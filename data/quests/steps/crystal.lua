@@ -125,10 +125,10 @@ Q.STEPS = {
     },
 
     cw_wwt_handbag = {
-        'Speak with Hampu-Kampu in Windurst Waters (S) at (G-8).',
-        'Examine ' .. ACTOR.WINDURST_S_ACOLYTE_HOSTEL_DOOR.text .. ' at (K-4) on the upper floor.',
+        "Speak with Hampu-Kampu in Windurst Waters (S) (G-8), outside the gate that blocks Gingerberry Grove.",
+        'Examine ' .. ACTOR.WINDURST_S_ACOLYTE_HOSTEL_DOOR.text .. ' at (K-4) on the north map: second floor, right side of the left building.',
         'Return to Hampu-Kampu and receive the Torn Patches of Leather key item.',
-        'Travel to the Tanners\' Guild in present-day Southern San d\'Oria and speak with Kipopo.',
+        "Travel to present-day Southern San d'Oria and speak with Kipopo inside the first-floor room at (D-8).",
         'Obtain Laminated Ram Leather, Sheep Leather, and Silk Thread and trade them to Kipopo.',
         'Change zones and return to Kipopo to receive the Repaired Handbag.',
         'Return to Hampu-Kampu in Windurst Waters (S) and trade the handbag for the Trainee\'s Needle reward.',
@@ -185,11 +185,11 @@ Q.STEPS = {
     -- BASTOK MARKETS (S)
     -- ========================================================
     cw_bmk_fighting_fourth = {
-        'Speak with ' .. ACTOR.ADELBRECHT_WOTG.text .. ' in Bastok Markets (S) and turn in the Blue Recommendation Letter to receive Battle Rations.',
-        'Travel to North Gustaberg (S), ascend Zegham Hill, and speak with ' .. ACTOR.GEBHARDT_WOTG.text .. '.',
-        'Speak with ' .. ACTOR.RODERICH_WOTG.text .. '.',
-        'Interact with ' .. ACTOR.NORTH_GUSTABERG_S_BARRICADE_E7.text .. '.',
-        'Return to ' .. ACTOR.ADELBRECHT_WOTG.text .. '.',
+        'Speak with ' .. ACTOR.ADELBRECHT_WOTG.text .. ' in Bastok Markets (S) and turn in the Blue Recommendation Letter to receive Battle Rations. The quest changes your Campaign allegiance at no cost; speaking to him again before you finish lets you cancel it.',
+        'Travel to North Gustaberg (S), climb the first level of Zegham Hill from around (I-8), and speak with ' .. ACTOR.GEBHARDT_WOTG.text .. ' at (I-6).',
+        'Speak with ' .. ACTOR.RODERICH_WOTG.text .. ' at (E-11).',
+        'Interact with ' .. ACTOR.NORTH_GUSTABERG_S_BARRICADE_E7.text .. ' at (E-7).',
+        'Return to ' .. ACTOR.ADELBRECHT_WOTG.text .. ' to join the Republican Legion\'s Fourth Division (Sprinter\'s Shoes if this is your first allegiance quest).',
     },
 
     cw_bmk_burden_of_suspicion = {
@@ -230,9 +230,9 @@ Q.STEPS = {
     cw_bmk_fires_of_discontent = {
         'Speak with ' .. ACTOR.ENGELHART_WOTG.text .. ' in Bastok Markets (S).',
         'Speak with ' .. ACTOR.PAGDAKO_WOTG.text .. '.',
-        'Travel to present-day Metalworks and speak with Iron Eater in the President\'s Office at (J-8).',
+        "Travel to present-day Metalworks and speak with Iron Eater in the President's Office at (J-8), maybe more than once.",
         'Return to the past and speak with ' .. ACTOR.ENGELHART_WOTG.text .. ' again.',
-        'Travel to Grauberg (S) and examine ' .. ACTOR.GRAUBERG_QQ_H6.text .. ' inside the cave at (I-6).',
+        'Travel to Grauberg (S) and examine ' .. ACTOR.GRAUBERG_QQ_H6.text .. ' inside the cave; the entrance is on the border of (H/I-5/6) (the Survival Guide is fairly close).',
         'Return to Bastok Markets (S) and speak with ' .. ACTOR.ENGELHART_WOTG.text .. '.',
         'Travel to the Metalworks gate area and speak with ' .. ACTOR.GENTLE_TIGER_WOTG.text .. '.',
         'Return to ' .. ACTOR.ENGELHART_WOTG.text .. ' to complete the quest.',
@@ -366,10 +366,10 @@ Q.STEPS = {
 
     cw_ssd_wrath_of_griffon = {
         'Speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S).',
-        'Travel to Jugner Forest (S) and find ' .. ACTOR.JUGNER_FOREST_S_TOPPLED_CRESSET_H10.text .. ' near a watch platform.',
+        'Travel to Jugner Forest (S) (H-10) and find ' .. ACTOR.JUGNER_FOREST_S_TOPPLED_CRESSET_H10.text .. ' at the foot of a watch platform. The Survival Guide is fastest; grab it and the Recall-Jugner key item if you don\'t have them, as other quests use them.',
         'Examine ' .. ACTOR.JUGNER_FOREST_S_TOPPLED_CRESSET_H10.text .. ' again to battle Cobraclaw Buchzvotch and defeat him.',
         'Examine ' .. ACTOR.JUGNER_FOREST_S_TOPPLED_CRESSET_H10.text .. ' once more after the battle.',
-        'Return to ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S) to complete the quest.',
+        'Return to ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S) to complete the quest and receive a Military Scrip, which Wyatt (L-6) exchanges for 20,147 gil.',
     },
 
     cw_ssd_beans_ahoy = {
@@ -383,9 +383,9 @@ Q.STEPS = {
     cw_ssd_perils_of_griffon = {
         'Wait one Vana\'diel day after Wrath of the Griffon, then change zones and speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S).',
         'Leave the area and speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' again.',
-        'Speak with ' .. ACTOR.DAIGRAFFEAUX_WOTG.text .. ' in Southern San d\'Oria (S).',
+        'Speak with ' .. ACTOR.DAIGRAFFEAUX_WOTG.text .. ' at (I-11) in Southern San d\'Oria (S), where the chocobo stables are in the present.',
         'Return to ' .. ACTOR.RHOLONT_WOTG.text .. '.',
-        'Travel to Jugner Forest (S) and examine the ??? on the tree stump at (I-6) to obtain the Orcish Warmachine Body key item.',
+        "Travel to Jugner Forest (S) and examine the ??? on the tree stump at (I-6), east of the river, to obtain the Orcish Warmachine Body key item. The East Ronfaure (S) Survival Guide is the shortest way.",
         'Return to ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S) to complete the quest.',
     },
 
@@ -423,8 +423,8 @@ Q.STEPS = {
     cw_ssd_carnelian_footfalls = {
         'Enter Southern San d\'Oria (S) from East Ronfaure (S).',
         'Speak with ' .. ACTOR.MAINCHELITE_WOTG.text .. ' to begin the quest.',
-        'Enter East Ronfaure (S) on foot.',
-        'Examine the designated ??? at (J-7), (I-8), and (H-8) to complete the three required steps.',
+        "Zone into East Ronfaure (S) from Southern San d'Oria (S) on foot for a cutscene.",
+        "Examine the three ??? from Steamed Rams: (H-8) in a dirt hole just north-east of the fort, (I-8) at the base of the waterfall (north-west corner), and (J-7) just south of a tree (north-west corner).",
         'Return to ' .. ACTOR.MAINCHELITE_WOTG.text .. ' to receive the Large Memory Fragment.',
     },
 

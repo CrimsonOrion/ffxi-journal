@@ -48,7 +48,7 @@ Q.STEPS = {
     },
 
     sdz_ss_the_seamstress = {
-        "Obtain 3 Sheepskins.",
+        "Obtain 3 Sheepskins; Cletae, in the building right behind Hanaa Punaa, sells them.",
         "Speak with Hanaa Punaa on the second floor balcony of the Leathercraft guild in Southern San d'Oria (E-8) to start the quest, then trade her the 3 skins to complete it.",
     },
 
@@ -188,7 +188,7 @@ Q.STEPS = {
 
     sdz_ns_trial_by_ice = {
         "Speak with Gulmama in Northern San d'Oria (E-7) to get the quest. If you are sure you have the required fame but she does not offer it, keep speaking with her until her text changes. Once you receive the key item Tuning fork of ice you can safely undertake the quest.",
-        "Go to Fei'Yin. In the basement (map B) travel to (I-5) to find the entrance to the Cloister of Frost. Each party member must have their own Tuning fork of ice.",
+        "Travel to Beaucedine Glacier and enter Fei'Yin at (J-4). On map A, go to (G-9) and down the stairs; in the basement (map B), go to (I-5) for the entrance to the Cloister of Frost. Fei'Yin Home Point #2 is best. Each party member must have their own Tuning fork of ice.",
         "Defeat Shiva Prime to receive the key item Whisper of frost.",
         "Return to Gulmama with the whisper and she offers several rewards, including the ability to summon Shiva. You can only select one reward at a time, and you can repeat the quest once per Earth day.",
         "To save travel time to the Cloister of Frost, you can use the Mini tuning fork of ice from the quest Trial-Size Trial by Ice. You must be on Summoner as your main job: get the Mini tuning fork from Castilchat, trade the fork back to Castilchat, and enter the Protocrystal normally. As long as you do not clear the level 20 version, you may warp to the Cloister as many times as you like.",
@@ -233,7 +233,7 @@ Q.STEPS = {
 
     sdz_ss_grimy_signposts = {
         "Speak with Maugie in Southern San d'Oria (L-9) to start the quest.",
-        "Travel to Jugner Forest and click on the signposts at the following spots to clean them: (E-11), (G-8), (H-7) and (J-5).",
+        "Travel to Jugner Forest and click on the signposts along the dirt path to clean them: (E-11), (G-8), (H-7) and (J-5). From the La Theine Plateau Survival Guide, go east into Jugner Forest and follow the path.",
         "Speak with Maugie again after cleaning them to receive your reward, 1,500 gil.",
     },
 
@@ -269,7 +269,7 @@ Q.STEPS = {
     sdz_ns_blackmail = {
         "Speak with Dauperiat in Northern San d'Oria (I-10) to obtain a Suspicious envelope, and deliver it to Halver in Chateau d'Oraguille.",
         "Return to Dauperiat, who now asks you to do a second job for him. If you choose to keep helping him you lose fame; if you choose no, you can proceed to the next quest, The Setting Sun.",
-        "If you say yes, he asks you to get the floor plans back from the Orcs. Orcish Serjeant enemies in Fort Ghelsba and Batallia Downs can drop the Castle Floor Plans.",
+        "If you say yes, he asks you to get the floor plans back from the Orcs: Orcish Serjeants in Fort Ghelsba, Davoi and Yughott Grotto can drop the Castle Floor Plans. You can flag the next quest by fame alone, but this one is only marked complete once you turn in the plans.",
         "Trade the Castle Floor Plans back to Dauperiat for your reward.",
     },
 
@@ -563,7 +563,7 @@ Q.STEPS = {
 
     sdz_ss_timely_visit = {
         "Speak with Deraquien in Southern San d'Oria (G-8) for a cutscene.",
-        "Go to La Theine Plateau and speak with Narvecaint (F-7) for another cutscene.",
+        "Go to La Theine Plateau and speak with Narvecaint (F-7) at the entrance to Ordelle's Caves for another cutscene (the Ordelle's Caves Voidwatch warp puts you right next to him).",
         "Return to Deraquien and speak with him again.",
         "Go to Chateau d'Oraguille and speak with Halver. If you have just cleared The Voracious Resurgence, you will have to rezone after the cutscene and speak with him again.",
         "Speak with Deraquien again.",
@@ -571,6 +571,9 @@ Q.STEPS = {
         "Go back and speak with Deraquien.",
         "Head to Jugner Forest through King Ranperre's Tomb. If you have access to the Proto-Waypoint, it is the fastest way to reach the location.",
         "Click the ??? at (F-5) between 18:00 and 4:00 to spawn two NMs, Giollemitte B Feroun and Skeleton Esquire. Both must be defeated to proceed.",
+        "Once both are defeated, click the ??? again for a cutscene.",
+        "Return to Phillone for a cutscene, then speak with Narvecaint in La Theine Plateau (F-7).",
+        "Return to Phillone to receive your reward.",
     },
 
     sdz_co_fit_for_a_prince = {
@@ -622,7 +625,7 @@ Q.STEPS = {
         "First go to the second floor of the house at (G-7) in Southern San d'Oria and read the diary there until you have read up to Page 4. This quest requires the Chains of Promathia pack, and follows A Squire's Test II.",
         "Speak with Antreneau in Port San d'Oria (G-7) to flag the quest.",
         "Head to Oldton Movalpolos and defeat Moblin Ashman and Moblin Gurneyman enemies until one drops a Moblin Hotrok. Alternatively, go to Newton Movalpolos and defeat Moblin Groundman enemies.",
-        "Head to Uleguerand Range and climb to the top, where Jormungand spawns.",
+        "Head to Uleguerand Range. At (F-9) a slope leads all the way down to the zone entrance: slide down the southern slope (the one you see as you zone in) and aim for the ledge on your left; if you miss it, climb back up and try again. On the ledge, go into the hole to the ???.",
         "Trade the Moblin Hotrok to the ??? to complete the quest.",
     },
 

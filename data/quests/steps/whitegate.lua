@@ -239,7 +239,8 @@ Q.STEPS = {
     },
 
     tau_wg_soothing_waters = {
-        "You need to have completed Aht Urhgan Mission 11, and Mihli Aliapoh must be present in Al Zahbi. Go to (G-9) in Aht Urhgan Whitegate and talk to Eunheem.",
+        "Speak with Fari-Wari in Aht Urhgan Whitegate (K-12) for a cutscene that begins the quest. You need to have completed Aht Urhgan Mission 11, and Mihli Aliapoh must be present in Al Zahbi.",
+        "Go to (G-9) in Aht Urhgan Whitegate and talk to Eunheem.",
         "Talk to Nadeey at (K-7) inside the Walahra Temple. You may get a cutscene upon entry for The Rider Cometh.",
         "Talk to Mihli Aliapoh in Al Zahbi (H-7), who tells you to obtain a Colorful Hair.",
         "Kill Aydeewa Diremite enemies until you get a Colorful Hair. You can find them around (I-9) after you take the (I-7) entrance from Bhaflau Thickets and slide down at (H-8). Circle back up to farm the item, then slide back down. The Voidwatch warp, if you have it, is a quick shortcut.",
@@ -409,7 +410,7 @@ Q.STEPS = {
 
     tau_alz_when_bow_breaks = {
         "While the quest Ode to the Serpents is active, speak with Gaweesh in Al Zahbi (G-8). You may only get the cutscenes when General Najelith is in Al Zahbi.",
-        "In Wajaom Woodlands, kill Aht Urhgan Attercop enemies (spiders) until you get a Frayed Arrow. Three Aht Urhgan Attercops are located at the Giwahb Watchtower.",
+        "In Wajaom Woodlands, kill Aht Urhgan Attercops (spiders) until you get a Frayed Arrow. Three are at the Giwahb Watchtower, with more at (F-6) and (E-8). The Wajaom Woodlands Survival Guide is fastest; the long way is the Aht Urhgan Whitegate exit at (G-10).",
         "Go to the Giwahb Watchtower in Wajaom Woodlands (F-5) and trade the Frayed Arrow to the door for a cutscene that completes the quest and gives you 500 Imperial Standing.",
     },
 

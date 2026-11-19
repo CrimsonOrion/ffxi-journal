@@ -20,7 +20,8 @@ Q.STEPS = {
         "Take the letter to Windurst Waters and talk to Angelica at the Rarab Tail Hostelry. You receive the key items Angelica's letter and the painting \"Final Fantasy\", which she wants you to hang in the Temple of Uggalepih.",
         "Go back to Kazham and talk to Etteh Sulaej.",
         "Go to (G-8) on the first map of the Temple of Uggalepih and hang the picture at the Stone Picture Frame, on the south wall of the Paintbrush Room, to spawn the Golem NM Trompe L'Oeil. The Temple of Uggalepih Survival Guide warp puts you a short distance from the Stone Frame.",
-        "Return to Etteh Sulaej to receive your reward, 3,000 gil. You can repeat the quest.",
+        "Defeat the NM, then check the frame for the Ripped \"Final Fantasy\" painting. In a party, there is a 10-minute wait before the NM can be spawned again.",
+        "Return to Etteh Sulaej to receive your reward, 3,000 gil. You can repeat the quest; Angelica then gives you \"Final Fantasy Part II\" instead.",
     },
 
     out_kaz_grudging = {
@@ -465,6 +466,7 @@ Q.STEPS = {
 
     out_rab_indomitable_spirit = {
         "To begin this quest in your log, you need the key item Serpent Rumors. It can be bought from Fennella in Port Windurst (C-8) for 95,000 Guild Points with Fishing rank Adept or higher. You can still obtain the other items needed for this quest before initiating it. You need the Rise of the Zilart pack.",
+        "Get the Opal Silk and Saber Shoot by trading Liks and Gugrusauruses to Zaldon in Selbina (about a 0.5% chance each).",
         "Speak with Irmilant in Rabao (G-7). He asks you to bring the two base materials required to craft a legendary fishing rod, which seem to have found their way into the bellies of sea creatures that still elude the finest fishermen.",
         "Trade the Opal Silk and the Saber Shoot to Irmilant.",
         "Return to Irmilant after the Conquest tally to receive your reward, the Ebisu Fishing Rod. It can be re-obtained if dropped by mistake.",

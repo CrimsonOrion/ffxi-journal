@@ -131,11 +131,10 @@ Q.STEPS = {
     },
 
     wq_wt_food_for_thought = {
-        "This quest cannot be started if you have started Say It with Flowers or the mission The Price of Peace.",
-        "Before starting, check whether Kerutoto keeps asking about challenging Diabolos. If so, you must accept that quest (Waking Dreams) first; once it is in your quest log, you can start Food for Thought.",
-        "Go to the northern Rhinostery building and speak with Kerutoto in Windurst Waters South (J-8); the quest is added to your quest log.",
-        "Speak with Ohbiru-Dohbiru and Kenapa-Keppa again to get their food orders.",
-        "Trade the food orders: a Grilled Hare to Kerutoto, plus the orders you got from Ohbiru-Dohbiru and Kenapa-Keppa.",
+        "This quest cannot be started if you have started Say It with Flowers or the mission The Price of Peace. If Kerutoto keeps asking about challenging Diabolos, accept Waking Dreams first; once it's in your quest log you can start this one.",
+        "Talk to these NPCs in this exact order: first Ohbiru-Dohbiru in the southern Rhinostery building (J-9), who says he's hungry; then Kerutoto in the northern Rhinostery building (J-8), which adds the quest to your log.",
+        "Speak with Ohbiru-Dohbiru again, and with Kenapa-Keppa three times, to get their food orders.",
+        "Trade Kerutoto a Grilled Hare (440 gil), Kenapa-Keppa a Hard-boiled Egg (120 gil), and Ohbiru-Dohbiru a Pamtam Kelp, a Tortilla and Windurstian Tea (440 gil).",
         "The quest completes automatically once the final order is traded, so you do not need to speak with Kerutoto again.",
     },
 
@@ -195,7 +194,7 @@ Q.STEPS = {
         "Return to her while you are under the effect of Bane, Mute or Plague.",
         "Bane is inflicted by Lost Soul enemies in The Eldieme Necropolis, and pays 1,200 gil.",
         "Mute is inflicted through the additional effect of the weapon of Eight of Cups in the Outer Horutoto Ruins (enter from (F-11) in West Sarutabaruta), and pays 1,000 gil.",
-        "Plague is inflicted by Bloodsucker enemies in Toraimarai Canal, by Deathmaw Orobon enemies in the Ceizak Battlegrounds with Vile Belch (which also inflicts Silence, so use an item or Echo Drops first if you plan to warp back to Ohruru), and by the Devouring Mosquito in Reisenjima with Infected Leech, which lasts 45 seconds.",
+        "Plague (1,500 gil) is inflicted by Bloodsucker enemies in Toraimarai Canal, by Deathmaw Orobon enemies in the Ceizak Battlegrounds with Vile Belch (which also inflicts Silence, so use an item or Echo Drops first if you plan to warp back to Ohruru), and by the Devouring Mosquito in Reisenjima with Infected Leech, which lasts 45 seconds. Many of these wear off quickly, so set your Home Point at Port Windurst #1.",
         "Once the quest is complete, she removes the status ailment from you.",
     },
 
@@ -372,7 +371,7 @@ Q.STEPS = {
     wq_wd_legendary_plan_b = {
         "You must zone after completing A Greeting Cardian before you start this quest.",
         "Speak with Kopuro-Popuro in Windurst Woods (H-10) to start the quest.",
-        "Obtain a Luminicloth, a Revival Tree Root and a Wolf Hide. All three can be found at the Auction House.",
+        "Obtain a Luminicloth, a Revival Tree Root and a Wolf Hide. All three are on the Auction House, or farm them in The Eldieme Necropolis at any time of day: Luminicloth (rare) from ghosts, Revival Tree Root from undead, Wolf Hide from hounds.",
         "Trade the Luminicloth, the Revival Tree Root and the Wolf Hide to Kopuro-Popuro to complete the quest and receive 700 gil and Scentless Armlets.",
     },
 
@@ -420,6 +419,7 @@ Q.STEPS = {
 
     wq_wt_say_it_with_flowers = {
         "Speak with Moari-Kaaori in Windurst Waters South (C-9) to start the quest. Home Point #3 is the closest.",
+        "Speak with Ohbiru-Dohbiru in the southern Rhinostery building (J-9). The right answers to his questions are \"Rare\", \"Mystical\" and \"Elegant\"; wrong answers get you the wrong flower and a smaller reward.",
         "If you answer all the questions correctly, you are sent after a Tahrongi Cactus.",
         "Go to Tahrongi Canyon (F-6) and examine the Tahrongi Cacti there to get a Tahrongi Cactus.",
         "Give the flower to Moari-Kaaori to receive your reward: an Iron Sword the first time and 400 gil on later completions.",
@@ -639,6 +639,7 @@ Q.STEPS = {
         "Go to Windurst Walls (G-3) and check the door of the House of the Hero.",
         "Go to Toraimarai Canal and open a Coffer there to obtain the Joker card. Various enemies in the zone drop the Toraimarai Coffer Key, or you can buy one from the Curio Vendor Moogle for 5,000 gil.",
         "If you spoke to Joker during the previous cutscene, return to the House of the Hero for your reward.",
+        "If you spoke to Apururu in that cutscene instead, return to the Manustery in Windurst Woods (Home Point #3).",
         "Return to Honoi-Gomoi to complete the quest.",
     },
 
@@ -669,7 +670,7 @@ Q.STEPS = {
     wq_wt_toraimarai_turmoil = {
         "If you have just completed Blue Ribbon Blues, zone first.",
         "Speak with Ohbiru-Dohbiru in Windurst Waters South (J-9) for a cutscene. You receive the key item Rhinostery certificate, which gives access to Toraimarai Canal through Windurst Walls (H-3).",
-        "To find Starmites, enter Toraimarai Canal by speaking with Seven of Diamonds in Windurst Walls (H-3). Go up the stairs at (I-9), then head west to (G-9), where the Starmites spawn.",
+        "To find Starmites, enter Toraimarai Canal by speaking with Seven of Diamonds in Windurst Walls (H-3). Go east at the first intersection, down the stairs at (I-8) and east, turn right at both intersections at (I-10), go up the stairs at (I-9), then head west to (G-9), where the Starmites spawn.",
         "Starmite Shell drops from Starmite enemies. Get Starmite Shell x3.",
         "Return to Ohbiru-Dohbiru and trade him the shells to complete the quest and receive 4,500 gil.",
     },

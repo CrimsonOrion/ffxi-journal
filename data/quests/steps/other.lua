@@ -16,7 +16,8 @@ Q.STEPS = {
         "Wait 8 Vana'diel days after completing His Name Is Valgeir to begin this quest. Speak with Take in Mhaura (I-8), inside the Sailor's Stay. She wants you to bring back one of Valgeir's dishes from Selbina.",
         "Speak with Valgeir in Selbina (I-9), inside the Shepherd's Muster.",
         "Obtain 1 Scream Fungus and 1 Land Crab Meat and trade them to Valgeir.",
-        "Bring the dish back to Take for your reward, the Tableware Set, and the title Three-Star Purveyor.",
+        "Wait 2 game days and return to Valgeir for the key item Land crab bisque.",
+        "Take the bisque to Take for your reward, the Tableware Set, and the title Three-Star Purveyor.",
     },
 
     oth_mha_fishermans_heart = {
@@ -57,7 +58,8 @@ Q.STEPS = {
     },
 
     oth_mha_rycharde_the_chef = {
-        "Speak with Rycharde in Mhaura (I-8) to begin the quest. He needs your help to find some dhalmel meat.",
+        "Speak with Numi Adaligo in the governor's house in Mhaura (F-9) and ask about jobs, then with Take (I-8) on the first floor of the Sailor's Stay.",
+        "Speak with Rycharde on the second floor of the Sailor's Stay to begin the quest. He needs your help to find some dhalmel meat.",
         "Obtain 2 Dhalmel Meat and trade them to Rycharde to complete the quest. You receive 1,500 gil and the title Purveyor in Training.",
     },
 
@@ -129,8 +131,8 @@ Q.STEPS = {
     oth_sel_cargo = {
         "Talk to Vuntar in Selbina (H-9). He will pay a premium price for rolanberries, but only for those that are thoroughly aged and can serve as food for long voyages.",
         "Purchase some Rolanberries.",
-        "Proceed to the Crawlers' Nest to turn your Rolanberries into higher quality Rolanberries.",
-        "Trade the aged Rolanberries to Vuntar to complete the quest. The payment depends on the Rolanberry you hand in. You can repeat the quest.",
+        "In Crawlers' Nest, trade the right berry to the baskets in the circular rooms. Each trade has a chance to spawn an NM crawler at one of the room's exits; it walks to the basket and then attacks you, and always drops the upgraded berry. Bring several stacks for the higher tiers.",
+        "Trade the aged Rolanberries to Vuntar: Rolanberry 881 pays 800 gil, 874 pays 2,000 gil and 864 pays 3,000 gil (Rolanberry 854 and the white or withered berries aren't accepted). You can repeat the quest.",
     },
 
     oth_sel_donate_to_recycling = {
@@ -226,7 +228,7 @@ Q.STEPS = {
     oth_tvs_behind_the_smile = {
         "Talk to Enaremand in Tavnazian Safehold (J-7, Home Point #3), on the upper level. This quest follows It's Raining Mannequins and requires the Chains of Promathia pack. One last material is required to complete his final masterpiece, and the mannequin craftswoman in Mhaura may have clues.",
         "Go to Mhaura and talk with Fyi Chalmwoh at (G-8).",
-        "Go to Carpenters' Landing, entering from Jugner Forest at (J-8), where you will fight an Orc NM. When you touch the ???, Bullheaded Grosvez spawns.",
+        "Go to Carpenters' Landing, entering from Jugner Forest (J-8) (the Carpenters' Landing Survival Guide puts you one square east). At (I-10), touch the ??? on a red mushroom near the south-west corner to spawn the Orc NM Bullheaded Grosvez.",
         "After you have defeated Bullheaded Grosvez, touch the ??? again to receive the Red oil.",
         "Go back to the Tavnazian Safehold and talk to Enaremand again for your reward, the Mannequin Pumps.",
     },
@@ -340,8 +342,8 @@ Q.STEPS = {
 
     oth_tvs_unforgiven = {
         "Speak with Elysia on the first floor of Tavnazian Safehold (G-10) to begin the quest. She dropped her hairpin while doing her shopping.",
-        "Head up to the second floor of the safehold and examine the ??? behind the pillar at (K-9), near the Walnut Door. You obtain the Alabaster hairpin.",
-        "Return to Elysia for your reward, the Map of Tavnazia.",
+        "Head up to the third floor of the safehold and examine the ??? behind the pillar at (K-9), near the Walnut Door (maybe twice). You obtain the Alabaster hairpin.",
+        "Return to Elysia, then speak with Pradiulot (H-9), for your reward, the Map of Tavnazia. For more of the story, speak with Elysia and Pradiulot once more.",
     },
 
     oth_tvs_uninvited_guests = {
@@ -513,15 +515,15 @@ Q.STEPS = {
     },
 
     oth_mog_moogles_in_the_wild = {
-        "Place a bed in your Mog House using the furniture Layout menu, exit your Mog House, re-enter it and speak to your Moogle. You need to have completed The Moogle's Picnic! and have Other fame level 7 (home nation fame).",
-        "Your moogle wants to take a raptor mantle and a wool hat to his friends in the Outlands. Trade him the items he requests.",
-        "When he returns from his trip, your Mog Safe capacity is increased to 80 items.",
+        "Place a Noble's Bed in your Mog House, zone out and back in, wait one Earth minute and speak to your Moogle (maybe twice). You need to have completed The Moogle's Picnic! and have home nation fame level 7. Remove any weekly conquest-reward item (such as an Aurum Coffer) from your layout if it won't trigger.",
+        "Trade your Moogle a Raptor Mantle and a Wool Hat.",
+        "When he returns from his trip after one Earth minute, your Mog Safe holds 80 items.",
     },
 
     oth_mog_moogles_picnic = {
-        "Place a Mahogany Bed in your Mog House, then speak to the Moogle. You need to have completed Give a Moogle a Break. Zone out of your Mog House and then come back.",
-        "Your moogle wants to take a shrimp lure and some Selbina butter back home. He would be very happy if you found them for him; trade him the items.",
-        "When he returns from his trip, your Mog Safe capacity is increased to 70 items.",
+        "Place a Mahogany Bed in your Mog House, zone out and back in, and speak to the Moogle (maybe twice). You need to have completed Give a Moogle a Break and have home nation fame level 5. If an item that gives weekly conquest rewards (such as an Aurum Coffer) is in your layout, you may need to remove it.",
+        "Trade your Moogle a Shrimp Lure and Selbina Butter.",
+        "When he returns from his trip after one Earth minute, your Mog Safe holds 70 items.",
     },
 
     -- ========================================================

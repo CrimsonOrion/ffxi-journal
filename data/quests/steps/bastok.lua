@@ -116,9 +116,9 @@ Q.STEPS = {
     },
 
     bsz_pb_love_and_ice = {
-        "Locate the key item you received during The Stars of Ifrit. You receive it before the end of that quest, so you do not need to complete The Stars of Ifrit before starting this one.",
+        "Examine the key item Carrier pigeon letter (permanent key items) from The Stars of Ifrit. You receive it before the end of that quest, so you don't need to complete The Stars of Ifrit first.",
         "Speak with Carmelo inside the Steaming Sheep in Port Bastok (E-6) to receive the actual quest and Carmelo's song sheet. If you have The Siren's Tear active, you get a prompt to ask him about the Siren's Tear instead. You need Bastok fame level 5.",
-        "Travel to (G-10) in Beaucedine Glacier, at the ice pond, and click on the Mirror Pond. It only appears on days without snow or clouds.",
+        "Travel to the ice pond in Beaucedine Glacier (G-10) and click on the Mirror Pond. It only appears on days without snow or clouds (single gloom weather is fine). The Beaucedine Glacier Voidwatch warp is closest.",
         "After the cutscene, return to Bastok and speak with Carmelo to complete the quest.",
     },
 
@@ -146,7 +146,7 @@ Q.STEPS = {
 
     bsz_pb_trial_by_earth = {
         "Speak with Juroro in Port Bastok (I-8); Home Point #1 is the closest. You need Bastok fame level 6. Once you have received the key item Tuning fork of earth, you can safely undertake the quest.",
-        "Travel to Quicksand Caves and go to (E-10) of the map to find the hidden entrance to the Cloister of Tremors. Each party member must have their own Tuning fork of earth.",
+        "Travel to Eastern Altepa Desert and enter Quicksand Caves at (J-7), by the level 30+ beetle and Antica camp; you arrive on the first map at (L-4). Make your way to (E-10) to find the hidden entrance to the Cloister of Tremors, watching out for hidden falls and traps. Quicksand Caves Home Point #2 is best; the Unity Warp (level 125) is about a minute's run from it. Each party member must have their own Tuning fork of earth.",
         "Defeat Titan Prime to receive the key item Whisper of tremors.",
         "Return to Juroro with the whisper and she offers several rewards, including the ability to summon Titan. You can only select one reward at a time, and you can repeat the quest once per Earth day.",
         "To save travel time to the Cloister of Tremors, you can use the Mini tuning fork of earth from the quest Trial-Size Trial by Earth. You must be on Summoner as your main job: get the Mini tuning fork from Ferrol, trade the fork back to Ferrol, and enter the Protocrystal normally. As long as you do not clear the level 20 version of the battlefield, you may warp to the Cloister as many times as you wish.",
@@ -485,10 +485,10 @@ Q.STEPS = {
     },
 
     bsz_bkt_brygid_stylist_returns = {
-        "Complete Brygid the Stylist first. Then speak with Brygid in Bastok Markets (K-9), on any job, while wearing any 1 to 5 pieces of Artifact Armor to begin the quest.",
-        "Brygid asks for armor pieces from a list of ordinary body and leg armors, for example Banded Mail, Bishop's Robe, Pyro Robe or Silver Mail.",
-        "Some pieces are job-specific armor that needs a matching subligar dropped by a Fomor enemy: for example Aikido Gi (MNK) needs an Aquarius Subligar from Fomor Monk, Gaudy Harness (BRD/BST) an Ophiuchus Subligar from Fomor Beastmaster, Gloom Breastplate (DRK) a Sagittarius Subligar from Fomor Dark Knight, Nokizaru Gi (NIN) a Taurus Subligar from Fomor Ninja, and Wyvern Mail (DRG) a Leo Subligar from Fomor Dragoon.",
-        "Bring Brygid what she requests to complete the quest and receive your reward.",
+        "Complete Brygid the Stylist first. Then speak with Brygid in Bastok Markets (K-9), on any job, while wearing 1 to 5 pieces of original Artifact Armor (not +1 or Reforged) to begin the quest.",
+        "She asks for one body and one legs piece from her list of ordinary armors (for example Banded Mail, Bishop's Robe, Pyro Robe or Silver Mail). Return wearing both.",
+        "She then offers 13 level 50 body armors. Choose one and trade her the matching rare/ex Subligar from the Fomors in Phomiuna Aqueducts and the Sacrarium: for example Aikido Gi (MNK) needs an Aquarius Subligar from Fomor Monk, Gaudy Harness (BRD/BST) an Ophiuchus Subligar from Fomor Beastmaster, Gloom Breastplate (DRK) a Sagittarius Subligar from Fomor Dark Knight, Nokizaru Gi (NIN) a Taurus Subligar from Fomor Ninja, and Wyvern Mail (DRG) a Leo Subligar from Fomor Dragoon.",
+        "You receive the body armor and can repeat the quest as often as you like.",
     },
 
     bsz_bkt_father_figure = {
@@ -533,7 +533,7 @@ Q.STEPS = {
         "Speak with Hungry Wolf inside the Craftmen's Eatery in Metalworks (G-9) to start the quest; Home Point #1 is close. He wants a Galkan Sausage.",
         "Optional: speak with Offa in Bastok Markets (F-10), on the second floor behind the door on the left, for instructions on how to make the sausage.",
         "Obtain a Giant Sheep Meat from the Auction House or from Ornery Sheep in South Gustaberg.",
-        "Travel to South Gustaberg (K-9) to find a Goblin campfire (???). To find it, look on your map for the small hill at (K-9); it blends in with the surroundings, so keep an eye open for it.",
+        "Travel to South Gustaberg and find the Goblin campfire (???) on the small hill at (K-9): the ramp up is directly south of the hill, at the top of (K-10). It blends in with the surroundings, so keep an eye open for it.",
         "Trade the Giant Sheep Meat to the campfire to begin cooking it, then wait one minute (Earth time). Do not zone out, or you will have to repeat the steps.",
         "After the wait, check the campfire again and it drops a Galkan Sausage into your inventory, so make sure you have inventory room.",
         "Trade the Galkan Sausage to Hungry Wolf to complete the quest and receive 300 gil.",
@@ -571,7 +571,7 @@ Q.STEPS = {
         "Travel to Beadeaux. Upon entry, proceed straight in, then turn left (north) when you reach the wall at (F-7). Go north to the wall in (F-6), then due east to (H-6).",
         "From there head south and you will go into a cave that leads down. Take it down until it exits at (H-7) on the lower map.",
         "From there go west and south as you can until you come to the tunnel at (F-8) that leads back to the surface; you pass one Afflictor that curses you as you proceed.",
-        "Follow the surface path along, south past the Mute at (F-9). When the weather is raining, a ??? appears; take your sample of polluted dirt from it.",
+        "Follow the surface path south past the Mute at (F-9), under the bridge and past the second Afflictor, then east around the giant smokestacks at (G-9)/(H-9). When it's raining, a ??? appears near the base of the smokestacks; examine it for the key item Corrupted dirt.",
         "Return to High Bear and speak with him to complete the quest and receive a Chakram.",
     },
 
@@ -655,7 +655,7 @@ Q.STEPS = {
     bsz_mw_question_of_faith = {
         "Speak with Ayame in Metalworks (K-7) for a cutscene that starts the quest. You need Bastok fame level 4 and the Chains of Promathia pack.",
         "Go to Bastok Mines and speak with Virnage at (I-5) for a cutscene. Agree to his proposal and you receive the Dawn talisman.",
-        "Go to Oldton Movalpolos and speak with Rakorok at (K-10). This spawns the NM Bugallug, which must be defeated. It has around 5,000 HP and uses the standard Bugbear attacks (Earthshock, Heavy Whisk, Flying Hip Press, etc.).",
+        "Go to Oldton Movalpolos and speak with Rakorok at (K-10) (the Proto-Waypoint at the Geomagnetic Fount (K-11) is closest). This spawns the NM Bugallug, which must be defeated. It has around 5,000 HP and uses the standard Bugbear attacks (Earthshock, Heavy Whisk, Flying Hip Press, etc.).",
         "After defeating Bugallug, speak with Rakorok for a cutscene in which you lose the Dawn talisman.",
         "Return to Bastok Mines and speak with Virnage to complete the quest and receive 3,000 gil.",
     },
@@ -689,7 +689,7 @@ Q.STEPS = {
         "Speak with Ferghus in the Craftsmen's Eatery in Metalworks (G-9), south of Cid's workshop, for a cutscene. Metalworks Home Point #1 is the closest. You need Bastok fame level 5 and the Wings of the Goddess pack.",
         "Speak with Leonhardt for another cutscene.",
         "Go to Bastok Markets (S) and speak with Raginmund near Harmodio's Music Shop (L-10).",
-        "Obtain a Red Oven Mitt from Copper Quadav and Onyx Quadav enemies in Grauberg (S).",
+        "Obtain a Red Oven Mitt from Copper Quadav and Onyx Quadav enemies in Grauberg (S) (two of each in the (J-5/6) corridor, near the Campaign Arbiter and Survival Guide) or North Gustaberg (S) (one Copper Quadav south of the Survival Guide).",
         "Trade the Red Oven Mitt to Leonhardt for a brief cutscene.",
         "Speak with Umberto in Bastok Markets, near Harmodio's Music Shop (L-10), for a cutscene and your reward.",
     },
@@ -713,7 +713,7 @@ Q.STEPS = {
     },
 
     bsz_mw_synergistic_support = {
-        "Speak with Hildolf in Metalworks (F-8) to learn how to create your own Fewell.",
+        "Speak with Hildolf in Metalworks (F-8) to learn how to create your own Fewell, and trade him a Slime Oil.",
         "Choose a type from the list and you are given three of that choice, which completes the quest.",
     },
 
