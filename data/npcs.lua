@@ -928,4 +928,9 @@ return {
     "Chomoro-Kyotoro", -- Local patch: Windurst quests
     "Kirarara", -- Local patch: Windurst quests
     "Comitolus", -- Local patch: Windurst quests
+    "Matifa", -- Local patch: Aht Urhgan quests
+    "Arcuhbah", -- Local patch: Aht Urhgan quests
+    "Fubruhn", -- Local patch: Aht Urhgan quests
+    "Ugrihd", -- Local patch: Aht Urhgan quests
+    "Koja Salaheem", -- Local patch: Aht Urhgan quests
 }

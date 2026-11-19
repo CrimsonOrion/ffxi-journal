@@ -859,4 +859,7 @@ return {
     ["Maan-Pokuun"] = { { 239, -68.32, 124.57, -5.00 } }, -- Local patch: Windurst quests
     ["Chomoro-Kyotoro"] = { { 238, 133.00, 167.64, -5.75 } }, -- Local patch: Windurst quests
     ["Kirarara"] = { { 238, 130.99, 172.25, -6.25 } }, -- Local patch: Windurst quests
+    ["Matifa"] = { { 50, -10.58, -8.82, 0.00 } }, -- Local patch: Aht Urhgan quests
+    ["Fubruhn"] = { { 50, -99.71, -88.54, 0.00 } }, -- Local patch: Aht Urhgan quests
+    ["Ugrihd"] = { { 50, -63.00, -31.60, -6.00 } }, -- Local patch: Aht Urhgan quests
 }

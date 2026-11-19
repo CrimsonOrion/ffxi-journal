@@ -14,8 +14,7 @@ Q.STEPS = {
 
     tau_wg_arts_and_crafts = {
         "Speak with Hadahda in Aht Urhgan Whitegate (F-10), above the Mog House. He wants paper pieces with letters written on them: one each of M, U and T, and two each of A and D.",
-        "Collect the letters from NPCs in Aht Urhgan Whitegate: Qutiba (K-12) gives an A, Zabahf (F-8) gives the T, Mathlouq (F-5) gives the U, Mhasbaf (J-8) gives the M, Balakaf (I-5) gives a D, and Ekhu Pesshyadha (H-6) gives the second A. You may need to speak to Ekhu Pesshyadha twice if you have logged The Die Is Cast.",
-        "Collect the 7 letters in total. The source I found does not say who gives the first D.",
+        "Collect the 7 letters from NPCs in Aht Urhgan Whitegate: Zabahf (F-8) gives the T, Mathlouq (F-5) the U, Ekhu Pesshyadha (H-6) an A, Balakaf (I-5) a D, Matifa (H-9) the other D, Mhasbaf (J-8) the M and Qutiba (K-12) the other A. They start quests of their own, so you may need to speak to them more than once (Ekhu Pesshyadha twice if you have The Die Is Cast).",
         "Return to Hadahda for another cutscene and your reward, a Sutlac.",
         "You can trade the Sutlac back to Hadahda if you prefer an Imperial Bronze Piece.",
     },
@@ -250,9 +249,10 @@ Q.STEPS = {
 
     tau_wg_embers_of_his_past = {
         "Talk to Fari-Wari at the Shararat Teahouse in Aht Urhgan Whitegate (K-12) for a cutscene that begins the quest. This quest requires the Treasures of Aht Urhgan pack, and Gadalar must be present in Al Zahbi.",
-        "Head to Mount Zhayolm and click on the Sprightly Footsteps at (L-7) between 18:00 and 06:00. The Voidwatch teleport takes you to the exact location; casting Escape from inside Halvung puts you at (L-7), just north of the location.",
-        "Click on the Withered Petals at (L-6), in the southeast portion near the coastal cliffs, between 18:00 and 06:00.",
-        "Trade a Hydrangea to Fari-Wari.",
+        "Head to Mount Zhayolm and click on the Sprightly Footsteps at (L-7) between 18:00 and 06:00. The Voidwatch teleport takes you to the exact location; casting Escape from inside Halvung puts you at (L-7), just north of it. Starting after 05:00 may not leave you time for the next cutscene before the hour changes.",
+        "Click on the Withered Petals at (L-6), in the south-east part near the coastal cliffs, between 18:00 and 06:00. After the cutscene you end up in Aht Urhgan Whitegate.",
+        "Trade a Hydrangea to Fari-Wari. Hilltroll Red Mages, Hilltroll Warriors and Hilltroll Puppetmasters in Mount Zhayolm drop it, or buy it at the Auction House.",
+        "Trade a Hydrangea to the Withered Petals in Mount Zhayolm (L-6); this one doesn't have to be at night.",
         "Return to Fari-Wari for a cutscene and an Imperial Gold Piece. Speak to Fari-Wari after this to learn Trust: Gadalar.",
         "Speak to Fari-Wari after the day changes to receive a Mercenary Camp Entry Slip.",
     },
@@ -288,7 +288,7 @@ Q.STEPS = {
         "Walk towards the crates at (F-9).",
         "Return to Saliyahf.",
         "Speak with Wazyih again.",
-        "You must now find a targetable location in Al Zahbi to find Munahda's package.",
+        "Find Munahda's package at a targetable spot in Al Zahbi; it moves after another player finds it. Possible spots: (G-7) in the water, (G-8) at the entrance to the south tunnel, (I-10) in the chocobo alley, (J-7) behind Kahah Hobichai, (I-5) Flameserpent Square, (H-9) in the tunnel from Galeserpent Square to the chocobo alley, and (J-9) Galeserpent Square.",
         "Zone back into Aht Urhgan Whitegate from Al Zahbi for a cutscene.",
         "Return to Wazyih at (F-11) in Aht Urhgan Whitegate.",
         "Finally, speak with Saliyahf at (G-7) for your reward, 3 Imperial Bronze Pieces, and to finish the quest.",
@@ -326,6 +326,7 @@ Q.STEPS = {
 
     tau_wg_promo_sp = {
         "Complete 25 points worth of Assaults as a Private First Class. You need Aht Urhgan fame level 1 and the Treasures of Aht Urhgan pack. Your task is to find hard evidence that the Dark Rider has truly appeared out of legend and is terrorizing the Empire.",
+        "Find a Warhorse Hoofprint and examine it for the key item Dark Rider hoofprint. It shows up on widescan and can be in Bhaflau Thickets, Caedarva Mire, Mount Zhayolm or Wajaom Woodlands.",
         "Return to Naja Salaheem in Aht Urhgan Whitegate (I-10) to complete the quest and receive the SP Wildcat badge, which gives access to SP Assaults.",
     },
 
@@ -379,20 +380,21 @@ Q.STEPS = {
         "Complete 25 points worth of Assaults as a Chief Sergeant. You need Aht Urhgan fame level 1 and the Treasures of Aht Urhgan pack. You also need 3 Imperial Gold Pieces and 6 Imperial Mythril Pieces. You have enrolled in the Salaheem Officer Academy to earn your position in the upper ranks of Salaheem's Sentinels.",
         "Enter Naja's office in Aht Urhgan Whitegate (I-10) to start the quest.",
         "Trade 3 Imperial Gold Pieces to Abquhbah, who gives you the Officer Academy manual.",
-        "Trade 2 Imperial Mythril Pieces to Abquhbah to start the first trial. Trial 1, Memory: you are shown a scene for a short period of time and then asked questions about it. Get them all right to pass. In scene 1 you are asked what kind of critters were shown to you.",
-        "Trade 2 Imperial Mythril Pieces to Abquhbah to start the second trial. Trial 2, Proof of competence: any unwearable Aht Urhgan beastmen weapon or armor will work.",
-        "Trade 2 Imperial Mythril Pieces to Abquhbah to start the third trial. Trial 3, Trivia.",
+        "Trade 2 Imperial Mythril Pieces to Abquhbah to start the first trial. Trial 1, memory: you're shown a scene briefly and must answer every question about it. Scene 1 asks what kind of critters and how many; scene 2 asks twice how many face left, right, up or down; scene 3 asks how many there were.",
+        "Trade 2 Imperial Mythril Pieces to Abquhbah to start the second trial. Trial 2, proof of competence: trade him a piece of eastern beastmen equipment, such as Macuahuitl -1, Mamool Ja Collar, Mamool Ja Helmet, Jadagna -1, Januwiyah -1, Tariqah -1, Troll Pauldron, Troll Vambrace, Lamian Armlet, Lamian Kaman -1 or Qutrub Gorget. Upgraded items (Lamian Kaman, Lamian Kaman +1) and western beastmen gear (Yagudo, Orc, Goblin) don't work.",
+        "Trade 2 Imperial Mythril Pieces to Abquhbah to start the third trial. Trial 3, trivia: get at least 7 of 8 right. Answers: Fulfill requests without fail; Bigger than a Marid; Mythralline Wellspring; A detective agency; Empyrean Incense; Warjal; Blackrust; He tripped over his right foot.",
         "After all 3 trials are complete, you are awarded your promotion and the SL Wildcat badge, which gives access to SL Assaults. If you fail any trial, you need to pay the initiation fee of 2 Imperial Mythril Pieces again in order to repeat it.",
     },
 
     tau_wg_promo_1lt = {
         "Complete 25 points worth of Assaults as a Second Lieutenant. You need Aht Urhgan fame level 1, the Treasures of Aht Urhgan pack and 5 Imperial Gold Pieces. Your final term at the Salaheem Officer Academy has begun.",
-        "The quest is started by entering the Salaheem's Sentinels office in Aht Urhgan Whitegate (I-10). Trade Abquhbah 5 Imperial Gold Pieces.",
-        "Talk to Abquhbah to start the first trial. The quest is split into three parts, and you must wait until the next in-game day between each part.",
-        "Part 1, Counterespionage: a three-part mini-game in which you must find the qiqirn hiding in a crowd of twelve humes. In the first group there are three qiqirn to find.",
-        "Part 2, Cipher: talk to Abquhbah to start it, and answer his questions.",
-        "Part 3, BCG Training: a rock-paper-scissors type game against the cadets. An opponent always repeats whatever his first three calls were, and they switch plans after every two or three hit points they lose. The final round is against Drill Sergeant Rongelouts: get him down to four, tie him three times in a row, then win the next round by dealing four points of damage.",
-        "Once you have beaten everyone, wait until the next in-game day and talk to Abquhbah to be promoted and receive the FL Wildcat badge, which gives access to FL Assaults.",
+        "Enter the Salaheem's Sentinels office in Aht Urhgan Whitegate (I-10) and trade Abquhbah 5 Imperial Gold Pieces. Wait for the game day to change, zone, and talk to Abquhbah to start the first trial. Between trials you again wait for the next game day and zone; if you fail one, you can retry the next Earth minute at no extra cost.",
+        "Trial 1, logic puzzle: find the Qiqirn spies among 12 humes. You can ask how many spies are in a set of 4 consecutive humes, or in a pair. Round 1: 3 spies, 5 sets and 5 pairs; round 2: 4 spies, 5 sets and 4 pairs; round 3: 5 spies, 6 sets and 5 pairs.",
+        "Trial 2, cipher: the four answers are \"Haes, Waami lakiino kiichi.\", \"Waami lakiino tachiito!\", \"Waami lakiino Yasmeel.\" and \"Waami lakiino kolcha.\"",
+        "Trial 3, BCG (rock-paper-scissors): Ghost beats Beetle, Beetle beats Crab, Crab beats Ghost. A lost round costs 1 point; each tie grows both bombs, adding 1 to the next loss. Reduce your opponent to 0 points.",
+        "Arcuhbah cycles through all three critters without repeating within each set of three. Fubruhn and Ugrihd signal with emotes: Nod = Beetle (plan 1) or Crab (plan 2), Laugh = Ghost or Beetle, Psych = Crab or Ghost; if you don't know their current plan, pick Beetle, Ghost and Crab respectively.",
+        "Drill Sergeant Rongelouts repeats a 4-round cycle: the same critter every other round and the other two alternating in between (e.g. Crab, Ghost, Beetle, Ghost). Below 4 points he cheats back up to 4, so bring him to 4, tie three times, then win once to knock him out. Against Koja Salaheem (a single round), choose Beetle.",
+        "After winning, wait for the game day to change, zone, and talk to Abquhbah between 15:00 and 17:00 game time to be promoted and receive the FL Wildcat badge, which gives access to FL Assaults.",
     },
 
     -- ========================================================
@@ -414,7 +416,7 @@ Q.STEPS = {
     tau_alz_fist_of_people = {
         "While the quest Ode to the Serpents is active, speak with Talhaal in Al Zahbi (H-6). You may only get the cutscenes when General Zazarg is in Al Zahbi.",
         "Speak with Fari-Wari in Aht Urhgan Whitegate (K-12).",
-        "In Wajaom Woodlands, kill Wajaom Tiger enemies until you get a Rusty Medal.",
+        "In Wajaom Woodlands, kill Wajaom Tigers (they spawn near (E-8), (F-7) and (K-9)) until you get a Rusty Medal. The Wajaom Woodlands Survival Guide is fastest; the long way is the Aht Urhgan Whitegate exit at (G-10).",
         "Go to the Leypoint in Wajaom Woodlands (G-8) and trade the Rusty Medal for a cutscene that completes the quest and gives you 500 Imperial Standing.",
         "Return to the teahouse and speak with Fari-Wari again to learn Trust: Zazarg.",
     },
@@ -485,9 +487,10 @@ Q.STEPS = {
     },
 
     tau_arr_breaking_bonds = {
-        "You need to be a Corsair of level 66 or higher and have a Corsair's Testimony. Obtain a Corsair's Testimony from Merrow Icedancer, Merrow Kabukidancer, Merrow Chantress or Lamia Fatedealer enemies.",
-        "Go to the Rock Slab in Arrapago Reef (H-10), on map 1. You end up in the correct area to continue after the conclusion of Against All Odds.",
-        "Trade the Corsair's Testimony to the Rock Slab to enter the battlefield. This quest does not need to be completed for the level limit increase if you have already completed New Worlds Await or better.",
+        "You need to be a Corsair of level 66 or higher and have a Corsair's Testimony, from Merrow Icedancer, Merrow Kabukidancer, Merrow Chantress or Lamia Fatedealer enemies. Two Merrow Icedancers are easy to reach at Arrapago Reef (F-8), map 2, via the Runic Portal to the Ilrusi Atoll Staging Point. Set the Records of Eminence objective Tutorial > Level Cap Increase > Level Cap Increase: 75 (COR) first.",
+        "Go to Arrapago Reef (H-10), map 1, and examine the ??? (the same one as in Luck of the Draw) for a cutscene. You end up in the right area after finishing Against All Odds.",
+        "Trade the Corsair's Testimony to the ??? for another cutscene, which takes you to Talacca Cove.",
+        "Trade the Corsair's Testimony to the Rock Slab to enter the battlefield. Buffs are wiped on entry; with the key item \"Rhapsody in Umber\" you can call Trusts. The fight ends when the boss drops to 20% HP or less. You don't need this quest for the level limit if you've already completed New Worlds Await or later.",
         "Completing the battle raises your level limit to 75 and gives you the title Master of Chance.",
     },
 
@@ -513,8 +516,12 @@ Q.STEPS = {
     tau_iw_waking_colossus = {
         "Approach Naja Salaheem in Aht Urhgan Whitegate (I-10) for a cutscene that begins the quest. Imperial researchers are uneasy about curious readings from the chamber where the iron colossus sleeps.",
         "Examine the Imperial Whitegate in Aht Urhgan Whitegate (L-8/9) to receive the key item Imperial missive. The quest now appears under Aht Urhgan: Current Quests.",
+        "Examine the Audience Chamber in Ru'Lude Gardens (H-6). Then, in any order, get approval letters from Halver in Chateau d'Oraguille (I-9) (San d'Orian approval letter), Iron Eater in Metalworks (J-8) (Bastokan approval letter) and Kupipi in Heavens Tower (Windurstian approval letter).",
+        "Return to the Audience Chamber in Ru'Lude Gardens (H-6) for the Jeunoan approval letter.",
         "Examine the Imperial Whitegate in Aht Urhgan Whitegate (L-8/9) to receive the key item Present for Megomak.",
-        "In the battle you face Alexander, who can spawn up to three Alexander Images. At low HP, Alexander uses Divine Judgment, dealing high damage to everyone in range.",
+        "Get 3 Slabs of Plumbago from the Auction House, from Trolls in Mount Zhayolm or by mining. Examine the Acid-eaten Door at the north-west corner of (I-9) in Mount Zhayolm, past the Gates of Halvung near the Halvung Staging Point (opening those gates needs a Cast metal plate), for Megomak's shopping list.",
+        "Trade the 3 Slabs of Plumbago to the Acid-eaten Door for the lightning cell. Then examine the blank target on the single dark lamp at the Nyzul Isle Staging Point in Alzadaal Undersea Ruins (J-8/9) for a cutscene.",
+        "Examine the Runic Seal in Alzadaal Undersea Ruins (I-8/9) to start the battle against Alexander; Trusts can't be used. He can spawn up to three Alexander Images, and at low HP uses Divine Judgment, dealing high damage to everyone in range. The fight is aimed at level 75.",
         "Upon defeating the battlefield you receive the Whisper of radiance. Examine the Imperial Whitegate in Aht Urhgan Whitegate (L-8/9) for a cutscene.",
         "Speak with Naja Salaheem to choose your reward: an Imperial Gold Piece and one of Pact with Alexander, Colossus's Torque, Colossus's Mantle, Colossus's Earring or 10,000 gil.",
     },
@@ -522,7 +529,9 @@ Q.STEPS = {
     tau_iw_divine_interference = {
         "Approach Naja Salaheem in Aht Urhgan Whitegate (I-10) for a cutscene that begins the quest. If you are repeating this quest, skip this step and go straight to the Imperial Whitegate in the next step. This quest follows Waking the Colossus.",
         "Examine the Imperial Whitegate in Aht Urhgan Whitegate (L-8/9).",
-        "In the battle you face Alexander, who can spawn up to three Alexander Images. At low HP, Alexander uses Divine Judgment, dealing high damage to everyone in range.",
+        "Examine the Acid-eaten Door in Mount Zhayolm (I-9) for a short cutscene, then trade it 3 Slabs of Plumbago for the lightning cell.",
+        "Examine the blank target at the Nyzul Isle Staging Point in Alzadaal Undersea Ruins (J-8/9) for a cutscene.",
+        "Examine the Runic Seal in Alzadaal Undersea Ruins (I-8/9) to start the battle against Alexander; Trusts can't be used. He can spawn up to three Alexander Images, and at low HP uses Divine Judgment, dealing high damage to everyone in range.",
         "Speak with Naja Salaheem to choose your reward. You can repeat the quest.",
     },
 
