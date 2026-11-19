@@ -30,7 +30,7 @@ Q.STEPS = {
 
     jeu_lj_save_my_son = {
         "You need to be level 30 or higher. Examine the Door: Merchant's House on the second floor in Lower Jeuno (G-11), above the chocobo stables.",
-        "Speak with Shalott in Upper Jeuno (G-7), outside the Chocobo Stables, for a cutscene.",
+        "Optional: speak with Shalott in Upper Jeuno (G-7), outside the Chocobo Stables next to Mapitoto, for a cutscene.",
         "Examine the Door: Merchant's House in Lower Jeuno (G-11) again for another cutscene.",
         "Examine the Night Flowers down the ramp in Qufim Island (F-8) between 21:30 and 4:00 for a cutscene.",
         "A Kraken (level 37-38) may spawn above the Night Flowers.",
@@ -41,7 +41,9 @@ Q.STEPS = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need Axe skill 240 or higher and level 71.",
         "Speak with Brutus in Upper Jeuno (G-7) to receive the key item Weapons Training Guide and the Pick of Trials. You need to break the latent on the Pick of Trials before completing the rest of the quest.",
         "Trade the Pick of Trials back to Brutus.",
-        "The page gives these directions for the next part: follow the path to the T-intersection and head north, follow the path and exit the Temple, and once inside follow the path south to the ???.",
+        "Brutus gives you the key item Map to the Annals of Truth. Bring Sneak and Invisible to the Temple of Uggalepih.",
+        "From Yhoator Jungle, follow the path to the T-intersection, head north and exit the Temple. Faster: the Voidwatch warp puts you outside the Temple (exit 1, map 1), and the Survival Guide warp inside it (exit 2); from either, follow the left wall to the granite door at (J-7), go through and on to (K-3) to exit the Temple (exit 4).",
+        "Outside, follow the right wall north and then east to re-enter the Temple (exit 5, map 3), then follow the path south to the ??? at (G-9) to spawn Yallery Brown, a sapling weak to Fire and Dark. Defeat it and examine the ??? again for the key item Annals of Truth.",
         "Go back and speak with Brutus to receive your reward, the Decimation weapon skill.",
     },
 
@@ -50,6 +52,7 @@ Q.STEPS = {
         "Help the chocobo leave when prompted.",
         "Head to La Theine Plateau and check the Chocobo Tracks at the far northwest corner of (E-5), just south of the sliver of map in (E-4).",
         "Return to Upper Jeuno and speak to Brutus (G-7) again.",
+        "Speak with Hantileon in Southern San d'Oria (I-11). All three choices are wrong, but you have to pick them: choose \"Bring the chocobos together\".",
         "Return to Brutus (G-7) in Upper Jeuno one last time to complete the quest.",
         "Speak to Brutus (G-7) after one game day to receive a chocobo egg. You must change zones and return to Upper Jeuno after the day change.",
         "Trade the egg to one of the VCS Trainers located in Bastok Mines, Southern San d'Oria or Windurst Woods to begin raising a chocobo.",
@@ -313,11 +316,15 @@ Q.STEPS = {
 
     jeu_rg_defiant_challenge = {
         "Speak with Maat in Ru'Lude Gardens (H-5) on a level 50 job. You need Jeuno fame level 1.",
-        "Maat asks for three items. Three key items combine into each required item. Be wary of Explosure's Self-Destruct and Exoray's conal Breath damage attacks.",
-        "Bomb Coal drops from Explosure enemies, or you can receive it after obtaining three Bomb coal fragments from ??? spots.",
-        "Exoray Mold drops from Exoray enemies (uncommon), or you can receive it after obtaining three Exoray mold crumbs from ??? spots.",
-        "Ancient Papyrus drops from Lich enemies (common), or you can receive it after obtaining three Ancient papyrus shreds from ??? spots. Do not walk over the graves throughout the zone, as you may fall through them to a lower level.",
-        "Take care while triggering the lever, as the single bomb that wanders nearby is aggressive by sight and by magic.",
+        "Maat asks for a Bomb Coal, an Exoray Mold and an Ancient Papyrus, in any order. Each drops from monsters, or three key-item pieces from ??? spots combine into it. If you already hold one of the finished items in any inventory, that zone's ??? says \"There is nothing out of the ordinary here.\"",
+        "Solo, bring Sneak and Invisible (spells, Silent Oil and Prism Powder, Spectral Jig, or Tonko/Monomi: Ichi); drop Invisible to click each ??? and reapply. Reraise (e.g. a Scroll of Instant Reraise) is recommended. To fight for the drops instead, Trusts are enough; beware Explosure's Self-Destruct and Exoray's conal Breath (Cipher: Zeid stuns them).",
+        "Bomb Coal: drops from Explosures, or collect three Bomb coal fragments in Garlaige Citadel, all on map 2 at (I-8), (H-7) and (G-6). First take the Pouch of weighted stones key item from the ??? on the floor at (G-8), map 1, just south of the entrance; undead aggro low HP through Sneak and Invisible.",
+        "Garlaige route: go south and east through the first Banishing Gate, run round the outside of the square room to the east, down the stairs and hug the left wall to a wide room: ??? at (I-8). Go north-west to the next room: ??? at (H-7). Continue north, turn left down a hallway, and past the third Banishing Gate the last ??? is on your right in the first room at (G-6). Don't fall in the holes in the floor.",
+        "Exoray Mold: drops from Exorays (uncommon), or collect three Exoray mold crumbs in Crawlers' Nest. Run past the crawlers and bees, up the hill, drop into the \"sack room\" and head south-south-west (not the south-south-east dead end): ??? on the path from (I-10), map 1, towards map 3, and another further along at (I-6), map 3. Use Sneak around the Exorays.",
+        "For the last crumb, go back to the sack room and take the north-west tunnel (not the scorpion dead end), through the green glow and up the hill into a new sack room, take the west-south-west tunnel, turn right at the ledge (don't drop) and left into the dead-end room: ??? at (G-10), map 2, among the Exorays.",
+        "Ancient Papyrus: drops from Liches (common), or collect three Ancient papyrus shreds in The Eldieme Necropolis, entering from Batallia Downs (I/J-10). The ??? spots are at (F-7), (F-9) and (H-9), map 1, each in the corner of a room with Liches around a brazier. Don't walk over the square graves: some drop you to a lower level (warp out and come back).",
+        "Eldieme route: go in, turn left past the ghosts and follow the hallway. If the path left at the Hellhounds is blocked, go north into the grave room, examine the East Plate behind the Gravestone to open it, and come back (a Magicked astrolabe, 10,000 gil from Churano-Shurano in Windurst Waters (F-8), opens the gates for good). Take care at the lever: the lone bomb nearby aggroes by sight and magic.",
+        "Pass the first brazier room (first ???) to an identical room down the hall (second ???), follow the only path west and north through the large grave room and up the stairs, to the last brazier room with the third ???.",
         "Trade the items to Maat to complete the quest, which raises your level cap to 55.",
     },
 
@@ -327,6 +334,7 @@ Q.STEPS = {
         "The key items are: Round frigicite from Boreal Tiger at (I-5), Square frigicite from Boreal Coeurl at (J-6) and Triangular frigicite from Boreal Hound at (G-10).",
         "The Notorious Monsters stand guard in caves, have a fairly large aggro range, and respawn within about 5 minutes after being defeated.",
         "The ??? spot is always present at the far end of the cave, and you receive the key item once you touch it, so you do not need to defeat the Notorious Monsters: you can simply hold them while examining the spots. They no longer use draw-in according to the page, although a note says the Coeurl did use it several times when tested in 2024.",
+        "Trusts make the Notorious Monsters easy to solo. Or ride through each cave on a Mount to get the key item, then remount or run out.",
         "Speak with Maat once you have all three key items to complete the quest, which raises your level cap to 60.",
     },
 
@@ -351,15 +359,22 @@ Q.STEPS = {
     jeu_rg_riding_on_clouds = {
         "Speak with Maat in Ru'Lude Gardens (H-5) on a level 61 or higher job. You need Jeuno fame level 1. He gives you four clues and wants you to trade a Kindred's Seal to each of the people described in the clues.",
         "You are not provided with the Kindred's Seals and need to get them yourself. Check your inventory and the Port Jeuno NPCs Shemo and Shami (Status, Currencies, Kindred's Seals Stored), as you may already have enough seals.",
-        "Kindred's Seals can be acquired from any normal monster of level 50-69 that checks as Easy Prey or higher, or exchanged 3 for 1 (or 2 for 1 during certain campaigns) for other seal types from Shemo.",
-        "In return for a seal you receive either a Smiling stone, Scowling stone, Somber stone or Spirited stone.",
+        "Kindred's Seals come from any normal monster of level 50-69 that checks as Easy Prey or higher, from Shemo at 3 other seals for 1 (2 for 1 during some campaigns), or from the Greeter Moogle for 5 login points each when that's offered. New Worlds Await needs 5 more, so you may want 9 at once. Don't confuse them with Kindred's Crests.",
+        "There is one clue each for San d'Oria, Bastok and Windurst, and one for Selbina or Mhaura, in no particular order. Trade a seal to the person the clue describes; in return you receive either a Smiling stone, Scowling stone, Somber stone or Spirited stone.",
+        "San d'Oria: sick mother = Raminel (Southern San d'Oria, runs between (F-8) and (I-9)); likes her knives sharp = Sobane (Southern, D-6); wants to be a Royal Knight = Taurette (Northern, F-7); breath stinks = Maloquedil (Northern, J-8); job where they're not too rough = Sheridan (Port, H-10); runs the Consortium warehouses = Fontoumant (Port, H-10); nirvana slash = Brifalien (Port, H-8); more than scrolls of Stone = Rugiette (Port, J-8).",
+        "Bastok: pioneer of the Palborough Mines = Babenn (Bastok Mines, J-6); watching Dalzakk's home = Gwill (Markets, E-11); robes and bronze subligaria = Brygid (Markets, K-9); never as good as her sister = Kaede (Port Bastok, J-5); lost her husband in the mines = Hilda (Port Bastok, E-6); number five doorman = Naji (Metalworks, J-8); \"Silent Mountain\" = Raibaht (Metalworks, G-8); age of magic = Lucius (Metalworks, J-9).",
+        "Windurst: smartest-looking Mithra child = Koko Lihzeh (Windurst Waters, K-6); something snappy to hook customers = Naiko-Paneiko (Waters, C-11); \"strange little poppet\" = Kerutoto (Waters, J-8); magic doll upgrades = Koru-Moru (Windurst Walls, E-7); sick of being left out = Shanruru (Port Windurst, H-5); \"hats suck\" = Boizo-Naizo (Windurst Woods, H-10); another tasty frog = Sola Jaab (Woods, K-10); rolanberry souvenirs = Kupipi (Heavens Tower).",
+        "Selbina/Mhaura: weaving woman who lost her memory = Mathilde (Selbina, H-9); Galkan child great at hiding = Vobo (Selbina, I-7); raising his own sheep = Melyon (Selbina, I-9); pupil of Zaldon = Gabwaleid (Selbina, H-9); fiance in Selbina = Celestina (Mhaura, G-8); small mayor = Ekokoko (Mhaura, F-9); knows a lot about pirates = Bihoro-Guhoro (Mhaura, G-9); wants to work with monsters = Jikka-Abukka (Mhaura, H-9).",
         "Speak with Maat once you have all four stones to complete the quest, which raises your level cap to 70.",
     },
 
     jeu_rg_shattering_stars = {
         "Speak with Maat in Ru'Lude Gardens (H-5) on any level 66-70 job. You need Jeuno fame level 1. This limit break applies to the jobs that existed before the Treasures of Aht Urhgan expansion, and it needs the Testimony item for the job you want to fight Maat with.",
+        "Each job's Testimony (Warrior's Testimony, Monk's Testimony, etc.) drops from specific monsters; see the item's wiki page for where. A Testimony can be used up to three times before it tears.",
         "Once you trade the Testimony to Maat, he asks if you are ready.",
+        "Saying yes teleports you to an arena (for later fights he may not warp you). On rematches, or a job other than your first, you must use that job's assigned arena: Balga's Dais for MNK/WHM/SMN, Horlais Peak for WAR/BLM/RNG, Qu'Bia Arena for PLD/DRK/BRD, Waughroon Shrine for RDM/THF/BST, Chamber of Oracles for SAM/NIN/DRG.",
         "Trade the Testimony to the Burning Circle to enter a one-on-one battle against Maat. The time limit is 10 minutes, and after about 5 minutes from engaging Maat, he begins to use Asuran Fists. Maat has all the relevant abilities and spells of your main job.",
+        "Your support job is removed when you enter, so you lose all buffs except food, and your TP. Maat copies your main job with Monk as his support job, including your special ability, and can use all Hand-to-Hand weapon skills. With the key item \"Rhapsody in Umber\" (Rhapsodies of Vana'diel Missions, around level 55) you can call Trusts.",
         "A White Mage may instead pull Maat and stay alive for 5 minutes, causing Maat to give up. A Thief may try to steal a Scroll of Instant Warp from Maat; once you steal it, Maat gives up.",
         "When Maat gives up, you receive the title Maat Masher and a Scroll of Instant Warp.",
         "Return to Ru'Lude Gardens and speak with Maat to complete the quest, which raises your level cap to 75.",
@@ -369,6 +384,7 @@ Q.STEPS = {
     jeu_rg_beyond_the_sun = {
         "This quest requires the Rise of the Zilart pack. Talk to Maat at (H-5) in Ru'Lude Gardens on each of the 15 jobs that existed before Treasures of Aht Urhgan, and defeat him with each one.",
         "The level required to fight Maat is at least level 66.",
+        "Talk to Maat before every fight: he asks for that job's Testimony and names the battlefield. After your first win each job has an assigned arena, and you have to walk, use the Tenshodo warp or a Home Point to get there: Balga's Dais for MNK/WHM/SMN, Horlais Peak for WAR/BLM/RNG, Qu'Bia Arena for PLD/DRK/BRD, Waughroon Shrine for RDM/THF/BST, Chamber of Oracles for SAM/NIN/DRG. The fights are like Shattering Stars, without the level cap.",
         "To check which jobs you have beaten Maat with, enter the Feretory and speak with Teyrnon. Instincts associated with the jobs on which you have defeated Maat cost 5,000 Infamy instead of 10,000.",
         "Upon defeating Maat for the last time, speak with him to receive the cutscene and your new Maat's Cap.",
     },
@@ -403,7 +419,7 @@ Q.STEPS = {
 
     jeu_rg_ducal_hospitality = {
         "You need to have completed Chains of Promathia Mission 3-2. Speak with Taillegeas in Ru'Lude Gardens (I-7) to begin the quest.",
-        "He asks you to bring him a few items from a list of possible requests.",
+        "He asks for a few items from this list: Chocobo Bedding, Counterfeit Gil, Dart, Eastern Paper, Fernan's Diaries, Goblin Bread, Goblin Doll, Goblin Mushpot, Goblin Pie, Kaiserin Cosmetics, Kongou Inaho, My First Magic Kit, Naphille Pochette, Nyumomo Doll, Shuriken, Silver Obi, Snoll Gelato, Sphene Earring, Tonosama Rice Ball, Turquoise Ring.",
         "Trade Taillegeas the items he requests to receive your reward, 4,000 gil. You can repeat the quest.",
     },
 

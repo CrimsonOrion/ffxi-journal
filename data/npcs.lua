@@ -882,4 +882,18 @@ return {
     "Dabnorrin", -- Local patch: GEO/RUN unlock quests
     "Yeggha Dolashi", -- Local patch: GEO/RUN unlock quests
     "Wescolina", -- Local patch: GEO/RUN AF
+    "Raminel", -- Local patch: Jeuno quests
+    "Hantileon", -- Local patch: Jeuno quests
+    "Taurette", -- Local patch: Jeuno quests
+    "Sheridan", -- Local patch: Jeuno quests
+    "Brifalien", -- Local patch: Jeuno quests
+    "Rugiette", -- Local patch: Jeuno quests
+    "Koko Lihzeh", -- Local patch: Jeuno quests
+    "Shanruru", -- Local patch: Jeuno quests
+    "Boizo-Naizo", -- Local patch: Jeuno quests
+    "Sola Jaab", -- Local patch: Jeuno quests
+    "Vobo", -- Local patch: Jeuno quests
+    "Gabwaleid", -- Local patch: Jeuno quests
+    "Bihoro-Guhoro", -- Local patch: Jeuno quests
+    "Jikka-Abukka", -- Local patch: Jeuno quests
 }

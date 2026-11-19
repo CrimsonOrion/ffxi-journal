@@ -816,4 +816,18 @@ return {
     ["Dabnorrin"] = { { 265, 357.75, 29.86, -16.17 } }, -- Local patch: GEO/RUN unlock quests
     ["Yeggha Dolashi"] = { { 258, 260.00, 60.00, -5.77 } }, -- Local patch: GEO/RUN unlock quests
     ["Wescolina"] = { { 256, 30.27, 33.99, -0.75 } }, -- Local patch: GEO/RUN AF
+    ["Raminel"] = { { 230, -74.16, -8.43, 0.69 } }, -- Local patch: Jeuno quests
+    ["Hantileon"] = { { 230, -2.67, -105.29, -0.10 } }, -- Local patch: Jeuno quests
+    ["Taurette"] = { { 231, -161.84, 89.97, 0.00 } }, -- Local patch: Jeuno quests
+    ["Sheridan"] = { { 232, -19.15, -129.73, -8.00 } }, -- Local patch: Jeuno quests
+    ["Brifalien"] = { { 232, -19.30, -74.17, -4.00 } }, -- Local patch: Jeuno quests
+    ["Rugiette"] = { { 232, 71.36, -73.72, -8.10 } }, -- Local patch: Jeuno quests
+    ["Koko Lihzeh"] = { { 238, 132.89, 162.51, -5.75 } }, -- Local patch: Jeuno quests
+    ["Shanruru"] = { { 240, -1.30, 186.70, -6.00 } }, -- Local patch: Jeuno quests
+    ["Boizo-Naizo"] = { { 241, -9.58, -26.06, -2.75 } }, -- Local patch: Jeuno quests
+    ["Sola Jaab"] = { { 241, 109.38, -25.93, -5.00 } }, -- Local patch: Jeuno quests
+    ["Vobo"] = { { 248, 37.94, 81.16, -14.56 } }, -- Local patch: Jeuno quests
+    ["Gabwaleid"] = { { 248, -17.74, 11.23, -7.29 } }, -- Local patch: Jeuno quests
+    ["Bihoro-Guhoro"] = { { 249, -28.46, 40.85, -8.00 } }, -- Local patch: Jeuno quests
+    ["Jikka-Abukka"] = { { 249, -13.54, 58.62, -15.88 } }, -- Local patch: Jeuno quests
 }
