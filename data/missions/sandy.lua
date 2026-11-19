@@ -161,8 +161,8 @@ M.STEPS = {
         steps = {
             "Speak with " .. ACTOR.SANDORIA_GATE_GUARD.text .. ".",
             "Travel to Northern San d'Oria and speak with " .. ACTOR.ARNAU.text .. " in the Cathedral.",
-            "Go to Ghelsba Outpost, entered from West Ronfaure (E-4).",
-            "Make your way to " .. ACTOR.GHELSBA_HUT_DOOR.text .. " in the large open area.",
+            "Go to Ghelsba Outpost, entered from West Ronfaure (E-4) (a map is 600 gil from Elesca in Northern San d'Oria (I-8) or Violitte in Southern San d'Oria (G-10)).",
+            "Make your way to " .. ACTOR.GHELSBA_HUT_DOOR.text .. " at (F-10), in the large open area around (G-9).",
             "Examine the Hut Door to enter the battlefield.",
             "Defeat the three Orcs: Fodderchief Vokdek (WAR), Strongarm Zodvad (RNG) and Sureshot Snatgat (RNG). Up to 6 people who are on or past this mission can enter; the battlefield removes level restrictions and Trusts, so summon your Trusts again after entering. Winning gives the key item Orcish hut key.",
             "Examine " .. ACTOR.GHELSBA_HUT_DOOR.text .. " again after the battle.",

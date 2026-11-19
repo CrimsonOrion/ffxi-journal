@@ -220,7 +220,7 @@ M.STEPS = {
     ['1-10'] = {
         name = "Eddies of Despair",
         steps = {
-            "After defeating Ophiotaurus, examine " .. ACTOR.QUFIM_UNDULATING_CONFLUENCE.text .. " again.",
+            "After defeating Ophiotaurus, examine " .. ACTOR.QUFIM_UNDULATING_CONFLUENCE.text .. " again. You are teleported into Escha - Zi'Tah, which completes the mission.",
         },
     },
 

@@ -115,12 +115,12 @@ M.STEPS = {
         mission_type = "Quest/Fight",
         reward = "Key Items: Earth fragment, Fire fragment, Ice fragment, Light fragment, Lightning fragment, Water fragment, Wind fragment",
         steps = {
-            "Examine the seven required Cermet Headstones in any order.",
-
+            "Examine the seven required Cermet Headstones in any order (the Dark fragment came from Grav'iton in The Temple of Uggalepih). Stand close and check that you really got each key item: from too far away the game says \"You need to move closer\", which looks similar at a glance. Grab the Cloister Home Points on the way.",
             "Examine " .. ACTOR.HEADSTONE_W_ALTEPA.text .. " to obtain the Earth fragment.",
+            "Earth route: the Unity Warp (level 125) to Western Altepa Desert puts you on a rock above a crevasse; walk into it, turn right at the fork to the Ruby Column (press it down if it's up), go through the open door near the end and out into the square crevasse, turn left through the first open door, and head south-west to the headstone at (H-8)/(H-9). Otherwise enter Quicksand Caves at Western Altepa (J-9), drop down the sandpit at (K-6) on map 3 and follow the path back out.",
             "Examine " .. ACTOR.HEADSTONE_LA_THEINE.text .. " to obtain the Water fragment.",
+            "Water route: enter Ordelle's Caves at La Theine Plateau (F-7) (or the Survival Guide), go east to exit B at (I-6) onto map 1, down to (G-8), east into the south tunnel (exit D) at (H-9), up the stairs and south to the second hole at the (H-11)/(H-12) border and drop down. Go east into tunnel E (map 3), south from (I-6) to (H-9) and west out to La Theine Plateau; the headstone is at the end of the valley at (G-11). The La Theine Geomagnetic Fount is on a ledge right there.",
             "Examine " .. ACTOR.CLOISTER_OF_FROST.text .. " to obtain the Ice fragment.",
-
             "Examine " .. ACTOR.HEADSTONE_YUHTUNGA.text .. ", defeat Carthi and Tipha, then examine it again to obtain the Fire fragment.",
             "Examine " .. ACTOR.HEADSTONE_BEHEMOTH.text .. ", defeat Legendary Weapon and Ancient Weapon, then examine it again to obtain the Lightning fragment.",
             "Examine " .. ACTOR.HEADSTONE_CAPE_TERRIGAN.text .. ", defeat Axesarion the Wanderer, then examine it again to obtain the Wind fragment.",
