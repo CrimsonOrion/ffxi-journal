@@ -27,21 +27,21 @@ Q.STEPS = {
     },
 
     cw_bat_face_of_the_future = {
-        'Enter Jugner Forest from Batallia Downs for the required event.',
-        'Examine ' .. ACTOR.METALLIC_HODGEPODGE.text .. ' in Jugner Forest.',
-        'Enter Ghelsba Outpost to obtain the Orcish Infiltration Kit key item.',
-        'Travel to Yughott Grotto Map 1 and examine ' .. ACTOR.SCRAPE_MARK.text .. '.',
+        "This quest starts automatically after Chasing Shadows. Enter present-day Jugner Forest from Batallia Downs for a cutscene.",
+        'Examine ' .. ACTOR.METALLIC_HODGEPODGE.text .. ' in Jugner Forest, at the base of a tree near the (F-9)/(G-9) border.',
+        "Zone into Ghelsba Outpost for a cutscene and the key item Orcish infiltration kit (spares from the Clandestine Marking at (I-10)). Domenic in Lower Jeuno (J-7) warps you there for 750 gil after Beyond Infinity; the Fort Ghelsba Survival Guide is right by it, or cast Escape from the Yughott Grotto Home Point.",
+        'Travel to Yughott Grotto Map 1 and examine ' .. ACTOR.SCRAPE_MARK.text .. ' at (G-9).',
         'Examine ' .. ACTOR.SCRAPE_MARK.text .. ' again to enter the Face of the Future battlefield.',
-        'Defeat Fangmonger Colossus. Killing the Tombstones weakens its damage resistance, and NPC allies assist during the battle.',
-        'Examine ' .. ACTOR.MAW_BATALLIA.text .. ' in Batallia Downs to complete the quest and receive the Griffon Ring.',
+        "Only Fangmonger Colossus must die; each of the 6 Tombstones you kill weakens its damage resistance. They use Seismostomp and Numbing Glare (conal paralysis) and are slow, so kite them while curing Excenmille and Maxcimille (Bostillette joins later).",
+        'Examine ' .. ACTOR.MAW_BATALLIA.text .. ' in Batallia Downs (H-5) to complete the quest and receive the Griffon Ring. The maw must already be unlocked in the past; with a full inventory, examine the ??? by the maw in Batallia Downs (S) later.',
         'Speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S) and bring the Bundle of half-inscribed scrolls to obtain Trust: Excenmille (S).',
     },
 
     cw_bat_grave_resolve = {
-        'Speak with ' .. ACTOR.HALVER.text .. ' in Chateau d\'Oraguille.',
-        'Obtain a Lilac.',
-        'Travel to the ' .. ACTOR.HER_MEMORIES_WEATHERED_GRAVESTONE_WOTG.text .. ' in Batallia Downs.',
-        'Trade the Lilac to the Weathered Gravestone to complete the quest and obtain the Tiny Memory Fragment.',
+        'Speak with ' .. ACTOR.HALVER.text .. ' in Chateau d\'Oraguille (I-9), Northern San d\'Oria Home Point #2.',
+        "Obtain a Lilac: Areebah at the M&P's Market in Upper Jeuno (H-6) sells them.",
+        'Travel to the ' .. ACTOR.HER_MEMORIES_WEATHERED_GRAVESTONE_WOTG.text .. ' in Batallia Downs (I-10), on the hill just above The Eldieme Necropolis entrance (its Survival Guide is closest).',
+        "Trade the Lilac to the Weathered Gravestone for a cutscene and the Tiny Memory Fragment, or the Large memory fragment if this is the last of the three.",
     },
 
     -- ========================================================
@@ -67,9 +67,9 @@ Q.STEPS = {
     cw_wwt_dawn_of_delectability = {
         'Speak with ' .. ACTOR.RANPI_MONPI_WOTG.text .. ' in Windurst Waters (S).',
         'Travel to present-day Windurst Waters and speak with Ranpi-Monpi there.',
-        'Obtain Bastore Sweeper, Walnut, Dragon Fruit, and Pepperoni.',
+        "Obtain a Bastore Sweeper (fish in Vunkerl Inlet (S)), a Walnut (log in East Ronfaure (S)), a Dragon Fruit (log in Fort Karugo-Narugo (S)) and Pepperoni (Cooking 85); all are also on the Auction House.",
         'Trade all four ingredients to Ranpi-Monpi and wait one Vana\'diel day.',
-        'Return to Ranpi-Monpi in Windurst Waters (S), receive the Culinary Knife, and bring it to the present-day Ranpi-Monpi.',
+        "Collect the Ranpi-Monpi Specialty, take it to Ranpi-Monpi in Windurst Waters (S) to feed the young lad for a Culinary Knife, and bring the knife back to the present-day Ranpi-Monpi.",
         'Receive the Trainee Knife reward.',
     },
 
@@ -97,30 +97,30 @@ Q.STEPS = {
 
     cw_wwt_tigress_strikes = {
         'Speak with ' .. ACTOR.DHEA_PRANDOLEH_WOTG.text .. ' in Windurst Waters (S).',
-        'Travel to Fort Karugo-Narugo (S) and speak with Rotih Moalghett on the Fivespires map.',
+        "Travel to Fort Karugo-Narugo (S) and speak with Rotih Moalghett on the Fivespires map (I-8), on the second-floor ledge east of the Spiritwell; reach Fivespires through the Cavalry Gate (F-8) or by touching the Phosphorous Ward at (I-9).",
         'Exit the fortress and examine ' .. ACTOR.FORT_KARUGO_NARUGO_S_QQ_I9.text .. ', then examine it again to face War Lynx.',
-        'Defeat War Lynx.',
+        "Defeat War Lynx (about 7,000 HP, sleepable, resists Thunder; face away to avoid many of its TP moves).",
         'Examine ' .. ACTOR.FORT_KARUGO_NARUGO_S_QQ_I9.text .. ' again after the battle.',
         'Return to ' .. ACTOR.DHEA_PRANDOLEH_WOTG.text .. ' to receive the reward.',
     },
 
     cw_wwt_lost_book = {
         'Examine the southern Rhinostery door in Windurst Waters (S).',
-        'Take a Mythril Beastcoin to Quu Bokye in Giddeus and trade it for the Leather-bound Book.',
+        "Take a Mythril Beastcoin (farm it or buy it on the Auction House) to Quu Bokye in the lower levels of Giddeus and trade it for the Leather-bound Book.",
         'Return to the Rhinostery door in Windurst Waters (S).',
-        'Examine the Optistery door and obtain the Vellum and Lynx Pelt requirements.',
-        'Trade the Vellum at the Optistery door, then obtain the Lynx Pelt from the ??? in Castle Oztroja (S) at (G-8).',
+        "Examine the Optistery door in Windurst Waters (S) (F-8); they ask for a Vellum (Leathercraft or Auction House) and a Lynx Pelt.",
+        "Get the Lynx Pelt from the ??? in Castle Oztroja (S) at (G-8) on the first floor, then trade the Vellum to the Optistery door for a cutscene.",
         'Wait one Vana\'diel day and return to the Optistery to receive the Scroll of Retrace.',
     },
 
     cw_wwt_knot_quite_there = {
         'Defeat Yagudo near the fortification in Sauromugue Champaign (S) around (K-9) until you obtain a 108-Knot Quipu.',
         'Speak with ' .. ACTOR.DHEA_PRANDOLEH_WOTG.text .. ' in Windurst Waters (S).',
-        'Check ' .. ACTOR.WINDURST_S_ACOLYTE_HOSTEL_DOOR.text .. ' in Windurst Waters (S).',
+        'Check the left-hand ' .. ACTOR.WINDURST_S_ACOLYTE_HOSTEL_DOOR.text .. ' at (K-5) in Windurst Waters (S), on the ground floor, for a cutscene with the young Ajido-Marujido.',
         'Travel to Sauromugue Champaign (S) and check ' .. ACTOR.BULWARK_GATE_WOTG.text .. ' to meet Rachemace.',
         'Trade the 108-Knot Quipu to ' .. ACTOR.BULWARK_GATE_WOTG.text .. '.',
         'Check the Bulwark Gate repeatedly until the "door is firmly sealed" message appears at least three times.',
-        'Enter Southern San d\'Oria (S) from East Ronfaure (S) on foot to meet Pattna-Ottna.',
+        "Enter Southern San d'Oria (S) from East Ronfaure (S) on foot (not mounted) to meet Pattna-Ottna. If you get a message about Rhapsodies of Vana'diel being blocked, exit and re-enter on foot.",
         'Go through the Portcullis and check ' .. ACTOR.SOUTHERN_SAN_DORIA_S_HOUSE_DOOR_M8.text .. ' to complete the quest and receive the reward.',
     },
 
@@ -138,13 +138,13 @@ Q.STEPS = {
     -- THE ELDIEME NECROPOLIS (S)
     -- ========================================================
     cw_eld_little_knowledge = {
-        "'Speak with ' .. ACTOR.ERLENE_WOTG.text .. ' in The Eldieme Necropolis (S), on the first map, while on a level 30+ job for a cutscene. The Survival Guide puts you inside; otherwise enter from Batallia Downs (S) (J-10), walk straight down the tunnel, and she is in the room where it forks north and south.'",
-        "'Obtain 12 sheets of Vellum: buy them at the Auction House (Leathercraft), or trade Rolanberries to Tucker in Crawlers' Nest (S) (K-8) on the first map, once the quest is active. Tucker accepts only 3 trades of up to 4 stacks each (one sheet per stack), so bring 12 stacks and trade 4 at a time. Champalpieu in Upper Jeuno sells Rolanberries.'",
+        'Speak with ' .. ACTOR.ERLENE_WOTG.text .. ' in The Eldieme Necropolis (S), on the first map, while on a level 30+ job for a cutscene. The Survival Guide puts you inside; otherwise enter from Batallia Downs (S) (J-10), walk straight down the tunnel, and she is in the room where it forks north and south.',
+        'Obtain 12 sheets of Vellum: buy them at the Auction House (Leathercraft), or trade Rolanberries to Tucker in Crawlers\' Nest (S) (K-8) on the first map, once the quest is active. Tucker accepts only 3 trades of up to 4 stacks each (one sheet per stack), so bring 12 stacks and trade 4 at a time. Champalpieu in Upper Jeuno sells Rolanberries.',
         'Trade all 12 Vellum to ' .. ACTOR.ERLENE_WOTG.text .. '.',
         "Change to BLM, RDM, SMN, or BLU (it doesn't need to be level 30) and activate Astral Flow, Chainspell, Azure Lore, or Manafont.",
         'While the two-hour ability is active, speak with ' .. ACTOR.ERLENE_WOTG.text .. ' again.',
         'Receive the Grimoire and Scholar job access.',
-        "'Once your Scholar is level 5 or higher, speak with ' .. ACTOR.ERLENE_WOTG.text .. ' again while on Scholar to learn Embrava and Kaustra (these spells have no scrolls).'",
+        'Once your Scholar is level 5 or higher, speak with ' .. ACTOR.ERLENE_WOTG.text .. ' again while on Scholar to learn Embrava and Kaustra (these spells have no scrolls).',
     },
 
     cw_eld_requiem_departed = {
@@ -205,8 +205,8 @@ Q.STEPS = {
     cw_bmk_storm_on_horizon = {
         'Enter Bastok Markets (S) from North Gustaberg (S).',
         'Speak with ' .. ACTOR.GENTLE_TIGER_WOTG.text .. '.',
-        'Examine ' .. ACTOR.NORTH_GUSTABERG_S_MONUMENT_J7.text .. ' in North Gustaberg (S).',
-        'Examine ' .. ACTOR.GRAUBERG_QQ_H6.text .. ' inside the cave at (I-6) to complete the quest.',
+        'Examine ' .. ACTOR.NORTH_GUSTABERG_S_MONUMENT_J7.text .. ' on Zegham Hill in North Gustaberg (S): climb in around (I-8), go counter-clockwise on the second level to the ramp at (J-8), then clockwise to the last ramp at the top of (J-7).',
+        'Examine ' .. ACTOR.GRAUBERG_QQ_H6.text .. ' in the Grauberg (S) cave (entrance at the south-east corner of (H-5); the Survival Guide is fastest) to complete the quest.',
     },
 
     cw_bmk_azure_footfalls = {
@@ -220,10 +220,10 @@ Q.STEPS = {
 
     cw_bmk_better_part_of_valor = {
         'Leave Bastok Markets (S) for North Gustaberg (S) at (G-4) and obtain the Clump of Animal Hair.',
-        'Deliver the Clump of Animal Hair to ' .. ACTOR.ENGELHART_WOTG.text .. ' in Bastok Markets (S).',
-        'Travel to the waterfall in North Gustaberg (S) at (F-8) and examine the ???.',
-        'Obtain a Gnole Claw.',
-        'Travel to Vunkerl Inlet (S) and trade the Gnole Claw to ' .. ACTOR.LEADAVOX_WOTG.text .. ' for the Xhifhut key item.',
+        'Deliver the Clump of Animal Hair to ' .. ACTOR.ENGELHART_WOTG.text .. ' at the Music Shop in Bastok Markets (S) (K-10). You don\'t need to be allied to Bastok.',
+        "Travel to the waterfall in North Gustaberg (S) at (F-8), near the Survival Guide, and examine the ??? on its right side.",
+        "Obtain a Gnole Claw: Auction House (Materials > Bonecraft), Gnoles in Vunkerl Inlet (S) (E-7) or Decrepit Gnoles in Jugner Forest (S) (H-11).",
+        'Travel to Vunkerl Inlet (S), talk to ' .. ACTOR.LEADAVOX_WOTG.text .. ' at (J-6) first, then trade the Gnole Claw for the Xhifhut key item.',
         'Return to ' .. ACTOR.ENGELHART_WOTG.text .. ' in Bastok Markets (S).',
     },
 
@@ -248,32 +248,34 @@ Q.STEPS = {
     cw_bmk_light_in_darkness = {
         'Speak with ' .. ACTOR.GENTLE_TIGER_WOTG.text .. ' in Bastok Markets (S).',
         'Speak with ' .. ACTOR.PAGDAKO_WOTG.text .. '.',
-        'Trade with ' .. ACTOR.BLATHERIX_WOTG.text .. ': either 30 Goblin Chocolate or 5,000 gil for the Mine Shaft Key.',
-        'Enter Pashhow Marshlands (S) from Grauberg (S).',
+        'Trade ' .. ACTOR.BLATHERIX_WOTG.text .. ' either 30 Goblin Chocolate (sold by Pawkrix in Lower Jeuno (H-10)) or 5,000 gil for the Mine Shaft Key.',
+        "Enter Pashhow Marshlands (S) from Grauberg (S) for a cutscene (Grauberg (S) Survival Guide, or the Atmacite Refiner's warp).",
         'Examine ' .. ACTOR.PASHHOW_MARSHLANDS_S_CORRODED_DOOR_F5.text .. ' to enter the battlefield.',
-        'Defeat 1 Sapphire Quadav and 10 Sapphirine Quadavs.',
-        'Speak with ' .. ACTOR.GENTLE_TIGER_WOTG.text .. ' and answer the three questions correctly.',
+        "Defeat 1 Sapphire Quadav and 10 Sapphirine Quadavs. Kill about six Sapphirines first, because killing the Sapphire Quadav scatters the rest.",
+        'With a free inventory slot, speak with ' .. ACTOR.GENTLE_TIGER_WOTG.text .. ' and answer: "...the ventilation shaft.", "...the senator did not light the lantern." and "...he was distracted."',
         'Receive the Adaman Ingot reward.',
     },
 
     cw_bmk_fire_in_the_hole = {
         'Enter Bastok Markets (S) from North Gustaberg (S) and obtain the Silvermine Key.',
-        'Travel to North Gustaberg (S) and examine ' .. ACTOR.NORTH_GUSTABERG_S_STONEHOUSED_ADIT_E9.text .. '.',
+        'Travel to North Gustaberg (S) and examine ' .. ACTOR.NORTH_GUSTABERG_S_STONEHOUSED_ADIT_E9.text .. ' at the top middle of (E-9) (Survival Guide or a Campaign Arbiter Allied Notes teleport).',
         'Examine ' .. ACTOR.NORTH_GUSTABERG_S_STONEHOUSED_ADIT_E9.text .. ' again to begin the battle.',
-        'Protect Adelheid through the maze while defeating waves of Quadavs.',
+        "Protect Adelheid as she runs through the maze; groups of level 66-70 Quadavs (1,500-2,000 HP) attack her, and sometimes switch to her. You can cure and buff her (not with BLU spells). Hard solo without AoE sleep or damage; Valaineral's Trust helps.",
         'Defeat all Quadavs; the battle ends when Adelheid reaches the turret.',
+        "If you fail, zone, wait a game day and get a new Silvermine Key from Solitary Ant in North Gustaberg (S) (J-9).",
         'Re-enter Bastok Markets (S) from North Gustaberg (S).',
         'Speak with ' .. ACTOR.GENTLE_TIGER_WOTG.text .. ' in Bastok Markets (S).',
         'Receive the Republican Silver Medal reward.',
     },
 
     cw_bmk_quelling_the_storm = {
-        'Wait one Vana\'diel day after Fire in the Hole, then enter Bastok Markets (S) from North Gustaberg (S).',
+        'Wait one Vana\'diel day after Fire in the Hole, then enter Bastok Markets (S) from North Gustaberg (S) for a cutscene. You must have received the Elixir from Blatherix after Burden of Suspicion.',
         'Speak with ' .. ACTOR.GENTLE_TIGER_WOTG.text .. ' at the Metalworks entrance in Bastok Markets (S).',
-        'Obtain Goblin Mess Tin, Goblin Mushpot, and Twinkle Powder.',
-        'Return to ' .. ACTOR.BLATHERIX_WOTG.text .. ' and trade all three items.',
+        'Visit Paul (H-5), Biggorf (H-10) and Wilhelmina (I-9) in Bastok Markets (S), in any order, then return to ' .. ACTOR.GENTLE_TIGER_WOTG.text .. ' for a cutscene.',
+        'Speak with ' .. ACTOR.BLATHERIX_WOTG.text .. ' for a cutscene. If you don\'t get it, talk to Paul, Biggorf and Wilhelmina again until they mention the "Darksteel Hurricane".',
+        'Trade ' .. ACTOR.BLATHERIX_WOTG.text .. ' a Goblin Mess Tin, a Goblin Mushpot and Twinkle Powder for another cutscene. Mess Tins drop from Goblin Skirmishers (few spawn points) and other goblins, or the Auction House (Other > Beast-made); Mushpots are sold by Pawkrix in Lower Jeuno (H-10); Twinkle Powder by Upih Khachla in Windurst Waters North (H-9), sometimes by Dabih Jajalioh in Ru\'Lude Gardens (F-9).',
         'Return to ' .. ACTOR.GENTLE_TIGER_WOTG.text .. '.',
-        'Travel to Vunkerl Inlet (S) and examine ' .. ACTOR.VUNKERL_INLET_S_QQ_F6.text .. '.',
+        'Travel to Vunkerl Inlet (S) and examine ' .. ACTOR.VUNKERL_INLET_S_QQ_F6.text .. ', just east of the bridge (Survival Guide or Atmacite Refiner).',
         'Speak with ' .. ACTOR.BLATHERIX_WOTG.text .. ' in Bastok Markets (S) to receive the Goblin Belt.',
     },
 
@@ -300,11 +302,11 @@ Q.STEPS = {
 
     cw_bmk_what_price_loyalty = {
         'Speak with ' .. ACTOR.GENTLE_TIGER_WOTG.text .. ' in Bastok Markets (S) and receive the Sack of Victuals key item.',
-        'Travel to Benedikt Watchtower in North Gustaberg (S) and speak with ' .. ACTOR.RODERICH_WOTG.text .. '.',
+        'Travel to the Benedikt Watchtower in North Gustaberg (S) (E-11) and speak with ' .. ACTOR.RODERICH_WOTG.text .. '; the Campaign Arbiter warp is close.',
         'Return to ' .. ACTOR.GENTLE_TIGER_WOTG.text .. ' in Bastok Markets (S).',
         'Travel to Xarcabard (S) and obtain the Commander\'s Endorsement key item.',
         'Examine ' .. ACTOR.XARCABARD_S_FORBIDDING_PORTAL_I7.text .. ', then examine it again to enter battle.',
-        'Defeat the humanoid opponent.',
+        "Defeat the humanoid opponent (Trusts allowed). He uses sword weapon skills and double attacks, randomly resets one player's enmity, and around 50% uses Mighty Strikes and gains Temblor Blade (AoE petrify). Magic draws a lot of enmity. If you lose, ask Gentle Tiger for another Commander's endorsement.",
         'Return to ' .. ACTOR.GENTLE_TIGER_WOTG.text .. ' to receive the Fourth Staff.',
     },
 
@@ -324,8 +326,8 @@ Q.STEPS = {
     -- ========================================================
     cw_ssd_steamed_rams = {
         'Speak with ' .. ACTOR.MAINCHELITE_WOTG.text .. ' in Southern San d\'Oria (S) and turn in the Red Recommendation Letter.',
-        'Travel to East Ronfaure (S) and collect the Charred Propeller at (H-8), Oxidized Plate at (I-8), and Piece of Shattered Lumber at (J-7).',
-        'Return to ' .. ACTOR.MAINCHELITE_WOTG.text .. '.',
+        "In East Ronfaure (S), examine three ??? in any order: the Charred Propeller in a dirt hole in the south-east corner of (H-8), the Oxidized Plate at the (I-8) waterfall where the river splits, and the Piece of Shattered Lumber in a bush by a tree in the north-west corner of (J-7).",
+        'Return to ' .. ACTOR.MAINCHELITE_WOTG.text .. ' to join the Knights of the Ram (you get Sprinter\'s Shoes if this is your first allegiance quest). The quest changes your Campaign allegiance at no cost, and speaking to him before you finish lets you cancel it.',
     },
 
     cw_ssd_seeing_spots = {
@@ -428,21 +430,21 @@ Q.STEPS = {
 
     cw_ssd_malign_maladies = {
         'Speak with ' .. ACTOR.AMAURA_WOTG.text .. ' in Southern San d\'Oria (S).',
-        'Speak with ' .. ACTOR.MONBERAUX.text .. ' in Upper Jeuno.',
-        'Examine the Library Book in the Optistery in Windurst Waters at (G-7).',
+        'Speak with ' .. ACTOR.MONBERAUX.text .. ' in Upper Jeuno (G-10).',
+        "Examine the Library Book on the east wall of the Optistery in Windurst Waters North (G-7).",
         'Obtain a Philosopher\'s Stone.',
-        'Trade the Philosopher\'s Stone to ' .. ACTOR.BOSHEAN_WOTG_FEY_BLOSSOMS_F5.text .. ' in Grauberg (S).',
+        'Trade the Philosopher\'s Stone to ' .. ACTOR.BOSHEAN_WOTG_FEY_BLOSSOMS_F5.text .. ' at Witchfire Glen in Grauberg (S). With the Lightsworm, a blue ??? by any Cavernous Maw (the Batallia Downs Survival Guide is next to one) and the centre Conflux in the Walk of Echoes take you there; otherwise use the Grauberg (S) Survival Guide or Campaign warp and run north-west.',
         'Wait one Vana\'diel day and change zones.',
         'Examine ' .. ACTOR.BOSHEAN_WOTG_FEY_BLOSSOMS_F5.text .. ' again to receive the key item.',
-        'Speak with ' .. ACTOR.RAUSTIGNE_WOTG.text .. ' in Southern San d\'Oria (S) to receive the Large Memory Fragment.',
+        'Speak with ' .. ACTOR.RAUSTIGNE_WOTG.text .. ' in Southern San d\'Oria (S) (I-7) to receive the Large Memory Fragment.',
     },
 
     -- ========================================================
     -- GARLAIGE CITADEL (S)
     -- ========================================================
     cw_gar_flipside_of_things = {
-        'Speak with Rarcasmeult in Garlaige Citadel (S) at (J-6).',
-        'Proceed to the Storeroom Door at (G-7) on the second map.',
+        "Speak with Rarcasmeult in Garlaige Citadel (S): map 2 (J-6), in the uncharted top-right area around (H-6)/(I-6).",
+        "Go back through the door and south past Loutille and Duchille, through the Heavy Iron Gate (Slimes and Bats aggro, so bring Sneak or Silent Oil), then south and west towards the square section and the Storeroom Door at (G-7).",
         'Examine the ??? on the table to obtain the Firepower Case.',
         'Return to Rarcasmeult to receive the reward.',
     },
@@ -459,6 +461,7 @@ Q.STEPS = {
         'Travel east to Map 2 and examine ' .. ACTOR.GHOYUS_REVERIE_WOODEN_CRATES_H9.text .. ' to enter Ghoyu\'s Reverie; the party leader must perform this examination.',
         'Locate and defeat Orcish Turret at approximately (H-10) on Map 15 within 30 minutes.',
         'Manage the Goblin Effluvial Grenade attacks and poison effects during the battle.',
+        "The Effluvial Flasks (about 150 HP) and the other Orcs and Goblins (about 1,500 HP) don't need to be killed. If you fail, speak with Diordinne again and wait a game day for a new key.",
         'Return to Southern San d\'Oria (S) between 18:00 and 00:00.',
         'Speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' to complete the quest and receive the Fullmetal Bullet.',
     },
@@ -469,25 +472,25 @@ Q.STEPS = {
     cw_jug_price_of_valor = {
         'Wait one Vana\'diel day after In a Haze of Glory, then change zones.',
         'Speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S).',
-        'Obtain Ronfaure Maple Syrup by logging in East Ronfaure (S), Long-life Biscuits from the Tree Hollow behind ' .. ACTOR.RHOLONT_WOTG.text .. ', and a Flask of Kingdom Water from the Well east of ' .. ACTOR.RHOLONT_WOTG.text .. '.',
+        'Obtain Ronfaure Maple Syrup by logging in East Ronfaure (S) (buy several Hatchets; the next quest also needs logging), Long-life Biscuits from the Tree Hollow right behind ' .. ACTOR.RHOLONT_WOTG.text .. ', and a Flask of Kingdom Water from the Well east of ' .. ACTOR.RHOLONT_WOTG.text .. '.',
         'Speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' again to receive Biscuit a la Rholont.',
-        'Examine ' .. ACTOR.JUGNER_FOREST_S_FELLED_TREES_G7.text .. '.',
-        'Examine the first Toppled Cresset at (I-8), then the second at (F-9)/(F-8) in Vunkerl Inlet (S).',
+        'Examine ' .. ACTOR.JUGNER_FOREST_S_FELLED_TREES_G7.text .. ' in western (G-7) (Recall-Jugner, or north then north-west from the Survival Guide).',
+        "In Vunkerl Inlet (S) (the Campaign warp is closer than the Survival Guide), examine the Toppled Cresset at (I-8), then the one at (F-9)/(F-8).",
         'Examine ' .. ACTOR.VUNKERL_INLET_S_UNDERBRUSH_F13.text .. ', then examine it again to face Madthrasher Zradbodd.',
-        'Defeat Madthrasher Zradbodd and examine the Underbrush again for the instructions leading to Pashhow Marshlands (S).',
-        'Examine ' .. ACTOR.PASHHOW_MARSHLANDS_S_SHIMMERING_PONDWEED_G6.text .. ' in Pashhow Marshlands (S) to complete the quest and receive the reward.',
+        "Madthrasher Zradbodd is an Orc BLM with lots of Fast Cast: tier IV and -ga III spells, Sleepga and Dispelga (a BLU to stun helps below i119). Afterwards examine the Underbrush again for the message sending you to Pashhow Marshlands (S); if you zone without it, you must fight him again.",
+        'Examine ' .. ACTOR.PASHHOW_MARSHLANDS_S_SHIMMERING_PONDWEED_G6.text .. ' in the north-west corner of (G-6) in Pashhow Marshlands (S) to complete the quest and receive the reward.',
     },
 
     -- ========================================================
     -- PASHHOW MARSHLANDS (S)
     -- ========================================================
     cw_pas_bonds_never_die = {
-        'Speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S) and receive the Letter to Count Aurchiat.',
-        'Travel to Pashhow Marshlands (S) and examine ' .. ACTOR.PASHHOW_MARSHLANDS_S_SHIMMERING_PONDWEED_G6.text .. '.',
-        'Follow the quest route into Jugner Forest (S) and gather the required logging key items.',
-        'Proceed to the designated battlefield and defeat the Young Behemoth encounter.',
-        'Complete the follow-up event after the battlefield victory.',
-        'Report to Rongelouts N Distaud in Southern San d\'Oria (S) to receive the Behemoth Horn reward.',
+        'Speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S) (more than once if needed) to receive the Letter to Count Aurchiat. Buy Hatchets from Geltpix (M-6) now; you\'ll need them.',
+        'Travel to Pashhow Marshlands (S) and examine ' .. ACTOR.PASHHOW_MARSHLANDS_S_SHIMMERING_PONDWEED_G6.text .. ' for a cutscene that flags the quest. The Campaign teleport is fastest, or the Rolanberry Fields (S) Survival Guide, right at the zone line.',
+        "In Jugner Forest (S), examine the Overgrown Mushrooms on the path at (F-10) for a cutscene (Recall-Jugner or the Survival Guide is closest). Have a free inventory slot, or you have to watch it again.",
+        "Use Hatchets on Logging Points around (F-7), (F-10), (J-6) and (J/K-10/11) until you get the key item Length of Jugner Ivy (likely but not certain; with a full inventory the game has to give you the key item). Return to the Overgrown Mushrooms for another cutscene.",
+        "Examine the Mossy Stump in the lower right of (F-7) for a cutscene, then again to enter a battlefield against a Young Behemoth.",
+        'Report to Rongelouts N Distaud in Southern San d\'Oria (S) (I-9) to receive the Behemoth Horn reward. For the missions, then zone into Southern San d\'Oria (S) from East Ronfaure (S) to complete Crossroads of Time.',
     },
 
     -- ========================================================
@@ -498,7 +501,7 @@ Q.STEPS = {
         'Examine ' .. ACTOR.XARCABARD_S_WHEEL_RUT_I9.text .. ' in the dead-end tunnel to the south.',
         'Examine ' .. ACTOR.XARCABARD_S_ANIMAL_SPOOR_J9.text .. ' again to obtain the Vial of Military Prism Powder key item.',
         'Examine ' .. ACTOR.XARCABARD_S_FORBIDDING_PORTAL_I7.text .. ' to enter the battlefield.',
-        'Defeat 2 Bloodwing Deathrainers, 4 Bloodwing Maimers, Gherrmoga, and Kingslayer Doggvdegg. Excenmille assists, and defeating Doggvdegg ends the battle.',
+        "Defeat 2 Bloodwing Deathrainers (BLM), 4 Bloodwing Maimers (WAR), the bugard Gherrmoga and Kingslayer Doggvdegg (PLD). Excenmille assists, but if he dies you lose, so don't let him run in alone. Killing Doggvdegg ends the fight (he may use Invincible). If you lose, wait a game day for another Vial from the Animal Spoor.",
         'Examine ' .. ACTOR.XARCABARD_S_WHEEL_RUT_I9.text .. ' again to complete the quest and receive the Ram Staff.',
     },
 
@@ -508,11 +511,11 @@ Q.STEPS = {
     cw_zvb_bonds_of_mythril = {
         'Enter Castle Zvahl Baileys (S) from Castle Zvahl Keep (S).',
         'Examine ' .. ACTOR.CASTLE_ZVAHL_BAILEYS_S_QQ_G9.text .. ' on Map 3.',
-        'Defeat all four imps in the central room on Map 3.',
-        'Examine ' .. ACTOR.CASTLE_ZVAHL_BAILEYS_S_QQ_G9.text .. ' again to face Gargouille Warden; defeat it and examine the ??? again to obtain the Zvahl Passkey.',
+        "Defeat all four imps in the central room on Map 3, after the cutscene (any killed before it have to respawn and die again).",
+        'Examine ' .. ACTOR.CASTLE_ZVAHL_BAILEYS_S_QQ_G9.text .. ' again to face Gargouille Warden (resists magic, stuns with its melee); defeat it and examine the ??? again to obtain the Zvahl Passkey.',
         'Enter Throne Room (S) and examine the Throne Room door.',
-        'Examine the Throne Room door again to enter battle and defeat the humanoid opponent with Zeid assisting.',
-        'Defeat Marquis Amon.',
+        "Examine the Throne Room door again to enter battle. The humanoid opponent uses sword weapon skills plus Temblor Blade (AoE petrify) and Darkling Blade (knockback and curse); Zeid assists, and if he falls you lose.",
+        "Defeat Marquis Amon, a scythe-wielding BLM demon with tier III -ga spells. His weapon skill draws everyone in, removes shadows and inflicts Doom; wear the Sanctus Rosary to block it, or stun it.",
         'Speak with ' .. ACTOR.GENTLE_TIGER_WOTG.text .. ' in Bastok Markets (S) to complete the quest and receive the Excelsis Ring.',
         'Bring the Bundle of half-inscribed scrolls to ' .. ACTOR.GENTLE_TIGER_WOTG.text .. ' to obtain Trust: Klara.',
     },
@@ -521,9 +524,9 @@ Q.STEPS = {
     -- PORT SAN D'ORIA
     -- ========================================================
     cw_psd_old_bean = {
-        'Enter Southern San d\'Oria from East Ronfaure to begin the Her Memories sequence.',
-        'Speak with ' .. ACTOR.THIERRIDE_WOTG.text .. ' in the Rusty Anchor Pub in Port San d\'Oria.',
-        'Receive the Tiny Memory Fragment and continue the Her Memories chain.',
+        'Speak with ' .. ACTOR.THIERRIDE_WOTG.text .. ' in the Rusty Anchor Pub in Port San d\'Oria (G-7) for Thierride\'s bean creation.',
+        'Speak with ' .. ACTOR.AMAURA_WOTG.text .. ' in Southern San d\'Oria (G-6) and give her the dish to try (she may give other cutscenes first; one of them starts Her Memories: Of Malign Maladies).',
+        'Return to ' .. ACTOR.THIERRIDE_WOTG.text .. ' to receive the Tiny Memory Fragment.',
     },
 
     -- ========================================================
@@ -540,9 +543,9 @@ Q.STEPS = {
     -- ========================================================
     cw_sau_operation_cupid = {
         'Enter Batallia Downs (S) from Jugner Forest (S).',
-        'Examine the Bulwark Gate in Sauromugue Champaign (S) at (E-6).',
-        'Obtain Rice Vinegar, Ground Wasabi, and Holy Basil.',
-        'Travel to Vunkerl Inlet (S) and trade all three ingredients to ' .. ACTOR.LEADAVOX_WOTG.text .. ' to receive the Pot of Martial Relish.',
+        "Examine the Bulwark Gate in Sauromugue Champaign (S) at (E-6); the Atmacite Refiner's Voidwatch warp or the Campaign Arbiter warp is closest.",
+        "Obtain Rice Vinegar, Ground Wasabi and Holy Basil; Amalasanda in the Tenshodo in Lower Jeuno (J-8) sells all three.",
+        'Travel to Vunkerl Inlet (S) and trade all three ingredients to ' .. ACTOR.LEADAVOX_WOTG.text .. ' at (J-6) to receive the Pot of Martial Relish.',
         'Examine the Bulwark Gate in Sauromugue Champaign (S) at (E-6) again.',
         'Enter Batallia Downs (S) from Rolanberry Fields (S) to receive the Large Memory Fragment.',
     },

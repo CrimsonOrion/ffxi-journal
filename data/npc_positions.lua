@@ -880,4 +880,15 @@ return {
     ["Jimaida"] = { { 248, -17.34, -18.77, -2.60 } }, -- Local patch: Other quests
     ["Meret"] = { { 26, 83.17, 4.63, -25.08 } }, -- Local patch: Other quests
     ["Mengrenaux"] = { { 26, 72.84, 63.92, -34.25 } }, -- Local patch: Other quests
+    ["Paul"] = { { 87, -192.88, 53.08, -4.00 } }, -- Local patch: Crystal War quests
+    ["Biggorf"] = { { 87, -210.14, -140.87, 2.00 } }, -- Local patch: Crystal War quests
+    ["Wilhelmina"] = { { 87, -158.09, -120.08, -4.00 } }, -- Local patch: Crystal War quests
+    ["Geltpix"] = { { 80, 154.38, 103.17, -2.00 } }, -- Local patch: Crystal War quests
+    ["Pawkrix"] = { { 245, -27.02, -144.14, 4.10 } }, -- Local patch: Crystal War quests
+    ["Upih Khachla"] = { { 238, 17.98, 68.89, -2.22 } }, -- Local patch: Crystal War quests
+    ["Dabih Jajalioh"] = { { 243, -64.73, -34.73, 12.00 } }, -- Local patch: Crystal War quests
+    ["Solitary Ant"] = { { 88, 375.03, 151.65, 0.86 } }, -- Local patch: Crystal War quests
+    ["Amalasanda"] = { { 245, 28.15, -44.78, 3.90 } }, -- Local patch: Crystal War quests
+    ["Loutille"] = { { 164, 102.67, 59.35, 0.00 } }, -- Local patch: Crystal War quests
+    ["Duchille"] = { { 164, 82.20, 18.76, 6.00 } }, -- Local patch: Crystal War quests
 }

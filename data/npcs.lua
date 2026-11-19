@@ -951,4 +951,15 @@ return {
     "Jimaida", -- Local patch: Other quests
     "Meret", -- Local patch: Other quests
     "Mengrenaux", -- Local patch: Other quests
+    "Paul", -- Local patch: Crystal War quests
+    "Biggorf", -- Local patch: Crystal War quests
+    "Wilhelmina", -- Local patch: Crystal War quests
+    "Geltpix", -- Local patch: Crystal War quests
+    "Pawkrix", -- Local patch: Crystal War quests
+    "Upih Khachla", -- Local patch: Crystal War quests
+    "Dabih Jajalioh", -- Local patch: Crystal War quests
+    "Solitary Ant", -- Local patch: Crystal War quests
+    "Amalasanda", -- Local patch: Crystal War quests
+    "Loutille", -- Local patch: Crystal War quests
+    "Duchille", -- Local patch: Crystal War quests
 }
