@@ -854,4 +854,9 @@ return {
     ["Adaunel"] = { { 230, 80.38, -24.64, -7.40 } }, -- Local patch: San d'Oria quests
     ["Haubijoux"] = { { 246, -61.55, 58.63, 7.90 } }, -- Local patch: San d'Oria quests
     ["Riche"] = { { 1, 5.95, 13.61, -2.75 } }, -- Local patch: San d'Oria quests
+    ["Luuh Koplehn"] = { { 239, -93.91, 130.06, -5.10 } }, -- Local patch: Windurst quests
+    ["Bonchacha"] = { { 239, -83.88, 132.06, -5.19 } }, -- Local patch: Windurst quests
+    ["Maan-Pokuun"] = { { 239, -68.32, 124.57, -5.00 } }, -- Local patch: Windurst quests
+    ["Chomoro-Kyotoro"] = { { 238, 133.00, 167.64, -5.75 } }, -- Local patch: Windurst quests
+    ["Kirarara"] = { { 238, 130.99, 172.25, -6.25 } }, -- Local patch: Windurst quests
 }

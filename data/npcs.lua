@@ -922,4 +922,10 @@ return {
     "Adaunel", -- Local patch: San d'Oria quests
     "Haubijoux", -- Local patch: San d'Oria quests
     "Riche", -- Local patch: San d'Oria quests
+    "Luuh Koplehn", -- Local patch: Windurst quests
+    "Bonchacha", -- Local patch: Windurst quests
+    "Maan-Pokuun", -- Local patch: Windurst quests
+    "Chomoro-Kyotoro", -- Local patch: Windurst quests
+    "Kirarara", -- Local patch: Windurst quests
+    "Comitolus", -- Local patch: Windurst quests
 }

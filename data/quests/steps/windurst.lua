@@ -24,8 +24,8 @@ Q.STEPS = {
 
     wq_wt_crisis_in_the_making = {
         "Speak with Ranpi-Monpi in the Culinarians' Guild in Windurst Waters North (D-9); he accidentally spoiled the food offering meant for the Yagudo.",
-        "Travel to Giddeus.",
-        "Go down into the underground cave area behind the food or drink altar and examine the altar to receive the key item Off Offering.",
+        "Travel to Giddeus via West Sarutabaruta. You can't do this while The Dawn of Delectability is active; a Map of Giddeus helps.",
+        "Enter the caves at (F-8) or (I-8), behind where you left the offering in Windurst Mission 1-3, go down to the lower level and the storage room at (G-6), and examine the altar for the key item Off Offering.",
         "Return to Ranpi-Monpi and speak with him again to complete the quest and receive 400 gil.",
     },
 
@@ -37,12 +37,13 @@ Q.STEPS = {
     },
 
     wq_wt_making_the_grade = {
-        "Make sure Let Sleeping Dogs Lie is not active, and zone first if you have just finished it.",
+        "Make sure Let Sleeping Dogs Lie and Teacher's Pet are not active, and zone first if you have just finished one of them.",
         "Speak with Fuepepe in the Aurastery in Windurst Waters North (L-6); the students' exam answer sheets have been stolen.",
-        "Obtain the Test Answers, which drop from Wendigo enemies inside Inner Horutoto Ruins and can also be bought at the Auction House.",
+        "Obtain the Test Answers: they drop from Wendigos in Inner Horutoto Ruins past the Three Mage Gate (shown as \"Pile of answer sheets\" in the log), or can sometimes be bought at the Auction House.",
         "Trade the Test Answers to Fuepepe, who tells you to take them to Koru-Moru in Windurst Walls.",
-        "Trade the Test Answers to Koru-Moru in Windurst Walls.",
+        "Trade the Test Answers to Koru-Moru in Windurst Walls (E-7), not Yoran-Oran, for a Tattered test sheet.",
         "Return to Fuepepe to complete the quest and receive the Scroll of Aspir.",
+        "Optional: show the Tattered test sheet to Chomoro-Kyotoro and Kirarara on top of the Windurst Waters Aurastery for extra dialogue.",
     },
 
     wq_wt_in_a_pickle = {
@@ -106,6 +107,7 @@ Q.STEPS = {
         "If the quest Class Reunion is active, finish it first: you cannot start this quest until it is complete.",
         "Zone in and out if you have just completed Star Struck.",
         "Speak with Koru-Moru in Windurst Walls (E-7) to start the quest.",
+        "Optional hints: Luuh Koplehn, Bonchacha and Maan-Pokuun outside; Maan-Pokuun sends you to Yoran-Oran, and once Tokaka (fishing guild) says Yoran-Oran had one, Yoran-Oran names the Maze of Shakhrami.",
         "Go to the Maze of Shakhrami.",
         "Examine the Fossil Rock at (F-8) on map 2 to spawn the NM Ichorous Ire, which drops a Burnite Shell.",
         "Trade the Burnite Shell to Koru-Moru to complete the quest.",
@@ -154,9 +156,10 @@ Q.STEPS = {
 
     wq_wt_blue_ribbon_blues = {
         "To get a Purple Ribbon, first speak with Roberta in the Nchaa's Good Goods shop in Windurst Woods (I-13).",
-        "Give the Purple Ribbon to Kerutoto in the northern Rhinostery building in Windurst Waters South (J-8).",
-        "Wait one Earth minute, then speak with Kerutoto again; she gives the ribbon back.",
-        "Trade the Purple Ribbon to the Hume Bones at (M-10) to spawn the NM Lich C Magnus.",
+        "Give the Purple Ribbon to Kerutoto in the northern Rhinostery building in Windurst Waters South (J-8) for 3,600 gil.",
+        "Wait one Earth minute, then speak with Kerutoto again; she gives the ribbon back. If you can take on Waking Dreams, you have to accept the Diabolos fight before she moves on.",
+        "Go to The Eldieme Necropolis from Batallia Downs (J-10), or by Survival Guide. You need a Magicked astrolabe or a friend on the switches. Go straight to the intersection at (J-8), turn left and follow the path west to Titan's Gate at (G-8), go north through it and step on the square of bones to fall to map 2 (L-10). Go east to the Hume Bones at (M-10).",
+        "Trade the Purple Ribbon to the Hume Bones to spawn the NM Lich C Magnus, which can drop the level 50 club Lilith's Rod.",
         "If the rod does not drop, rezone without touching the Hume Bones and repeat the quest from the beginning for another chance.",
         "If you lose the Purple Ribbon, you must wait until the next Conquest Tally to get it back. If several party members need the quest, wait 5 minutes after the defeat between each spawn.",
         "After the NM is defeated, check the Hume Bones again to receive a Blue Ribbon.",
@@ -276,8 +279,9 @@ Q.STEPS = {
     },
 
     wq_wl_curses_foiled_again2 = {
-        "Speak with Shantotto in Windurst Walls (K-7) to start the quest.",
-        "Collect Bomb Arm x2, a Revival Tree Root and Hiwon's Hair. Bomb Arm can be bought from Nogga on the top floor of Metalworks (G-7) for 690 gil when Bastok is at least 2nd place in Conquest.",
+        "Wait one game day and zone after completing the previous quest. Speak with Hiwon-Biwon in Windurst Walls (K-8), then with Shantotto (K-8).",
+        "Zone out and back, and speak with Shantotto again. Answer her first question either way, and the second with \"No way! Not on your life!\" (title Tarutaru Murder Suspect).",
+        "She wants 2 Bomb Arms, a Revival Tree Root and Hiwon's Hair. Speak with Hiwon-Biwon again for the hair. Bomb Arm can be bought from Nogga on the top floor of Metalworks (G-7) for 690 gil when Bastok is at least 2nd in Conquest.",
         "Trade the items to Shantotto to complete the quest and receive a Misery Staff.",
     },
 
@@ -392,8 +396,9 @@ Q.STEPS = {
 
     wq_wd_can_cardians_cry = {
         "Speak with Apururu in Windurst Woods (H-9).",
-        "Obtain a Bruised Starfruit, which drops from Cursed Weapon enemies (levels 43-45) in Xarcabard.",
+        "Obtain a Bruised Starfruit, which drops from Cursed Weapon enemies (levels 43-45) in Xarcabard or can be bought at the Auction House.",
         "Take the Bruised Starfruit to Apururu.",
+        "Afterwards, trading Apururu another Bruised Starfruit gives 1,000 gil.",
     },
 
     wq_pw_wonder_wands = {
@@ -436,6 +441,8 @@ Q.STEPS = {
     wq_pw_catch_a_falling_star = {
         "Speak with Sigismund on top of the Orastery in Port Windurst (E-7); he tells you about the elusive Starfall Tear.",
         "Speak with Tohopka, who stands right next to Sigismund (E-7). Tohopka explains how to collect the tears and that you need Pugil Scales. Pugil enemies drop them, or you can find them at the Auction House under Bonecrafting.",
+        "Kill Pugils just outside in East Sarutabaruta if there are no scales on the Auction House. (The Starfall Tear itself is sometimes on the Auction House, under Other.)",
+        "Go to the Twinkle Tree near the Starfall Hillock in West Sarutabaruta (I-6), a rounded tree with a blue firefly-like glow at night.",
         "Wait until 0:00 to 3:00 game time. At any other time the tree says nothing is out of the ordinary; during those hours you get the message \"A frost deposit at the base of the tree twinkles in the starlight.\"",
         "At that point trade the Pugil Scales to the tree to receive your Starfall Tear.",
         "Take the Starfall Tear back to Sigismund to complete the quest and receive a Fish Scale Shield.",
@@ -465,10 +472,10 @@ Q.STEPS = {
     },
 
     wq_wl_curses_foiled_a_golem = {
-        "Speak with Shantotto in Windurst Walls (K-7) to start the quest.",
-        "Speak with Torino-Samarino in Beaucedine Glacier to obtain the temporary key item Shantotto's new spell.",
-        "Turn Shantotto's new spell in to Rukususu. If you kill too many monsters while carrying it, it breaks and is replaced by Shantotto's ex-spell; return to Torino-Samarino to get another scroll.",
-        "Return to Shantotto in Windurst Walls to receive the Scroll of Warp II.",
+        "You must zone after completing the previous quest. Speak with Shantotto in Windurst Walls (K-7): answer \"Ask if you're worthy\" and then \"Whatchu talkin' 'bout Shantotto?\" (\"Yes mommy\" gives you the title Total Loser).",
+        "Go to the tower at Beaucedine Glacier (I-7) and speak with Torino-Samarino twice, choosing the first option, for the temporary key item Shantotto's new spell.",
+        "In Fei'Yin (Home Point #2 is fastest), go to the basement (map 2) at (F-6) and examine the north-western Cermet Door for a cutscene with Rukususu. If you kill too many monsters while carrying the spell, it breaks into Shantotto's ex-spell; get another from Torino-Samarino.",
+        "Return to Shantotto in Windurst Walls to receive the Scroll of Warp II. This quest is one of the requirements for Shantotto's Trust.",
     },
 
     wq_wt_acting_in_good_faith = {
@@ -621,6 +628,7 @@ Q.STEPS = {
         "Speak with Kohlo-Lakolo in Port Windurst (G-5) for a cutscene that starts the quest.",
         "Go to Windurst Waters South (a short walk away, or use Home Point #3) and speak with Honoi-Gomoi (E-7) for a cutscene. He is upstairs in his house, reached by a back stairway.",
         "Obtain a Star Spinel from Spelunking Sabotender enemies in Quicksand Caves. Enter from Western Altepa Desert at (G-5); they are in the passageway near (F-7), and a couple spawn by Home Point #1. Sneak is required even at level 99. The weight sensors need one Galka or any two of Hume, Elvaan or Mithra.",
+        "An Ornate Door on the way opens with the nearby weight pad: 1 Galka, any 2 Hume/Elvaan/Mithra, 3 Tarutaru, or any 1 player after completing Open Sesame.",
         "Bring the Star Spinel to Honoi-Gomoi, who gives you the Star Necklace after a cutscene.",
         "Speak with Kohlo-Lakolo for a cutscene, then speak with Honoi-Gomoi again for a cutscene that completes the quest.",
     },
@@ -648,6 +656,7 @@ Q.STEPS = {
         "Optional: speak with Yoran-Oran (E-5) about the author of the thesis on alchemy, and with Shantotto (K-7) about alchemy.",
         "Speak with Fuepepe in Windurst Waters North (L-6).",
         "Go north to the Acolyte Hostel (K-6) and interact with each of the six doors on the ground floor to play Quiz de Vana'diel. Answer a question correctly, then go to another door, until you have 4 to 6 correct answers.",
+        "Quiz answers: four-leaf Mandragora bud = AGI; after Firesday = Earthsday; Windurst kids love the Agatha Crystalie mystery series; airship pass = 500,000 gil; herb seeds can't grow a Marguerite; Bastok's constellation = Titan; Windurst Waters cardians = hearts; Curilla's hair covers her left eye; Delkfutt's Tower = thirteen floors; Bastok waterwheels facing north turn counter clockwise; Galka eat raw meat, Mithra raw fish; in Kazham you can't learn the weather in Sarutabaruta; Rabao Oasis = six springs; Karaha-Baruha = Minister of the Optistery; M & P's Market = Kazham or Upper Jeuno; Ayame's sister = Kaede; Iron Eater's master = Werei; Naji = the 5th Musketeer; not on Elshimo = Cloister of Storms; Prince Trion lost an entire company; Quadav lack a Quadav hand fetich; Autumn Hunt quarry = a Giant Sheep; Rukususu likes peanuts; San d'Oria's younger prince = Pieuje; archduke of Jeuno = Kam'lanaut; Bastok Markets armourer = Kulatz Bridge; Bastok auction house = 5 counters; constellation map = Lago-Charago; Balga's Dais dragon = Black Dragon; ex-Minister of the Manustery = Zonpa-Zippa; N. Gustaberg falls = Drachenfall; Galka who lived with Werei = Gumbah; red flower girl = Valah Molkot; Goldsmiths' Guild closed 23:00-8:00; most mythril = Palborough Mines; N. San d'Oria kid looks for Exoroche; Konschtat houses the Crag of Dem; lost San d'Oria kid wants a willow fishing rod; map of Mindartia = Enid Ironheart; Mithra chieftainness = Perih Vashai; monster that doesn't belong = Zu; far-left Norg auction clerk = Atrevaux; President of Bastok = Karst, sleeps in the Presidential Suite; Aurastery principal = Koru-Moru; Port Bastok restaurant = The Steaming Sheep; river near San d'Oria = Cheval River; delivery boy's mom has Davoi Fever; papsque = Shamonde P Grauche; Royal Knight general = Rahal; sea east of Mindartia = Gugru Blue; Tenshodo leader's cape = black; Troupe Valeriano = five members; war 20 years ago = Crystal War; Windurst flag = five stars; weapon shop greeting = Hohbiba-Mubiba; west of Zulkheim = Vollbow; crystal bass = Maiden's Spring.",
         "After the questions, go to the western Acolyte Hostel building (K-5) for a cutscene and receive the Thesis on alchemy.",
         "Answering all 6 questions correctly also gives you a Vile Elixir. If you already have one you cannot complete the quest: zone out, get rid of it, then come back to continue. With 4 correct answers the quest continues, but you get no Vile Elixir.",
         "Return to Koru-Moru for a cutscene.",
@@ -746,6 +755,7 @@ Q.STEPS = {
     wq_pw_escort_for_hire = {
         "Speak with Dehn Harzhapan in Port Windurst (G-6) to start the quest. Only one Escort for Hire quest can be active at a time, and only one can be completed each Conquest Tally.",
         "Go to Garlaige Citadel. As soon as you zone in you get a cutscene, after which the NPC Wanzo-Unzozo appears. You can summon Trusts, but zoning in with an Adventuring Fellow makes the escort NPC disappear.",
+        "Talk to Wanzo-Unzozo to stop him, and again to make him continue. He draws aggro from almost everything, and at low HP draws undead, so cure him. He can run through the Banishing Gate like monsters, so stop him before you open it, or carry the Pouch of weighted stones.",
         "You have 30 minutes. Escort Wanzo-Unzozo until he stops on his own, then speak with him to receive the key item Completion certificate. If he vanishes before you speak with him, you do not get the key item and must do the quest again.",
         "Return to Dehn Harzhapan for your reward.",
     },
@@ -763,29 +773,35 @@ Q.STEPS = {
         "Speak with Leepe-Hoppe in Windurst Waters South (J-9) to start the quest. You must wait one Earth minute after completing Tuning In.",
         "Speak with Jakoh Wahcondalo in Kazham (J-9).",
         "Speak with Romaa Mihgo in Kazham (H-11).",
+        "In Yuhtunga Jungle (K-7), find the ??? overlooking Gemini Falls; reach that side through the tunnel at (I-7) (no need to go through Ifrit's Cauldron). The cutscene spawns 5 Nasus, easy at level 75. Only one player at a time gets the cutscene; others wait 3 minutes after the Nasus die to spawn their own.",
+        "Examine the ??? again after defeating the Nasus.",
         "Return to Kazham and speak with Romaa Mihgo again.",
         "To progress further you need a Mutton Tortilla, Habaneros and a serving of Black Curry.",
         "Habaneros can be bought at the Auction House (Food, Ingredients) or from regional vendors, grown from Herb Seeds in your Mog Garden, or farmed from Mantrap enemies in Misareaux Coast.",
         "Black Curry can be bought at the Auction House (Food, Meals, Soups).",
         "Mutton Tortilla can be bought at the Auction House (Food, Meals, Breads & Rice), or from Taajiji at the Timbre Timbers Tavern in Windurst Waters North if Windurst is at least 2nd place in Conquest.",
+        "Go to Norg (K-8) and trade all three foods to Comitolus for a cutscene that sends you to the Rhinostery researchers in Beaucedine Glacier.",
+        "Speak with Torino-Samarino at the tower in Beaucedine Glacier (I-7); the Survival Guide and the Unity Warp (level 125) are fastest. The quest completes after this cutscene.",
         "The quest is marked complete after the cutscene. Speak with Leepe-Hoppe afterwards to receive a Cache-nez.",
     },
 
     wq_pw_one_good_deed = {
         "Speak with Chipmy-Popmy in Port Windurst (C-8) to start the quest. This quest requires the Chains of Promathia pack.",
-        "Go to the Manaclipper in Bibiki Bay and take the tour that goes to Purgonorgo Isle; the clipper does three tours.",
-        "On the isle, follow the path to (H-9), near the center. There is a ??? that spawns 6 to 8 Peerifool enemies (Mandragora). Defeat them, then examine the ??? again.",
-        "Go to Attohwa Chasm, which you can enter from the Maze of Shakhrami, and make your way through it to the Boneyard Gully zone, in the eastern part of (G-6).",
-        "After the cutscene you receive the key item Map of the Attohwa Chasm.",
-        "Return to Chipmy-Popmy for another cutscene and your gil reward.",
+        "Go to Bibiki Bay and take the Manaclipper tour to Purgonorgo Isle.",
+        "On the isle, examine the ??? at (H-9) to spawn 6 Peerifools (Mandragora that use Dream Flower and link with other Mandragora). Defeat them and examine the ??? again for the key item Deed to Purgonorgo Isle.",
+        "Return to Chipmy-Popmy for a cutscene; you may have to speak with him more than once.",
+        "Go to Boneyard Gully through Attohwa Chasm, which you enter from the Maze of Shakhrami. Cross the bridge to the east side, go into the caves at (I-8) and follow the tunnel up to the surface at (F-7); the next tunnel at (F-6) leads to Boneyard Gully (the Attohwa Chasm Home Point is just before it).",
+        "Zoning into Boneyard Gully gives a cutscene and the key item Map of the Attohwa Chasm (if you don't have it).",
+        "Return to Chipmy-Popmy for another cutscene, 3,200 gil and 2,000 experience points.",
     },
 
     wq_wt_waking_dreams = {
         "Trust magic cannot be used in this battlefield.",
         "Speak with Kerutoto in Windurst Waters South (J-8), near Home Point #3, for a cutscene that starts the quest and gives you the key item Vial of dream incense.",
         "Go to Pso'Xja Home Point #1. Alternatively, travel to Beaucedine Glacier (H-8) and enter Pso'Xja; the Beaucedine Glacier Survival Guide brings you to (H-9), just south of the entrance.",
-        "Once inside, the correct displacement sequence is red, purple, red, purple.",
+        "Once inside, the displacement sequence is red, purple, red, purple (you lose all buffs, Trusts included, at each one). Take the elevator down, go north, then west at the intersection, and use the Stone Gate with your Pso'Xja pass. The Home Point is just past the gate on the left; head down the steps into The Shrouded Maw.",
         "Select the Memento Circle and pick Waking Dreams.",
+        "Up to 6 can enter, each with their own Vial of dream incense; the limit is 30 minutes. Diabolos Prime uses Drain, Aspir, Sleepga II, Dispelga, Blindga, Noctoshield (Phalanx), Dream Shroud (magic attack and defense up), Camisado, Nether Blast, Ultimate Terror (stat down), Nightmare (sleep plus damage over time) and Ruinous Omen (Astral Flow, HP cut by a random percentage). Floor tiles vanish during the fight, dropping you among the Diremites.",
         "Defeat Diabolos Prime to receive the key item Whisper of dreams.",
         "Return to Kerutoto with the whisper. She offers several rewards, including the ability to summon Diabolos; you can only select one reward at a time.",
         "You can repeat this quest once per Earth day.",
