@@ -862,4 +862,16 @@ return {
     ["Matifa"] = { { 50, -10.58, -8.82, 0.00 } }, -- Local patch: Aht Urhgan quests
     ["Fubruhn"] = { { 50, -99.71, -88.54, 0.00 } }, -- Local patch: Aht Urhgan quests
     ["Ugrihd"] = { { 50, -63.00, -31.60, -6.00 } }, -- Local patch: Aht Urhgan quests
+    ["Kukupp"] = { { 250, 40.34, -176.46, -11.00 } }, -- Local patch: Outlands quests
+    ["Mumupp"] = { { 250, 92.85, -115.62, -15.00 } }, -- Local patch: Outlands quests
+    ["Roropp"] = { { 250, 12.58, -113.21, -8.00 } }, -- Local patch: Outlands quests
+    ["Popopp"] = { { 250, 15.59, -82.29, -8.00 } }, -- Local patch: Outlands quests
+    ["Bubupp"] = { { 250, 67.67, -49.58, -11.00 } }, -- Local patch: Outlands quests
+    ["Tatapp"] = { { 250, 56.92, -65.62, -11.00 } }, -- Local patch: Outlands quests
+    ["Kakapp"] = { { 250, 102.83, -109.61, -15.00 } }, -- Local patch: Outlands quests
+    ["Lalapp"] = { { 250, -65.71, -95.58, -11.00 } }, -- Local patch: Outlands quests
+    ["Nenepp"] = { { 250, 24.71, -181.89, -11.00 } }, -- Local patch: Outlands quests
+    ["Gimb"] = { { 252, -4.97, -44.04, -0.97 } }, -- Local patch: Outlands quests
+    ["Babubu"] = { { 240, -175.19, 70.44, -3.32 } }, -- Local patch: Outlands quests
+    ["Chef Nonberry"] = { { 159, -135.22, -92.23, 0.00 } }, -- Local patch: Outlands quests
 }

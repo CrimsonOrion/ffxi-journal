@@ -933,4 +933,16 @@ return {
     "Fubruhn", -- Local patch: Aht Urhgan quests
     "Ugrihd", -- Local patch: Aht Urhgan quests
     "Koja Salaheem", -- Local patch: Aht Urhgan quests
+    "Kukupp", -- Local patch: Outlands quests
+    "Mumupp", -- Local patch: Outlands quests
+    "Roropp", -- Local patch: Outlands quests
+    "Popopp", -- Local patch: Outlands quests
+    "Bubupp", -- Local patch: Outlands quests
+    "Tatapp", -- Local patch: Outlands quests
+    "Kakapp", -- Local patch: Outlands quests
+    "Lalapp", -- Local patch: Outlands quests
+    "Nenepp", -- Local patch: Outlands quests
+    "Gimb", -- Local patch: Outlands quests
+    "Babubu", -- Local patch: Outlands quests
+    "Chef Nonberry", -- Local patch: Outlands quests
 }

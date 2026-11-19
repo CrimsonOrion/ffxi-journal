@@ -26,8 +26,11 @@ Q.STEPS = {
     out_kaz_grudging = {
         "To begin this quest you must have traded an Unlit Lantern to the Altar of Rancor and received a Rancor Flame at some point before; it helps to have a Rancor Flame on you. This quest follows A Question of Taste and requires the Rise of the Zilart pack.",
         "Once you have used a Rancor Flame, talk to Jakoh Wahcondalo in Kazham (J-9), who tells you to leave her village. The other NPCs in the room tell you to go to the Den of Rancor and Temple of Uggalepih complex to be cleansed and then come back. You get the title Excommunicate of Kazham as soon as the quest becomes active.",
+        "You need at least one Unlit Lantern, dropped by Tonberry Maledictors. Four players with four lanterns is easiest, but all four lamps at the altar must be lit, and you can solo it by making four trips; the altar stays lit for a good while.",
+        "From the Temple of Uggalepih's main entrance, take every right turn to exit at (F-5), then hug the left wall in Yhoator Jungle to re-enter the temple at (H-11).",
         "Once in the temple, head to (I-10) and defeat the Temple Guardian to open the door.",
-        "Past the guardian's door, head north to (I-7) inside the paintings room.",
+        "Past the guardian's door, head north to the paintings room at (I-7) and use a Paintbrush of souls to enter the Den of Rancor.",
+        "In the Den of Rancor, hug the right wall to the Altar of Rancor at (D/E-5) and trade it the Unlit Lanterns for Rancor Flames. Take them to the other Altar of Rancor at (I/J-13) and trade them; after the fourth lantern is lit, the bomb NM Rancor Torch appears.",
         "Kill the Rancor Torch, then head back to Kazham and talk to the Chieftainess for your reward, 11,000 gil.",
     },
 
@@ -35,8 +38,9 @@ Q.STEPS = {
         "Trade Mhebi Juhbily in Kazham (I-10) a Sandfish. You need Kazham fame level 6 and the Rise of the Zilart pack. When asked, tell her you give it to her. Then check the shed behind her for a cutscene.",
         "Speak with Vah Keshura at (H-9).",
         "Obtain a Tonberry Board. It drops from Tonberry Pursuer enemies in the Temple of Uggalepih, Tonberry Shadower enemies in Yhoator Jungle and Tonberry Trailer enemies in the Den of Rancor.",
-        "Use a Unity Concord NPC warp to the Temple of Uggalepih (level 125), or walk in. Part of the route leads you back outside to Yhoator Jungle; head left and re-enter the Temple at (H-11).",
-        "Back inside, head west, then south until you reach (H-10). There you receive the key item Nonberry's knife.",
+        "Use a Unity Concord warp to the Temple of Uggalepih (level 125), or walk: enter from Yhoator Jungle (J-12), go south at (J-7), north at (H-9) and north again at (G-7) to come back out into Yhoator Jungle, then head left and re-enter the Temple at (H-11), careful not to fall off the ledge.",
+        "Back inside, head west, then south to (H-10), then west again past the Granite Door into the Tonberry Kitchen.",
+        "Speak with Chef Nonberry and trade him the Tonberry Board for the key item Nonberry's knife.",
         "Return to Mhebi Juhbily for your reward, 7,200 gil.",
     },
 
@@ -58,6 +62,7 @@ Q.STEPS = {
         "You must zone after completing Gullible's Travels before you can flag this quest. You need Kazham fame level 7 and the Rise of the Zilart pack. Magriffon has spent all of his (your?) money to save a maiden in distress.",
         "Speak with Magriffon in Kazham (I-7) and trade him the gil he asks for.",
         "Zone, then return to Magriffon, who gives you a Treasure map key item.",
+        "Go to the three spots on the treasure map in Yuhtunga Jungle, (F-7), (H-10) and (I-12), and examine the Blue Rafflesia at each for a Rafflesia Nectar.",
         "Return to Magriffon to finish the quest and receive 3 Rafflesia Nectar.",
         "After completing this quest, all Mithra in Kazham are repulsed by you, but Opo-opos are attracted to you. The only way to fix this is by completing Personal Hygiene, though it is recommended that you finish The Opo-opo and I first so you can get an Opo-opo Crown.",
     },
@@ -72,14 +77,16 @@ Q.STEPS = {
 
     out_kaz_opo_opo_and_i = {
         "Once you have finished Even More Gullible's Travels and received the scent, speak with Lulupp in Kazham (G-7) for a cutscene. The Opo-opo in Kazham love your new fragrance: bring them what they want, in the correct order, and they make you their king.",
-        "You must trade items in order to a list of Opo-opos. The first is Lulupp (G-7), who wants a Broken Mithran Rod, which can be bought at the Auction House.",
-        "If you forget how far you are into the quest, simply chat with the Opo-opos on the list. One that has already received the correct item responds and you can bow to it.",
+        "Trade these items in this exact order; a wrong order resets all progress (you then need to trade each item again, but they don't take it a second time): Lulupp (G-7) a Broken Mithran Rod (Auction House, or break a Mithran Fishing Rod from Babubu in Port Windurst (C-8) on something too heavy); Kukupp (I-11) a Workbench (Woodworking 7 or Auction House); Mumupp (J-9) a Ten of Coins (Ten of Coins monster, Outer Horutoto Ruins, same place as The Kind Cardian).",
+        "Next, Roropp (H-9) Sands of Silence (Demon Magistrate/Chancellor, Castle Zvahl Baileys: from the Survival Guide go west to map 2 and down the stairs at (H-6) or (H-10), or fall through the big holes); Popopp (H-9) a Wandering Bulb (Utukku, Fei'Yin: downstairs at (G-9) and north, or south from Home Point #2, in the small rooms with doors); Bubupp (I-8) Giant Fish Bones (Tonberry Stalker).",
+        "Then Tatapp, who walks counter-clockwise round the town (trade while moving), a Blackened Toad (Brook Sahagin round the lake at (J-12) in Sea Serpent Grotto, or the room at (M-14)); Kakapp (J-9) a Wyvern Skull (Hurricane Wyvern, Ifrit's Cauldron: from the Home Point drop at (J-4) into map 7, round the crater to (J-8), north to map 3 and west to a square room); Lalapp (F-9) Ancient Salt (Sand Digger, Quicksand Caves, same spot as Zilart Mission 12); Nenepp (I-11), who moves in and out of range, a Lucky Egg (Knight Crawler, The Boyahda Tree).",
+        "If you forget how far you are, talk to the Opo-opos on the list: those already given the right item say \"Opopopopo!\" and bow. Wide scan lists them in the right order if you can get all 10 in one scan.",
         "When every Opo-opo has received its item, you receive the Opo-opo Crown and the title King of the Opo-opos.",
     },
 
     out_kaz_trial_by_fire = {
-        "Speak with Ronta-Onta in Kazham (J-9) to obtain the quest. You need Kazham fame level 6 and the Rise of the Zilart pack. Once you have the key item Tuning fork of fire, you can safely undertake the quest. Each party member must have their own Tuning fork of fire.",
-        "Travel to Yhoator Jungle and look for the entrance to Ifrit's Cauldron at (I-6). On the first map of Ifrit's Cauldron head to the Flame Spout at (H-6). When you land (Map C) go to the drop at (H-7), then proceed to (G-6) to find the entrance to the Cloister of Flames. Preferably, use the Home Point warp to Ifrit's Cauldron #1.",
+        "Speak with Ronta-Onta in Kazham (J-9) to obtain the quest. You need Kazham fame level 6 and the Rise of the Zilart pack; if he won't give it, keep talking to him until his text changes. Once you have the key item Tuning fork of fire, you can safely undertake the quest. Each party member must have their own Tuning fork of fire. Trusts can't be used.",
+        "Travel to Yhoator Jungle and look for the entrance to Ifrit's Cauldron at (I-6). On the first map, go to the Flame Spout at (H-6), trade it an Ice Cluster or wait for it to recede, and continue to (F-6). On map B, drop down at (I-8); on map C, take the drop at (H-7), then go to (G-6) for the Cloister of Flames. Home Point #1 is best; the Unity Warp (level 125) puts you a short run from it (go left to J, follow the tunnel and walk off the ledge at its end).",
         "Defeat Ifrit Prime to receive the key item Whisper of flames.",
         "Return to Ronta-Onta with the whisper and he offers several reward options, including the ability to summon Ifrit. You can only select one of the rewards at any time, and you may repeat this quest once per Earth day. You may also keep the whisper to meet the requirements of The Moonlit Path.",
         "To save travel time to the Cloister, use the Mini Fork of Fire from Trial-Size Trial by Fire: be on Summoner as your main job, get the Mini Tuning Fork from Dodmos, trade it back to Dodmos, and enter the Protocrystal normally. As long as you do not clear the level 20 version of the battlefield, you may warp to the Cloister as many times as you wish.",
@@ -106,7 +113,7 @@ Q.STEPS = {
         "You need Windurst fame level 6 (Kazham uses the fame of Windurst). Speak with Soun Abralah in Kazham (H-9). He needs a piece of wood from the Firebloom Tree that will not burn, even in the inferno of Ifrit's Cauldron.",
         "Go to the Firebloom Tree Roots in Yuhtunga Jungle (H-9), northeast of the Survival Guide and the Outpost. Examine the roots on each side of the tree to obtain the Northern, Eastern, Southern and Western Vine. The Western Vine is in the tunnel. No hatchet is needed.",
         "Travel to Ifrit's Cauldron and examine three different Flame Spouts. Each one burns one of the vines, until only the vine from the most fire-resistant side is left. If a spout shows only bubbling lava, wait for the flame to rise again. Bombs guard the last spouts, so bring Sneak and Invisible (non-magic, or cast them well away from the bombs).",
-        "A suggested route on Map 1: Flame Spout (H-6), then B > C > K > L to the spout at (H-6)/(H-7), then E > H > N to the spout at (I-10).",
+        "A suggested route on Map 1: Flame Spout (H-6), then B > C > K > L to the spout at (H-6)/(H-7), then E > H > N to the spout at (I-10). The wiki also suggests the Survival Guide, then K > L > H to the Ash Dragon area.",
         "Return to the Firebloom Tree and examine the root that matches your remaining vine (check your temporary key items if you forget). Remove a piece of wood to obtain the key item Firebloom Tree Wood.",
         "Return to Soun Abralah to complete the quest and receive 5,000 gil. The quest is repeatable.",
     },
@@ -156,7 +163,7 @@ Q.STEPS = {
 
     out_nrg_mama_mia = {
         "Speak with Mamaulabion in Norg (G-6) to activate the quest. You need Norg fame level 4 and the Rise of the Zilart pack. This does not need to be done before obtaining the seven items. He would like any \"thuper-dee-duper\" special power items you come across, but cannot tell you where to find them.",
-        "Obtain the seven items by selecting them as your reward after defeating the seven Prime Avatars in the Trial battles: Bubbly Water, Egil's Torch, Eye of Nept, Desert Light, Elder Branch, Rust 'B' Gone and Ancients' Key.",
+        "Obtain the seven items by choosing them as your reward from the Prime Avatar fights: Trial by Fire (Ifrit) for Egil's Torch, Trial by Ice (Shiva) for Rust 'B' Gone, Trial by Wind (Garuda) for Bubbly Water, Trial by Earth (Titan) for Desert Light, Trial by Lightning (Ramuh) for Elder Branch, Trial by Water (Leviathan) for Eye of Nept, and The Moonlit Path (Fenrir) for Ancients' Key.",
         "Return all seven items to Mamaulabion. They must be traded one at a time, and it is not necessary to turn in all seven at once.",
         "Wait until midnight (JST), then speak with Mamaulabion once more to receive the Evoker's Ring.",
         "The quest is only repeatable if the Evoker's Ring is dropped.",
@@ -170,8 +177,9 @@ Q.STEPS = {
     },
 
     out_nrg_trial_by_water = {
-        "Speak with Edal-Tahdal in Norg (H-9) to obtain the quest. You need Norg fame level 4 and the Rise of the Zilart pack. Once you have the key item Tuning fork of water, you can safely undertake the quest. Each party member must have their own Tuning fork of water.",
-        "Use the Paintbrush of souls on the empty Picture frame to open the door to the Den of Rancor. Use the Home Point warp to Den of Rancor #2 if you can.",
+        "Speak with Edal-Tahdal in Norg (H-9) to obtain the quest. You need Norg fame level 4 and the Rise of the Zilart pack; if he won't give it, keep talking to him until his text changes. Once you have the key item Tuning fork of water, you can safely undertake the quest. Each party member must have their own Tuning fork of water. Trusts can't be used.",
+        "Enter the Temple of Uggalepih from Yhoator Jungle (J-12), getting a Paintbrush of souls if you don't have one. Leave by the (F-5) exit of the first map (the Survival Guide is there), follow the left wall in Yhoator Jungle back into the Temple, and continue to (I-7).",
+        "Use the Paintbrush of souls on the empty Picture frame to open the door to the Den of Rancor. Faster: Den of Rancor Home Point #2; from Home Point #1, go to point A (I-5) on map 2 to reach map 1. The Unity Warp to Den of Rancor (level 128) skips the Paintbrush.",
         "On the first map of the Den of Rancor (Map C), drop down the hole at (J-7) to the sixth map (Map D) and enter the Cloister of Tides at (I-7).",
         "Defeat Leviathan Prime to receive the key item Whisper of tides.",
         "Return to Edal-Tahdal with the whisper and he offers several reward options, including the ability to summon Leviathan. You can only select one of the rewards at any time, and you may repeat this quest once per Earth day. You receive the title Heir of the Great Water.",
@@ -379,17 +387,22 @@ Q.STEPS = {
     },
 
     out_sra_divine_might = {
-        "Enter The Shrine of Ru'Avitau from the (H-9) entrance in Ru'Aun Gardens. You need to have completed Zilart Mission 13, and you need an Illuminink, a Parchment and an Ark Pentasphere; the Illuminink and the Parchment are also needed to do the quest a second time.",
-        "Examine the Blank Target at (G/H-11) in the main entrance of The Shrine of Ru'Avitau to flag the quest. You must flag it there, or you will not receive credit and will have to acquire another Ark Pentasphere. Divine Might now appears in your Outlands quests log.",
-        "Enter and complete the Divine Might battlefield at La'Loff Amphitheater.",
+        "Enter The Shrine of Ru'Avitau from the (H-9) entrance in Ru'Aun Gardens (the Survival Guide puts you on the way; Home Point #5 is also close). You need to have completed Zilart Mission 13. Completing this quest also counts as completing Zilart Mission 14.",
+        "Head north a short way and examine the Blank Target at (G/H-11) for a cutscene, then again for how to get an Ark Pentasphere. You must flag it there, or you get no credit and need another Ark Pentasphere. Divine Might now appears in your Outlands quests log.",
+        "You, or someone in your alliance, need an Ark Pentasphere: trade an Illuminink and a Parchment to the Qu'Hau Spring in Ro'Maeve (H-6) during a full moon between 18:00 and 06:00. Illuminink drops from Cursed Puppets and Magic Flagons in Ro'Maeve.",
+        "Trade the Ark Pentasphere to any Shimmering Circle in La'Loff Amphitheater. Up to 18 can enter, with a 30-minute limit. Defeat Ark Angel MR, TT, EV, HM and GK; at level 99 it's easy.",
+        "At level 75: bring Reraise and only raise once everyone is down and the Ark Angels have reset (they share hate); move out of the centre if you're about to die. Put a tank or kiter on each and kill them one by one, keep the pets asleep, and kill TT first (nasty spells). MR charms at least once (Fealty, light resistance, magic evasion help); GK's Meikyo Shisui aims at a Light skillchain (Utsusemi breaks it); stay out of HM's Mijin Gakure range (Barfira doesn't help); EV's Spirits Within can one-shot.",
         "Once you have finished the battle, return to the Blank Target in The Shrine of Ru'Avitau to choose your reward: the key items Shard of Apathy, Shard of Arrogance, Shard of Cowardice, Shard of Envy and Shard of Rage, and one of the following earrings: Abyssal Earring, Beastly Earring, Bushinomimi, Knight's Earring or Suppanomimi.",
-        "To repeat the quest, drop your current earring and receive the quest again at the unmarked target (G/H-11) in the main entrance of The Shrine of Ru'Avitau. It appears as a second Divine Might quest in your quest log with a different description.",
+        "To repeat (once per Conquest Tally): drop your earring (zone if you dropped it in the same area), then take the quest again at the Blank Target (G/H-11); it shows as a second Divine Might quest.",
+        "For the repeat you also need a Light Ore: trade it to the Qu'Hau Spring during a full moon between 18:00 and 06:00 for the key item Moonlight ore (each player needs their own, and only after accepting the quest). A used Ark Pentasphere doesn't work again, so trade a new Illuminink and Parchment separately; if you trade all three together you only get the Moonlight ore.",
+        "Win the battlefield again and return to the Blank Target for a new earring.",
     },
 
     out_ead_open_sesame = {
-        "Speak with Lokpix in Eastern Altepa Desert (G-7). You need the Rise of the Zilart pack. He requests a Tremorstone in addition to one of the following: 1 Meteorite, 1 Soil Gem or 12 Soil Geode.",
-        "A Meteorite is dropped by Crawler enemies in West Sarutabaruta, on Starfall Hillock (R).",
-        "Trade Lokpix the Tremorstone and one of the options to receive the key item Loadstone. The Loadstone lets you open the weighted doors in Quicksand Caves solo, without needing multiple players.",
+        "Speak with Lokpix in Eastern Altepa Desert (G-7). You need the Rise of the Zilart pack. He wants a Tremorstone plus one of: 1 Meteorite, 1 Soil Gem (Goldsmithing) or 12 Soil Geodes.",
+        "A Meteorite drops from Crawlers on the Starfall Hillock in West Sarutabaruta (very rare), comes from Colonization Reives in Kamihr Drifts (needs \"Fragmenting\" from Breaking the Ice) or Outer Ra'Kaznar (needs \"Pulverizing\" from Lerene's Lament), or from a Mog Garden Mineral Vein at rank 3.",
+        "The Tremorstone comes from the Cloister of Tremors in the west of Quicksand Caves; the Unity Warp (level 125) to Quicksand Caves helps, and Home Point #2 puts you just outside the Cloister.",
+        "Trade Lokpix the Tremorstone and the other item together to receive the key item Loadstone. The Loadstone lets you open the weighted doors in Quicksand Caves solo, without needing multiple players.",
     },
 
     -- ========================================================
@@ -420,8 +433,8 @@ Q.STEPS = {
 
     out_rab_kuftal_tour = {
         "Speak with Datta in Rabao (F-7) to begin the quest. You need to be level 40 or lower and have the Rise of the Zilart pack. You have been asked to join a tour planned by Datta: travel to the cliff inside the entrance to Kuftal Tunnel with a party of two or more people of level forty or lower, and meet Datta's partner, Hawk Nose.",
-        "Form a party with at least two people who are level 40 or lower. Level sync does work. If you buy a chocobo in Rabao, you can cross the desert without having to worry about aggro.",
-        "Head to Kuftal Tunnel and examine the ??? just inside the entrance for a cutscene, with your party members close by. You and your party overlook the Kuftal Tunnel.",
+        "Form a party with at least two people who are level 40 or lower. Trusts and Adventuring Fellows don't count, but Level Sync works.",
+        "Head to Kuftal Tunnel and examine the ??? just inside the entrance for a cutscene; the whole party must be close by, or you see nothing out of the ordinary. The Survival Guide is right at this entrance; otherwise a chocobo from Rabao gets you across the desert. The only monsters near the ??? are Sand Lizards, which don't aggro.",
         "Once you get the cutscene in Kuftal Tunnel, return to Datta for your reward, 8,000 gil, and the title Kuftal Tourist. You can watch the cutscene again with the Goblin Footprint after returning to Datta.",
     },
 
@@ -443,7 +456,10 @@ Q.STEPS = {
         "First head to Rabao and talk to Rudolfo (J-7). You need to have completed Promathia Mission 2-1 and have the Chains of Promathia pack. A young cargo hauler named Sanctia has suddenly left Rabao, and Zoriboh wants you to find her; she has probably headed for Norg to board a ship bound for the Tavnazian Marquisate.",
         "Talk to Zoriboh in Rabao (F-6).",
         "Head to Norg and talk to Sohyon (J-8). Then talk to Washu to receive the key item Washu's flask.",
-        "Head to Korroloka Tunnel. You need to fill the flask by interacting with four different Giant Clams. The first Giant Clam is at (F-10) on map 1, as you zone into Korroloka Tunnel from Zeruhn Mines.",
+        "Head to Korroloka Tunnel and fill the flask at four Giant Clams: (F-10) on map 1 as you enter from Zeruhn Mines, (K-6) on map 3, (G-11) on map 5 and (I-10) on map 2. Washu's flask turns into a Flask of clam water.",
+        "Return to Sohyon in Norg (J-8) for the Storeroom key, then speak with Gimb (H-9).",
+        "In Port Bastok, speak with Kagetora (F-6), then trade 5 Eastern Gems to Patient Wheel (F-5). They drop from Riparian Sahagin behind the silver door in Sea Serpent Grotto.",
+        "In Selbina, speak with Abelard (G-9). Then take the Swirling Vortex in the Valkurm Dunes cave at (I-9) to Lufaise Meadows for a cutscene as you zone in.",
         "Head to Rabao and talk to Zoriboh (F-6) to complete the quest and receive your reward, the Venerer Ring and 4,000 gil.",
     },
 
