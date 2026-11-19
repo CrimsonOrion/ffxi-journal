@@ -225,6 +225,7 @@ end
 
 -- The click on an NPC name goes to the controller (set while drawing).
 local click_npc = nil
+local click_zone = nil
 
 local function text_wrapped(color, text, id, items)
     richtext.draw_wrapped(text, {
@@ -240,6 +241,8 @@ local function text_wrapped(color, text, id, items)
         end or nil,
         id = id,
         npc_tooltip = i18n.t('Click to point the compass at it'),
+        on_zone = click_zone,
+        zone_tooltip = i18n.t('Click to guide the compass to this zone'),
     })
 end
 
@@ -622,6 +625,7 @@ function M.Draw(controller, can_draw)
 
     -- Clicking an NPC name points the compass at it.
     click_npc = controller.AddCompassNpcByName
+    click_zone = controller.SetCompassZoneGoalByName
 
     -- "Reset window positions" in the settings.
     if last_reset_count == nil then

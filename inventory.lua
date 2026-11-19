@@ -22,6 +22,11 @@ local M = {}
 -- out), 4 locker, 5 satchel, 6 sack, 7 case, 8 wardrobe, 9 safe 2, 10 to 12
 -- wardrobes 2 to 4.
 local CONTAINERS = { 0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12 }
+-- What the character carries: the alert of an item obtained only counts
+-- these (the safe, storage and locker may not be read outside the Mog House,
+-- and would look like a new item when they are).
+local CARRIED = { [0] = true, [5] = true, [6] = true, [7] = true,
+    [8] = true, [10] = true, [11] = true, [12] = true }
 local SCAN_INTERVAL = 1.5
 local INDEX_SLICE = 1500
 local INDEX_MAX = 32000
@@ -29,6 +34,8 @@ local KEY_MAX = 4500
 local GIL_ID = 65535
 
 local counts = {}
+local carried = {}
+local scanned = false
 local version = 1
 local last_scan = -1000
 
@@ -152,6 +159,7 @@ local function scan()
     end
 
     local found = {}
+    local found_carried = {}
     local total = 0
 
     for _, container in ipairs(CONTAINERS) do
@@ -172,6 +180,10 @@ local function scan()
                     if id > 0 and id ~= GIL_ID and count > 0 then
                         found[id] = (found[id] or 0) + count
                         total = total + 1
+
+                        if CARRIED[container] then
+                            found_carried[id] = (found_carried[id] or 0) + count
+                        end
                     end
                 end
             end
@@ -182,6 +194,9 @@ local function scan()
     if total == 0 then
         return
     end
+
+    carried = found_carried
+    scanned = true
 
     local changed = false
 
@@ -273,9 +288,57 @@ function M.Status(name, quantity)
     return 'partial', have
 end
 
+-- True when the names and the first reading of the containers are done.
+function M.Ready()
+    return index.done and key_index.done and scanned
+end
+
+-- How many of an item the player carries (bag, satchel, sack, case and
+-- wardrobes) and how many he has in all the containers; for a key item 1 or
+-- 0 in both. nil when the name is not an item or a key item, or when
+-- everything is not read yet.
+function M.Counts(name)
+    if not M.Ready() then
+        return nil
+    end
+
+    local key = normalize(name)
+    local ids = index.names[key]
+
+    if ids == nil then
+        local key_id = key_index.names[key]
+
+        if key_id == nil then
+            return nil
+        end
+
+        local owned = watched[key_id]
+
+        if owned == nil then
+            owned = has_key_item(key_id)
+            watched[key_id] = owned
+        end
+
+        local n = owned and 1 or 0
+
+        return n, n
+    end
+
+    local on_hand, have = 0, 0
+
+    for _, id in ipairs(ids) do
+        on_hand = on_hand + (carried[id] or 0)
+        have = have + (counts[id] or 0)
+    end
+
+    return on_hand, have
+end
+
 -- For the tests.
 function M.Reset()
     counts = {}
+    carried = {}
+    scanned = false
     version = 1
     last_scan = -1000
     index = { names = {}, next_id = 1, done = false }

@@ -619,7 +619,9 @@ return {
     ["Shalott"] = { { 244, -50.54, 87.17, 8.20 } },
     ["Shamarhaan"] = { { 235, -285.38, -84.74, -12.02 }, { 235, -120.44, -11.19, 0.00 } },
     ["Shami"] = { { 246, -53.91, 10.86, 0.00 } },
-    ["Shantotto"] = { { 70, 463.71, 412.34, 13.04 }, { 239, 122.64, 113.61, -3.00 }, { 240, -111.97, 95.40, -4.25 }, { 241, -232.34, 99.21, 0.04 }, { 242, -24.10, 18.52, 28.00 } },
+    -- Shantotto: LSB only has her interactable (status normal) in Windurst Walls.
+    -- The other fixed spots (Chocobo Circuit, Port Windurst, Windurst Woods, Heaven's Tower) are cutscene_only.
+    ["Shantotto"] = { { 239, 122.64, 113.61, -3.00 } },
     ["Sharzalion"] = { { 230, 95.38, 113.60, 0.00 } },
     ["Sheelala"] = { { 242, 4.45, -8.67, 0.75 } },
     ["Shemo"] = { { 246, -55.08, 11.30, 0.00 } },

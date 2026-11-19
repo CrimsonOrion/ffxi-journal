@@ -278,6 +278,7 @@ end
 -- For the tests: use this table instead of the file.
 function M.SetLinks(list)
     links = type(list) == 'table' and list or {}
+    M.zone_goal_cache = {}
 end
 
 -- The shortest way on foot from zone `from` to the closest of the zones in
@@ -331,6 +332,59 @@ function M.Route(from, targets)
     end
 
     return nil
+end
+
+-- The zone the player picked (a click on a zone name in a step): the
+-- compass guides to it from the zone the player is in. Not saved.
+M.zone_goal = nil
+M.zone_goal_cache = {}
+
+function M.SetZoneGoal(id)
+    if type(id) ~= 'number' then
+        return false
+    end
+
+    M.zone_goal = id
+    M.zone_goal_cache = {}
+
+    return true
+end
+
+function M.ClearZoneGoal()
+    M.zone_goal = nil
+    M.zone_goal_cache = {}
+end
+
+function M.GetZoneGoal()
+    return M.zone_goal
+end
+
+-- nil without a goal; { goal =, arrived = true } when the player is in it;
+-- { goal =, unknown = true } when the zone he is in is not known; else
+-- { goal =, route = { next =, hops =, path = } or nil }.
+function M.GetZoneRoute(zone)
+    local goal = M.zone_goal
+
+    if goal == nil then
+        return nil
+    end
+
+    if zone == goal then
+        return { goal = goal, arrived = true }
+    end
+
+    if type(zone) ~= 'number' then
+        return { goal = goal, unknown = true }
+    end
+
+    local cache = M.zone_goal_cache
+
+    if cache.from ~= zone then
+        cache.from = zone
+        cache.route = M.Route(zone, { goal }) or false
+    end
+
+    return { goal = goal, route = cache.route or nil }
 end
 
 -- The NPCs chosen with the search -------------------------------------------

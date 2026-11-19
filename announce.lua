@@ -17,10 +17,14 @@
 --   assets/sounds/new_quest.wav       assets/sounds/new_mission.wav
 --   assets/sounds/complete_quest.wav  assets/sounds/complete_mission.wav
 --   assets/sounds/nearby_quest.wav    (quests not active in the new zone)
+--   assets/sounds/item_found.wav      (an item of a quest in progress)
+--   assets/sounds/item_complete.wav   (all the items of the quest; when it is
+--                                     missing item_found.wav plays)
 
 local imgui = require('imgui')
 local richtext = require('richtext')
 local icons = require('icons')
+local zonebanner = require('zonebanner')
 local i18n = require('i18n')
 
 local M = {}
@@ -166,6 +170,17 @@ local function play_sound(entry)
         base = base .. '/'
     end
 
+    if entry.item then
+        file = 'item_found.wav'
+
+        if entry.complete
+            and ashita.fs ~= nil
+            and ashita.fs.exists(base .. 'assets/sounds/item_complete.wav') then
+
+            file = 'item_complete.wav'
+        end
+    end
+
     local path = base .. 'assets/sounds/' .. file
 
     if ashita.fs ~= nil and ashita.fs.exists(path) then
@@ -182,6 +197,14 @@ local function play_sound(entry)
             file
         ))
     end
+end
+
+-- The fantasy font of the titles of the alerts (assets/fonts, loaded in
+-- ui.lua; nil when its file is missing, and then the usual font is used).
+local alert_font = nil
+
+local function title_font_for(_, usual)
+    return alert_font or usual
 end
 
 -- The text sizes are baked into the font, so any size is pushed with it.
@@ -330,7 +353,9 @@ local function start_banner(controller, entry, token)
     end
 end
 
-function M.Draw(controller, can_draw)
+function M.Draw(controller, can_draw, title_font)
+    alert_font = title_font
+
     if controller == nil or controller.TakeAnnouncement == nil then
         return
     end
@@ -345,7 +370,18 @@ function M.Draw(controller, can_draw)
         or nil
 
     if test ~= nil and (current == nil or current.token ~= test.token) then
-        if test.near then
+        if test.item then
+            start_banner(controller, {
+                kind = 'quest',
+                item = true,
+                complete = test.complete == true,
+                name = tx('Sample Item'),
+                have = test.complete and 3 or 2,
+                need = 3,
+                quest = tx('Sample Quest'),
+                ask = false,
+            }, test.token)
+        elseif test.near then
             start_banner(controller, {
                 kind = 'quest',
                 near = true,
@@ -372,6 +408,11 @@ function M.Draw(controller, can_draw)
     end
 
     if current == nil then
+        -- The name of the zone goes first: the alerts wait until it is gone.
+        if zonebanner.IsBusy() then
+            return
+        end
+
         local entry = controller.TakeAnnouncement()
 
         if entry == nil then
@@ -421,7 +462,8 @@ function M.Draw(controller, can_draw)
     -- The look set in the settings: one for new items, one for completed.
     local style = controller.GetAlertStyle ~= nil
         and controller.GetAlertStyle(
-            entry.near and 'near' or (entry.done and 'done' or 'new')
+            entry.near and 'near'
+                or ((entry.done or (entry.item and entry.complete)) and 'done' or 'new')
         )
         or { opacity = 0.70, size = 1.0, color = 0 }
 
@@ -436,6 +478,8 @@ function M.Draw(controller, can_draw)
     if entry.near then
         near_lines = #(entry.names or {}) + ((entry.more or 0) > 0 and 1 or 0)
         height = (HEIGHT_PLAIN + 36 + near_lines * (NAME_SIZE + 10)) * scale
+    elseif entry.item then
+        height = (HEIGHT_PLAIN + 40) * scale
     end
     local slide = (1 - ease_out(t / FADE_IN)) * SLIDE * scale
 
@@ -461,6 +505,7 @@ function M.Draw(controller, can_draw)
     -- The color of the title: the one chosen in the palette, or the default
     -- of the alert (gold for quests, blue for missions, green when done).
     local accent = entry.near and colors.near
+        or (entry.item and entry.complete) and colors.completed
         or entry.done and colors.completed
         or colors[entry.kind]
         or colors.quest
@@ -489,7 +534,10 @@ function M.Draw(controller, can_draw)
 
         local title
 
-        if entry.near then
+        if entry.item then
+            title = entry.complete and tx('Items Complete')
+                or tx('Item Obtained')
+        elseif entry.near then
             title = entry.progress and tx('Quest In Progress')
                 or tx('Quest Nearby')
         elseif entry.done then
@@ -506,11 +554,15 @@ function M.Draw(controller, can_draw)
         -- moves over so the two stay centered together.
         local check_size = TITLE_SIZE * scale * 0.85
         local check_gap = 14 * scale
-        local offset = entry.done and (check_size + check_gap) * 0.5 or 0
+        local show_check = entry.done or (entry.item and entry.complete)
+        local offset = show_check and (check_size + check_gap) * 0.5 or 0
 
-        centered_text(bold, TITLE_SIZE * scale, accent, title, width, alpha, offset)
+        centered_text(
+            title_font_for(title, bold), TITLE_SIZE * scale, accent, title,
+            width, alpha, offset
+        )
 
-        if entry.done then
+        if show_check then
             pcall(function()
                 local min_x, min_y = imgui.GetItemRectMin()
                 local _, max_y = imgui.GetItemRectMax()
@@ -659,6 +711,62 @@ function M.Draw(controller, can_draw)
                     regular, TEXT_SIZE * scale, colors.dim,
                     string.format(tx('+%d more'), entry.more), width, alpha
                 )
+            end
+        elseif entry.item then
+            -- An item of a quest in progress: its name (with how many of
+            -- the ones the quest asks for), and the quest under it.
+            local label = tostring(entry.name or '')
+
+            if (entry.need or 1) > 1 then
+                label = string.format('%s (%d/%d)', label, entry.have or 0, entry.need)
+            end
+
+            centered_text(
+                regular,
+                NAME_SIZE * scale,
+                colors.name,
+                fit_text(regular, NAME_SIZE * scale, label, width - 80 * scale),
+                width,
+                alpha
+            )
+
+            imgui.Spacing()
+
+            centered_text(
+                regular,
+                TEXT_SIZE * scale,
+                colors.text,
+                fit_text(
+                    regular, TEXT_SIZE * scale,
+                    string.format(tx('For quest: %s'), tostring(entry.quest or '')),
+                    width - 80 * scale
+                ),
+                width,
+                alpha
+            )
+
+            -- A click opens the sheet of the quest.
+            if entry.quest_id ~= nil
+                and (controller.OpenQuestSheet ~= nil
+                    or controller.OpenQuestFromCompass ~= nil) then
+
+                if imgui.IsItemHovered() then
+                    if imgui.SetTooltip then
+                        imgui.SetTooltip(tx('Opens the quest sheet'))
+                    end
+
+                    if imgui.IsItemClicked() and not current.persistent then
+                        if controller.OpenQuestSheet ~= nil then
+                            controller.OpenQuestSheet(entry.quest_id)
+                        else
+                            controller.OpenQuestFromCompass(entry.quest_id)
+                        end
+
+                        if current.leave == nil or current.leave > t then
+                            current.leave = t
+                        end
+                    end
+                end
             end
         else
             -- A new or completed quest or mission has its icon left of the

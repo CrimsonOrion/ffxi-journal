@@ -250,6 +250,44 @@ function M.draw_compass(draw, x, y, size, ring_color, needle_color, needle_color
     )
 end
 
+-- A globe inside the square that starts at x, y: a ring, the equator, the
+-- meridian and two curved meridians. color is already converted
+-- (GetColorU32).
+function M.draw_globe(draw, x, y, size, color)
+    if draw == nil then
+        return
+    end
+
+    local cx = x + size * 0.5
+    local cy = y + size * 0.5
+    local radius = size * 0.46
+    local thickness = math.max(1.2, size * 0.07)
+    local steps = 28
+
+    local function ellipse(rx, ry)
+        local previous = nil
+
+        for i = 0, steps do
+            local angle = math.pi * 2 * (i / steps)
+            local point = {
+                cx + math.cos(angle) * rx,
+                cy + math.sin(angle) * ry,
+            }
+
+            if previous ~= nil then
+                draw:AddLine(previous, point, color, thickness)
+            end
+
+            previous = point
+        end
+    end
+
+    ellipse(radius, radius)
+    ellipse(radius * 0.46, radius)
+    draw:AddLine({ cx, cy - radius }, { cx, cy + radius }, color, thickness)
+    draw:AddLine({ cx - radius, cy }, { cx + radius, cy }, color, thickness)
+end
+
 -- A thumbtack inside the square that starts at x, y, drawn with lines and
 -- triangles. filled = false draws only its outline (an item that is not
 -- pinned). color is already converted (GetColorU32).

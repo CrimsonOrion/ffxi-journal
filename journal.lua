@@ -1,6 +1,6 @@
 addon.name    = 'Journal'
 addon.author  = 'Kxteel'
-addon.version = '0.3.7'
+addon.version = '0.4.0'
 addon.desc    = 'Journal for FFXI'
 
 --[[
@@ -61,6 +61,7 @@ local ui = require('ui')
 local logic = require('logic')
 local pinned = require('pinned')
 local announce = require('announce')
+local zonebanner = require('zonebanner')
 local worldmark = require('worldmark')
 
 -- The items that a step asks for are checked against the inventory.
@@ -97,7 +98,20 @@ ashita.events.register('d3d_present', 'journal_present', function()
 
     ui.Draw()
     pinned.Draw(logic, ui.CanDrawUI)
-    announce.Draw(logic, ui.CanDrawUI)
+    -- The banner of the zone first: it tells the alerts to wait.
+    zonebanner.Draw(
+        logic,
+        ui.CanDrawUI,
+        (ui.GetBannerFont and ui.GetBannerFont())
+            or (ui.GetTitleFont and ui.GetTitleFont())
+            or nil,
+        ui.GetBannerProfile and ui.GetBannerProfile() or nil
+    )
+    announce.Draw(
+        logic,
+        ui.CanDrawUI,
+        ui.GetAlertFont and ui.GetAlertFont() or nil
+    )
 end)
 
 ashita.events.register('load', 'journal_load', function()

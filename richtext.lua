@@ -663,8 +663,10 @@ local SHADOW_COLOR = 0xCC000000
 -- opts.size          font size
 -- opts.italic_color  tint used when there is no italic font
 -- opts.on_npc        function(name) called when an NPC name is clicked
+-- opts.on_zone       function(name) called when a zone name is clicked
 -- opts.id            prefix of the ids of the clickable NPC names
 -- opts.npc_tooltip   tooltip of a clickable NPC name
+-- opts.zone_tooltip  tooltip of a clickable zone name
 -- opts.items         true to mark the items the player has (steps only)
 function M.draw_wrapped(text, opts)
     local imgui = require('imgui')
@@ -759,7 +761,7 @@ function M.draw_wrapped(text, opts)
                 -- drawn piece by piece, each in its own font.
                 local line_x, line_y = 0, 0
 
-                if opts.on_npc ~= nil then
+                if opts.on_npc ~= nil or opts.on_zone ~= nil then
                     line_x, line_y = imgui.GetCursorPos()
                 end
 
@@ -846,22 +848,39 @@ function M.draw_wrapped(text, opts)
                         end
                     end
 
-                    -- Clickable NPC names: an invisible button over each
-                    -- one, with an underline while the mouse is on it.
-                    if opts.on_npc ~= nil then
+                    -- Clickable NPC and zone names: an invisible button over
+                    -- each one, with an underline while the mouse is on it.
+                    if opts.on_npc ~= nil or opts.on_zone ~= nil then
                         local _, max_y = imgui.GetItemRectMax()
                         local height = max_y - min_y
                         local after_x, after_y = imgui.GetCursorPos()
 
                         for piece_index, piece in ipairs(pieces) do
-                            if piece.kind == 'npc' and piece.width > 0 then
+                            local click = nil
+                            local hint = nil
+                            local line_color = nil
+                            local prefix = '##NpcLink'
+
+                            if piece.kind == 'npc' then
+                                click = opts.on_npc
+                                hint = opts.npc_tooltip
+                                line_color = palette.npc
+                            elseif piece.kind == 'bold' then
+                                -- The zones of the game.
+                                click = opts.on_zone
+                                hint = opts.zone_tooltip
+                                line_color = col
+                                prefix = '##ZoneLink'
+                            end
+
+                            if click ~= nil and piece.width > 0 then
                                 imgui.SetCursorPos({
                                     line_x + shift + piece.x,
                                     line_y,
                                 })
 
                                 local clicked = imgui.InvisibleButton(
-                                    '##NpcLink' .. tostring(opts.id or '')
+                                    prefix .. tostring(opts.id or '')
                                         .. '_' .. line_index
                                         .. '_' .. piece_index,
                                     { piece.width, height }
@@ -873,19 +892,17 @@ function M.draw_wrapped(text, opts)
                                     draw:AddLine(
                                         { from, min_y + height - 1 },
                                         { from + piece.width, min_y + height - 1 },
-                                        palette.npc,
+                                        line_color,
                                         1.0
                                     )
 
-                                    if opts.npc_tooltip ~= nil
-                                        and imgui.SetTooltip then
-
-                                        imgui.SetTooltip(opts.npc_tooltip)
+                                    if hint ~= nil and imgui.SetTooltip then
+                                        imgui.SetTooltip(hint)
                                     end
                                 end
 
                                 if clicked then
-                                    opts.on_npc(piece.text)
+                                    click(piece.text)
                                 end
                             end
                         end

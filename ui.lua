@@ -10,6 +10,7 @@ local richtext = require('richtext')
 local i18n = require('i18n')
 local tx = i18n.t
 local icons = require('icons')
+local theme = require('theme')
 
 -- Ashita 4.1/4.3 ImGui compatibility.
 --
@@ -457,12 +458,16 @@ local colors = {
     -- Navy palette of the original look, with one blue accent for the
     -- selection and the titles in plain white.
     window_bg = { 0.123, 0.136, 0.247, 0.88 },
+    -- Same value as window_bg; a theme can give popups their own color.
+    popup_bg = { 0.123, 0.136, 0.247, 0.88 },
     child_bg = { 0.111, 0.123, 0.225, 0.85 },
     header_bg = { 0.080, 0.087, 0.173, 1.00 },
     header_active = { 0.094, 0.102, 0.196, 1.00 },
     border = { 0.55, 0.62, 0.80, 0.16 },
     text = { 0.902, 0.910, 0.925, 1.00 },
     text_dim = { 0.640, 0.660, 0.740, 1.00 },
+    -- Text on the colored buttons of the nations (a theme can change it).
+    on_tint = { 0.902, 0.910, 0.925, 1.00 },
     -- The infinity sign of the repeatable quests.
     repeatable = { 0.62, 0.85, 1.00, 1.00 },
     -- The green sprout of the guide for new adventurers.
@@ -484,6 +489,10 @@ local colors = {
     settings_active = { 0.318, 0.329, 0.361, 1.00 },
     settings_border = { 0.780, 0.792, 0.827, 1.00 },
     settings_text = { 0.961, 0.965, 0.976, 1.00 },
+    -- Borders of the three buttons under the details.
+    detail_pin = { 0.40, 0.62, 0.95, 1.00 },
+    detail_favorite = { 0.95, 0.75, 0.25, 1.00 },
+    detail_compass = { 0.35, 0.78, 0.60, 1.00 },
     -- The Missions and Quests buttons: the blue of the missions and the
     -- yellow of the quests (the ones of the alerts).
     mode_mission = { 0.55, 0.75, 1.00, 1.00 },
@@ -526,6 +535,9 @@ local colors = {
     panel_alpha_bottom = 1.00,
 }
 
+-- The themes (theme.lua) change the values of this table in place.
+theme.Bind(colors, richtext.COLORS)
+
 local transparent = { 0, 0, 0, 0 }
 
 -- Button colors of the three nations in the area and category selectors.
@@ -558,7 +570,7 @@ end
 local theme_colors = {
     { ImGuiCol_WindowBg, colors.window_bg },
     { ImGuiCol_ChildBg, colors.child_bg },
-    { ImGuiCol_PopupBg, colors.window_bg },
+    { ImGuiCol_PopupBg, colors.popup_bg },
     { ImGuiCol_Border, colors.border },
     { ImGuiCol_FrameBg, colors.button },
     { ImGuiCol_FrameBgHovered, colors.button_hover },
@@ -1001,6 +1013,10 @@ end
 -- no_fade keeps the window solid (the settings window, so it can always be
 -- read while the opacity is being changed).
 local function push_theme(no_fade, opacity_override)
+    -- The compass (the only caller with an opacity of its own) keeps the
+    -- Original look.
+    theme.Enter(opacity_override ~= nil)
+
     local opacity = 1.0
 
     if opacity_override ~= nil then
@@ -1041,7 +1057,7 @@ local function push_theme(no_fade, opacity_override)
 
     imgui.PushStyleVar(
         ImGuiStyleVar_WindowPadding,
-        { 12, 12 }
+        theme.WindowPadding()
     )
 
     imgui.PushStyleVar(
@@ -1058,15 +1074,21 @@ local function push_theme(no_fade, opacity_override)
         ImGuiStyleVar_ItemInnerSpacing,
         { 6, 5 }
     )
+
+    -- The style of the controls of the Legacy theme (nothing in Original).
+    theme.PushExtra(imgui)
 end
 
 local function pop_theme()
+    theme.PopExtra(imgui)
     imgui.PopStyleVar(4)
     imgui.PopStyleColor(
         #theme_colors
     )
 
     current_bg_opacity = 1.0
+
+    theme.Leave()
 end
 
 local function draw_window_panel(
@@ -1078,6 +1100,13 @@ local function draw_window_panel(
     double_line
 )
     if not draw then
+        return
+    end
+
+    -- The book of the Legacy theme replaces the panel.
+    if theme.DrawPanel(
+        imgui, draw, x, y, width, height, current_bg_opacity
+    ) then
         return
     end
 
@@ -1201,7 +1230,8 @@ local function draw_panel(
     height,
     double_line
 )
-    if not draw then
+    -- The pages of the Legacy theme have no frame of their own.
+    if not draw or theme.HasPicture() then
         return
     end
 
@@ -1327,6 +1357,10 @@ local function draw_selector_item(
             2
         )
     end
+
+    -- Legacy: a faint rule under every row, and a burgundy mark on the
+    -- selected one (nothing in Original).
+    theme.DrawRow(imgui, draw, min_x, min_y, max_x, max_y, selected)
 
     if selected then
         draw_selection_arrow(
@@ -2051,6 +2085,60 @@ local function npc_click(step_text)
     return nil
 end
 
+-- A line "prefix + name" for the compass where the name has a border around
+-- its letters (the zone pinned in the compass): the line is reserved with
+-- invisible text and the border is the name drawn in the border color around
+-- its place, one pixel (scaled) in each direction, with the letters on top.
+-- Returns false when it could not draw it.
+sheetx.outline_line = function(color, prefix, name, border, scale)
+    imgui.PushStyleColor(ImGuiCol_Text, transparent)
+
+    local reserved = pcall(imgui.Text, prefix .. name)
+
+    imgui.PopStyleColor()
+
+    if not reserved then
+        return false
+    end
+
+    return pcall(function()
+        local draw = imgui.GetWindowDrawList()
+        local x, y = imgui.GetItemRectMin()
+        local shift = (imgui.CalcTextSize(prefix .. '|'))
+            - (imgui.CalcTextSize('|'))
+        -- A little thinner than a whole pixel per step of scale.
+        local width = math.max(0.6, (scale or 1) * 0.6)
+        local ring = imgui.GetColorU32(border)
+        local fill = imgui.GetColorU32(color)
+
+        draw:AddText({ x, y }, fill, prefix)
+
+        for dx = -1, 1 do
+            for dy = -1, 1 do
+                if dx ~= 0 or dy ~= 0 then
+                    draw:AddText(
+                        { x + shift + dx * width, y + dy * width },
+                        ring,
+                        name
+                    )
+                end
+            end
+        end
+
+        draw:AddText({ x + shift, y }, fill, name)
+    end)
+end
+
+-- A click on a zone name in a step: the compass guides the player there.
+-- nil when the controller cannot do it, and then the names are not clickable.
+sheetx.zone_click = function()
+    if controller ~= nil and controller.SetCompassZoneGoalByName ~= nil then
+        return controller.SetCompassZoneGoalByName
+    end
+
+    return nil
+end
+
 -- mark_kind and mark_id (and mark_name) identify the quest or mission, to
 -- show and change its checklist.
 local function draw_steps(
@@ -2173,6 +2261,8 @@ local function draw_steps(
                         on_npc = npc_click(text),
                         id = tostring(child_id) .. '_' .. i,
                         npc_tooltip = tx('Click to point the compass at it'),
+                        on_zone = sheetx.zone_click(),
+                        zone_tooltip = tx('Click to guide the compass to this zone'),
                     }
                 )
 
@@ -2195,6 +2285,8 @@ local function draw_steps(
                         on_npc = npc_click(text),
                         id = tostring(child_id) .. '_' .. i,
                         npc_tooltip = tx('Click to point the compass at it'),
+                        on_zone = sheetx.zone_click(),
+                        zone_tooltip = tx('Click to guide the compass to this zone'),
                     }
                 )
             end
@@ -2512,129 +2604,109 @@ local function draw_note_input(kind, selected, width)
     end
 end
 
--- The pin button, and beside it a star button for the favorites.
+-- One row of three buttons under the details: pin it to the Tracker, mark it
+-- as a favorite and point the compass at it. Short names (the full ones are in
+-- the tooltips) and a border of its own color for each one.
 local function draw_details_button(
     kind,
     selected,
     width
 )
-    local button_width =
+    -- The row takes the width that is really free inside the panel (its
+    -- margins change with the theme); width - 24 when that is unknown.
+    local row_width =
         math.max(
             120,
             width - 24
         )
 
+    if imgui.GetContentRegionAvail ~= nil then
+        local ok, avail = pcall(imgui.GetContentRegionAvail)
+
+        if ok and type(avail) == 'number' and avail > 0 then
+            row_width = math.max(120, math.floor(avail))
+        end
+    end
+
+    local entries = {}
+
     if controller
         and controller.IsPinned
         and controller.ToggleItemPin then
 
-        imgui.SetCursorPosX(
-            (
-                imgui.GetWindowWidth()
-                - button_width
-            ) * 0.5
-        )
+        local pinned = controller.IsPinned(kind, selected)
 
-        local pinned =
-            controller.IsPinned(
-                kind,
-                selected
-            )
-
-        local can_favorite =
-            controller.IsFavorite ~= nil
-            and controller.ToggleFavorite ~= nil
-
-        local gap = 8
-
-        local star_width =
-            can_favorite
-            and math.floor(ui_button_height * 1.4)
-            or 0
-
-        local pin_width =
-            can_favorite
-            and (button_width - star_width - gap)
-            or button_width
-
-        if imgui.Button(
-            pinned
-                and tx('Unpin from Tracker')
+        entries[#entries + 1] = {
+            id = '##JournalPinButton',
+            on = pinned,
+            label = pinned and tx('Unpin') or tx('Pin'),
+            tip = pinned and tx('Unpin from Tracker')
                 or tx('Pin to Tracker'),
-            {
-                pin_width,
-                ui_button_height,
+            border = colors.detail_pin,
+            run = function()
+                controller.ToggleItemPin(kind, selected)
+            end,
+        }
+
+        if controller.IsFavorite ~= nil
+            and controller.ToggleFavorite ~= nil then
+
+            local favorite = controller.IsFavorite(kind, selected)
+
+            entries[#entries + 1] = {
+                id = '##JournalFavoriteButton',
+                on = favorite,
+                label = favorite and tx('Unfav') or tx('Fav'),
+                tip = favorite and tx('Remove from favorites')
+                    or tx('Add to favorites'),
+                border = colors.detail_favorite,
+                run = function()
+                    controller.ToggleFavorite(kind, selected)
+                end,
             }
-        ) then
-            controller.ToggleItemPin(
-                kind,
-                selected
-            )
-        end
-
-        if can_favorite then
-            imgui.SameLine(0, gap)
-
-            local favorite =
-                controller.IsFavorite(kind, selected)
-
-            if favorite then
-                imgui.PushStyleColor(
-                    ImGuiCol_Button,
-                    colors.button_active
-                )
-            end
-
-            if imgui.Button(
-                '##JournalFavoriteButton',
-                { star_width, ui_button_height }
-            ) then
-                controller.ToggleFavorite(kind, selected)
-            end
-
-            if favorite then
-                imgui.PopStyleColor()
-            end
-
-            local min_x, min_y = imgui.GetItemRectMin()
-            local max_x, max_y = imgui.GetItemRectMax()
-            local size = (max_y - min_y) * 0.6
-
-            icons.draw_star(
-                imgui.GetWindowDrawList(),
-                min_x + ((max_x - min_x) - size) * 0.5,
-                min_y + ((max_y - min_y) - size) * 0.5,
-                size,
-                imgui.GetColorU32(
-                    favorite and colors.favorite or colors.text_dim
-                )
-            )
-
-            if imgui.IsItemHovered() and imgui.SetTooltip then
-                imgui.SetTooltip(
-                    favorite
-                        and tx('Remove from favorites')
-                        or tx('Add to favorites')
-                )
-            end
         end
     end
 
-    -- Second row: point the compass at the NPC of the current step.
     if controller
         and controller.IsCompassTarget
         and controller.ToggleCompassTarget then
 
-        imgui.SetCursorPosX(
-            (
-                imgui.GetWindowWidth()
-                - button_width
-            ) * 0.5
-        )
-
         local targeted = controller.IsCompassTarget(kind, selected)
 
-        if targeted then
+        entries[#entries + 1] = {
+            id = '##JournalCompassTargetButton',
+            on = targeted,
+            label = targeted and tx('Stop') or tx('Compass'),
+            tip = targeted and tx('Stop compass')
+                or tx('Point compass here'),
+            border = colors.detail_compass,
+            run = function()
+                controller.ToggleCompassTarget(kind, selected)
+            end,
+        }
+    end
+
+    if #entries == 0 then
+        return
+    end
+
+    local gap = 6
+    local button_width =
+        math.floor((row_width - gap * (#entries - 1)) / #entries)
+
+    imgui.SetCursorPosX(
+        (
+            imgui.GetWindowWidth()
+            - (button_width * #entries + gap * (#entries - 1))
+        ) * 0.5
+    )
+
+    for index, entry in ipairs(entries) do
+        if index > 1 then
+            imgui.SameLine(0, gap)
+        end
+
+        if entry.on then
             imgui.PushStyleColor(
                 ImGuiCol_Button,
                 colors.button_active
@@ -2642,16 +2714,30 @@ local function draw_details_button(
         end
 
         if imgui.Button(
-            targeted
-                and tx('Stop compass')
-                or tx('Point compass here'),
+            entry.label .. entry.id,
             { button_width, ui_button_height }
         ) then
-            controller.ToggleCompassTarget(kind, selected)
+            entry.run()
         end
 
-        if targeted then
+        if entry.on then
             imgui.PopStyleColor()
+        end
+
+        local min_x, min_y = imgui.GetItemRectMin()
+        local max_x, max_y = imgui.GetItemRectMax()
+
+        imgui.GetWindowDrawList():AddRect(
+            { min_x, min_y },
+            { max_x, max_y },
+            imgui.GetColorU32(entry.border),
+            4,
+            0,
+            2
+        )
+
+        if imgui.IsItemHovered() and imgui.SetTooltip then
+            imgui.SetTooltip(entry.tip)
         end
     end
 end
@@ -2660,29 +2746,50 @@ end
 -- rest of the controls (tracker size, opacity, language...) are in the
 -- settings window.
 local function details_controls_height()
-    local rows = 0
+    local has_buttons =
+        controller
+        and ((controller.IsPinned and controller.ToggleItemPin)
+            or (controller.IsCompassTarget
+                and controller.ToggleCompassTarget))
 
-    if controller
-        and controller.IsPinned
-        and controller.ToggleItemPin then
+    -- What the panel draws under the steps: a space, the note box (when the
+    -- notes are on), another space and the row of buttons; every item also
+    -- adds the spacing of the style. The real height of the note box and the
+    -- spacing are read from ImGui, because they grow with the font.
+    local spacing = 8
 
-        rows = rows + 1
+    if imgui.GetTextLineHeightWithSpacing and imgui.GetTextLineHeight then
+        local with_spacing = imgui.GetTextLineHeightWithSpacing()
+        local plain = imgui.GetTextLineHeight()
+
+        if type(with_spacing) == 'number' and type(plain) == 'number'
+            and with_spacing > plain then
+
+            spacing = with_spacing - plain
+        end
     end
 
-    -- The note box.
+    local note_height = ui_button_height
+
+    if imgui.GetFrameHeight then
+        local frame = imgui.GetFrameHeight()
+
+        if type(frame) == 'number' then
+            note_height = math.max(ui_button_height, frame)
+        end
+    end
+
+    local height = spacing * 4 + 4
+
     if notes_enabled() then
-        rows = rows + 1
+        height = height + note_height
     end
 
-    -- The compass button.
-    if controller
-        and controller.IsCompassTarget
-        and controller.ToggleCompassTarget then
-
-        rows = rows + 1
+    if has_buttons then
+        height = height + ui_button_height
     end
 
-    return rows * (ui_button_height + 8) + 8
+    return math.floor(height)
 end
 
 local function draw_details_panel(
@@ -3060,7 +3167,8 @@ local function draw_selector_button(
                 ) * 0.5,
         },
         imgui.GetColorU32(
-            colors.text
+            tint and colors.on_tint
+            or colors.text
         ),
         text
     )
@@ -3241,9 +3349,109 @@ end
 
 -- The only bar at the top of the Journal: Missions / Quests on the left,
 -- then the questline or region selector, with a thin line underneath.
+-- The two small buttons at the right corner of the Journal: show or hide the
+-- bar, and close. The bar starts hidden every time the Journal is opened.
+sheetx.toolbar_open = false
+
+-- The search box lives in the bar: with the bar hidden a search that is still
+-- on would filter the list with no box to see or clear it, so the search is
+-- cleared whenever the bar goes away.
+function sheetx.clear_search()
+    journal_search_buffer[1] = ''
+
+    if controller
+        and controller.SetSearchText
+        and controller.GetSearchText
+        and controller.GetSearchText() ~= '' then
+
+        controller.SetSearchText('')
+    end
+end
+
+function sheetx.corner_buttons()
+    local size = ui_button_height
+
+    if imgui.Button('##JournalBarToggle', { size, size }) then
+        sheetx.toolbar_open = not sheetx.toolbar_open
+
+        if not sheetx.toolbar_open then
+            sheetx.clear_search()
+        end
+    end
+
+    local min_x, min_y = imgui.GetItemRectMin()
+    local max_x, max_y = imgui.GetItemRectMax()
+    local mid_x = (min_x + max_x) * 0.5
+    local mid_y = (min_y + max_y) * 0.5
+    local color = imgui.GetColorU32(colors.text)
+
+    -- A triangle: down to show the bar, up to hide it.
+    if sheetx.toolbar_open then
+        imgui.GetWindowDrawList():AddTriangleFilled(
+            { mid_x - 7, mid_y + 4 },
+            { mid_x + 7, mid_y + 4 },
+            { mid_x, mid_y - 5 },
+            color
+        )
+    else
+        imgui.GetWindowDrawList():AddTriangleFilled(
+            { mid_x - 7, mid_y - 4 },
+            { mid_x + 7, mid_y - 4 },
+            { mid_x, mid_y + 5 },
+            color
+        )
+    end
+
+    if imgui.IsItemHovered() and imgui.SetTooltip then
+        imgui.SetTooltip(
+            sheetx.toolbar_open and tx('Hide the bar') or tx('Show the bar')
+        )
+    end
+
+    imgui.SameLine(0, 8)
+
+    if imgui.Button('X##JournalClose', { size, size }) then
+        sheetx.close_requested = true
+    end
+
+    if imgui.IsItemHovered() and imgui.SetTooltip then
+        imgui.SetTooltip(tx('Close'))
+    end
+end
+
 local function draw_journal_toolbar(
     is_mission_mode
 )
+    -- Hidden: only the two buttons of the corner.
+    if not sheetx.toolbar_open then
+        imgui.PushStyleColor(ImGuiCol_ChildBg, transparent)
+
+        if imgui.BeginChild(
+            '##JournalToolbar',
+            { -1, ui_bar_height },
+            false,
+            ImGuiWindowFlags_NoScrollbar
+                + ImGuiWindowFlags_NoScrollWithMouse
+        ) then
+            imgui.SetCursorPosY(6)
+
+            imgui.SetCursorPosX(
+                math.max(
+                    0,
+                    imgui.GetWindowWidth() - ui_button_height * 2 - 8 - 14
+                )
+            )
+
+            sheetx.corner_buttons()
+        end
+
+        imgui.EndChild()
+
+        imgui.PopStyleColor()
+
+        return
+    end
+
     local _, _, _, _, _, value =
         get_journal_context(
             is_mission_mode
@@ -3375,7 +3583,7 @@ local function draw_journal_toolbar(
 
             imgui.PushStyleColor(
                 ImGuiCol_Text,
-                colors.text
+                colors.on_tint
             )
         end
 
@@ -3427,7 +3635,7 @@ local function draw_journal_toolbar(
             { arrow_x + 4, arrow_y - 2 },
             { arrow_x, arrow_y + 3 },
             imgui.GetColorU32(
-                tint and colors.text
+                tint and colors.on_tint
                 or colors.text_dim
             )
         )
@@ -3591,6 +3799,52 @@ local function draw_journal_toolbar(
             end
         end
 
+        -- Shows or hides the list of the zones by region: a button with a
+        -- globe, beside the compass.
+        sheetx.zones_w = 0
+
+        if controller.zonelist ~= nil then
+            imgui.SameLine(0, 8)
+
+            sheetx.zones_w = ui_button_height
+
+            local zones_open = controller.zonelist.GetOpen()
+
+            if zones_open then
+                imgui.PushStyleColor(
+                    ImGuiCol_Button,
+                    colors.button_active
+                )
+            end
+
+            if imgui.Button(
+                '##JournalZonesButton',
+                { sheetx.zones_w, ui_button_height }
+            ) then
+                controller.zonelist.Toggle()
+            end
+
+            if zones_open then
+                imgui.PopStyleColor()
+            end
+
+            local min_x, min_y = imgui.GetItemRectMin()
+            local max_x, max_y = imgui.GetItemRectMax()
+            local size = (max_y - min_y) * 0.68
+
+            icons.draw_globe(
+                imgui.GetWindowDrawList(),
+                min_x + ((max_x - min_x) - size) * 0.5,
+                min_y + ((max_y - min_y) - size) * 0.5,
+                size,
+                imgui.GetColorU32(colors.text)
+            )
+
+            if imgui.IsItemHovered() and imgui.SetTooltip then
+                imgui.SetTooltip(tx('Zones by region'))
+            end
+        end
+
         -- Opens the general notes: a button with a sticky note.
         notesx.btn_w = 0
 
@@ -3655,7 +3909,9 @@ local function draw_journal_toolbar(
                             - active_width
                             - menu_width
                             - compass_width
+                            - sheetx.zones_w
                             - notesx.btn_w
+                            - (ui_button_height + 8) * 2
                             - 190
                     )
                 )
@@ -3738,6 +3994,7 @@ local function draw_journal_toolbar(
         if controller.ToggleSettings or #menu_entries > 0 then
             local target_x =
                 imgui.GetWindowWidth() - settings_width - menu_width - 14
+                - (ui_button_height + 8) * 2
 
             if imgui.GetCursorPosX then
                 target_x =
@@ -3830,6 +4087,12 @@ local function draw_journal_toolbar(
                 controller.ToggleSettings()
             end
         end
+
+        -- Hide the bar, and close the Journal (the window has no title bar,
+        -- so no X of its own).
+        imgui.SameLine(0, 8)
+
+        sheetx.corner_buttons()
 
         -- The list of the menu: one row for each function (its icon and its
         -- name). The one whose window is open is shown pressed.
@@ -4370,6 +4633,8 @@ local function draw_sheet_step(index, text, state)
             on_npc = npc_click(text),
             id = 'sheet' .. tostring(index),
             npc_tooltip = tx('Click to point the compass at it'),
+            on_zone = sheetx.zone_click(),
+            zone_tooltip = tx('Click to guide the compass to this zone'),
         }
     )
 
@@ -5718,6 +5983,8 @@ do
                 and controller.GetCompassNpcRows(now) or {}
             local pin_rows = controller.GetCompassPinRows
                 and controller.GetCompassPinRows(now) or {}
+            local zone_route = controller.GetCompassZoneRoute
+                and controller.GetCompassZoneRoute() or nil
 
             if state.target ~= nil then
                 shadow_text(
@@ -5734,14 +6001,8 @@ do
             end
 
             if state.status == 'none' then
-                -- No quest or mission: the hint only while there is nothing
-                -- else in the window.
-                if #npc_rows == 0 and #pin_rows == 0 then
-                    richtext.draw_wrapped(
-                        message,
-                        { color = colors.text_dim, size = step_font_size * compass_scale, shadow = true }
-                    )
-                end
+                -- No quest or mission: nothing is written (the hint that
+                -- was here got in the way of an empty compass).
             elseif message ~= nil then
                 imgui.Spacing()
 
@@ -5852,12 +6113,77 @@ do
                 end
             end
 
+            -- The zone picked with a click on a zone name in a step: the
+            -- way there from the zone the player is in.
+            if zone_route ~= nil then
+                if state.status ~= 'none' then
+                    imgui.Separator()
+                end
+
+                -- The zone has a yolk-yellow border around its letters.
+                local route_prefix = tx('Route to') .. ' '
+                local route_name = fit_text(
+                    zone_label(zone_route.goal),
+                    available - cscaled(24)
+                        - (imgui.CalcTextSize(route_prefix .. '|'))
+                        + (imgui.CalcTextSize('|'))
+                )
+
+                if not sheetx.outline_line(
+                    colors.text,
+                    route_prefix,
+                    route_name,
+                    { 1.00, 0.78, 0.15, 1.00 },
+                    compass_scale
+                ) then
+                    imgui.TextColored(colors.text, route_prefix .. route_name)
+                end
+
+                -- The "x" stops guiding to the zone.
+                if draw_cross('##CompassZoneGoalRemove', window_width)
+                    and controller.ClearCompassZoneGoal then
+
+                    controller.ClearCompassZoneGoal()
+                end
+
+                local path = zone_route.route and zone_route.route.path
+
+                if path ~= nil then
+                    shadow_text(
+                        colors.text,
+                        fit_text(
+                            tx('Next:') .. ' ' .. zone_label(path[1]),
+                            available
+                        )
+                    )
+
+                    if #path > 1 then
+                        local later = {}
+
+                        for position = 2, #path do
+                            later[#later + 1] = zone_label(path[position])
+                        end
+
+                        richtext.draw_wrapped(
+                            tx('Then:') .. ' ' .. table.concat(later, ' > '),
+                            {
+                                color = colors.text_dim,
+                                size = step_font_size * compass_scale,
+                                shadow = true,
+                            }
+                        )
+                    end
+                elseif not zone_route.unknown then
+                    shadow_text(colors.text_dim, tx('No walking route'))
+                end
+            end
+
             -- The items pinned in the Tracker: the NPC of the current step
             -- of each, with a small "x" that takes it off the compass only.
             local hide_key = nil
 
             if #pin_rows > 0 then
-                if state.status ~= 'none' then
+                if state.status ~= 'none' or zone_route ~= nil then
                     imgui.Separator()
                 end
 
@@ -5929,7 +6255,8 @@ do
             local remove_index = nil
 
             if #npc_rows > 0 then
-                if state.status ~= 'none' or #pin_rows > 0 then
+                if state.status ~= 'none' or #pin_rows > 0
+                    or zone_route ~= nil then
                     imgui.Separator()
                 end
 
@@ -6314,6 +6641,12 @@ do
                 -- again, once for each content.
                 local signature = state.status .. #npc_rows .. '/' .. #pin_rows
 
+                if zone_route ~= nil then
+                    signature = signature .. 'r' .. tostring(
+                        zone_route.route and zone_route.route.hops or 0
+                    )
+                end
+
                 for _, row in ipairs(npc_rows) do
                     signature = signature .. row.status .. #(row.quests or {})
                 end
@@ -6361,20 +6694,67 @@ end
 
 local function draw_settings_header(label)
     imgui.Spacing()
-    imgui.TextColored(colors.gold, label)
+    imgui.PushStyleColor(ImGuiCol_Text, colors.gold)
+    imgui.TextWrapped(label)
+    imgui.PopStyleColor()
     imgui.Separator()
 end
 
 -- Label on the left and [-] value [+] on the right. Clicking the value goes
 -- back to the default.
+-- Width the controls of the Settings window can use: the window without its
+-- inner margins (12 px a side in Original, wider in Legacy) and without the
+-- scroll bar when the content is taller than the window.
+function sheetx.settings_inner(width)
+    local pad = theme.WindowPadding()[1]
+    local bar = 0
+
+    if imgui.GetScrollMaxY and imgui.GetScrollMaxY() > 0 then
+        bar = 14
+    end
+
+    return width - pad * 2 - bar, pad
+end
+
+-- The windows without a title bar close with a small X at the right of their
+-- first row. `open` is the { true } table that goes to imgui.Begin.
+function sheetx.close_row(open)
+    local size = scaled(26)
+    local inner, pad = sheetx.settings_inner(imgui.GetWindowWidth())
+
+    imgui.SetCursorPosX(pad + inner - size)
+
+    if imgui.Button('X##WindowClose', { size, size }) then
+        open[1] = false
+    end
+
+    if imgui.IsItemHovered() and imgui.SetTooltip then
+        imgui.SetTooltip(tx('Close'))
+    end
+end
+
+-- A size of window that does not pass 90% of the screen.
+function sheetx.fit_screen(w, h)
+    local ok, screen_w, screen_h = pcall(function()
+        local size = imgui.GetIO().DisplaySize
+
+        return size.x or size[1], size.y or size[2]
+    end)
+
+    if ok and screen_w and screen_h then
+        return math.min(w, math.floor(screen_w * 0.9)),
+            math.min(h, math.floor(screen_h * 0.9))
+    end
+
+    return w, h
+end
+
 local function draw_settings_stepper(id, label, value_text, on_step, on_reset)
     if imgui.AlignTextToFramePadding then
         imgui.AlignTextToFramePadding()
     end
 
     imgui.TextColored(colors.text, label)
-
-    imgui.SameLine()
 
     local small = SETTINGS_BUTTON_HEIGHT
 
@@ -6387,7 +6767,19 @@ local function draw_settings_stepper(id, label, value_text, on_step, on_reset)
     local gap = 6
     local total = small * 2 + middle + gap * 2
 
-    imgui.SetCursorPosX(imgui.GetWindowWidth() - total - 18)
+    local inner, pad = sheetx.settings_inner(imgui.GetWindowWidth())
+
+    -- When the label leaves no room for the buttons, they go on the next
+    -- line (the label would be under them).
+    local label_w = imgui.CalcTextSize(label)
+
+    if not (type(label_w) == 'number'
+        and label_w + 12 + total + 6 > inner) then
+
+        imgui.SameLine()
+    end
+
+    imgui.SetCursorPosX(pad + inner - total - 6)
 
     if imgui.Button('-##' .. id .. '_minus', { small, small }) then
         on_step(-1)
@@ -6412,6 +6804,31 @@ end
 local function draw_settings_checkbox(id, label, value, on_change)
     local box = { value == true }
 
+    -- A label wider than the window goes on more than one line: the box
+    -- alone, and the text next to it wrapped at the edge of the window (a
+    -- click on the text also changes the box).
+    local inner = sheetx.settings_inner(imgui.GetWindowWidth())
+    local label_w = imgui.CalcTextSize(label)
+    local box_w = imgui.GetFrameHeight and imgui.GetFrameHeight() or 30
+
+    if type(label_w) == 'number'
+        and type(box_w) == 'number'
+        and label_w + box_w + 12 > inner then
+
+        if imgui.Checkbox('##' .. id, box) then
+            on_change(box[1])
+        end
+
+        imgui.SameLine(0, 8)
+        imgui.TextWrapped(label)
+
+        if imgui.IsItemClicked and imgui.IsItemClicked() then
+            on_change(not (value == true))
+        end
+
+        return
+    end
+
     if imgui.Checkbox(label .. '##' .. id, box) then
         on_change(box[1])
     end
@@ -6428,6 +6845,18 @@ local function draw_settings_choice(label, active, width)
 
     width = math.max(width, math.ceil((imgui.CalcTextSize(shown)) + 24))
 
+    -- ...and never wider than the window: a text that does not fit is
+    -- shortened with "...".
+    local inner = sheetx.settings_inner(imgui.GetWindowWidth())
+
+    if type(inner) == 'number' and inner > 0 and width > inner then
+        width = math.floor(inner)
+
+        local id = tostring(label):match('(##.*)$') or ''
+
+        label = fit_text(shown, width - 24) .. id
+    end
+
     local clicked =
         imgui.Button(
             label,
@@ -6443,7 +6872,7 @@ end
 
 -- The look of one kind of alert: background, text size and color. group is
 -- 'new' (new quests and missions) or 'done' (completed ones).
-local function draw_alert_style_group(group, header)
+local function draw_alert_style_group(group, header, no_background)
     if not (controller.GetAlertStyle
         and controller.AdjustAlertOpacity
         and controller.AdjustAlertSize
@@ -6457,19 +6886,23 @@ local function draw_alert_style_group(group, header)
     local palette = controller.GetAlertPalette()
 
     imgui.Spacing()
-    imgui.TextColored(colors.text_dim, header)
+    imgui.PushStyleColor(ImGuiCol_Text, colors.text_dim)
+    imgui.TextWrapped(header)
+    imgui.PopStyleColor()
 
-    draw_settings_stepper(
-        'alert_' .. group .. '_bg',
-        tx('Alert background'),
-        settings_percent(style.opacity),
-        function(direction)
-            controller.AdjustAlertOpacity(group, direction)
-        end,
-        function()
-            controller.SetAlertOpacity(group, 0.70)
-        end
-    )
+    if not no_background then
+        draw_settings_stepper(
+            'alert_' .. group .. '_bg',
+            tx('Alert background'),
+            settings_percent(style.opacity),
+            function(direction)
+                controller.AdjustAlertOpacity(group, direction)
+            end,
+            function()
+                controller.SetAlertOpacity(group, 0.70)
+            end
+        )
+    end
 
     draw_settings_stepper(
         'alert_' .. group .. '_size',
@@ -6495,8 +6928,17 @@ local function draw_alert_style_group(group, header)
 
     local box = scaled(32)
 
+    local inner, pad = sheetx.settings_inner(imgui.GetWindowWidth())
+
     for index, color in ipairs(palette) do
-        imgui.SameLine(0, 6)
+        -- A square that does not fit at the end of the line goes on the next.
+        local at_x = imgui.GetCursorPosX and imgui.GetCursorPosX()
+
+        if not (type(at_x) == 'number'
+            and at_x + 6 + box > pad + inner + 4) then
+
+            imgui.SameLine(0, 6)
+        end
 
         imgui.PushStyleColor(ImGuiCol_Button, color)
         imgui.PushStyleColor(ImGuiCol_ButtonHovered, lighten(color, 0.10))
@@ -6540,7 +6982,7 @@ local function draw_alert_tests(width)
     end
 
     local test = controller.GetAlertTest()
-    local half = math.floor((width - 24 - 8) / 2)
+    local half = math.floor((sheetx.settings_inner(width) - 8) / 2)
 
     local function test_button(label, kind, done, id)
         local special = kind == 'near' or kind == 'progress'
@@ -6567,21 +7009,76 @@ local function draw_alert_tests(width)
     imgui.Spacing()
     imgui.TextColored(colors.text_dim, tx('Test the alerts'))
 
+    -- Two buttons side by side only when the longest text fits in half the
+    -- width; if not, one button per line.
+    local stacked = false
+
+    for _, label in ipairs({
+        'Test: Mission Completed',
+        'Test: Quest Completed',
+        'Test: Items Complete',
+        'Test: Quest In Progress',
+    }) do
+        local text_w = imgui.CalcTextSize(tx(label))
+
+        if type(text_w) == 'number' and text_w + 24 > half then
+            stacked = true
+        end
+    end
+
+    if stacked then
+        half = sheetx.settings_inner(width)
+    end
+
+    local function pair()
+        if not stacked then
+            imgui.SameLine(0, 8)
+        end
+    end
+
     test_button('Test: New Quest', 'quest', false, 'quest')
-    imgui.SameLine(0, 8)
+    pair()
     test_button('Test: New Mission', 'mission', false, 'mission')
 
     test_button('Test: Quest Completed', 'quest', true, 'quest_done')
-    imgui.SameLine(0, 8)
+    pair()
     test_button('Test: Mission Completed', 'mission', true, 'mission_done')
 
     test_button('Test: Quest Nearby', 'near', false, 'near')
     test_button('Test: Quest In Progress', 'progress', false, 'progress')
 
-    imgui.TextColored(
-        colors.text_dim,
+    -- The alerts of an item of a quest in progress (item obtained, and all
+    -- the items of the quest).
+    for _, item_test in ipairs({
+        { 'Test: Item Obtained', 'item', 'item' },
+        { 'Test: Items Complete', 'itemdone', 'item_done' },
+    }) do
+        local item_active = test ~= nil
+            and test.item == true
+            and (test.complete == true) == (item_test[2] == 'itemdone')
+
+        if draw_settings_choice(
+            tx(item_test[1]) .. '##alert_test_' .. item_test[3],
+            item_active,
+            half
+        ) then
+            if item_active then
+                controller.StopAlertTest()
+            else
+                controller.StartAlertTest(item_test[2], false)
+            end
+        end
+
+        if item_test[2] == 'item' then
+            pair()
+        end
+    end
+
+    imgui.PushStyleColor(ImGuiCol_Text, colors.text_dim)
+    imgui.TextWrapped(
         tx('The test stays on the screen until you press it again or close the settings.')
     )
+    imgui.PopStyleColor()
 end
 
 local function draw_settings_window()
@@ -6643,6 +7140,7 @@ local function draw_settings_window()
         open,
         ImGuiWindowFlags_NoSavedSettings
             + ImGuiWindowFlags_NoCollapse
+            + ImGuiWindowFlags_NoTitleBar
     ) then
         scalex.after('settings')
 
@@ -6651,6 +7149,8 @@ local function draw_settings_window()
         local width, height = imgui.GetWindowSize()
 
         draw_window_panel(draw, x, y, width, height, true)
+
+        sheetx.close_row(open)
 
         -- Remember the size the player gives the window.
         if controller.SetSettingsSize and controller.GetSettingsSize then
@@ -6670,7 +7170,7 @@ local function draw_settings_window()
         if controller.GetLanguage and controller.SetLanguage then
             draw_settings_header(tx('Language'))
 
-            local half = math.floor((width - 24 - 8) / 2)
+            local half = math.floor((sheetx.settings_inner(width) - 8) / 2)
             local es = controller.GetLanguage() == 'es'
 
             if draw_settings_choice('English##settings_en', not es, half)
@@ -6688,6 +7188,34 @@ local function draw_settings_window()
             ) and not es then
 
                 controller.SetLanguage('es')
+            end
+        end
+
+        -- Theme
+        draw_settings_header(tx('Theme'))
+
+        do
+            local half = math.floor((sheetx.settings_inner(width) - 8) / 2)
+            local legacy = theme.Get() == 'legacy'
+
+            if draw_settings_choice(
+                tx(theme.LABELS.original) .. '##settings_theme_original',
+                not legacy,
+                half
+            ) and legacy then
+
+                theme.Set('original')
+            end
+
+            imgui.SameLine(0, 8)
+
+            if draw_settings_choice(
+                tx(theme.LABELS.legacy) .. '##settings_theme_legacy',
+                legacy,
+                half
+            ) and not legacy then
+
+                theme.Set('legacy')
             end
         end
 
@@ -6793,7 +7321,7 @@ local function draw_settings_window()
                         and 'Mode: Tabs'
                         or 'Mode: Stacked'
                 ) .. '##settings_mode',
-                { width - 24, SETTINGS_BUTTON_HEIGHT }
+                { sheetx.settings_inner(width), SETTINGS_BUTTON_HEIGHT }
             ) then
                 controller.TogglePinMode()
             end
@@ -6991,6 +7519,17 @@ local function draw_settings_window()
 
                 draw_alert_style_group('near', tx('Quest nearby alerts'))
 
+                if controller.GetItemAlertEnabled
+                    and controller.SetItemAlertEnabled then
+
+                    draw_settings_checkbox(
+                        'alert_items',
+                        tx('Alert when you get an item for a quest in progress'),
+                        controller.GetItemAlertEnabled(),
+                        controller.SetItemAlertEnabled
+                    )
+                end
+
                 if controller.GetProxEnabled and controller.SetProxEnabled then
                     draw_settings_checkbox(
                         'alert_prox',
@@ -7011,6 +7550,21 @@ local function draw_settings_window()
             end
 
             draw_alert_tests(width)
+
+            -- The banner with the name of the zone (zonebanner.lua).
+            draw_alert_style_group('zone', tx('Zone name banner'), true)
+
+            if draw_settings_choice(
+                tx('Test: Zone Name') .. '##zone_banner_test',
+                false,
+                sheetx.settings_inner(width)
+            ) then
+                local banner = require('zonebanner')
+
+                if banner.Replay then
+                    banner.Replay(controller)
+                end
+            end
         end
 
         -- Windows
@@ -7019,7 +7573,7 @@ local function draw_settings_window()
 
             if imgui.Button(
                 tx('Reset window positions') .. '##settings_reset',
-                { width - 24, SETTINGS_BUTTON_HEIGHT }
+                { sheetx.settings_inner(width), SETTINGS_BUTTON_HEIGHT }
             ) then
                 controller.ResetWindowPositions()
             end
@@ -7293,7 +7847,10 @@ local function draw_guide_window()
             controller.GetJournalWindowState
             and controller.GetJournalWindowState()
 
-        imgui.SetNextWindowSize({ scaled(760), scaled(680) })
+        -- Twice the size it had (760 x 680), without passing the screen.
+        imgui.SetNextWindowSize({
+            sheetx.fit_screen(scaled(1520), scaled(1360))
+        })
 
         imgui.SetNextWindowPos({
             ((journal and journal.visible and journal.x) or 40) + 60,
@@ -7318,6 +7875,7 @@ local function draw_guide_window()
         open,
         ImGuiWindowFlags_NoSavedSettings
             + ImGuiWindowFlags_NoCollapse
+            + ImGuiWindowFlags_NoTitleBar
     ) then
         scalex.after('guide')
 
@@ -7327,7 +7885,20 @@ local function draw_guide_window()
 
         draw_window_panel(draw, x, y, width, height, true)
 
+        sheetx.close_row(open)
+
         local current = controller.GetGuideSection()
+
+        -- The group (first level title and the points under it) that the
+        -- current section belongs to.
+        local current_group = current
+
+        while current_group > 1
+            and guide.sections[current_group]
+            and guide.sections[current_group].level == 2 do
+
+            current_group = current_group - 1
+        end
 
         -- The contents, on the left. It is as wide as the longest title
         -- needs (within limits) and a title that is still too long goes on
@@ -7349,14 +7920,47 @@ local function draw_guide_window()
             local usable = contents_width - 40
 
             for index, section in ipairs(guide.sections) do
-                local indent = section.level == 2 and '   ' or ''
+                -- A first level title with points under it is a heading:
+                -- yellow letters, a triangle (down when its group is the open
+                -- one) and the number of points it holds.
+                local points = 0
+
+                if section.level ~= 2 then
+                    local following = index + 1
+
+                    while guide.sections[following]
+                        and guide.sections[following].level == 2 do
+
+                        points = points + 1
+                        following = following + 1
+                    end
+                end
+
+                local heading = points > 0
+                -- The points go further in than the headings.
+                local indent = section.level == 2 and '     ' or ''
+
+                if heading then
+                    indent = '  '
+                end
+
+                local title = guide_text(section.title)
+
+                if heading then
+                    title = title .. '  (' .. points .. ')'
+                end
+
                 -- The lines after the first one are indented a little.
                 local room =
                     usable
                     - (imgui.CalcTextSize(indent))
                     - (imgui.CalcTextSize('  '))
                 local lines =
-                    wrap_guide_title(guide_text(section.title), room)
+                    wrap_guide_title(title, room)
+
+                if heading then
+                    imgui.PushStyleColor(ImGuiCol_Text, colors.favorite)
+                end
 
                 for line_index, line in ipairs(lines) do
                     -- Every line of a title selects it.
@@ -7371,6 +7975,35 @@ local function draw_guide_window()
                         controller.SetGuideSection(index)
                         guide_scroll_top = true
                     end
+
+                    if heading and line_index == 1 then
+                        local min_x, min_y = imgui.GetItemRectMin()
+                        local max_x, max_y = imgui.GetItemRectMax()
+                        local mid = (min_y + max_y) * 0.5
+                        local open_group = index == current_group
+                        local list_draw = imgui.GetWindowDrawList()
+                        local color = imgui.GetColorU32(colors.favorite)
+
+                        if open_group then
+                            list_draw:AddTriangleFilled(
+                                { min_x + 4, mid - 3 },
+                                { min_x + 14, mid - 3 },
+                                { min_x + 9, mid + 4 },
+                                color
+                            )
+                        else
+                            list_draw:AddTriangleFilled(
+                                { min_x + 5, mid - 5 },
+                                { min_x + 5, mid + 5 },
+                                { min_x + 12, mid },
+                                color
+                            )
+                        end
+                    end
+                end
+
+                if heading then
+                    imgui.PopStyleColor()
                 end
             end
         end
@@ -7559,7 +8192,10 @@ local function draw_camps_window()
             controller.GetJournalWindowState
             and controller.GetJournalWindowState()
 
-        imgui.SetNextWindowSize({ scaled(700), scaled(640) })
+        -- Twice as tall as it was (640), without passing the screen.
+        imgui.SetNextWindowSize({
+            sheetx.fit_screen(scaled(700), scaled(1280))
+        })
 
         imgui.SetNextWindowPos({
             ((journal and journal.visible and journal.x) or 40) + 80,
@@ -7584,6 +8220,7 @@ local function draw_camps_window()
         open,
         ImGuiWindowFlags_NoSavedSettings
             + ImGuiWindowFlags_NoCollapse
+            + ImGuiWindowFlags_NoTitleBar
     ) then
         scalex.after('camps')
 
@@ -7593,9 +8230,11 @@ local function draw_camps_window()
 
         draw_window_panel(draw, x, y, width, height, true)
 
+        sheetx.close_row(open)
+
         -- How the camps are listed: the ones for the level, or a whole range.
         local mode = controller.GetCampsMode()
-        local half = math.floor((width - 24 - 8) / 2)
+        local half = math.floor((sheetx.settings_inner(width) - 8) / 2)
 
         if draw_settings_choice(
             tx('For your level') .. '##camps_mode_level',
@@ -7772,6 +8411,7 @@ function fame_ui.draw()
         open,
         ImGuiWindowFlags_NoSavedSettings
             + ImGuiWindowFlags_NoCollapse
+            + ImGuiWindowFlags_NoTitleBar
     ) then
         scalex.after('fame')
 
@@ -7780,6 +8420,8 @@ function fame_ui.draw()
         local width, height = imgui.GetWindowSize()
 
         draw_window_panel(draw, x, y, width, height, true)
+
+        sheetx.close_row(open)
 
         -- Remember the size the player gives the window.
         if controller.SetFameSize and controller.GetFameSize then
@@ -8032,6 +8674,80 @@ local function draw_search_results(width)
     imgui.PopStyleColor()
 end
 
+-- The Journal as a book (Legacy theme): the toolbar on the bar of leather,
+-- the list on the left page and the details on the right page. book is the
+-- layout of theme.BookLayout. A field of sheetx, not a local (limit of 200).
+function sheetx.draw_book(is_mission_mode, book)
+    -- The children (list and details) keep a small margin of their own.
+    imgui.PushStyleVar(ImGuiStyleVar_WindowPadding, { 10, 8 })
+
+    -- No scroll bar on the pages of the book: the lists and the sheet still
+    -- scroll with the mouse wheel.
+    local hide_bars = ImGuiStyleVar_ScrollbarSize ~= nil
+
+    if hide_bars then
+        imgui.PushStyleVar(ImGuiStyleVar_ScrollbarSize, 0)
+    end
+
+    if sheetx.toolbar_open then
+        imgui.SetCursorPosX(book.bar_pad)
+        imgui.SetCursorPosY(
+            math.max(0, math.floor((book.bar_h - ui_bar_height) * 0.5) - 2)
+        )
+
+        draw_journal_toolbar(is_mission_mode)
+    else
+        -- No bar: the two buttons sit at the right corner of the book, in
+        -- the margin above the right page.
+        local right_edge = book.left_x + book.page_w * 2 + book.gap
+
+        imgui.SetCursorPosX(
+            math.max(0, right_edge - ui_button_height * 2 - 8)
+        )
+        imgui.SetCursorPosY(
+            math.max(
+                6,
+                math.floor((book.page_y - ui_button_height) * 0.5)
+            )
+        )
+
+        sheetx.corner_buttons()
+    end
+
+    imgui.SetCursorPosX(book.left_x)
+    imgui.SetCursorPosY(book.page_y)
+
+    if controller.GetSearchText
+        and controller.GetSearchResults
+        and controller.GetSearchText() ~= '' then
+
+        draw_search_results(book.page_w)
+    else
+        draw_journal_list(is_mission_mode, book.page_w)
+    end
+
+    imgui.SameLine(0, book.gap)
+
+    if is_mission_mode then
+        local areas = controller.GetMissionAreas()
+        local selection = controller.GetMissionSelection()
+
+        draw_details_panel(
+            'Mission',
+            book.page_w,
+            areas[selection.area_index]
+        )
+    else
+        draw_details_panel('Quest', book.page_w)
+    end
+
+    if hide_bars then
+        imgui.PopStyleVar()
+    end
+
+    imgui.PopStyleVar()
+end
+
 local function draw_journal()
     if not can_draw_ui()
         or not controller
@@ -8045,6 +8761,10 @@ local function draw_journal()
 
     if not state
         or not state.visible then
+
+        -- The bar is hidden again for the next time the Journal opens.
+        sheetx.toolbar_open = false
+        sheetx.clear_search()
 
         return
     end
@@ -8064,6 +8784,15 @@ local function draw_journal()
                 journal_restore_window
             )
     end
+
+    -- The book of the Legacy theme needs the size of the window before the
+    -- theme is pushed (the margin of its bottom edge is the padding).
+    -- With the bar hidden the book fills the whole window.
+    theme.BeginBook(
+        sheetx.toolbar_open and (ui_bar_height + 30) or 0,
+        state.width,
+        state.height
+    )
 
     push_theme()
 
@@ -8095,6 +8824,7 @@ local function draw_journal()
         title .. '###JournalWindow',
         open,
         ImGuiWindowFlags_NoSavedSettings
+            + ImGuiWindowFlags_NoTitleBar
             + ImGuiWindowFlags_NoScrollbar
             + ImGuiWindowFlags_NoScrollWithMouse
             + ImGuiWindowFlags_NoCollapse
@@ -8119,63 +8849,73 @@ local function draw_journal()
             true
         )
 
-        draw_journal_toolbar(
-            is_mission_mode
-        )
+        -- The Legacy theme draws the Journal as an open book: the toolbar on
+        -- the bar of leather, the list on the left page and the details on
+        -- the right page. Without the pictures this is nil and the window is
+        -- drawn as always.
+        local book = theme.BookLayout(width, height)
 
-        imgui.Spacing()
-
-        local content_width =
-            imgui.GetWindowWidth()
-
-        local spacing = 10
-
-        local details_width =
-            math.floor(
-                content_width * 0.32
-            )
-
-        local list_width =
-            content_width
-            - details_width
-            - spacing
-
-        if controller.GetSearchText
-            and controller.GetSearchResults
-            and controller.GetSearchText() ~= '' then
-
-            draw_search_results(list_width)
+        if book then
+            sheetx.draw_book(is_mission_mode, book)
         else
-            draw_journal_list(
-                is_mission_mode,
-                list_width
+            draw_journal_toolbar(
+                is_mission_mode
             )
-        end
 
-        imgui.SameLine(
-            0,
-            spacing
-        )
+            imgui.Spacing()
 
-        if is_mission_mode then
-            local areas =
-                controller.GetMissionAreas()
+            local content_width =
+                imgui.GetWindowWidth()
 
-            local selection =
-                controller.GetMissionSelection()
+            local spacing = 10
 
-            draw_details_panel(
-                'Mission',
-                details_width,
-                areas[
-                    selection.area_index
-                ]
+            local details_width =
+                math.floor(
+                    content_width * 0.32
+                )
+
+            local list_width =
+                content_width
+                - details_width
+                - spacing
+
+            if controller.GetSearchText
+                and controller.GetSearchResults
+                and controller.GetSearchText() ~= '' then
+
+                draw_search_results(list_width)
+            else
+                draw_journal_list(
+                    is_mission_mode,
+                    list_width
+                )
+            end
+
+            imgui.SameLine(
+                0,
+                spacing
             )
-        else
-            draw_details_panel(
-                'Quest',
-                details_width
-            )
+
+            if is_mission_mode then
+                local areas =
+                    controller.GetMissionAreas()
+
+                local selection =
+                    controller.GetMissionSelection()
+
+                draw_details_panel(
+                    'Mission',
+                    details_width,
+                    areas[
+                        selection.area_index
+                    ]
+                )
+            else
+                draw_details_panel(
+                    'Quest',
+                    details_width
+                )
+            end
         end
 
         local wx, wy =
@@ -8201,6 +8941,11 @@ local function draw_journal()
     end
 
     imgui.End()
+
+    if sheetx.close_requested then
+        sheetx.close_requested = false
+        open[1] = false
+    end
 
     if not open[1] then
         controller.SetJournalVisible(false)
@@ -9090,6 +9835,7 @@ function notesx.draw()
         open,
         ImGuiWindowFlags_NoSavedSettings
             + ImGuiWindowFlags_NoCollapse
+            + ImGuiWindowFlags_NoTitleBar
     ) then
         scalex.after('notes')
 
@@ -9101,6 +9847,8 @@ function notesx.draw()
         store.SetSize(width, height)
 
         draw_window_panel(draw, x, y, width, height, true)
+
+        sheetx.close_row(open)
 
         local list_w = math.floor(math.max(scaled(200), width * 0.32))
         local half = math.floor((list_w - 8) / 2)
@@ -9573,6 +10321,269 @@ function notesx.draw()
     pop_theme()
 end
 
+-- The list of the zones by region (the globe button of the toolbar): a click
+-- on a zone points the compass at it (the route there), another click removes
+-- it. The names of the zones are read from the game (zones.names).
+sheetx.zones_open = {}
+sheetx.zones_filter = { '' }
+
+function sheetx.zones_build()
+    local store = controller and controller.zonelist
+    local names = controller and controller.GetCompassZoneName
+
+    if store == nil or names == nil then
+        return nil
+    end
+
+    local list = {}
+
+    for _, region in ipairs(store.Regions()) do
+        local entries = {}
+
+        for _, id in ipairs(region.zones) do
+            local name = names(id)
+
+            if type(name) == 'string' and name ~= '' and name ~= '???' then
+                entries[#entries + 1] = {
+                    id = id,
+                    name = name,
+                    key = name:lower(),
+                }
+            end
+        end
+
+        table.sort(entries, function(a, b)
+            return a.key < b.key
+        end)
+
+        if #entries > 0 then
+            list[#list + 1] = { name = region.name, zones = entries }
+        end
+    end
+
+    return #list > 0 and list or nil
+end
+
+function sheetx.zones_draw()
+    local store = controller and controller.zonelist
+
+    if store == nil
+        or not store.GetOpen()
+        or not can_draw_ui()
+        or imgui.InputText == nil then
+
+        sheetx.zones_was_open = false
+
+        return
+    end
+
+    if not sheetx.zones_was_open then
+        sheetx.zones_was_open = true
+        -- Read again: the names may not have been there the last time.
+        sheetx.zones_list = nil
+
+        local journal =
+            controller.GetJournalWindowState
+            and controller.GetJournalWindowState()
+
+        -- Twice the size it had (380 x 580), without going over the screen.
+        local zones_w = scaled(760)
+        local zones_h = scaled(1160)
+
+        local shown_ok, screen_w, screen_h = pcall(function()
+            local size = imgui.GetIO().DisplaySize
+
+            return size.x or size[1], size.y or size[2]
+        end)
+
+        if shown_ok and screen_w and screen_h then
+            zones_w = math.min(zones_w, math.floor(screen_w * 0.9))
+            zones_h = math.min(zones_h, math.floor(screen_h * 0.9))
+        end
+
+        imgui.SetNextWindowSize({ zones_w, zones_h })
+
+        imgui.SetNextWindowPos({
+            ((journal and journal.visible and journal.x) or 40) + 80,
+            ((journal and journal.visible and journal.y) or 40) + 80,
+        })
+    end
+
+    if imgui.SetNextWindowSizeConstraints then
+        imgui.SetNextWindowSizeConstraints(
+            { scaled(300), scaled(260) },
+            { scaled(1800), scaled(2400) }
+        )
+    end
+
+    push_theme()
+
+    local font_pushed = journal_font ~= nil
+
+    if font_pushed then
+        imgui.PushFont(journal_font, journal_font_size)
+    end
+
+    local open = { true }
+
+    scalex.before('zones')
+
+    if imgui.Begin(
+        tx('Zones by region') .. '###JournalZones',
+        open,
+        ImGuiWindowFlags_NoSavedSettings
+            + ImGuiWindowFlags_NoCollapse
+            + ImGuiWindowFlags_NoTitleBar
+    ) then
+        scalex.after('zones')
+
+        local draw = imgui.GetWindowDrawList()
+        local x, y = imgui.GetWindowPos()
+        local width, height = imgui.GetWindowSize()
+
+        draw_window_panel(draw, x, y, width, height, true)
+
+        sheetx.close_row(open)
+
+        if sheetx.zones_list == nil then
+            sheetx.zones_list = sheetx.zones_build()
+        end
+
+        local goal = controller.GetCompassZoneGoal
+            and controller.GetCompassZoneGoal() or nil
+
+        imgui.TextWrapped(
+            tx('Click a zone to guide the compass there. Click it again to remove it.')
+        )
+
+        imgui.PushItemWidth(-1)
+
+        imgui.InputText('##ZonesFilter', sheetx.zones_filter, 64)
+
+        imgui.PopItemWidth()
+
+        imgui.Spacing()
+
+        imgui.PushStyleColor(ImGuiCol_ChildBg, transparent)
+
+        if imgui.BeginChild('##ZonesList', { -1, -1 }, child_border) then
+            local list = sheetx.zones_list
+
+            if list == nil then
+                imgui.TextWrapped(tx('The zone names are not available yet.'))
+            else
+                local query = tostring(sheetx.zones_filter[1] or ''):lower()
+                -- The width that is really free (the margins change with
+                -- the theme), minus the space of a scroll bar.
+                local row_w = width - scaled(48)
+
+                if imgui.GetContentRegionAvail ~= nil then
+                    local ok, avail = pcall(imgui.GetContentRegionAvail)
+
+                    if ok and type(avail) == 'number' and avail > 0 then
+                        row_w = math.floor(avail)
+                    end
+                end
+
+                local toggle_w = ui_button_height
+
+                -- The names start at the left of their button.
+                local aligned = ImGuiStyleVar_ButtonTextAlign ~= nil
+
+                if aligned then
+                    imgui.PushStyleVar(ImGuiStyleVar_ButtonTextAlign, { 0, 0.5 })
+                end
+
+                local indent = scaled(28)
+
+                for index, region in ipairs(list) do
+                    local shown = {}
+
+                    for _, zone in ipairs(region.zones) do
+                        if query == '' or zone.key:find(query, 1, true) then
+                            shown[#shown + 1] = zone
+                        end
+                    end
+
+                    if #shown > 0 then
+                        -- With a filter every region with a match is open.
+                        local opened = query ~= ''
+                            or sheetx.zones_open[region.name] == true
+
+                        if imgui.Button(
+                            (opened and '-' or '+') .. '##ZoneFold' .. index,
+                            { toggle_w, ui_button_height }
+                        ) then
+                            sheetx.zones_open[region.name] = not opened
+                        end
+
+                        imgui.SameLine(0, 4)
+
+                        if toolbar_mode_button(
+                            fit_text(
+                                region.name .. ' (' .. #shown .. ')',
+                                row_w - toggle_w - 4 - 24
+                            ) .. '##ZoneRegion' .. index,
+                            false,
+                            row_w - toggle_w - 4
+                        ) then
+                            sheetx.zones_open[region.name] = not opened
+                        end
+
+                        if opened then
+                            for _, zone in ipairs(shown) do
+                                imgui.Dummy({ indent, 1 })
+                                imgui.SameLine(0, 0)
+
+                                local selected = zone.id == goal
+
+                                if toolbar_mode_button(
+                                    fit_text(
+                                        zone.name,
+                                        row_w - indent - 24
+                                    ) .. '##Zone' .. zone.id,
+                                    selected,
+                                    row_w - indent
+                                ) and controller.ToggleCompassZoneGoal then
+                                    controller.ToggleCompassZoneGoal(zone.id)
+                                end
+
+                                if imgui.IsItemHovered() and imgui.SetTooltip then
+                                    imgui.SetTooltip(
+                                        selected
+                                            and tx('Click to remove it from the compass')
+                                            or tx('Click to guide the compass here')
+                                    )
+                                end
+                            end
+                        end
+                    end
+                end
+
+                if aligned then
+                    imgui.PopStyleVar()
+                end
+            end
+        end
+
+        imgui.EndChild()
+
+        imgui.PopStyleColor()
+    end
+
+    imgui.End()
+
+    if not open[1] then
+        store.SetOpen(false)
+    end
+
+    if font_pushed then
+        imgui.PopFont()
+    end
+
+    pop_theme()
+end
+
 function M.Draw()
     -- Set again by the note box of this frame, if it has the keyboard.
     note_input_active = false
@@ -9593,6 +10604,7 @@ function M.Draw()
     draw_camps_window()
     fame_ui.draw()
     notesx.draw()
+    sheetx.zones_draw()
     draw_journal_mini()
     draw_journal_help()
 end
@@ -9628,6 +10640,21 @@ ashita.events.register(
         end
 
         text_font = load_text_font('FiraSans-Regular.ttf')
+
+        -- Fantasy letters for the banner of the zone name: Hexenkotel, and
+        -- Uncial Antiqua when that file is missing. banner_profile is where
+        -- the color bands of the letters go (see zonebanner.lua).
+        sheetx.banner_font = load_text_font('Hexenkotel.ttf')
+        sheetx.banner_profile = { top = 0.19, span = 0.62 }
+
+        if sheetx.banner_font == nil then
+            sheetx.banner_font = load_text_font('UncialAntiqua-Regular.ttf')
+            sheetx.banner_profile = { top = 0.07, span = 0.68 }
+        end
+
+        -- The titles of the alerts (New Quest!, Quest Completed...).
+        sheetx.alert_font = load_text_font('KensingtonParlor.ttf')
+
         text_bold_font = load_text_font('FiraSans-Bold.ttf')
         text_italic_font = load_text_font('FiraSans-Italic.ttf')
 
@@ -9667,6 +10694,9 @@ ashita.events.register(
         journal_cover_cache = {}
 
         journal_font = nil
+        sheetx.banner_font = nil
+        sheetx.banner_profile = nil
+        sheetx.alert_font = nil
         text_font = nil
         text_bold_font = nil
         text_italic_font = nil
@@ -9688,5 +10718,27 @@ ashita.events.register(
 )
 
 M.CanDrawUI = can_draw_ui
+
+-- The title font of the Journal (nil until it is loaded).
+function M.GetTitleFont()
+    return journal_font
+end
+
+-- The font of the banner of the zone name: the one of the titles of the
+-- alerts (Kensington Parlor), then Hexenkotel / Uncial Antiqua when that file
+-- is missing (nil when none is there).
+function M.GetBannerFont()
+    return sheetx.alert_font or sheetx.banner_font
+end
+
+-- The font of the titles of the alerts (nil when its file is missing).
+function M.GetAlertFont()
+    return sheetx.alert_font
+end
+
+-- Where the color bands of its letters go: { top =, span = }.
+function M.GetBannerProfile()
+    return sheetx.banner_profile
+end
 
 return M

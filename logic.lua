@@ -10,6 +10,7 @@ local i18n = require('i18n')
 -- for more locals.
 M.personal = (require('personal'))
 M.notes = (require('notes'))
+M.zonelist = (require('zonelist'))
 
 -- The compass: an arrow to the NPC of the current step (compass.lua). A
 -- field of M for the same reason.
@@ -323,6 +324,9 @@ local announce = {
     near = true,
     near_pending = nil,
 
+    -- The alert of an item that a quest in progress asks for.
+    items = true,
+
     -- The alert of an NPC close by who starts a quest that is not active.
     prox = true,
     prox_compass = true,
@@ -341,6 +345,9 @@ local announce = {
         new = { opacity = 0.70, size = 1.0, color = 0 },
         done = { opacity = 0.70, size = 1.0, color = 0 },
         near = { opacity = 0.70, size = 1.0, color = 0 },
+        -- The name of the zone shown when entering one (zonebanner.lua); it
+        -- has no background, so only size and color are used.
+        zone = { opacity = 0.70, size = 1.0, color = 0 },
     },
 
     -- The alert being tried from the settings window.
@@ -963,6 +970,7 @@ local function apply_config()
     announce.sound = config.announce_sound ~= false
     announce.ask = config.announce_ask ~= false
     announce.near = config.announce_near ~= false
+    announce.items = config.announce_items ~= false
     announce.prox = config.announce_prox ~= false
     announce.prox_compass = config.announce_prox_compass ~= false
     announce.world_mark = config.world_mark == true
@@ -1019,6 +1027,7 @@ local function update_config_values()
     config.announce_sound = announce.sound
     config.announce_ask = announce.ask
     config.announce_near = announce.near
+    config.announce_items = announce.items
     config.announce_prox = announce.prox
     config.announce_prox_compass = announce.prox_compass
     config.world_mark = announce.world_mark
@@ -5897,6 +5906,79 @@ do
         return M.compass.UpdatePins(now, items, M.GetStyles(), compass_api)
     end
 
+    -- A click on a zone name in a step: the compass guides the player to that
+    -- zone, zone by zone (data/zone_links.lua), from the zone he is in.
+    function M.SetCompassZoneGoalByName(name)
+        local id = zonematch.find_destination(name, M.GetZoneIndex())
+
+        if id == nil or not M.compass.SetZoneGoal(id) then
+            return false
+        end
+
+        M.SetCompassOpen(true)
+
+        return true
+    end
+
+    -- The route to the picked zone from the current one (see
+    -- compass.lua, M.GetZoneRoute); the goal is dropped on arrival.
+    function M.GetCompassZoneRoute()
+        if M.compass.GetZoneGoal() == nil then
+            return nil
+        end
+
+        if compass_api == nil then
+            compass_api = M.compass.AshitaApi()
+        end
+
+        local zone = nil
+
+        if compass_api.zone ~= nil then
+            local ok, value = pcall(compass_api.zone)
+
+            if ok and type(value) == 'number' and value > 0 then
+                zone = value
+            end
+        end
+
+        local info = M.compass.GetZoneRoute(zone)
+
+        if info ~= nil and info.arrived then
+            M.compass.ClearZoneGoal()
+
+            return nil
+        end
+
+        return info
+    end
+
+    function M.ClearCompassZoneGoal()
+        M.compass.ClearZoneGoal()
+    end
+
+    function M.GetCompassZoneGoal()
+        return M.compass.GetZoneGoal()
+    end
+
+    -- A click on a zone of the list of zones: the first click points the
+    -- compass at it (and opens the compass), the next one removes it.
+    -- Returns true when the zone is now the goal.
+    function M.ToggleCompassZoneGoal(id)
+        if M.compass.GetZoneGoal() == id then
+            M.compass.ClearZoneGoal()
+
+            return false
+        end
+
+        if not M.compass.SetZoneGoal(id) then
+            return false
+        end
+
+        M.SetCompassOpen(true)
+
+        return true
+    end
+
     -- The "x" of a pin row: it leaves the compass, not the Tracker.
     function M.HideCompassPin(key)
         if M.compass.HidePin(key) then
@@ -5976,6 +6058,11 @@ local function get_current_zone_id()
     end
 
     return nil
+end
+
+-- The zone the player is in (nil while zoning), for the banner of the name.
+function M.GetCurrentZoneId()
+    return get_current_zone_id()
 end
 
 local function check_zone_change()
@@ -6676,6 +6763,20 @@ function M.TakeAnnouncement()
         return nil
     end
 
+    if entry.item then
+        return {
+            kind = 'quest',
+            item = true,
+            complete = entry.complete == true,
+            name = entry.name,
+            have = entry.have,
+            need = entry.need,
+            quest = entry.quest,
+            quest_id = entry.quest_id,
+            ask = false,
+        }
+    end
+
     if entry.near then
         local shown = {}
         local shown_ids = entry.ids ~= nil and {} or nil
@@ -6857,6 +6958,8 @@ function M.StartAlertTest(kind, done)
     announce.test = {
         near = kind == 'near' or kind == 'progress',
         progress = kind == 'progress',
+        item = kind == 'item' or kind == 'itemdone',
+        complete = kind == 'itemdone',
         kind = kind == 'mission' and 'mission' or 'quest',
         done = done == true,
         token = announce.test_token,
@@ -7118,6 +7221,31 @@ do
         return #list > 0 and list or nil
     end
 
+    -- The NPCs that the compass already shows because of a quest pinned in
+    -- the Tracker (a pin row) or the target of the compass: the proximity
+    -- list does not repeat them. Normalized names; only the ones placed in
+    -- this zone count (found near the player, or a fixed position here).
+    function prox.pinned_names(zone)
+        local set = {}
+
+        local function add(item)
+            if type(item) == 'table' and type(item.npc) == 'string'
+                and (item.status == 'found'
+                    or (item.status == 'known' and item.zone == zone)) then
+
+                set[zonematch.normalize(item.npc)] = true
+            end
+        end
+
+        for _, item in ipairs(M.compass.GetPinRows() or {}) do
+            add(item)
+        end
+
+        add(M.compass.GetState())
+
+        return set
+    end
+
     function prox.drop_auto(zone)
         for name in pairs(prox.auto) do
             M.compass.RemoveAutoNpc(name, zone)
@@ -7130,6 +7258,7 @@ do
     -- flicker), when the quests are started, or when the zone changes.
     function prox.sync_compass(zone, me)
         local cands = {}
+        local pinned = prox.pinned_names(zone)
 
         for _, row in ipairs(prox.list) do
             local dx = me.x - row.x
@@ -7138,7 +7267,8 @@ do
             local limit = prox.auto[row.name] and prox.keep or prox.radius
             local names = nil
 
-            if d2 <= limit * limit and not prox.dismissed[row.name] then
+            if d2 <= limit * limit and not prox.dismissed[row.name]
+                and not pinned[zonematch.normalize(row.name)] then
                 -- A Fame Checker or a Gate Guard has no quests to list.
                 names = (row.fame or row.mission) and {}
                     or prox.start_names(row, true)
@@ -7367,6 +7497,15 @@ function M.SetNearEnabled(value)
     request_config_save()
 end
 
+function M.GetItemAlertEnabled()
+    return announce.items
+end
+
+function M.SetItemAlertEnabled(value)
+    announce.items = value == true
+    request_config_save()
+end
+
 -- Automatic pins of the active quests.
 local function reconcile_auto_pins()
     if not tracker_is_ready() then
@@ -7585,8 +7724,241 @@ function M.Update()
     end
 
     M.CheckProximity(os.clock(), M.prox_api)
+    pcall(M.CheckItems, os.clock(), M.prox_api)
 
     update_config_save()
+end
+
+-- Alert of an item that a quest in progress asks for, when the player gets it.
+-- The "items" field of the quest is read ("2x Honey, Bag of Seeds, Maul or
+-- Replica Maul"; gil and what is not an item of the game are left out), and
+-- the amounts are compared at each look: more on hand (bag, satchel, sack,
+-- case, wardrobes) and more in all the containers is an item obtained, and
+-- when every item of the quest is in hand a different alert says so. A move
+-- between bags, or out of the safe, is not an item obtained. The first look,
+-- a new zone and the first seconds after logging in only set the starting
+-- amounts.
+-- (Everything is a field of M.item_alert: the chunk is at the limit of
+-- locals.)
+M.item_alert = {
+    INTERVAL = 1.0,
+    QUIET = 10,
+    RECOVER = 45,
+    at = 0, prev = {}, needs = {}, zone = nil, quiet_until = 0,
+}
+
+function M.item_alert.trim(text)
+    return (tostring(text or ''):gsub('^%s+', ''):gsub('%s+$', ''))
+end
+
+-- { { names = { 'Maul', 'Replica Maul' }, qty = 1 }, ... }
+function M.item_alert.parse(text)
+    local groups = {}
+
+    for part in tostring(text or ''):gmatch('[^,]+') do
+        local piece = M.item_alert.trim(part)
+        local alternative = false
+
+        if piece:lower():match('^or%s') then
+            piece = M.item_alert.trim(piece:sub(3))
+            alternative = true
+        end
+
+        local qty = 1
+        local number, rest = piece:match('^(%d+)x%s+(.+)$')
+
+        if number == nil then
+            number, rest = piece:match('^(%d+)%s+(.+)$')
+        end
+
+        if number ~= nil then
+            qty = tonumber(number) or 1
+            piece = rest
+        end
+
+        if piece ~= '' and not piece:match('^%d+$')
+            and piece:lower() ~= 'gil' then
+
+            local names = {}
+
+            for name in (piece:gsub('%s+or%s+', '/')):gmatch('[^/]+') do
+                names[#names + 1] = M.item_alert.trim(name)
+            end
+
+            if alternative and #groups > 0 then
+                for _, name in ipairs(names) do
+                    table.insert(groups[#groups].names, name)
+                end
+            else
+                groups[#groups + 1] = { names = names, qty = qty }
+            end
+        end
+    end
+
+    return groups
+end
+
+function M.CheckItems(now, api)
+    local items = M.item_alert
+
+    if not announce.items or not announce.enabled then
+        return
+    end
+
+    local inventory = require('inventory')
+
+    -- The names of the game are read a piece at each frame.
+    if not inventory.Ready() then
+        inventory.Tick()
+
+        return
+    end
+
+    if now - items.at < items.INTERVAL then
+        return
+    end
+
+    items.at = now
+    inventory.Tick()
+
+    local ok_zone, zone = pcall(function()
+        return api ~= nil and api.zone() or nil
+    end)
+
+    if ok_zone and zone ~= items.zone then
+        items.zone = zone
+        items.quiet_until = now + items.QUIET
+    end
+
+    local quiet = now < items.quiet_until
+        or announce_known == nil
+        or now < announce_armed_at
+    local seen = {}
+
+    for _, quest in ipairs(get_active_quests()) do
+        local groups = items.needs[quest.id]
+
+        if groups == nil then
+            groups = items.parse(quest.items)
+            items.needs[quest.id] = groups
+        end
+
+        if #groups > 0 then
+            seen[quest.id] = true
+
+            local before = items.prev[quest.id]
+            local now_carried = {}
+            local hits = {}
+            local all_done = true
+            local any_known = false
+
+            for _, group in ipairs(groups) do
+                local have_total = 0
+                local group_known = false
+
+                for _, name in ipairs(group.names) do
+                    local carried, have = inventory.Counts(name)
+
+                    if carried ~= nil then
+                        group_known = true
+                        have_total = have_total + have
+                        -- When the amount drops (a trade, or a reading of the
+                        -- containers cut short while zoning) the amount
+                        -- there was is remembered for RECOVER seconds: that
+                        -- amount coming back is not an item obtained.
+                        local old = before ~= nil and before[name] or nil
+                        local peak_carried, peak_have, peak_at
+
+                        if old ~= nil then
+                            peak_carried, peak_have, peak_at =
+                                old[3], old[4], old[5]
+
+                            if carried < old[1] or have < old[2] then
+                                peak_carried = math.max(peak_carried or 0, old[1])
+                                peak_have = math.max(peak_have or 0, old[2])
+                                peak_at = now
+                            end
+
+                            if peak_at ~= nil
+                                and now - peak_at > items.RECOVER then
+
+                                peak_carried, peak_have, peak_at = nil, nil, nil
+                            end
+                        end
+
+                        now_carried[name] = {
+                            carried, have, peak_carried, peak_have, peak_at,
+                        }
+
+                        -- More on hand and more in all the containers: an
+                        -- item taken out of the safe is not one obtained;
+                        -- and not more than before a drop.
+                        if old ~= nil
+                            and carried > old[1]
+                            and have > old[2]
+                            and not (peak_carried ~= nil
+                                and carried <= peak_carried
+                                and have <= peak_have) then
+
+                            hits[#hits + 1] = {
+                                name = name, group = group,
+                            }
+                        end
+                    end
+                end
+
+                if group_known then
+                    any_known = true
+
+                    if have_total < group.qty then
+                        all_done = false
+                    end
+                end
+
+                for _, hit in ipairs(hits) do
+                    if hit.group == group then
+                        hit.have = have_total
+                    end
+                end
+            end
+
+            items.prev[quest.id] = now_carried
+
+            if any_known and #hits > 0 and not quiet then
+                if all_done then
+                    local hit = hits[#hits]
+
+                    if #announce_queue < ANNOUNCE_QUEUE_MAX then
+                        announce_queue[#announce_queue + 1] = {
+                            item = true, complete = true,
+                            name = hit.name, have = hit.have,
+                            need = hit.group.qty,
+                            quest = quest.name, quest_id = quest.id,
+                        }
+                    end
+                else
+                    for _, hit in ipairs(hits) do
+                        if #announce_queue < ANNOUNCE_QUEUE_MAX then
+                            announce_queue[#announce_queue + 1] = {
+                                item = true, complete = false,
+                                name = hit.name, have = hit.have,
+                                need = hit.group.qty,
+                                quest = quest.name, quest_id = quest.id,
+                            }
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    -- A quest that is not active any more starts again from the
+    -- amounts of that moment.
+    for id in pairs(items.prev) do
+        if not seen[id] then
+            items.prev[id] = nil
+        end
+    end
 end
 
 function M.Unload()

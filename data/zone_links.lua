@@ -1,7 +1,8 @@
 -- Walking links between zones, for the compass route.
 -- Generated from LandSandBoat (GPLv3, https://github.com/LandSandBoat/server,
 -- data/zones/*/zone.yaml zonelines, commit 204a64c). Zone id -> ids of the
--- zones you reach by walking out of it. Boats and airships are not here.
+-- zones you reach by walking out of it. Boats and airships are not here,
+-- except the Selbina - Mhaura ferry (added by hand, both ways).
 -- Dynamis and instanced zones are left out.
 return {
     [2] = { 104, 231 },
@@ -181,8 +182,8 @@ return {
     [245] = { 110, 244, 245, 246 },
     [246] = { 120, 126, 245, 246 },
     [247] = { 125 },
-    [248] = { 103 },
-    [249] = { 118 },
+    [248] = { 103, 249 },
+    [249] = { 118, 248 },
     [250] = { 123 },
     [251] = { 122, 130 },
     [252] = { 176 },
