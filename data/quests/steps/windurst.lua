@@ -722,7 +722,7 @@ Q.STEPS = {
 
     wq_wd_from_saplings_grow = {
         "You cannot start this quest while another Weapon Skill quest is active; return to the person who gave it and quit it first. You need Archery skill 250 or higher, level 71, and the Rise of the Zilart pack.",
-        "Speak with Perih Vashai in Windurst Woods (K-7) to receive the key item Weapons Training Guide and the Bow of Trials.",
+        "Speak with Perih Vashai in Windurst Woods (K-7) to receive the key item Weapon Training Guide and the Bow of Trials.",
         "Break the latent on the Bow of Trials before completing the rest of the quest. The latent is active while you have fewer than 300 Skillchain points accumulated; you know you have enough when it breaks and the weapon's elemental resistances disappear from your active resistances.",
         "Trade the Bow of Trials back to Perih Vashai for the key item Map to the Annals of Truth, which sends you to Cape Teriggan.",
         "Fastest: the Unity Warp to Cape Teriggan (level 128) brings you to (H-7); the Cloister of Gales Home Point (F-5) and the Survival Guide at the Outpost (G-8) also work. Otherwise, with Silent Oil and Prism Powder, go through Kuftal Tunnel: from (I-7) head north without taking any branches; at (I-4) the tunnel loops south into a larger space, so curve straight back north-west and exit into Cape Teriggan.",
@@ -732,7 +732,7 @@ Q.STEPS = {
 
     wq_pw_orastery_woes = {
         "You cannot start this quest while another Weapon Skill quest is active; return to the person who gave it and quit it first. You need Club skill 230 or higher, level 71 and the Rise of the Zilart pack, and your main job must be WAR, MNK, WHM, BLM, PLD, SMN, BLU, SCH or GEO.",
-        "Speak with Kuroido-Moido in Port Windurst (E-7) to receive the key item Weapons Training Guide and the Club of Trials.",
+        "Speak with Kuroido-Moido in Port Windurst (E-7) to receive the key item Weapon Training Guide and the Club of Trials.",
         "Break the latent on the Club of Trials before doing the rest of the quest. Each skillchain gives trial points: 5 with no skillchain, 7 at level 1, 9 at level 2 and 11 at level 3.",
         "The latent is broken when the elemental resistances listed in the Club of Trials description disappear from the elemental resistances shown under the equipped gear grid in the equipment window.",
         "Trade the Club of Trials back to Kuroido-Moido for the key item Map to the Annals of Truth, which sends you to Ro'Maeve.",
@@ -743,7 +743,7 @@ Q.STEPS = {
 
     wq_wl_blood_and_glory = {
         "You cannot start this quest while another Weapon Skill quest is active; return to the person who gave it and quit it first. It requires Staff skill 230 or higher and level 71.",
-        "Speak with Shantotto in Windurst Walls (K-7) to receive the key item Weapons Training Guide and the Pole of Trials.",
+        "Speak with Shantotto in Windurst Walls (K-7) to receive the key item Weapon Training Guide and the Pole of Trials.",
         "Break the latent on the Pole of Trials. With it equipped in your main hand, fight enemies rated Extremely Easy Prey or higher and use weapon skills or close skillchains until you accumulate 300 Trial Points: 5 points with no skillchain, 7 at level 1, 9 at level 2 and 11 at level 3.",
         "The latent is broken when the elemental resistances listed in the Pole of Trials description disappear from the elemental resistances shown under the equipped gear grid in the equipment window.",
         "Trade the Pole of Trials back to Shantotto. You are instructed to travel to Ifrit's Cauldron.",

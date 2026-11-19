@@ -502,7 +502,7 @@ Q.STEPS = {
 
     sdz_ss_methods_madness = {
         "You cannot start this quest while another Weapon Skill quest is active; return to the person who gave it and quit it first. You need Polearm skill 240 or higher, level 71 and the Rise of the Zilart pack.",
-        "Speak with Balasiel in Southern San d'Oria (F-7) to receive the key item Weapons Training Guide and the Spear of Trials.",
+        "Speak with Balasiel in Southern San d'Oria (F-7) to receive the key item Weapon Training Guide and the Spear of Trials.",
         "Break the latent on the Spear of Trials before doing the rest of the quest. Each skillchain gives points: 5 with no skillchain, 7 at level 1, 9 at level 2 and 11 at level 3.",
         "Trade the Spear of Trials back to Balasiel for the key item Map to the Annals of Truth, which sends you to Sea Serpent Grotto. You, or someone in your party, need a Sahagin Key.",
         "With Silent Oil, enter the Grotto, go south into the first large room and take the south-west tunnel, continue south to the Ornamented Door at (J-10), unlock it with the Sahagin Key and cross the bridge to the south; the ??? is at (H-6).",
@@ -512,7 +512,7 @@ Q.STEPS = {
 
     sdz_bo_souls_in_shadow = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need Scythe skill 240 or higher and level 71.",
-        "Speak with Novalmauge in Bostaunieux Oubliette (G-8) to receive the key item Weapons Training Guide and the Scythe of Trials. You need to break the latent on the Scythe of Trials before completing the rest of the quest.",
+        "Speak with Novalmauge in Bostaunieux Oubliette (G-8) to receive the key item Weapon Training Guide and the Scythe of Trials. You need to break the latent on the Scythe of Trials before completing the rest of the quest.",
         "With the Scythe of Trials equipped in your main hand, fight enemies rated Extremely Easy Prey or higher and use weapon skills or close skillchains to accumulate 300 Trial Points.",
         "You know the latent is broken when the elemental resistances listed in the Scythe of Trials description have disappeared from the elemental resistances in the equipment window.",
         "Trade the Scythe of Trials back to Novalmauge for the key item Map to the Annals of Truth, which sends you to the Den of Rancor.",

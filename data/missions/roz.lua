@@ -160,9 +160,9 @@ M.STEPS = {
         steps = {
             "Optional: speak with Aldo at the Tenshodo in Lower Jeuno for a cutscene.",
             "Zone into Lower Delkfutt's Tower from Qufim Island (or via the Survival Guide) for a cutscene.",
-            "If you have a Delkfutt's Key, go to (E-8), pass through the Cermet Door, and continue to the next Cermet Door at (J-8).",
+            "If you have a Delkfutt Key, go to (E-8), pass through the Cermet Door, and continue to the next Cermet Door at (J-8).",
             "Proceed to (H-8) and examine the ??? in the spiral staircase to reach the 10th floor.",
-            "If you do not have a Delkfutt's Key, climb the tower normally until you reach the 10th floor.",
+            "If you do not have a Delkfutt Key, climb the tower normally until you reach the 10th floor.",
             "Once in Upper Delkfutt's Tower, go to (F-8) on the first map and through the door (this area isn't shown on the map). Climb the stairs to the 11th floor with Sneak and Invisible (Bats and Giants; Dolls and Pots detect magic).",
             "Go to (J-6) up to the 12th floor, then to (F-10) and take the teleporter into " .. ACTOR.STELLAR_FULCRUM.text .. " for a cutscene. Upper Delkfutt's Tower Home Point #1 is right by this teleporter for later visits.",
             "Walk forward and examine " .. ACTOR.QEVLOVE_GATE.text .. " to enter the battlefield.",

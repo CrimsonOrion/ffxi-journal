@@ -39,7 +39,7 @@ Q.STEPS = {
 
     jeu_uj_axe_the_competition = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need Axe skill 240 or higher and level 71.",
-        "Speak with Brutus in Upper Jeuno (G-7) to receive the key item Weapons Training Guide and the Pick of Trials. You need to break the latent on the Pick of Trials before completing the rest of the quest.",
+        "Speak with Brutus in Upper Jeuno (G-7) to receive the key item Weapon Training Guide and the Pick of Trials. You need to break the latent on the Pick of Trials before completing the rest of the quest.",
         "Trade the Pick of Trials back to Brutus.",
         "Brutus gives you the key item Map to the Annals of Truth. Bring Sneak and Invisible to the Temple of Uggalepih.",
         "From Yhoator Jungle, follow the path to the T-intersection, head north and exit the Temple. Faster: the Voidwatch warp puts you outside the Temple (exit 1, map 1), and the Survival Guide warp inside it (exit 2); from either, follow the left wall to the granite door at (J-7), go through and on to (K-3) to exit the Temple (exit 4).",

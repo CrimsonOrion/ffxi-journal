@@ -300,7 +300,7 @@ Q.STEPS = {
 
     out_nrg_potential_within = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need to be level 71 with a base Great Katana skill of 250 or higher.",
-        "Speak with Jaucribaix in Norg (K-8). He grants you the key item Weapons Training Guide as well as the Tachi of Trials. Wield the katana to find your true potential; when the blade has lost its power, you will know you have been accepted.",
+        "Speak with Jaucribaix in Norg (K-8). He grants you the key item Weapon Training Guide as well as the Tachi of Trials. Wield the katana to find your true potential; when the blade has lost its power, you will know you have been accepted.",
         "You need to break the latent on the Tachi of Trials. With it equipped in your main hand, fight experience-yielding monsters (Incredibly Easy Prey or higher) and perform Weapon Skills or close skillchains to accumulate 300 Trial Points.",
         "You will know the latent is broken when the elemental resistances listed in the description of the Tachi of Trials have disappeared from the elemental resistances in the equipment window.",
         "Trade the Tachi of Trials back to Jaucribaix for the key item Map to the Annals of Truth, which sends you to Kuftal Tunnel.",
@@ -311,7 +311,7 @@ Q.STEPS = {
 
     out_nrg_bugi_soden = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need a Ninja of level 71 and Katana skill 250 or higher, and the Rise of the Zilart pack.",
-        "Speak with Ryoma in Norg (H-8). He grants you the key item Weapons Training Guide as well as the Kodachi of Trials.",
+        "Speak with Ryoma in Norg (H-8). He grants you the key item Weapon Training Guide as well as the Kodachi of Trials.",
         "You need to break the latent on the Kodachi of Trials. With it equipped in your main hand, fight experience-yielding monsters (Incredibly Easy Prey or higher) and perform Weapon Skills or close skillchains to accumulate 300 Trial Points. A weapon skill with no skillchain gives 5 points and a level 1 skillchain gives 7.",
         "You will know the latent is broken when its bonus stats disappear on un-equipping and re-equipping the Kodachi of Trials; the elemental resistances also disappear from your stats.",
         "Trade the Kodachi of Trials back to Ryoma for the key item Map to the Annals of Truth, which sends you to the Labyrinth of Onzozo (the Survival Guide is fastest).",
