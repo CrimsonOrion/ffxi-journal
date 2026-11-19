@@ -34,7 +34,8 @@ Q.STEPS = {
         "Speak with Miene by the water in Port San d'Oria (I-8); a cutscene reveals a burglary in progress.",
         "Speak with Altiret, who asks you to retrieve the stolen item.",
         "Speak with Miene again to obtain a clue, an Eagle Button.",
-        "Head to West Ronfaure and look for Esca inside a tower at (F-6).",
+        "Optional: you can try trading the button to Altiret. Guards and bystanders comment on the thief, but only these give hints: Crilde, Rielle and Avandale in Port San d'Oria, and Pepigort, Maurinne, Gilipese and Rodaillece in Northern San d'Oria.",
+        "Head to West Ronfaure and look for Esca inside a tower at (F-6). She demands evidence.",
         "Trade the Eagle Button to her, which prompts her to admit she was the thief.",
         "After receiving the Gilt Glasses, return them to Altiret for your reward.",
     },
@@ -105,9 +106,12 @@ Q.STEPS = {
     },
 
     sdz_ps_flyers_for_regine = {
-        "Speak with Regine in Port San d'Oria (J-8) to begin the quest, and choose the option to look for work.",
+        "Make sure you have two free slots in your active inventory. Speak with Regine in Port San d'Oria (J-8) to begin the quest, and choose the option to look for work. You receive 15 Magicmart Flyers.",
         "Hand out the 15 Magicmart Flyers, only to townsfolk and not to adventurers. While the quest is active, when you come close to an NPC who should get a flyer, a message in /say tells you that the NPC looks over curiously for a moment.",
-        "You must hand out all 15 flyers or the quest will not be completed. If you lose them, you can buy more from Regine for 10 gil each.",
+        "You must hand out all 15 flyers or the quest won't complete. If you lose some, trade Regine 10 gil per flyer (one per trade), or buy them at the Auction House.",
+        "Port San d'Oria: Answald (J-10), in front of the Mog House; Portaure (H-9), Cargo Room B; Miene (I-9), by the water; Prietta (H-9), up the stairs above the cargo rooms; Auvare (H-6), behind the Air Travel Agency.",
+        "Northern San d'Oria: Guilberdrier (F-3), in front of the Carpenters' Guild; Villion (F-3), on the guild's 2nd-floor balcony; Capiria (F-6), near the Laborman's Way arch above the sluice gates; Boncort (F-8), Phoenix Perch Inn 2nd floor; Coullene (M-6), in the Cathedral.",
+        "Southern San d'Oria: Leuveret (F-8), Raimbroy's Grocery 2nd-floor balcony; Blendare (J-9), under the tree near the Auction House; Maugie (L-9), near the East Gate; Adaunel (K-9), up the stairs on top of the East Gate archway; Rosel (K-8), Rosel's Armour Shop.",
         "Once all 15 Magicmart Flyers have been distributed, return to Regine and speak with her to end the quest.",
     },
 
@@ -129,10 +133,12 @@ Q.STEPS = {
 
     sdz_ss_cure_a_cough = {
         "Speak with Nenne in Southern San d'Oria (F-6). The quest does not appear in your quest log until the item hunt part has been activated.",
-        "After hearing Nenne's story, go into the first house on Watchdog Alley (G-7), go upstairs to a bedroom and examine the ??? on the table. Click it to get the option to read a diary.",
+        "After hearing Nenne's story, go into the first house on Watchdog Alley (G-7), go upstairs to a bedroom and examine the diary on the table. Read it up to page 3.",
         "Speak with Amaura (G-6), who asks for Thyme Moss.",
-        "Obtain Thyme Moss and return it to Amaura, who gives you Cough Medicine.",
+        "The Thyme Moss is at a ??? in Davoi (F-9), behind the one-way barrier in the centre-north of that grid. Enter the waterway at (J-10), follow it north and west, and go south at (D-8).",
+        "Return the moss to Amaura, who gives you the Cough Medicine.",
         "Speak with Nenne, who gives you a Scroll of Treasure as your reward.",
+        "The scroll leads to the signpost at (H-6) in East Ronfaure; examine it for 3,000 gil.",
     },
 
     sdz_ss_tigers_teeth = {
@@ -232,9 +238,9 @@ Q.STEPS = {
     },
 
     sdz_ps_job_for_consortium = {
-        "Speak with Portaure in Cargo Room B, near Home Point #1 in Port San d'Oria (H-9), to accept the quest and obtain the Brugaire goods. Nighttime is the safest option.",
-        "Take the next airship to Jeuno. You must go through Jeuno's Air Travel Agency before delivering to the Tenshodo, or the package will be damaged and the quest failed.",
-        "If you pass through undetected, speak with Yin Pocanakhu in Lower Jeuno (J-8). If you are caught, your airship pass is revoked until midnight Japan time and the quest is failed.",
+        "Speak with Portaure in Cargo Room B, near Home Point #1 in Port San d'Oria (H-9), to accept the quest and obtain the Brugaire goods. To be sure of passing customs undetected, arrive in Jeuno at night (18:00-6:00); an airship leaving San d'Oria arrives 3 hours later.",
+        "Travel to Port Jeuno. A Home Point warp is fastest and you don't need an airship ticket, but you must still go through Jeuno's Air Travel Agency before delivering to the Tenshodo, or the package is damaged and the quest fails.",
+        "Speak with Haubijoux at the Air Travel Agency arrivals entrance in Port Jeuno. If you are caught, your airship pass is revoked until midnight Japan time and the quest fails. If you cleared customs, speak with Yin Pocanakhu in the Tenshodo HQ in Lower Jeuno (J-8).",
         "Return to Portaure for your reward. Completing this quest raises your fame in Norg.",
     },
 
@@ -271,7 +277,8 @@ Q.STEPS = {
         "Speak with Vamorcote in Northern San d'Oria (F-5) to begin the quest.",
         "Head to the island in Batallia Downs (J-11). The only way to get there is through The Eldieme Necropolis: enter it from (I-10) in Batallia Downs. The Survival Guide puts you in the correct part of the Eldieme for this quest.",
         "Once inside, hug the south side until you reach a large room at (G-9), and fall through the grave in the center of the room. To reach the room at (G-9) you need someone to operate the gates for you, or the Magicked astrolabe.",
-        "Defeat Ahtu to obtain an Engraved Key.",
+        "After the drop the monsters aggro even level 99 characters, so use Sneak. Follow the path south until you come out on the island in Batallia Downs.",
+        "Defeat the NM Ahtu on the island to obtain an Engraved Key. Optional: the Stone Monument for An Explorer's Footsteps is also here.",
         "Trade the Engraved Key to Vamorcote to complete the quest and receive 10,000 gil.",
     },
 
@@ -321,11 +328,12 @@ Q.STEPS = {
     },
 
     sdz_ns_healing_the_land = {
-        "Speak with Eperdur at (M-7) in Northern San d'Oria. He gives you the Seal of banishing, which you must place on a ??? target. You must be level 10 or higher.",
+        "Speak with Eperdur in the Northern San d'Oria Cathedral (M-7), at the top of the right staircase. He gives you the Seal of banishing, which you must place on a ??? target. You must be level 10 or higher.",
         "Travel to Gusgen Mines from Konschtat Highlands. The fastest way is the Survival Guide, then Zulkheim, then Gusgen Mines.",
         "Head north, down the stairs, and hit the lever to go through the middle door at (H-6). Then north again, down the stairs, and hit the lever for the left door this time.",
         "Take a left at the T intersection, then head north. Go west until another split.",
-        "Check the ???.",
+        "Go west again and drop down hole H at the end of the path. You may meet the NM Juggler Hecatomb here (a Records of Eminence target).",
+        "Examine the ??? at (G-8) in the south-west corner, behind the shack. There are two ??? close together; the right one says \"You have found the location of the seal\" and then \"You place a Seal of banishing on it.\"",
         "Speak with Eperdur again for your reward. You must zone before you can be offered the follow-up quest, Sorcery of the North.",
     },
 
@@ -484,10 +492,11 @@ Q.STEPS = {
 
     sdz_ss_eco_warrior = {
         "Speak with Norejaie in Southern San d'Oria (K-6) to begin the quest. You must be level 25 or higher, and you cannot get it while the quest Eco-Warrior (Bastok) or Eco-Warrior (Windurst) is active.",
-        "Enter Ordelle's Caves from the (F-7) entrance in La Theine Plateau; the Survival Guide warp takes you right there.",
+        "Enter Ordelle's Caves from the (F-7) entrance in La Theine Plateau; the Survival Guide and Voidwatch (San d'Oria region) warps take you right there.",
         "Speak with Rojaireaut (G-3) to have your level capped at 25. Everyone in your party or alliance needs the level cap applied to them, and it has no timer.",
-        "Stink Bat enemies link to Hognosed Bat enemies.",
-        "Go to the ??? at the northeast corner of (G-9).",
+        "With the cap, Goblins and Hognosed Bats aggro you, and Stink Bats link to Hognosed Bats. Head east through the puddle and follow the path south to a large room at (G-7). Keep to its west wall going south, and before the next tunnel turn left towards the middle of the map.",
+        "Examine the ??? at the north-east corner of (G-9) to spawn Necroplasm. Trusts are allowed. It may not be targetable with Tab while it sits on the stalagmite, so move away to pull it off. Defeat it and examine the ??? again for the key item Indigested stalagmite.",
+        "The level cap stays after the fight and can't be clicked off: speak with Rojaireaut (maybe twice) to remove it, or warp out.",
         "Return to Norejaie to complete the quest. You can only complete one Eco-Warrior quest a week; wait until the next Conquest tally before accepting another.",
     },
 
@@ -534,6 +543,7 @@ Q.STEPS = {
         "Speak with Curilla in Chateau d'Oraguille (I-9) to receive the Sapara of Trials. You need to break the latent on the Sapara of Trials before completing the rest of the quest.",
         "With the Sapara of Trials equipped in your main hand, fight enemies rated Extremely Easy Prey or higher and use weapon skills or close skillchains to accumulate 300 Trial Points.",
         "You know the latent is broken when the elemental resistances listed in the Sapara of Trials description have disappeared from the elemental resistances in the equipment window.",
+        "At level 99, the Bight Uragnite at (K-8) in Ceizak Battlegrounds are good for breaking the latent.",
         "Trade the Sapara of Trials back to Curilla for the Map to the Annals of Truth, which sends you to Quicksand Caves.",
         "Before you go, speak with Lokpix in Eastern Altepa Desert (G-7) and complete the quest Open Sesame for the Loadstone, which lets you use the weight-activated switches alone.",
         "Bring Echo Drops and Silent Oil. In Western Altepa Desert, open the Altepa Gate (see the Altepa Gate page). It stays open for 15-30 minutes, so get help lowering the colored columns or have a mule waiting behind it.",
@@ -546,6 +556,8 @@ Q.STEPS = {
         "Speak with Rondipur in Northern San d'Oria (F-6) to begin the quest. Only one Escort for Hire quest can be active at a time, and only one can be completed each Conquest Tally.",
         "Head to Eldieme Necropolis from Batallia Downs (I-10). As soon as you zone in you receive a cutscene, after which the NPC Cannau appears. You can summon Trusts, but zoning in with an Adventuring Fellow makes the escort NPC disappear.",
         "You have 30 minutes to complete the quest.",
+        "Cannau runs west to the door at (H-8); you need a Magicked astrolabe, or a helper at the switch, to get through. Talk to her to stop her and again to make her continue. She draws aggro from almost everything and her low HP draws undead, so stop her, clear her path and cure her.",
+        "Past the gate she heads to (F-8) by the north or south path and stops there on her own. Speak with her quickly for the Completion certificate; if she disappears first, you get no credit.",
         "Return to Rondipur for your reward.",
     },
 
@@ -590,8 +602,11 @@ Q.STEPS = {
     sdz_ss_tea_with_tonberry = {
         "Speak with Sobane in Southern San d'Oria (D-6) to begin the quest. You must zone after finishing Signed in Blood.",
         "Obtain an Attohwa Ginseng, which drops from Gallinipper, Ogrefly and Monarch Ogrefly enemies in Attohwa Chasm.",
-        "Enter Carpenters' Landing from the entrance in Jugner Forest (J-8).",
-        "Speak with Anguenet (J-10) and trade him the Attohwa Ginseng.",
+        "Enter Carpenters' Landing from the entrance in Jugner Forest (J-8); the Carpenters' Landing Survival Guide puts you right next to Anguenet.",
+        "Speak with Anguenet (J-10) and trade him the Attohwa Ginseng for the key item Tonberry blackboard.",
+        "Buy a ticket and board the barge to Central Landing via Emfea Way; it leaves from the docks next to Anguenet at 00:50 every game day. On board, speak with Riche and ask him all five questions; he then takes the blackboard.",
+        "In Fei'Yin, defeat Shadows until one drops Treasury Gold (one per party is enough).",
+        "In Davoi, trade the Treasury Gold to the ??? at (J-11) to spawn Hematic Cyst. Defeat it and examine the ??? again for a cutscene.",
         "Return to Sobane for your reward.",
     },
 
@@ -631,6 +646,7 @@ Q.STEPS = {
     sdz_ns_forest_for_trees = {
         "You must already have signed up with the Woodworking Guild: speak to the Guild Master, Cheupirudaux, in Northern San d'Oria (F-3).",
         "Speak with Ramua in Northern San d'Oria (E-3) for a cutscene that begins the quest. She gives you the Timber survey checklist and a Hatchet.",
+        "The one Hatchet will probably break, so buy more first; Ostalie in Southern San d'Oria (E-9) is closest. If you've never harvested, trade the hatchet to the yellow-sparkling Logging Points. Optional: the Records of Eminence objective Harvesting > Original Areas > Jugner Forest gives sparks, and 12 hatchets on the first clear.",
         "Travel to Jugner Forest and log the five items on the checklist: Arrowwood Log, Ash Log, Yew Log, Willow Log and Walnut Log. Each one you log shows a message that data was recorded; you must log them yourself and cannot buy them from shops or the Auction House.",
         "Trade the logs to Ramua for your reward. She also returns the logs to you.",
     },

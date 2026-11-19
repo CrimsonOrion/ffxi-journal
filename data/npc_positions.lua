@@ -834,4 +834,24 @@ return {
     ["Amulya"] = { { 237, -106.09, -24.56, 2.00 } }, -- Local patch: Bastok quests
     ["Vicious Eye"] = { { 237, -106.13, -28.76, 2.00 } }, -- Local patch: Bastok quests
     ["Otto"] = { { 236, -145.93, 13.70, -7.48 } }, -- Local patch: Bastok quests
+    ["Crilde"] = { { 232, -46.71, -81.32, -4.00 } }, -- Local patch: San d'Oria quests
+    ["Rielle"] = { { 232, -69.75, -111.81, -4.00 } }, -- Local patch: San d'Oria quests
+    ["Avandale"] = { { 232, -105.52, -125.27, -8.00 } }, -- Local patch: San d'Oria quests
+    ["Answald"] = { { 232, 76.33, -128.66, -16.00 } }, -- Local patch: San d'Oria quests
+    ["Prietta"] = { { 232, -13.77, -95.86, -14.00 } }, -- Local patch: San d'Oria quests
+    ["Auvare"] = { { 232, -37.82, 40.95, -8.00 } }, -- Local patch: San d'Oria quests
+    ["Pepigort"] = { { 231, -126.74, 262.76, 12.00 } }, -- Local patch: San d'Oria quests
+    ["Maurinne"] = { { 231, -127.19, 179.19, 0.00 } }, -- Local patch: San d'Oria quests
+    ["Gilipese"] = { { 231, -155.09, 120.30, 0.00 } }, -- Local patch: San d'Oria quests
+    ["Rodaillece"] = { { 231, -246.94, 46.84, 7.00 } }, -- Local patch: San d'Oria quests
+    ["Guilberdrier"] = { { 231, -159.08, 253.79, 12.00 } }, -- Local patch: San d'Oria quests
+    ["Villion"] = { { 231, -157.52, 263.82, 4.00 } }, -- Local patch: San d'Oria quests
+    ["Capiria"] = { { 231, -127.36, 130.46, 0.00 } }, -- Local patch: San d'Oria quests
+    ["Boncort"] = { { 231, -156.24, 49.18, -5.20 } }, -- Local patch: San d'Oria quests
+    ["Coullene"] = { { 231, 146.42, 127.60, 0.00 } }, -- Local patch: San d'Oria quests
+    ["Leuveret"] = { { 230, -136.32, 21.96, -8.80 } }, -- Local patch: San d'Oria quests
+    ["Blendare"] = { { 230, 33.03, -30.12, 2.00 } }, -- Local patch: San d'Oria quests
+    ["Adaunel"] = { { 230, 80.38, -24.64, -7.40 } }, -- Local patch: San d'Oria quests
+    ["Haubijoux"] = { { 246, -61.55, 58.63, 7.90 } }, -- Local patch: San d'Oria quests
+    ["Riche"] = { { 1, 5.95, 13.61, -2.75 } }, -- Local patch: San d'Oria quests
 }

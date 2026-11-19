@@ -902,4 +902,24 @@ return {
     "Militant Gale", -- Local patch: Bastok quests
     "Pensive Beast", -- Local patch: Bastok quests
     "Otto", -- Local patch: Bastok quests
+    "Crilde", -- Local patch: San d'Oria quests
+    "Rielle", -- Local patch: San d'Oria quests
+    "Avandale", -- Local patch: San d'Oria quests
+    "Answald", -- Local patch: San d'Oria quests
+    "Prietta", -- Local patch: San d'Oria quests
+    "Auvare", -- Local patch: San d'Oria quests
+    "Pepigort", -- Local patch: San d'Oria quests
+    "Maurinne", -- Local patch: San d'Oria quests
+    "Gilipese", -- Local patch: San d'Oria quests
+    "Rodaillece", -- Local patch: San d'Oria quests
+    "Guilberdrier", -- Local patch: San d'Oria quests
+    "Villion", -- Local patch: San d'Oria quests
+    "Capiria", -- Local patch: San d'Oria quests
+    "Boncort", -- Local patch: San d'Oria quests
+    "Coullene", -- Local patch: San d'Oria quests
+    "Leuveret", -- Local patch: San d'Oria quests
+    "Blendare", -- Local patch: San d'Oria quests
+    "Adaunel", -- Local patch: San d'Oria quests
+    "Haubijoux", -- Local patch: San d'Oria quests
+    "Riche", -- Local patch: San d'Oria quests
 }
