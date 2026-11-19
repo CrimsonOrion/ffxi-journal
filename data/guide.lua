@@ -1,6 +1,6 @@
 -- New Player Guide for the first hours in Vana'diel, shown in the guide window.
 --
--- Local patch: generated on 2026-11-11 from BG-Wiki, "New Player Leveling Guide"
+-- Local patch: generated on 2026-11-19 from BG-Wiki, "New Player Leveling Guide"
 -- (https://www.bg-wiki.com/ffxi/New_Player_Leveling_Guide), a collaborative
 -- retail guide from level 1 to 99. Its "Level 0" chapter (buying and
 -- installing the game) is left out. The previous Phoenix guide is kept as
@@ -1502,7 +1502,13 @@ return {
             blocks = {
                 { p = "Before you do anything else, go back and talk to that Nomad Moogle next to Maat in Ru'Lude Gardens one last time to get the job breaker, unlocking the ability to earn Capacity Points and convert them into Job Points for permanent upgrades. You'll definitely want to wait until you have better gear to farm these in earnest (see Apex for more information) but it's very important to get it unlocked before you forget." },
                 { p = "Immediately after that, go into the house behind Maat and talk to Syndella at (H-5) to get the Cipher bracelet, which unlocks the Alter Ego Points system. These are like merit point stat boosts, but for your trusts, and mostly gated by the RL-monthly rate of acquisition of the Trust Magic Primers." },
-                { p = "After that, probably beeline finishing Rhapsodies of Vana'diel. Ambuscade is a great way to get item level gear to get you there. There's a couple guides in the section below this that I strongly recommend reading. But above all, have fun! You can do all the storylines now, and you have the tools to begin gearing up to do whatever later content interests you." },
+                { p = "Then, talk to Syndella again to get the Celestite Case. This allows you to equip Celestite to trust roles (example: tanks), to boost their stats further." },
+                { bullets = {
+                    "Syndella gives you a Defense Celestite for free. You can buy other types from Stinknix in Lower Jeuno (H-9) for about 32k gil each, then come back and trade them to Syndella (one at a time) to register them.",
+                    "You initially have only 1 Celestite slot, at level 1. You can unlock more slots and increase the slots' levels through the new \"Trust Ascension\" section in Records of Eminence. Be sure to turn these on once you're fighting stuff of the right level.",
+                    "You'll need to go to your Mog House or Mog Garden to equip Celestites, similar to Merit Points.",
+                } },
+                { p = "After that, probably beeline finishing Rhapsodies of Vana'diel. Ambuscade is a great source of item level gear to get you there. There's a couple guides in the section below this that I strongly recommend reading. But above all, have fun! You can do all the storylines now, and you have the tools to begin gearing up to do whatever later content interests you." },
             },
         },
         {

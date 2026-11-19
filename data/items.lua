@@ -1391,4 +1391,6 @@ return {
     "Stone of Lux", -- Local patch: GEO/RUN AF
     "Stone of unknown runic origins", -- Local patch: GEO/RUN AF
     "Insidio's extinguished lantern", -- Local patch: GEO/RUN AF
+    "Celestite Case", -- Local patch: guide refresh
+    "Defense Celestite", -- Local patch: guide refresh
 }

@@ -962,4 +962,5 @@ return {
     "Amalasanda", -- Local patch: Crystal War quests
     "Loutille", -- Local patch: Crystal War quests
     "Duchille", -- Local patch: Crystal War quests
+    "Stinknix", -- Local patch: Guide
 }
