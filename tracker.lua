@@ -42,6 +42,7 @@ local quest_tracker_categories = {
     other = 'other',
     toau = 'whitegate',
     wotg = 'crystal_war',
+    adoulin = 'other', -- Local patch: GEO/RUN AF quests live in Other
 }
 
 local function get_quest_category_from_tracker_area(area)
@@ -528,18 +529,22 @@ local function skip_override()
     return nil, true
 end
 
-local function nation_main_override(id, is_completed, is_current, completed_set)
-    for _, sub_id in ipairs({ 6, 7, 8, 9 }) do
-        if completed_set[sub_id + 1] then
-            return 'completed', false
-        end
-    end
-
-    if is_completed then
+-- Local patch: Mission 2-3 is split by the game into legs: 6/7 = first leg
+-- (San d'Oria / Windurst or the two other nations), 8/9 = second leg. The
+-- mission is only completed with a second leg (or the mission itself)
+-- done; finishing the first leg used to mark it completed. While any leg is
+-- under way the game's current mission is that leg (6-9), not 5, so that
+-- also counts as active.
+local function nation_main_override(id, is_completed, is_current, completed_set, nation_current)
+    if is_completed or completed_set[8 + 1] or completed_set[9 + 1] then
         return 'completed', false
     end
 
-    if is_current then
+    local current = tonumber(nation_current)
+
+    if is_current or (current ~= nil and current >= 5 and current <= 9)
+        or completed_set[6 + 1] or completed_set[7 + 1] then
+
         return 'active', false
     end
 
@@ -551,7 +556,7 @@ end
 local mission_overrides = {
     sandoria = {
         [5] = function(id, is_completed, is_current, ctx)
-            return nation_main_override(id, is_completed, is_current, ctx.completed_set)
+            return nation_main_override(id, is_completed, is_current, ctx.completed_set, ctx.nation_current)
         end,
 
         [6] = skip_override,
@@ -562,7 +567,7 @@ local mission_overrides = {
 
     bastok = {
         [5] = function(id, is_completed, is_current, ctx)
-            return nation_main_override(id, is_completed, is_current, ctx.completed_set)
+            return nation_main_override(id, is_completed, is_current, ctx.completed_set, ctx.nation_current)
         end,
 
         [6] = skip_override,
@@ -573,7 +578,7 @@ local mission_overrides = {
 
     windurst = {
         [5] = function(id, is_completed, is_current, ctx)
-            return nation_main_override(id, is_completed, is_current, ctx.completed_set)
+            return nation_main_override(id, is_completed, is_current, ctx.completed_set, ctx.nation_current)
         end,
 
         [6] = skip_override,
@@ -876,6 +881,7 @@ local function get_mission_status_from_context(area, id, context)
                 completed_set = context.completed_set,
                 current_set = context.current_set,
                 cop_current = context.cop_current,
+                nation_current = context.nation_current,
             }
         )
 

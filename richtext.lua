@@ -753,7 +753,22 @@ function M.draw_wrapped(text, opts)
     if not ok or lines == nil then
         imgui.TextWrapped(text)
     else
+        -- Local patch: each line below is its own item, so ImGui puts its
+        -- item spacing between them, while plain text (TextWrapped above)
+        -- has none. Pull every line after the first back up by that gap so
+        -- highlighted and plain steps have the same line spacing.
+        local line_gap = 0
+
+        pcall(function()
+            line_gap = imgui.GetTextLineHeightWithSpacing()
+                - imgui.GetTextLineHeight()
+        end)
+
         for line_index, line in ipairs(lines) do
+            if line_index > 1 and line_gap > 0 then
+                imgui.SetCursorPosY(imgui.GetCursorPosY() - line_gap)
+            end
+
             if #line.marks == 0 and not right and not shadow then
                 imgui.Text(line.text)
             else

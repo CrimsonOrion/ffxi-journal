@@ -100,14 +100,46 @@ Q.STEPS = {
         "You may re-obtain the Mini Tuning Fork from Dodmos at any point if you want to repeat the fight, but he will no longer teleport you to the Cloister. Try to fight Ifrit on Watersday and do not fight him on Firesday.",
     },
 
+    out_kaz_firebloom_tree = {
+        "You need Windurst fame level 6 (Kazham uses the fame of Windurst). Speak with Soun Abralah in Kazham (H-9). He needs a piece of wood from the Firebloom Tree that will not burn, even in the inferno of Ifrit's Cauldron.",
+        "Go to the Firebloom Tree Roots in Yuhtunga Jungle (H-9), northeast of the Survival Guide and the Outpost. Examine the roots on each side of the tree to obtain the Northern, Eastern, Southern and Western Vine. The Western Vine is in the tunnel. No hatchet is needed.",
+        "Travel to Ifrit's Cauldron and examine three different Flame Spouts. Each one burns one of the vines, until only the vine from the most fire-resistant side is left. If a spout shows only bubbling lava, wait for the flame to rise again. Bombs guard the last spouts, so bring Sneak and Invisible (non-magic, or cast them well away from the bombs).",
+        "A suggested route on Map 1: Flame Spout (H-6), then B > C > K > L to the spout at (H-6)/(H-7), then E > H > N to the spout at (I-10).",
+        "Return to the Firebloom Tree and examine the root that matches your remaining vine (check your temporary key items if you forget). Remove a piece of wood to obtain the key item Firebloom Tree Wood.",
+        "Return to Soun Abralah to complete the quest and receive 5,000 gil. The quest is repeatable.",
+    },
+
+    out_kaz_discerning_eye = {
+        "You need an airship pass. Speak with Swift in Kazham (H-7) and accept the quest.",
+        "Swift shows you a picture of the passenger who dropped an item. You can look at it as many times as you like; when you say you have it memorized you receive the key item Dropped Item.",
+        "Board the next airship. Eight passengers who look very similar to the owner appear on board. They share the race, gender and face, and differ in hair and clothing. Some stand in hard-to-see places, such as above the stairs or behind the engine.",
+        "Return the Dropped Item to the passenger you think is the owner. You only get one try: the right passenger gives you 500 gil, and the wrong one takes the item and you receive nothing.",
+        "If you have not returned the item before the airship lands, you keep it and must give it back to Swift before you can take the quest again.",
+        "Completing it with a passenger of every race and gender earns the title Very Discerning Individual, and with every character model, Extremely Discerning Individual. The quest is repeatable.",
+    },
+
+    out_kaz_elshimo_list = {
+        "First start Voidwatch Ops: Border Crossing with Kieran in Norg and receive the key item Ashen Stratum Abyssite.",
+        "Speak with Hildegard in Kazham (F-9) to begin the quest. Speak with her before defeating the Voidwatch monsters below, or the kills will not count.",
+        "Defeat the three Tier I Voidwatch Notorious Monsters of the Elshimo region at their planar rifts:",
+        "Holy Moly in Yuhtunga Jungle: rifts at (F-11), (G-6) and (J-7).",
+        "Neith in the Temple of Uggalepih: rifts on Map 1 at (I-9) and (K-6), and on Map 2 at (G-8).",
+        "Ildebrann in Ifrit's Cauldron: rifts on Map 3 at (F-9), and on Map 5 at (F-9) and (I-6). The closest teleport is the Unity Warp (level 125) to Map 5.",
+        "Return to Hildegard to complete the quest.",
+    },
+
     -- ========================================================
     -- NORG
     -- ========================================================
 
     out_nrg_forge_your_destiny = {
         "Speak with Jaucribaix in Norg (K-8), near the Captain's Chamber, to begin the quest. You need to be level 30 or higher on any job and have the Rise of the Zilart pack. A lump of bomb steel and a sacred branch are required to make a new katana, and Jaucribaix's pupils can tell you where to get them.",
-        "Speak with Aeka at (I-8) to receive the first material.",
-        "If you are doing the quest for multiple people, you must wait 4 minutes for the Forger to respawn for another Bomb Steel, and you only need to kill the Treant once.",
+        "Speak with Aeka at (I-8) to receive the Oriental Steel.",
+        "Speak with Ranemaud at (I-7) to receive the Sacred Sprig.",
+        "Go to the cave at (D-8) in Konschtat Highlands and trade the Oriental Steel to the ??? inside to spawn Forger, a level ~33 Bomb NM. The level 99 Unity warp (Sleepy Mabel) puts you close, at (G-7).",
+        "Defeat Forger for the Bomb Steel. If you die or lose the Bomb Steel, Aeka gives you another Oriental Steel for a Darksteel Ore. For multiple people, wait 4 minutes between Forger spawns.",
+        "Buy a Hatchet (a Trbl. Hatchet doesn't work) and go to The Sanctuary of Zi'Tah. An area off the map in the northern part of (K-10) leads to a block at (L-9); climb the nearby rock to reach the ??? and trade it the Hatchet to spawn Guardian Treant. The level 122 Unity warp (Keeper of Heiligtum) puts you close, at (K-12).",
+        "Defeat Guardian Treant, then trade the Sacred Sprig to the ??? for the Sacred Branch. For multiple people, only one kill is needed, but the Treant takes at least 10 minutes to respawn, so everyone should trade their Sprig before leaving.",
         "Trade the Bomb Steel and the Sacred Branch to Jaucribaix.",
         "Return in 72 in-game hours (3 real-life hours) to receive your reward: the Mumeito and the ability to become a Samurai, with the title Bushido Blade.",
         "The Mumeito is required for the Samurai artifact quest The Sacred Katana, so hold on to it. If you lose it, you have to pay Ranemaud 30,000 gil for a replacement.",
@@ -198,9 +230,12 @@ Q.STEPS = {
         "You must zone after completing The Sacred Katana to begin this quest. Speak with Jaucribaix in Norg (K-8). You need to be a Samurai of level 50 or higher and have the Rise of the Zilart pack. A ritual is needed to send the souls of those who died in a long-ago war to their proper resting place.",
         "Speak with Washu at (J-8).",
         "Trade Washu a Bastore Sardine, a Frost Turnip, a piece of Giant Sheep Meat and a Hecteyes Eye to receive the key item Washu's tasty wurst.",
-        "Examine the ??? in Labyrinth of Onzozo (F-8) to spawn the NM Ubume. An alternate route to Labyrinth of Onzozo is through Buburimu Peninsula.",
+        "Examine the ??? in Labyrinth of Onzozo (F-8) to spawn the NM Ubume, a level 60-65 Bard bird that loves Horde Lullaby. The Survival Guide lands you at (G-11), near the Buburimu Peninsula zone line; walking in from Buburimu Peninsula also works.",
+        "After defeating Ubume, examine the ??? again for the key item Yomotsu feather.",
         "Return to Norg and speak with Jaucribaix.",
         "Exit Norg, re-enter, and speak with Jaucribaix to receive the key item Yomotsu Hirasaka.",
+        "Examine the ??? in Valkurm Dunes at (B-7) between 18:00 and 4:00 to spawn Doman (Fomor) and Onryo (Ghost), both around level 52. The Survival Guide to Gustav Tunnel lands you just outside (B-7).",
+        "After defeating them and once their corpses disappear, examine the ??? again for the key item Faded Yomotsu Hirasaka.",
         "Speak with Jaucribaix again to receive your reward, the Myochin Sune-Ate.",
     },
 
@@ -208,7 +243,11 @@ Q.STEPS = {
         "You must zone after completing Yomi Okuri to begin this quest. Speak with Jaucribaix in Norg (K-8). You need to be a Samurai of level 50 or higher and have the Rise of the Zilart pack. At the close of the Great War, Gilgamesh's father trapped a terrible spirit within a helm, and that helm has been stolen.",
         "Speak with Sanosuke in Port Jeuno (H-8), inside the Duty Free Shop.",
         "Speak with Phoochuchu in Mhaura (H-8), on the ground level under the bridge.",
+        "Examine the door on the lower level of Bastok Mines (J-6), near the Alchemy Guild. It must be closed when you examine it; if another player has it open, the cutscene doesn't trigger.",
+        "Enter Waughroon Shrine through the top floor of Palborough Mines for a cutscene (Domenic's teleport also works; Home Point warp is fastest).",
         "Speak with Jaucribaix in Norg to receive a Banishing Charm.",
+        "Trade the Banishing Charm to the Burning Circle in Waughroon Shrine to start a battle against three Demons: Rasetsu (DRK), Gaki (BLM) and Onki (SMN, with an elemental). All three can use their two-hour abilities; 30 minute limit, Trusts allowed.",
+        "After defeating them you receive the key item Charred helm.",
         "Speak with Jaucribaix again; he requests a Gold Thread. Trade a Gold Thread to Jaucribaix.",
         "Zone out of Norg, then return to Jaucribaix for your reward, the Myochin Kabuto, and the title Paragon of Samurai Excellence. You can toss the Banishing Charm after completing the quest, as it serves no further purpose.",
     },
@@ -218,13 +257,20 @@ Q.STEPS = {
         "Speak with Kagetora inside Warehouse #2 at (F-6) in Port Bastok (near Port Bastok Home Point #3).",
         "Go to (I-5) in Port Bastok and speak with Ensetsu.",
         "After speaking with Ensetsu, make your way to (H-5)/(H-6) of Eastern Altepa Desert. From this point you can continue on any job. The shortest route to the ??? is to take the Survival Guide to Western Altepa Desert and then zone to Eastern Altepa Desert.",
-        "Clear the area and examine the ??? once ready. Two Tsuchigumo NMs spawn. Both NM corpses must disappear before you can obtain the Trick box.",
+        "Clear the area and examine the ??? once ready. Two Tsuchigumo spiders spawn; they can't be slept.",
+        "After defeating them, examine the ??? again for the Trick box. Both corpses must disappear first.",
         "Head back to Norg and speak with Ryoma to complete the quest and receive your reward, Anju and Zushio.",
     },
 
     out_nrg_big_box = {
         "Travel to Norg and speak with Ryoma (H-8) to receive the quest. You need to be a Ninja of level 50 or higher, Outlands fame level 1 and the Rise of the Zilart pack; this quest follows 20 in Pirate Years. If you just completed 20 in Pirate Years, you need to zone and re-enter Norg for Ryoma to begin it. The trick box you brought back has been identified as a fake, and he needs help finding the real box.",
+        "Speak with Ensetsu in Port Bastok (I-5), who sends you to Leodarion.",
+        "In Rabao, speak with Leodarion at (F-8), on the west side of the lake near the windmill. He asks for an Oak Pole.",
+        "Buy an Oak Pole for 156 Sparks from a Records of Eminence NPC (Equ. Lv. 40-50, page 2): Rolandienne in Southern San d'Oria (G-10), Isakoth in Bastok Markets (E-11), Fhelm Jobeizat in Windurst Woods (J-10) or Eternal Flame in Western Adoulin (H-11). Trade it to Leodarion.",
+        "Speak with Leodarion again on the next game day to receive the Seance staff and instructions to go to Mhaura.",
         "Once in Mhaura, take the ferry to Selbina so that you are traveling at nighttime. Suitable ferry departure times for this quest leave Mhaura at 16:00 and 0:00. On the ferry that departs at 16:00, you must wait until night time at 20:00 for the event to appear.",
+        "The NM Enagakure appears on the main deck: on the 0:00 ferry it is already there (and leaves at 4:00), on the 16:00 ferry it appears at 20:00. Unload any cutscene-skipping addon first, or zoning onto the night ferry can send you straight to Selbina.",
+        "Defeat Enagakure, keep at least one inventory slot free, and wait until the ferry docks in Selbina.",
         "You receive a cutscene and the Ninja Hakama, and the quest is complete. You can repeat the quest.",
     },
 
@@ -233,7 +279,11 @@ Q.STEPS = {
         "Travel to (I-7) in Yhoator Jungle. The quickest way is Survival Guide teleportation from Elshimo Uplands to Yhoator Jungle, with one east of Home Point #1 in Norg. The Unity warp (level 122) teleports you to (J-7).",
         "Once prepared, examine the ??? at (I-7), northwest of Bloodlet Spring, to spawn 3 Sahagin NMs: Kappa Akuso (Monk), Kappa Biwa (Bard) and Kappa Bonze (White Mage).",
         "Only one of them needs to be killed, so a recommended strategy is to zone to Den of Rancor and fight one while the others despawn.",
+        "After the Sahagin are defeated, examine the ??? again for the key item Old trick box. You won't get it until all three, including corpses, have despawned.",
         "Return to Ryoma for another cutscene.",
+        "In Rabao, speak with Leodarion at (F-7), on the west side of the lake near the windmill.",
+        "Get a Kuftal Coffer Key in Kuftal Tunnel, or buy one from the Curio Vendor Moogle. Quickest: the Survival Guide from Vollbow, or the Unity Warp (level 125) to Kuftal Tunnel.",
+        "Find and open the Treasure Coffer in Kuftal Tunnel to obtain the Large trick box.",
         "Return to Leodarion to complete the quest and receive the Ninja Chainmail and the title Paragon of Ninja Excellence. You can repeat the quest.",
     },
 
@@ -267,6 +317,36 @@ Q.STEPS = {
         "Once inside Sea Serpent Grotto, head to (K-6), where you find a ???. Check the ??? to spawn Glyryvilu.",
         "Defeat Glyryvilu, then check the ??? again to receive the key item Caliginous Blade.",
         "Return to Stray Cloud for your reward, the Light Buckler.",
+    },
+
+    out_nrg_border_crossing = {
+        "You need to be level 75 or higher. No other Voidwatch progress is needed to start this series.",
+        "Speak with Kieran in Norg (I-8) for a cutscene and the key item Ashen Stratum Abyssite.",
+        "Speak with Hildegard in Kazham (F-9) to begin VW Op. 054: Elshimo List, and with Gushing Spring in Rabao (G-8), near the Nomad Moogles, to begin VW Op. 101: Detour to Zepwell. Start both before defeating their Voidwatch monsters, or the kills will not count. Speaking with them also unlocks teleports to those regions from the Atmacite Refiner.",
+        "Complete both quests by defeating their six Tier I Voidwatch Notorious Monsters (three each) and reporting back to Hildegard and Gushing Spring.",
+        "Return to Kieran to complete the quest.",
+    },
+
+    out_nrg_li_telor_variant = {
+        "You must have completed Voidwatch Ops: Border Crossing and started Zilart Mission 14, Ark Angels.",
+        "Speak with Kieran in Norg (H-8) for a cutscene.",
+        "Speak with Gilgamesh in Norg (L-8) for another cutscene.",
+        "Return to Kieran for a cutscene. Your key item becomes the Ashen Stratum Abyssite II and the quest is now in your log.",
+        "Defeat the three Tier II Voidwatch Notorious Monsters of the Li'Telor region at their planar rifts:",
+        "Cath Palug in The Sanctuary of Zi'Tah: rifts at (E-9), (F-8) and (G-10). The rift at (G-10) is close to the Survival Guide.",
+        "Modron in The Boyahda Tree: rifts on Map 1 at (G-5), (K-8) and (L-9), and on Map 2 at (F-7), very close to the Unity Warp (level 125).",
+        "Mimic King in Ro'Maeve: rifts at (E-7), (I-9) and (K-7).",
+        "Return to Kieran to complete the quest and receive the key item Ashen Stratum Abyssite III. Skyward Ho, Voidwatcher! begins automatically.",
+    },
+
+    out_nrg_skyward_ho = {
+        "This quest begins automatically when Kieran gives you the Ashen Stratum Abyssite III at the end of VW Op. 115: Li'Telor Variant.",
+        "Defeat the three Tier III Voidwatch Notorious Monsters of the Tu'Lia region at their planar rifts:",
+        "Aello in Ru'Aun Gardens: rifts at (G-5), (I-11) and (J-6).",
+        "Qilin in The Shrine of Ru'Avitau: rifts at (F-6), (F-9) and (J-6) (the wikis disagree on whether this is Map 2 or Map 3).",
+        "Uptala in Ve'Lugannon Palace: rifts at (D-5), (G-13) and (M-8).",
+        "Return to Norg and speak with Kieran (H-8) first. If you speak with Gilgamesh before Kieran, you have to zone before Gilgamesh will give you the cutscene.",
+        "Speak with Gilgamesh (L-8) for a cutscene to complete the quest.",
     },
 
     -- ========================================================
@@ -365,6 +445,50 @@ Q.STEPS = {
         "Speak with Irmilant in Rabao (G-7). He asks you to bring the two base materials required to craft a legendary fishing rod, which seem to have found their way into the bellies of sea creatures that still elude the finest fishermen.",
         "Trade the Opal Silk and the Saber Shoot to Irmilant.",
         "Return to Irmilant after the Conquest tally to receive your reward, the Ebisu Fishing Rod. It can be re-obtained if dropped by mistake.",
+    },
+
+    out_rab_search_for_goldmane = {
+        "You need to have completed Chasing Dreams and Promathia Mission 2-5, Ancient Vows. Speak with Zoriboh in Rabao (F-6) to begin the quest and receive the key item Care Package.",
+        "Go to the Tavnazian Safehold and speak with Quelveuiat (I-10), on the first floor near the Altar of the Dawn, for a cutscene.",
+        "Obtain a Copper Key, which drops from Riverne Vultures in Riverne - Site #A01. You also need a Giant Scale (from a Firedrake) to pass through the Unstable Displacements.",
+        "In Riverne - Site #A01, go through the portals to the island at (I-11) for a cutscene, then trade the Copper Key to the Trunk there for another cutscene.",
+        "Go to the Metalworks in Bastok and speak with Vladinek (H-8), in the Craftsmen's Eatery on the upper floor, for a long cutscene.",
+        "Go to Bibiki Bay and take the Manaclipper to Purgonorgo Isle. Buy a ticket from Tswe Panipahr, and ask Fheli Lapatzuo (H-7) at the docks which boat is the right one. If you have Bismarck access, the Voidwatch teleport also works.",
+        "Examine the Weathered Boat on the beach at (F-9) for a cutscene. The NM Rohemolipaud, an Elvaan Ranger, appears. After about 1,400 damage, or once the fight has gone on long enough, he uses Camouflage and the fight ends. Each party member who needs the quest must start the fight separately.",
+        "Examine the Weathered Boat again for a cutscene and the Deluxe Carbine.",
+        "Return to Zoriboh in Rabao to complete the quest and receive 3,000 gil and the title Rookie Hero Instructor.",
+    },
+
+    out_rab_fish_favors_bold = {
+        "You must have completed Indomitable Spirit and have the Ebisu Fishing Rod, and you must have fished up 100 different fish. After Fisherman's Heart, Katsunaga in Mhaura (H-9) can tell you how many you have caught. You also need the Rise of the Zilart, Chains of Promathia, Treasures of Aht Urhgan, Wings of the Goddess, Seekers of Adoulin and Scars of Abyssea packs.",
+        "Speak with Irmilant in Rabao (G-7) to begin the quest.",
+        "Catch the five legendary fish below, in any order, and trade each one to Irmilant:",
+        "Matsya: at the East Bridges in Vunkerl Inlet (S), with a Dwarf Pugil.",
+        "Dragon's Tabernacle: at the Cape Teriggan seafront, with a Shrimp Lure.",
+        "Quicksilver Blade: on the Silver Sea route to Nashmau or to Al Zahbi, with a Sardine Ball.",
+        "Phantom Serpent: in Abyssea - Misareaux, at the seafront next to Veridical Conflux #08, with a Sea Dragon Liver (exclusive bait).",
+        "Lord of Ulbuka: in Cirdas Caverns at the exit to Yorcia Weald, with a Dwarf Pugil or Rotten Meat. First you must have caught a Remora (Woh Gates pond, J-11, Minnow), an Ancient Carp (Moh Gates pond, L-6/7, Insect Ball), a Tusoteuthis Longa (Dho Gates Map 1, F/G-12, Minnow) and a Cameroceras (Sih Gates Map 2, Minnow).",
+        "A fish counts once Katsunaga has it registered as caught by you, so a fish you caught earlier can be replaced with one bought from the Auction House. A Penguin, Seagull or Duck Ring makes the legendary fish much easier to land.",
+        "After all five fish are accepted, trade the Ebisu Fishing Rod to Irmilant to receive the Ebisu Fishing Rod +1 and the title Exalted Fisherman.",
+    },
+
+    out_rab_thanks_for_fish = {
+        "You need a Lu Shang's Fishing Rod (it can be bought; The Rivalry is not required) and to have completed the Records of Eminence objective First Step Forward.",
+        "Speak with Jourdenaux in Rabao (F-8) with the rod to begin the quest.",
+        "Fish up 60 different types of fish, with any rod. Fish caught before the quest count, and Katsunaga in Mhaura (H-9) can tell you how many you have. If you already have 60, Jourdenaux moves on to the next step.",
+        "Speak with Jourdenaux again to unlock the Records of Eminence category Fishing > Fishing (Tenacity).",
+        "Complete every objective in Fishing (Tenacity) using only Lu Shang's Fishing Rod. Lures that catch several small fish per cast, such as the Sabiki Rig, Rogue Rig and Robber Rig, count each fish toward objectives that need many catches.",
+        "Trade Lu Shang's Fishing Rod to Jourdenaux to complete the quest and receive Lu Shang's Fishing Rod +1 (Rare/Ex, tagged with your server and completion number) and the title Fish Whisperer. If it breaks, Jourdenaux repairs it for an Ancient Lumber.",
+    },
+
+    out_rab_detour_to_zepwell = {
+        "First start Voidwatch Ops: Border Crossing with Kieran in Norg and receive the key item Ashen Stratum Abyssite.",
+        "Speak with Gushing Spring in Rabao (G-8), near the Nomad Moogles, to begin the quest. Speak with her before defeating the Voidwatch monsters below, or the kills will not count.",
+        "Defeat the three Tier I Voidwatch Notorious Monsters of the Zepwell region at their planar rifts:",
+        "Sabotender Campeador in the Western Altepa Desert: rifts at (G-10), (H-5) and (L-6).",
+        "Tangaroa in the Kuftal Tunnel: rifts on Map 2 at (F-8) and (J-9), and on Map 3 at (I-8). The closest teleport is the Unity Warp (level 125) to Map 2.",
+        "Malleator Maurok in the Quicksand Caves: rift on Map 3 at (G-9)/(F-9). Use the Unity Warp (level 125) in the Western Altepa Desert, then take Entrance 2 of the Quicksand Caves.",
+        "Return to Gushing Spring to complete the quest.",
     },
 
 }

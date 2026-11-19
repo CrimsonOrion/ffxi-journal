@@ -49,6 +49,29 @@ M.AREAS = {
         { npc = 'Vaultimand', place = 'Norg (H-8)' } } },
     { key = 'selbina_rabao', name = 'Selbina / Rabao', checkers = {
         { npc = 'Waylea', place = 'Rabao (G-9)' } } },
+    -- Local patch: Adoulin (Seekers of Adoulin), from the BG-Wiki Fame page.
+    { key = 'adoulin', name = 'Adoulin', checkers = {
+        { npc = 'Iyvah Halohm', place = 'Eastern Adoulin (G-8)' } } },
+    -- Local patch: the nine Abyssea areas (levels 1 to 6), read from the
+    -- chat line of their Fame Checker (see M.ABYSSEA below).
+    { key = 'abyssea_konschtat', name = 'Abyssea - Konschtat', checkers = {
+        { npc = 'Flaco', place = 'Abyssea - Konschtat (I-13)' } } },
+    { key = 'abyssea_la_theine', name = 'Abyssea - La Theine', checkers = {
+        { npc = 'Namonutice', place = 'Abyssea - La Theine (E-3)' } } },
+    { key = 'abyssea_tahrongi', name = 'Abyssea - Tahrongi', checkers = {
+        { npc = 'Zabirego-Hajigo', place = 'Abyssea - Tahrongi (H-12)' } } },
+    { key = 'abyssea_attohwa', name = 'Abyssea - Attohwa', checkers = {
+        { npc = 'Mendi', place = 'Abyssea - Attohwa (G-10)' } } },
+    { key = 'abyssea_misareaux', name = 'Abyssea - Misareaux', checkers = {
+        { npc = 'Izabele', place = 'Abyssea - Misareaux (K-7)' } } },
+    { key = 'abyssea_vunkerl', name = 'Abyssea - Vunkerl', checkers = {
+        { npc = 'Gulemont', place = 'Abyssea - Vunkerl (F-4)' } } },
+    { key = 'abyssea_altepa', name = 'Abyssea - Altepa', checkers = {
+        { npc = 'Honoi-Gomoi', place = 'Abyssea - Altepa (K-5)' } } },
+    { key = 'abyssea_grauberg', name = 'Abyssea - Grauberg', checkers = {
+        { npc = 'Parnika', place = 'Abyssea - Grauberg (D-14)' } } },
+    { key = 'abyssea_uleguerand', name = 'Abyssea - Uleguerand', checkers = {
+        { npc = 'Magriffon', place = 'Abyssea - Uleguerand (G-11)' } } },
 }
 
 -- Points of each fame level, the ones the client expects in the events that
@@ -70,7 +93,15 @@ end
 -- area, level and the name of the NPC of an event of a Fame Checker, or
 -- nil. number is the first number of the packet 0x034 (nil in the packet
 -- 0x032).
-function M.Decode(zone, event, number)
+function M.Decode(zone, event, number, number2)
+    -- Local patch: Iyvah Halohm (Eastern Adoulin, zone 257) starts event 562
+    -- with the fame level as the second number (LandSandBoat's script).
+    if zone == 257 and event == 562 and number2 ~= nil
+        and number2 >= 1 and number2 <= 9 then
+
+        return 'adoulin', number2, 'Iyvah Halohm'
+    end
+
     if zone == 230 and event == 31 and number ~= nil and number >= 0 then
         return 'sandoria', level_from_points(number), 'Namonutice'
     end
@@ -144,7 +175,8 @@ function M.IsChecker(name)
     return false
 end
 
--- Zone, event, first number and index of the NPC of an event packet.
+-- Zone, event, first number and index of the NPC of an event packet, then
+-- (local patch) the second number.
 function M.ReadEvent(id, data)
     if type(data) ~= 'string' then
         return nil
@@ -154,7 +186,7 @@ function M.ReadEvent(id, data)
 
     if id == 0x034 and #data >= 0x30 then
         return reader.u16(data, 0x2A), reader.u16(data, 0x2C),
-            reader.i32(data, 8), reader.u16(data, 0x28)
+            reader.i32(data, 8), reader.u16(data, 0x28), reader.i32(data, 12)
     end
 
     if id == 0x032 and #data >= 0x10 then
@@ -245,10 +277,10 @@ end
 
 function M.OnPacket(id, data)
     -- A Fame Checker: keep the level.
-    local read, zone, event, number, index = pcall(M.ReadEvent, id, data)
+    local read, zone, event, number, index, number2 = pcall(M.ReadEvent, id, data)
 
     if read and zone ~= nil then
-        local area, level, expected = M.Decode(zone, event, number)
+        local area, level, expected = M.Decode(zone, event, number, number2)
 
         if area ~= nil then
             -- Another NPC with the same event number is not a Fame Checker.
@@ -317,6 +349,73 @@ function M.OnCommand(args)
 
     return true
 end
+
+-- Local patch: Abyssea Fame Checkers. LandSandBoat does not script them, so
+-- their event numbers are unknown; instead the level is read from what the
+-- NPC says in the chat. Each level's line (BG-Wiki, "Flaco (A)" and the
+-- others) has a phrase of its own, kept here in lowercase letters only and
+-- free of the player's name and of he/she/his/her. The line only counts in
+-- the zone of that NPC. zone id -> area, NPC, { level -> phrase }.
+M.ABYSSEA = {
+    [15] = { key = 'abyssea_konschtat', npc = 'Flaco', levels = { [1] = 'thatsanameihaventheard', [2] = 'hmmmirecallhearingthata', [3] = 'yesihearyournamehere', [4] = 'didyouknowthatyourea', [5] = 'alwaysapleasureiwasjust', [6] = 'herooftheresistancewhyto' } },
+    [132] = { key = 'abyssea_la_theine', npc = 'Namonutice', levels = { [1] = 'yousaynoneverheardof', [2] = 'hmmimighthaveheardthat', [3] = 'anameioftenhearpeople', [4] = 'youhavebecomewellknownin', [5] = 'youarefamousamongthecommunity', [6] = 'iwouldventurethatmostwhove' } },
+    [45] = { key = 'abyssea_tahrongi', npc = 'Zabirego-Hajigo', levels = { [1] = 'ohthatsyouyoullhaveto', [2] = 'wasthatthethirdministerof', [3] = 'wasitivefinallywinallymanagedput', [4] = 'iwasjusttalkingtoa', [5] = 'dontgogettingaswellywelledhead', [6] = 'whatararetreataruwhyi' } },
+    [215] = { key = 'abyssea_attohwa', npc = 'Mendi', levels = { [1] = 'welliveneverheardofyou', [2] = 'ehhmmthatnameisvaguely', [3] = 'ihaveheardsomeofthe', [4] = 'ihearyournamementionedquite', [5] = 'agooddealofpeoplehere', [6] = 'allofushereyourname' } },
+    [216] = { key = 'abyssea_misareaux', npc = 'Izabele', levels = { [1] = 'idontbelieveiveseenyou', [2] = 'imighthaveheardthename', [3] = 'thatisanameimfamiliar', [4] = 'ihearyournamequiteoften', [5] = 'idbehardpressedtofind', [6] = 'howgoodofyoutodrop' } },
+    [217] = { key = 'abyssea_vunkerl', npc = 'Gulemont', levels = { [1] = 'idontbelieveiveseenyou', [2] = 'imighthaveheardthename', [3] = 'thatisanameimfamiliar', [4] = 'ihearyournamequiteoften', [5] = 'idbehardpressedtofind', [6] = 'howgoodofyoutodrop' } },
+    [218] = { key = 'abyssea_altepa', npc = 'Honoi-Gomoi', levels = { [1] = 'ohexcusemeiwasjust', [2] = 'imighthaveheardthatname', [3] = 'yesiveheardtheoccasionalrumor', [4] = 'yourgenerousdeedshavewonyou', [5] = 'youvemadequiteanamefor', [6] = 'welllookwhowehavehere' } },
+    [254] = { key = 'abyssea_grauberg', npc = 'Parnika', levels = { [1] = 'whoareyousupposedtobe', [2] = 'yousayimightveheardthat', [3] = 'ahsoyouretheonecalled', [4] = 'itsalwaysapleasurespeakingwith', [5] = 'iwaswonderingwhenyoudnext', [6] = 'yourvisitdoesmegreathonor' } },
+    [253] = { key = 'abyssea_uleguerand', npc = 'Magriffon', levels = { [1] = 'cantsayiveeverheardthat', [2] = 'sayyesimayhaveoverheard', [3] = 'yestheresnomistakingitthats', [4] = 'yourequitethetalkofthe', [5] = 'alwaysapleasureeverytimei', [6] = 'youvecompletelyeclipsedyourstrulyin' } },
+}
+
+local function abyssea_zone()
+    local ok, zone = pcall(function()
+        return AshitaCore:GetMemoryManager():GetParty():GetMemberZone(0)
+    end)
+
+    return ok and tonumber(zone) or nil
+end
+
+-- Lowercase letters only: drops color codes, auto-translate brackets,
+-- punctuation and spaces, so the line matches however the game formats it.
+local function letters_only(text)
+    text = text:gsub('\30.', ''):gsub('\31.', ''):gsub('\253.-\253', '')
+
+    return (text:lower():gsub('[^a-z]', ''))
+end
+
+function M.OnChat(message)
+    local zone = abyssea_zone()
+    local entry = zone and M.ABYSSEA[zone]
+
+    if entry == nil or type(message) ~= 'string' then
+        return
+    end
+
+    local text = letters_only(message)
+
+    for level, phrase in pairs(entry.levels) do
+        if text:find(phrase, 1, true) then
+            local logic = package.loaded['logic']
+
+            if logic ~= nil and logic.SetFameLevel ~= nil then
+                logic.SetFameLevel(entry.key, level, os.time())
+            end
+
+            for _, area in ipairs(M.AREAS) do
+                if area.key == entry.key then
+                    print(string.format('[Journal] Fame: %s level %d saved.', area.name, level))
+                end
+            end
+
+            return
+        end
+    end
+end
+
+ashita.events.register('text_in', 'journal_fame_text', function(e)
+    pcall(M.OnChat, e.message)
+end)
 
 ashita.events.register('packet_in', 'journal_fame_packet', function(e)
     if e.id == 0x034 or e.id == 0x032 then

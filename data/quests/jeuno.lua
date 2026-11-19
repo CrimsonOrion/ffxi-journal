@@ -25,15 +25,41 @@ M.zones = {
         quests = {
 
             {
-                id = 'jeu_lj_path_of_the_bard',
-                name = 'Path of the Bard',
+                id = 'jeu_lj_the_old_monument',
+                name = 'The Old Monument',
                 area = 'jeuno',
                 zone = 'Lower Jeuno',
                 loc = 'Lower Jeuno (I-8)',
                 npc = 'Mertaire',
-                req = '',
+                req = 'Lv.30+',
                 prereq = '',
-                reward = 'Bard job',
+                reward = 'Poetic Parchment, title Researcher of Classics',
+                items = 'Parchment',
+            }, -- Local patch: BRD unlock chain
+
+            {
+                id = 'jeu_lj_a_minstrel_in_despair',
+                name = 'A Minstrel in Despair',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (I-8)',
+                npc = 'Mertaire',
+                req = 'Lv.30+',
+                prereq = 'The Old Monument',
+                reward = '2,100 gil',
+                items = 'Poetic Parchment',
+            }, -- Local patch: BRD unlock chain
+
+            {
+                id = 'jeu_lj_path_of_the_bard',
+                name = 'Path of the Bard',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-8)', -- Local patch: was (I-8)/Mertaire
+                npc = 'Bki Tbujhja',
+                req = 'Lv.30+',
+                prereq = 'A Minstrel in Despair',
+                reward = 'Bard job, title Wandering Minstrel',
             },
 
             {
@@ -46,6 +72,47 @@ M.zones = {
                 req = 'Lv.30+, Fame req unknown',
                 prereq = "Chocobo's Wounds",
                 reward = 'Beast Whistle, 2,100 gil',
+            },
+
+            {
+                id = 'jeu_lj_painful_memory',
+                name = "Painful Memory",
+                area = 'jeuno',
+                zone = "Lower Jeuno",
+                loc = "Lower Jeuno (H-8)",
+                npc = "Mertaire",
+                req = "Lv.40+ BRD",
+                prereq = "Path of the Bard",
+                reward = "Paper Knife",
+                repeatable = true,
+            },
+
+            {
+                id = 'jeu_lj_the_requiem',
+                name = "The Requiem",
+                area = 'jeuno',
+                zone = "Lower Jeuno",
+                loc = "Lower Jeuno (H-8)",
+                npc = "Bki Tbujhja",
+                req = "Lv.50+ BRD, Rise of Zilart required",
+                prereq = "Painful Memory",
+                reward = "Choral Slippers",
+                repeatable = true,
+                items = "Holy Water",
+            },
+
+            {
+                id = 'jeu_lj_a_new_dawn',
+                name = "A New Dawn",
+                area = 'jeuno',
+                zone = "Lower Jeuno",
+                loc = "Lower Jeuno (G-11)",
+                npc = "Merchant's House door",
+                req = "Lv.50+ BST",
+                prereq = "Scattered Into Shadow",
+                reward = "Beast Trousers",
+                repeatable = true,
+                items = "Mahogany Lumber",
             },
         },
     },
@@ -324,6 +391,58 @@ M.zones = {
                 repeatable = true,
                 no_chain_indent = true,
             },
+
+            {
+                id = 'jeu_uj_lakeside_minuet',
+                name = "Lakeside Minuet",
+                area = 'jeuno',
+                zone = "Upper Jeuno",
+                loc = "Upper Jeuno (G-7)",
+                npc = "Laila",
+                req = "Lv.30+, Wings of the Goddess required",
+                prereq = "",
+                reward = "Dancer job",
+            },
+
+            {
+                id = 'jeu_uj_unfinished_waltz',
+                name = "The Unfinished Waltz",
+                area = 'jeuno',
+                zone = "Upper Jeuno",
+                loc = "Upper Jeuno (G-7)",
+                npc = "Laila",
+                req = "Lv.40+ DNC",
+                prereq = "Lakeside Minuet",
+                reward = "War Hoop",
+                repeatable = true,
+            },
+
+            {
+                id = 'jeu_uj_road_to_divadom',
+                name = "The Road to Divadom",
+                area = 'jeuno',
+                zone = "Upper Jeuno",
+                loc = "Upper Jeuno (G-7)",
+                npc = "Laila",
+                req = "Lv.50+ DNC",
+                prereq = "The Unfinished Waltz",
+                reward = "Dancer's Tights",
+                repeatable = true,
+                items = "Block of Yagudo Glue",
+            },
+
+            {
+                id = 'jeu_uj_comeback_queen',
+                name = "Comeback Queen",
+                area = 'jeuno',
+                zone = "Upper Jeuno",
+                loc = "Upper Jeuno (G-7)",
+                npc = "Laila",
+                req = "Lv.50+ DNC",
+                prereq = "The Road to Divadom",
+                reward = "Dancer's Casaque",
+                repeatable = true,
+            },
         },
     },
 
@@ -551,6 +670,21 @@ local tracker_data = {
         bit = 5,
     },
 
+    jeu_lj_painful_memory = {
+        area = 'jeuno',
+        bit = 63,
+    },
+
+    jeu_lj_the_requiem = {
+        area = 'jeuno',
+        bit = 64,
+    },
+
+    jeu_lj_a_new_dawn = {
+        area = 'jeuno',
+        bit = 62,
+    },
+
     -- --------------------------------------------------------
     -- UPPER JEUNO
     -- --------------------------------------------------------
@@ -658,6 +792,26 @@ local tracker_data = {
     jeu_uj_borghertz_wild_hands = {
         area = 'jeuno',
         bit = 52,
+    },
+
+    jeu_uj_lakeside_minuet = {
+        area = 'jeuno',
+        bit = 95,
+    },
+
+    jeu_uj_unfinished_waltz = {
+        area = 'jeuno',
+        bit = 96,
+    },
+
+    jeu_uj_road_to_divadom = {
+        area = 'jeuno',
+        bit = 97,
+    },
+
+    jeu_uj_comeback_queen = {
+        area = 'jeuno',
+        bit = 98,
     },
 
     -- --------------------------------------------------------

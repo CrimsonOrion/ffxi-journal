@@ -440,8 +440,19 @@ local journal_logo_files = {
     wotg = 'Wingsofthegoddess_Logo.png',
     adoulin = 'Seekersofadoulin_Logo.png',
     rov = 'Rhapsodiesofvanadiel_Logo.png',
+    -- Local patch: banners for the quest categories that had none. The
+    -- expansion logos stand in for Whitegate and the Crystal War.
+    whitegate = 'Treasuresofahturhgan_Logo.png',
+    crystal_war = 'Wingsofthegoddess_Logo.png',
 }
 local journal_logo_cache = {}
+
+-- Local patch: quest categories with no picture get a drawn title banner.
+-- A PNG added to journal_logo_files for the same key replaces it.
+local journal_text_banners = {
+    outlands = 'Outlands',
+    other = 'Other Areas',
+}
 
 -- How many times bigger than the usual width a logo is drawn. The banners
 -- of the nations are twice as big.
@@ -1887,7 +1898,10 @@ local function draw_selectable_status_list(
                 local key = is_mission_list and item.area or item.category
 
                 if key ~= nil
-                    and journal_logo_files[key] ~= nil
+                    and (
+                        journal_logo_files[key] ~= nil
+                        or (not is_mission_list and journal_text_banners[key] ~= nil)
+                    )
                     and not logo_seen[key] then
 
                     logo_seen[key] = true
@@ -1895,8 +1909,86 @@ local function draw_selectable_status_list(
                 end
             end
 
+            -- Local patch: a title banner drawn in place of a picture.
+            local function draw_text_banner(title)
+                local width = math.min(
+                    imgui.GetWindowWidth() - scaled(40),
+                    scaled(380) * 2
+                )
+                local height = scaled(64)
+
+                if width <= 0 then
+                    return
+                end
+
+                imgui.Spacing()
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - width) * 0.5)
+                imgui.Dummy({ width, height })
+
+                pcall(function()
+                    local draw = imgui.GetWindowDrawList()
+                    local x1, y1 = imgui.GetItemRectMin()
+                    local x2, y2 = imgui.GetItemRectMax()
+                    local gold = imgui.GetColorU32({ 0.93, 0.80, 0.50, 1.00 })
+                    local line = imgui.GetColorU32({ 0.93, 0.80, 0.50, 0.55 })
+                    local fill = imgui.GetColorU32({ 0.06, 0.07, 0.15, 0.65 })
+                    local size = scaled(40)
+                    local tw, th
+
+                    if journal_font ~= nil then
+                        imgui.PushFont(journal_font, size)
+                        tw, th = imgui.CalcTextSize(title)
+                        imgui.PopFont()
+                    else
+                        tw, th = imgui.CalcTextSize(title)
+                    end
+
+                    local cx = (x1 + x2) * 0.5
+                    local cy = (y1 + y2) * 0.5
+                    local gap = scaled(18)
+                    local d = scaled(5)
+
+                    draw:AddRectFilled({ x1, y1 }, { x2, y2 }, fill, 4)
+                    draw:AddRect({ x1, y1 }, { x2, y2 }, line, 4, 0, 1)
+
+                    -- Ornamental rules on each side of the title, ending
+                    -- in a small diamond.
+                    local left_end = cx - tw * 0.5 - gap
+                    local right_start = cx + tw * 0.5 + gap
+                    local margin = x1 + scaled(24)
+                    local margin_r = x2 - scaled(24)
+
+                    if left_end > margin + d * 2 then
+                        draw:AddLine({ margin, cy }, { left_end, cy }, line, 1.5)
+                        draw:AddQuadFilled({ left_end, cy - d }, { left_end + d, cy },
+                            { left_end, cy + d }, { left_end - d, cy }, gold)
+                        draw:AddLine({ right_start, cy }, { margin_r, cy }, line, 1.5)
+                        draw:AddQuadFilled({ right_start, cy - d }, { right_start + d, cy },
+                            { right_start, cy + d }, { right_start - d, cy }, gold)
+                    end
+
+                    local pos = { cx - tw * 0.5, cy - th * 0.5 }
+
+                    if journal_font ~= nil then
+                        draw:AddText(journal_font, size, pos, gold, title)
+                    else
+                        draw:AddText(pos, gold, title)
+                    end
+                end)
+
+                imgui.Spacing()
+            end
+
             local function draw_logo(logo_area)
                 local logo = load_journal_logo(logo_area)
+
+                if (logo == nil or logo.height <= 0)
+                    and not is_mission_list
+                    and journal_text_banners[logo_area] ~= nil then
+
+                    draw_text_banner(tx(journal_text_banners[logo_area]))
+                    return
+                end
 
                 if logo == nil or logo.height <= 0 then
                     return
@@ -2023,7 +2115,9 @@ local function draw_selectable_status_list(
                         selected,
                         status_dot_color(status),
                         item.repeatable == true,
-                        nil,
+                        -- Local patch: the row number keeps rows with the same
+                        -- name apart (e.g. "Enemy of the Empire" in two areas).
+                        'row' .. i,
                         favorite_getter ~= nil
                             and favorite_getter(item) == true,
                         sheetx.row_icon(item, status, is_mission_list)
@@ -2326,17 +2420,17 @@ local function draw_mission_info(selected)
     end
 
     if #parts > 0 then
-        imgui.TextColored(
-            colors.text_dim,
-            table.concat(parts, '  |  ')
-        )
+        -- Local patch: wrap instead of running past the panel edge.
+        imgui.PushStyleColor(ImGuiCol_Text, colors.text_dim)
+        imgui.TextWrapped(table.concat(parts, '  |  '))
+        imgui.PopStyleColor()
     end
 
     if selected.reward ~= nil and selected.reward ~= '' then
-        imgui.TextColored(
-            colors.gold,
-            tx('Reward: ') .. tostring(selected.reward)
-        )
+        -- Local patch: wrap instead of running past the panel edge.
+        imgui.PushStyleColor(ImGuiCol_Text, colors.gold)
+        imgui.TextWrapped(tx('Reward: ') .. tostring(selected.reward))
+        imgui.PopStyleColor()
     end
 end
 
@@ -2477,11 +2571,14 @@ local function draw_metadata(selected)
                     end
                 end
             else
-                imgui.TextColored(
-                    colors.text_dim,
+                -- Local patch: wrap long values (items, requirements)
+                -- instead of letting them run past the edge of the panel.
+                imgui.PushStyleColor(ImGuiCol_Text, colors.text_dim)
+                imgui.TextWrapped(
                     field[1]
                         .. tostring(field[2])
                 )
+                imgui.PopStyleColor()
             end
         end
     end
@@ -2525,11 +2622,13 @@ local function draw_metadata(selected)
     if selected.reward ~= nil
         and selected.reward ~= '' then
 
-        imgui.TextColored(
-            colors.gold,
+        -- Local patch: wrap instead of running past the panel edge.
+        imgui.PushStyleColor(ImGuiCol_Text, colors.gold)
+        imgui.TextWrapped(
             tx('Reward: ')
                 .. tostring(selected.reward)
         )
+        imgui.PopStyleColor()
     end
 end
 
@@ -5976,6 +6075,37 @@ do
                 )
             end
 
+            -- Local patch: a slim header with a close button, since the window
+            -- has no title bar. Dragging anywhere and fitting to the content
+            -- work as before; the content just starts one row lower.
+            do
+                local close_size = cscaled(16)
+
+                imgui.TextColored(colors.text_dim, tx('Compass'))
+                imgui.SameLine(window_width - cscaled(10) - close_size)
+
+                if imgui.InvisibleButton('##CompassClose', { close_size, close_size }) then
+                    controller.SetCompassOpen(false)
+                end
+
+                local min_x, min_y = imgui.GetItemRectMin()
+                local max_x, max_y = imgui.GetItemRectMax()
+                local cx = (min_x + max_x) * 0.5
+                local cy = (min_y + max_y) * 0.5
+                local arm = close_size * 0.30
+                local hovered = imgui.IsItemHovered()
+                local color = imgui.GetColorU32(hovered and colors.text or colors.text_dim)
+
+                draw:AddLine({ cx - arm, cy - arm }, { cx + arm, cy + arm }, color, 1.6)
+                draw:AddLine({ cx - arm, cy + arm }, { cx + arm, cy - arm }, color, 1.6)
+
+                if hovered and imgui.SetTooltip then
+                    imgui.SetTooltip(tx('Close'))
+                end
+
+                imgui.Separator()
+            end
+
             local available = window_width - cscaled(24)
             local message = compass_text(state)
 
@@ -7638,13 +7768,25 @@ local function wrap_guide_title(text, max_width)
     return lines
 end
 
+-- Local patch: NPC names in the guide are clickable (they point the compass
+-- at the NPC, as in the quest steps). Each paragraph needs its own id for
+-- the click areas, so a counter numbers them; it restarts with each section.
+local guide_paragraph_count = 0
+
 local function draw_guide_paragraph(text, color)
+    local shown = guide_text(text)
+
+    guide_paragraph_count = guide_paragraph_count + 1
+
     richtext.draw_wrapped(
-        guide_text(text),
+        shown,
         {
             styles = get_styles(),
             color = color or colors.text,
             size = step_font_size,
+            on_npc = npc_click(shown),
+            id = 'guide_' .. guide_paragraph_count,
+            npc_tooltip = tx('Click to point the compass at it'),
         }
     )
 
@@ -7671,7 +7813,21 @@ local function draw_guide_bullets(items)
         and imgui.Unindent
 
     for _, item in ipairs(items) do
+        -- Local patch: an item that starts with "- " is a sub-point of the
+        -- one above: indented further, with a smaller, hollow dot.
+        local sub = type(item) == 'string' and item:sub(1, 2) == '- '
+
+        if sub then
+            item = item:sub(3)
+        end
+
         if can_dot then
+            local shift = sub and 18 or 0
+
+            if shift > 0 then
+                imgui.Indent(shift)
+            end
+
             local dot_x, dot_y = imgui.GetCursorScreenPos()
             local line_height = imgui.GetTextLineHeight()
 
@@ -7681,11 +7837,25 @@ local function draw_guide_bullets(items)
 
             imgui.Unindent(18)
 
-            imgui.GetWindowDrawList():AddCircleFilled(
-                { dot_x + 6, dot_y + line_height * 0.55 },
-                3,
-                imgui.GetColorU32(colors.gold)
-            )
+            if sub then
+                imgui.GetWindowDrawList():AddCircle(
+                    { dot_x + 6, dot_y + line_height * 0.55 },
+                    2.5,
+                    imgui.GetColorU32(colors.gold),
+                    12,
+                    1.2
+                )
+            else
+                imgui.GetWindowDrawList():AddCircleFilled(
+                    { dot_x + 6, dot_y + line_height * 0.55 },
+                    3,
+                    imgui.GetColorU32(colors.gold)
+                )
+            end
+
+            if shift > 0 then
+                imgui.Unindent(shift)
+            end
         else
             draw_guide_paragraph('- ' .. item)
         end
@@ -7789,6 +7959,8 @@ local function draw_guide_quests(rows, block_id)
 end
 
 local function draw_guide_section(section)
+    guide_paragraph_count = 0
+
     imgui.TextColored(colors.gold, guide_text(section.title))
     imgui.Separator()
     imgui.Spacing()
@@ -8113,6 +8285,30 @@ local function draw_camps_entries(entries, highlight)
             }
         )
 
+        -- Local patch: how the monsters detect you, and the notes of the
+        -- guide, dimmed and indented under the camp.
+        local extra = {}
+
+        if camp.aggro ~= nil then
+            extra[#extra + 1] = tx('Aggro') .. ': ' .. camp.aggro
+        end
+
+        for _, line in ipairs(camp.details or {}) do
+            extra[#extra + 1] = tostring(i18n.step(line))
+        end
+
+        if #extra > 0 then
+            imgui.Indent(scaled(18))
+            imgui.PushStyleColor(ImGuiCol_Text, colors.text_dim)
+
+            for _, line in ipairs(extra) do
+                imgui.TextWrapped(line)
+            end
+
+            imgui.PopStyleColor()
+            imgui.Unindent(scaled(18))
+        end
+
         imgui.Spacing()
     end
 end
@@ -8125,9 +8321,16 @@ local function draw_camps_list(view)
         if #view[kind] > 0 then
             shown = shown + #view[kind]
 
+            -- Local patch: the guide has one list, so no "Standard" title.
+            local title = kind == 'standard' and 'Standard camps' or 'Alternate camps'
+
+            if #view.alternate == 0 then
+                title = 'Camps'
+            end
+
             imgui.TextColored(
                 colors.gold,
-                tx(kind == 'standard' and 'Standard camps' or 'Alternate camps')
+                tx(title)
             )
 
             imgui.Separator()
@@ -8299,10 +8502,15 @@ local function draw_camps_window()
                     imgui.SameLine(0, 6)
                 end
 
+                -- Local patch: the buttons show the ranges of the guide.
+                local label = controller.GetCampsBracketLabel
+                    and controller.GetCampsBracketLabel(level)
+                    or tostring(level)
+
                 if draw_settings_choice(
-                    tostring(level) .. '##camps_bracket_' .. level,
+                    label .. '##camps_bracket_' .. level,
                     level == current,
-                    scaled(58)
+                    math.max(scaled(58), math.ceil((imgui.CalcTextSize(label)) + scaled(20)))
                 ) then
                     controller.SetCampsBracket(level)
                 end
@@ -8327,6 +8535,14 @@ local function draw_camps_window()
         -- The camps.
         if imgui.BeginChild('##CampsList', { 0, -1 }, true) then
             draw_camps_list(controller.GetCampsView())
+
+            -- Local patch: where the camps come from.
+            local camps = controller.GetCamps()
+
+            if camps ~= nil and camps.source ~= nil then
+                imgui.Spacing()
+                imgui.TextColored(colors.text_dim, tx('Source') .. ': ' .. camps.source)
+            end
         end
 
         imgui.EndChild()
@@ -8664,8 +8880,14 @@ local function draw_search_results(width)
                 end
             end
 
-            group('Missions (%d)', result.missions, result.total_missions, 'mission')
-            group('Quests (%d)', result.quests, result.total_quests, 'quest')
+            -- Local patch: the results of the open tab come first.
+            if open_kind == 'quest' then
+                group('Quests (%d)', result.quests, result.total_quests, 'quest')
+                group('Missions (%d)', result.missions, result.total_missions, 'mission')
+            else
+                group('Missions (%d)', result.missions, result.total_missions, 'mission')
+                group('Quests (%d)', result.quests, result.total_quests, 'quest')
+            end
         end
     end
 
@@ -8937,6 +9159,21 @@ local function draw_journal()
                     wh
                 )
             end
+        end
+
+        -- Local patch: the window panel covers ImGui's own resize grip, so
+        -- draw a visible one over the bottom-right corner (drag it to resize).
+        local grip = 18
+        local gx, gy = wx + ww - 2, wy + wh - 2
+        local hovered = imgui.IsMouseHoveringRect
+            and imgui.IsMouseHoveringRect({ gx - grip, gy - grip }, { gx, gy }, false)
+        local grip_color = imgui.GetColorU32(
+            hovered and { 0.80, 0.84, 0.95, 0.75 } or { 0.80, 0.84, 0.95, 0.40 }
+        )
+        local clipped = pcall(imgui.PushClipRect, { wx, wy }, { wx + ww, wy + wh }, false)
+        draw:AddTriangleFilled({ gx, gy - grip }, { gx, gy }, { gx - grip, gy }, grip_color)
+        if clipped then
+            imgui.PopClipRect()
         end
     end
 

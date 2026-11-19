@@ -48,7 +48,7 @@ M.zones = {
                 prereq = 'The Three Magi',
                 reward = "Wizard's Sabots",
                 repeatable = true,
-                items = 'Bag of Seeds, Wine Cellar Key',
+                items = 'Bag of Seeds, Whine Cellar Key',
             },
 
             {
@@ -82,7 +82,7 @@ M.zones = {
                 zone = 'Port Windurst',
                 loc = 'Port Windurst (M-7)',
                 npc = 'Pygmalion',
-                req = 'NOT IMPLEMENTED on this server',
+                req = '',
                 prereq = '',
                 reward = '500 gil',
                 repeatable = true,
@@ -340,7 +340,7 @@ M.zones = {
                 loc = 'Windurst Walls',
                 npc = 'Carbuncle',
                 req = 'Lv.40+ SMN, Rise of Zilart required',
-                prereq = '',
+                prereq = 'I Can Hear a Rainbow',
                 reward = "Kukulcan's Staff",
                 repeatable = true,
                 items = 'Earth Pendulum',
@@ -946,7 +946,7 @@ M.zones = {
                 loc = 'Windurst Woods (K-7)',
                 npc = 'Perih Vashai',
                 req = 'Lv.40+ RNG',
-                prereq = '',
+                prereq = 'The Fanged One',
                 reward = 'Sniping Bow',
                 repeatable = true,
                 items = 'Glittersand',
@@ -1172,7 +1172,7 @@ M.zones = {
                 zone = 'Windurst Woods',
                 loc = 'Windurst Woods (K-12)',
                 npc = 'Amimi, Sariale, Orlaine',
-                req = 'NOT IMPLEMENTED on this server',
+                req = '',
                 prereq = '',
                 reward = "Depends on delivery time: Windurst Woods Glyph, Miratete's Memoirs, Chocobo Ticket or Gysahl Greens",
             },
@@ -1186,7 +1186,7 @@ M.zones = {
                 npc = 'Nanaa Mihgo',
                 req = 'Lv.40+ THF',
                 prereq = '',
-                reward = '',
+                reward = "Marauder's Knife",
                 items = 'Quadav Stew',
             },
 
@@ -1226,7 +1226,7 @@ M.zones = {
                 npc = 'Nanaa Mihgo',
                 req = 'Lv.50+ THF',
                 prereq = 'As Thick as Thieves',
-                reward = '',
+                reward = "Rogue's Poulaines",
                 repeatable = true,
                 items = '4x Quake Grenade, Pickaxe',
             },
@@ -1427,4 +1427,4 @@ for _, zone in ipairs(M.zones) do
     apply_tracker_data(zone.quests)
 end
 
-return M
+return M

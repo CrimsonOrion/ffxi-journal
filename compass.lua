@@ -254,7 +254,27 @@ function M.PickZone(name, current_zone, hint, zone_name)
         end
     end
 
-    return named or first or current_zone
+    if named ~= nil then
+        return named
+    end
+
+    -- Local patch: with no zone named in the text, take the location you can
+    -- walk to with the fewest zone changes, not just the first one listed.
+    if current_zone ~= nil and entries ~= nil and #entries > 1 then
+        local zones = {}
+
+        for _, entry in ipairs(entries) do
+            zones[#zones + 1] = entry[1]
+        end
+
+        local ok, route = pcall(M.Route, current_zone, zones)
+
+        if ok and route ~= nil and route.path ~= nil and #route.path > 0 then
+            return route.path[#route.path]
+        end
+    end
+
+    return first or current_zone
 end
 
 -- Route between zones -----------------------------------------------------------

@@ -17,9 +17,13 @@ Q.STEPS = {
     },
 
     cw_bat_message_on_the_wind = {
+        "Speak with Romualdo in the Metalworks (K-9) in the present. The quest appears in your log after the next step.",
         'Speak with ' .. ACTOR.ROMUALDO_WOTG.text .. ' in Batallia Downs (S).',
-        'Follow ' .. ACTOR.ROMUALDO_WOTG.text .. '\'s instructions and investigate the requested location in the Shadowreign area.',
-        'Complete the examination sequence and return to ' .. ACTOR.ROMUALDO_WOTG.text .. '.',
+        "Speak with Childerich by the Old Cabin in Grauberg (S) (E-12).",
+        "Examine the ??? at (J-9), east of the Grauberg Guntower.",
+        "Speak with Childerich again.",
+        'Return to ' .. ACTOR.ROMUALDO_WOTG.text .. ' in Batallia Downs (S) to complete the quest and receive the Smart Grenade.',
+        "Optional, for the title: speak with Romualdo in the present, then with Childerich, and choose \"Message on the Wind\".",
     },
 
     cw_bat_face_of_the_future = {
@@ -45,7 +49,7 @@ Q.STEPS = {
     -- ========================================================
     cw_crn_weekly_adventurer = {
         'Speak with ' .. ACTOR.NAIKO_PANEIKO_WOTG.text .. ' in Crawlers\' Nest (S) and receive the Scoop-Dedicated Linkpearl.',
-        'Travel to Rolanberry Fields (S) at (G-9) and speak with ' .. ACTOR.RAKULA_MOTAKULA_WOTG.text .. ' on the turret.',
+        'Travel to Rolanberry Fields (S) and speak with ' .. ACTOR.RAKULA_MOTAKULA_WOTG.text .. ' on the turret.',
         'Answer the mandragora questions: Leafed = 4, Black = 4, and Flowered = 5.',
         'Return to ' .. ACTOR.NAIKO_PANEIKO_WOTG.text .. ' to complete the quest and receive the Map of Fort Karugo-Narugo.',
     },
@@ -53,7 +57,7 @@ Q.STEPS = {
     cw_crn_evil_at_inlet = {
         'Speak with ' .. ACTOR.RODEUPANSAT_WOTG.text .. ' in Crawlers\' Nest (S) and receive the Evil Warding Seal.',
         'Travel to Vunkerl Inlet (S) at (D-11).',
-        'Examine the ' .. ACTOR.CRAWLERS_NEST_S_WINDOW_QQ.text .. ' on the back side of the boarded-up tower window.',
+        'Examine the ' .. ACTOR.CRAWLERS_NEST_S_WINDOW_QQ.text .. '.',
         'Return to ' .. ACTOR.RODEUPANSAT_WOTG.text .. ' in Crawlers\' Nest (S) to complete the quest.',
     },
 
@@ -87,7 +91,7 @@ Q.STEPS = {
     cw_wwt_tigress_stirs = {
         'Enter Windurst Waters (S) and obtain the Inky Black Yagudo Feather.',
         'Speak with ' .. ACTOR.DHEA_PRANDOLEH_WOTG.text .. ' in Windurst Waters (S).',
-        'Travel to West Sarutabaruta (S) and examine ' .. ACTOR.WEST_SARUTABARUTA_S_STARFALL_HILLOCK_QQ.text .. ' at Starfall Hillock to obtain the Small Starfruit key item.',
+        'Travel to West Sarutabaruta (S) and examine ' .. ACTOR.WEST_SARUTABARUTA_S_STARFALL_HILLOCK_QQ.text .. ' to obtain the Small Starfruit key item.',
         'Check the ' .. ACTOR.WINDURST_S_ACOLYTE_HOSTEL_DOOR.text .. '.',
     },
 
@@ -113,11 +117,11 @@ Q.STEPS = {
         'Defeat Yagudo near the fortification in Sauromugue Champaign (S) around (K-9) until you obtain a 108-Knot Quipu.',
         'Speak with ' .. ACTOR.DHEA_PRANDOLEH_WOTG.text .. ' in Windurst Waters (S).',
         'Check ' .. ACTOR.WINDURST_S_ACOLYTE_HOSTEL_DOOR.text .. ' in Windurst Waters (S).',
-        'Travel to Sauromugue Champaign (S) at (F-6) and check ' .. ACTOR.BULWARK_GATE_WOTG.text .. ' to meet Rachemace.',
+        'Travel to Sauromugue Champaign (S) and check ' .. ACTOR.BULWARK_GATE_WOTG.text .. ' to meet Rachemace.',
         'Trade the 108-Knot Quipu to ' .. ACTOR.BULWARK_GATE_WOTG.text .. '.',
         'Check the Bulwark Gate repeatedly until the "door is firmly sealed" message appears at least three times.',
         'Enter Southern San d\'Oria (S) from East Ronfaure (S) on foot to meet Pattna-Ottna.',
-        'Go through the Portcullis and check ' .. ACTOR.SOUTHERN_SAN_DORIA_S_HOUSE_DOOR_M8.text .. ' at (M-8) to complete the quest and receive the reward.',
+        'Go through the Portcullis and check ' .. ACTOR.SOUTHERN_SAN_DORIA_S_HOUSE_DOOR_M8.text .. ' to complete the quest and receive the reward.',
     },
 
     cw_wwt_handbag = {
@@ -134,12 +138,13 @@ Q.STEPS = {
     -- THE ELDIEME NECROPOLIS (S)
     -- ========================================================
     cw_eld_little_knowledge = {
-        'Speak with ' .. ACTOR.ERLENE_WOTG.text .. ' in The Eldieme Necropolis (S) while on a level 30+ job.',
-        'Obtain 12 sheets of Vellum.',
+        "'Speak with ' .. ACTOR.ERLENE_WOTG.text .. ' in The Eldieme Necropolis (S), on the first map, while on a level 30+ job for a cutscene. The Survival Guide puts you inside; otherwise enter from Batallia Downs (S) (J-10), walk straight down the tunnel, and she is in the room where it forks north and south.'",
+        "'Obtain 12 sheets of Vellum: buy them at the Auction House (Leathercraft), or trade Rolanberries to Tucker in Crawlers' Nest (S) (K-8) on the first map, once the quest is active. Tucker accepts only 3 trades of up to 4 stacks each (one sheet per stack), so bring 12 stacks and trade 4 at a time. Champalpieu in Upper Jeuno sells Rolanberries.'",
         'Trade all 12 Vellum to ' .. ACTOR.ERLENE_WOTG.text .. '.',
-        'Change to BLM, RDM, SMN, or BLU and activate Astral Flow, Chainspell, Azure Lore, or Manafont.',
+        "Change to BLM, RDM, SMN, or BLU (it doesn't need to be level 30) and activate Astral Flow, Chainspell, Azure Lore, or Manafont.",
         'While the two-hour ability is active, speak with ' .. ACTOR.ERLENE_WOTG.text .. ' again.',
         'Receive the Grimoire and Scholar job access.',
+        "'Once your Scholar is level 5 or higher, speak with ' .. ACTOR.ERLENE_WOTG.text .. ' again while on Scholar to learn Embrava and Kaustra (these spells have no scrolls).'",
     },
 
     cw_eld_requiem_departed = {
@@ -150,15 +155,30 @@ Q.STEPS = {
     },
 
     cw_eld_on_sabbatical = {
-        'Speak with ' .. ACTOR.ERLENE_WOTG.text .. ' and ' .. ACTOR.ULBRECHT_WOTG.text .. ' in The Eldieme Necropolis (S).',
-        'Complete the required Scholar artifact objectives and combat sequence.',
+        'Speak with ' .. ACTOR.ERLENE_WOTG.text .. ' in The Eldieme Necropolis (S) to begin the quest and receive Ulbrecht\'s sealed letter.',
+        "Speak with Gentle Tiger in Bastok Markets (S) (H-6) for a cutscene. If he says he has never heard of a bundle of half-inscribed scrolls, speak with him again; you may need to finish the Bastok (S) quests first.",
+        "In the southwest corner of Pashhow Marshlands (S), touch the Indescript Markings on the line between (E-10) and (E-11) for a cutscene and Schultz's sealed letter. Level ~80 Virulent Peistes around them aggro on sight: use Invisible, or bring a strong job.",
         'Return to ' .. ACTOR.ERLENE_WOTG.text .. ' to receive Klimaform.',
     },
 
     cw_eld_downward_helix = {
-        'Speak with ' .. ACTOR.ERLENE_WOTG.text .. ' in The Eldieme Necropolis (S).',
-        'Complete the required Scholar artifact objectives and battlefield.',
-        'Return to ' .. ACTOR.ERLENE_WOTG.text .. ' to receive the Scholar\'s Bracers.',
+        'Zone and wait until the next game day after On Sabbatical. As a Scholar, speak with ' .. ACTOR.ERLENE_WOTG.text .. ' in The Eldieme Necropolis (S) for a cutscene.',
+        'Zone into Southern San d\'Oria (S) from East Ronfaure (S); the Survival Guide and telecrystals don\'t count.',
+        'Return to ' .. ACTOR.ERLENE_WOTG.text .. '.',
+        'Zone into Sauromugue Champaign (S) from Rolanberry Fields (S) for a cutscene.',
+        'Examine the Indescript Markings on the ledge in the south-east corner of (J-7) in Sauromugue Champaign (S), near a ???, for a cutscene and the key item Ulbrecht\'s mortarboard. They disappear during dust (earth) weather.',
+        'Return to ' .. ACTOR.ERLENE_WOTG.text .. ' for a cutscene and your Scholar\'s Bracers. Afterwards Loussaire in Bastok Markets (S) (G-10) can make the rest of your artifact pieces.',
+    },
+
+    cw_eld_seeing_blood_red = {
+        'Zone and wait until the next game day after Downward Helix. As a Scholar, speak with ' .. ACTOR.ERLENE_WOTG.text .. ' in The Eldieme Necropolis (S); from here on any job works.',
+        'Examine the Indescript Markings along the north edge of (E-11) in Pashhow Marshlands (S), by the wall, for the key item Unaddressed sealed letter. The Recall-Pashh telepoint and the Survival Guide put you at the south end of the map, a short walk west.',
+        'Read the Unaddressed sealed letter from your Temporary Key Items menu.',
+        'Return to ' .. ACTOR.ERLENE_WOTG.text .. ' for a cutscene and the key item Porting magic transcript.',
+        'In Grauberg (S), enter the cave opposite the waterfall on the (E-10)/(F-10) line and examine the shimmering light on the ground. The entrance is on dry land; if you reach the waterfall you\'ve gone too far and have to go back around. The Campaign Arbiter warp from a Shadowreign city lands closest.',
+        'Examine the Indescript Markings on the cave wall to enter the battlefield in Ruhotz Silvermines. The party leader must have the quest; up to 6 can enter, Trusts are allowed, 30 minute limit.',
+        'Fight Ulbrecht, a level 67 Scholar with about 12,000 HP who casts tier III nukes, Sleep, Drain, Aspir, Dispel and cures. He is immune to Silence but not to Bind, Gravity or Sleep, and uses Tabula Rasa at about 50%. The fight ends when he drops below 20%. If you lose, trade ' .. ACTOR.ERLENE_WOTG.text .. ' a Sheet of Vellum for a new Porting magic transcript.',
+        'Return to ' .. ACTOR.ERLENE_WOTG.text .. ' for your Scholar\'s Mortarboard.',
     },
 
     -- ========================================================
@@ -167,8 +187,8 @@ Q.STEPS = {
     cw_bmk_fighting_fourth = {
         'Speak with ' .. ACTOR.ADELBRECHT_WOTG.text .. ' in Bastok Markets (S) and turn in the Blue Recommendation Letter to receive Battle Rations.',
         'Travel to North Gustaberg (S), ascend Zegham Hill, and speak with ' .. ACTOR.GEBHARDT_WOTG.text .. '.',
-        'Go to (E-11) and speak with ' .. ACTOR.RODERICH_WOTG.text .. '.',
-        'Go to (E-7) and interact with ' .. ACTOR.NORTH_GUSTABERG_S_BARRICADE_E7.text .. '.',
+        'Speak with ' .. ACTOR.RODERICH_WOTG.text .. '.',
+        'Interact with ' .. ACTOR.NORTH_GUSTABERG_S_BARRICADE_E7.text .. '.',
         'Return to ' .. ACTOR.ADELBRECHT_WOTG.text .. '.',
     },
 
@@ -185,7 +205,7 @@ Q.STEPS = {
     cw_bmk_storm_on_horizon = {
         'Enter Bastok Markets (S) from North Gustaberg (S).',
         'Speak with ' .. ACTOR.GENTLE_TIGER_WOTG.text .. '.',
-        'Examine ' .. ACTOR.NORTH_GUSTABERG_S_MONUMENT_J7.text .. ' on Zegham Hill in North Gustaberg (S).',
+        'Examine ' .. ACTOR.NORTH_GUSTABERG_S_MONUMENT_J7.text .. ' in North Gustaberg (S).',
         'Examine ' .. ACTOR.GRAUBERG_QQ_H6.text .. ' inside the cave at (I-6) to complete the quest.',
     },
 
@@ -253,7 +273,7 @@ Q.STEPS = {
         'Obtain Goblin Mess Tin, Goblin Mushpot, and Twinkle Powder.',
         'Return to ' .. ACTOR.BLATHERIX_WOTG.text .. ' and trade all three items.',
         'Return to ' .. ACTOR.GENTLE_TIGER_WOTG.text .. '.',
-        'Travel to Vunkerl Inlet (S) at (F-6) and examine ' .. ACTOR.VUNKERL_INLET_S_QQ_F6.text .. '.',
+        'Travel to Vunkerl Inlet (S) and examine ' .. ACTOR.VUNKERL_INLET_S_QQ_F6.text .. '.',
         'Speak with ' .. ACTOR.BLATHERIX_WOTG.text .. ' in Bastok Markets (S) to receive the Goblin Belt.',
     },
 
@@ -295,7 +315,7 @@ Q.STEPS = {
         'In Castle Zvahl Keep (S), locate Rikke at (G-7) northwest, Rakke at (G-10) southwest, and Rokke at (H-10) southeast.',
         'Speak with all three imps and determine which one is honest.',
         'Trade the Elixir to the correct imp. If you choose incorrectly, wait one Vana\'diel day before trying again.',
-        'Examine ' .. ACTOR.CASTLE_ZVAHL_KEEP_S_QQ_G9.text .. ' in the southwest room on Map 3.',
+        'Examine ' .. ACTOR.CASTLE_ZVAHL_KEEP_S_QQ_G9.text .. ' on Map 3.',
         'Drop down, use the center teleporter, and examine ' .. ACTOR.CASTLE_ZVAHL_KEEP_S_DISPLACED_BLOCK.text .. ' to complete the quest and receive the reward.',
     },
 
@@ -327,19 +347,19 @@ Q.STEPS = {
         'Speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S).',
         'Leave the area and return, then speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' again.',
         'Travel to Jugner Forest (S) via East Ronfaure (S).',
-        'Go to (I-6) and examine ' .. ACTOR.JUGNER_FOREST_S_FOOTPRINT_I6.text .. ' on the tree stump.',
-        'Defeat Fingerfilcher Dradzad.',
-        'Examine ' .. ACTOR.JUGNER_FOREST_S_FOOTPRINT_I6.text .. ' again to complete the quest.',
+        'Go to (I-6) and examine the ??? on a tree stump for a cutscene.',
+        'Examine the ??? again to make Fingerfilcher Dradzad, an Orc warrior NM, appear, and defeat it. It is immune to sleep.',
+        'Examine the ??? once more for a cutscene that completes the quest and gives your reward.',
     },
 
     cw_ssd_boy_and_the_beast = {
         'Speak with ' .. ACTOR.RAUSTIGNE_WOTG.text .. ' in Southern San d\'Oria (S).',
         'Speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S).',
-        'Travel to Vunkerl Inlet (S) at (H-6) and examine ' .. ACTOR.VUNKERL_INLET_S_QQ_H6.text .. ' near the bridge to obtain the Vunkerl Herb Memo.',
+        'Travel to Vunkerl Inlet (S) and examine ' .. ACTOR.VUNKERL_INLET_S_QQ_H6.text .. ' to obtain the Vunkerl Herb Memo.',
         'Determine the correct herb color from the current time: Red/Sandy 00:00-07:59, Blue/Bastok 08:00-15:59, Green/Windurst 16:00-23:59.',
-        'Travel to Vunkerl Inlet (S) at (F-5), find ' .. ACTOR.VUNKERL_INLET_S_LEAFY_PATCH_F5.text .. ', and select the correct color.',
+        'Travel to Vunkerl Inlet (S), find ' .. ACTOR.VUNKERL_INLET_S_LEAFY_PATCH_F5.text .. ', and select the correct color.',
         'Obtain the Vunkerl Herb from the Leafy Patch.',
-        'Return to (H-6) and examine ' .. ACTOR.VUNKERL_INLET_S_QQ_H6.text .. ' to complete the quest.',
+        'Return to the ' .. ACTOR.VUNKERL_INLET_S_QQ_H6.text .. ' to complete the quest.',
     },
 
     cw_ssd_wrath_of_griffon = {
@@ -363,7 +383,7 @@ Q.STEPS = {
         'Leave the area and speak with ' .. ACTOR.RHOLONT_WOTG.text .. ' again.',
         'Speak with ' .. ACTOR.DAIGRAFFEAUX_WOTG.text .. ' in Southern San d\'Oria (S).',
         'Return to ' .. ACTOR.RHOLONT_WOTG.text .. '.',
-        'Travel to Jugner Forest (S) at (I-6) and examine ' .. ACTOR.JUGNER_FOREST_S_FOOTPRINT_I6.text .. ' to obtain the Orcish Warmachine Body key item.',
+        'Travel to Jugner Forest (S) and examine the ??? on the tree stump at (I-6) to obtain the Orcish Warmachine Body key item.',
         'Return to ' .. ACTOR.RHOLONT_WOTG.text .. ' in Southern San d\'Oria (S) to complete the quest.',
     },
 
@@ -487,7 +507,7 @@ Q.STEPS = {
     -- ========================================================
     cw_zvb_bonds_of_mythril = {
         'Enter Castle Zvahl Baileys (S) from Castle Zvahl Keep (S).',
-        'Examine ' .. ACTOR.CASTLE_ZVAHL_BAILEYS_S_QQ_G9.text .. ' in the southwest room on Map 3.',
+        'Examine ' .. ACTOR.CASTLE_ZVAHL_BAILEYS_S_QQ_G9.text .. ' on Map 3.',
         'Defeat all four imps in the central room on Map 3.',
         'Examine ' .. ACTOR.CASTLE_ZVAHL_BAILEYS_S_QQ_G9.text .. ' again to face Gargouille Warden; defeat it and examine the ??? again to obtain the Zvahl Passkey.',
         'Enter Throne Room (S) and examine the Throne Room door.',

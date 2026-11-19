@@ -144,8 +144,8 @@ M.STEPS = {
         number = "1-1",
         mission_type = "Cutscene",
         steps = {
-            "Travel to Lower Jeuno and speak with " .. ACTOR.DARCIA.text .. ".",
-            "Choose to begin the Seekers of Adoulin storyline.",
+            "After installing Seekers of Adoulin, entering one of the three starting nations plays a short cutscene telling you to go to Jeuno. It is optional.",
+            "Speak with " .. ACTOR.DARCIA.text .. " in the Chamber of Commerce and Industry in Lower Jeuno and choose \"I would like to apply!\" to receive the Geomagnetron key item.",
         },
     },
 
@@ -154,10 +154,10 @@ M.STEPS = {
         number = "1-2",
         mission_type = "Quest",
         steps = {
-            "Speak with " .. ACTOR.DARCIA.text .. " to receive the Geomagnetron and the list of possible attunement sites.",
-            "Travel to one of the listed Geomagnetic Founts.",
-            "Attune the Geomagnetron to the required energy source.",
-            "Return to " .. ACTOR.DARCIA.text .. ".",
+            "If you don't have it yet, speak with " .. ACTOR.DARCIA.text .. " and choose \"I would like to apply!\" for the Geomagnetron and a list of founts.",
+            "Attune it at the Geomagnetic Fount in any one of: Gustav Tunnel (G-10) map 1, Ranguemont Pass (J-10), Yughott Grotto (J-7), King Ranperre's Tomb (K-6), Monastic Cavern (H-10) map 1, Eldieme Necropolis (J-10) map 2, Ordelle's Caves (F-12), Gusgen Mines (G-7) map 3, Dangruf Wadi (E-11), Korroloka Tunnel (G-9) map 4, Palborough Mines (J-8) map 2, Labyrinth of Onzozo (J-5), Maze of Shakhrami (K-9) map 1, Garlaige Citadel (G-8) map 2, Crawlers' Nest (F-7) map 1, Outer Horutoto Ruins (G-7) map 2, Inner Horutoto Ruins (G/H-7) map 2 or Toraimarai Canal (I-6).",
+            "Easiest at low level: Outer Horutoto Ruins, entered from the tower at (H-3) in East Sarutabaruta. Go left down the hall to (G-7); the fount is behind the farthest southwest Stone Door. Monsters there are level 1-4. At high level, Gustav Tunnel is seconds from Unity Warp (level 128).",
+            "Return to " .. ACTOR.DARCIA.text .. " for the Adoulinian charter permit. You can skip the fount by paying her 1,000,000 gil, or by finishing the Rhapsodies mission The River Runs Red, where Iroha hands you the Geomagnetron.",
         },
     },
 
@@ -166,8 +166,7 @@ M.STEPS = {
         number = "1-3",
         mission_type = "Cutscene",
         steps = {
-            "Travel west through Ceizak Battlegrounds.",
-            "Reach Western Adoulin at (K-7).",
+            "Activate the Waypoint at (H-7) in Lower Jeuno to travel to Ulbuka.",
         },
     },
 
@@ -176,8 +175,7 @@ M.STEPS = {
         number = "1-4",
         mission_type = "Cutscene",
         steps = {
-            "Travel northeast through Ceizak Battlegrounds.",
-            "Reach Western Adoulin at (K-7).",
+            "Head northeast through Ceizak Battlegrounds to Western Adoulin (K-7). You can use mounts here.",
         },
     },
 
@@ -190,6 +188,7 @@ M.STEPS = {
             "Travel to the Pioneers' Coalition in Western Adoulin at (E-8).",
             "Speak with " .. ACTOR.BRENTON.text .. ".",
             "Receive the Pioneer's Badge, Map of Adoulin, and 1,000 Bayld.",
+            "Talk to a Task Delegator now so you start earning imprimaturs for Coalition Assignments.",
         },
     },
 
@@ -199,9 +198,10 @@ M.STEPS = {
         mission_type = "Quest",
         reward = "Wildskeeper Reive access",
         steps = {
-            "Use at least 15 Imprimaturs on completed Coalition Assignments.",
-            "Return to " .. ACTOR.BRENTON.text .. " in the Pioneers' Coalition.",
-            "Receive the Dinner invitation and access to Wildskeeper Reives.",
+            "Use 15 or more imprimaturs on completed Coalition Assignments. Higher Adoulin fame lowers the requirement; finishing quests such as I'm on a Boat helps.",
+            "Now is a good time to start learning Survival Skills (Logging, Watercrafting, Climbing and so on); you need them to cross the Ulbuka zones.",
+            "Speak with " .. ACTOR.BRENTON.text .. " in the Pioneers' Coalition for a cutscene and the Dinner invitation.",
+            "You can now buy Wildskeeper Reive key items from Dimmian in Eastern Adoulin (E-6).",
         },
     },
 
@@ -210,8 +210,9 @@ M.STEPS = {
         number = "1-7",
         mission_type = "Cutscene",
         steps = {
-            "Travel to the Gates of Castle Adoulin in Eastern Adoulin.",
-            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " at (K-9) between 15:00 and 22:00.",
+            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " at the Gates of Castle Adoulin in Eastern Adoulin between 15:00 and 22:00 (Vana'diel time) for a cutscene.",
+            "Tip: start the quest Flavors of Our Lives now (Berghent at (J-9) near the Big Bridge in Western Adoulin, then Masad in the Mummers' Coalition) until Teodor is introduced. Otherwise Budding Prospects costs you an extra game day.",
+            "Finishing this mission also lets you continue the Rhapsodies mission The Crucible.",
         },
     },
 
@@ -220,8 +221,10 @@ M.STEPS = {
         number = "1-8",
         mission_type = "Cutscene",
         steps = {
-            "Meet the required imprimatur and fame progression for the mission.",
-            "Return to the Pioneers' Coalition and speak with " .. ACTOR.LEVIL.text .. ".",
+            "Use enough imprimaturs and earn Adoulin fame. 15 imprimaturs used plus fame level 2 (quests such as I'm on a Boat, Western Waypoints Ho!, Eastern Waypoints Ho! and The Old Man and the Harpoon) is enough.",
+            "Quick assignments: repeat the Inventors' Coalition task Gather Materials: Rala Waterways (trade 3 Bloodthread to the Task Delegator), or Couriers' Coalition deliveries using waypoints. Accepting assignments and cancelling them later refunds the imprimaturs, so you can bank them.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition to finish. If you already met the requirement, the next mission can start on the next game day.",
+            "Keep using imprimaturs: later missions need more.",
         },
     },
 
@@ -231,9 +234,9 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Game day: wait for the next mission",
         steps = {
-            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " at the Gates of Castle Adoulin.",
-            "Speak with " .. ACTOR.ARCIELA.text .. ".",
-            "Wait until the next Vana'diel day before continuing to The Light Shining in Your Eyes.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition.",
+            "If Teodor hasn't been introduced in the quest Flavors of Our Lives yet: talk to Berghent at (J-9) near the Big Bridge, then Masad in the Mummers' Coalition, and wait until the next game day.",
+            "Speak with Masad in the Mummers' Coalition (Western Adoulin) for the mission cutscene. After the day changes you may need to zone and talk to him twice.",
         },
     },
 
@@ -242,8 +245,7 @@ M.STEPS = {
         number = "2-1-1",
         mission_type = "Cutscene",
         steps = {
-            "Speak with " .. ACTOR.ARCIELA.text .. ".",
-            "Complete the resulting event.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition (Western Adoulin) for a cutscene.",
         },
     },
 
@@ -256,8 +258,7 @@ M.STEPS = {
         number = "2-1-2",
         mission_type = "Cutscene",
         steps = {
-            "Speak with " .. ACTOR.ARCIELA.text .. " and follow her request.",
-            "Continue to the required event involving the royal heirloom.",
+            "Approach the Castle Adoulin gates in Eastern Adoulin, where " .. ACTOR.POHL_TRISHBAHK.text .. " stands, for a cutscene.",
         },
     },
 
@@ -266,9 +267,9 @@ M.STEPS = {
         number = "2-2",
         mission_type = "Quest",
         steps = {
-            "Travel to Cirdas Caverns.",
-            "Proceed to the Ergon Locus around (E-9).",
-            "Complete the cutscene involving Arciela.",
+            "Travel to Cirdas Caverns and go to the Ergon Locus at (E-9) for a cutscene. A Colonization Reive that needs the Logging survival skill blocks the way.",
+            "Routes: Ceizak Battlegrounds waypoint #3, southwest into Sih Gates, then west into Cirdas Caverns (southeast corner). Or Foret de Hennetiel waypoint #3, clear the reive to the north, go through Dho Gates and take the one-way drop into Cirdas Caverns (southwest corner). If the Augural Conveyor is unlocked, a waypoint takes you to (J-3) for 300 units.",
+            "Afterwards you can continue the Rhapsodies mission Tears of the Generals.",
         },
     },
 
@@ -277,8 +278,8 @@ M.STEPS = {
         number = "2-2-1",
         mission_type = "Cutscene",
         steps = {
-            "Travel to Yorcia Weald.",
-            "Enter Yorcia Weald.",
+            "You need the Watercrafting and Climbing survival skills to reach Yorcia Weald from Cirdas Caverns.",
+            "Enter Yorcia Weald for a cutscene. Arriving by waypoint or Home Point also works.",
         },
     },
 
@@ -288,11 +289,10 @@ M.STEPS = {
         mission_type = "Quest",
         reward = "Game day: wait for the next mission",
         steps = {
-            "Travel to Yorcia Weald.",
-            "Examine " .. ACTOR.YORCIA_ERGON_QQ_I8.text .. " to obtain Yorcia's Tear.",
+            "Examine " .. ACTOR.YORCIA_ERGON_QQ_I8.text .. " in Yorcia Weald for Yorcia's tear. Enter (I-8) from the west; a wall that sometimes blocks the path opens at 21:00. Standing on the Suspicious Place, face northeast and the ??? is straight ahead.",
             "Do not use the northern Ergon Locus ???; it is not the correct target.",
-            "Travel to the required pure water font.",
-            "Complete the royal sequence and obtain Rosulatia's Pome.",
+            "Alternatively, harvest Harvesting Points with Sickles until the key item drops. This is slow; bring spare Sickles.",
+            "Go to (G-6) and examine the Pellucid Afflusion next to the pond for a cutscene and Rosulatia's pome. A bush at the (G-5/6)-(H-5/6) corner sometimes rises and blocks the path for a few minutes.",
         },
     },
 
@@ -311,8 +311,7 @@ M.STEPS = {
         number = "2-4",
         mission_type = "Cutscene",
         steps = {
-            "Travel to Eastern Adoulin.",
-            "Enter Rala Waterways from the Eastern Adoulin entrance at (F-7).",
+            "Enter Rala Waterways from Eastern Adoulin (F-7) for a cutscene with Arciela.",
         },
     },
 
@@ -322,9 +321,7 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Game day: wait for the next mission",
         steps = {
-            "Travel to Rala Waterways.",
-            "Speak with " .. ACTOR.YEGGHA_DOLASHI.text .. ".",
-            "Continue to the Watergarden Coliseum.",
+            "In Rala Waterways, go to the room in the center of (M-6) and speak with " .. ACTOR.YEGGHA_DOLASHI.text .. " for a cutscene. The Eastern Adoulin (F-7) entrance is closest.",
         },
     },
 
@@ -333,8 +330,8 @@ M.STEPS = {
         number = "2-5",
         mission_type = "Cutscene",
         steps = {
-            "Continue the Arciela sequence through Rala Waterways.",
-            "Proceed through the required events.",
+            "Wait until the next game day after The Watergarden Coliseum.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition (Western Adoulin) for a cutscene.",
         },
     },
 
@@ -343,8 +340,9 @@ M.STEPS = {
         number = "2-5-1",
         mission_type = "Quest",
         steps = {
-            "Enter the " .. ACTOR.LIBRARY.text .. ".",
-            "Complete the event inside the library.",
+            "Go to the " .. ACTOR.LIBRARY.text .. " at (F-10) in Eastern Adoulin and talk to Eppel-Treppel to go inside.",
+            "Read all three options in the book \"History\" on the shelf between Yefafa and Vainrachault. If you can't read the books, first do the quest Order Up from Reja Ygridhi inside the library; it needs a library card (1,000 bayld from Patient Snake in Eastern Adoulin (F-9), at the end of the path into the Scouts' Coalition).",
+            "Return to " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition.",
         },
     },
 
@@ -353,9 +351,9 @@ M.STEPS = {
         number = "2-5-2",
         mission_type = "Quest",
         steps = {
-            "Enter Rala Waterways.",
-            "Examine " .. ACTOR.SLUICE_GATE.text .. ".",
-            "Continue through the required investigation.",
+            "Enter Rala Waterways for a cutscene. The Western Adoulin (F-5) entrance, near the Adoulin Waterfront waypoint, is closest.",
+            "Go south to the dead end at (C-6) and examine the " .. ACTOR.SLUICE_GATE.text .. ". Enter the four-letter password in capitals: the initials of the four order leaders marked in the library's History book (HGSI).",
+            "In the cutscene, answer \"Of course it won't help\". If you pick the other answer and fail to repeat the password, examine the gate again for the Note detailing seditious plans. Too many wrong passwords lock you out until you reread the History book.",
         },
     },
 
@@ -365,7 +363,7 @@ M.STEPS = {
         mission_type = "Cutscene",
         steps = {
             "Travel to the Gates of Castle Adoulin in Eastern Adoulin at (K-9).",
-            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. ".",
+            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " for a cutscene. If you are on the Rhapsodies mission Tears of the Generals you get that cutscene first, so talk to her twice.",
         },
     },
 
@@ -374,9 +372,8 @@ M.STEPS = {
         number = "2-6-1",
         mission_type = "Cutscene",
         steps = {
-            "Continue from Aiming for Ygnas into Rala Waterways.",
-            "Complete the kitchen-related event.",
-            "Return to " .. ACTOR.ARCIELA.text .. ".",
+            "Enter Rala Waterways from Western Adoulin (I-12), near the Rent-a-Room waypoint and Home Point #2.",
+            "Speak with Chalvava at (F-11) for a cutscene and a Box of Adoulinian tomatoes.",
         },
     },
 
@@ -385,8 +382,7 @@ M.STEPS = {
         number = "2-6-2",
         mission_type = "Cutscene",
         steps = {
-            "Follow Arciela into the required wilderness sequence.",
-            "Return to " .. ACTOR.ARCIELA.text .. ".",
+            "Return to " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates in Eastern Adoulin for a cutscene.",
         },
     },
 
@@ -396,7 +392,7 @@ M.STEPS = {
         mission_type = "Cutscene",
         steps = {
             "Enter Rala Waterways from Western Adoulin at (F-5).",
-            "Reach " .. ACTOR.SLUICE_GATE.text .. " at (C-6).",
+            "Reach " .. ACTOR.SLUICE_GATE.text .. ".",
         },
     },
 
@@ -405,12 +401,11 @@ M.STEPS = {
         number = "2-7-1",
         mission_type = "BCNM",
         steps = {
-            "Travel to Rala Waterways.",
-            "Examine " .. ACTOR.RALA_STORAGE_CONTAINER_H6.text .. " at (H-6) to obtain the Waterway facility crank.",
-            "Return to " .. ACTOR.SLUICE_GATE.text .. " at (C-6).",
-            "Use the crank at the Sluice Gate to open the route.",
-            "Proceed to the Antiquated Sluice Gate and enter the battlefield.",
-            "Defeat the enemies in Behind the Sluices.",
+            "Get the Waterway facility crank from the " .. ACTOR.RALA_STORAGE_CONTAINER_H6.text .. " in Rala Waterways. From town, the Western Adoulin (K-8) entrance by the Big Bridge waypoint is closest; Sneak is enough.",
+            "Return to the " .. ACTOR.SLUICE_GATE.text .. " for a cutscene, then examine it again to go behind the gate.",
+            "Examine the Antiquated Sluice Gate to enter the battle. If you lose, you need a new crank from the Storage Container.",
+            "You fight The Keeper (SCH/BLM, the toughest; kill it last), Mistdagger (NIN) and The Briars (a Galka WAR and an Elvaan RDM/BLM). They run to random targets to use weapon skills, so expect skillchains on your party. Trusts are allowed.",
+            "Arciela joins once you draw your weapon. She needs healing, and the mission fails if she dies.",
         },
     },
 
@@ -420,7 +415,7 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Game day: wait for the next mission",
         steps = {
-            "Return to the Gates of Castle Adoulin at (K-9).",
+            "Approach the Castle Adoulin gates in Eastern Adoulin, where " .. ACTOR.POHL_TRISHBAHK.text .. " stands, for a cutscene. Taking the waypoint to the gates also triggers it.",
         },
     },
 
@@ -429,8 +424,8 @@ M.STEPS = {
         number = "2-7-3",
         mission_type = "Cutscene",
         steps = {
-            "Wait until the next Vana'diel day if necessary.",
-            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition at (E-8).",
+            "Wait until the next game day after the cutscene at the castle gates.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition. If there is still an imprimatur and fame requirement, 15 imprimaturs used and fame level 2 is enough.",
         },
     },
 
@@ -443,8 +438,7 @@ M.STEPS = {
         number = "3-1",
         mission_type = "Cutscene",
         steps = {
-            "Travel to the Western Adoulin Airship Docks.",
-            "Complete the event introducing Ingrid.",
+            "Go to the Airship Docks in Western Adoulin (H-4, waypoint #8) for a cutscene.",
         },
     },
 
@@ -454,8 +448,8 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Access to Ingrid Trust",
         steps = {
-            "Travel to Eastern Adoulin at (K-9).",
-            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. ".",
+            "Approach the Castle Adoulin gates in Eastern Adoulin, where " .. ACTOR.POHL_TRISHBAHK.text .. " stands, for a cutscene.",
+            "Afterwards, speak with " .. ACTOR.RIGOBERTINE.text .. " twice for the Trust: Ingrid cutscene.",
         },
     },
 
@@ -465,10 +459,10 @@ M.STEPS = {
         mission_type = "Quest",
         steps = {
             "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates.",
-            "Speak with " .. ACTOR.RIGOBERTINE.text .. " at (J-7).",
+            "Speak with " .. ACTOR.RIGOBERTINE.text .. " in the alley at the southeast corner of (J-7) for the Eternal flame and hints. You can't get the other items without this cutscene.",
             "Examine " .. ACTOR.FONTIS_XANIRA_H8.text .. " to obtain the Vial of untainted holy water.",
             "Examine " .. ACTOR.SUNRISE_BEACON_J4.text .. " to obtain the Piece of a stone wall.",
-            "Speak with " .. ACTOR.ERMINOLD.text .. " to obtain the Weather vane wings.",
+            "Speak with " .. ACTOR.ERMINOLD.text .. " near the castle gates for the Weather vane wings. He only gives them once you have the holy water and the stone wall piece.",
         },
     },
 
@@ -478,9 +472,7 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Game day: wait for the next mission",
         steps = {
-            "Continue with the four required items from A Curse from the Past.",
-            "Complete the purification sequence.",
-            "Return to " .. ACTOR.ARCIELA.text .. ".",
+            "With all four key items, approach the Castle Adoulin gates in Eastern Adoulin, where " .. ACTOR.POHL_TRISHBAHK.text .. " stands, for a cutscene.",
         },
     },
 
@@ -489,8 +481,8 @@ M.STEPS = {
         number = "3-1-4",
         mission_type = "Cutscene",
         steps = {
-            "Continue the investigation into the key.",
-            "Return to " .. ACTOR.ARCIELA.text .. " when directed.",
+            "Wait until the next Vana'diel day after the previous mission.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition (Western Adoulin) for a cutscene.",
         },
     },
 
@@ -499,9 +491,8 @@ M.STEPS = {
         number = "3-2",
         mission_type = "Cutscene",
         steps = {
-            "Speak with " .. ACTOR.ARCIELA.text .. ".",
-            "Proceed to the " .. ACTOR.PALACE_ADOULIN.text .. ".",
-            "Complete the royal event.",
+            "Enter the " .. ACTOR.LIBRARY.text .. " for a cutscene.",
+            "Choose the second option, \"What kind of sweets do you like?\".",
         },
     },
 
@@ -511,8 +502,7 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Game day: wait for the next mission",
         steps = {
-            "Continue the royal investigation.",
-            "Proceed to the required encounter.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition (Western Adoulin) for a cutscene.",
         },
     },
 
@@ -521,8 +511,8 @@ M.STEPS = {
         number = "3-2-2",
         mission_type = "Cutscene",
         steps = {
-            "Complete the requested favor in Adoulin.",
-            "Return to " .. ACTOR.ARCIELA.text .. ".",
+            "Wait until the next Vana'diel day after the previous mission.",
+            "Walk from Western Adoulin into Ceizak Battlegrounds for a cutscene. Don't use a waypoint.",
         },
     },
 
@@ -531,8 +521,7 @@ M.STEPS = {
         number = "3-3",
         mission_type = "Cutscene",
         steps = {
-            "Enter the " .. ACTOR.LIBRARY.text .. ".",
-            "Complete the cutscene there.",
+            "Enter the " .. ACTOR.LIBRARY.text .. " for a cutscene.",
         },
     },
 
@@ -551,7 +540,7 @@ M.STEPS = {
         number = "3-3-2",
         mission_type = "Cutscene",
         steps = {
-            "Examine " .. ACTOR.BOARDING_HOUSE_H9.text .. " at (H-9) in Eastern Adoulin.",
+            "Examine " .. ACTOR.BOARDING_HOUSE_H9.text .. " in Eastern Adoulin, near the Statue of the Goddess waypoint (#3), for a very long cutscene.",
         },
     },
 
@@ -572,7 +561,7 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "1k Bayld, 1k Exp/LP; Game day: wait for the next mission",
         steps = {
-            "Return to " .. ACTOR.BOARDING_HOUSE_H9.text .. " at (H-9).",
+            "Return to " .. ACTOR.BOARDING_HOUSE_H9.text .. ".",
         },
     },
 
@@ -600,6 +589,7 @@ M.STEPS = {
             "Speak with Masad.",
             "Win 3 rounds of Boom or Bust.",
             "If you lose, speak with Masad twice to try again.",
+            "Shortcut: with the Rhapsody in Azure key item, buy the Card Jailer Teodor from a Curio Vendor Moogle for 1,000 gil, then speak with Masad to win automatically.",
         },
     },
 
@@ -608,8 +598,7 @@ M.STEPS = {
         number = "3-4-1",
         mission_type = "Cutscene",
         steps = {
-            "Continue the Teodor sequence from the Mummers' Coalition.",
-            "Complete the resulting event.",
+            "This mission finishes as soon as you beat Teodor at Boom or Bust (or win with the Card Jailer Teodor).",
         },
     },
 
@@ -618,8 +607,8 @@ M.STEPS = {
         number = "3-4-2",
         mission_type = "Cutscene",
         steps = {
-            "Continue the investigation into the Gentleman.",
-            "Complete the required event.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition and choose \"Ortharsyne\".",
+            "If Levil has nothing new, talk to Masad again to make sure you saw the Teodor cutscene, then try Levil again.",
         },
     },
 
@@ -638,7 +627,7 @@ M.STEPS = {
         number = "3-4-4",
         mission_type = "Cutscene",
         steps = {
-            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates in Eastern Adoulin at (K-9).",
+            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates in Eastern Adoulin.",
         },
     },
 
@@ -647,8 +636,7 @@ M.STEPS = {
         number = "3-5",
         mission_type = "Cutscene",
         steps = {
-            "Continue the storyline following Ingrid's appearance.",
-            "Complete the required event.",
+            "In Ceizak Battlegrounds, examine the Signs of Struggle at the (I-7)/(J-8) intersection, southwest of the Frontier Station. Follow the wall from the station into the narrow path just before the Bight Uragnite; it is by a tree near some Twigtrip Lapinions.",
         },
     },
 
@@ -657,7 +645,7 @@ M.STEPS = {
         number = "3-5-1",
         mission_type = "Cutscene",
         steps = {
-            "Return to the Gates of Castle Adoulin in Eastern Adoulin.",
+            "Approach the Castle Adoulin gates in Eastern Adoulin, where " .. ACTOR.POHL_TRISHBAHK.text .. " stands, for a cutscene.",
         },
     },
 
@@ -675,8 +663,7 @@ M.STEPS = {
         number = "3-5-3",
         mission_type = "Cutscene",
         steps = {
-            "Continue the search for Arciela.",
-            "Follow the leads through Adoulin.",
+            "Approach Wegellion in the Scouts' Coalition in Eastern Adoulin (waypoint #2) for a cutscene and the Tintinnabulum.",
         },
     },
 
@@ -685,8 +672,7 @@ M.STEPS = {
         number = "3-6",
         mission_type = "Cutscene",
         steps = {
-            "Travel northwest through Ulbuka.",
-            "Follow the trail to the required location.",
+            "Enter Kamihr Drifts for a cutscene. Arriving from Woh Gates, by Home Point or by waypoint all work. Bivouac #2 is closest to the next mission's spot.",
         },
     },
 
@@ -695,9 +681,8 @@ M.STEPS = {
         number = "3-6-1",
         mission_type = "Cutscene",
         steps = {
-            "Travel to Kamihr Drifts.",
-            "Reach the Wildskeeper Reive area.",
-            "Defeat Kumhau.",
+            "Examine the Crawling Cave at (F-11) in Kamihr Drifts for a long cutscene and the Aureate ball of fur. You don't fight Kumhau here.",
+            "Route: from Bivouac #2, leave the cave by the west tunnel, turn right and go north to the inlet at the top of (G-10), go down the slope and through the cave, then head southwest to the Crawling Cave.",
         },
     },
 
@@ -706,8 +691,7 @@ M.STEPS = {
         number = "3-6-2",
         mission_type = "Cutscene",
         steps = {
-            "Continue the investigation following Kumhau.",
-            "Proceed to the required encounter.",
+            "Examine the Hollowed Pathway in the southwest corner of (G-11) in Kamihr Drifts and choose \"Proceed\" for a cutscene. This does not start the battle yet.",
         },
     },
 
@@ -717,8 +701,9 @@ M.STEPS = {
         mission_type = "BCNM",
         reward = "15,000 Bayld each for repeat fights",
         steps = {
-            "Enter the Stonewalled battlefield.",
-            "Defeat the required enemies.",
+            "Examine the Hollowed Pathway again to enter the Stonewalled battle. Solo with Trusts is fine; there is a 30-minute limit and buffs other than food wear off.",
+            "Only the Primogenial Marolith has to die. Gargouille Drudges keep arriving one at a time from behind it, but they have little HP.",
+            "You receive the Soul siphon. Don't warp away: the next mission is back at the Crawling Cave. If you lose, get a new Aureate ball of fur from the Crawling Cave (F-11).",
         },
     },
 
@@ -728,9 +713,8 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Game day: wait for the next mission",
         steps = {
-            "Continue the events after Stonewalled.",
-            "Complete the cutscene.",
-            "Wait until the next Vana'diel day before Glimmer of Portent.",
+            "Return to the Crawling Cave at (F-11) in Kamihr Drifts for a cutscene.",
+            "Choose the third option, \"Her hilt-clutching hands.\"",
         },
     },
 
@@ -749,8 +733,7 @@ M.STEPS = {
         number = "4-1",
         mission_type = "Cutscene",
         steps = {
-            "Travel to the Mummers' Coalition.",
-            "Speak with the relevant coalition representative to continue the Teodor sequence.",
+            "Speak with " .. ACTOR.KIPLIGG.text .. " at the entrance of the Couriers' Coalition. He sends you to the Western Adoulin Waterfront.",
         },
     },
 
@@ -759,8 +742,8 @@ M.STEPS = {
         number = "4-1-1",
         mission_type = "Cutscene",
         steps = {
-            "Speak with " .. ACTOR.MELVIEN.text .. ".",
-            "Continue the investigation into Melvien.",
+            "Go to the Western Adoulin Waterfront (waypoint #9) and examine the Port Storage door at (J-4) for a cutscene.",
+            "Guilberien asks for one of: 5 Eft Skins, 4 Manticore Hair, a Buffalo Horn, a Manticore Leather or a Buffalo Leather. Which one depends on your bond with Arciela (Buffalo Horn means the lowest).",
         },
     },
 
@@ -769,9 +752,7 @@ M.STEPS = {
         number = "4-1-2",
         mission_type = "Quest",
         steps = {
-            "Complete the required Courier Coalition task.",
-            "Deliver the requested item.",
-            "Return and report the result.",
+            "Trade the requested item(s) to the Port Storage door at (J-4) on the Western Adoulin Waterfront for a cutscene with Guilberien.",
         },
     },
 
@@ -780,8 +761,7 @@ M.STEPS = {
         number = "4-1-3",
         mission_type = "Cutscene",
         steps = {
-            "Complete the delivery requested by the mission.",
-            "Return to the issuing NPC.",
+            "Return to " .. ACTOR.KIPLIGG.text .. " at the entrance of the Couriers' Coalition to finish.",
         },
     },
 
@@ -791,9 +771,7 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Game day wait / zone for next mission",
         steps = {
-            "Proceed to the " .. ACTOR.PALACE_ADOULIN.text .. ".",
-            "Complete the royal event.",
-            "Wait until the next Vana'diel day before continuing if necessary.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition for a small reward to finish.",
         },
     },
 
@@ -802,8 +780,9 @@ M.STEPS = {
         number = "4-1-5",
         mission_type = "Cutscene",
         steps = {
-            "Complete the required Pioneer Coalition assignments.",
-            "Return to the Pioneers' Coalition and speak with " .. ACTOR.BRENTON.text .. ".",
+            "Zone and wait until the next game day.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition (Western Adoulin) for a cutscene.",
+            "Choose \"What happened after that?\".",
         },
     },
 
@@ -812,9 +791,7 @@ M.STEPS = {
         number = "4-2",
         mission_type = "Cutscene",
         steps = {
-            "Enter the " .. ACTOR.LIBRARY.text .. ".",
-            "Research the required history.",
-            "Continue to the designated Ulbukan area.",
+            "Examine the Alpine Trail at (H-5) in Kamihr Drifts for a cutscene. Bivouac #3 is closest (take the northern tunnel and follow the left wall north); the Home Point is also near. Turn FastCS off: it disconnects you here (the mission still counts when you log back in). It takes you to Mount Kamihr.",
         },
     },
 
@@ -823,10 +800,8 @@ M.STEPS = {
         number = "4-2-1",
         mission_type = "Cutscene",
         steps = {
-            "Travel to Kamihr Drifts.",
-            "Meet Sajj'aka near " .. ACTOR.KAMIHR_PEAK.text .. ".",
-            "Return to the " .. ACTOR.LIBRARY.text .. ".",
-            "Research August Adoulin's history.",
+            "Enter the " .. ACTOR.LIBRARY.text .. " for a cutscene.",
+            "Read the different stories in the cutscene to continue.",
         },
     },
 
@@ -835,8 +810,8 @@ M.STEPS = {
         number = "4-2-2",
         mission_type = "Cutscene",
         steps = {
-            "Enter the " .. ACTOR.LIBRARY.text .. ".",
-            "Read the required history concerning August and his retinue.",
+            "Return to the Alpine Trail at (H-5) in Kamihr Drifts, north of Bivouac #3, for a cutscene (FastCS off).",
+            "Answer the questions in order: Yorcia Weald; Morimar; The Serpentine Labyrinth; Yes it does; Who are \"They\"?; Unleash a feral scream; What are you proposing?",
         },
     },
 
@@ -845,8 +820,7 @@ M.STEPS = {
         number = "4-2-3",
         mission_type = "Cutscene",
         steps = {
-            "Continue the investigation following the library research.",
-            "Complete the event with " .. ACTOR.ARCIELA.text .. ".",
+            "Enter Woh Gates from any entrance for a cutscene. From Kamihr Drifts, the entrance at (K-11) by the Frontier Station is closest; from town, use Marjami Ravine waypoint #4 and walk northwest.",
         },
     },
 
@@ -855,8 +829,9 @@ M.STEPS = {
         number = "4-2-4",
         mission_type = "Cutscene",
         steps = {
-            "Travel to the required Ulbukan area.",
-            "Meet Darrcuiln.",
+            "Examine the " .. ACTOR.DARKENED_CREVICE_G8.text .. " in Woh Gates, just inside the tunnel before the downward slope at the (G-7)/(G-8) border, for a cutscene and the Tuft of golden fur (the battle's entry item).",
+            "From Kamihr Drifts: drop down at (I-5) and again at (H-6), then cross the big room. From Marjami Ravine: follow the left wall to skip the reive at (H-9); you still need to clear the one at (H-7).",
+            "Use Sneak and Invisible (or Silent Oil and Prism Powder) before the big room: the Gefryst detect magic, the worms detect sound, and the rabbits and snolls detect sight.",
         },
     },
 
@@ -865,10 +840,9 @@ M.STEPS = {
         number = "4-3",
         mission_type = "BCNM",
         steps = {
-            "Travel to Woh Gates.",
-            "Examine " .. ACTOR.DARKENED_CREVICE_G8.text .. ".",
-            "Enter the battlefield.",
-            "Defeat the waves of Umbrils.",
+            "Examine the " .. ACTOR.DARKENED_CREVICE_G8.text .. " again to enter \"The Gates\" battle against waves of Umbrils. It starts after about a minute, so buff and call Trusts.",
+            "Arciela, Darrcuiln, the Noble Warrior and Resolute Leafkins fight with you; the battle is lost if any of them die. You can heal and buff them with Blood Pact: Wards, or with Accession or Curaga cast on one of your Trusts.",
+            "If you lose, get a new Tuft of golden fur from the Large Animal Track at the (J-8)/(K-8) border near the Yorcia Weald exit.",
         },
     },
 
@@ -881,8 +855,7 @@ M.STEPS = {
         number = "4-3-1",
         mission_type = "Cutscene",
         steps = {
-            "Travel to Kamihr Drifts.",
-            "Continue Morimar's storyline.",
+            "Return to the Alpine Trail at (H-5) in Kamihr Drifts, north of Bivouac #3, for a cutscene (FastCS off).",
         },
     },
 
@@ -891,8 +864,9 @@ M.STEPS = {
         number = "4-3-2",
         mission_type = "Quest",
         steps = {
-            "Travel to Outer Ra'Kaznar through Kamihr Drifts.",
-            "Continue the investigation with " .. ACTOR.MORIMAR.text .. ".",
+            "Enter Outer Ra'Kaznar through the Liseran Door at (F-8) in Kamihr Drifts (or the Enigmatic Device waypoint if unlocked). To break the Amaranth Barriers, first do the quest Lerene's Lament: Lerene at (N-7) wants 2 Ancestral Cloth from the Shunned enemies at (K-7)/(K-8).",
+            "Collect, in this order: the Starblessed scale from the Effigy of Sealing at (I-11), map 1; the Silvery plate at (C-7), map 1 (needed for the elevator at (I-6)); the Moontouched scale from the Effigy of Sealing at (H-2), map 1; and the Sunkissed scale from the Demonic Architrave at (C-8), basement map 2.",
+            "Return to the Alpine Trail at (H-5) in Kamihr Drifts (Bivouac #3 or the Home Point) for a cutscene and the World Tree sapling.",
         },
     },
 
@@ -901,9 +875,8 @@ M.STEPS = {
         number = "4-3-3",
         mission_type = "Cutscene",
         steps = {
-            "Travel to the designated forest area.",
-            "Investigate the Sacred Sapling.",
-            "Continue the World Tree sequence.",
+            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates in Eastern Adoulin for a cutscene.",
+            "Choose \"Tree Grafting.\"",
         },
     },
 
@@ -912,9 +885,7 @@ M.STEPS = {
         number = "4-3-4",
         mission_type = "Cutscene",
         steps = {
-            "Continue the World Tree sequence.",
-            "Collect the required grafting materials.",
-            "Complete the grafting sequence.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition (Western Adoulin) for a cutscene.",
         },
     },
 
@@ -924,8 +895,7 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Leafallia access",
         steps = {
-            "Travel through the forest canopy.",
-            "Investigate the disturbance.",
+            "Examine the Blockaded Path at (G-11), almost (F-11), in Kamihr Drifts to enter Leafallia. Bivouac #2 is closest; it is southeast of the Hollowed Pathway from Soul Siphon.",
         },
     },
 
@@ -934,8 +904,7 @@ M.STEPS = {
         number = "4-3-6",
         mission_type = "Cutscene",
         steps = {
-            "Travel to " .. ACTOR.LEAFALLIA.text .. ".",
-            "Enter Leafallia.",
+            "Examine the " .. ACTOR.AGED_STUMP_H8.text .. " in Leafallia for a cutscene.",
         },
     },
 
@@ -944,8 +913,7 @@ M.STEPS = {
         number = "4-3-7",
         mission_type = "Cutscene",
         steps = {
-            "Continue through " .. ACTOR.LEAFALLIA.text .. ".",
-            "Complete Rosulatia's event.",
+            "Examine the Heroic Footprints at (H-8) in Leafallia, by a tree across the stream behind the Aged Stump, for a long cutscene.",
         },
     },
 
@@ -955,7 +923,8 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "500 Experience Points; one of: Adoulin's Refuge, Ygnas's Resolve, Arciela's Grace; Game day: wait for the next mission",
         steps = {
-            "Continue through the Leafallia sequence.",
+            "Return to " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates for a cutscene.",
+            "Pick a necklace: Adoulin's Refuge, Arciela's Grace or Ygnas's Resolve. You must choose one to progress. It doesn't limit which +1 you pick later, and you trade it back then.",
         },
     },
 
@@ -964,8 +933,8 @@ M.STEPS = {
         number = "4-3-9",
         mission_type = "Cutscene",
         steps = {
-            "Continue the Leafallia sequence.",
-            "Proceed to the World Tree.",
+            "Wait until the next Vana'diel day after the previous mission.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition. The next mission starts automatically.",
         },
     },
 
@@ -974,8 +943,7 @@ M.STEPS = {
         number = "4-4",
         mission_type = "Cutscene",
         steps = {
-            "Travel to " .. ACTOR.OUTER_RAKAZNAR.text .. ".",
-            "Investigate the disturbance from the depths.",
+            "Approach the Castle Adoulin gates in Eastern Adoulin, where " .. ACTOR.POHL_TRISHBAHK.text .. " stands, for a cutscene.",
         },
     },
 
@@ -984,7 +952,8 @@ M.STEPS = {
         number = "4-4-1",
         mission_type = "Cutscene",
         steps = {
-            "Continue the investigation into the mysterious seeds.",
+            "Enter Rala Waterways from Western Adoulin (I-12) near the Residential Area (waypoint #6 Rent-a-Room or Home Point #2 are closest).",
+            "Speak with Chalvava at (F-11) for a cutscene.",
         },
     },
 
@@ -993,8 +962,7 @@ M.STEPS = {
         number = "4-4-2",
         mission_type = "Cutscene",
         steps = {
-            "Obtain the requested tomatoes.",
-            "Deliver them to the requested NPC.",
+            "Return to " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates for a long cutscene with Arciela and the Order of Renaye.",
         },
     },
 
@@ -1003,9 +971,10 @@ M.STEPS = {
         number = "4-4-3",
         mission_type = "Quest",
         steps = {
+            "Enter Rala Waterways from Eastern Adoulin (F-7) (waypoint #4 or Home Point #1). You arrive at (K-5), close to two of the three points.",
             "Examine " .. ACTOR.SAINENE.text .. ".",
             "Examine " .. ACTOR.WATERWAYS_OVERLOOK_I6.text .. ".",
-            "Examine " .. ACTOR.STOUT_WEIR.text .. ".",
+            "Examine " .. ACTOR.STOUT_WEIR.text .. " to receive a Broken fuse.",
             "Return to the Castle Adoulin gates and report to " .. ACTOR.POHL_TRISHBAHK.text .. ".",
         },
     },
@@ -1016,8 +985,8 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Game day: wait for the next mission",
         steps = {
-            "Proceed to the " .. ACTOR.PALACE_ADOULIN.text .. ".",
-            "Attend the emergency convocation.",
+            "Leave Eastern Adoulin and come back.",
+            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates for a long cutscene.",
         },
     },
 
@@ -1026,9 +995,8 @@ M.STEPS = {
         number = "4-5",
         mission_type = "Cutscene",
         steps = {
-            "Proceed to the Balamor encounter.",
-            "Enter the battlefield.",
-            "Defeat Balamor.",
+            "Wait until the next Vana'diel day after the previous mission.",
+            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates for a cutscene. No zoning needed.",
         },
     },
 
@@ -1037,8 +1005,7 @@ M.STEPS = {
         number = "4-5-1",
         mission_type = "Cutscene",
         steps = {
-            "Continue after the Balamor encounter.",
-            "Complete the revelation event.",
+            "Trade " .. ACTOR.POHL_TRISHBAHK.text .. " the necklace from The Lightsland (Adoulin's Refuge, Arciela's Grace or Ygnas's Resolve). If you threw it away, just talk to her.",
         },
     },
 
@@ -1047,8 +1014,7 @@ M.STEPS = {
         number = "4-5-2",
         mission_type = "Cutscene",
         steps = {
-            "Obtain the requested item.",
-            "Deliver it to " .. ACTOR.ARCIELA.text .. ".",
+            "Enter the " .. ACTOR.LIBRARY.text .. " and speak with " .. ACTOR.ANDREINE.text .. " for a cutscene and the key item Suffering Sacchariferous.",
         },
     },
 
@@ -1057,8 +1023,7 @@ M.STEPS = {
         number = "4-5-3",
         mission_type = "Cutscene",
         steps = {
-            "Complete the requested preparation.",
-            "Deliver the requested item to " .. ACTOR.ARCIELA.text .. ".",
+            "Return to " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates for a cutscene and the Sepulcher ensign.",
         },
     },
 
@@ -1067,8 +1032,8 @@ M.STEPS = {
         number = "4-5-4",
         mission_type = "Cutscene",
         steps = {
-            "Speak with " .. ACTOR.ARCIELA.text .. ".",
-            "Follow the required sequence.",
+            "Enter Rala Waterways from Eastern Adoulin (F-7), by waypoints #1 and #4.",
+            "Go to (N-10), the far southeast corner, and examine the Royal Sepulcher for a cutscene.",
         },
     },
 
@@ -1078,10 +1043,10 @@ M.STEPS = {
         mission_type = "Quest & BCNM",
         reward = "20,000 Bayld each for repeat fights",
         steps = {
-            "Defeat enemies in Rala Waterways until you obtain a Consummate simulacrum.",
-            "Travel to the Augural Conveyor at (B-6).",
-            "Use the Consummate simulacrum at the Augural Conveyor to enter the battlefield.",
-            "Defeat Balamor and the three Dullahan.",
+            "Kill enemies in Rala Waterways until you get a Consummate simulacrum (a temporary key item; the chat message is easy to miss). Waterway Pugils and New Moon Bats seem to drop it most. Everyone on the mission in the zone gets one at once.",
+            "Examine the " .. ACTOR.AUGURAL_CONVEYOR.text .. ", near the Western Adoulin Waterfront (F-5) entrance, and choose \"The Charlatan\" to go straight into the battle.",
+            "You fight Balamor and three Dullahan alongside Arciela. The Regicidal Dullahan always targets Arciela, and the battle is lost if she falls. Balamor and his two Sycophants share hate. Only Balamor has to be beaten; he surrenders around 20%. Trusts are allowed.",
+            "Afterwards warp out of the Royal Sepulcher and go to the castle gates for the next mission.",
         },
     },
 
@@ -1091,8 +1056,8 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "500 Experience Points; one of: Adoulin's Refuge +1, Ygnas's Resolve +1, Arciela's Grace +1; Game day: wait for the next mission",
         steps = {
-            "Continue the investigation into the charlatan.",
-            "Follow " .. ACTOR.TEODOR.text .. "'s instructions.",
+            "Return to " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates and choose a +1 necklace: Adoulin's Refuge +1, Arciela's Grace +1 or Ygnas's Resolve +1. Choose carefully; it is effectively permanent.",
+            "If Ploh says the princess awaits you in the Celennia Memorial Library, finish the Rhapsodies mission Solemnity first.",
         },
     },
 
@@ -1101,7 +1066,9 @@ M.STEPS = {
         number = "4-6-2",
         mission_type = "Cutscene",
         steps = {
-            "Attend the royal ceremony at the " .. ACTOR.PALACE_ADOULIN.text .. ".",
+            "Wait until the next Vana'diel day after the previous mission.",
+            "Speak with " .. ACTOR.LEVIL.text .. " in the Pioneers' Coalition (Western Adoulin) for a cutscene.",
+            "Choose \"'Strange'? Can you be more specific?\" and then \"Of course they will!\".",
         },
     },
 
@@ -1110,8 +1077,8 @@ M.STEPS = {
         number = "5-1",
         mission_type = "Cutscene",
         steps = {
-            "Travel to " .. ACTOR.LEAFALLIA.text .. ".",
-            "Investigate the latest arboreal rumors.",
+            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " at the Castle Adoulin gates for a cutscene.",
+            "Choose \"I just want to see Arciela.\" to receive the Hastily scribbled note.",
         },
     },
 
@@ -1130,8 +1097,7 @@ M.STEPS = {
         number = "5-1-2",
         mission_type = "Cutscene",
         steps = {
-            "Gather the required allies.",
-            "Proceed to the royal meeting at the " .. ACTOR.PALACE_ADOULIN.text .. ".",
+            "Examine the Alpine Trail at (H-5) in Kamihr Drifts (Bivouac #3 or Home Point #1 are quickest) for a cutscene.",
         },
     },
 
@@ -1140,9 +1106,8 @@ M.STEPS = {
         number = "5-1-3",
         mission_type = "Cutscene",
         steps = {
-            "Travel to " .. ACTOR.LEAFALLIA.text .. ".",
-            "Examine " .. ACTOR.AGED_STUMP_H8.text .. " at (H-8).",
-            "Receive the required pome key items.",
+            "Enter " .. ACTOR.LEAFALLIA.text .. " through the Blockaded Path at (G-11) in Kamihr Drifts, or warp to the Leafallia Home Point.",
+            "Examine the " .. ACTOR.AGED_STUMP_H8.text .. " for a cutscene, the Sky blue pome and the Sun yellow pome.",
         },
     },
 
@@ -1152,7 +1117,9 @@ M.STEPS = {
         mission_type = "BCNM",
         reward = "20,000 Bayld each for repeat fights",
         steps = {
-            "Return to " .. ACTOR.YGGDRASIL.text .. ".",
+            "Two battles, in either order. You win each by bringing the main target below 10%. Drawing your weapon starts the fight at once. If you lose, get the entry key item again from the Aged Stump (H-8) in Leafallia.",
+            "Dhokmak: go to (K-11) in Cirdas Caverns (west tunnel from Yorcia Weald's Frontier Station, or the Enigmatic Device waypoint). Examine the Wavering Flux for a cutscene, then again to enter. You fight Dhokmak and 3 Malignant Acuex with Darrcuiln, who must survive.",
+            "Ashrakk: go to the southeast part of (H-6) in Yorcia Weald (Frontier Bivouac #1 is closest). Examine the Wavering Flux twice. Morimar must survive. Under 50% Ashrakk summons a Hell-spawned Orthrus, which you can ignore if your damage is high.",
         },
     },
 
@@ -1161,7 +1128,8 @@ M.STEPS = {
         number = "5-2-1",
         mission_type = "Cutscene",
         steps = {
-            "Return to " .. ACTOR.YGGDRASIL.text .. ".",
+            "Enter Leafallia (Blockaded Path at (G-11) in Kamihr Drifts, or the Home Point) for a cutscene.",
+            "Choose \"Ask for forgiveness.\" and then \"I promise.\"",
         },
     },
 
@@ -1170,9 +1138,9 @@ M.STEPS = {
         number = "5-2-2",
         mission_type = "Quest/Cutscene",
         steps = {
-            "Reach the bottom of " .. ACTOR.TURRIS.text .. ".",
-            "Examine the Ominous Postern.",
-            "If the route requires the Silvery Plate, travel to Outer Ra'Kaznar and examine " .. ACTOR.OUTER_RAKAZNAR_QQ_C7.text .. ".",
+            "Reach the bottom of " .. ACTOR.TURRIS.text .. " and examine the Ominous Postern for a long cutscene. With Ra'Kaznar Inner Court Home Point #1, warp there and take the Vertical Transit Device down.",
+            "Otherwise reach Ra'Kaznar Inner Court first. Each Naakual you have beaten opens a shortcut through a Gates zone. Shortest first: Yumcax (Yorcia Weald, via Cirdas Caverns map 2), Tchakka (Foret de Hennetiel, via Dho Gates), Hurkan (Marjami Ravine, via Woh Gates), Achuka (Morimar Basalt Fields, via Moh Gates), Colkhab (Ceizak Battlegrounds, via Sih Gates), Kumhau (Woh Gates (D-8) to Outer Ra'Kaznar map 2, then the elevator at (I-8)).",
+            "With no Naakual crests, walk the whole way from the start of Outer Ra'Kaznar, by the Augural Conveyor and the Kamihr Drifts exit.",
         },
     },
 
@@ -1185,7 +1153,8 @@ M.STEPS = {
         number = "5-3",
         mission_type = "Cutscene",
         steps = {
-            "Follow " .. ACTOR.TEODOR.text .. "'s summons.",
+            "After the cutscene you are in Kamihr Drifts. Examine the Alpine Trail at (H-5) (Bivouac #3 is closest) for a cutscene.",
+            "Choose \"I thought he was a libertine, myself.\" You receive an Ash runic board.",
         },
     },
 
@@ -1194,8 +1163,7 @@ M.STEPS = {
         number = "5-3-1",
         mission_type = "Cutscene",
         steps = {
-            "Travel to " .. ACTOR.OUTER_RAKAZNAR.text .. ".",
-            "Continue to the Seventh Guardian.",
+            "In Rala Waterways, speak with " .. ACTOR.YEGGHA_DOLASHI.text .. " for a cutscene. The Eastern Adoulin (F-7) entrance (waypoints #1 and #4, Home Point #1) is closest.",
         },
     },
 
@@ -1205,9 +1173,9 @@ M.STEPS = {
         mission_type = "BCNM",
         reward = "20,000 Bayld each for repeat fights; ability to obtain Key Item: Prototype sigil pearl",
         steps = {
-            "Enter " .. ACTOR.RAKAZNAR_INNER.text .. ".",
-            "Proceed to the Watery Grave battlefield.",
-            "Defeat Teodor.",
+            "Examine the Entrance: Coliseum at (M-6) in Rala Waterways to fight Teodor.",
+            "He surrenders below 10%. He deals steady area damage and uses Dread Spikes, which will kill melee attackers if not dispelled. He resists Sanguine Blade.",
+            "If you lose, wait until the next game day and re-enter Rala Waterways; your Blank ash runic board turns back into an Ash runic board.",
         },
     },
 
@@ -1216,10 +1184,7 @@ M.STEPS = {
         number = "5-3-3",
         mission_type = "Cutscene",
         steps = {
-            "Continue through " .. ACTOR.RAKAZNAR_INNER.text .. ".",
-            "Reach the bottom of " .. ACTOR.TURRIS.text .. ".",
-            "Examine the Ominous Postern.",
-            "Complete the required battle.",
+            "Reach the bottom of " .. ACTOR.TURRIS.text .. " and examine the Ominous Postern for a cutscene. Ra'Kaznar Inner Court Home Point #1 is right next to the entrance.",
         },
     },
 
@@ -1229,8 +1194,8 @@ M.STEPS = {
         mission_type = "BCNM",
         reward = "20,000 Bayld each for repeat fights",
         steps = {
-            "Enter the Reckoning battlefield in " .. ACTOR.RAKAZNAR_INNER.text .. ".",
-            "Defeat the required enemy.",
+            "Examine the Ominous Postern in " .. ACTOR.TURRIS.text .. " to fight Hades (first form) with Arciela. The mission fails if she dies. Drawing your weapon starts the fight.",
+            "Winning plays another cutscene and gives the Awakened crystallized psyche.",
         },
     },
 
@@ -1240,8 +1205,9 @@ M.STEPS = {
         mission_type = "BCNM",
         reward = "25,000 Bayld each for repeat fights",
         steps = {
-            "Enter the Abomination battlefield in " .. ACTOR.RAKAZNAR_INNER.text .. ".",
-            "Defeat Hades.",
+            "Examine the Ominous Postern in Ra'Kaznar Turris to fight Hades (second form). Drawing your weapon starts the fight.",
+            "Arciela and Teodor help, and the mission fails if either dies. You can only heal Arciela, so keep Hades off Teodor. Hades' HP bar stays hidden.",
+            "If you lose, re-enter Ra'Kaznar Inner Court for another Awakened crystallized psyche. Winning ends with you in Ceizak Battlegrounds.",
         },
     },
 
@@ -1264,11 +1230,12 @@ M.STEPS = {
         reward = "Councilor's Cuffs; Councilor's Garb; one of: Adoulin Ring, Gorney Ring, Haverton Ring, Janniston Ring, Karieyh Ring, Orvail Ring, Renaye Ring, Shneddick Ring, Thurandaut Ring, Vocane Ring, Weatherspoon Ring, Woltaris Ring",
         steps = {
             "Wait until the next Vana'diel day after Undying Light.",
-            "Zone into Ceizak Battlegrounds for the final event.",
+            "Zone into Ceizak Battlegrounds for a cutscene. (Answering \"No?\" about a dozen times gives extra dialogue and a key item, but drops your bond with Arciela to the lowest.)",
             "Return to the Castle Gates in Eastern Adoulin.",
             "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " for the final reward sequence.",
             "Choose your ring reward.",
-            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " again afterward to obtain Trust: Arciela.",
+            "Speak with " .. ACTOR.POHL_TRISHBAHK.text .. " again, then examine the Sandy Overlook at (J-10) in Ceizak Battlegrounds (near waypoint #1) for Trust: Arciela. You need it for The Silent Forest (Siren).",
+            "If the end of the cutscene freezes, lower your frame rate to 30 fps. If you drop the ring or Councilor's gear, Ploh returns one piece per game day; to swap rings, trade her yours with 300,000 bayld.",
         },
     },
 }

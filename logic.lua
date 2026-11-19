@@ -999,9 +999,10 @@ local function apply_config()
     pin_show_next = config.pin_show_next ~= false
     auto_pin_quests = config.auto_pin_quests == true
     guide_section = math.max(1, math.floor(tonumber(config.guide_section) or 1))
-    camps_level = math.max(1, math.min(75, math.floor(tonumber(config.camps_level) or 10)))
+    camps_level = math.max(1, math.min(99, math.floor(tonumber(config.camps_level) or 10)))
     camps_mode = config.camps_mode == 'bracket' and 'bracket' or 'level'
-    camps_bracket = math.max(10, math.min(70, math.floor(tonumber(config.camps_bracket) or 10)))
+    -- Local patch: brackets come from data/camps.lua (see camps_bracket_of).
+    camps_bracket = math.max(1, math.min(99, math.floor(tonumber(config.camps_bracket) or 1)))
     camps_hide_shadow = config.camps_hide_shadow == true
     auto_pin_dismissed = {}
 
@@ -1461,9 +1462,9 @@ local function build_quest_link_index()
         return quest_link_index
     end
 
-    if not tracker_is_ready() then
-        return nil
-    end
+    -- Local patch: no tracker_is_ready() gate. The index comes from the data
+    -- files, and "ready" only arrives with the quest log on zoning, so after
+    -- a reload links and search results could not open a quest until then.
 
     local index = {
         by_id = {},
@@ -1846,9 +1847,38 @@ function M.GetPlayerLevel()
     return nil
 end
 
--- The level range (10, 20 ... 70) of the table a level belongs to.
+-- Local patch: the bracket (its starting level) a level belongs to, from the
+-- brackets of data/camps.lua: the last one that starts at or below it.
 local function camps_bracket_of(level)
-    return math.max(10, math.min(70, math.floor(level / 10) * 10))
+    local data = M.GetCamps()
+    level = tonumber(level) or 1
+
+    if data == nil or data.brackets == nil or #data.brackets == 0 then
+        return math.max(10, math.min(70, math.floor(level / 10) * 10))
+    end
+
+    local result = data.brackets[1].level
+
+    for _, bracket in ipairs(data.brackets) do
+        if bracket.level <= level then
+            result = bracket.level
+        end
+    end
+
+    return result
+end
+
+-- The name of a bracket, as the guide gives it ("25-50").
+function M.GetCampsBracketLabel(level)
+    local data = M.GetCamps()
+
+    for _, bracket in ipairs(data and data.brackets or {}) do
+        if bracket.level == level then
+            return bracket.label or tostring(level)
+        end
+    end
+
+    return tostring(level)
 end
 
 function M.GetCampsOpen()
@@ -1863,7 +1893,7 @@ function M.SetCampsOpen(value)
         local level = M.GetPlayerLevel()
 
         if level ~= nil then
-            camps_level = math.min(level, 75)
+            camps_level = math.min(level, 99)
             camps_bracket = camps_bracket_of(camps_level)
             request_config_save()
         end
@@ -1881,7 +1911,7 @@ function M.GetCampsLevel()
 end
 
 function M.SetCampsLevel(value)
-    local level = math.max(1, math.min(75, math.floor(tonumber(value) or camps_level)))
+    local level = math.max(1, math.min(99, math.floor(tonumber(value) or camps_level)))
 
     if level ~= camps_level then
         camps_level = level
@@ -1902,7 +1932,7 @@ function M.UseGameLevelForCamps()
         return false
     end
 
-    M.SetCampsLevel(math.min(level, 75))
+    M.SetCampsLevel(math.min(level, 99))
 
     return true
 end
@@ -1921,7 +1951,7 @@ function M.SetCampsMode(mode)
 end
 
 function M.GetCampsBracket()
-    return camps_bracket
+    return camps_bracket_of(camps_bracket)
 end
 
 function M.SetCampsBracket(value)
@@ -1959,7 +1989,7 @@ function M.GetCampsView()
     end
 
     for _, bracket in ipairs(data.brackets) do
-        local in_view = camps_mode == 'level' or bracket.level == camps_bracket
+        local in_view = camps_mode == 'level' or bracket.level == camps_bracket_of(camps_bracket)
 
         if in_view then
             for _, kind in ipairs({ 'standard', 'alternate' }) do
@@ -4135,7 +4165,8 @@ function M.JumpToMission(area, id, name, keep_search)
         end
     end
 
-    if area_index == nil or not tracker_is_ready() then
+    -- Local patch: no tracker_is_ready() gate (see build_quest_link_index).
+    if area_index == nil then
         return false
     end
 
@@ -4329,9 +4360,36 @@ do
     -- How well an item fits the text: 0 the name starts with it, 1 the name
     -- has it, 2 the name has every word, 3 another field has it, 4 the
     -- words are spread. match is the field to tell the player about.
+    -- Local patch: whole-word matching. The normalized text holds only
+    -- letters, digits and single spaces (fields joined by new lines), so a
+    -- word is the token with a space or the edge on each side. The last
+    -- token may be a word still being typed, so it only has to start a word.
+    function S.padded(value)
+        return ' ' .. string.gsub(value or '', '\n', ' ') .. ' '
+    end
+
+    function S.has_word(padded, token, prefix)
+        if prefix then
+            return string.find(padded, ' ' .. token, 1, true) ~= nil
+        end
+
+        return string.find(padded, ' ' .. token .. ' ', 1, true) ~= nil
+    end
+
+    function S.has_all(padded, tokens)
+        for index, token in ipairs(tokens) do
+            if not S.has_word(padded, token, index == #tokens) then
+                return false
+            end
+        end
+
+        return true
+    end
+
     function S.rate(entry, text, tokens)
+        local name = S.padded(entry.name_text)
         local at = entry.name_text ~= ''
-            and string.find(entry.name_text, text, 1, true)
+            and string.find(name, ' ' .. text, 1, true)
 
         if at == 1 then
             return 0, nil
@@ -4339,22 +4397,13 @@ do
             return 1, nil
         end
 
-        local in_name = entry.name_text ~= ''
-
-        for _, token in ipairs(tokens) do
-            if not string.find(entry.name_text, token, 1, true) then
-                in_name = false
-                break
-            end
-        end
-
-        if in_name then
+        if entry.name_text ~= '' and S.has_all(name, tokens) then
             return 2, nil
         end
 
         for _, field in ipairs(entry.fields) do
             if field.key ~= 'name'
-                and string.find(field.text, text, 1, true) then
+                and S.has_word(S.padded(field.text), text, true) then
 
                 return 3, field
             end
@@ -4362,7 +4411,7 @@ do
 
         for _, field in ipairs(entry.fields) do
             if field.key ~= 'name'
-                and string.find(field.text, tokens[1], 1, true) then
+                and S.has_word(S.padded(field.text), tokens[1], #tokens == 1) then
 
                 return 4, field
             end
@@ -4381,16 +4430,11 @@ do
         local hits = {}
 
         for _, entry in ipairs(S.corpus) do
-            local all = true
-
-            for _, token in ipairs(tokens) do
-                if not string.find(entry.hay, token, 1, true) then
-                    all = false
-                    break
-                end
+            if entry.padded == nil then
+                entry.padded = S.padded(entry.hay)
             end
 
-            if all then
+            if #tokens > 0 and S.has_all(entry.padded, tokens) then
                 local score, field = S.rate(entry, text, tokens)
 
                 hits[#hits + 1] = {
@@ -4499,16 +4543,10 @@ do
             return nil
         end
 
-        if not tracker_is_ready() then
-            return {
-                ready = false,
-                text = search_text,
-                missions = {},
-                quests = {},
-                total_missions = 0,
-                total_quests = 0,
-            }
-        end
+        -- Local patch: the tracker is only "ready" after the server sends
+        -- the quest log, which happens on zoning, so after a reload of the
+        -- addon the search was skipped until the next zone. The lists work
+        -- from the saved statuses meanwhile, and so does the search now.
 
         local language = i18n.get_language()
 
@@ -7088,13 +7126,51 @@ do
     local PROX_INTERVAL = 1.0
     local prox = { keep = 35, radius = 30, zone = nil, list = nil, shown = {}, at = 0, last_count = 0, auto = {}, dismissed = {} }
 
+    -- Local patch: the names of all the zones (normalized), to tell when the
+    -- zone of a quest is a real zone.
+    -- (Kept in the prox table: logic.lua's main function is at Lua's limit
+    -- of 200 local variables.)
+    function prox.zone_names()
+        if prox.zone_name_set == nil then
+            prox.zone_name_set = {}
+
+            for id = 0, 299 do
+                local name = M.GetCompassZoneName and M.GetCompassZoneName(id)
+
+                if name ~= nil then
+                    prox.zone_name_set[zonematch.normalize(name)] = true
+                end
+            end
+        end
+
+        return prox.zone_name_set
+    end
+
+    -- Local patch: true when the quest belongs to another zone. An NPC with
+    -- the same name can stand in more than one zone (for example the hidden
+    -- copies of Port San d'Oria NPCs in Southern San d'Oria [S]), and its
+    -- quests must only count in their own zone. A quest whose zone is not a
+    -- real zone name ("Multi-Nation", "Mog House") counts everywhere.
+    function prox.quest_elsewhere(quest, here)
+        if here == '' or type(quest.zone) ~= 'string' then
+            return false
+        end
+
+        local own = zonematch.normalize(quest.zone)
+
+        return own ~= here and prox.zone_names()[own] == true
+    end
+
     local function build(zone)
         local by_npc = {}
         local list = {}
+        local here = zonematch.normalize(
+            M.GetCompassZoneName and M.GetCompassZoneName(zone) or '')
 
         for _, category in ipairs(get_quest_categories()) do
             for _, quest in ipairs(get_quest_list_from_tracker(category)) do
                 if type(quest.npc) == 'string'
+                    and not prox.quest_elsewhere(quest, here)
                     and quest.trackable ~= false
                     and quest.tracker_area ~= nil
                     and quest.tracker_id ~= nil then

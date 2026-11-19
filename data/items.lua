@@ -499,6 +499,14 @@ return {
     'Life Float',
     'Light Buckler',
     'Light Crystal',
+    -- Local patch: the other seven crystals, so all eight are highlighted alike.
+    'Dark Crystal',
+    'Earth Crystal',
+    'Fire Crystal',
+    'Ice Crystal',
+    'Lightning Crystal',
+    'Water Crystal',
+    'Wind Crystal',
     'Lightning Band',
     'Lightning Pendulum',
     'Lightning Protocrystal',
@@ -667,6 +675,7 @@ return {
     'Parcel for the Magic Shop',
     'Parcel for the Pub',
     'Parchment',
+    'Poetic Parchment', -- Local patch: BRD unlock chain
     'Pepperoni',
     "Perchond's envelope",
     'Perennial Snow',
@@ -780,6 +789,8 @@ return {
     'Saber Shoot',
     'Sack of Fish Bait',
     'Sacred Branch',
+    'Oriental Steel', -- Local patch: Forge Your Destiny
+    'Sacred Sprig', -- Local patch: Forge Your Destiny
     'Sagittarius Subligar',
     'Sahagin Key',
     "San d'Orian Flag",
@@ -983,6 +994,7 @@ return {
     'Valkurm Sunsand',
     'Vault quipus',
     'Vellum',
+    'Rolanberry', -- Local patch: A Little Knowledge
     'Velvet Cloth',
     'Venerer Ring',
     'Vial of dream incense',
@@ -1252,4 +1264,131 @@ return {
     'Wooden Ladder',
     'Worn Chest',
     'Yellow Door',
+
+    -- Local patch: items and key items named in the BG-Wiki new player guide.
+    "Acheron Shield",
+    "Adventurer Coupon",
+    "Alexandrite",
+    "Antidote",
+    "Anwig Salade",
+    "Aurore Beret",
+    "Beastmen's Seal",
+    "Beitetsu",
+    "Bundle of half-inscribed scrolls",
+    "Chariot Band",
+    "Chocobo Blinkers",
+    "Chocobo Shirt",
+    "Cipher bracelet",
+    "Cipher: Amchuchu",
+    "Cipher: Joachim",
+    "Cipher: King",
+    "Cipher: Koru-Moru",
+    "Cipher: Kupofried",
+    "Cipher: Lion",
+    "Cipher: Mihli",
+    "Cipher: Monberaux",
+    "Cipher: Qultada",
+    "Cipher: Rainemard",
+    "Cipher: Shantotto II",
+    "Cipher: Valaineral",
+    "Conquest promotion voucher",
+    "Copper Voucher",
+    "Deed Voucher",
+    "Destrier Beret",
+    "Desultor Tassets",
+    "Doom Tabar",
+    "Echad Ring",
+    "Emperor Band",
+    "Empress Band",
+    "Fossilized Bone",
+    "Fossilized Fang",
+    "Gilgamesh's Introductory Letter",
+    "Heavy Metal",
+    "High Kindred's Crest",
+    "Homam Corazza",
+    "Jack-o'-Lantern",
+    "job breaker",
+    "Kindred's Crest",
+    "Koenig Shield",
+    "Limit breaker",
+    "Linkpearl",
+    "Linkshell",
+    "Lustreless Hide",
+    "Lustreless Scale",
+    "Mandragora Dewdrop",
+    "Map of the Jeuno area",
+    "Mirke Wardecors",
+    "Nashira Turban",
+    "Olde Rarab Tail",
+    "Pepperoni Slice",
+    "Perle Hauberk",
+    "Potion",
+    "Prism Powder",
+    "Prize Powder",
+    "Rajas Ring",
+    "Rhapsody in Crimson",
+    "S. Astral Detritus",
+    "Sacred Kindred's Crest",
+    "Seasoning Stone",
+    "Shimmering invitation",
+    "Skeleton Key",
+    "Staurobow",
+    "Storage Slip 04",
+    "Teal Saio",
+    "Thief's Testimony",
+    "traverser stone",
+    "Trust Primer",
+    "Yagudo Bead Necklace",
+    "Mertaire's bracelet", -- Local patch: AF quests
+    "Paper Knife", -- Local patch: AF quests
+    "Choral Slippers", -- Local patch: AF quests
+    "Star ring (tarnished)", -- Local patch: AF quests
+    "Mahogany Lumber", -- Local patch: AF quests
+    "Tamer's whistle", -- Local patch: AF quests
+    "Beast Trousers", -- Local patch: AF quests
+    "Stardust pebble", -- Local patch: AF quests
+    "War Hoop", -- Local patch: AF quests
+    "The Essence of Dance", -- Local patch: AF quests
+    "Block of Yagudo Glue", -- Local patch: AF quests
+    "Dancer's Tights", -- Local patch: AF quests
+    "Wyatt's proposal", -- Local patch: AF quests
+    "Dancer's Casaque", -- Local patch: AF quests
+    "Unaddressed sealed letter", -- Local patch: AF quests
+    "Porting magic transcript", -- Local patch: AF quests
+    "Sheet of Vellum", -- Local patch: AF quests
+    "Scholar's Mortarboard", -- Local patch: AF quests
+    "Ulbrecht's mortarboard", -- Local patch: AF quests
+    "Scholar's Bracers", -- Local patch: AF quests
+    "Silver luopan", -- Local patch: GEO/RUN AF
+    "Filiae Bell", -- Local patch: GEO/RUN AF
+    "Dowser's Wand", -- Local patch: GEO/RUN AF
+    "Acuex Ore", -- Local patch: GEO/RUN AF
+    "Geomancy Mitaines", -- Local patch: GEO/RUN AF
+    "Lhaiso Neftereh's bell", -- Local patch: GEO/RUN AF
+    "Geomancy Pants", -- Local patch: GEO/RUN AF
+    "Rune saber", -- Local patch: GEO/RUN AF
+    "Frost-encrusted flame gem", -- Local patch: GEO/RUN AF
+    "Flask of fruiserum", -- Local patch: GEO/RUN AF
+    "Sowilo Claymore", -- Local patch: GEO/RUN AF
+    "Ifritite", -- Local patch: GEO/RUN AF
+    "Petrified Log", -- Local patch: GEO/RUN unlock quests
+    "Matre Bell", -- Local patch: GEO/RUN unlock quests
+    "Beorc Sword", -- Local patch: GEO/RUN AF
+    "Letter from Octavien", -- Local patch: GEO/RUN AF
+    "Secrets of Runic Enhancement", -- Local patch: GEO/RUN AF
+    "Runeist Trousers", -- Local patch: GEO/RUN AF
+    "Runic kinegraver", -- Local patch: GEO/RUN AF
+    "Yahse wildflower petal", -- Local patch: GEO/RUN AF
+    "Vial of vivid rainbow extract", -- Local patch: GEO/RUN AF
+    "Runeist Coat", -- Local patch: GEO/RUN AF
+    "Stone of Unda", -- Local patch: GEO/RUN AF
+    "Stone of Flabra", -- Local patch: GEO/RUN AF
+    "Stone of Sulpor", -- Local patch: GEO/RUN AF
+    "Stone of Gelus", -- Local patch: GEO/RUN AF
+    "Stone of Ignis", -- Local patch: GEO/RUN AF
+    "Stone of Tellus", -- Local patch: GEO/RUN AF
+    "Stone of Tenebrae", -- Local patch: GEO/RUN AF
+    "Stone of Lux", -- Local patch: GEO/RUN AF
+    "Stone of unknown runic origins", -- Local patch: GEO/RUN AF
+    "Insidio's extinguished lantern", -- Local patch: GEO/RUN AF
 }

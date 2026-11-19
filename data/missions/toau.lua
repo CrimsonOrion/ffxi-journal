@@ -83,9 +83,9 @@ M.STEPS = {
         mission_type = "Cutscene",
         steps = {
             "Obtain a Boarding Permit through The Road to Aht Urhgan or the Rhapsodies of Vana'diel progression.",
-            "Travel to Aht Urhgan Whitegate.",
-            "Enter Salaheem's Sentinels and speak with " .. ACTOR.NAJA.text .. " at (I-10).",
-            "Receive the Supplies Package.",
+            "Take the ferry from Mhaura to Aht Urhgan Whitegate. Once you have the Boarding Permit you can skip the boat: Unity Warp (level 125) to Wajaom Woodlands puts you a short walk from Whitegate.",
+            "Speak with Naja Salaheem in Salaheem's Sentinels, upstairs in the northeast corner of (I-10), for the key item Supplies package.",
+            "Touch the Home Point in the residential area near the ferry dock if this is your first visit.",
         },
     },
 
@@ -96,9 +96,8 @@ M.STEPS = {
         reward = "Key Item: PSC Wildcat badge; 150 Imperial Standing; Mog Locker access",
         steps = {
             "Speak with " .. ACTOR.NAJA.text .. " and receive the Supplies Package.",
-            "Take the package to any Imperial staging point except Nyzul Isle.",
-            "At the staging point, speak with the Immortal beside the Runic Portal and deliver the package.",
-            "The available staging points are Azouph Isle, Dvucca Isle, Mamool Ja, Halvung, and Ilrusi Atoll.",
+            "Take the Supplies package to any Staging Point except Nyzul Isle (Azouph Isle, Dvucca Isle, Mamool Ja, Halvung or Ilrusi Atoll). You will want them all eventually. Tip: the Voidwatch warp (Atmacite Refiner > Aht Urhgan > Caedarva Mire, 1,000 cruor) puts you just outside Nashmau, close to the Azouph Isle Staging Point.",
+            "Deliver the package to the blue-clad Immortal beside the Runic Portal first: touching the portal sends you straight back to Whitegate.",
             "Use the Runic Portal to return to Aht Urhgan Whitegate.",
             "Speak with " .. ACTOR.NAJA.text .. " to complete the mission.",
         },
@@ -110,9 +109,10 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Assault access",
         steps = {
-            "Leave Aht Urhgan Whitegate and return after completing Immortal Sentries.",
-            "Speak with " .. ACTOR.NAJA.text .. ".",
-            "Complete the cutscene to gain access to Assault and the Mog Locker.",
+            "Leave Aht Urhgan Whitegate and come back in (there is an exit to Wajaom Woodlands west of the office, under the stairs).",
+            "Speak with Rytaal in the Commissions Agency (K-10, door at K-9) for an explanation of Assault, which unlocks it.",
+            "Speak with Naja Salaheem twice for two cutscenes; this completes the mission and starts the next one.",
+            "Optional: speak with Fubruhn (F-11) about Mog Locker access.",
         },
     },
 
@@ -122,10 +122,10 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Key Item: Raillefal's letter",
         steps = {
-            "Travel to Nashmau and speak with " .. ACTOR.CACAROON.text .. ".",
-            "Give Cacaroon either 1,000 gil or one Imperial Bronze Piece.",
-            "Travel to Walahra Temple and continue to the Shararat Teahouse.",
-            "Complete the events there and continue through the resulting cutscenes.",
+            "Speak with Cacaroon in Nashmau (G-11), across from the Mog House, for a cutscene.",
+            "Trade Cacaroon 1,000 gil or one Imperial Bronze Piece for another cutscene (he won't take the gil automatically; you must trade it).",
+            "Enter the Walahra Temple in Whitegate (K-8) for a cutscene.",
+            "Go to the Shararat Teahouse (K-12) for a cutscene and answer: pick all three topics, then \"Raillefal's secret\", then \"A San d'Orian prince\", then \"Prince Trion\".",
         },
     },
 
@@ -134,9 +134,8 @@ M.STEPS = {
         number = 5,
         mission_type = "Quest",
         steps = {
-            "Travel to Chateau d'Oraguille in San d'Oria.",
-            "Speak with " .. ACTOR.HALVER.text .. ".",
-            "Deliver Raillefal's letter and complete the royal event.",
+            "Enter Chateau d'Oraguille from Northern San d'Oria (I-6) (Home Point #2 is closest).",
+            "Speak with Halver (I-9) for a cutscene.",
         },
     },
 
@@ -146,9 +145,9 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Imperial Bronze Piece x10",
         steps = {
-            "Travel to Aht Urhgan Whitegate and enter the Palace.",
-            "Choose the affirmative response when asked for assistance.",
-            "Receive 10 Imperial Bronze Pieces.",
+            "Wait one Earth minute after the previous mission.",
+            "Approach the Palace in Ru'Lude Gardens for a cutscene.",
+            "Answer \"Yes\" and then \"That's what I'm here for!\" to receive 10 Imperial Bronze Pieces (\"What am I, a donkey?\" also completes it, but without the coins).",
         },
     },
 
@@ -158,9 +157,8 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Imperial Silver Piece x2",
         steps = {
-            "Travel to the Shararat Teahouse.",
-            "Complete the cutscene.",
-            "Return to " .. ACTOR.NAJA.text .. ".",
+            "Go to the Shararat Teahouse in Whitegate (K-11) for a cutscene and the key item Raillefal's note. Your answers don't matter; you also get an Imperial Silver Piece.",
+            "Speak with Naja Salaheem (I-10) for a cutscene and a second Imperial Silver Piece. If she asks for an Imp Wing, that's for the quest Promotion: Private First Class; trade one to continue.",
         },
     },
 
@@ -180,13 +178,9 @@ M.STEPS = {
         mission_type = "Quest",
         reward = "Key Item: Astral compass",
         steps = {
-            "If the Nyzul Isle staging point is not yet accessible, trade one Imperial Silver Piece to Kamih Mapokhalam in Bhaflau Thickets (F-6) to open the route.",
-            "Travel to the Alzadaal Undersea Ruins through Bhaflau Thickets.",
-            "Reach the Gilded Doors at (H-8) and trigger the cutscene.",
-            "Proceed through the ruins and reach the Nyzul Isle staging point.",
-            "If the staging point was just unlocked, return to Aht Urhgan Whitegate and use the Runic Portal to reach Nyzul Isle.",
-            "Take the transport device at (H-9), then use the eastern transport device to enter the Alzadaal Undersea Ruins.",
-            "Complete the scouting event upon entering the ruins.",
+            "Enter the Chamber of Passage in Whitegate (K-8) and take the Runic Portal to the Nyzul Isle Staging Point. If you haven't unlocked it, trade an Imperial Silver Piece to Kamih Mapokhalam in Bhaflau Thickets (F-6) and walk in through the Alzadaal Undersea Ruins.",
+            "Take the southeastern transport device at (H-9) to the Bhaflau Remnants, then the right (eastern) one into the Alzadaal Undersea Ruins.",
+            "A cutscene plays as you zone in, giving the key item Astral compass.",
         },
     },
 
@@ -237,12 +231,10 @@ M.STEPS = {
         mission_type = "Quest/Fight",
         reward = "Key Item: Ephramadian gold coin",
         steps = {
-            "Travel to Caedarva Mire through the western exit of Nashmau.",
-            "Reach " .. ACTOR.JAZARATT_HEADSTONE.text .. " at (E-10).",
-            "Examine the headstone to begin the event.",
-            "Examine the headstone again to face Jazaraat.",
-            "Defeat Jazaraat.",
-            "Examine the headstone a third time to receive the Ephramadian Gold Coin.",
+            "Go to Caedarva Mire from the west exit of Nashmau (or Caedarva Mire Home Point #1, just northwest of it).",
+            "Examine " .. ACTOR.JAZARATT_HEADSTONE.text .. " at (E-10) for a cutscene.",
+            "Examine it again to spawn the Fomor NM Jazaraat, and defeat it.",
+            "Examine the headstone a third time for the Ephramadian gold coin. Everyone joining the next two battles needs one, including players who have already finished them; they only need to touch the headstone.",
         },
     },
 
@@ -262,12 +254,11 @@ M.STEPS = {
         number = 15,
         mission_type = "Dungeon/BCNM",
         steps = {
-            "Travel through Caedarva Mire and enter Arrapago Reef.",
-            "Approach " .. ACTOR.CUTTER.text .. " at (H-8).",
-            "Complete the opening event.",
-            "Enter The Black Coffin battlefield.",
-            "Defeat the Ashu Talif Captain.",
-            "Reduce the Ashu Talif Captain to 20% HP or below to complete the battle.",
+            "Every party member needs an Ephramadian gold coin (from Jazaraat's Headstone, Caedarva Mire E-10) to enter.",
+            "Go to the Cutter at (H-8) on Map 5 of Arrapago Reef. Fastest is the Arrapago Ring (100 Imperial Standing accolades), if you have been there before. Otherwise take the Caedarva Mire Survival Guide and go south into Arrapago Reef at (G-8) (not the G-6 zone line right next to the guide), then south to the Cutter; or take the Dvucca Isle Staging Point and go west to the (F-9) entrance, paying its fee.",
+            "Approach the Cutter for a cutscene, then examine it to enter the battlefield.",
+            "Gessho helps you after a minute or two (the fight goes on if he falls), and Trusts are allowed. First come five Ashu Talif Crew (2 RNG, 2 RDM, 1 COR; they resist Sleep without Elemental Seal, Lullaby works at high item level), then four more along with the Ashu Talif Captain.",
+            "Bring the Ashu Talif Captain down to about 20% HP to win. You end up in Nashmau.",
         },
     },
 
@@ -289,10 +280,9 @@ M.STEPS = {
         reward = "Zone & Day: wait for the next mission; Imperial Mythril Piece; Salvage access",
         steps = {
             "Speak with " .. ACTOR.NAJA.text .. " and prepare for the palace visit.",
-            "Equip an accepted chest piece for the ceremony.",
-            "Equip gloves, leg armor, and boots as well.",
-            "Return to " .. ACTOR.NAJA.text .. " after changing your equipment.",
-            "Approach " .. ACTOR.IMPERIAL_GATE.text .. " to enter the palace event.",
+            "Wear an accepted body piece plus any gloves, leg armor and boots (they don't have to match). Multi-slot gear doesn't count for the other slots. Accepted body pieces include: Adaman Cuirass, Aketon, Amir Korazin, Arhat's Gi, Barone Corazza, Black Cloak, Black Cotehardie, Blessed Bliaut, Bloody Aketon, Blue Cotehardie, Brigandine, Byrnie, Cardinal Vest, Chasuble, Dragon Harness, Dusk Jerkin, Errant Houppelande, Hachiman Domaru, Haubergeon, Hauberk, Holy Breastplate, Homam Corazza, Igqira Weskit, Jaridah Peti, Justaucorps, Nashira Manteel, Noble's Tunic, Plastron, Pahluwan Khazagand, Rasetsu Samue, Scorpion Harness, Sha'ir Manteel, Sipahi Jawshan, Vermillion Cloak and Yigit Gomlek. Keep it: Imperial Coronation needs the same.",
+            "Speak with Naja Salaheem again while wearing it, or the palace won't give the cutscene.",
+            "Remove your weapons and examine the Imperial Whitegate door at (L-8) in Whitegate for a cutscene and an Imperial Mythril Piece reward. Make inventory space first, or you have to watch the whole scene again.",
         },
     },
 
@@ -313,8 +303,7 @@ M.STEPS = {
         number = 19,
         mission_type = "Cutscene",
         steps = {
-            "Travel to the Shararat Teahouse.",
-            "Complete the cutscene.",
+            "Enter the Shararat Teahouse in Aht Urhgan Whitegate for a cutscene.",
         },
     },
 
@@ -323,10 +312,9 @@ M.STEPS = {
         number = 20,
         mission_type = "Quest",
         steps = {
-            "Enter Aydeewa Subterrane from Wajaom Woodlands.",
-            "Reach Map 5 and enter the room containing the large tree root.",
-            "Examine " .. ACTOR.AYDEEWA_TARGET.text .. ".",
-            "Complete the cutscene.",
+            "Go to Aydeewa Subterrane: its Survival Guide, Unity Warp (level 125) to Wajaom Woodlands (the zone line is right behind you), or the Wajaom Woodlands (G-7) entrance.",
+            "Head to the western part of the zone (Map 5): from the Survival Guide go west on Map 2 and slide down drop point D; from (G-7) go south.",
+            "Examine " .. ACTOR.AYDEEWA_TARGET.text .. " at (F-8/G-8) for a cutscene that completes the mission.",
         },
     },
 
@@ -346,11 +334,10 @@ M.STEPS = {
         number = 22,
         mission_type = "BCNM",
         steps = {
-            "Travel to Mount Zhayolm.",
-            "Reach the Navukgo Execution Chamber.",
-            "Examine " .. ACTOR.DECORATIVE_BRONZE_GATE.text .. " to enter the battlefield.",
-            "Defeat Khimaira 13.",
-            "Keep Karababa alive throughout the battle.",
+            "Travel to the Navukgo Execution Chamber: Mount Zhayolm's Home Point is right outside it (without it, Unity Warp level 135 to Mount Zhayolm, turn around and take the east junction at the C-7/C-8 line). You get a cutscene on entering.",
+            "Examine " .. ACTOR.DECORATIVE_BRONZE_GATE.text .. " for a cutscene, then again to enter the battlefield.",
+            "Defeat Khimaira 13. Dreadstorm (AoE, Terror), Thunderstrike (AoE, Stun) and Tourbillion (AoE, knockback) remove Utsusemi; Tenebrous Mist resets your TP.",
+            "Lady Karababa fights with you, casting fast Ancient Magic II. Keep her healed: if her HP drops too low she warps out and you lose.",
         },
     },
 
@@ -406,10 +393,9 @@ M.STEPS = {
         number = 27,
         mission_type = "Quest",
         steps = {
-            "Enter Aydeewa Subterrane from Wajaom Woodlands.",
-            "Reach Map 5 and enter the room containing the large tree root.",
-            "Examine " .. ACTOR.AYDEEWA_TARGET.text .. ".",
-            "Complete the cutscene.",
+            "Go to Aydeewa Subterrane: its Survival Guide, Unity Warp (level 125) to Wajaom Woodlands (the zone line is right behind you), or the Wajaom Woodlands (G-7) entrance.",
+            "Head to the western part of the zone (Map 5): from the Survival Guide go west on Map 2 and slide down drop point D; from (G-7) go south.",
+            "Examine " .. ACTOR.AYDEEWA_TARGET.text .. " at (F-8/G-8), the same spot as Teahouse Tumult, for a cutscene that completes the mission.",
         },
     },
 
@@ -418,9 +404,8 @@ M.STEPS = {
         number = 28,
         mission_type = "Cutscene",
         steps = {
-            "Travel to Walahra Temple.",
+            "Enter the Walahra Temple in Aht Urhgan Whitegate for a cutscene.",
             "Choose the second dialogue option.",
-            "Complete the cutscene.",
         },
     },
 
@@ -429,10 +414,10 @@ M.STEPS = {
         number = 29,
         mission_type = "BCNM",
         steps = {
-            "Travel to Jade Sepulcher through the Mamool Ja staging point.",
-            "Examine " .. ACTOR.ORNAMENTAL_DOOR.text .. ".",
-            "Examine the door again to enter the battlefield.",
-            "Defeat Lancelord Gaheel Ja.",
+            "Go to the Jade Sepulcher: Bhaflau Thickets Home Point #1 is closest. Otherwise take the Mamool Ja Staging Point and head north to the zone line at (I-9) with Sneak and Invisible (or a mount).",
+            "Examine " .. ACTOR.ORNAMENTAL_DOOR.text .. " for a cutscene, then again and choose \"Puppet in Peril\".",
+            "Defeat Lancelord Gaheel Ja, a Paladin (Flash, Holy, Cures). Clobber and Blazing Angon are AoE. While Granite Skin is up, attacks from the front do nothing, so hit him from behind until it wears off.",
+            "Winning plays a cutscene that completes the mission.",
         },
     },
 
@@ -442,10 +427,10 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Key Item: Periqia Assault area entry permit",
         steps = {
-            "Enter Arrapago Reef.",
-            "Complete the opening cutscene.",
-            "Approach " .. ACTOR.CUTTER.text .. " at (H-8).",
-            "Complete the following cutscene to obtain the Periqia Assault access.",
+            "Go to the Cutter at (H-8) on Map 5 of Arrapago Reef: the Arrapago Ring is fastest; or the Caedarva Mire Survival Guide and south into Arrapago Reef at (G-8) (not G-6); or the Dvucca Isle Staging Point and west to the (F-9) entrance (fee).",
+            "You get a cutscene on entering Arrapago Reef.",
+            "Approach " .. ACTOR.CUTTER.text .. " for another cutscene.",
+            "Don't warp out: head south from the Cutter into Caedarva Mire for the next mission.",
         },
     },
 
@@ -454,12 +439,11 @@ M.STEPS = {
         number = 31,
         mission_type = "BCNM",
         steps = {
-            "Travel to the Dvucca Isle staging point in Caedarva Mire.",
-            "Enter Periqia through the Runic Seal beside the staging point.",
-            "Defeat the K23H1-LAMIA gathered around (H-9).",
-            "Continue defeating the Lamia until the battle ends.",
+            "Go to the Dvucca Isle Staging Point in Caedarva Mire (south from the Cutter into Caedarva Mire puts you close).",
+            "Enter Periqia through the Runic Seal just west of where you arrive.",
+            "Defeat the K23H1-LAMIA gathered at (H-9) (up to 10; true sight, they link, can be slept; every attack poisons, and Venomous Tail poisons hard). After a random number are down, the battle ends. Trusts are allowed.",
             "Complete the cutscene after winning the battle.",
-            "If the battle is failed, return after one Vana'diel day and obtain another permit from Nahshib.",
+            "If you fail, Nahshib gives another permit after one game day. Players who already finished it don't need a permit to help.",
         },
     },
 
@@ -481,8 +465,8 @@ M.STEPS = {
         number = 33,
         mission_type = "Cutscene",
         steps = {
-            "Return to the mission area after the required transition.",
-            "Complete the cutscene.",
+            "Wait a game day and zone, then speak with Naja Salaheem again.",
+            "While you wait, get another Ephramadian gold coin from Jazaraat's Headstone in Caedarva Mire (E-10) (Home Point or Nashmau's west exit); the next mission needs it.",
         },
     },
 
@@ -492,9 +476,9 @@ M.STEPS = {
         mission_type = "Quest",
         reward = "Key Item: Percipient eye",
         steps = {
-            "Travel to Arrapago Reef.",
-            "Approach " .. ACTOR.CUTTER.text .. ".",
-            "Complete the cutscene.",
+            "Make sure you have an Ephramadian gold coin (Jazaraat's Headstone, Caedarva Mire E-10).",
+            "Go to the Cutter at (H-8) on Map 5 of Arrapago Reef (Arrapago Ring; or Caedarva Mire Survival Guide and south via the G-8 zone line; or Dvucca Isle Staging Point and the F-9 entrance).",
+            "Approach " .. ACTOR.CUTTER.text .. " for a cutscene. You end up in Talacca Cove; don't warp away, the next mission is there.",
         },
     },
 
@@ -503,10 +487,11 @@ M.STEPS = {
         number = 35,
         mission_type = "BCNM",
         steps = {
-            "Travel to Talacca Cove.",
-            "Examine " .. ACTOR.ROCK_SLAB.text .. " to enter the battlefield.",
-            "Defeat Gessho.",
-            "Gessho withdraws after being reduced to approximately 10% HP.",
+            "After the cutscene you're in Talacca Cove (others can join via Caedarva Mire Home Point #1).",
+            "Examine " .. ACTOR.ROCK_SLAB.text .. " right in front of you to enter the battlefield (30 minutes).",
+            "Fight Gessho, a Ninja who warps around the arena (often followed by a TP move), uses Ninjutsu, ranged attacks and Mijin Gakure. Happobarai (AoE, Stun) and Shibaraku (AoE, knockback) are blocked by shadows; Hane Fubuki poisons.",
+            "He periodically summons 3-6 clones (about 2,000 HP each, immune to Sleep, gone after about 20 seconds) that can Mijin Gakure together with him, so spread out or kill them quickly.",
+            "Gessho gives up at about 15% HP; a cutscene completes the mission.",
         },
     },
 
@@ -516,9 +501,8 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Key Item: Luminian dagger",
         steps = {
-            "Travel to the Hazhalm Testing Grounds entrance in Caedarva Mire.",
-            "Examine " .. ACTOR.ENTRY_GATE.text .. ".",
-            "Complete the resulting cutscene.",
+            "Zone into the Hazhalm Testing Grounds from Caedarva Mire Map 1 (D-9) for a cutscene. Caedarva Mire Home Point #1 is closest (or Nashmau's west exit).",
+            "Examine " .. ACTOR.ENTRY_GATE.text .. " for the final cutscene.",
         },
     },
 
@@ -552,8 +536,8 @@ M.STEPS = {
         mission_type = "Cutscene",
         reward = "Zone & Day: wait for the next mission",
         steps = {
-            "Travel to Aht Urhgan Whitegate.",
-            "Enter the Palace and complete the royal cutscene.",
+            "Go to Ru'Lude Gardens and approach the Palace doors for a cutscene.",
+            "Several cutscenes can play there; make sure you get the one where you speak with Trion directly.",
         },
     },
 
@@ -575,8 +559,8 @@ M.STEPS = {
         reward = "Key Item: Nyzul Isle route",
         steps = {
             "Travel to Aht Urhgan Whitegate.",
-            "Speak with " .. ACTOR.RODIN_COMIDIN.text .. " outside the Automaton Workshop at (I-7).",
-            "Prepare for the battle and travel to the Nyzul Isle staging point.",
+            "Speak with " .. ACTOR.RODIN_COMIDIN.text .. " outside the Automaton Workshop (I-7).",
+            "Prepare for a battle and go to the Nyzul Isle Staging Point.",
         },
     },
 
@@ -585,11 +569,12 @@ M.STEPS = {
         number = 42,
         mission_type = "BCNM",
         steps = {
-            "At the Nyzul Isle staging point, examine " .. ACTOR.NYZUL_BLANK.text .. " at (J-9).",
-            "Choose to proceed.",
-            "Examine " .. ACTOR.RUNIC_SEAL.text .. " at (I-9) to enter the battlefield.",
-            "Keep Naja alive throughout the battle.",
-            "Defeat the enemies and rescue Luzaf.",
+            "At the Nyzul Isle Staging Point, examine " .. ACTOR.NYZUL_BLANK.text .. " (the unlit lamp at J-9, next to the Runic Portals) and choose \"Yes\".",
+            "Examine " .. ACTOR.RUNIC_SEAL.text .. " at (I-9), across the room, to enter the battlefield \"Path of Darkness\". Trusts are allowed.",
+            "Naja Salaheem fights with you and must survive. Battle 1: Amnaf and four Imperial Gears, which only appear once Amnaf is aggroed. Pull Amnaf, let the gears spawn and gather their hate on yourself with AoE before they kill Naja (Gravity and Bind work on them; Amnaf can be slept).",
+            "Battle 2: Amnaf warps one room over and fights again with four Triple Gears (easier to sleep). She gives up at about 25% HP.",
+            "Battle 3: Amnaf alone, transformed into a Soulflayer. Her Sleepga resets hate on everyone it hits. Defeat her for a cutscene that completes the mission.",
+            "If you fail, get another key item from Rodin-Comidin in Whitegate and try again.",
         },
     },
 
@@ -610,12 +595,12 @@ M.STEPS = {
         number = 44,
         mission_type = "BCNM",
         steps = {
-            "Travel to the Nyzul Isle staging point.",
-            "Examine " .. ACTOR.NYZUL_BLANK.text .. " for the opening event.",
-            "Examine " .. ACTOR.RUNIC_SEAL.text .. " to enter the battlefield.",
-            "Defeat Raubahn three times as he re-raises twice.",
-            "Continue through the remaining battles of the mission.",
-            "Complete all three battles within the 45-minute limit.",
+            "At the Nyzul Isle Staging Point, examine " .. ACTOR.NYZUL_BLANK.text .. " for a cutscene.",
+            "Examine " .. ACTOR.RUNIC_SEAL.text .. " at (I-9) to enter the battlefield: three battles in 45 minutes, Trusts allowed.",
+            "Battle 1, Raubahn: a Blue Mage who reraises twice (three kills), resetting his abilities each time. After every Azure Lore he casts a much stronger Eyes On Me, and his Circle Blade hurts mages. In the third round he's immune to whichever damage type (melee, magic or ranged) you used most; mixing types avoids the immunity.",
+            "Battle 2, Razfahd: a stationary Paladin (Banish IV, Banishga III, Dia III, Holy II). At 50% HP he uses Perfect Defense and is immune to damage for a while.",
+            "Battle 3, Alexander: stationary and usually the longest fight. Divine Judgement (1,000+ AoE, clears Utsusemi) comes at 50% and repeatedly after, announced by a line of Omega symbols. Gospel of the Lost heals about 1,000 and removes debuffs (stun it if you can); Draw In pulls the target back if they move too far; Radiant Sacrament and Void of Repentance are AoE and Terror. He also uses Perfect Defense.",
+            "Winning gives a cutscene that completes the mission. If you fail, get another key item from Naja Salaheem.",
         },
     },
 
@@ -635,11 +620,9 @@ M.STEPS = {
         number = 46,
         mission_type = "Cutscene",
         steps = {
-            "Equip one of the accepted chest pieces for the imperial ceremony.",
-            "Equip gloves, leg armor, and boots.",
+            "Wear an accepted body piece (the same list as Guests of the Empire) plus any gloves, leg armor and boots. Accepted body pieces include: Adaman Cuirass, Aketon, Amir Korazin, Arhat's Gi, Barone Corazza, Black Cloak, Black Cotehardie, Blessed Bliaut, Bloody Aketon, Blue Cotehardie, Brigandine, Byrnie, Cardinal Vest, Chasuble, Dragon Harness, Dusk Jerkin, Errant Houppelande, Hachiman Domaru, Haubergeon, Hauberk, Holy Breastplate, Homam Corazza, Igqira Weskit, Jaridah Peti, Justaucorps, Nashira Manteel, Noble's Tunic, Plastron, Pahluwan Khazagand, Rasetsu Samue, Scorpion Harness, Sha'ir Manteel, Sipahi Jawshan, Vermillion Cloak and Yigit Gomlek.",
             "Remove all main-hand and off-hand equipment.",
-            "Examine " .. ACTOR.IMPERIAL_GATE.text .. " at (L-8).",
-            "Complete the coronation cutscene.",
+            "Examine " .. ACTOR.IMPERIAL_GATE.text .. " at (L-8) in Whitegate for the coronation cutscene.",
         },
     },
 

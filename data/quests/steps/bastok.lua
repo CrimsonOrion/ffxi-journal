@@ -44,12 +44,15 @@ Q.STEPS = {
     },
 
     bsz_pb_ayame_and_kaede = {
-        "Speak with Kaede in Port Bastok (J-5) to start the quest. You must have a job at level 30 or higher and the Rise of the Zilart pack. Ensetsu wants his item back from the Tenshodo, who will only trade it for a strangely shaped coral from Korroloka Tunnel.",
-        "In Korroloka Tunnel, click on the ??? to spawn 3 Korroloka Leech enemies. They link with any Thread Leech enemies nearby. If the leeches do not appear after you click the ???, try relogging.",
+        "Speak with Kaede in Port Bastok (J-5), in the northernmost house near Home Point #1, for a cutscene. You must have a job at level 30 or higher and the Rise of the Zilart pack. If she talks about people from Aht Urhgan being sneaky, ignore it and speak with her again. Ensetsu wants his item back from the Tenshodo, who will only trade it for a strangely shaped coral from Korroloka Tunnel.",
+        "Speak with Kagetora at (F-6), inside the door to Warehouse 2.",
+        "Return to Kaede's house and speak with Ensetsu at (I-5) for a cutscene. The quest only appears in your log after this.",
+        "In Korroloka Tunnel, go to (K-8) on Map 5. The quickest entrance is from Western Altepa Desert (M-8) via the Survival Guide, which puts you straight onto Map 5; the Zeruhn Mines Survival Guide is also close. Click on the ??? to spawn 3 Korroloka Leech enemies. They link with any Thread Leech enemies nearby. If the leeches do not appear after you click the ???, try relogging.",
         "Once the leeches are defeated and their bodies despawn, click on the ??? to receive the key item Strangely shaped coral. Several players can do this at the same time: have one member spawn the leeches and, after they despawn, have the others select the ??? before the player who spawned them. If the player who spawned them is KO'd, do not raise them until the Korroloka Leeches are defeated, or the leeches respawn immediately.",
         "Return to Ensetsu in Port Bastok (I-5).",
         "Travel to Norg and speak with Ryoma at (H-8), who gives you the key item Sealed dagger.",
         "Return to Ensetsu to complete the quest.",
+        "Optional: speak with Kaede afterwards for some closing dialogue.",
     },
 
     bsz_pb_fear_of_flying = {
@@ -180,9 +183,9 @@ Q.STEPS = {
     },
 
     bsz_pb_ghosts_of_past = {
-        "Speak with Oggbi inside the Steaming Sheep Restaurant in Port Bastok (E-6) for a cutscene, as a Monk of level 40 or higher. Once the quest is active you can complete it on any job.",
-        "Get a Pickaxe from the Auction House or from any other source.",
-        "In Gusgen Mines, get to the third map by taking the ramp down at (F-5) and trade the Pickaxe to the ???.",
+        "Speak with Oggbi inside the Steaming Sheep Restaurant in Port Bastok (E-6) for a cutscene, as a Monk of level 40 or higher. If your Hand-to-Hand skill is over 250 he offers the Asuran Fists weapon skill trial first. Once the quest is active you can complete it on any job.",
+        "Get a Pickaxe from the Auction House or a merchant; Numa (E-7), in the shop down the stairs in front of the Steaming Sheep, sells them.",
+        "In Gusgen Mines, go straight ahead and down the staircase, and use the west switch to open the door to map 2. Take the ramp down at (F-5) to map 3 and trade the Pickaxe to the ??? at (G-7) to spawn the Wandering Ghost (about 3 minutes between spawns).",
         "The Wandering Ghost that appears drops a Miner's Pendant, and the Pickaxe is still in your inventory.",
         "Trade the Miner's Pendant to Oggbi to receive the Beat Cesti.",
     },
@@ -260,11 +263,12 @@ Q.STEPS = {
     },
 
     bsz_bm_blade_of_darkness = {
-        "Teleport to Bastok Mines Home Point #1, go inside the house (upper floor) at (J-7) and speak with Gumbah. Speak to him repeatedly until you get the cutscene that begins the quest. You must be level 30 or higher.",
+        "Teleport to Bastok Mines Home Point #3, go inside the house (upper floor) at (J-7) and speak with Gumbah. Speak to him repeatedly until you get the cutscene that begins the quest, which mentions finding Zeid; if the dialogue keeps repeating, zone and try again. You must be level 30 or higher.",
         "Travel to Palborough Mines and go to the top floor (map 3). If you have not unlocked it yet and have completed the limit break quest Beyond Infinity, you can use Domenic to teleport right to the home point outside Waughroon Shrine.",
-        "Defeat the required number of monsters with the Chaosbringer. If you need to reobtain it, return to Palborough Mines and ride the boat back to Zeruhn Mines; your kill count is reset to zero.",
+        "Go to the Boat Docks at (H-8), board one of the boats and interact with the Dock Lever for a cutscene with Zeid. Make sure you have a free inventory space: at the end you receive the Chaosbringer.",
+        "Defeat 100 monsters with the Chaosbringer equipped. The killing blow must be a normal hit (weapon skill kills do not count), monsters do not have to give experience, and Trusts can take your kills, so leave them out. The sword keeps its count through zoning and logging out, but there is no counter. If you drop it, return to Palborough Mines and ride the boat back to Zeruhn Mines; the count resets to zero.",
         "Set the Records of Eminence objective Conflict: South Gustaberg (or similar) to help you keep track of the kills.",
-        "Zone in for a cutscene to complete the quest.",
+        "With 100 kills done, go to Beadeaux and zone in for a cutscene that completes the quest. You can now become a Dark Knight.",
     },
 
     bsz_bm_drachenfall = {
@@ -291,34 +295,39 @@ Q.STEPS = {
 
     bsz_bm_the_doorman = {
         "Speak with Phara in Bastok Mines (J-9), a Warrior of level 40 or higher; she is right beside the Gobbie Mystery Box at Home Point #2. She needs sword grip material to repair her son's sword, which can be found in a tent in Davoi.",
-        "If multiple people are doing the quest, you will have to wait 5 minutes for the monsters to pop again.",
+        "Go to Davoi and examine the Hide Flap at (K-9)/(K-10) to spawn Barakbok and Gavotvut.",
+        "Defeat both, then examine the Hide Flap again to receive the Sword grip material. It moves to a random nearby spot (possibly the same one) after each check; if several people are doing the quest, the NMs take 5 minutes to become available again.",
         "Speak with Phara, then wait a game day (until the clock rolls past 00:00).",
         "Speak with Phara again to receive Yasin's sword.",
-        "Speak with Naji outside the President's Office in Metalworks (J-8) for a cutscene that finishes the quest, and receive your Razor Axe.",
+        "Speak with Naji outside the President's Office in Metalworks (J-8) for a cutscene that finishes the quest, and receive your Razor Axe. You may have to speak with him twice.",
     },
 
     bsz_bm_talekeepers_truth = {
         "Speak with Phara in Bastok Mines (J-9), a Warrior of level 50 or higher.",
         "Speak with Deidogg in Bastok Mines (H-6) twice; he is at the bottom of the ramp that leads to the guild. After this point the quest can be completed on any job.",
-        "Go to Palborough Mines and work your way to the top floor. You will find a ??? at (G-10) in a dead-end room.",
+        "Go to Palborough Mines and work your way to the top floor (Home Point #1 is very close; Domenic's teleport to Waughroon Shrine also lands next to it). Examine the ??? at (G-10) in a dead-end room to spawn Ni'Ghu Nestfender, and defeat it for a Mottled Quadav Egg. It can be spawned again 3 minutes later.",
         "Return to Bastok and trade the Mottled Quadav Egg to Deidogg.",
         "Go to Castle Oztroja and defeat the Yagudo Parasite in the pond on the third floor (H-9) for a Parasite Skin.",
         "Return to Bastok again and trade the Parasite Skin to Deidogg.",
+        "Wait a game day (until the clock rolls past 00:00), then speak with Deidogg for your reward.",
     },
 
     bsz_bm_talekeepers_gift = {
         "You must wait until the next game day after completing The Talekeeper's Truth before you can activate this quest. You must be a Warrior of level 50 or higher.",
         "Speak with Deidogg in Bastok Mines (H-6).",
-        "Speak with Detzo in Bastok Mines (I-6), in the alleyway around the corner from Deidogg.",
+        "Speak with Detzo in Bastok Mines (I-6), in the alleyway around the corner from Deidogg. Speak to him again if he mentions a Mythril Sallet.",
         "Obtain a Ginger Cookie, sold by the Curio Vendor Moogle or by Valeriano in Port Bastok, and trade it to Deidogg. The quest is not flagged in your log until after you trade the Ginger Cookie, and from then on it is active.",
+        "Travel to Behemoth's Dominion. Without the Survival Guide warp, the quickest way is through Qufim Island: follow the tunnel starting at (G-5) until you zone in.",
+        "Go to (K-9) in Behemoth's Dominion and examine the ??? to spawn three Goblin NMs: Doglix Muttsnout (Lv.58 WHM), Moxnix Nightgoggle (Lv.58 RNG) and Picklix Longindex (Lv.60 THF). All three use Bomb Toss often. They can be spawned once per game day (\"It is too blurry to read\" means wait), and the fight can be done on any job once the quest is active.",
         "Defeat the NMs, and zone out of Behemoth's Dominion back into Qufim to receive a cutscene and the reward for completing the quest.",
     },
 
     bsz_bm_first_meeting = {
         "If you just finished Ghosts of the Past, you must zone before beginning this quest. You must be on Monk.",
         "Speak with Oggbi inside the Steaming Sheep Restaurant in Port Bastok (E-6) for a cutscene. Once the quest is active you can complete it on any job.",
-        "Travel to Fei'Yin. You can use the Home Point warp #1 if you have it.",
-        "When ready, click the Hide Flap to pop Deloknok (PLD) and Bilopdop (MNK).",
+        "Travel to Fei'Yin (Home Point #1 if you have it). Zone into Qu'Bia Arena and back out for a cutscene and the key item Letter from Dalzakk.",
+        "In Davoi, find the Hide Flap on one of the huts around (F-7)/(G-7) and examine it to spawn Deloknok (PLD) and Bilopdop (MNK).",
+        "Defeat them, then find where the Hide Flap moved to (it jumps to another hut nearby whenever anyone searches one) and examine it for the key item San d'Orian martial arts scroll. Each player has to trigger the NMs once; after a scroll is taken there is a few minutes' cooldown.",
         "Go back and speak with Oggbi to receive your Temple Gaiters.",
     },
 
@@ -326,7 +335,7 @@ Q.STEPS = {
         "Speak with Ayame in Metalworks (K-7), as a Monk of level 50 or higher. If you have finished the Treasures of Aht Urhgan missions, you may need to speak with her twice. Once you have talked to Ayame, the quest shows up in your quest log and you may switch to another job to complete it.",
         "Acquire a Yagudo Drink from the Auction House, or buy one from a Curio Vendor Moogle if you have the appropriate Rhapsody key item.",
         "Travel to Castle Oztroja. You do not need the three passwords to enter the Altar Room.",
-        "Trade the Yagudo Drink to the ??? to spawn Huu Xalmo the Savage.",
+        "On the top floor, don't go through the timed gate: in the H-shaped room before it, trade the Yagudo Drink to the ??? on a torch at (H-8) to spawn Huu Xalmo the Savage (3 minutes between spawns).",
         "Huu Xalmo the Savage drops the Xalmo Feather. Trade the feather to Ayame for your Temple Hose.",
     },
 
@@ -569,7 +578,8 @@ Q.STEPS = {
         "Speak with Mighty Fist in Metalworks (G-9), on the lower level inside the Darksteel Forge, to receive the key item Letter from the Darksteel Forge.",
         "Travel to Windurst Waters and speak with Cochal-Monchal at (F-8), at Home Point #1 on the north map, in the Optistery.",
         "Obtain a Yagudo Cherry from a vendor or the Auction House. One is enough for multiple people doing the quest.",
-        "Travel to Giddeus and trade the Yagudo Cherry to the ??? at (H-14). This spawns the NM Vaa Huja the Erudite. You then obtain the key item Darksteel Formula.",
+        "Travel to Giddeus and trade the Yagudo Cherry to the ??? at (H-14) to spawn the NM Vaa Huja the Erudite; clear the area first if you can.",
+        "Defeat Vaa Huja the Erudite and examine the ??? again for the key item Darksteel Formula. Optional: back in Metalworks, Mighty Fist has some extra dialogue.",
         "Return to Raibaht and speak with him to complete the quest.",
     },
 
@@ -691,10 +701,11 @@ Q.STEPS = {
     -- ========================================================
 
     bsz_ol_blade_of_evil = {
-        "Travel to Beadeaux as a Dark Knight of level 50 or higher, and zone in from Pashhow Marshlands (this is important) to receive a cutscene that starts the quest. The quest follows Dark Puppet.",
+        "Travel to Beadeaux as a Dark Knight of level 50 or higher, and zone in from Pashhow Marshlands (this is important) to receive a cutscene that starts the quest. The quest follows Dark Puppet. Easiest: the Beadeaux Survival Guide, exit to Pashhow Marshlands, then re-enter. The rest can be done on any job.",
         "Farm Topaz Quadav enemies until you obtain a Quadav Mage Blood. Only one is needed if you are doing this with a group.",
-        "Proceed to Qufim and enter Delkfutt's Tower. Climb to Floor 7 (Middle Delkfutt's Tower).",
-        "Defeat the 3 NMs in Middle Delkfutt's Tower. You then receive the Chaos Burgeonet from Zeid in a cutscene, which completes the quest.",
+        "Enter Middle Delkfutt's Tower, either climbing up from Lower Delkfutt's Tower or down from the Upper Delkfutt's Tower Home Point. Use the teleporter at (J-6) on the 7th floor; it takes you to a closed circular chamber on the 6th floor with a ???.",
+        "Trade the Quadav Mage Blood to the ??? to spawn Gerwitz's Scythe and two Scythe Victims. Only Gerwitz's Scythe has to die, but the other two are weak and quicker to kill than to sleep.",
+        "Stand on the teleporter to go back upstairs for a cutscene and your Chaos Burgeonet.",
     },
 
     bsz_ol_chips = {

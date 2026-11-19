@@ -140,6 +140,8 @@ return {
     'Gentle Tiger',
     'Gerbaum',
     'Ghatsad',
+    'Tucker', -- Local patch: A Little Knowledge
+    'Champalpieu', -- Local patch: A Little Knowledge
     'Ghebi Damomohe',
     'Gilgamesh',
     'Gioh Ajihri',
@@ -257,6 +259,7 @@ return {
     'Melvien',
     'Melyon',
     'Mertaire',
+    'Mataligeat', -- Local patch: BRD unlock chain
     'Mhasbaf',
     'Mhebi Juhbily',
     'Miageau',
@@ -272,6 +275,7 @@ return {
     'Mokyokyo',
     'Monberaux',
     'Moreno-Toeno',
+    'Morjean', -- Local patch: The Holy Crest
     'Morunaude',
     'Mourices',
     'Muckvis',
@@ -296,6 +300,7 @@ return {
     'Nunaarl Bthtrogg',
     'Offa',
     'Oggbi',
+    'Ostalie', -- Local patch: The Holy Crest
     'Ohbiru-Dohbiru',
     'Ohruru',
     'Ojha Rhawash',
@@ -786,4 +791,95 @@ return {
     'Jack of Clubs',
     'Jack of Spades',
     'Jack of Diamonds',
+
+    -- Local patch: NPCs named in the BG-Wiki new player guide.
+    "A.M.A.N. Validator",
+    "Ajido-Marujido",
+    "Artisan Moogle",
+    "Asrahd",
+    "Cruor Prospector",
+    "Curio Vendor Moogle",
+    "Ephemeral Moogle",
+    "Festive Moogle",
+    "Field Manual",
+    "Grounds Tome",
+    "Horst",
+    "Hunt Registry",
+    "Jamal",
+    "Linkshell Concierge",
+    "Lombaria",
+    "Ludwig",
+    "Mapitoto",
+    "Oboro",
+    "Parike-Poranke",
+    "Porter Moogle",
+    "Rainemard",
+    "Rusese",
+    "Shanene",
+    "Skipper Moogle",
+    "Syndella",
+    "Task Delegator",
+    "Voidwatch Officer",
+    "Zenicca",
+
+    -- Local patch: NPCs named inside quest and mission steps (LandSandBoat c95bb99).
+    "Abd-al-Raziq",
+    "Biyaada",
+    "Brugaire",
+    "Brunhilde",
+    "Claidie",
+    "Cornelia",
+    "Ekokoko",
+    "Elnonde",
+    "Eternal Flame",
+    "Faulpie",
+    "Fheli Lapatzuo",
+    "Gushing Spring",
+    "Illeuse",
+    "Iroha",
+    "Jabbos",
+    "Kamih Mapokhalam",
+    "Loillie",
+    "Lourdaude",
+    "Louverance",
+    "Luzaf",
+    "Machionage",
+    "Molaal Ja",
+    "Morimar",
+    "Mukunda",
+    "Nahshib",
+    "Nouveil",
+    "Nyline",
+    "Nyumomo",
+    "Peshi Yohnts",
+    "Rapipi",
+    "Rohemolipaud",
+    "Rongelouts N Distaud",
+    "Sabiliont",
+    "Selh'teus",
+    "Shamonde",
+    "Shikaree Y",
+    "Shikaree Z",
+    "Suspicious Elvaan",
+    "Suspicious Galka",
+    "Suspicious Hume",
+    "Suspicious Tarutaru",
+    "Swift",
+    "Sylvie",
+    "Tswe Panipahr",
+    "Ulmia",
+    "Vladinek",
+    "Hagain", -- Local patch: Hitting the Marquisate
+    "Yatniel", -- Local patch: Hitting the Marquisate
+    "Laila", -- Local patch: AF quests
+    "Rhea Myuliah", -- Local patch: AF quests
+    "Valderotaux", -- Local patch: AF quests
+    "Tebhi", -- Local patch: AF quests
+    "Nhili Uvolep", -- Local patch: GEO/RUN AF
+    "Octavien", -- Local patch: GEO/RUN AF
+    "Vestavius", -- Local patch: GEO/RUN AF
+    "Gaddiux", -- Local patch: GEO/RUN AF
+    "Dabnorrin", -- Local patch: GEO/RUN unlock quests
+    "Yeggha Dolashi", -- Local patch: GEO/RUN unlock quests
+    "Wescolina", -- Local patch: GEO/RUN AF
 }

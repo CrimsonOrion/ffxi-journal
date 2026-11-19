@@ -20,7 +20,14 @@ Q.STEPS = {
     },
 
     oth_mha_fishermans_heart = {
-        'Steps not added yet.',
+
+        "You need a Fishing skill of at least 20 (gear included). Speak with Katsunaga on the waterfront in Mhaura (H-9).",
+
+        "Trade him a Gugru Tuna. In exchange he tells you your fishing history: how many times you have cast your line, how many fish you have caught, and the longest and heaviest fish you have landed.",
+
+        "Afterwards Katsunaga can show you the list of fish you have caught. It counts toward the 100 species needed for Fish Favors the Bold and the 60 types for Thanks for All the Fish. Only fish that entered your inventory count, not ones regretfully released for lack of space, and only those caught since the June 2015 update.",
+
+        "Completing the quest also lets you unlock an Accuracy/Evasion Vorseal. The quest is repeatable.",
     },
 
     oth_mha_his_name_is_valgeir = {
@@ -146,7 +153,20 @@ Q.STEPS = {
     },
 
     oth_sel_picture_perfect = {
-        'Steps not added yet.',
+
+        "You need your Adventuring Fellow at its level cap of 50 with a familiarity of 35, and must have finished Mirror, Mirror or A Pose by Any Other Name. With your Signal Pearl or Tactics Pearl equipped, speak with Diederik in Selbina (G-10) for a cutscene.",
+
+        "Diederik has lost a painting ordered by a customer. Choose either to ask Angelica for a new painting, or to delay the buyer, Umberto, while a new one is made. Both paths need the same two things.",
+
+        "Obtain a Bal Shell by using a Pickaxe at an Excavation Point in Korroloka Tunnel. Angelica's path: trade it to Angelica on the top floor of the Rarab Tail Hostelry in Windurst Waters (North) (F-10). Umberto's path: trade it to Umberto in Bastok Markets (L-10), then speak with Diederik again.",
+
+        "Obtain the Opalescent Stone from Castle Oztroja. Go through the Brass Door at (I-8) to Map 2, take the exit at (I-9) to Map 6, and examine the Brass Door at (I-8) there for a cutscene, then again to enter.",
+
+        "Examine the ??? inside the room to spawn the NM Yagudo Muralist along with your Adventuring Fellow. Defeat it, speak with your Fellow, then examine the ??? again to obtain the key item. Another player must wait 3 minutes before spawning the NM again.",
+
+        "Speak with Angelica in Windurst Waters (North) to receive the key item Old Woman's Portrait.",
+
+        "Take the portrait to Umberto in Bastok Markets (L-10) for a cutscene that completes the quest. Your Adventuring Fellow's level cap rises to 55 and you earn the title Team Player.",
     },
 
     oth_sel_the_gift = {
@@ -225,7 +245,13 @@ Q.STEPS = {
 
     oth_tvs_search_of_the_truth = {
         "Speak with Tressia in Tavnazian Safehold (J-6). You need to have completed Darkness Named and have the Chains of Promathia pack. Search for information regarding what happened on the day Wazozo's treasure was stolen.",
-        "Return to Tressia with what you found for your reward, the Gramary Cape.",
+        "Optional: speak with Mengrenaux and Chemioue, also in the Patrol HQ (J-6, third floor).",
+        "Speak with these four, in any order, for short cutscenes: Fouagine (I-9, third floor, under the archway), Noam (G-9, second floor, lower section), Zadant (H-8, second floor, on the ramp down) and Raminey (J-7, third floor, Home Point #3).",
+        "Return to Tressia and put what you learned in order. Two orders are known to work and the right one seems to change with each try: Fouagine, Zadant, Raminey, Noam or Fouagine, Zadant, Noam, Raminey. Keep trying either one.",
+        "Look at the other patrol members' reports (reports 1 and 2 from Mengrenaux, 3 and 4 from Chemioue), then return to Tressia and say where each report was gathered.",
+        "Follow the trail: examine the ??? next to Noam (G-9, second floor) to receive the Shaded Cruse, then the ??? up the ramp to the north (G-7), the one by the open doors on the left (G-8), the one in the hallway (H-8), and the last one in the bottom right corner of (H-8).",
+        "Return to Tressia in the Patrol HQ (J-6).",
+        "Go to Ondieulix (I-7, second floor, near Home Point #1) for your reward, the Gramary Cape.",
     },
 
     oth_tvs_name_of_science = {
@@ -237,7 +263,11 @@ Q.STEPS = {
         "Wait up to 1 minute after completing Behind the Smile. Talk with Enaremand in Tavnazian Safehold (J-7).",
         "Talk to Chemioue (J-6). If you have not done Petals for Parelbriaux and you are at Promathia Mission 3-5 or later, you may get that cutscene first.",
         "Go to Phomiuna Aqueducts, find a Wooden Ladder at (C-9) on the second map, and climb the ladder for a cutscene.",
-        "Complete the rest of the quest to be able to pose your mannequin.",
+        "Go to Misareaux Coast and examine the ??? at (I-6), near the end of the river, for the Mire incense.",
+        "Go to the base of the waterfall at (F-4) in Misareaux Coast and examine the ??? for a cutscene.",
+        "Examine the ??? again to spawn the mannequin NM Alsha. It casts Silence, Paralyze and sometimes Cure III on you; below about 20% it casts Fire II on itself, and if it kills itself you must zone and try again, since you have to land the final blow.",
+        "After defeating Alsha, examine the ??? again for the key item Better Humes and Mannequins.",
+        "Travel to Mhaura and speak with Fyi Chalmwoh, who takes the key item and lets you pose your mannequins for 200 gil.",
     },
 
     oth_tvs_paradise_salvation = {
@@ -263,7 +293,18 @@ Q.STEPS = {
     },
 
     oth_tvs_the_big_one = {
-        'Steps not added yet.',
+
+        "Speak with Travonce in the Tavnazian Safehold (F-9). His final wish is to reel in the big one, and he asks you to protect him while he fishes.",
+
+        "Between 13:00 and 16:00 (Vana'diel time), leave the Safehold through the southeast exit into Lufaise Meadows. The first person with the quest to enter gets a short cutscene.",
+
+        "Wait until everyone in your party is in Lufaise Meadows before speaking with Travonce; anyone not there cannot take part. The level cap for the escort is 45, Trust magic cannot be used, and uncapped helpers cannot cast on the capped players or on the monsters Travonce fishes up.",
+
+        "Escort Travonce. On the bridge he fishes up at least one Notorious Monster; defeat it. He then heads to the sea (defeat any Orcs on the way), where he fishes up more NMs, and finally to a lake to the north, where he fishes up three more. Defeat them all. Possible NMs: Asrai, Abhac, Vu-Murt, Petrocrab, Cetic Parasite, Ferrocrab and Nakki.",
+
+        "At last he fishes up The Big One, a Flesh-type monster. Defeat it and Travonce gives you the key item Travonce's Escort Award.",
+
+        "Speak with Travonce in the Tavnazian Safehold (F-9) for your reward: Dragon Chronicles, a Glass Fiber Fishing Rod, a Sinking Minnow, or one of the odd things he fished up. The quest is repeatable.",
     },
 
     oth_tvs_call_of_the_sea = {
@@ -289,7 +330,12 @@ Q.STEPS = {
 
     oth_tvs_x_marks_the_spot = {
         "Talk to Despachiaire in Tavnazian Safehold (K-10, upper level), behind the Walnut Door at (K-9), to start the quest.",
-        "Obtain a Tavnazian Liver and bring it to Despachiaire for your reward, 4,000 gil.",
+        "Speak with Parelbriaux (K-7, upper level).",
+        "Speak with Odeya (J-10, upper level).",
+        "Obtain a Tavnazian Liver from the Orcs in Lufaise Meadows or the Tavnazian Sheep in Lufaise Meadows or Misareaux Coast, and trade it to Odeya.",
+        "Go to Phomiuna Aqueducts. Map 1: climb the ladder at (F-6), follow the path and turn right at the T intersection. Map 2: go to (M-8) and climb the ladder; the Iron Gate at (J-6) needs a Bronze Key, or a Thief with several Thief's Tools.",
+        "Map 3: take the south corridor and examine the ??? at the north-east corner of (J-9), behind the ladder against the bookcase, to open the secret door. In the hidden hallway, examine the second Ornate Gate at (K-8) for a cutscene.",
+        "Return to Odeya for the final cutscene and your reward, 4,000 gil.",
     },
 
     oth_tvs_tango_with_a_tracker = {
@@ -299,7 +345,22 @@ Q.STEPS = {
     },
 
     oth_tvs_vw_op_026 = {
-        'Steps not added yet.',
+
+        "You need to be level 75 or higher and have an Adventurer's Certificate. Speak with Owain in the Tavnazian Safehold (H-6), at Home Point #1, for a cutscene.",
+
+        "Choose to take part in Voidwatch operations to receive the key item Hyacinth Stratum Abyssite.",
+
+        "Defeat the four Voidwatch Notorious Monsters of the Promathia areas at their planar rifts:",
+
+        "Fjalar in Attohwa Chasm: rifts at (I-9), (K-7) and (K-10).",
+
+        "Abununnu in Lufaise Meadows: rifts at (H-9), (F-8) and (G-7).",
+
+        "Tsui-Goab in Misareaux Coast: rifts at (J-8), (I-7) and (J-10).",
+
+        "Isarukitsck in the Uleguerand Range: rifts at (G-11), (G-10) and (J-10/11).",
+
+        "Return to Owain to complete the quest. VW Op. 004: Bibiki Bombardment begins automatically.",
     },
 
     -- ========================================================
@@ -307,7 +368,14 @@ Q.STEPS = {
     -- ========================================================
 
     oth_cpl_mithran_delicacies = {
-        'Steps not added yet.',
+
+        "You need to be on the Chains of Promathia mission Head Wind. Speak with Anguenet in Carpenters' Landing (J-10), right next to the Survival Guide, and choose the fourth option, Newtpool, to begin the quest.",
+
+        "Obtain a Muddy Siredon. It is fished up in the Newt Pool area of the Phanauet Channel, but one bought from the Auction House works just as well.",
+
+        "Trade the Muddy Siredon to Lourdaude, the Tonberry standing beside Anguenet. He asks for 100 gil.",
+
+        "Trade him 100 gil to receive a Blackened Siredon. The quest is repeatable.",
     },
 
     -- ========================================================
@@ -323,7 +391,14 @@ Q.STEPS = {
     },
 
     oth_riv_vw_op_004 = {
-        'Steps not added yet.',
+
+        "This quest begins automatically when Owain upgrades your key item to the Hyacinth Stratum Abyssite II at the end of VW Op. 026: Tavnazian Terrors.",
+
+        "Go to Bibiki Bay and take the Manaclipper to Purgonorgo Isle (Map 2), or use the Voidwatch teleport, which is the fastest way.",
+
+        "Defeat Bismarck at one of its planar rifts on Purgonorgo Isle: (F-9), (J-9) or (I-10).",
+
+        "Return to Owain in the Tavnazian Safehold (H-6) to complete the quest.",
     },
 
     -- ========================================================
@@ -352,7 +427,24 @@ Q.STEPS = {
     -- ========================================================
 
     oth_old_generous_general = {
-        'Steps not added yet.',
+
+        "You need to be level 60 or higher. Enter Oldton Movalpolos through the far eastern entrance in North Gustaberg (K-6) for a cutscene that starts the quest. This is not the entrance by the Survival Guide. If you turn it down, you cannot start it again until the next Conquest tally.",
+
+        "Speak with Faulpie in the Tanners' Guild in Southern San d'Oria (E-8), near Home Point #4, for a cutscene.",
+
+        "Trade Faulpie a Buffalo Hide, a Sheep Leather and 10,000 gil.",
+
+        "Wait until the next game day and speak with Faulpie again to receive a Goblin Cutting and the recipe for a Goblin Coif. A lost cutting can be replaced for 100,000 gil.",
+
+        "Synthesize a Goblin Coif (Leathercraft 75, Earth Crystal): Goblin Cutting, Steel Sheet, Linen Cloth, 2 Artificial Lens, Moblin Thread, Undead Skin and Sheep Leather.",
+
+        "Enter Oldton Movalpolos again through the (K-6) entrance while wearing the Goblin Coif for a cutscene and the Goblin Recommendation Letter.",
+
+        "Go to (G-8) and examine the Iron Box while wearing the coif to spawn the Goblin Preceptor (RDM) with Grimoire Guru Grimogek, Dread Dealing Dredodak and four Bugbear Portermen. Only the Goblin Preceptor has to be defeated; the others then disappear.",
+
+        "Examine the Iron Box again while wearing the coif for a cutscene, then trade the Goblin Coif to it to receive Choplix's Coif.",
+
+        "Leave Oldton Movalpolos and enter again through the (K-6) entrance while wearing Choplix's Coif for a cutscene and a Gold Beastcoin. You earn the title Moblin Kinsman. The quest can be repeated once per Conquest tally.",
     },
 
     oth_old_missionary_moblin = {
@@ -401,7 +493,24 @@ Q.STEPS = {
     -- ========================================================
 
     oth_dav_understanding_overlord = {
-        'Steps not added yet.',
+
+        "You need to be level 60 or higher. Enter the Monastic Cavern through the (G-7) entrance in Davoi for a cutscene that starts the quest. If you turn it down, you cannot start it again until the next Conquest tally.",
+
+        "Speak with Faulpie in the Tanners' Guild in Southern San d'Oria (E-8) for a cutscene.",
+
+        "Trade Faulpie a Buffalo Hide, a Ram Leather and 10,000 gil.",
+
+        "Wait until the next game day and speak with Faulpie again to receive an Orc Cutting and the recipe for an Orc Helm.",
+
+        "Synthesize an Orc Helm (Leathercraft 74, Earth Crystal): Orc Cutting, Iron Sheet, Linen Thread, Wool Thread, 2 Manticore Hair and 2 Black Pearls.",
+
+        "Enter the Monastic Cavern again while wearing the Orc Helm for a cutscene and the key item Communication from Tzee Xicu.",
+
+        "Examine the Cryptexphere (F-6) while wearing the helm to spawn the Orcish Overlord and six other Orc NMs. Only the Orcish Overlord has to be defeated; the others then disappear.",
+
+        "Examine the Cryptexphere again while wearing the helm for a cutscene, then trade the Orc Helm to it to receive Gadzradd's Helm.",
+
+        "Leave the Monastic Cavern and enter again while wearing Gadzradd's Helm for a cutscene and a Gold Beastcoin. You earn the title Orcish Serjeant. The quest is repeatable.",
     },
 
     -- ========================================================
@@ -409,7 +518,24 @@ Q.STEPS = {
     -- ========================================================
 
     oth_bea_affable_adamantking = {
-        'Steps not added yet.',
+
+        "You need to be level 60 or higher. In Beadeaux, enter the Qulun Dome at (H-7), on the left after first going underground, for a cutscene that starts the quest. If you turn it down, you cannot start it again until the next Conquest tally.",
+
+        "Speak with Peshi Yohnts in Windurst Woods (H-13) for a cutscene.",
+
+        "Trade Peshi Yohnts a Bugard Leather, a Turtle Shell and 10,000 gil.",
+
+        "Wait until the next game day and speak with Peshi Yohnts again to receive Quadav Parts and the recipe for a Quadav Barbut.",
+
+        "Synthesize a Quadav Barbut (Bonecraft 78, Earth Crystal): Quadav Parts, Tiger Leather, Lizard Molt, Bugard Tusk, Wool Thread, Red Grass Cloth and 2 Black Pearls.",
+
+        "Enter the Qulun Dome at (H-7) again while wearing the Quadav Barbut for a cutscene and the key item Orcish Seeker Bats.",
+
+        "Examine the Beastmen's Banner (F-8) while wearing the barbut to spawn the Diamond Quadav (WHM) and six other Quadav NMs. Only the Diamond Quadav has to be defeated; the others then disappear. It can use Benediction, which heals and wakes the NMs around it.",
+
+        "Examine the Beastmen's Banner again while wearing the barbut for a cutscene, then trade the Quadav Barbut to it to receive Da'Vhu's Barbut.",
+
+        "Leave the Qulun Dome and enter again while wearing Da'Vhu's Barbut for a cutscene and a Gold Beastcoin. You earn the title Bronze Quadav. The quest is repeatable.",
     },
 
     -- ========================================================
@@ -417,7 +543,16 @@ Q.STEPS = {
     -- ========================================================
 
     oth_pas_monstrosity = {
-        'Steps not added yet.',
+
+        "Speak with the Suspicious Hume in the Pashhow Marshlands (E-12). The Voidwatch teleport or the Unity Warp to the Pashhow Marshlands are the quickest ways there.",
+
+        "He asks for one of three items: a Rabbit Hide, a Lizard Tail or a Two-Leaf Mandragora Bud. The Bog Bunnies just north of him drop Rabbit Hides.",
+
+        "Trade the item to any of the Suspicious NPCs: the Suspicious Tarutaru in Port Windurst (M-4) near Home Point #3, the Suspicious Elvaan in Northern San d'Oria (L-8) near Home Point #3, or the Suspicious Galka in Port Bastok (K-12) near Home Point #2. After a short cutscene you receive the Ring of Supernal Disjunction.",
+
+        "Examine the Odyssean Passage and enter it for a cutscene that completes the quest. You can now take part in Monstrosity.",
+
+        "For The Curious Case of Melvien you can get the Gladiatorial Writ of Summons from any of the Suspicious NPCs (choose Belligerency). If you only want it for the Mog Garden, return the writ afterwards, or you stay flagged for Belligerency in its zones.",
     },
 
     -- ========================================================
@@ -425,7 +560,18 @@ Q.STEPS = {
     -- ========================================================
 
     oth_xar_survival_of_wisest = {
-        'Steps not added yet.',
+
+        "You need to be a Scholar of level 66 or higher, and must have completed Seeing Blood-red and waited until the next game day.",
+
+        "Zone into Xarcabard for a cutscene. The Survival Guide and Teleport-Vahzl both work.",
+
+        "Obtain a Scholar's Testimony, which drops from Orcs such as the Orcish Stonechucker, Orcish Fodder and Orcish Mesmerizer in East Ronfaure (S).",
+
+        "Go to the Throne Room in Castle Zvahl Keep for a cutscene at the door, then trade the Scholar's Testimony to the door to start the fight. All buffs are lost on entry and your support job is disabled; Trust magic is allowed if you have the key item Rhapsody in Umber.",
+
+        "Fight Schultz and his Crimson Grimoire. You win when Schultz is down to about 20% HP; the Grimoire does not have to be defeated. Engage quickly, since both buff themselves if left alone, and neither can be slept reliably. If you are not using Trusts or are undergeared, defeat the Grimoire first, as it has much less HP.",
+
+        "Winning completes the quest, raises your level limit to 75 and earns the title Grimoire Bearer. If you have already completed New Worlds Await or a later limit break, you do not need this quest for the level limit.",
     },
 
     -- ========================================================
@@ -442,13 +588,126 @@ Q.STEPS = {
     },
 
     oth_mul_records_of_eminence = {
-        'Steps not added yet.',
+
+        "Open the main menu and select Quests. Under Records of Eminence, go to Objective List > Tutorial > Basics and set the objective First Step Forward.",
+
+        "Speak with one of the Records of Eminence NPCs: Isakoth in Bastok Markets (E-11), Rolandienne in Southern San d'Oria (G-10), Fhelm Jobeizat in Windurst Woods (J-10), or the Eternal Flame in Western Adoulin (H-11).",
+
+        "This completes First Step Forward, gives you the key item Memorandoll and unlocks the other Records of Eminence objectives. Some objectives only appear after completing others.",
     },
 
     oth_mul_unity_concord = {
-        'Steps not added yet.',
+
+        "You need to have completed ten or more Records of Eminence objectives.",
+
+        "Set the Records of Eminence objective All for One, found under Tutorial in the Records of Eminence menu.",
+
+        "Speak with a Unity Concord NPC: Urbiolaine in Southern San d'Oria (G-10), Igsli in Bastok Markets (E-11), Teldro-Kesdrodo or Yonolala in Windurst Woods (J-10), or Nunaarl Bthtrogg in Western Adoulin (H-11).",
+
+        "Choose a Unity to join: Pieuje, Ayame, Invincible Shield, Apururu, Maat, Aldo, Jakoh Wahcondalo, Naja Salaheem, Flaviria, Sylvie or Yoran-Oran. This completes the quest.",
+
+        "Unity objectives in Records of Eminence earn Accolades, spent at the same NPCs on items, Unity Warps and the Wanted battles. You can change Unity once per Conquest week for an Accolade fee.",
     },
 
+    -- Local patch: GEO/RUN AF quests (BG-Wiki)
+
+    oth_wad_dances_with_luopans = { -- Local patch: GEO/RUN unlock quests
+        "Speak with Sylvie in Western Adoulin at the Waterfront (I-5), Waypoint #9. You need a job at level 30 or higher.",
+        "Go to the crag nearest your home nation and examine the Ergon Locus ??? beneath the stairs up to the Telepoint for the key item Fistful of homeland soil: San d'Oria, La Theine Plateau (K-8); Bastok, Konschtat Highlands; Windurst, Tahrongi Canyon (I-6).",
+        "Return to Sylvie with the soil and trade her a Petrified Log to receive the key item Luopan.",
+        "Go to one of these Ergon Loci: Flourishing Island, Ceizak Battlegrounds (K-10, Frontier Station); Bud of the Swarm, Ceizak Battlegrounds (I-8, Bivouac #2); Immutable Boulder, Yahse Hunting Grounds (F-6, Bivouac #2). You get the message \"You are assaulted by an uncanny sensation.\"",
+        "Rest (/heal) there to charge the Luopan; it can take up to 8 minutes, until you see \"You feel a mystical warmth welling up inside you!\"",
+        "Return to Sylvie to complete the quest. You receive the Matre Bell and can become a Geomancer. Don't throw the bell away before finishing Treasures of the Earth: if you toss it, Sylvie charges 300,000 gil or 150,000 Bayld before giving you the later AF and Empyrean quests (speaking to her again may let you skip paying).",
+    },
+
+    oth_wad_elementary_my_dear_sylvie = { -- Local patch: GEO/RUN unlock quests
+        "With Geomancer as your main job, level 66 or higher, speak with Sylvie in Western Adoulin at the Waterfront (I-5), Waypoint #9. You also need to be on Geomancer to spawn the NM. You don't need this quest for the level cap if you've already completed New Worlds Await or later.",
+        "Go to Morimar Basalt Fields (J-8), Bivouac #1, and speak with Dabnorrin to receive the key item Vessel of summoning.",
+        "Head to (K-6); the entrance is at (J-6) and leads to an area not shown on the map. Examine the Primordial Convergence from the south or west to spawn Burgeoning Flames, a Fire Elemental.",
+        "This is a solo fight with a 10 minute limit, and your support job is locked when it spawns (wiping your buffs). Trusts are dismissed on spawn, but you can call them again during the fight if you have Rhapsody in Umber. It only casts Fire spells (up to about 350 damage without buffs) and has under 3,800 HP; at level 119 it's trivial.",
+        "Examine the Primordial Convergence again for a cutscene and your reward. If you lose, Dabnorrin sells another Vessel of summoning for 5,000 Bayld, 10 Beastmen's Seals or 50,000 gil.",
+    },
+
+    oth_wad_for_whom_the_bell_tolls = {
+        "This quest follows Elementary, My Dear Sylvie and requires the Seekers of Adoulin pack. With Geomancer as your main job (level 90 or higher), speak with Sylvie at the Western Adoulin Waterfront (I-5), Waypoint #9. After this you can be on any job.",
+        "Speak with Nhili Uvolep in Eastern Adoulin (I-7), at the Sverdhried Hillock Waypoint #7, for a cutscene. If she offers you the Trial Wand or the weapon skill trial instead, keep talking to her until you get the cutscene with Sylvie; no need to zone.",
+        "Go to the Frontier Station in Morimar Basalt Fields (K-10) and speak with Vestavius.",
+        "Head east from Bivouac #2 to the north-west corner of (J-6) in Morimar Basalt Fields and examine the Ergon Locus ??? south of the giant rock (it doesn't sparkle) for a cutscene and the key item Silver luopan. Party members helping without the key item get a one-time Bayld reward that grows with the party size.",
+        "Examine the Ergon Locus ??? again to spawn Deranged Ameretat (about 75,000 HP). It uses Sweet Breath and Bad Breath, and below 50% Extremely Bad Breath, which it skips while an enfeebling Indi- or Geo- effect is up. It has very high magic evasion and resists nearly all enfeebles, including Stun; ranged Trusts such as Apururu, Semih Lafihna or Tenzen II work well.",
+        "After defeating it, examine the Ergon Locus ??? a third time for a cutscene; the Silver luopan is taken from you.",
+        "Return to Sylvie in Western Adoulin (I-5) for the final cutscene and your Filiae Bell, Dowser's Wand and Bayld. Wait a game day before starting The Bloodline of Zacariah.",
+    },
+
+    oth_wad_bloodline_of_zacariah = {
+        "Wait until the next game day after For Whom the Bell Tolls. With Geomancer as your main job, speak with Sylvie at the Western Adoulin Waterfront (I-5), Waypoint #9. After this you can be on any job. Flagging the quest lets you commission the other three Geomancer Artifact pieces from Wescolina in Western Adoulin (H-7).",
+        "Obtain 3 Acuex Ore and trade them to Sylvie. Buy them at the Auction House (Materials > Smithing) or get them from Putrid Acuex and Flatus Acuex in Cirdas Caverns.",
+        "In Cirdas Caverns (M-8/9), examine the Overgrown Grave on the ground, to the right of the Ergon Locus, for a cutscene. The Augural Conveyor to Cirdas Caverns is quickest, otherwise the Yorcia Weald Frontier Station; a Colonization Reive at (M-8) may block the way.",
+        "Speak with Nhili Uvolep in Eastern Adoulin (I-7), Sverdhried Hillock Waypoint #7, for a cutscene and your Geomancy Mitaines.",
+    },
+
+    oth_wad_the_communion = {
+        "Wait until the next game day after The Bloodline of Zacariah. With Geomancer as your main job, speak with Sylvie at the Western Adoulin Waterfront (I-5), Waypoint #9. After this you can be on any job.",
+        "Speak with Nhili Uvolep in Eastern Adoulin (I-7), Sverdhried Hillock Waypoint #7, for a cutscene and the key item Lhaiso Neftereh's bell. If you get the Trial Wand or Geomancerrific instead, talk to her twice. Cutscene-skipping addons can freeze this cutscene. Helpers without the bell get a one-time Bayld reward for the fight.",
+        "Go to Cirdas Caverns (M-8/9) and examine the Overgrown Grave for a cutscene (Augural Conveyor, or the Yorcia Weald Frontier Station; clear any Colonization Reive in the way).",
+        "Examine the Overgrown Grave again to spawn Ancestral Rage (about 70,000 HP). It has very high physical damage reduction (Monk's Formless Strikes doesn't work on it) and uses high-tier Earth and Dark magic, Sleepga II, area Drain and Aspir, Entomb (Petrify, Slow, hate reset) and Tenebral Crush (Defense Down). Repose and Lullaby can sleep it.",
+        "After defeating it, examine the Overgrown Grave again for a cutscene.",
+        "Return to Sylvie in Western Adoulin (I-5) for a final cutscene, your Geomancy Pants and the title Storied Geomancer. Lhaiso Neftereh's bell is taken from you.",
+    },
+
+    oth_ead_children_of_the_rune = { -- Local patch: GEO/RUN unlock quests
+        "Speak with Octavien in Eastern Adoulin (I-8), south down the ramp from the Sverdhried Hillock waypoint. You need a job at level 30 or higher.",
+        "In Yahse Hunting Grounds (K-7), examine the Yahse Wildflower at the northern end of the three beaches for the key item Yahse wildflower petal.",
+        "Speak with Octavien again and choose \"Use Rune Enhancement.\" It can take anywhere from 1 to 100 attempts (he comments every 10 failures), but you can't fail permanently; keep trying.",
+        "When it succeeds, you can become a Rune Fencer and receive the Sowilo Claymore. Keep the sword: Forging New Bonds needs it, or an Elixir instead.",
+    },
+
+    oth_ead_endeavoring_to_awaken = { -- Local patch: GEO/RUN unlock quests
+        "With Rune Fencer as your main job, level 66 or higher, speak with Octavien in Eastern Adoulin (I-8) to receive the key item Ephemeral Endeavor. You don't need this quest for the level cap if you've already completed New Worlds Await or later.",
+        "Go to Rala Waterways (M-6), entering from Eastern Adoulin (F-7). Speak with Yeggha Dolashi and examine the door behind her to enter Rala Waterways (U).",
+        "Your support job is locked; Trusts are allowed if you have Rhapsody in Umber. After you climb the stairs, Zurko-Bazurko (under 1,100 HP) attacks. Sverdheid waits in the center of the arena and doesn't attack right away, so you can buff and heal.",
+        "Deal about 3,700 damage to Sverdheid (about 4,000 HP) and she surrenders, giving you the key item Enlightened Endeavor. If you fail, wait a game day for another Ephemeral Endeavor, or pay Octavien 50,000 gil, 5,000 Bayld or 10 Beastmen's Seals.",
+        "Return to Octavien to complete the quest.",
+    },
+
+    oth_ead_forging_new_bonds = {
+        "This quest follows Endeavoring to Awaken and requires the Seekers of Adoulin pack. Zone after finishing it, then speak with Octavien in Eastern Adoulin (I-8), near the Sverdhried Hillock waypoint, as a Rune Fencer of level 90 or higher. After this you can be on any job.",
+        "Optional: speak with Gaddiux at the Inventors' Coalition in Western Adoulin (J-10) about the blacksmith.",
+        "In Western Adoulin (I-4), examine the Inconspicuous Barrel in the alley near the Adoulin Waterfront waypoint. Yestin-Ovestin asks for a Rune saber and a Frost-encrusted flame gem.",
+        "In Rala Waterways (E-10), in the Arboretum (closest entrance is near the Western Adoulin Mog House), examine the Tomato Vantage Point for a cutscene with Jerra Ndala. Ask about the Rune saber and trade a Sowilo Claymore or an Elixir for the key item Rune saber.",
+        "Ask her about the Frost-encrusted flame gem for the key item Flask of fruiserum.",
+        "In Moh Gates (K-8), trade an Ifritite to the Molten Rift for a cutscene. The Morimar Frontier Station waypoint is quickest (or Yahse Bivouac #1); you must get past a Colonization Reive at (I-7). In a group, everyone trades their Ifritite before the NM is spawned.",
+        "Examine the Molten Rift again to spawn Staumarth and defeat it (any job; the Apex Efts nearby don't aggro). It resists everything but Thunder and uses Spectral Floe and Scouring Spate. If you lose, just examine the Rift again; no new Ifritite needed. You receive the key item Frost-encrusted flame gem.",
+        "Examine the Inconspicuous Barrel in Western Adoulin (I-4) for a cutscene; it takes the Rune saber and the gem.",
+        "After a game day, examine the Inconspicuous Barrel again for a note telling you to see Octavien.",
+        "Speak with Octavien for your Beorc Sword. You can now commission the other three Rune Fencer Artifact pieces at the Tomato Vantage Point in Rala Waterways (E-10).",
+    },
+
+    oth_ead_legacies_lost_and_found = {
+        "Zone after finishing Forging New Bonds. As a Rune Fencer, speak with Octavien in Eastern Adoulin (I-8) for the key item Letter from Octavien.",
+        "In Port Windurst (E-7), speak with Ohruru at the back of the Orastery, use Ignis, then speak with her twice more for a cutscene.",
+        "Visit at least three of these eight Strange Apparatuses (often behind invisible walls). At each, use its rune three times, then examine the Hazy Rune for that rune's Stone key item: Dangruf Wadi (E-11) Unda, Stone of Unda; Gusgen Mines map 2 (J-5) Flabra, Stone of Flabra; Crawlers' Nest map 3 (K-8) Sulpor, Stone of Sulpor; Ordelle's Caves (E-12) Gelus, Stone of Gelus; Outer Horutoto Ruins map 5 (E-6) Tellus, Stone of Tellus, from the north tower in West Sarutabaruta (the Voidwatch warp lands at the right tower); Garlaige Citadel map 3 (K-8) Tenebrae, Stone of Tenebrae, behind Banishing Gate #2.",
+        "The Eldieme Necropolis map 2 (K-13) is Ignis for the Stone of Ignis: drop down the westernmost hole in room D on map 1 (G-9), not the centre one. Maze of Shakhrami map 2 (L-10) is Lux for the Stone of Lux: enter from Buburimu Peninsula, not Tahrongi Canyon (the Unity Warp drops you at the entrance).",
+        "Optional: three more apparatuses give a Stone of unknown runic origins for three runes in order: Fei'Yin map 1 (G-6) Ignis, Tellus, Tenebrae; Ranguemont Pass (E-4) Flabra, Ignis, Lux; King Ranperre's Tomb map 2 (E-7) Gelus, Sulpor, Unda. These don't count toward the three. Each Stone adds 2,000 Bayld to your reward.",
+        "Return to Ohruru in Port Windurst and answer her questions. Rune against a spell's element: Fire Unda, Earth Flabra, Water Sulpor, Wind Gelus, Ice Ignis, Lightning Tellus, Light Tenebrae, Dark Lux. Rune for an element it can't stomach: the same element (Fire Ignis, Earth Tellus, Water Unda, Wind Flabra, Ice Gelus, Lightning Sulpor, Light Lux, Dark Tenebrae).",
+        "Ailments: Paralyze/Frost Ignis; Silence/Gravity/Choke Gelus; Slow/Petrify/Rasp Flabra; Stun/Shock Tellus; Poison/Drown Sulpor; Addle/Amnesia/Plague/Disease/Burn Unda; Bane/Blind/Bio/Drain Lux; Dia/Sleep/Charm/Holy Tenebrae. Wards: reduce elemental damage Vallation, for the party Valiance, absorb it Liement, enhance resistance Pflug. She also asks which question number you're on, so keep count. You receive the key item \"Secrets of Runic Enhancement\".",
+        "Speak with Octavien in Eastern Adoulin (I-8).",
+        "Examine the Inconspicuous Barrel in Western Adoulin (I-4), near the Adoulin Waterfront waypoint, to hand over the Secrets of Runic Enhancement.",
+        "Wait until the next game day and examine the Inconspicuous Barrel again to complete the quest and receive the Runeist Trousers.",
+    },
+
+    oth_ead_destinys_device = {
+        "As a Rune Fencer, speak with Octavien in Eastern Adoulin (I-8) for the key item Runic kinegraver.",
+        "Speak with Gaddiux at the Inventors' Coalition in Western Adoulin (J-10) and choose the option about Adoulinian Kelp. Then keep picking the top two options (asking if the rune stone is still there, and about the trial objectives) until he mentions the Yahse wildflower petal.",
+        "Examine the Yahse Wildflower in Yahse Hunting Grounds (K-7) for the key item Yahse wildflower petal.",
+        "In Marjami Ravine, go to the ??? at the base of the waterfall east of Bivouac #2 (I-8), use Ignis three times, then examine it for a cutscene and the key item Vial of vivid rainbow extract. If nothing happens, go back to Gaddiux and repeat his dialogue.",
+        "Speak with Gaddiux again, choosing the Adoulinian Kelp option, for another cutscene.",
+        "Speak with Octavien in Eastern Adoulin (I-8).",
+        "In Foret de Hennetiel, go to the secret beach at (J-11), south of Bivouac #2, and examine the Bloodstained Glove on the shoreline for a cutscene.",
+        "Once everyone has seen the cutscene, examine the Bloodstained Glove again to spawn Insidio (any job; Trusts allowed). This Orobon uses Mayhem Lantern (area Charm) and takes less physical damage each time it does, so bring magic damage and skillchains, or let Trusts hold hate while you stay out of Charm range; Tenebrae with Pflug and other Magic Evasion buffs also helps. Everyone on the quest gets Insidio's extinguished lantern; helpers who have never assisted get up to 10,000 Bayld.",
+        "Optional: examine the Bloodstained Glove again after the fight.",
+        "Return to Octavien to complete the quest and receive the Runeist Coat and the title Ultimate Runeist.",
+        "Optional: speak with Zurko-Bazurko in Mhaura by the Proto-Waypoint for an extra cutscene; he asks for the Runic kinegraver.",
+    },
 }
 
 return Q

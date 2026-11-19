@@ -293,6 +293,21 @@ local M = {
         trackable = true,
     },
 
+    {
+        id = 'cw_eld_seeing_blood_red',
+        name = 'Seeing Blood-red',
+        area = 'crystal_war',
+        zone = 'The Eldieme Necropolis (S)',
+        loc = 'The Eldieme Necropolis (S) (J-8)',
+        npc = 'Erlene',
+        req = 'Lv.50+ SCH',
+        prereq = 'Downward Helix',
+        reward = "Scholar's Mortarboard",
+        tracker_area = 'wotg',
+        tracker_id = 34,
+        trackable = true,
+    },
+
     -- ========================================================
     -- BASTOK MARKETS (S)
     -- ========================================================
