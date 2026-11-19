@@ -945,4 +945,10 @@ return {
     "Gimb", -- Local patch: Outlands quests
     "Babubu", -- Local patch: Outlands quests
     "Chef Nonberry", -- Local patch: Outlands quests
+    "Ponono", -- Local patch: Other quests
+    "Daa Bola the Seer", -- Local patch: Other quests
+    "Yaya", -- Local patch: Other quests
+    "Jimaida", -- Local patch: Other quests
+    "Meret", -- Local patch: Other quests
+    "Mengrenaux", -- Local patch: Other quests
 }

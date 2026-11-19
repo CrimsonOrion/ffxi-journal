@@ -874,4 +874,10 @@ return {
     ["Gimb"] = { { 252, -4.97, -44.04, -0.97 } }, -- Local patch: Outlands quests
     ["Babubu"] = { { 240, -175.19, 70.44, -3.32 } }, -- Local patch: Outlands quests
     ["Chef Nonberry"] = { { 159, -135.22, -92.23, 0.00 } }, -- Local patch: Outlands quests
+    ["Ponono"] = { { 241, -38.24, -120.95, -1.25 } }, -- Local patch: Other quests
+    ["Daa Bola the Seer"] = { { 151, -157.98, 193.46, -17.18 } }, -- Local patch: Other quests
+    ["Yaya"] = { { 248, -18.77, -14.93, -2.60 } }, -- Local patch: Other quests
+    ["Jimaida"] = { { 248, -17.34, -18.77, -2.60 } }, -- Local patch: Other quests
+    ["Meret"] = { { 26, 83.17, 4.63, -25.08 } }, -- Local patch: Other quests
+    ["Mengrenaux"] = { { 26, 72.84, 63.92, -34.25 } }, -- Local patch: Other quests
 }

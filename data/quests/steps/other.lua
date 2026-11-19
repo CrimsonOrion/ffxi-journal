@@ -8,8 +8,8 @@ Q.STEPS = {
 
     oth_mha_potters_preference = {
         "Speak with Nereus in Mhaura (I-8), near the Proto-Waypoint, to begin the quest. You need Windurst fame level 5. Nereus seeks a dish of Gusgen clay from the depths of the Gusgen Mines.",
-        "Obtain a Gusgen Clay from the Gusgen Mines.",
-        "Bring the Gusgen Clay to Nereus for your reward, 2,160 gil. You can repeat the quest.",
+        "The Gusgen Clay is by the right-most pond at (I-6/7) on map 3 of Gusgen Mines; bring Sneak, as monsters there are 85+. From the Survival Guide, head north, down the stairs and through the right-most door at (H-6) (use the lever if it's closed; not while Invisible), then drop down the hole in the north-east corner of (I-6) on map 2. The Grounds Tome at (H-7) sells Sneak and Invisible, but only buy it after the door.",
+        "Bring the Gusgen Clay to Nereus for your reward, 2,160 gil. You can repeat the quest after 8 hours.",
     },
 
     oth_mha_expertise = {
@@ -39,8 +39,9 @@ Q.STEPS = {
 
     oth_mha_raining_mannequins = {
         "Speak with Fyi Chalmwoh in the Goldsmithing shop in Mhaura (G-8) to begin the quest, then speak to her again. You need Windurst fame level 4. She wants to build a mannequin that rivals those of times past, and it is your job to gather information on how to make one.",
-        "Speak with Ramona in Selbina (H-9) to receive the Mannequin joint diagrams.",
-        "Gather all 5 Mannequin pieces and trade them to Fyi Chalmwoh. They can also be bought from player bazaars.",
+        "Speak with Ramona in Selbina (H-9), inside the Weavers' Guild, to receive the Ye Olde Mannequin Catalogue.",
+        "Speak with Cheupirudaux in Northern San d'Oria (F-3), near Home Point #4, to receive the Mannequin joint diagrams.",
+        "Gather all 5 pieces, a Mannequin Body, Feet, Hands, Head and Legs, and trade them to Fyi Chalmwoh. They can also be bought from player bazaars.",
         "Zone and speak with Fyi Chalmwoh again to receive your reward, a mannequin matching your race and gender.",
     },
 
@@ -51,7 +52,7 @@ Q.STEPS = {
 
     oth_mha_recycling_rods = {
         "Speak with Keshab-Menjab at the lower level of Mhaura (H-9) to begin the quest. You need Other fame level 1. You have been asked to help bring in cleanly snapped rods for recycling; the recycled rods are supposedly sold somewhere around Bibiki Bay.",
-        "Obtain a Clean Snap Rod. You can speak to Keshab-Menjab again for some additional dialogue.",
+        "In Bibiki Bay - Purgonorgo Isle, fish up a Lancet Jagil (Minnows seem to work as bait) and defeat it until one drops a Cleanly Snapped Rod.",
         "Return the rod to Keshab-Menjab to complete the quest and receive 1,500 gil.",
     },
 
@@ -62,7 +63,8 @@ Q.STEPS = {
 
     oth_mha_trial_by_lightning = {
         "Speak with Ripapa in Mhaura (I-9) to obtain the quest. You need Mhaura fame level 6. Warning: Trust Magic cannot be used in this battlefield. Once you have the key item Tuning fork of lightning, you can safely undertake the quest, and every party member needs their own.",
-        "Ring the tuning fork upon the Lightning Protocrystal in the Boyahda Tree. Up to 6 party members can enter the arena, and the time limit is 30 minutes.",
+        "Enter The Boyahda Tree from The Sanctuary of Zi'Tah (K-12) or (J-12). On map 1, go to (A-7) to climb to map 2, and go behind the waterfall at (I-11) to the hidden entrance to the Cloister of Storms. The Boyahda Tree Home Point #1 is best; the Unity Warp puts you on map 2 a short run from it (monsters aggro even at 99).",
+        "Ring the tuning fork upon the Lightning Protocrystal. Up to 6 party members can enter the arena, and the time limit is 30 minutes.",
         "Defeat Ramuh Prime to receive the key item Whisper of storms.",
         "Return to Ripapa with the whisper and she offers several reward options, including the ability to summon Ramuh. You can only select one of the rewards at any time, and you may repeat this quest once per Earth day.",
         "To save travel time to the Cloister, use the Mini Fork of Ltn. given by Trial-Size Trial by Lightning: be on Summoner as your main job, get the Mini Tuning Fork from Lacia, trade it back to her, and enter the Protocrystal normally.",
@@ -79,12 +81,13 @@ Q.STEPS = {
     oth_mha_the_basics = {
         "You need to wait 8 real-life hours after completing The Clue before this quest is offered. Speak with Rycharde in Mhaura (I-8), who asks you to take Mhauran couscous to Valgeir in Selbina.",
         "Rycharde offers to buy you a ticket for the next Ferry between Mhaura and Selbina, but you can travel to Selbina any way you choose.",
-        "Deliver the dish to Valgeir in Selbina (I-9) and report back to Rycharde on how he liked it.",
+        "Deliver the dish to Valgeir in Selbina (I-9); he gives you a Popoto to take back.",
+        "Return to Rycharde and trade him the Popoto to complete the quest and receive a Tea Set. Optional: speak with Valgeir and then Rycharde once more to conclude the story.",
     },
 
     oth_mha_the_clue = {
-        "Speak with Rycharde in Mhaura (H-8). This quest follows Expertise. He seeks an ingredient known as Crawler's Eggs.",
-        "Obtain Crawler's Eggs and bring them to Rycharde to complete the quest. You receive 3,000 gil and the title Four-Star Purveyor.",
+        "Wait 8 Earth hours after completing Expertise. Speak with Rycharde in Mhaura (H-8), upstairs in the Sailors' Stay, and accept his request.",
+        "Bring him 4 Crawler Eggs (Auction House, Cooking, or from Crawlers) to complete the quest. You receive 3,000 gil and the title Four-Star Purveyor.",
     },
 
     oth_mha_the_old_lady = {
@@ -194,7 +197,8 @@ Q.STEPS = {
     },
 
     oth_sel_under_the_sea = {
-        "Speak with Oswald in Selbina (I-9). This quest involves a Fat Greedie, a fish that can be caught in the sea at Selbina, and an Etched ring.",
+        "Speak with Yaya in Selbina (H-9), then Oswald (I-9), inside the Shepherd's Muster by the Nomad Moogles, then Jimaida (H-9); the quest is now active.",
+        "Speak with Zaldon (H-9). Fish up a Fat Greedie in Selbina and trade it to Zaldon; repeat with one fish at a time until he gives you the temporary key item Etched ring.",
         "Bring the ring back to Oswald for your reward, the Amber Earring.",
     },
 
@@ -206,6 +210,7 @@ Q.STEPS = {
         "Talk to Frescheque in Tavnazian Safehold (H-8, 3rd floor) to start the quest.",
         "Talk to Raminey (J-7, 3rd floor).",
         "Talk to Equette (I-9, 2nd floor).",
+        "In Lufaise Meadows, examine the ??? at (I-8) to spawn Blackbone Frazdiz (DRK) and Rainbringer Vjatvot (BLM). Both can be slept briefly, and nearby Orcs link.",
         "Defeat the NMs and select the ??? again to obtain the Tiny wristlet.",
         "Return to the Tavnazian Safehold and talk to Frescheque for your reward, the Yinyang Lorgnette. Talk to Equette again for an additional cutscene.",
     },
@@ -227,19 +232,23 @@ Q.STEPS = {
     },
 
     oth_tvs_elderly_pursuits = {
-        "This quest follows Secrets of Ovens Lost and requires the Chains of Promathia pack. Speak with Despachiaire in Tavnazian Safehold (K-10). He has asked you to investigate the origin of his late wife's amulet.",
-        "Investigate the amulet's origin and return to Despachiaire for your reward, the Elegant Ribbon.",
+        "This quest follows Secrets of Ovens Lost and requires the Chains of Promathia pack. Speak with Despachiaire in Tavnazian Safehold (K-10) for a cutscene and the Antique amulet.",
+        "Speak with Rouva in Southern San d'Oria (I-8).",
+        "Enter Carpenters' Landing from the Jugner Forest (E-6) entrance and examine the ??? at (F-9) to spawn the NM Para. At low health it makes copies of itself, so kill it fast.",
+        "Examine the ??? again to exchange the Antique amulet for the Cathedral medallion, then return to Rouva.",
+        "Return to Despachiaire for your reward, the Elegant Ribbon.",
     },
 
     oth_tvs_fly_high = {
-        "Speak with Ferchinne in Tavnazian Safehold (G-9) to begin the quest. You need to be on or past Promathia Mission 4-2 and have the Chains of Promathia pack.",
-        "Obtain 2 Hippogryph Tailfeathers and trade them to Ferchinne for your reward, the Mistmelt. You can repeat the quest.",
+        "Speak with Ferchinne in Tavnazian Safehold (G-9), in the lower section of the main floor near the waterfalls and bridges. You need to be on or past Promathia Mission 4-2 and have the Chains of Promathia pack.",
+        "Obtain 2 Hippogryph Tailfeathers (from Hippogryphs in Riverne - Site #A01 and #B01, or the Auction House under Clothcraft) and trade them to Ferchinne for your reward, the Mistmelt. You can repeat the quest.",
+        "A Mistmelt forces Ouryu to land when you fight him, but has no effect in The Savage II.",
     },
 
     oth_tvs_go_go_gobmuffin = {
         "To activate this quest you must be on or past Promathia Mission 4-2 and have zoned into Riverne - Site B01. You need the Chains of Promathia pack.",
         "Speak with Epinolle in Tavnazian Safehold (F-8) to begin the quest.",
-        "Enter Riverne - Site B01 and defeat the goblin NMs Book Browser Bokabraq, Chemical Cook Chemachiq and Spell Spitter Spilospok.",
+        "Enter Riverne - Site #B01 and head to the island at (J-6). As you leave the spatial distortion onto the island, three goblin NMs spawn: Book Browser Bokabraq (BLM), Chemical Cook Chemachiq (WHM) and Spell Spitter Spilospok (WAR). Defeat them.",
         "Return to Epinolle for your reward, the Map of Cape Riverne.",
     },
 
@@ -248,7 +257,7 @@ Q.STEPS = {
         "Optional: speak with Mengrenaux and Chemioue, also in the Patrol HQ (J-6, third floor).",
         "Speak with these four, in any order, for short cutscenes: Fouagine (I-9, third floor, under the archway), Noam (G-9, second floor, lower section), Zadant (H-8, second floor, on the ramp down) and Raminey (J-7, third floor, Home Point #3).",
         "Return to Tressia and put what you learned in order. Two orders are known to work and the right one seems to change with each try: Fouagine, Zadant, Raminey, Noam or Fouagine, Zadant, Noam, Raminey. Keep trying either one.",
-        "Look at the other patrol members' reports (reports 1 and 2 from Mengrenaux, 3 and 4 from Chemioue), then return to Tressia and say where each report was gathered.",
+        "Look at the other patrol members' reports (reports 1 and 2 from Mengrenaux, 3 and 4 from Chemioue), then return to Tressia and say where each was gathered: report 1 (I-8), report 2 (H-8), report 3 (G-9), report 4 (J-7).",
         "Follow the trail: examine the ??? next to Noam (G-9, second floor) to receive the Shaded Cruse, then the ??? up the ramp to the north (G-7), the one by the open doors on the left (G-8), the one in the hallway (H-8), and the last one in the bottom right corner of (H-8).",
         "Return to Tressia in the Patrol HQ (J-6).",
         "Go to Ondieulix (I-7, second floor, near Home Point #1) for your reward, the Gramary Cape.",
@@ -257,6 +266,10 @@ Q.STEPS = {
     oth_tvs_name_of_science = {
         "Start the quest by talking to Yurim in Tavnazian Safehold (J-8), on the top floor. This quest requires the Chains of Promathia pack.",
         "Choose a reward, then trade the appropriate base item and chip to Yurim. Be careful: you cannot cancel the quest after making your decision. You can repeat the quest.",
+        "Speak with Yurim again. Either collect the organs now, or trade him an Apple Pie for a hint. Then trade him the organs to complete the quest and receive your item.",
+        "Recipes: Silver Earring + Black or White Chip, 5 Euvhi Organs, 5 Luminian Tissues. Silver Obi + chip, 7 + 3 organs and 3 Luminian Tissues: Red 7 Phuabo/3 Xzomit, Yellow 7 Hpemde/3 Aern, Blue 7 Hpemde/3 Phuabo, Green 7 Aern/3 Hpemde, Clear 7 Xzomit/3 Phuabo, Purple 7 Phuabo/3 Hpemde, White 7 Xzomit/3 Aern, Black 7 Aern/3 Xzomit.",
+        "Gorget + chip, plus Yovra Organs: Red 10 Phuabo/5 Xzomit/1 Yovra, Yellow 10 Xzomit/5 Aern/1, Blue 10 Aern/5 Hpemde/1, Green 10 Phuabo/5 Hpemde/1, Clear 10 Phuabo/5 Aern/1, Purple 10 Xzomit/5 Hpemde/1, White 7 Aern/3 Phuabo/3 Hpemde/2 Yovra, Black 7 Hpemde/3 Phuabo/3 Aern/2 Yovra.",
+        "After completing it once, you can also trade vices and auras from several Lumoria HNMs to Meret for rewards.",
     },
 
     oth_tvs_forbidden_doors = {
@@ -277,19 +290,28 @@ Q.STEPS = {
 
     oth_tvs_petals_for_parelbriaux = {
         "Speak with Chemioue on the top floor of Tavnazian Safehold (J-6), slightly north of Home Point #3, for a cutscene. You need to have completed Promathia Mission 3-5 and have the Chains of Promathia pack.",
+        "Speak with Tressia, next to Chemioue.",
+        "Speak with Parelbriaux (K-7): walk back to the Home Point and up the ramp to the east.",
         "If you get a cutscene about a Shikaree tracker, that is for Tango with a Tracker: go talk to Despachiaire at (K-10), behind a Walnut Door, then return to Parelbriaux and talk to him twice more for a cutscene with Chemioue.",
+        "Speak with Ondieulix on the middle floor (I-7), just south of Home Point #1, for a cutscene that adds the quest to your log.",
+        "In Lufaise Meadows, examine the ??? at (G-6) during foggy weather (most often early morning) to spawn the NM Baumesel. Defeat it and examine the ??? again.",
         "Speak with Ondieulix at (I-7) to receive your reward, the Powerful Rope.",
     },
 
     oth_tvs_secrets_of_ovens_lost = {
         "Talk to Despachiaire in Tavnazian Safehold (K-10), on the top floor. This quest follows Spice Gals and requires the Chains of Promathia pack.",
         "Talk to Jonette on the middle floor, near the stream at (G-9).",
-        "Complete the rest of the quest to receive a page from Miratete's Memoirs.",
+        "You need access to Phomiuna Aqueducts or the Sacrarium (each needs different Chains of Promathia progress). In either, find a ??? on a bookshelf for the key item Tavnazian cookbook; it moves to the next room about every 10 minutes.",
+        "Phomiuna Aqueducts: the libraries are the four rooms at (F-7), (F-9), (J-7) and (J-9) on the third map, with the ??? on the north or south bookshelf. From the entrance, open the iron door at (G-8) or (J-6) with a Bronze Key (or a Thief's tools), avoid the Taurus, and take the ladder at (E-8) or (M-8). Two True-Sight Taurus guard each hallway to the libraries, and their aggro can't be avoided in the narrow corridors.",
+        "Sacrarium: the ??? is in one of the four corner rooms, (F-5), (H-5), (F-11) or (H-11), on the inner side of a bookshelf facing away from the door; it seems to move north-east, north-west, south-east, south-west. Bring Sneak (Invisible isn't needed) for the True-Sight Stegotaurs, take whichever maze entrance is open that day, and pass the one that guards a maze entrance when it turns away, or aggro it, zone and run past before it respawns.",
+        "Return to Jonette for a Page from Miratete's Memoirs. You can repeat the quest once per Conquest week by speaking to her again, but only if you collected the page before the week ended.",
     },
 
     oth_tvs_requiem_of_sin = {
-        "This quest follows Tango with a Tracker and requires the Chains of Promathia pack. Speak with Despachiaire in Tavnazian Safehold (K-10).",
-        "Complete the quest to receive your reward, which varies, and the title Disciple of Justice. You can repeat the quest.",
+        "This quest follows Tango with a Tracker and requires the Chains of Promathia pack. Speak with Despachiaire in Tavnazian Safehold (K-10) for the Letter from Shikaree Y (on repeats, the Letter from the Mithran Trackers).",
+        "Head to Boneyard Gully and select \"Requiem of Sin\" at the Dark Miasma to enter a battlefield.",
+        "You have 30 minutes, up to 6 players, each with their own letter key item; there's no level cap, but Trusts can't be used. Shikaree X is BST/NIN with a rabbit pet (resists sleep but not bind or gravity; if it dies first, X summons another), and Shikaree Y is DRK/MNK, and Shikaree Z is DRG/WHM with a wyvern that resists sleep. The Shikaree are hard to sleep, it doesn't last, and they build TP fast and skillchain with each other.",
+        "Defeat all three for a treasure chest with your reward, which varies, and the title Disciple of Justice. You can repeat the quest once per Conquest Tally.",
     },
 
     oth_tvs_the_big_one = {
@@ -323,9 +345,10 @@ Q.STEPS = {
     },
 
     oth_tvs_uninvited_guests = {
-        "Speak with Justinius on the second floor of Tavnazian Safehold (J-6) to activate the quest and receive a Monarch Linn Patrol Permit. You need Other fame level 1, and the Chains of Promathia mission The Savage must be complete.",
-        "Take the permit to Monarch Linn and complete the task there.",
-        "Return to Justinius for your reward.",
+        "Speak with Justinius on the top floor of Tavnazian Safehold (J-6) to activate the quest and receive a Monarch Linn Patrol Permit. You need Other fame level 1, and the Chains of Promathia mission The Savage must be complete. Every alliance member needs their own permit; it's used up on entry.",
+        "Travel to Monarch Linn: the Riverne - Site #B01 Home Point and the Spatial Displacement are fastest. Without it you need 2 Giant Scales for Site #A01 or 1 for Site #B01 (exclusive drops from Firedrakes and Ignidrakes).",
+        "One Mammet-800 appears per 2 alliance members (up to 9). They have the abilities of Mammet-19 Epsilon from Promathia Mission 2-5, scaled up; Yellow Liquid (0-3 drop from each) still locks one into its current form. They change stance when someone enters the grassy arena and attack a minute later. The fight ends when the last one dies.",
+        "Return to Justinius for your reward, most often a Page from Miratete's Memoirs. You can repeat the quest after each Conquest Tally.",
     },
 
     oth_tvs_x_marks_the_spot = {
@@ -340,7 +363,8 @@ Q.STEPS = {
 
     oth_tvs_tango_with_a_tracker = {
         "Speak with Despachiaire in Tavnazian Safehold (K-10) to obtain the Letter from Shikaree X. The letter has arrived in the safehold, and she wants to gauge your battle prowess in Boneyard Gully.",
-        "Head to Boneyard Gully and select \"Tango with a Tracker\" at the Dark Miasma to enter a battlefield.",
+        "Head to Boneyard Gully (Attohwa Chasm Home Point #1 is fastest) and select \"Tango with a Tracker\" at the Dark Miasma to enter a battlefield.",
+        "You have 30 minutes, up to 6 players, each with their own letter key item; there's no level cap, but Trusts can't be used. Shikaree X is BST/NIN with a rabbit pet (resists sleep but not bind or gravity; if it dies first, X summons another), and Shikaree Y is DRK/MNK. The Shikaree are hard to sleep, it doesn't last, and they build TP fast and skillchain with each other.",
         "Win the battle to complete the quest and receive 10,000 gil.",
     },
 
@@ -417,9 +441,13 @@ Q.STEPS = {
 
     oth_lat_waking_the_beast = {
         "Speak with Carbuncle at the ??? in La Theine Plateau (G-6). You must first have obtained spirit pacts with the 6 summonable Celestial avatars before you are presented with the Rainbow resonator.",
-        "Use the Rainbow resonator to enter the battlefield.",
-        "Once the three avatars are defeated, five Carbuncle Primes spawn at once. Defeat all five Carbuncle Primes to win the battle.",
+        "Collect six key items from much harder versions of the six Celestial avatars, one at each avatar's Cloister. Select \"Waking the Beast\" at the battlefield entrance; you don't need the Trial quests active. Up to 18 players, no Trusts.",
+        "The avatars are level 85, use their meritable Blood Pacts and can use Astral Flow at any time. Each has four elementals that share its hate, heal it with tier IV nukes and add their element's debuff to their melee; new ones only appear when the avatar uses its meritable Blood Pact (up to four at a time).",
+        "With all six key items, go to the Full Moon Fountain (the Toraimarai Canal Home Point is fastest) for a cutscene and the final battle (up to 18 players). The key items are kept if you lose and used up when you win.",
+        "Carbuncle leaves at 75% HP for one Celestial avatar, at 50% for two more and at 25% for the last three, coming back after each group is defeated. Then five Carbuncle Primes spawn at once, each able to use Searing Light (repeatedly); defeat all five to win.",
+        "In the cutscene you choose whether to return the Faded ruby. Return to the ??? in La Theine Plateau (G-6): returning it gives the title Disturber of Slumber, keeping it Interrupter of Dreams.",
         "Every player who participates in the final fight receives a Carbuncle's Pole. All other quest rewards are dropped at random at the end of the Carbuncle Prime battle.",
+        "You can repeat the quest after the next Conquest Tally.",
     },
 
     -- ========================================================
@@ -456,6 +484,11 @@ Q.STEPS = {
         "After completing Missionary Moblin you need to zone out and back in to initiate this quest. Talk to Koblakiq in Oldton Movalpolos (H-11) to begin it. A letter has arrived from Zeelozok asking for an arnica root to be brought to Castle Oztroja, and Koblakiq entrusts the task to you. It is suggested that you have the three beastmen stronghold Survival Guides, as the quest requires traveling between the three strongholds, and that you bring Echo Drops, Holy Water or someone who can cast Cursna.",
         "Obtain an Arnica Root if you have not already.",
         "Head to Castle Oztroja and go to the Brass Door at (I-8).",
+        "The Brass Door has two handles: one opens it, the other opens a trap door in front of it. Pull one and immediately step away; if the trap door opens, wait for it to close and pull the other.",
+        "On the next map, go to (G-7) and through the exit onto a ledge; walk north along it to Daa Bola the Seer at (I-7) and trade him the Arnica Root.",
+        "Return to Koblakiq in Oldton Movalpolos for the key item Glittering fragment.",
+        "In Beadeaux, go down at (H-7) into the tunnels and out at (F-8). The Afflictors curse anyone nearby (Cursna or Holy Water) unless you're silenced: touch The Mute in the north of (G-7) first (Echo Drops or Silena remove the silence).",
+        "Above ground, go up to the upper level at (E-10) and to the large island at (G-10) to speak with Ge'Fhu Yagudoeye. Four Quadav NMs spawn: two Nickel Quadavs (PLD) and two Magnes Quadavs (BLM), easy solo at 75. Only one player can do this at a time; others wait 3 minutes and spawn them again.",
         "After the fight, talk to Ge'Fhu Yagudoeye again for a short cutscene.",
         "Head back to Oldton Movalpolos and speak with Koblakiq to complete the quest and receive your Jaguar Mantle.",
     },
@@ -463,7 +496,9 @@ Q.STEPS = {
     oth_old_better_the_demon = {
         "Speak with Koblakiq in Oldton Movalpolos (H-11) to begin the quest. Make sure you have zoned after completing For the Birds. To save time, you can bring a Demon Pen with you when you travel to start this quest.",
         "Head to Castle Zvahl Baileys and fight Blood Demons and Demon Generals until you obtain a Demon Pen.",
-        "Trade the Demon Pen to Koblakiq to complete the quest and receive the Goblin Grenade.",
+        "Trade the Demon Pen to Koblakiq, wait one Earth minute and speak with him again.",
+        "In Castle Zvahl Baileys, examine the ??? at (I-8), behind the gate where Dark Spark spawns, to spawn Marquis Andrealphus with 2 Demon Bannerets and 2 Demon Secretaries (sleepable). Nearby demons link. Only the Marquis must die; the extras then die too. He can Escape whoever has hate back to Xarcabard, unless only one party member is left in the zone or you're solo.",
+        "Examine the ??? again for the key item Zeelozok's earplug, and return to Koblakiq to complete the quest and receive the Goblin Grenade.",
     },
 
     -- ========================================================
@@ -472,6 +507,7 @@ Q.STEPS = {
 
     oth_mog_give_moogle_break = {
         "Place a Bronze Bed in your Mog House using the furniture Layout menu. You need Other fame level 3 (home nation fame). Wait one Earth minute, exit your Mog House, re-enter and speak to the Moogle. If you have enough fame, you receive a cutscene.",
+        "If you get the A Moogle Kupo d'Etat cutscene instead, speak to him again. If an item that gives weekly conquest rewards (such as an Aurum Coffer) is in your layout, you may need to remove it to trigger the quest.",
         "Trade the Moogle the items he asks for: a Power Bow and a Beetle Ring. The Power Bow can be bought from a Records of Eminence NPC using Sparks (equip level 10 to 19). The Beetle Ring +1 does not count.",
         "When your Moogle returns from his trip after one Earth minute (without ever leaving your Mog House), he gives you a Mog Safe that holds 60 items and you receive the title Mog's Kind Master.",
     },
@@ -579,12 +615,13 @@ Q.STEPS = {
     -- ========================================================
 
     oth_mul_moral_manifest = {
-        "Enter the Altar Room, in Castle Oztroja, for a cutscene with Hooknox that starts the quest. You need to be level 60 or higher. You are given a choice to start the quest or not.",
-        "Obtain a Yagudo Headgear. It is crafted with Clothcraft (skill 80).",
+        "Enter the Altar Room in Castle Oztroja for a cutscene with Hooknox that starts the quest (go past the left/right switch gate with the trap door, to (G-7) onto another map, turn right and go straight back into the castle, then to (G-10)). You need to be level 60 or higher. If you turn it down, you can't start it again until the next Conquest Tally.",
+        "Speak with Ponono in Windurst Woods (G-12) for a cutscene, then trade him a Velvet Cloth, a Rainbow Cloth and 10,000 gil.",
+        "Wait until the next game day and speak with Ponono again for the Yagudo Cutting. Synthesize a Yagudo Headgear (Clothcraft 80, Leathercraft 50, Bonecraft 55, Earth Crystal): Yagudo Cutting, Bugard Tusk, Cockatrice Skin, Wool Thread, 2 Yagudo Feathers and 2 Black Pearls.",
         "Return to the Altar Room while wearing your Yagudo Headgear for a cutscene. You receive the key item Vault quipus.",
-        "Defeat the Yagudo Avatar. The other Yagudo NMs in the room are Duu Masa the Onecut, Fee Jugu the Ramfist, Goo Pake the Bloodhound, Kee Taw the Nightingale, Laa Yaku the Austere and Poo Yozo the Babbler.",
+        "Examine the Stone Lid while wearing the headgear to spawn the Yagudo Avatar with Duu Masa the Onecut, Fee Jugu the Ramfist, Goo Pake the Bloodhound, Kee Taw the Nightingale, Laa Yaku the Austere and Poo Yozo the Babbler. Only the Yagudo Avatar must be defeated; the others then despawn. Examine the Stone Lid again, wearing the headgear, for a cutscene.",
         "Trade your Yagudo Headgear to the Stone Lid for a cutscene; it is replaced by Tsoo's Headgear.",
-        "Zone out to the south of the Altar Room and then back into the zone for a cutscene and a Gold Beastcoin. You receive the title Yagudo Initiate.",
+        "Wearing Tsoo's Headgear, zone out to the south of the Altar Room and back in for a cutscene and a Gold Beastcoin. You receive the title Yagudo Initiate.",
     },
 
     oth_mul_records_of_eminence = {
