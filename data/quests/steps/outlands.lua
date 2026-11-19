@@ -88,8 +88,10 @@ Q.STEPS = {
     out_kaz_cloak_and_dagger = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. Speak with Jakoh Wahcondalo in Kazham (J-9) to receive the Dagger of Trials.",
         "You need to break the latent on the Dagger of Trials before completing the rest of the quest. You know you have enough points when the latent breaks and the weapon's elemental resistances disappear from your active resistances (the colored dots below the gear grid).",
-        "You are instructed to travel to Gustav Tunnel. Take Silent Oils and Prism Powders with you. You will also find a Grounds Tome close to your spawn point, where you can get Sneak and Invisible.",
-        "Defeat the NM that appears and, once you kill it, re-examine the ???. Return to Jakoh Wahcondalo to receive your reward, the Evisceration weapon skill.",
+        "Trade the Dagger of Trials back to Jakoh Wahcondalo for the key item Map to the Annals of Truth, which sends you to Gustav Tunnel.",
+        "Fastest: the Unity Warp (level 128) puts you in the tunnel leading to the NM, with a Grounds Tome nearby for Sneak and Invisible; head north hugging the east wall to the ??? near the (I-9)/(J-9) intersection. Otherwise, with Silent Oil and Prism Powder, follow the path to (G-9) and take the western tunnel, go east at its fork, and from the large room take the eastern tunnel at (I-8) to the ??? at (I-9), map 2.",
+        "Examine the ??? to spawn Baronial Bat, weak to Wind and Light. Defeat it and examine the ??? again for the key item Annals of Truth.",
+        "Return to Jakoh Wahcondalo to receive your reward, the Evisceration weapon skill.",
     },
 
     out_kaz_trial_size_fire = {
@@ -292,7 +294,10 @@ Q.STEPS = {
         "Speak with Jaucribaix in Norg (K-8). He grants you the key item Weapons Training Guide as well as the Tachi of Trials. Wield the katana to find your true potential; when the blade has lost its power, you will know you have been accepted.",
         "You need to break the latent on the Tachi of Trials. With it equipped in your main hand, fight experience-yielding monsters (Incredibly Easy Prey or higher) and perform Weapon Skills or close skillchains to accumulate 300 Trial Points.",
         "You will know the latent is broken when the elemental resistances listed in the description of the Tachi of Trials have disappeared from the elemental resistances in the equipment window.",
-        "Trade the Tachi of Trials back to Jaucribaix. Then go back and speak with him to receive your reward, the weapon skill Tachi: Kasha.",
+        "Trade the Tachi of Trials back to Jaucribaix for the key item Map to the Annals of Truth, which sends you to Kuftal Tunnel.",
+        "The Unity Warp (level 125) gets you fairly close. Otherwise, with Silent Oil and Prism Powder, follow the path to the first junction and head north through the large tunnel to (I-5), then go south-east; the ??? is in this tunnel at (L-7).",
+        "Examine the ??? to spawn Kettenkaefer, a beetle weak to Ice and Light. Defeat it and examine the ??? again for the key item Annals of Truth.",
+        "Go back and speak with Jaucribaix to receive your reward, the weapon skill Tachi: Kasha.",
     },
 
     out_nrg_bugi_soden = {
@@ -300,8 +305,10 @@ Q.STEPS = {
         "Speak with Ryoma in Norg (H-8). He grants you the key item Weapons Training Guide as well as the Kodachi of Trials.",
         "You need to break the latent on the Kodachi of Trials. With it equipped in your main hand, fight experience-yielding monsters (Incredibly Easy Prey or higher) and perform Weapon Skills or close skillchains to accumulate 300 Trial Points. A weapon skill with no skillchain gives 5 points and a level 1 skillchain gives 7.",
         "You will know the latent is broken when its bonus stats disappear on un-equipping and re-equipping the Kodachi of Trials; the elemental resistances also disappear from your stats.",
+        "Trade the Kodachi of Trials back to Ryoma for the key item Map to the Annals of Truth, which sends you to the Labyrinth of Onzozo (the Survival Guide is fastest).",
         "Take Silent Oil and Prism Powder to the Labyrinth of Onzozo. Inside, follow the path to (H-9) and take the eastern tunnel, continue northeast through the large room and take the tunnel at (J-8). In the next large room, curve around the eastern wall to the tunnel at (H-7), head north at the next intersection, and continue north to the border of (I-5)/(I-6), where the ??? spawns the NM.",
-        "Trade the Kodachi of Trials back to Ryoma, then go back and speak with him to receive your reward, the weapon skill Blade: Ku.",
+        "Examine the ??? to spawn Megapod Megalops, a crab weak to Ice and Lightning. Defeat it and examine the ??? again for the key item Annals of Truth.",
+        "Go back and speak with Ryoma to receive your reward, the weapon skill Blade: Ku.",
     },
 
     out_nrg_trial_size_water = {

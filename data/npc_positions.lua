@@ -830,4 +830,8 @@ return {
     ["Gabwaleid"] = { { 248, -17.74, 11.23, -7.29 } }, -- Local patch: Jeuno quests
     ["Bihoro-Guhoro"] = { { 249, -28.46, 40.85, -8.00 } }, -- Local patch: Jeuno quests
     ["Jikka-Abukka"] = { { 249, -13.54, 58.62, -15.88 } }, -- Local patch: Jeuno quests
+    ["Folzen"] = { { 237, -92.11, 8.53, 2.00 } }, -- Local patch: Bastok quests
+    ["Amulya"] = { { 237, -106.09, -24.56, 2.00 } }, -- Local patch: Bastok quests
+    ["Vicious Eye"] = { { 237, -106.13, -28.76, 2.00 } }, -- Local patch: Bastok quests
+    ["Otto"] = { { 236, -145.93, 13.70, -7.48 } }, -- Local patch: Bastok quests
 }

@@ -896,4 +896,10 @@ return {
     "Gabwaleid", -- Local patch: Jeuno quests
     "Bihoro-Guhoro", -- Local patch: Jeuno quests
     "Jikka-Abukka", -- Local patch: Jeuno quests
+    "Folzen", -- Local patch: Bastok quests
+    "Amulya", -- Local patch: Bastok quests
+    "Vicious Eye", -- Local patch: Bastok quests
+    "Militant Gale", -- Local patch: Bastok quests
+    "Pensive Beast", -- Local patch: Bastok quests
+    "Otto", -- Local patch: Bastok quests
 }

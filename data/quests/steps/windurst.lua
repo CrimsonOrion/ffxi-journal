@@ -714,7 +714,9 @@ Q.STEPS = {
         "You cannot start this quest while another Weapon Skill quest is active; return to the person who gave it and quit it first. You need Archery skill 250 or higher, level 71, and the Rise of the Zilart pack.",
         "Speak with Perih Vashai in Windurst Woods (K-7) to receive the key item Weapons Training Guide and the Bow of Trials.",
         "Break the latent on the Bow of Trials before completing the rest of the quest. The latent is active while you have fewer than 300 Skillchain points accumulated; you know you have enough when it breaks and the weapon's elemental resistances disappear from your active resistances.",
-        "Trade the Bow of Trials back to Perih Vashai.",
+        "Trade the Bow of Trials back to Perih Vashai for the key item Map to the Annals of Truth, which sends you to Cape Teriggan.",
+        "Fastest: the Unity Warp to Cape Teriggan (level 128) brings you to (H-7); the Cloister of Gales Home Point (F-5) and the Survival Guide at the Outpost (G-8) also work. Otherwise, with Silent Oil and Prism Powder, go through Kuftal Tunnel: from (I-7) head north without taking any branches; at (I-4) the tunnel loops south into a larger space, so curve straight back north-west and exit into Cape Teriggan.",
+        "At (G-7), examine the ??? to spawn Stolas, a bird weak to Ice. Defeat it and examine the ??? again for the key item Annals of Truth.",
         "Go back and speak with Perih Vashai to receive your reward, the Empyreal Arrow weapon skill.",
     },
 
@@ -723,7 +725,9 @@ Q.STEPS = {
         "Speak with Kuroido-Moido in Port Windurst (E-7) to receive the key item Weapons Training Guide and the Club of Trials.",
         "Break the latent on the Club of Trials before doing the rest of the quest. Each skillchain gives trial points: 5 with no skillchain, 7 at level 1, 9 at level 2 and 11 at level 3.",
         "The latent is broken when the elemental resistances listed in the Club of Trials description disappear from the elemental resistances shown under the equipped gear grid in the equipment window.",
-        "Inside Ro'Maeve, go down the northeastern stairs and turn immediately east. Go through the hallway to the right, turn left, drop down the ledge and go through the door to the northeast. The Ro'Maeve page lists the notorious monster Eldhrimnir, a Magic Pot, for this quest.",
+        "Trade the Club of Trials back to Kuroido-Moido for the key item Map to the Annals of Truth, which sends you to Ro'Maeve.",
+        "Take Silent Oil: the Weapons aggro by sound and magic and the Dolls by magic, so Sneak (a spell) isn't recommended. Inside Ro'Maeve, go down the north-east stairs and turn immediately east, take the hallway to the right, turn left, drop down the ledge and go through the north-east door. Turn left and up the stairs to the north at (K-8), then follow the path north-west to the open doorway at (J-8). From the Survival Guide or the Hall of the Gods entrance, just run down the long stairs to the south-east.",
+        "Through the doorway, turn right and follow the long hallway south-east past the Moongate to (M-8); the ??? is on the ground in front of an inaccessible tunnel entrance. Examine it to spawn Eldhrimnir, a magic pot. Defeat it and examine the ??? again for the key item Annals of Truth.",
         "Go back and speak with Kuroido-Moido to receive your reward, the Black Halo weapon skill.",
     },
 
@@ -733,8 +737,10 @@ Q.STEPS = {
         "Break the latent on the Pole of Trials. With it equipped in your main hand, fight enemies rated Extremely Easy Prey or higher and use weapon skills or close skillchains until you accumulate 300 Trial Points: 5 points with no skillchain, 7 at level 1, 9 at level 2 and 11 at level 3.",
         "The latent is broken when the elemental resistances listed in the Pole of Trials description disappear from the elemental resistances shown under the equipped gear grid in the equipment window.",
         "Trade the Pole of Trials back to Shantotto. You are instructed to travel to Ifrit's Cauldron.",
-        "Take the Ifrit's Cauldron Home Point #1 to map 7. Run south, then north, to fall off the lip at (J-4). Enter Ifrit's Cauldron directly to the north.",
-        "Inside Ifrit's Cauldron, follow the path to the first junction and go north. The fight there is against Cailleach Bheur, a skeleton.",
+        "Fastest: take Ifrit's Cauldron Home Point #1 to map 7, run south and then north to drop off the lip at (J-4), then go south to transition M at (J-8) onto map 6, and north to the ???.",
+        "Without the Home Point, bring Silent Oil, Prism Powder and an Ice Cluster and enter Ifrit's Cauldron from Yhoator Jungle (I-5/6), arriving on map 1. Go north at the first junction, trade the Ice Cluster to the Flame Spout at (H-6/I-6), continue west through transition A to the large circular room (map 2), go south along the ledge and take drop P at (I-7/8) to map 7. Take transition M to the south-east onto map 6; the ??? is in the middle of the bridge to the north. Clear the bats and the bomb first if needed.",
+        "Examine the ??? to spawn Cailleach Bheur, a Black Mage skeleton weak to Fire and Light. Defeat it and examine the ??? again for the key item Annals of Truth.",
+        "Go back and speak with Shantotto to receive your reward, the Retribution weapon skill.",
     },
 
     wq_pw_escort_for_hire = {
