@@ -24,6 +24,10 @@ function M.step(text)
     -- period followed by a lowercase word is a stray one.
     text = text:gsub('%. (%l)', ' %1')
 
+    -- Local patch: "Walnut Door (K-7). (the north one" ->
+    -- "Walnut Door (K-7) (the north one", for the same reason.
+    text = text:gsub('%. %((%l)', ' (%1')
+
     return text
 end
 

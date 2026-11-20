@@ -294,7 +294,7 @@ M.STEPS = {
             "Short way to the key: from the basement, open the door at (J-8) to go up to Upper Delkfutt's Tower, walk forward and examine the ??? at the foot of the stairs to be teleported to the NM Porphyrion. You can skip the fight and examine the shimmering ??? by the elevator for the key item Delkfutt key, then take the elevator and go down the spiral stairs two zones back to the basement.",
             "Long way: climb all 10 floors from the Qufim Island entrance (about 15 minutes). Bats and Dancing Weapons detect sound, Goblins and Giants sight, Pots and Dolls magic; below level 50 bring Sneak and Invisible. The Delkfutt Key drops from Porphyrion at the top.",
             "In the basement, examine the Cermet Door at (L-7) for a cutscene. Another player using a key for you does not work here.",
-            "Return to the Windurstian Embassy in Ru'Lude Gardens and examine the Door: Windurstian Emb. (the third door inside) for a cutscene that completes the mission.",
+            "Return to the Windurstian Embassy in Ru'Lude Gardens and examine the third door inside (Door: Windurstian Emb.) for a cutscene that completes the mission.",
         },
     },
 
