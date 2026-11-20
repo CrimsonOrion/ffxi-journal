@@ -250,6 +250,10 @@ function M.words(text, styles, forced)
                     s = from - s + 1,
                     e = to - s + 1,
                     kind = mark.kind,
+                    -- The whole name, whichever line this piece ends up on
+                    -- (a name that wraps is clicked as the full name).
+                    id = mark.s,
+                    full = text:sub(mark.s, mark.e),
                 }
             end
         end
@@ -280,11 +284,17 @@ local function copy_marks(marks)
     local result = {}
 
     for index, mark in ipairs(marks) do
-        result[index] = { s = mark.s, e = mark.e, kind = mark.kind }
+        result[index] = {
+            s = mark.s, e = mark.e, kind = mark.kind,
+            id = mark.id, full = mark.full,
+        }
     end
 
     return result
 end
+
+-- The kinds of name that are links.
+M.CLICKABLE = { monster = true, npc = true, bold = true, item = true }
 
 local function extend_line(line, word)
     local shift = #line.text + 1
@@ -295,13 +305,22 @@ local function extend_line(line, word)
         local s = mark.s + shift
         local e = mark.e + shift
 
+        -- Neighbouring ranges of one style are joined, but two different
+        -- names that can be clicked stay apart ("Goblin Digger" next to
+        -- "Forest Hare" are two links).
+        local same_name = last ~= nil and last.id == mark.id
+
         if last ~= nil
             and last.kind == mark.kind
-            and last.e + 1 == s - 1 then
+            and last.e + 1 == s - 1
+            and (same_name or not M.CLICKABLE[mark.kind]) then
 
             last.e = e
         else
-            marks[#marks + 1] = { s = s, e = e, kind = mark.kind }
+            marks[#marks + 1] = {
+                s = s, e = e, kind = mark.kind,
+                id = mark.id, full = mark.full,
+            }
         end
     end
 
@@ -355,20 +374,21 @@ function M.segments(line)
     local segments = {}
     local position = 1
 
-    local function push(s, e, kind)
+    local function push(s, e, kind, full)
         if s <= e then
             segments[#segments + 1] = {
                 s = s,
                 e = e,
                 kind = kind,
                 text = line.text:sub(s, e),
+                full = full,
             }
         end
     end
 
     for _, mark in ipairs(line.marks) do
         push(position, mark.s - 1, nil)
-        push(mark.s, mark.e, mark.kind)
+        push(mark.s, mark.e, mark.kind, mark.full)
         position = mark.e + 1
     end
 
@@ -388,6 +408,7 @@ function M.positions(line, measure_kind)
 
         result[#result + 1] = {
             text = segment.text,
+            full = segment.full,
             kind = segment.kind,
             x = x,
             width = width,
@@ -664,9 +685,15 @@ local SHADOW_COLOR = 0xCC000000
 -- opts.italic_color  tint used when there is no italic font
 -- opts.on_npc        function(name) called when an NPC name is clicked
 -- opts.on_zone       function(name) called when a zone name is clicked
+-- opts.on_monster    function(name) called when a monster name is clicked
 -- opts.id            prefix of the ids of the clickable NPC names
 -- opts.npc_tooltip   tooltip of a clickable NPC name
 -- opts.zone_tooltip  tooltip of a clickable zone name
+-- opts.monster_tooltip  tooltip of a clickable monster name
+-- opts.on_item       function(name) called when an item name is clicked
+-- opts.item_known    function(name) true when that item has a sheet; only
+--                    those names are links
+-- opts.item_tooltip  tooltip of a clickable item name
 -- opts.items         true to mark the items the player has (steps only)
 function M.draw_wrapped(text, opts)
     local imgui = require('imgui')
@@ -776,7 +803,8 @@ function M.draw_wrapped(text, opts)
                 -- drawn piece by piece, each in its own font.
                 local line_x, line_y = 0, 0
 
-                if opts.on_npc ~= nil or opts.on_zone ~= nil then
+                if opts.on_npc ~= nil or opts.on_zone ~= nil
+                    or opts.on_monster ~= nil or opts.on_item ~= nil then
                     line_x, line_y = imgui.GetCursorPos()
                 end
 
@@ -865,7 +893,8 @@ function M.draw_wrapped(text, opts)
 
                     -- Clickable NPC and zone names: an invisible button over
                     -- each one, with an underline while the mouse is on it.
-                    if opts.on_npc ~= nil or opts.on_zone ~= nil then
+                    if opts.on_npc ~= nil or opts.on_zone ~= nil
+                    or opts.on_monster ~= nil or opts.on_item ~= nil then
                         local _, max_y = imgui.GetItemRectMax()
                         local height = max_y - min_y
                         local after_x, after_y = imgui.GetCursorPos()
@@ -886,6 +915,21 @@ function M.draw_wrapped(text, opts)
                                 hint = opts.zone_tooltip
                                 line_color = col
                                 prefix = '##ZoneLink'
+                            elseif piece.kind == 'monster' then
+                                -- The monsters: their sheet.
+                                click = opts.on_monster
+                                hint = opts.monster_tooltip
+                                line_color = palette.monster
+                                prefix = '##MonLink'
+                            elseif piece.kind == 'item'
+                                and opts.on_item ~= nil
+                                and (opts.item_known == nil
+                                    or opts.item_known(piece.full or piece.text)) then
+                                -- The items that have a sheet in the catalogue.
+                                click = opts.on_item
+                                hint = opts.item_tooltip
+                                line_color = palette.item
+                                prefix = '##ItemLink'
                             end
 
                             if click ~= nil and piece.width > 0 then
@@ -917,7 +961,7 @@ function M.draw_wrapped(text, opts)
                                 end
 
                                 if clicked then
-                                    click(piece.text)
+                                    click(piece.full or piece.text)
                                 end
                             end
                         end

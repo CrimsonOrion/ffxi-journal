@@ -1,6 +1,6 @@
 addon.name    = 'Journal'
 addon.author  = 'Kxteel'
-addon.version = '0.4.0'
+addon.version = '0.4.5'
 addon.desc    = 'Journal for FFXI'
 
 --[[
@@ -63,6 +63,7 @@ local pinned = require('pinned')
 local announce = require('announce')
 local zonebanner = require('zonebanner')
 local worldmark = require('worldmark')
+local monsterview = require('monsterview')
 
 -- The items that a step asks for are checked against the inventory.
 require('richtext').items_api = require('inventory')
@@ -75,6 +76,11 @@ require('rank')
 
 if logic.Initialize ~= nil then
     logic.Initialize()
+end
+
+-- The defeats of the monsters (the Defeated mark of the monster search).
+if logic.monsters ~= nil and logic.monsters.Register ~= nil then
+    logic.monsters.Register()
 end
 
 if ui.SetController ~= nil then
@@ -112,6 +118,22 @@ ashita.events.register('d3d_present', 'journal_present', function()
         ui.CanDrawUI,
         ui.GetAlertFont and ui.GetAlertFont() or nil
     )
+end)
+
+-- The 3D view of a monster (Vana'dex): the model is drawn when the game ends
+-- a scene, and the mouse over its picture is not given to the game.
+ashita.events.register('d3d_endscene', 'journal_monsterview_render', function(is_back_buffer)
+    if is_back_buffer then
+        monsterview.Render()
+    end
+end)
+
+ashita.events.register('mouse', 'journal_monsterview_mouse', function(e)
+    monsterview.OnMouse(e)
+end)
+
+ashita.events.register('unload', 'journal_monsterview_unload', function()
+    monsterview.Dispose()
 end)
 
 ashita.events.register('load', 'journal_load', function()

@@ -665,6 +665,8 @@ local ICON_FILES = {
     mission_available = 'mission_available.png',
     mission_progress = 'mission_progress.png',
     fame = 'fame.png',
+    chat = 'chat.png',
+    logo = 'logo.png',
 }
 
 local icons = {}

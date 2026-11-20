@@ -226,6 +226,9 @@ end
 -- The click on an NPC name goes to the controller (set while drawing).
 local click_npc = nil
 local click_zone = nil
+local click_monster = nil
+local click_item = nil
+local item_known = nil
 
 local function text_wrapped(color, text, id, items)
     richtext.draw_wrapped(text, {
@@ -243,6 +246,11 @@ local function text_wrapped(color, text, id, items)
         npc_tooltip = i18n.t('Click to point the compass at it'),
         on_zone = click_zone,
         zone_tooltip = i18n.t('Click to guide the compass to this zone'),
+        on_monster = click_monster,
+        monster_tooltip = i18n.t('Click to see its sheet'),
+        on_item = click_item,
+        item_known = item_known,
+        item_tooltip = i18n.t('Click to see its sheet'),
     })
 end
 
@@ -626,6 +634,17 @@ function M.Draw(controller, can_draw)
     -- Clicking an NPC name points the compass at it.
     click_npc = controller.AddCompassNpcByName
     click_zone = controller.SetCompassZoneGoalByName
+    click_monster = controller.monsters ~= nil
+        and controller.monsters.Show or nil
+
+    -- The items of the steps: their sheet in the item catalogue (only the
+    -- ones the catalogue has are links).
+    local items = controller.items
+
+    click_item = items ~= nil and items.ShowByName or nil
+    item_known = items ~= nil and function(name)
+        return items.ByName(name) ~= nil
+    end or nil
 
     -- "Reset window positions" in the settings.
     if last_reset_count == nil then

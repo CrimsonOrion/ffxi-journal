@@ -11,6 +11,12 @@ local i18n = require('i18n')
 M.personal = (require('personal'))
 M.notes = (require('notes'))
 M.zonelist = (require('zonelist'))
+M.monsters = (require('monsters'))
+M.items = (require('items'))
+M.monster_rank = (require('monsterrank'))
+M.monster_view = (require('monsterview'))
+M.chat = (require('chat'))
+M.share = (require('share'))
 
 -- The compass: an arrow to the NPC of the current step (compass.lua). A
 -- field of M for the same reason.
@@ -345,6 +351,9 @@ local announce = {
         new = { opacity = 0.70, size = 1.0, color = 0 },
         done = { opacity = 0.70, size = 1.0, color = 0 },
         near = { opacity = 0.70, size = 1.0, color = 0 },
+        -- The two alerts of the monsters (a monster defeated for the first
+        -- time, and a zone with monsters still to discover).
+        monster = { opacity = 0.70, size = 1.0, color = 0 },
         -- The name of the zone shown when entering one (zonebanner.lua); it
         -- has no background, so only size and color are used.
         zone = { opacity = 0.70, size = 1.0, color = 0 },
@@ -4565,6 +4574,24 @@ do
         return S.found
     end
 
+    -- Every quest and mission, for the Tab key of the chat (the search
+    -- corpus; empty until the tracker is ready).
+    function M.GetShareNames()
+        if not tracker_is_ready() then
+            return {}
+        end
+
+        local language = i18n.get_language()
+
+        if S.corpus == nil or S.language ~= language then
+            S.corpus = S.build(language)
+            S.language = language
+            S.found = nil
+        end
+
+        return S.corpus
+    end
+
     -- Opens a result in the Journal (the search text stays, so the player can
     -- go back to the results). Returns false when it is not in the data.
     function M.OpenSearchResult(row)
@@ -6353,6 +6380,14 @@ function M.HandleCommand(e)
         print(i18n.t('/journal guide - Open the guide for new adventurers'))
         print(i18n.t('/journal camps - Open the camps guide'))
         print(i18n.t('/journal notes - Open your general notes'))
+        print(i18n.t("/journal monsters - Open Vana'dex (BETA)"))
+        print(i18n.t('/journal items - Open the item catalog (BETA)'))
+        print(i18n.t('/journal dat [folder|reset] - Folder with the game DAT files (3D view of Vana\'dex)'))
+        print(i18n.t('/journal chat - Open the chat window'))
+        print(i18n.t('/journal chat on|off - Connect to the chat or disconnect'))
+        print(i18n.t('/journal chat mute <nick> | unmute <nick>|all - Hide or show the messages of a user'))
+        print(i18n.t('/journal chat private | clearpm [nick] - Open the private chats, or delete their saved history'))
+        print(i18n.t('/journal chat test [server] [port] - Test if the client can connect to a chat server'))
         print(i18n.t('/journal active - Open the Active Now window'))
         print(i18n.t('/journal favorites - Open your favorites'))
         print(i18n.t('/journal compass [off|reset|debug] - Show or hide the compass (reset: fit the window to its content)'))
@@ -6390,6 +6425,75 @@ function M.HandleCommand(e)
 
     if command == 'notes' then
         M.notes.Toggle()
+        return
+    end
+
+    if command == 'monsters' then
+        M.monsters.Toggle()
+        return
+    end
+
+    if command == 'items' then
+        M.items.Toggle()
+        return
+    end
+
+    -- The folder with the DAT files of the game (the 3D view of Vana'dex).
+    if command == 'dat' then
+        local rest = #args >= 3 and table.concat(args, ' ', 3) or ''
+
+        if rest:lower() == 'reset' then
+            M.monster_view.SetRoot(nil)
+        elseif rest ~= '' then
+            M.monster_view.SetRoot(rest)
+        end
+
+        print(string.format(
+            i18n.t('[Journal] Folder of the DAT files: %s'),
+            M.monster_view.GetRoot()
+        ))
+        return
+    end
+
+    if command == 'chat' then
+        local action = args[3] ~= nil and args[3]:lower() or ''
+
+        if action == 'test' then
+            M.chat.StartTest(args[4], args[5])
+        elseif action == 'on' then
+            M.chat.SetOpen(true)
+            M.chat.Connect()
+        elseif action == 'off' then
+            M.chat.Disconnect()
+        elseif action == 'names' then
+            M.chat.ShowNames()
+            M.chat.SetOpen(true)
+        elseif action == 'log' then
+            M.chat.ShowLog()
+            M.chat.SetOpen(true)
+        elseif action == 'private' then
+            M.chat.TogglePrivate()
+        elseif action == 'clearpm' then
+            local cleared = M.chat.ClearHistory(args[4])
+
+            print(cleared
+                and '[Journal] Chat: private history deleted.'
+                or '[Journal] Chat: there is no private history for that user.')
+        elseif action == 'mute' and args[4] ~= nil then
+            M.chat.SetMuted(args[4], true)
+            print('[Journal] Chat: muted ' .. M.chat.CleanText(args[4], 40))
+        elseif action == 'unmute' and args[4] ~= nil then
+            if args[4]:lower() == 'all' then
+                M.chat.ClearMuted()
+            else
+                M.chat.SetMuted(args[4], false)
+            end
+
+            print('[Journal] Chat: unmuted ' .. M.chat.CleanText(args[4], 40))
+        else
+            M.chat.Toggle()
+        end
+
         return
     end
 
@@ -6797,6 +6901,77 @@ end
 function M.TakeAnnouncement()
     local entry = table.remove(announce_queue, 1)
 
+    -- A monster defeated for the first time (the alerts setting turns the
+    -- banner off, and then the alert is dropped).
+    if entry == nil and M.monsters ~= nil then
+        M.monsters.PollZone()
+
+        -- The rank looks at the kills (a failure is told once).
+        if M.monster_rank ~= nil then
+            local ok, err = pcall(M.monster_rank.Poll)
+
+            if not ok and not M.monster_rank_warned then
+                M.monster_rank_warned = true
+                print('[Journal] Rank: ' .. tostring(err))
+            end
+        end
+
+        local kill = M.monsters.TakeKillAlert()
+
+        if kill ~= nil then
+            if announce.enabled ~= false then
+                return {
+                    kind = 'quest',
+                    monster = true,
+                    name = kill.name,
+                    defeated = kill.defeated,
+                    total = kill.total,
+                    -- The counter of the zone the character is in (the
+                    -- banner uses the total one when the zone has no
+                    -- monsters).
+                    zone_name = kill.zone ~= nil and (
+                        M.GetCompassZoneName(kill.zone)
+                            or string.format(require('i18n').t('Zone #%d'), kill.zone)
+                    ) or nil,
+                    zone_defeated = kill.zone_defeated,
+                    zone_total = kill.zone_total,
+                    ask = false,
+                }
+            end
+        else
+            -- A rank up or an achievement (after the alert of the defeat
+            -- that earned it).
+            local rank_alert = M.monster_rank ~= nil
+                and M.monster_rank.TakeAlert() or nil
+
+            if rank_alert ~= nil then
+                if announce.enabled ~= false then
+                    rank_alert.ask = false
+
+                    return rank_alert
+                end
+            else
+                -- A zone entered with monsters still to discover (after
+                -- the alerts of a defeat, when there are any).
+                local zone_alert = M.monsters.TakeZoneAlert()
+
+                if zone_alert ~= nil and announce.enabled ~= false then
+                    return {
+                        kind = 'quest',
+                        monster_zone = true,
+                        zone_name = M.GetCompassZoneName(zone_alert.zone)
+                            or string.format(
+                                require('i18n').t('Zone #%d'), zone_alert.zone
+                            ),
+                        missing = zone_alert.missing,
+                        total = zone_alert.total,
+                        ask = false,
+                    }
+                end
+            end
+        end
+    end
+
     if entry == nil then
         return nil
     end
@@ -6998,6 +7173,10 @@ function M.StartAlertTest(kind, done)
         progress = kind == 'progress',
         item = kind == 'item' or kind == 'itemdone',
         complete = kind == 'itemdone',
+        monster = kind == 'monster',
+        monster_zone = kind == 'monster_zone',
+        monster_rank = kind == 'monster_rank',
+        monster_ach = kind == 'monster_ach',
         kind = kind == 'mission' and 'mission' or 'quest',
         done = done == true,
         token = announce.test_token,
@@ -7703,6 +7882,7 @@ end
 
 function M.Initialize()
     M.notes.Load()
+    M.chat.Load()
     tracker.Initialize()
     apply_config()
     validate_state()
@@ -7733,6 +7913,8 @@ function M.Load()
 end
 
 function M.Update()
+    M.chat.Tick()
+
     check_zone_change()
 
     if not tracker_is_ready() then
@@ -8039,6 +8221,8 @@ end
 
 function M.Unload()
     M.notes.Flush()
+    M.monsters.Flush()
+    M.chat.Stop()
 
     if tracker_is_ready() then
         if tracker.IsMissionDirty == nil
@@ -8065,6 +8249,41 @@ function M.Unload()
     update_config_values()
     config_save_dirty = false
     settings.save()
+end
+
+-- The names the Tab key of the chat completes (quests, missions, zones and
+-- the people of the channel; the NPCs are read from data/npcs.lua).
+M.share.source.entries = function()
+    return M.GetShareNames()
+end
+
+M.share.source.zones = function()
+    local names = {}
+
+    for _, region in ipairs(M.zonelist.Regions()) do
+        for _, id in ipairs(region.zones) do
+            local name = M.GetCompassZoneName(id)
+
+            if name ~= nil and name ~= '???' then
+                names[#names + 1] = name
+            end
+        end
+    end
+
+    return names
+end
+
+M.share.source.nicks = function()
+    local me = M.chat.GetNick()
+    local list = {}
+
+    for _, nick in ipairs(M.chat.GetUsers()) do
+        if me == nil or nick:lower() ~= me:lower() then
+            list[#list + 1] = nick
+        end
+    end
+
+    return list
 end
 
 return M
