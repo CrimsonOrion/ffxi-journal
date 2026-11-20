@@ -318,6 +318,77 @@ local function get_texture(desc)
     return nil
 end
 
+-- VanaChat artwork is kept separate from the shared window themes.
+
+local CHAT_SKIN = { file = '/assets/theme/vanachat_controls.png', w = 1774, h = 887 }
+local CHAT_HEADER = { file = '/assets/theme/vanachat_header.png', w = 1672, h = 941 }
+local CHAT_CELLS = {
+    button = { 7, 30, 436, 412 },
+    accent = { 451, 30, 879, 412 },
+    hover = { 893, 30, 1325, 412 },
+    pressed = { 1337, 30, 1765, 412 },
+    parchment = { 3, 447, 439, 883 },
+    leather = { 448, 447, 883, 883 },
+    input = { 893, 580, 1324, 751 },
+    frame = { 1335, 450, 1766, 880 },
+}
+
+function M.HasChatSkin()
+    return get_texture(CHAT_SKIN) ~= nil and get_texture(CHAT_HEADER) ~= nil
+end
+
+-- Texture-only artwork. Text, hit testing and keyboard focus remain live.
+function M.DrawChatArt(imgui, draw, art, x, y, w, h)
+    if w <= 0 or h <= 0 then return end
+    local header = art == 'title'
+    local desc = header and CHAT_HEADER or CHAT_SKIN
+    local texture = get_texture(desc)
+    if texture == nil then return end
+    local tint = imgui.GetColorU32({ 1, 1, 1, 1 })
+    local function piece(u0, v0, u1, v1, x0, y0, x1, y1)
+        draw:AddImage(texture.id, { x0, y0 }, { x1, y1 },
+            { (u0 + 0.5) / desc.w, (v0 + 0.5) / desc.h },
+            { (u1 - 0.5) / desc.w, (v1 - 0.5) / desc.h }, tint)
+    end
+    if header then
+        piece(84, 30, 1376, 131, x, y, x + w, y + h)
+        return
+    end
+    local cell = CHAT_CELLS[art]
+    if cell == nil then return end
+    local u, v = cell[1], cell[2]
+    local cw, ch = cell[3] - u, cell[4] - v
+    if art == 'parchment' or art == 'leather' then
+        piece(u, v, u + cw, v + ch, x, y, x + w, y + h)
+        return
+    end
+    -- Nine-slice scaling preserves corners when the window is resized.
+    local source = math.min(cw, ch) * 0.17
+    local edge = math.min(art == 'frame' and 22 or 12, w / 3, h / 3)
+    local us, vs = { u, u + source, u + cw - source, u + cw },
+        { v, v + source, v + ch - source, v + ch }
+    local xs, ys = { x, x + edge, x + w - edge, x + w },
+        { y, y + edge, y + h - edge, y + h }
+    for row = 1, 3 do
+        for col = 1, 3 do
+            if art == 'frame' and row == 2 and col == 2 then
+                -- One continuous paper surface avoids seams from the
+                -- vignette in the source texture. A translucent ivory wash
+                -- keeps the enlarged grain behind the text subtle.
+                local paper = CHAT_CELLS.parchment
+                piece(paper[1], paper[2], paper[3], paper[4],
+                    xs[col], ys[row], xs[col + 1], ys[row + 1])
+                draw:AddRectFilled(
+                    { xs[col], ys[row] }, { xs[col + 1], ys[row + 1] },
+                    imgui.GetColorU32({ 0.95, 0.83, 0.60, 0.48 }))
+            else
+                piece(us[col], vs[row], us[col + 1], vs[row + 1],
+                    xs[col], ys[row], xs[col + 1], ys[row + 1])
+            end
+        end
+    end
+end
+
 -- Palettes -------------------------------------------------------------------
 
 local function copy_into(target, source)
@@ -431,8 +502,8 @@ end
 
 -- At the start of a window. `keep_original` is true for the windows that
 -- must not take the theme (the compass).
-function M.Enter(keep_original)
-    put(keep_original and 'original' or state.selected)
+function M.Enter(keep_original, chat_legacy)
+    put(chat_legacy and 'legacy' or (keep_original and 'original' or state.selected))
     put_rich(keep_original and 'original' or state.selected)
 end
 

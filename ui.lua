@@ -1012,10 +1012,10 @@ end
 
 -- no_fade keeps the window solid (the settings window, so it can always be
 -- read while the opacity is being changed).
-local function push_theme(no_fade, opacity_override)
+local function push_theme(no_fade, opacity_override, chat_legacy)
     -- The compass (the only caller with an opacity of its own) keeps the
     -- Original look.
-    theme.Enter(opacity_override ~= nil)
+    theme.Enter(opacity_override ~= nil, chat_legacy)
 
     local opacity = 1.0
 
@@ -2263,6 +2263,11 @@ local function draw_steps(
                         npc_tooltip = tx('Click to point the compass at it'),
                         on_zone = sheetx.zone_click(),
                         zone_tooltip = tx('Click to guide the compass to this zone'),
+                        on_monster = sheetx.monster_click(),
+                        monster_tooltip = tx('Click to see its sheet'),
+                        on_item = sheetx.item_click(),
+                        item_known = sheetx.item_known,
+                        item_tooltip = tx('Click to see its sheet'),
                     }
                 )
 
@@ -2287,6 +2292,11 @@ local function draw_steps(
                         npc_tooltip = tx('Click to point the compass at it'),
                         on_zone = sheetx.zone_click(),
                         zone_tooltip = tx('Click to guide the compass to this zone'),
+                        on_monster = sheetx.monster_click(),
+                        monster_tooltip = tx('Click to see its sheet'),
+                        on_item = sheetx.item_click(),
+                        item_known = sheetx.item_known,
+                        item_tooltip = tx('Click to see its sheet'),
                     }
                 )
             end
@@ -2792,6 +2802,106 @@ local function details_controls_height()
     return math.floor(height)
 end
 
+-- The head of the sheet of a quest or mission: the name big and centered
+-- (it wraps when it is long), the infinity sign of the repeatable ones and
+-- a big green V at its right when it is completed, and the state
+-- ([Active]...) centered under it.
+function sheetx.quest_title(selected, status)
+    local pad = imgui.GetCursorPosX()
+    local avail = math.max(scaled(60), imgui.GetWindowWidth() - pad * 2)
+    local done = status == 'completed'
+    local repeatable = selected.repeatable == true
+    local pushed = false
+
+    if journal_font ~= nil then
+        pushed = pcall(imgui.PushFont, journal_font, journal_font_size * 1.5)
+    end
+
+    local _, line_h = imgui.CalcTextSize('Ag')
+
+    line_h = line_h or scaled(30)
+
+    local gap = scaled(10)
+    local check_size = math.floor(line_h * 1.1 + 0.5)
+    local inf_w, inf_h = 0, 0
+
+    if repeatable then
+        inf_w, inf_h = icons.infinity_size(line_h)
+    end
+
+    -- What goes after the last line of the name.
+    local extra = (repeatable and (gap + inf_w) or 0)
+        + (done and (gap + check_size) or 0)
+
+    -- The name in lines that fit (word by word).
+    local lines, line = {}, ''
+
+    for word in tostring(selected.name or ''):gmatch('%S+') do
+        local candidate = line == '' and word or (line .. ' ' .. word)
+
+        if line ~= '' and (imgui.CalcTextSize(candidate)) > avail - extra then
+            lines[#lines + 1] = line
+            line = word
+        else
+            line = candidate
+        end
+    end
+
+    lines[#lines + 1] = line
+
+    for index, text in ipairs(lines) do
+        local last = index == #lines
+        local total = (imgui.CalcTextSize(text)) + (last and extra or 0)
+
+        imgui.SetCursorPosX(pad + math.max(0, (avail - total) * 0.5))
+        imgui.TextColored(colors.gold, text)
+
+        if last and repeatable and imgui.GetCursorScreenPos and imgui.Dummy then
+            imgui.SameLine(0, gap)
+
+            local icon_x, icon_y = imgui.GetCursorScreenPos()
+
+            icons.draw_infinity(
+                imgui.GetWindowDrawList(),
+                icon_x,
+                icon_y + (line_h - inf_h) * 0.5,
+                inf_w,
+                inf_h,
+                imgui.GetColorU32(colors.repeatable),
+                2.0
+            )
+
+            imgui.Dummy({ inf_w, line_h })
+        end
+
+        if last and done and imgui.GetItemRectMin and imgui.Dummy then
+            imgui.SameLine(0, gap)
+            imgui.Dummy({ check_size, line_h })
+
+            local check_x, check_y = imgui.GetItemRectMin()
+
+            icons.draw_check(
+                imgui.GetWindowDrawList(),
+                check_x,
+                check_y + (line_h - check_size) * 0.5,
+                check_size,
+                imgui.GetColorU32(colors.leaf)
+            )
+        end
+    end
+
+    if pushed then
+        imgui.PopFont()
+    end
+
+    local label, color = get_status_display(status)
+
+    label = '[' .. label .. ']'
+
+    imgui.SetCursorPosX(pad + math.max(0, (avail - (imgui.CalcTextSize(label))) * 0.5))
+    imgui.TextColored(color, label)
+end
+
 local function draw_details_panel(
     kind,
     width,
@@ -2849,11 +2959,11 @@ local function draw_details_panel(
                     )
 
                 if cover then
-                    -- 40 % of the width it had, so the objectives
-                    -- have room.
+                    -- 20 % of the width (half of what it was), so the
+                    -- objectives have room.
                     local cover_width =
                         math.floor(
-                            (width - 24) * 0.4
+                            (width - 24) * 0.2
                         )
 
                     local ratio = 1.0
@@ -2880,45 +2990,7 @@ local function draw_details_panel(
                 end
             end
 
-            imgui.TextColored(
-                colors.gold,
-                tostring(
-                    selected.name
-                        or ''
-                )
-            )
-
-            -- Repeatable quests: an infinity sign after the name.
-            if selected.repeatable == true
-                and imgui.GetCursorScreenPos
-                and imgui.Dummy then
-
-                local line_height = imgui.GetTextLineHeight()
-                local icon_width, icon_height =
-                    icons.infinity_size(line_height)
-
-                imgui.SameLine(0, 10)
-
-                local icon_x, icon_y = imgui.GetCursorScreenPos()
-
-                icons.draw_infinity(
-                    imgui.GetWindowDrawList(),
-                    icon_x,
-                    icon_y + (line_height - icon_height) * 0.5,
-                    icon_width,
-                    icon_height,
-                    imgui.GetColorU32(colors.repeatable),
-                    2.0
-                )
-
-                imgui.Dummy({ icon_width, line_height })
-            end
-
-            imgui.Spacing()
-
-            draw_selected_status(
-                display_status(selected)
-            )
+            sheetx.quest_title(selected, display_status(selected))
 
             imgui.Spacing()
 
@@ -3306,13 +3378,32 @@ local function toolbar_mode_button(
     label,
     active,
     width,
-    tint
+    tint,
+    light,
+    fixed
 )
     -- With a tint the button has its own color: solid when it is the
     -- active one, a dark shade of it (and tinted text) when it is not.
     local fill, hover, pressed, text
 
-    if tint ~= nil then
+    if type(fixed) == 'table' then
+        -- Its own colors in every theme: { fill, hover, pressed, text }.
+        fill, hover, pressed, text = fixed[1], fixed[2], fixed[3], fixed[4]
+    elseif type(light) == 'table' and theme.Get() == 'legacy' then
+        -- A button that gives a pale color (the folders and the defeated
+        -- monsters of the monster list) is very light in the Legacy theme,
+        -- with the dark ink of the pages.
+        local function shade(amount)
+            return {
+                light[1] * amount, light[2] * amount, light[3] * amount, 1,
+            }
+        end
+
+        fill = active and shade(0.84) or shade(1.0)
+        hover = shade(active and 0.78 or 0.92)
+        pressed = shade(0.72)
+        text = colors.text
+    elseif tint ~= nil then
         local function shade(amount)
             return { tint[1] * amount, tint[2] * amount, tint[3] * amount, 1 }
         end
@@ -3419,10 +3510,308 @@ function sheetx.corner_buttons()
     end
 end
 
+-- The entries of the menu (the guide, the camps, the fame): the same list in
+-- the bar and in the corner when the bar is hidden.
+function sheetx.menu_entries()
+    local menu_entries = {}
+
+    if controller.ToggleGuide then
+        menu_entries[#menu_entries + 1] = {
+            id = 'Guide',
+            label = tx('New adventurer guide'),
+            icon = 'sprout',
+            open = controller.GetGuideOpen
+                and controller.GetGuideOpen() or false,
+            toggle = controller.ToggleGuide,
+        }
+    end
+
+    if controller.ToggleCamps then
+        menu_entries[#menu_entries + 1] = {
+            id = 'Camps',
+            label = tx('Camps'),
+            tip = tx('Camps: where to gain experience'),
+            icon = 'question',
+            open = controller.GetCampsOpen
+                and controller.GetCampsOpen() or false,
+            toggle = controller.ToggleCamps,
+        }
+    end
+
+    if controller.ToggleFame then
+        menu_entries[#menu_entries + 1] = {
+            id = 'Fame',
+            label = tx('Fame'),
+            tip = tx('Fame of the nations'),
+            icon = 'star',
+            open = controller.GetFameOpen
+                and controller.GetFameOpen() or false,
+            toggle = controller.ToggleFame,
+        }
+    end
+
+    -- The windows that also have a button in the bar.
+    if controller.monsters ~= nil and icons.draw_monster ~= nil then
+        menu_entries[#menu_entries + 1] = {
+            id = 'Monsters',
+            label = tx("Vana'dex (BETA)"),
+            tip = tx("Vana'dex (BETA): search monsters and see their sheet"),
+            icon = 'monster',
+            open = controller.monsters.GetOpen(),
+            toggle = controller.monsters.Toggle,
+        }
+    end
+
+    if controller.items ~= nil then
+        menu_entries[#menu_entries + 1] = {
+            id = 'Items',
+            label = tx('Item catalog (BETA)'),
+            tip = tx('Item catalog (BETA): search any item and see its sheet'),
+            icon = 'box',
+            open = controller.items.GetOpen(),
+            toggle = controller.items.Toggle,
+        }
+    end
+
+    if controller.chat ~= nil and icons.draw_chat ~= nil then
+        menu_entries[#menu_entries + 1] = {
+            id = 'Chat',
+            label = tx('Chat'),
+            icon = 'chat',
+            open = controller.chat.GetOpen(),
+            toggle = controller.chat.Toggle,
+            unread = controller.chat.HasUnread and controller.chat.HasUnread() or false,
+        }
+    end
+
+    if controller.notes ~= nil then
+        menu_entries[#menu_entries + 1] = {
+            id = 'Notes',
+            label = tx('General notes'),
+            icon = 'postit',
+            open = controller.notes.GetOpen(),
+            toggle = controller.notes.Toggle,
+        }
+    end
+
+    if controller.zonelist ~= nil then
+        menu_entries[#menu_entries + 1] = {
+            id = 'Zones',
+            label = tx('Zones by region'),
+            icon = 'globe',
+            open = controller.zonelist.GetOpen(),
+            toggle = controller.zonelist.Toggle,
+        }
+    end
+
+    return menu_entries
+end
+
+-- The button of the menu (three lines); it opens the list.
+function sheetx.menu_button()
+    if imgui.Button(
+        '##JournalMenuButton',
+        { ui_button_height, ui_button_height }
+    ) then
+        imgui.OpenPopup('##JournalMenuPopup')
+    end
+
+    local mb_min_x, mb_min_y = imgui.GetItemRectMin()
+    local mb_max_x, mb_max_y = imgui.GetItemRectMax()
+    local mb_w = mb_max_x - mb_min_x
+    local mb_h = mb_max_y - mb_min_y
+    local mb_draw = imgui.GetWindowDrawList()
+
+    for line = -1, 1 do
+        local line_y = mb_min_y + mb_h * 0.5 + line * mb_h * 0.18
+
+        mb_draw:AddLine(
+            { mb_min_x + mb_w * 0.28, line_y },
+            { mb_max_x - mb_w * 0.28, line_y },
+            imgui.GetColorU32(colors.text),
+            2
+        )
+    end
+
+    if imgui.IsItemHovered() and imgui.SetTooltip then
+        imgui.SetTooltip(tx('Menu'))
+    end
+end
+
+-- The list of the menu (a popup): one row for each function.
+function sheetx.menu_popup(menu_entries)
+    -- The list of the menu: one row for each function (its icon and its
+    -- name). The one whose window is open is shown pressed.
+    if #menu_entries > 0 and imgui.BeginPopup('##JournalMenuPopup') then
+        local row_icon = ui_button_height * 0.62
+        local row_width = 0
+
+        for _, entry in ipairs(menu_entries) do
+            row_width = math.max(
+                row_width,
+                (imgui.CalcTextSize(entry.label))
+            )
+        end
+
+        row_width = row_width + (row_icon + 24) * 2
+
+        for _, entry in ipairs(menu_entries) do
+            if entry.open then
+                imgui.PushStyleColor(
+                    ImGuiCol_Button,
+                    colors.button_active
+                )
+            end
+
+            local row_clicked = imgui.Button(
+                entry.label .. '##JournalMenu' .. entry.id,
+                { row_width, ui_button_height }
+            )
+
+            if entry.open then
+                imgui.PopStyleColor()
+            end
+
+            local r_min_x, r_min_y = imgui.GetItemRectMin()
+            local r_max_x, r_max_y = imgui.GetItemRectMax()
+            local r_draw = imgui.GetWindowDrawList()
+            local r_x = r_min_x + 12
+            local r_y = r_min_y + ((r_max_y - r_min_y) - row_icon) * 0.5
+
+            if entry.icon == 'sprout' then
+                icons.draw_sprout(
+                    r_draw, r_x, r_y, row_icon,
+                    imgui.GetColorU32(colors.leaf),
+                    imgui.GetColorU32(colors.leaf_2),
+                    imgui.GetColorU32(colors.stem)
+                )
+            elseif entry.icon == 'question' then
+                icons.draw_question(
+                    r_draw, r_x, r_y, row_icon,
+                    imgui.GetColorU32(colors.camps_red)
+                )
+            elseif entry.icon == 'star' then
+                -- The icon of the Fame Checkers; the star drawn with
+                -- lines when there is no image.
+                local fame_icon = controller.worldmark
+                    and controller.worldmark.GetIcon
+                    and controller.worldmark.GetIcon('fame')
+                local image_drawn = false
+
+                if fame_icon ~= nil then
+                    image_drawn = pcall(function()
+                        r_draw:AddImage(
+                            fame_icon.id,
+                            { r_x, r_y },
+                            {
+                                r_x + row_icon * fame_icon.width
+                                    / fame_icon.height,
+                                r_y + row_icon,
+                            },
+                            { 0, 0 },
+                            { 1, 1 },
+                            imgui.GetColorU32({ 1, 1, 1, 1 })
+                        )
+                    end)
+                end
+
+                -- Five-point star, drawn with lines.
+                local cx = r_x + row_icon * 0.5
+                local cy = r_y + row_icon * 0.53
+                local rad = row_icon * 0.5
+                local star_color = imgui.GetColorU32(colors.favorite)
+                local points = {}
+
+                for k = 0, 4 do
+                    local ang = -math.pi / 2 + k * (2 * math.pi / 5)
+                    points[k] = {
+                        cx + math.cos(ang) * rad,
+                        cy + math.sin(ang) * rad,
+                    }
+                end
+
+                for k = 0, image_drawn and -1 or 4 do
+                    local p1 = points[k]
+                    local p2 = points[(k + 2) % 5]
+
+                    r_draw:AddLine(
+                        { p1[1], p1[2] }, { p2[1], p2[2] },
+                        star_color, math.max(1.5, row_icon * 0.09)
+                    )
+                end
+            end
+
+            if entry.icon == 'monster' then
+                icons.draw_monster(
+                    r_draw, r_x, r_y, row_icon, imgui.GetColorU32(colors.text)
+                )
+            elseif entry.icon == 'postit' then
+                icons.draw_postit(
+                    r_draw, r_x, r_y, row_icon,
+                    imgui.GetColorU32({ 1.0, 0.86, 0.35, 1.0 }),
+                    imgui.GetColorU32({ 0.80, 0.62, 0.15, 1.0 }),
+                    imgui.GetColorU32({ 0.45, 0.33, 0.08, 1.0 })
+                )
+            elseif entry.icon == 'box' and icons.draw_box ~= nil then
+                icons.draw_box(
+                    r_draw, r_x, r_y, row_icon,
+                    imgui.GetColorU32({ 0.62, 0.42, 0.20, 1 }),
+                    imgui.GetColorU32({ 0.78, 0.55, 0.26, 1 }),
+                    imgui.GetColorU32({ 0.28, 0.18, 0.08, 1 })
+                )
+            elseif entry.icon == 'globe' then
+                icons.draw_globe(
+                    r_draw, r_x, r_y, row_icon, imgui.GetColorU32(colors.text)
+                )
+            elseif entry.icon == 'chat' then
+                -- The Moogle icon, when the file is there; the bubble if not.
+                local chat_icon = controller.worldmark
+                    and controller.worldmark.GetIcon
+                    and controller.worldmark.GetIcon('chat')
+                local drawn = false
+
+                if chat_icon ~= nil then
+                    drawn = pcall(function()
+                        r_draw:AddImage(
+                            chat_icon.id,
+                            { r_x, r_y },
+                            { r_x + row_icon, r_y + row_icon },
+                            { 0, 0 },
+                            { 1, 1 },
+                            imgui.GetColorU32({ 1, 1, 1, 1 })
+                        )
+                    end)
+                end
+
+                if not drawn then
+                    icons.draw_chat(
+                        r_draw, r_x, r_y, row_icon,
+                        imgui.GetColorU32(entry.unread and colors.favorite or colors.text)
+                    )
+                end
+            end
+
+            if entry.tip and imgui.IsItemHovered()
+                and imgui.SetTooltip then
+
+                imgui.SetTooltip(entry.tip)
+            end
+
+            if row_clicked then
+                entry.toggle()
+                imgui.CloseCurrentPopup()
+            end
+        end
+
+        imgui.EndPopup()
+    end
+end
+
 local function draw_journal_toolbar(
     is_mission_mode
 )
-    -- Hidden: only the two buttons of the corner.
+    -- Hidden: the two buttons of the corner and, at their left, the menu
+    -- (three lines): its list opens without showing the bar.
     if not sheetx.toolbar_open then
         imgui.PushStyleColor(ImGuiCol_ChildBg, transparent)
 
@@ -3433,16 +3822,26 @@ local function draw_journal_toolbar(
             ImGuiWindowFlags_NoScrollbar
                 + ImGuiWindowFlags_NoScrollWithMouse
         ) then
+            local corner_entries = sheetx.menu_entries()
+            local corner_w = ui_button_height * 2 + 8
+
+            if #corner_entries > 0 then
+                corner_w = corner_w + ui_button_height + 8
+            end
+
             imgui.SetCursorPosY(6)
 
             imgui.SetCursorPosX(
-                math.max(
-                    0,
-                    imgui.GetWindowWidth() - ui_button_height * 2 - 8 - 14
-                )
+                math.max(0, imgui.GetWindowWidth() - corner_w - 14)
             )
 
+            if #corner_entries > 0 then
+                sheetx.menu_button()
+                imgui.SameLine(0, 8)
+            end
+
             sheetx.corner_buttons()
+            sheetx.menu_popup(corner_entries)
         end
 
         imgui.EndChild()
@@ -3709,42 +4108,7 @@ local function draw_journal_toolbar(
 
         -- The menu groups the guide, the camps and the functions to come.
         -- Its button sits at the right corner, left of Settings.
-        local menu_entries = {}
-
-        if controller.ToggleGuide then
-            menu_entries[#menu_entries + 1] = {
-                id = 'Guide',
-                label = tx('New adventurer guide'),
-                icon = 'sprout',
-                open = controller.GetGuideOpen
-                    and controller.GetGuideOpen() or false,
-                toggle = controller.ToggleGuide,
-            }
-        end
-
-        if controller.ToggleCamps then
-            menu_entries[#menu_entries + 1] = {
-                id = 'Camps',
-                label = tx('Camps'),
-                tip = tx('Camps: where to gain experience'),
-                icon = 'question',
-                open = controller.GetCampsOpen
-                    and controller.GetCampsOpen() or false,
-                toggle = controller.ToggleCamps,
-            }
-        end
-
-        if controller.ToggleFame then
-            menu_entries[#menu_entries + 1] = {
-                id = 'Fame',
-                label = tx('Fame'),
-                tip = tx('Fame of the nations'),
-                icon = 'star',
-                open = controller.GetFameOpen
-                    and controller.GetFameOpen() or false,
-                toggle = controller.ToggleFame,
-            }
-        end
+        local menu_entries = sheetx.menu_entries()
 
         local menu_width = 0
 
@@ -3892,6 +4256,121 @@ local function draw_journal_toolbar(
             end
         end
 
+        -- Opens the chat window: a button with a speech bubble.
+        sheetx.chat_w = 0
+
+        if controller.chat ~= nil and icons.draw_chat ~= nil then
+            imgui.SameLine(0, 8)
+
+            sheetx.chat_w = ui_button_height
+
+            local chat_open = controller.chat.GetOpen()
+
+            if chat_open then
+                imgui.PushStyleColor(
+                    ImGuiCol_Button,
+                    colors.button_active
+                )
+            end
+
+            if imgui.Button(
+                '##JournalChatButton',
+                { sheetx.chat_w, ui_button_height }
+            ) then
+                controller.chat.Toggle()
+            end
+
+            if chat_open then
+                imgui.PopStyleColor()
+            end
+
+            local min_x, min_y = imgui.GetItemRectMin()
+            local max_x, max_y = imgui.GetItemRectMax()
+            local size = (max_y - min_y) * 0.66
+            local unread = controller.chat.HasUnread
+                and controller.chat.HasUnread()
+            local chat_icon = controller.worldmark
+                and controller.worldmark.GetIcon
+                and controller.worldmark.GetIcon('chat')
+            local drawn = false
+
+            -- The Moogle icon, when the file is there.
+            if chat_icon ~= nil then
+                local pad = (max_y - min_y) * 0.10
+
+                drawn = pcall(function()
+                    imgui.GetWindowDrawList():AddImage(
+                        chat_icon.id,
+                        { min_x + pad, min_y + pad },
+                        { max_x - pad, max_y - pad },
+                        { 0, 0 },
+                        { 1, 1 },
+                        imgui.GetColorU32({ 1, 1, 1, 1 })
+                    )
+                end)
+            end
+
+            if not drawn then
+                icons.draw_chat(
+                    imgui.GetWindowDrawList(),
+                    min_x + ((max_x - min_x) - size) * 0.5,
+                    min_y + ((max_y - min_y) - size) * 0.5,
+                    size,
+                    -- Another color while there are messages not read yet.
+                    imgui.GetColorU32(unread and colors.favorite or colors.text)
+                )
+            end
+
+            sheetx.chat_badge(min_x, min_y, max_x, max_y)
+
+            if imgui.IsItemHovered() and imgui.SetTooltip then
+                imgui.SetTooltip(tx('Chat'))
+            end
+        end
+
+        -- Opens the monster search: a button with a monster face, beside
+        -- the chat.
+        sheetx.mon_w = 0
+
+        if controller.monsters ~= nil and icons.draw_monster ~= nil then
+            imgui.SameLine(0, 8)
+
+            sheetx.mon_w = ui_button_height
+
+            local mon_open = controller.monsters.GetOpen()
+
+            if mon_open then
+                imgui.PushStyleColor(ImGuiCol_Button, colors.button_active)
+            end
+
+            if imgui.Button(
+                '##JournalMonstersButton',
+                { sheetx.mon_w, ui_button_height }
+            ) then
+                controller.monsters.Toggle()
+            end
+
+            if mon_open then
+                imgui.PopStyleColor()
+            end
+
+            local m_min_x, m_min_y = imgui.GetItemRectMin()
+            local m_max_x, m_max_y = imgui.GetItemRectMax()
+            local m_size = (m_max_y - m_min_y) * 0.66
+
+            icons.draw_monster(
+                imgui.GetWindowDrawList(),
+                m_min_x + ((m_max_x - m_min_x) - m_size) * 0.5,
+                m_min_y + ((m_max_y - m_min_y) - m_size) * 0.5,
+                m_size,
+                imgui.GetColorU32(colors.text)
+            )
+
+            if imgui.IsItemHovered() and imgui.SetTooltip then
+                imgui.SetTooltip(tx("Vana'dex (BETA): search monsters and see their sheet"))
+            end
+        end
+
         -- Search box: filters the list by name.
         if controller.SetSearchText then
             imgui.SameLine(0, 24)
@@ -3911,6 +4390,10 @@ local function draw_journal_toolbar(
                             - compass_width
                             - sheetx.zones_w
                             - notesx.btn_w
+                            - sheetx.chat_w
+                            - (sheetx.chat_w > 0 and 8 or 0)
+                            - sheetx.mon_w
+                            - (sheetx.mon_w > 0 and 8 or 0)
                             - (ui_button_height + 8) * 2
                             - 190
                     )
@@ -4005,33 +4488,7 @@ local function draw_journal_toolbar(
         end
 
         if #menu_entries > 0 then
-            if imgui.Button(
-                '##JournalMenuButton',
-                { ui_button_height, ui_button_height }
-            ) then
-                imgui.OpenPopup('##JournalMenuPopup')
-            end
-
-            local mb_min_x, mb_min_y = imgui.GetItemRectMin()
-            local mb_max_x, mb_max_y = imgui.GetItemRectMax()
-            local mb_w = mb_max_x - mb_min_x
-            local mb_h = mb_max_y - mb_min_y
-            local mb_draw = imgui.GetWindowDrawList()
-
-            for line = -1, 1 do
-                local line_y = mb_min_y + mb_h * 0.5 + line * mb_h * 0.18
-
-                mb_draw:AddLine(
-                    { mb_min_x + mb_w * 0.28, line_y },
-                    { mb_max_x - mb_w * 0.28, line_y },
-                    imgui.GetColorU32(colors.text),
-                    2
-                )
-            end
-
-            if imgui.IsItemHovered() and imgui.SetTooltip then
-                imgui.SetTooltip(tx('Menu'))
-            end
+            sheetx.menu_button()
 
             if settings_width > 0 then
                 imgui.SameLine(0, 8)
@@ -4094,121 +4551,7 @@ local function draw_journal_toolbar(
 
         sheetx.corner_buttons()
 
-        -- The list of the menu: one row for each function (its icon and its
-        -- name). The one whose window is open is shown pressed.
-        if #menu_entries > 0 and imgui.BeginPopup('##JournalMenuPopup') then
-            local row_icon = ui_button_height * 0.62
-            local row_width = 0
-
-            for _, entry in ipairs(menu_entries) do
-                row_width = math.max(
-                    row_width,
-                    (imgui.CalcTextSize(entry.label))
-                )
-            end
-
-            row_width = row_width + (row_icon + 24) * 2
-
-            for _, entry in ipairs(menu_entries) do
-                if entry.open then
-                    imgui.PushStyleColor(
-                        ImGuiCol_Button,
-                        colors.button_active
-                    )
-                end
-
-                local row_clicked = imgui.Button(
-                    entry.label .. '##JournalMenu' .. entry.id,
-                    { row_width, ui_button_height }
-                )
-
-                if entry.open then
-                    imgui.PopStyleColor()
-                end
-
-                local r_min_x, r_min_y = imgui.GetItemRectMin()
-                local r_max_x, r_max_y = imgui.GetItemRectMax()
-                local r_draw = imgui.GetWindowDrawList()
-                local r_x = r_min_x + 12
-                local r_y = r_min_y + ((r_max_y - r_min_y) - row_icon) * 0.5
-
-                if entry.icon == 'sprout' then
-                    icons.draw_sprout(
-                        r_draw, r_x, r_y, row_icon,
-                        imgui.GetColorU32(colors.leaf),
-                        imgui.GetColorU32(colors.leaf_2),
-                        imgui.GetColorU32(colors.stem)
-                    )
-                elseif entry.icon == 'question' then
-                    icons.draw_question(
-                        r_draw, r_x, r_y, row_icon,
-                        imgui.GetColorU32(colors.camps_red)
-                    )
-                elseif entry.icon == 'star' then
-                    -- The icon of the Fame Checkers; the star drawn with
-                    -- lines when there is no image.
-                    local fame_icon = controller.worldmark
-                        and controller.worldmark.GetIcon
-                        and controller.worldmark.GetIcon('fame')
-                    local image_drawn = false
-
-                    if fame_icon ~= nil then
-                        image_drawn = pcall(function()
-                            r_draw:AddImage(
-                                fame_icon.id,
-                                { r_x, r_y },
-                                {
-                                    r_x + row_icon * fame_icon.width
-                                        / fame_icon.height,
-                                    r_y + row_icon,
-                                },
-                                { 0, 0 },
-                                { 1, 1 },
-                                imgui.GetColorU32({ 1, 1, 1, 1 })
-                            )
-                        end)
-                    end
-
-                    -- Five-point star, drawn with lines.
-                    local cx = r_x + row_icon * 0.5
-                    local cy = r_y + row_icon * 0.53
-                    local rad = row_icon * 0.5
-                    local star_color = imgui.GetColorU32(colors.favorite)
-                    local points = {}
-
-                    for k = 0, 4 do
-                        local ang = -math.pi / 2 + k * (2 * math.pi / 5)
-                        points[k] = {
-                            cx + math.cos(ang) * rad,
-                            cy + math.sin(ang) * rad,
-                        }
-                    end
-
-                    for k = 0, image_drawn and -1 or 4 do
-                        local p1 = points[k]
-                        local p2 = points[(k + 2) % 5]
-
-                        r_draw:AddLine(
-                            { p1[1], p1[2] }, { p2[1], p2[2] },
-                            star_color, math.max(1.5, row_icon * 0.09)
-                        )
-                    end
-                end
-
-                if entry.tip and imgui.IsItemHovered()
-                    and imgui.SetTooltip then
-
-                    imgui.SetTooltip(entry.tip)
-                end
-
-                if row_clicked then
-                    entry.toggle()
-                    imgui.CloseCurrentPopup()
-                end
-            end
-
-            imgui.EndPopup()
-        end
+        sheetx.menu_popup(menu_entries)
 
         local popup_id =
             is_mission_mode
@@ -4635,6 +4978,11 @@ local function draw_sheet_step(index, text, state)
             npc_tooltip = tx('Click to point the compass at it'),
             on_zone = sheetx.zone_click(),
             zone_tooltip = tx('Click to guide the compass to this zone'),
+            on_monster = sheetx.monster_click(),
+            monster_tooltip = tx('Click to see its sheet'),
+            on_item = sheetx.item_click(),
+            item_known = sheetx.item_known,
+            item_tooltip = tx('Click to see its sheet'),
         }
     )
 
@@ -5689,8 +6037,8 @@ do
     local placed = false
     -- Resizing of the window. refit counts the frames in which the window
     -- is asked to fit its content (a height of 0); after that its size
-    -- belongs to the player. clipped_signature remembers for which content
-    -- a refit was already asked because the content did not fit.
+    -- belongs to the player. clipped_signature is the content seen in the
+    -- last frame: a refit is only asked when it changes and does not fit.
     local refit, last_w, clipped_signature = 0, nil, nil
     local compass_scale, last_scale = 1.0, nil
 
@@ -5817,6 +6165,50 @@ do
             imgui.TextColored(color, text)
         elseif not drawn then
             imgui.TextColored(color, text)
+        end
+    end
+
+    -- A line with a shadow like shadow_text, but with the name of a zone in
+    -- bold after a regular prefix ("In another zone: Zone"). Bold is the
+    -- bold font of the text, or the text drawn twice when it is not loaded.
+    function sheetx.shadow_zone_text(color, prefix, zone, available)
+        local prefix_w = prefix ~= '' and (imgui.CalcTextSize(prefix)) or 0
+
+        zone = fit_text(zone, math.max(20, available - prefix_w))
+
+        local bold_size = journal_font_size * compass_scale
+
+        imgui.PushStyleColor(ImGuiCol_Text, transparent)
+
+        local reserved = pcall(imgui.Text, prefix .. zone)
+
+        imgui.PopStyleColor()
+
+        local drawn = reserved and pcall(function()
+            local draw = imgui.GetWindowDrawList()
+            local x, y = imgui.GetItemRectMin()
+            local u32 = imgui.GetColorU32(color)
+
+            if prefix ~= '' then
+                draw:AddText({ x + 1, y + 1 }, 0xCC000000, prefix)
+                draw:AddText({ x, y }, u32, prefix)
+            end
+
+            local has_font = text_bold_font ~= nil
+                and pcall(imgui.PushFont, text_bold_font, bold_size)
+
+            draw:AddText({ x + prefix_w + 1, y + 1 }, 0xCC000000, zone)
+            draw:AddText({ x + prefix_w, y }, u32, zone)
+
+            if has_font then
+                imgui.PopFont()
+            else
+                draw:AddText({ x + prefix_w + 1, y }, u32, zone)
+            end
+        end)
+
+        if not drawn then
+            imgui.TextColored(color, prefix .. zone)
         end
     end
 
@@ -6086,9 +6478,11 @@ do
 
                     shadow_text(colors.text_dim, tx('In another zone:'))
 
-                    shadow_text(
+                    sheetx.shadow_zone_text(
                         colors.text,
-                        fit_text(table.concat(zone_names, ', '), available)
+                        '',
+                        table.concat(zone_names, ', '),
+                        available
                     )
 
                     -- The next zone on foot (data/zone_links.lua).
@@ -6199,7 +6593,7 @@ do
 
                     local line
                     local color = colors.text
-                    local row_color, row_message
+                    local row_color, row_message, zone_bold
 
                     if row.status == 'found' or row.status == 'known' then
                         line = distance_text(row.distance)
@@ -6220,7 +6614,7 @@ do
                         end
 
                         line = tx('In another zone:') .. ' '
-                            .. table.concat(names, ', ')
+                        zone_bold = table.concat(names, ', ')
                         color = colors.text_dim
 
                         if row.next_zone ~= nil then
@@ -6236,7 +6630,13 @@ do
                         color = colors.text_dim
                     end
 
-                    shadow_text(color, fit_text(line, available))
+                    if zone_bold ~= nil then
+                        sheetx.shadow_zone_text(
+                            color, line, zone_bold, available
+                        )
+                    else
+                        shadow_text(color, fit_text(line, available))
+                    end
 
                     if row_message then
                         shadow_text(row_color, fit_text(row_message, available))
@@ -6486,7 +6886,7 @@ do
 
                     local line
                     local color = colors.text
-                    local row_color, row_message
+                    local row_color, row_message, zone_bold
 
                     if row.status == 'found' or row.status == 'known' then
                         -- Only the meters, in the color of the distance.
@@ -6496,7 +6896,7 @@ do
                         row_color = nil
                     elseif row.status == 'otherzone' then
                         line = tx('In another zone:') .. ' '
-                            .. zone_label(row.zone)
+                        zone_bold = zone_label(row.zone)
                         color = colors.text_dim
 
                         if row.next_zone ~= nil then
@@ -6513,7 +6913,13 @@ do
                         color = colors.text_dim
                     end
 
-                    shadow_text(color, fit_text(line, available))
+                    if zone_bold ~= nil then
+                        sheetx.shadow_zone_text(
+                            color, line, zone_bold, available
+                        )
+                    else
+                        shadow_text(color, fit_text(line, available))
+                    end
 
                     if row_message then
                         shadow_text(row_color, row_message)
@@ -6655,11 +7061,19 @@ do
                     signature = signature .. row.status
                 end
 
-                if imgui.GetScrollMaxY
-                    and imgui.GetScrollMaxY() > 1
-                    and signature ~= clipped_signature then
+                -- Only when the content changed while the window was open:
+                -- the first signature seen (also right after loading a
+                -- saved size) is never a reason to override the size the
+                -- player chose.
+                local previous = clipped_signature
 
-                    clipped_signature = signature
+                clipped_signature = signature
+
+                if previous ~= nil
+                    and signature ~= previous
+                    and imgui.GetScrollMaxY
+                    and imgui.GetScrollMaxY() > 1 then
+
                     refit = 3
                     last_w = window_width
                 end
@@ -6692,12 +7106,19 @@ local function settings_percent(value)
     return string.format('%d%%', math.floor((value or 0) * 100 + 0.5))
 end
 
-local function draw_settings_header(label)
+-- The bar that separates the sections (and the groups inside Alerts).
+function sheetx.settings_divider()
     imgui.Spacing()
+    imgui.Separator()
+    imgui.Spacing()
+end
+
+local function draw_settings_header(label)
+    sheetx.settings_divider()
     imgui.PushStyleColor(ImGuiCol_Text, colors.gold)
     imgui.TextWrapped(label)
     imgui.PopStyleColor()
-    imgui.Separator()
+    imgui.Spacing()
 end
 
 -- Label on the left and [-] value [+] on the right. Clicking the value goes
@@ -6885,7 +7306,7 @@ local function draw_alert_style_group(group, header, no_background)
     local style = controller.GetAlertStyle(group)
     local palette = controller.GetAlertPalette()
 
-    imgui.Spacing()
+    sheetx.settings_divider()
     imgui.PushStyleColor(ImGuiCol_Text, colors.text_dim)
     imgui.TextWrapped(header)
     imgui.PopStyleColor()
@@ -6988,6 +7409,10 @@ local function draw_alert_tests(width)
         local special = kind == 'near' or kind == 'progress'
         local active =
             test ~= nil
+            and not test.monster
+            and not test.monster_zone
+            and not test.monster_rank
+            and not test.monster_ach
             and test.done == done
             and (test.near == true) == special
             and (not special or (test.progress == true) == (kind == 'progress'))
@@ -7006,7 +7431,7 @@ local function draw_alert_tests(width)
         end
     end
 
-    imgui.Spacing()
+    sheetx.settings_divider()
     imgui.TextColored(colors.text_dim, tx('Test the alerts'))
 
     -- Two buttons side by side only when the longest text fits in half the
@@ -7070,6 +7495,34 @@ local function draw_alert_tests(width)
         end
 
         if item_test[2] == 'item' then
+            pair()
+        end
+    end
+
+    -- The alerts of the monsters: a defeat, a zone with monsters to
+    -- discover, a rank up and an achievement. The field of the test has the
+    -- name of its kind.
+    for position, monster_test in ipairs({
+        { 'Test: Monster Defeated', 'monster' },
+        { 'Test: Monsters to Discover', 'monster_zone' },
+        { 'Test: Rank Up', 'monster_rank' },
+        { 'Test: Achievement', 'monster_ach' },
+    }) do
+        local monster_active = test ~= nil and test[monster_test[2]] == true
+
+        if draw_settings_choice(
+            tx(monster_test[1]) .. '##alert_test_' .. monster_test[2],
+            monster_active,
+            half
+        ) then
+            if monster_active then
+                controller.StopAlertTest()
+            else
+                controller.StartAlertTest(monster_test[2], false)
+            end
+        end
+
+        if position % 2 == 1 then
             pair()
         end
     end
@@ -7504,50 +7957,49 @@ local function draw_settings_window()
                 )
             end
 
-            draw_alert_style_group('new', tx('New quest / mission alerts'))
-            draw_alert_style_group('done', tx('Completed alerts'))
-
             if controller.GetNearEnabled and controller.SetNearEnabled then
-                imgui.Spacing()
-
                 draw_settings_checkbox(
                     'alert_near',
                     tx('Alert when entering a zone: quests in progress there'),
                     controller.GetNearEnabled(),
                     controller.SetNearEnabled
                 )
+            end
 
-                draw_alert_style_group('near', tx('Quest nearby alerts'))
+            if controller.GetItemAlertEnabled
+                and controller.SetItemAlertEnabled then
 
-                if controller.GetItemAlertEnabled
-                    and controller.SetItemAlertEnabled then
+                draw_settings_checkbox(
+                    'alert_items',
+                    tx('Alert when you get an item for a quest in progress'),
+                    controller.GetItemAlertEnabled(),
+                    controller.SetItemAlertEnabled
+                )
+            end
 
+            if controller.GetProxEnabled and controller.SetProxEnabled then
+                draw_settings_checkbox(
+                    'alert_prox',
+                    tx('Alert when close to an NPC who starts a quest (30 y)'),
+                    controller.GetProxEnabled(),
+                    controller.SetProxEnabled
+                )
+
+                if controller.GetProxCompass and controller.SetProxCompass then
                     draw_settings_checkbox(
-                        'alert_items',
-                        tx('Alert when you get an item for a quest in progress'),
-                        controller.GetItemAlertEnabled(),
-                        controller.SetItemAlertEnabled
+                        'alert_prox_compass',
+                        tx('Add and remove those NPCs in the compass automatically'),
+                        controller.GetProxCompass(),
+                        controller.SetProxCompass
                     )
-                end
-
-                if controller.GetProxEnabled and controller.SetProxEnabled then
-                    draw_settings_checkbox(
-                        'alert_prox',
-                        tx('Alert when close to an NPC who starts a quest (30 y)'),
-                        controller.GetProxEnabled(),
-                        controller.SetProxEnabled
-                    )
-
-                    if controller.GetProxCompass and controller.SetProxCompass then
-                        draw_settings_checkbox(
-                            'alert_prox_compass',
-                            tx('Add and remove those NPCs in the compass automatically'),
-                            controller.GetProxCompass(),
-                            controller.SetProxCompass
-                        )
-                    end
                 end
             end
+
+            -- The look of each kind of alert.
+            draw_alert_style_group('new', tx('New quest / mission alerts'))
+            draw_alert_style_group('done', tx('Completed alerts'))
+            draw_alert_style_group('monster', tx('Monster alerts'))
+            draw_alert_style_group('near', tx('Quest nearby alerts'))
 
             draw_alert_tests(width)
 
@@ -7579,7 +8031,7 @@ local function draw_settings_window()
             end
         end
 
-        imgui.Spacing()
+        sheetx.settings_divider()
 
         imgui.TextColored(
             colors.text_dim,
@@ -8701,9 +9153,15 @@ function sheetx.draw_book(is_mission_mode, book)
         -- the margin above the right page.
         local right_edge = book.left_x + book.page_w * 2 + book.gap
 
-        imgui.SetCursorPosX(
-            math.max(0, right_edge - ui_button_height * 2 - 8)
-        )
+        -- The menu (three lines) goes at their left, as in the other theme.
+        local corner_entries = sheetx.menu_entries()
+        local corner_w = ui_button_height * 2 + 8
+
+        if #corner_entries > 0 then
+            corner_w = corner_w + ui_button_height + 8
+        end
+
+        imgui.SetCursorPosX(math.max(0, right_edge - corner_w))
         imgui.SetCursorPosY(
             math.max(
                 6,
@@ -8711,7 +9169,13 @@ function sheetx.draw_book(is_mission_mode, book)
             )
         )
 
+        if #corner_entries > 0 then
+            sheetx.menu_button()
+            imgui.SameLine(0, 8)
+        end
+
         sheetx.corner_buttons()
+        sheetx.menu_popup(corner_entries)
     end
 
     imgui.SetCursorPosX(book.left_x)
@@ -10364,6 +10828,1790 @@ function sheetx.zones_build()
     return #list > 0 and list or nil
 end
 
+
+function sheetx.chat_button(label, size, accent)
+    if not sheetx.chat_skin then
+        return imgui.Button(label, size)
+    end
+    imgui.PushStyleColor(ImGuiCol_Button, transparent)
+    imgui.PushStyleColor(ImGuiCol_ButtonHovered, transparent)
+    imgui.PushStyleColor(ImGuiCol_ButtonActive, transparent)
+    -- Reserve and activate the original control ID, without painting its label twice.
+    local id_at = label:find('##', 1, true)
+    local caption = id_at and label:sub(1, id_at - 1) or label
+    local id = id_at and label:sub(id_at) or ('##VanaChat' .. label)
+    local clicked = imgui.Button(id, size)
+    imgui.PopStyleColor(3)
+    local x0, y0 = imgui.GetItemRectMin()
+    local x1, y1 = imgui.GetItemRectMax()
+    local hovered = imgui.IsItemHovered()
+    local pressed = imgui.IsItemActive()
+    local art = pressed and 'pressed' or (hovered and 'hover'
+        or (accent and 'accent' or 'button'))
+    local draw = imgui.GetWindowDrawList()
+    theme.DrawChatArt(imgui, draw, art, x0, y0, x1 - x0, y1 - y0)
+    local tw, th = imgui.CalcTextSize(caption)
+    local text_color = (accent or hovered or pressed)
+        and { 1, 0.93, 0.77, 1 } or colors.text
+    draw:AddText({ x0 + math.max(4, (x1 - x0 - tw) / 2),
+        y0 + math.max(0, (y1 - y0 - (th or sheetx.chat_height * 0.7)) / 2) },
+        imgui.GetColorU32(text_color), caption)
+    return clicked
+end
+
+function sheetx.chat_strip(height)
+    if not sheetx.chat_skin then return end
+    local x, y = imgui.GetCursorScreenPos()
+    local inner = sheetx.chat_inner(imgui.GetWindowWidth())
+    theme.DrawChatArt(imgui, imgui.GetWindowDrawList(), 'leather',
+        x - 3, y - 3, inner + 6, height + 6)
+end
+
+function sheetx.chat_panel()
+    if not sheetx.chat_skin then return end
+    local x, y = imgui.GetWindowPos()
+    local w, h = imgui.GetWindowSize()
+    theme.DrawChatArt(imgui, imgui.GetWindowDrawList(), 'frame', x, y, w, h)
+end
+
+function sheetx.chat_inner(width)
+    if not sheetx.chat_skin then
+        return sheetx.settings_inner(width)
+    end
+
+    local scrollbar = imgui.GetScrollMaxY and imgui.GetScrollMaxY() > 0
+    return width - 38 - (scrollbar and 14 or 0), 19
+end
+
+-- Chat window -----------------------------------------------------------------
+-- The chat of the users of the addon (chat.lua talks to the server): the
+-- state and the Connect button, the lines and the box to write.
+sheetx.chat_buf = { '' }
+sheetx.pm_buf = { '' }
+sheetx.chat_copy_buf = { '' }
+sheetx.chat_pass = { '' }
+sheetx.chat_name = { '' }
+sheetx.chat_name_ready = false
+
+-- The name written in the box becomes the name of the chat. The password box
+-- belongs to a nick: when the nick changes it is loaded again.
+function sheetx.chat_apply_name(store)
+    if sheetx.chat_name_ready and store.SetCustomName ~= nil then
+        store.SetCustomName(sheetx.chat_name[1])
+        sheetx.chat_name[1] = store.GetCustomName()
+    end
+
+    if (store.ChatName and store.ChatName() or ''):lower()
+        ~= sheetx.chat_pass_nick then
+
+        sheetx.chat_pass_ready = false
+    end
+end
+
+-- A line of text in a color that wraps at the edge of the window.
+function sheetx.chat_wrapped(color, text)
+    imgui.PushStyleColor(ImGuiCol_Text, color)
+    imgui.TextWrapped(text)
+    imgui.PopStyleColor()
+end
+
+-- The ball with the number of messages not read, at the corner of the chat
+-- button of the bar. Red when one is important (a private message, or a
+-- line that names you), gold otherwise.
+function sheetx.chat_badge(min_x, min_y, max_x, max_y)
+    local chat = controller and controller.chat
+    local count = chat and chat.GetUnreadCount and chat.GetUnreadCount() or 0
+
+    if count <= 0 then
+        return
+    end
+
+    local text = count > 9 and '9+' or tostring(count)
+    local tw, th = imgui.CalcTextSize(text)
+    local radius = math.max((max_y - min_y) * 0.26, th * 0.5 + 1, tw * 0.5 + 2)
+    local cx, cy = max_x - radius - 1, min_y + radius + 1
+    local important = chat.HasImportantUnread and chat.HasImportantUnread()
+    local draw = imgui.GetWindowDrawList()
+
+    draw:AddCircleFilled(
+        { cx, cy },
+        radius,
+        imgui.GetColorU32(important and { 0.86, 0.17, 0.16, 1.0 } or colors.favorite)
+    )
+    draw:AddText(
+        { cx - tw * 0.5, cy - th * 0.5 },
+        imgui.GetColorU32({ 1.0, 1.0, 1.0, 1.0 }),
+        text
+    )
+
+    sheetx.badge_drawn = (sheetx.badge_drawn or 0) + 1
+end
+
+-- The box to write of the chat and of the private chats: Enter sends, the
+-- Up and Down arrows bring back the messages sent before, and Tab completes
+-- a nick or a name of the Journal (see share.lua). ctx is 'chat' or 'pm'.
+sheetx.sent = { chat = {}, pm = {} }
+sheetx.recall = { chat = { draft = '' }, pm = { draft = '' } }
+sheetx.tabs = {}
+sheetx.key_pending = nil
+sheetx.input_ctx = nil     -- the box that had the keyboard in the last frame
+
+-- A message was sent: it goes to the list that Up walks through.
+function sheetx.sent_add(ctx, text)
+    text = tostring(text or ''):gsub('^%s+', ''):gsub('%s+$', '')
+
+    if text == '' then
+        return
+    end
+
+    local list = sheetx.sent[ctx]
+
+    if list[#list] ~= text then
+        list[#list + 1] = text
+
+        if #list > 30 then
+            table.remove(list, 1)
+        end
+    end
+
+    sheetx.recall[ctx].idx = nil
+    sheetx.recall[ctx].draft = ''
+end
+
+-- Up (-1) or Down (+1) in the box: an older or a newer message; after the
+-- newest one, what was being written. Returns true when the text changed.
+function sheetx.chat_recall(ctx, buf, step)
+    local list = sheetx.sent[ctx]
+    local state = sheetx.recall[ctx]
+
+    if #list == 0 then
+        return false
+    end
+
+    if step < 0 then
+        if state.idx == nil then
+            state.draft = buf[1]
+            state.idx = #list
+        else
+            state.idx = math.max(1, state.idx - 1)
+        end
+
+        buf[1] = list[state.idx]
+
+        return true
+    end
+
+    if state.idx == nil then
+        return false
+    end
+
+    if state.idx >= #list then
+        state.idx = nil
+        buf[1] = state.draft
+    else
+        state.idx = state.idx + 1
+        buf[1] = list[state.idx]
+    end
+
+    return true
+end
+
+-- Tab: the next match for the end of the text. Returns true when it changed.
+function sheetx.tab_complete(ctx, buf, limit)
+    local share = controller and controller.share
+
+    buf[1] = buf[1]:gsub('\t', '')
+
+    if share == nil then
+        return false
+    end
+
+    sheetx.tabs[ctx] = sheetx.tabs[ctx] or share.New()
+
+    local text, what = share.Press(sheetx.tabs[ctx], buf[1], limit, ctx == 'pm')
+
+    if text == nil then
+        sheetx.set_hint(ctx, 'No matches for Tab.')
+
+        return false
+    end
+
+    buf[1] = text
+    sheetx.set_hint(ctx, 'Tab ' .. what)
+
+    return true
+end
+
+-- Draws the box and returns true when Enter was pressed in it.
+function sheetx.chat_input(ctx, id, buf, limit)
+    local flags = ImGuiInputTextFlags_EnterReturnsTrue
+    local tab_in_text = ImGuiInputTextFlags_AllowTabInput ~= nil
+
+    if tab_in_text then
+        flags = (flags or 0) + ImGuiInputTextFlags_AllowTabInput
+    end
+
+    -- A key pressed while this box had the keyboard (see the key event).
+    local key = sheetx.key_pending
+
+    if key ~= nil and sheetx.input_ctx == ctx then
+        sheetx.key_pending = nil
+
+        local changed = false
+
+        if key == 'up' then
+            changed = sheetx.chat_recall(ctx, buf, -1)
+        elseif key == 'down' then
+            changed = sheetx.chat_recall(ctx, buf, 1)
+        elseif key == 'tab' then
+            changed = sheetx.tab_complete(ctx, buf, limit)
+        end
+
+        -- The box takes the new text when it gets the keyboard again.
+        if changed and imgui.SetKeyboardFocusHere then
+            imgui.SetKeyboardFocusHere()
+        end
+    end
+
+    local entered = false
+
+    if flags ~= nil then
+        entered = imgui.InputText(id, buf, limit, flags)
+    else
+        imgui.InputText(id, buf, limit)
+    end
+
+    if imgui.IsItemActive() then
+        -- Arrows and Enter are text here, not moves in the Journal.
+        note_input_active = true
+        sheetx.input_ctx = ctx
+    elseif sheetx.input_ctx == ctx then
+        sheetx.input_ctx = nil
+    end
+
+    -- With AllowTabInput the Tab key arrives as a tab character in the text.
+    if tab_in_text and buf[1]:find('\t', 1, true) then
+        entered = false
+
+        if sheetx.tab_complete(ctx, buf, limit) then
+            -- Next frame the box gets the keyboard again with the new text.
+            if ctx == 'pm' then
+                sheetx.pm_focus = true
+            else
+                sheetx.chat_focus = true
+            end
+        end
+    end
+
+    return entered == true
+end
+
+ashita.events.register('key_data', 'journal_ui_chat_keys', function(e)
+    -- Only while a box of the chat has the keyboard.
+    if not e.down or sheetx.input_ctx == nil then
+        return
+    end
+
+    if e.key == 0xC8 then
+        sheetx.key_pending = 'up'
+    elseif e.key == 0xD0 then
+        sheetx.key_pending = 'down'
+    elseif e.key == 0x0F and ImGuiInputTextFlags_AllowTabInput == nil then
+        sheetx.key_pending = 'tab'
+    end
+end)
+
+function sheetx.chat_send(store)
+    local text = sheetx.chat_buf[1]
+    local sent, why = store.Say(text)
+
+    if sent then
+        sheetx.sent_add('chat', text)
+        sheetx.chat_buf[1] = ''
+        sheetx.chat_hint = nil
+    elseif why == 'fast' then
+        sheetx.chat_hint = 'Too fast: wait a moment.'
+    elseif why == 'offline' then
+        sheetx.chat_hint = 'You are not connected.'
+    elseif why == 'notjoined' then
+        sheetx.chat_hint = 'You are not in this channel: click it to join.'
+    end
+
+    -- The keyboard stays in the box after a message.
+    sheetx.chat_focus = true
+end
+
+-- The list of channels, at the left: a click opens one. A band of color at
+-- the left of each button, a green border around the ones the chat is
+-- connected to. There is no way to leave a channel, only to disconnect.
+function sheetx.chat_channel_button(store, entry, width, close_id)
+    local label, inside, unread, _, mention = store.GetChannelInfo(entry.name)
+    local pm_view = store.GetPrivateOpen ~= nil and store.GetPrivateOpen()
+    local is_active = entry.name == (
+        entry.private and store.GetPrivateActive() or store.GetActive()
+    )
+
+    -- While the private chats are on screen no channel is the open one.
+    if pm_view and not entry.private then
+        is_active = false
+    end
+
+    if is_active then
+        sheetx.chat_push_accent()
+    end
+
+    -- Online but not in the channel yet: dim until the user opens it.
+    local dim = not inside and not entry.private
+        and store.GetState() == 'online'
+
+    if dim and not is_active then
+        imgui.PushStyleColor(ImGuiCol_Text, colors.text_dim)
+    end
+
+    local text = entry.private and label or tx(label)
+
+    if sheetx.chat_skin then
+        imgui.PushStyleColor(ImGuiCol_Button, transparent)
+    end
+
+    local clicked = sheetx.chat_button(
+        text .. '##ChatTab' .. entry.name,
+        { width, sheetx.chat_height }, is_active
+    )
+
+    if sheetx.chat_skin then
+        imgui.PopStyleColor()
+    end
+    if dim and not is_active then
+        imgui.PopStyleColor()
+    end
+
+    if is_active then
+        imgui.PopStyleColor(4)
+    end
+
+    local min_x, min_y = imgui.GetItemRectMin()
+    local max_x, max_y = imgui.GetItemRectMax()
+    local draw_list = imgui.GetWindowDrawList()
+
+    if entry.color ~= nil then
+        draw_list:AddRectFilled(
+            { min_x + 4, max_y - 4 },
+            { max_x - 4, max_y - 2 },
+            imgui.GetColorU32(entry.color)
+        )
+    end
+
+    if unread and not is_active then
+        draw_list:AddCircleFilled(
+            { max_x - 8, min_y + 7 }, 3,
+            imgui.GetColorU32({ 0.96, 0.57, 0.17, 1 })
+        )
+    end
+
+    if inside then
+        draw_list:AddRect(
+            { min_x, min_y },
+            { max_x, max_y },
+            imgui.GetColorU32({ 0.20, 0.72, 0.28, 1.0 }),
+            0,
+            0,
+            2
+        )
+    end
+
+    -- A line that names you is waiting in that channel.
+    if mention and not is_active then
+        draw_list:AddCircleFilled(
+            { max_x - 10, (min_y + max_y) * 0.5 },
+            5,
+            imgui.GetColorU32({ 0.86, 0.17, 0.16, 1.0 })
+        )
+    end
+
+    if imgui.IsItemHovered() and imgui.SetTooltip then
+        imgui.SetTooltip(entry.private and label or entry.name)
+    end
+
+    if clicked then
+        if entry.private then
+            if not is_active and store.SetPrivateActive(entry.name) then
+                sheetx.pm_hint = nil
+                sheetx.pm_focus = true
+            end
+        else
+            if pm_view and store.SetPrivateOpen ~= nil then
+                store.SetPrivateOpen(false)
+            end
+
+            if not is_active and store.SetActive(entry.name) then
+                sheetx.chat_hint = nil
+                sheetx.chat_focus = true
+            end
+        end
+
+        -- A channel the chat is not in yet: the click joins it.
+        if not entry.private and store.JoinChannel ~= nil then
+            store.JoinChannel(entry.name)
+        end
+    end
+
+    -- The x of a private chat.
+    if close_id ~= nil then
+        imgui.SameLine(0, 4)
+
+        if sheetx.chat_button('x##ChatPMClose' .. entry.name, { sheetx.chat_height, sheetx.chat_height }) then
+            store.ClosePrivate(entry.name)
+        end
+
+        if imgui.IsItemHovered() and imgui.SetTooltip then
+            imgui.SetTooltip(tx('Close this chat'))
+        end
+    end
+end
+
+-- Local accents keep the rest of Journal on its existing theme.
+function sheetx.chat_push_accent()
+    local legacy = sheetx.chat_skin or theme.Get() == 'legacy'
+    local fill = legacy and { 0.37, 0.12, 0.15, 1 }
+        or { 0.10, 0.25, 0.34, 1 }
+
+    imgui.PushStyleColor(ImGuiCol_Button, fill)
+    imgui.PushStyleColor(ImGuiCol_ButtonHovered,
+        legacy and { 0.48, 0.19, 0.20, 1 } or { 0.15, 0.34, 0.43, 1 })
+    imgui.PushStyleColor(ImGuiCol_ButtonActive, fill)
+    imgui.PushStyleColor(ImGuiCol_Text, { 1, 0.92, 0.75, 1 })
+end
+
+-- A small in-game lantern emblem, drawn at the same scale as the title.
+function sheetx.chat_title(draw, x, y, width)
+    local size = sheetx.chat_skin and math.max(62, scaled(70)) or scaled(26)
+    local inner, pad = sheetx.chat_inner(width)
+    local left = x + pad
+    local cursor_y = imgui.GetCursorPosY()
+    local top = y + cursor_y
+    if sheetx.chat_skin then
+        local max_w = math.max(1, inner - math.max(56, scaled(52)) - 12)
+        theme.DrawChatArt(imgui, draw, 'leather', left, top, inner, size)
+        -- Keep the lantern, lettering and airship together at the reference ratio.
+        local title_w = math.min(max_w, size * 1292 / 101)
+        theme.DrawChatArt(imgui, draw, 'title', left, top, title_w, title_w * 101 / 1292)
+        return top + size
+    end
+
+    local cx = left + size * 0.55
+    local cy = top + size * 0.51
+    local brass = imgui.GetColorU32({ 0.77, 0.57, 0.29, 1 })
+    local glass = imgui.GetColorU32({ 0.05, 0.22, 0.33, 1 })
+
+    draw:AddRectFilled({ left - 3, top - 3 },
+        { x + width - pad + 3, top + size + 3 },
+        imgui.GetColorU32(theme.Get() == 'legacy'
+            and { 0.25, 0.08, 0.10, 1 } or { 0.07, 0.13, 0.20, 1 }), 4)
+    draw:AddLine({ left, top + size + 2 },
+        { x + width - pad, top + size + 2 }, brass, 1)
+
+    draw:AddCircleFilled({ cx, cy - size * 0.33 }, size * 0.09, brass)
+    draw:AddRectFilled({ cx - size * 0.27, cy - size * 0.25 },
+        { cx + size * 0.27, cy + size * 0.35 }, brass, 3)
+    draw:AddRectFilled({ cx - size * 0.18, cy - size * 0.17 },
+        { cx + size * 0.18, cy + size * 0.26 }, glass, 2)
+    draw:AddTriangleFilled({ cx, cy - size * 0.12 },
+        { cx - size * 0.12, cy + size * 0.16 },
+        { cx + size * 0.12, cy + size * 0.16 },
+        imgui.GetColorU32({ 0.39, 0.83, 1, 1 }))
+    draw:AddCircleFilled({ cx, cy + size * 0.13 }, size * 0.055,
+        imgui.GetColorU32({ 0.88, 0.98, 1, 1 }))
+
+    imgui.SetCursorPosX(pad + size + 5)
+    if imgui.AlignTextToFramePadding then
+        imgui.AlignTextToFramePadding()
+    end
+    imgui.TextColored({ 1, 0.91, 0.71, 1 }, 'VanaChat (Beta)')
+    imgui.SetCursorPosY(cursor_y)
+end
+
+-- The channels as tabs on top, in as many rows as the width needs, so no name
+-- is clipped. The last tab opens the window of the private chats, with a red
+-- number when some of those chats have news.
+function sheetx.chat_private_tab(store, width)
+    local shown = store.GetPrivateOpen and store.GetPrivateOpen()
+
+    if shown then
+        sheetx.chat_push_accent()
+    end
+
+    local clicked = sheetx.chat_button(
+        tx('Private chats') .. '##ChatPrivateOpen',
+        { width, sheetx.chat_height }, shown
+    )
+
+    if shown then
+        imgui.PopStyleColor(4)
+    end
+
+    local min_x, min_y = imgui.GetItemRectMin()
+    local max_x = imgui.GetItemRectMax()
+    local draw_list = imgui.GetWindowDrawList()
+
+    if imgui.IsItemHovered() and imgui.SetTooltip then
+        imgui.SetTooltip(tx('Open the private chats'))
+    end
+
+    if clicked then
+        store.TogglePrivate()
+    end
+
+    local n = store.CountUnreadPrivate and store.CountUnreadPrivate() or 0
+
+    if n > 0 then
+        local center = { max_x - 8, min_y + 2 }
+
+        draw_list:AddCircleFilled(
+            center, 9, imgui.GetColorU32({ 0.86, 0.17, 0.16, 1.0 })
+        )
+        draw_list:AddText(
+            { center[1] - 3, center[2] - 7 },
+            imgui.GetColorU32({ 1, 1, 1, 1 }),
+            tostring(math.min(n, 9))
+        )
+    end
+end
+
+function sheetx.chat_channels(store, width)
+    local items = {}
+
+    for _, entry in ipairs(store.GetChannels()) do
+        items[#items + 1] = entry
+    end
+
+    if store.TogglePrivate ~= nil then
+        items[#items + 1] = { pm = true, label = 'Private chats' }
+    end
+
+    if #items == 0 then
+        return
+    end
+
+    local gap = 7
+    local widest = 0
+
+    for _, entry in ipairs(items) do
+        widest = math.max(widest, imgui.CalcTextSize(tx(entry.label)) + 27)
+    end
+
+    local columns = math.max(1, math.min(#items,
+        math.floor((width + gap) / (widest + gap))))
+    local tab_w = math.floor((width - (columns - 1) * gap) / columns)
+
+    for index, entry in ipairs(items) do
+        if (index - 1) % columns ~= 0 then
+            imgui.SameLine(0, gap)
+        end
+
+        if entry.pm then
+            sheetx.chat_private_tab(store, tab_w)
+        else
+            sheetx.chat_channel_button(store, entry, tab_w, nil)
+        end
+    end
+end
+
+-- The people in the channel on screen (at the right).
+function sheetx.chat_users(store)
+    local users = store.GetUsers()
+
+    sheetx.chat_wrapped(
+        colors.text_dim,
+        string.format(tx('Connected (%d)'), #users)
+    )
+
+    imgui.Separator()
+
+    local me = store.GetNick()
+
+    for _, nick in ipairs(users) do
+        if me ~= nil and nick:lower() == me:lower() then
+            imgui.TextColored(colors.completed, nick)
+        elseif store.OpenPrivate ~= nil and imgui.Selectable then
+            -- A click opens a menu: quote, private message, mute.
+            if imgui.Selectable(nick .. '##ChatUser' .. nick) then
+                sheetx.chat_hint = nil
+                sheetx.nick_click(store, nick, 'chat', true)
+            end
+
+            if imgui.IsItemHovered() and imgui.SetTooltip then
+                imgui.SetTooltip(tx('Click for options'))
+            end
+        else
+            imgui.Text(nick)
+        end
+    end
+
+    if #users == 0 then
+        imgui.TextColored(colors.text_dim, tx('Nobody yet.'))
+    end
+end
+
+-- The hint under the lines: one for the chat, one for the private chats.
+function sheetx.set_hint(ctx, text)
+    if ctx == 'pm' then
+        sheetx.pm_hint = text
+    else
+        sheetx.chat_hint = text
+    end
+end
+
+-- A click on a name: a small menu (Quote, Private message, Mute). The menu
+-- itself is drawn by sheetx.nick_menu, once per window. Without popups, the
+-- old behaviour: a name in the list opens a private chat, one in the lines
+-- mutes it.
+function sheetx.nick_click(store, nick, ctx, from_list)
+    if imgui.OpenPopup ~= nil and imgui.BeginPopup ~= nil then
+        sheetx.nick_ask = sheetx.nick_ask or {}
+        sheetx.nick_ask[ctx] = { nick = nick, open = true }
+
+        return
+    end
+
+    if from_list and store.OpenPrivate ~= nil then
+        if store.OpenPrivate(nick) then
+            store.SetPrivateOpen(true)
+        else
+            sheetx.set_hint(ctx, 'Could not open that private chat (limit of 8).')
+        end
+    elseif not from_list then
+        store.SetMuted(nick, true)
+        sheetx.set_hint(
+            ctx, 'Muted. To undo: /journal chat unmute ' .. nick
+        )
+    end
+end
+
+-- Writes "Nick: " at the start of the box (once), and gives it the keyboard.
+function sheetx.quote_nick(ctx, nick)
+    local buf = ctx == 'pm' and sheetx.pm_buf or sheetx.chat_buf
+    local prefix = nick .. ': '
+
+    if buf[1]:sub(1, #prefix) ~= prefix then
+        buf[1] = (prefix .. buf[1]):sub(1, 300)
+    end
+
+    if ctx == 'pm' then
+        sheetx.pm_focus = true
+    else
+        sheetx.chat_focus = true
+    end
+end
+
+-- The menu of a name. Call it in the window (not in a child), every frame.
+function sheetx.nick_menu(store, ctx)
+    local ask = sheetx.nick_ask and sheetx.nick_ask[ctx]
+
+    if ask == nil or imgui.OpenPopup == nil or imgui.BeginPopup == nil then
+        return
+    end
+
+    local id = '##NickMenu' .. ctx
+
+    if ask.open then
+        ask.open = false
+        imgui.OpenPopup(id)
+    end
+
+    if imgui.BeginPopup(id) then
+        imgui.TextColored(colors.text_dim, ask.nick)
+        imgui.Separator()
+
+        if imgui.Selectable(tx('Quote') .. '##NickQuote') then
+            sheetx.quote_nick(ctx, ask.nick)
+        end
+
+        if ctx ~= 'pm' and store.OpenPrivate ~= nil
+            and imgui.Selectable(tx('Private message') .. '##NickPrivate') then
+
+            if store.OpenPrivate(ask.nick) then
+                store.SetPrivateOpen(true)
+                sheetx.pm_focus = true
+            else
+                sheetx.chat_hint = 'Could not open that private chat (limit of 8).'
+            end
+        end
+
+        if imgui.Selectable(tx('Mute') .. '##NickMute') then
+            store.SetMuted(ask.nick, true)
+            sheetx.set_hint(
+                ctx, 'Muted. To undo: /journal chat unmute ' .. ask.nick
+            )
+        end
+
+        imgui.EndPopup()
+    end
+end
+
+-- A line of the chat: [time] nick: text, or an info / action line. A line
+-- that names you has a soft band of color behind it.
+function sheetx.chat_line(store, line, ctx)
+    local mention = line.kind ~= 'me' and line.kind ~= 'info'
+        and store.Mentions ~= nil and store.Mentions(line.text)
+    local x0, y0, avail
+
+    if mention and imgui.GetCursorScreenPos then
+        x0, y0 = imgui.GetCursorScreenPos()
+
+        if imgui.GetContentRegionAvail ~= nil then
+            local ok, a = pcall(imgui.GetContentRegionAvail)
+
+            if ok and type(a) == 'number' then
+                avail = a
+            end
+        end
+    end
+
+    sheetx.chat_line_body(store, line, ctx)
+
+    if type(x0) == 'number' and type(y0) == 'number' then
+        local _, y1 = imgui.GetCursorScreenPos()
+
+        if type(y1) == 'number' and y1 > y0 then
+            imgui.GetWindowDrawList():AddRectFilled(
+                { x0 - 2, y0 - 1 },
+                { x0 + (avail or scaled(300)), y1 },
+                imgui.GetColorU32({ 1.0, 0.82, 0.25, 0.17 })
+            )
+
+            sheetx.mention_drawn = (sheetx.mention_drawn or 0) + 1
+        end
+    end
+end
+
+function sheetx.chat_line_body(store, line, ctx)
+    if line.kind == 'info' then
+        sheetx.chat_wrapped(
+            colors.text_dim,
+            '[' .. line.time .. '] ' .. line.text
+        )
+    elseif line.kind == 'action' then
+        sheetx.chat_wrapped(
+            colors.text_dim,
+            '[' .. line.time .. '] * ' .. line.nick
+                .. ' ' .. line.text
+        )
+    else
+        imgui.TextColored(
+            colors.text_dim,
+            '[' .. line.time .. ']'
+        )
+
+        imgui.SameLine(0, 6)
+
+        imgui.TextColored(
+            line.kind == 'me' and colors.completed
+                or colors.active_status,
+            line.nick .. ':'
+        )
+
+        -- A click on the nick of another opens a menu (quote, private, mute).
+        if line.kind ~= 'me' then
+            if imgui.IsItemHovered() and imgui.SetTooltip then
+                imgui.SetTooltip(tx('Click for options'))
+            end
+
+            if imgui.IsItemClicked and imgui.IsItemClicked() then
+                sheetx.nick_click(store, line.nick, ctx, false)
+            end
+        end
+
+        imgui.SameLine(0, 6)
+
+        imgui.TextWrapped(line.text)
+
+        -- The web addresses of the message: one line each, a
+        -- click copies it (nothing is opened by itself).
+        for _, url in ipairs(sheetx.chat_urls(line.text)) do
+            imgui.PushStyleColor(ImGuiCol_Text, { 0.20, 0.45, 0.90, 1.0 })
+            imgui.TextWrapped('> ' .. url)
+            imgui.PopStyleColor()
+
+            if imgui.IsItemHovered() and imgui.SetTooltip then
+                imgui.SetTooltip(tx('Click to copy the link'))
+            end
+
+            if imgui.IsItemClicked and imgui.IsItemClicked() then
+                sheetx.set_hint(
+                    ctx,
+                    sheetx.chat_copy_text(url)
+                    and 'Link copied. Paste it in your browser.'
+                    or 'Could not copy: use the Copy text button and Ctrl+C.'
+                )
+            end
+        end
+    end
+
+end
+
+-- Copy mode: one read-only box with the lines of the channel, where the text
+-- can be selected with the mouse and copied with Ctrl+C.
+function sheetx.chat_copy_view(lines)
+    local text = {}
+
+    for _, line in ipairs(lines) do
+        if line.kind == 'info' then
+            text[#text + 1] = '[' .. line.time .. '] ' .. line.text
+        elseif line.kind == 'action' then
+            text[#text + 1] = '[' .. line.time .. '] * ' .. line.nick
+                .. ' ' .. line.text
+        else
+            text[#text + 1] = '[' .. line.time .. '] ' .. line.nick
+                .. ': ' .. line.text
+        end
+    end
+
+    sheetx.chat_copy_buf[1] = table.concat(text, '\n')
+
+    imgui.InputTextMultiline(
+        '##ChatCopyText',
+        sheetx.chat_copy_buf,
+        math.max(1024, #sheetx.chat_copy_buf[1] + 256),
+        { -1, -1 },
+        ImGuiInputTextFlags_ReadOnly
+    )
+
+    if imgui.IsItemActive() then
+        note_input_active = true
+    end
+end
+
+-- Puts a text in the clipboard. true when one of the ways worked.
+function sheetx.chat_copy_text(text)
+    if imgui.SetClipboardText ~= nil and pcall(imgui.SetClipboardText, text) then
+        return true
+    end
+
+    if ashita ~= nil and ashita.misc ~= nil
+        and ashita.misc.set_clipboard ~= nil
+        and pcall(ashita.misc.set_clipboard, text) then
+
+        return true
+    end
+
+    return false
+end
+
+-- The web addresses in a message (at most three, without the signs that
+-- usually come after them in a sentence).
+function sheetx.chat_urls(text)
+    local urls = {}
+
+    for url in tostring(text):gmatch('[Hh][Tt][Tt][Pp][Ss]?://[^%s<>"]+') do
+        url = url:gsub('[%.,;:!%?%)%]]+$', '')
+
+        if #url > 8 then
+            urls[#urls + 1] = url
+        end
+
+        if #urls >= 3 then
+            break
+        end
+    end
+
+    return urls
+end
+
+-- Sends the text of the private box to the chat that is on screen.
+function sheetx.pm_send(store)
+    local active = store.GetPrivateActive()
+
+    if active == nil then
+        return
+    end
+
+    local text = sheetx.pm_buf[1]
+    local sent, why = store.Say(text, active)
+
+    if sent then
+        sheetx.sent_add('pm', text)
+        sheetx.pm_buf[1] = ''
+        sheetx.pm_hint = nil
+    elseif why == 'fast' then
+        sheetx.pm_hint = 'Too fast: wait a moment.'
+    elseif why == 'offline' then
+        sheetx.pm_hint = 'You are not connected.'
+    end
+
+    sheetx.pm_focus = true
+end
+
+-- The two panes of the private tab: the lines of the chat on screen and,
+-- where the people are in a channel, the list of private chats.
+function sheetx.pm_panes(store, height, side_w, border)
+    local active = store.GetPrivateActive()
+    local privates = store.GetPrivates()
+
+    if imgui.BeginChild('##PmLines', { -(side_w + 8), height }, border) then
+        sheetx.chat_panel()
+        local panel_w, panel_h = imgui.GetWindowSize()
+        imgui.SetCursorPosX(26)
+        imgui.SetCursorPosY(26)
+
+        if imgui.BeginChild('##PmContent',
+            { math.max(20, panel_w - 52), math.max(20, panel_h - 52) }, false) then
+
+            if active == nil then
+                sheetx.chat_wrapped(
+                    colors.text_dim,
+                    tx('Click a name in the chat and choose Private message.')
+                )
+            else
+                local lines = store.GetChatLines(active)
+
+                if #lines == 0 then
+                    sheetx.chat_wrapped(colors.text_dim, tx('No messages yet.'))
+                end
+
+                for _, line in ipairs(lines) do
+                    sheetx.chat_line(store, line, 'pm')
+                end
+
+                local serial = store.GetSerial(active)
+
+                if sheetx.pm_tab ~= active then
+                    sheetx.pm_tab = active
+                    sheetx.pm_serial = nil
+                end
+
+                if sheetx.pm_serial ~= serial then
+                    local reading =
+                        sheetx.pm_serial ~= nil
+                        and imgui.GetScrollY ~= nil
+                        and imgui.GetScrollMaxY ~= nil
+                        and type(imgui.GetScrollY()) == 'number'
+                        and type(imgui.GetScrollMaxY()) == 'number'
+                        and imgui.GetScrollMaxY() - imgui.GetScrollY() > 60
+
+                    sheetx.pm_serial = serial
+
+                    if not reading and imgui.SetScrollHereY then
+                        imgui.SetScrollHereY(1.0)
+                    end
+                end
+            end
+        end
+
+        imgui.EndChild()
+    end
+
+    imgui.EndChild()
+
+    imgui.SameLine(0, 8)
+
+    if imgui.BeginChild('##PmList', { -1, height }, border) then
+        sheetx.chat_panel()
+        local panel_w, panel_h = imgui.GetWindowSize()
+        imgui.SetCursorPosX(22)
+        imgui.SetCursorPosY(26)
+
+        if imgui.BeginChild('##PmListContent',
+            { math.max(20, panel_w - 44), math.max(20, panel_h - 52) }, false) then
+
+            for _, entry in ipairs(privates) do
+                entry.private = true
+
+                sheetx.chat_channel_button(
+                    store, entry, -(sheetx.chat_height + 8), true
+                )
+            end
+
+            if #privates == 0 then
+                sheetx.chat_wrapped(
+                    colors.text_dim, tx('No private chats yet.')
+                )
+            end
+        end
+
+        imgui.EndChild()
+    end
+
+    imgui.EndChild()
+end
+
+function sheetx.chat_draw()
+    local store = controller and controller.chat
+
+    if store == nil
+        or not store.GetOpen()
+        or not can_draw_ui()
+        or imgui.InputText == nil then
+
+        sheetx.chat_was_open = false
+        sheetx.chat_pass_ready = false
+        sheetx.chat_name_ready = false
+
+        if sheetx.input_ctx == 'chat' then
+            sheetx.input_ctx = nil
+            sheetx.key_pending = nil
+        end
+
+        return
+    end
+
+    if not sheetx.chat_was_open then
+        sheetx.chat_was_open = true
+        sheetx.chat_serial = nil
+        sheetx.chat_settings = nil
+
+        local journal =
+            controller.GetJournalWindowState
+            and controller.GetJournalWindowState()
+
+        -- Where it was the last time, or a first place near the Journal.
+        local saved = store.GetWindow and store.GetWindow()
+
+        if saved ~= nil then
+            imgui.SetNextWindowSize({ sheetx.fit_screen(saved.w, saved.h) })
+            imgui.SetNextWindowPos({ saved.x, saved.y })
+        else
+            imgui.SetNextWindowSize({
+                sheetx.fit_screen(scaled(1000), scaled(700))
+            })
+
+            imgui.SetNextWindowPos({
+                ((journal and journal.visible and journal.x) or 40) + 120,
+                ((journal and journal.visible and journal.y) or 40) + 120,
+            })
+        end
+    end
+
+    -- The player can drag the corner to resize it.
+    if imgui.SetNextWindowSizeConstraints then
+        imgui.SetNextWindowSizeConstraints(
+            { scaled(600), scaled(300) },
+            { scaled(2400), scaled(2400) }
+        )
+    end
+
+    store.MarkRead()
+
+    sheetx.chat_can_copy =
+        imgui.InputTextMultiline ~= nil and ImGuiInputTextFlags_ReadOnly ~= nil
+
+    sheetx.chat_skin = theme.HasChatSkin()
+    sheetx.chat_height = math.max(34, ui_button_height)
+    push_theme(nil, nil, sheetx.chat_skin)
+    if sheetx.chat_skin then
+        imgui.PushStyleVar(ImGuiStyleVar_WindowPadding, { 19, 17 })
+        imgui.PushStyleVar(ImGuiStyleVar_FramePadding,
+            { 10, math.max(6, (sheetx.chat_height - journal_font_size) / 2) })
+        imgui.PushStyleColor(ImGuiCol_WindowBg, transparent)
+    end
+
+    -- Pinned: it cannot be moved or resized, and the corner is not shown.
+    local pinned = store.GetPinned ~= nil and store.GetPinned()
+
+    if pinned then
+        imgui.PushStyleColor(ImGuiCol_ResizeGrip, transparent)
+        imgui.PushStyleColor(ImGuiCol_ResizeGripHovered, transparent)
+        imgui.PushStyleColor(ImGuiCol_ResizeGripActive, transparent)
+    else
+        imgui.PushStyleColor(ImGuiCol_ResizeGrip, { 0.80, 0.84, 0.95, 0.30 })
+        imgui.PushStyleColor(ImGuiCol_ResizeGripHovered, { 0.80, 0.84, 0.95, 0.60 })
+        imgui.PushStyleColor(ImGuiCol_ResizeGripActive, { 0.80, 0.84, 0.95, 0.90 })
+    end
+
+    local font_pushed = journal_font ~= nil
+
+    if font_pushed then
+        imgui.PushFont(journal_font, journal_font_size)
+    end
+
+    local open = { true }
+
+    scalex.before('chat')
+
+    if imgui.Begin(
+        tx('Chat') .. '###JournalChat',
+        open,
+        ImGuiWindowFlags_NoSavedSettings
+            + ImGuiWindowFlags_NoCollapse
+            + ImGuiWindowFlags_NoTitleBar
+            + (pinned and (ImGuiWindowFlags_NoMove or 0) or 0)
+            + (pinned and (ImGuiWindowFlags_NoResize or 0) or 0)
+    ) then
+        scalex.after('chat')
+
+        local draw = imgui.GetWindowDrawList()
+        local x, y = imgui.GetWindowPos()
+        local width, height = imgui.GetWindowSize()
+
+        -- Remembered (the file is written a moment after the last change).
+        if store.SetWindow ~= nil then
+            store.SetWindow(x, y, width, height)
+        end
+
+        if sheetx.chat_skin then
+            theme.DrawChatArt(imgui, draw, 'frame', x, y, width, height)
+        else
+            draw_window_panel(draw, x, y, width, height, true)
+        end
+
+        -- With the artwork the header is a picture; without it, the logo (or
+        -- the name in text) of the block below.
+        local title_bottom = sheetx.chat_skin
+            and sheetx.chat_title(draw, x, y, width) or nil
+        if title_bottom then
+            imgui.SetCursorPosY(imgui.GetCursorPosY() + scaled(6))
+        end
+        sheetx.chat_push_accent()
+
+        -- The name of the chat, in the middle of the top row (the pin and the
+        -- X share that row, at the right).
+        if not sheetx.chat_skin then
+            local title = 'Vanachat (Beta)'
+            local inner, pad = sheetx.settings_inner(width)
+            local logo = controller.worldmark
+                and controller.worldmark.GetIcon
+                and controller.worldmark.GetIcon('logo')
+            local logo_h = scaled(64)
+            local logo_w = logo and logo.width > 0
+                and logo_h * logo.height > 0
+                and math.floor(logo_h * logo.width / logo.height) or 0
+            local drawn = false
+
+            -- The logo, when its file is there; the name in text if not.
+            if logo ~= nil and logo_w > 0 then
+                local lx = x + pad + math.max(0, (inner - logo_w) * 0.5)
+                local ly = imgui.GetCursorScreenPos
+                    and select(2, imgui.GetCursorScreenPos()) or y + 6
+
+                drawn = pcall(function()
+                    draw:AddImage(
+                        logo.id,
+                        { lx, ly },
+                        { lx + logo_w, ly + logo_h },
+                        { 0, 0 },
+                        { 1, 1 },
+                        imgui.GetColorU32({ 1, 1, 1, 1 })
+                    )
+                end)
+
+                if drawn then
+                    -- The row is as high as the logo.
+                    imgui.Dummy({ 1, logo_h })
+                    imgui.SameLine()
+                end
+            end
+
+            if not drawn then
+                local text_w = (imgui.CalcTextSize(title))
+
+                if imgui.AlignTextToFramePadding then
+                    imgui.AlignTextToFramePadding()
+                end
+
+                imgui.SetCursorPosX(pad + math.max(0, (inner - text_w) * 0.5))
+                imgui.TextColored(colors.favorite, title)
+                imgui.SameLine()
+            end
+        end
+
+        -- The pin, to the left of the X.
+        if store.SetPinned ~= nil then
+            local size = math.max(28, scaled(26))
+            local inner, pad = sheetx.chat_inner(width)
+
+            imgui.SetCursorPosX(pad + inner - size * 2 - 6)
+
+            if pinned then
+                imgui.PushStyleColor(ImGuiCol_Button, colors.button_active)
+            end
+
+            if sheetx.chat_button('##ChatPin', { size, size }, true) then
+                store.SetPinned(not pinned)
+            end
+
+            if pinned then
+                imgui.PopStyleColor()
+            end
+
+            local min_x, min_y = imgui.GetItemRectMin()
+            local max_x = imgui.GetItemRectMax()
+            local icon = (max_x - min_x) * 0.62
+
+            icons.draw_pin(
+                draw,
+                min_x + ((max_x - min_x) - icon) * 0.5,
+                min_y + ((max_x - min_x) - icon) * 0.5,
+                icon,
+                imgui.GetColorU32({ 1, 0.91, 0.71, 1 }),
+                pinned
+            )
+
+            if imgui.IsItemHovered() and imgui.SetTooltip then
+                imgui.SetTooltip(
+                    pinned
+                        and tx('Unpin the window')
+                        or tx('Pin the window: it stays in place and comes back when the addon loads')
+                )
+            end
+
+            imgui.SameLine()
+        end
+
+        if sheetx.chat_skin then
+            local inner, pad = sheetx.chat_inner(width)
+            local size = math.max(28, scaled(26))
+            imgui.SetCursorPosX(pad + inner - size)
+            if sheetx.chat_button('X##WindowClose', { size, size }, true) then
+                open[1] = false
+            end
+            if imgui.IsItemHovered() and imgui.SetTooltip then
+                imgui.SetTooltip(tx('Close'))
+            end
+        else
+            sheetx.close_row(open)
+        end
+        imgui.PopStyleColor(4)
+        if title_bottom then
+            imgui.SetCursorPosY(title_bottom - y + 8)
+        end
+        imgui.Spacing()
+
+        -- The state, the button to connect or disconnect, and the gear that
+        -- opens the settings (the first time it starts open).
+        local state = store.GetState()
+
+        if sheetx.chat_settings == nil then
+            sheetx.chat_settings = not store.GetAccepted()
+        end
+
+        local show = sheetx.chat_settings == true
+        sheetx.chat_strip(sheetx.chat_height)
+
+        local gear_size = sheetx.chat_height
+
+        if show then
+            imgui.PushStyleColor(ImGuiCol_Button, colors.button_active)
+        end
+
+        if sheetx.chat_button('##ChatSettings', { gear_size, gear_size }) then
+            sheetx.chat_settings = not show
+        end
+
+        if show then
+            imgui.PopStyleColor()
+        end
+
+        do
+            local min_x, min_y = imgui.GetItemRectMin()
+            local max_x = imgui.GetItemRectMax()
+            local icon = (max_x - min_x) * 0.62
+
+            icons.draw_gear(
+                draw,
+                min_x + ((max_x - min_x) - icon) * 0.5,
+                min_y + ((max_x - min_x) - icon) * 0.5,
+                icon,
+                imgui.GetColorU32(colors.text)
+            )
+        end
+
+        if imgui.IsItemHovered() and imgui.SetTooltip then
+            imgui.SetTooltip(tx('Chat settings'))
+        end
+
+        -- The password written in the box (kept while it is disconnected,
+        -- even with the settings closed).
+        if state == 'off' and store.SetPassword ~= nil then
+            if not sheetx.chat_pass_ready then
+                sheetx.chat_pass_ready = true
+                sheetx.chat_pass_nick = (store.ChatName() or ''):lower()
+                sheetx.chat_pass[1] = store.GetPassword()
+                sheetx.chat_remember = store.IsPasswordSaved()
+            end
+        else
+            sheetx.chat_pass_ready = false
+        end
+
+        -- The name written in the box (while disconnected).
+        if state == 'off' and store.SetCustomName ~= nil then
+            if not sheetx.chat_name_ready then
+                sheetx.chat_name_ready = true
+                sheetx.chat_name[1] = store.GetCustomName()
+            end
+        else
+            sheetx.chat_name_ready = false
+        end
+
+        imgui.SameLine(0, 8)
+
+        -- As wide as the longer of the two texts (it changes with the language).
+        local connect_w = math.max(
+            scaled(120),
+            (imgui.CalcTextSize(tx('Connect'))) + 28,
+            (imgui.CalcTextSize(tx('Disconnect'))) + 28
+        )
+
+        if state == 'off' then
+            if sheetx.chat_button(
+                tx('Connect') .. '##ChatConnect',
+                { connect_w, sheetx.chat_height }
+            ) then
+                -- The name and the password written in the boxes go with it.
+                sheetx.chat_apply_name(store)
+
+                if sheetx.chat_pass_ready and store.SetPassword ~= nil then
+                    store.SetPassword(
+                        nil,
+                        sheetx.chat_pass[1],
+                        sheetx.chat_remember == true
+                    )
+                end
+
+                store.Connect()
+            end
+        elseif sheetx.chat_button(
+            tx('Disconnect') .. '##ChatConnect',
+            { connect_w, sheetx.chat_height }
+        ) then
+            store.Disconnect()
+        end
+
+        imgui.SameLine(0, 10)
+
+        if imgui.AlignTextToFramePadding then
+            imgui.AlignTextToFramePadding()
+        end
+
+        if state == 'online' then
+            imgui.TextColored(
+                sheetx.chat_skin and { 0.68, 0.94, 0.48, 1 } or colors.completed,
+                string.format(
+                    tx('Online as %s - %d in the channel'),
+                    store.GetNick(),
+                    store.GetUserCount()
+                )
+            )
+        elseif state == 'connecting' then
+            imgui.TextColored({ 0.93, 0.74, 0.40, 1 }, tx('Connecting...'))
+        elseif state == 'waiting' then
+            sheetx.chat_wrapped({ 0.93, 0.74, 0.40, 1 }, tx('Connection lost. Trying again...'))
+        else
+            imgui.TextColored({ 0.90, 0.80, 0.65, 1 }, tx('Offline'))
+        end
+
+        if show then
+            imgui.Separator()
+
+            -- The name: the one of the character, or the one the user writes.
+            imgui.TextColored(colors.text_dim, tx('Name:'))
+            imgui.SameLine(0, 8)
+
+            if sheetx.chat_name_ready then
+                imgui.PushItemWidth(scaled(200))
+
+                imgui.InputText('##ChatName', sheetx.chat_name, 21)
+
+                imgui.PopItemWidth()
+
+                -- Done writing: it is kept (and the password box follows).
+                -- (without IsItemActive it waits for the Connect button)
+                if imgui.IsItemActive ~= nil and not imgui.IsItemActive() then
+                    sheetx.chat_apply_name(store)
+                end
+
+                sheetx.chat_wrapped(
+                    colors.text_dim,
+                    string.format(
+                        tx('Empty: the name of your character (%s). Letters, digits, _ and -.'),
+                        (store.PlayerName and store.PlayerName() ~= '')
+                            and store.PlayerName() or '-'
+                    )
+                )
+            else
+                local who = state == 'online' and store.GetNick()
+                    or (store.ChatName and store.ChatName())
+
+                imgui.Text((who ~= nil and who ~= '') and who or '-')
+
+                imgui.TextColored(
+                    colors.text_dim,
+                    tx('Disconnect to change the name.')
+                )
+            end
+
+            if imgui.Checkbox then
+                local auto = { store.GetAuto() }
+
+                if imgui.Checkbox(
+                    tx('Connect when the addon loads') .. '##ChatAuto',
+                    auto
+                ) then
+                    store.SetAuto(auto[1])
+                end
+
+                -- Alert and sound for the private messages.
+                if store.SetPmAlert ~= nil then
+                    local alert = { store.GetPmAlert() }
+
+                    if imgui.Checkbox(
+                        tx('Alerts and sound for private messages') .. '##PmAlert',
+                        alert
+                    ) then
+                        store.SetPmAlert(alert[1])
+                    end
+                end
+
+                if store.GetMentionAlert ~= nil then
+                    local alert = { store.GetMentionAlert() }
+
+                    if imgui.Checkbox(
+                        tx('Alert when a message names you') .. '##ChatMention',
+                        alert
+                    ) then
+                        store.SetMentionAlert(alert[1])
+                    end
+                end
+            end
+
+            -- The password of a registered nick, only while disconnected.
+            if sheetx.chat_pass_ready then
+                imgui.TextColored(
+                    colors.text_dim,
+                    tx('Password (only if your nick is registered):')
+                )
+
+                imgui.PushItemWidth(scaled(260))
+
+                imgui.InputText(
+                    '##ChatPassword',
+                    sheetx.chat_pass,
+                    120,
+                    ImGuiInputTextFlags_Password or 0
+                )
+
+                if imgui.IsItemActive() then
+                    note_input_active = true
+                end
+
+                imgui.PopItemWidth()
+
+                if imgui.Checkbox then
+                    local remember = { sheetx.chat_remember == true }
+
+                    if imgui.Checkbox(
+                        tx('Remember it on this computer') .. '##ChatRemember',
+                        remember
+                    ) then
+                        sheetx.chat_remember = remember[1]
+                    end
+                end
+
+                sheetx.chat_wrapped(
+                    colors.text_dim,
+                    tx('The password travels without encryption and, if remembered, is saved as plain text. Do not reuse one from another site.')
+                )
+            elseif store.SetPassword ~= nil then
+                imgui.TextColored(
+                    colors.text_dim,
+                    tx('Disconnect to change the password.')
+                )
+            end
+
+            -- What connecting means, until the first connection.
+            if not store.GetAccepted() then
+                sheetx.chat_wrapped(
+                    colors.text_dim,
+                    tx('This chat connects to a public IRC network (Snoonet). Everyone in the channel sees the name of your character, and anyone could use the name of another. Nothing is encrypted: do not write passwords or personal data. The network sees your IP address and checks it for open proxies; the other users do not see it.')
+                )
+            end
+
+            imgui.Separator()
+        end
+
+        imgui.Spacing()
+
+        -- The private chats are a tab of this window: the same lines, list
+        -- and box, for the private chat on screen.
+        local pm_view = store.GetPrivateOpen ~= nil and store.GetPrivateOpen()
+
+        if pm_view then
+            store.MarkReadPrivate()
+        end
+
+        local hint = pm_view and sheetx.pm_hint or sheetx.chat_hint
+
+        -- The box to write is taller than the buttons: it is where the
+        -- player looks most.
+        local input_h = math.max(
+            sheetx.chat_height,
+            math.floor(sheetx.chat_height * 1.45)
+        )
+
+        -- The lines, with room below for the box.
+        local row_h = input_h + 14
+
+        if hint ~= nil then
+            row_h = row_h
+                + (imgui.GetTextLineHeightWithSpacing
+                    and imgui.GetTextLineHeightWithSpacing() or 24)
+        end
+
+        imgui.PushStyleColor(ImGuiCol_ChildBg, transparent)
+
+        local inner = sheetx.chat_inner(width)
+        sheetx.chat_channels(store, inner)
+
+        local avail_h
+        if imgui.GetContentRegionAvail ~= nil then
+            local _, height_left = imgui.GetContentRegionAvail()
+            avail_h = height_left
+        end
+        -- Keep the channel tabs, settings and composer reachable in short
+        -- windows. The parent scrolls when their total height exceeds it.
+        local log_h = -row_h
+        if type(avail_h) == 'number' then
+            log_h = math.max(scaled(100), avail_h - row_h)
+        end
+
+        local users_w = math.min(math.floor(inner * 0.36), math.max(
+            math.max(172, scaled(155)),
+            imgui.CalcTextSize(string.format(tx('Connected (%d)'), 99)) + 24
+        ))
+
+        local child_frame = sheetx.chat_skin and type(ImGuiStyleVar_ChildBorderSize) == 'number'
+        if child_frame then
+            imgui.PushStyleVar(ImGuiStyleVar_ChildBorderSize, 0)
+            imgui.PushStyleVar(ImGuiStyleVar_WindowPadding, { 24, 24 })
+        end
+
+        if pm_view then
+            sheetx.pm_panes(store, log_h, users_w, child_border)
+        else
+        if imgui.BeginChild(
+            '##ChatLines',
+            { -(users_w + 8), log_h },
+            child_border
+        ) then
+            sheetx.chat_panel()
+            local panel_w, panel_h = imgui.GetWindowSize()
+            imgui.SetCursorPosX(26)
+            imgui.SetCursorPosY(26)
+            local content_open = imgui.BeginChild('##ChatTranscriptContent',
+                { math.max(20, panel_w - 52), math.max(20, panel_h - 52) }, false)
+            if content_open then
+                local lines = store.GetChatLines()
+
+                local copying = sheetx.chat_copy == true and sheetx.chat_can_copy
+
+                if copying then
+                    sheetx.chat_copy_view(lines)
+                elseif #lines == 0 then
+                    sheetx.chat_wrapped(
+                        colors.text_dim,
+                        tx('No messages yet.')
+                    )
+                end
+
+                for _, line in ipairs(copying and {} or lines) do
+                    sheetx.chat_line(store, line, 'chat')
+                end
+
+                -- A new line scrolls down, unless the user is reading above; another
+                -- channel starts at the bottom.
+                local serial = store.GetSerial()
+
+                if sheetx.chat_tab ~= store.GetActive() then
+                    sheetx.chat_tab = store.GetActive()
+                    sheetx.chat_serial = nil
+                end
+
+                if not copying and sheetx.chat_serial ~= serial then
+                    local reading =
+                        sheetx.chat_serial ~= nil
+                        and imgui.GetScrollY ~= nil
+                        and imgui.GetScrollMaxY ~= nil
+                        and type(imgui.GetScrollY()) == 'number'
+                        and type(imgui.GetScrollMaxY()) == 'number'
+                        and imgui.GetScrollMaxY() - imgui.GetScrollY() > 60
+
+                    sheetx.chat_serial = serial
+
+                    if not reading and imgui.SetScrollHereY then
+                        imgui.SetScrollHereY(1.0)
+                    end
+                end
+            end
+            imgui.EndChild()
+        end
+
+        imgui.EndChild()
+
+        imgui.SameLine(0, 8)
+
+        -- Who is in the channel.
+        if imgui.BeginChild('##ChatUsers', { -1, log_h }, child_border) then
+            sheetx.chat_panel()
+            local panel_w, panel_h = imgui.GetWindowSize()
+            imgui.SetCursorPosX(22)
+            imgui.SetCursorPosY(26)
+            if imgui.BeginChild('##ChatRosterContent',
+                { math.max(20, panel_w - 44), math.max(20, panel_h - 52) }, false) then
+                sheetx.chat_users(store)
+            end
+            imgui.EndChild()
+        end
+
+        imgui.EndChild()
+        end
+
+        if child_frame then
+            imgui.PopStyleVar(2)
+        end
+        imgui.PopStyleColor()
+
+        sheetx.nick_menu(store, pm_view and 'pm' or 'chat')
+
+        if hint ~= nil then
+            imgui.TextColored(colors.text_dim, tx(hint))
+        end
+
+        -- The box to write: Enter or the button sends (to the channel, or to
+        -- the private chat on screen).
+        local send_w = scaled(110)
+        local copy_w = 0
+        local can_copy = sheetx.chat_can_copy and not pm_view
+
+        if can_copy then
+            copy_w = math.max(
+                scaled(110),
+                (imgui.CalcTextSize(tx('Copy text'))) + 28
+            ) + 8
+        end
+
+        local box_ctx = pm_view and 'pm' or 'chat'
+        local box_id = pm_view and '##PmInput' or '##ChatInput'
+        local box = pm_view and sheetx.pm_buf or sheetx.chat_buf
+
+        sheetx.chat_strip(input_h)
+        local input_w = math.max(120, inner - send_w - copy_w - 8)
+        if sheetx.chat_skin then
+            local ix, iy = imgui.GetCursorScreenPos()
+            theme.DrawChatArt(imgui, imgui.GetWindowDrawList(), 'input',
+                ix, iy, input_w, input_h)
+            imgui.PushStyleColor(ImGuiCol_FrameBg, transparent)
+        end
+
+        -- The text sits in the middle of the taller box.
+        imgui.PushStyleVar(
+            ImGuiStyleVar_FramePadding,
+            { 14, math.max(4, (input_h - journal_font_size) / 2) }
+        )
+        imgui.PushItemWidth(input_w)
+
+        local want_focus = pm_view and sheetx.pm_focus or sheetx.chat_focus
+
+        if want_focus and imgui.SetKeyboardFocusHere then
+            imgui.SetKeyboardFocusHere()
+        end
+
+        sheetx.chat_focus = false
+        sheetx.pm_focus = false
+
+        local entered = sheetx.chat_input(box_ctx, box_id, box, 300)
+
+        imgui.PopItemWidth()
+        imgui.PopStyleVar()
+        if sheetx.chat_skin then
+            imgui.PopStyleColor()
+        end
+
+        imgui.SameLine(0, 8)
+
+        sheetx.chat_push_accent()
+        if sheetx.chat_button(
+            tx('Send') .. (pm_view and '##PmSend' or '##ChatSend'),
+            { send_w, input_h }, true
+        ) then
+            entered = true
+        end
+
+        imgui.PopStyleColor(4)
+
+        if entered == true then
+            if pm_view then
+                sheetx.pm_send(store)
+            else
+                sheetx.chat_send(store)
+            end
+        end
+
+        -- The button of the copy mode.
+        if can_copy then
+            imgui.SameLine(0, 8)
+
+            local copying = sheetx.chat_copy == true
+
+            if copying then
+                imgui.PushStyleColor(ImGuiCol_Button, colors.button_active)
+            end
+
+            if sheetx.chat_button(
+                tx('Copy text') .. '##ChatCopy',
+                { copy_w - 8, input_h }
+            ) then
+                sheetx.chat_copy = not copying
+            end
+
+            if copying then
+                imgui.PopStyleColor()
+            end
+
+            if imgui.IsItemHovered() and imgui.SetTooltip then
+                imgui.SetTooltip(
+                    tx('Select the text with the mouse and copy it with Ctrl+C. Click again to go back.')
+                )
+            end
+        end
+    end
+
+    imgui.End()
+
+    if not open[1] then
+        store.SetOpen(false)
+    end
+
+    if font_pushed then
+        imgui.PopFont()
+    end
+
+    imgui.PopStyleColor(3)
+
+    if sheetx.chat_skin then
+        imgui.PopStyleColor()
+        imgui.PopStyleVar(2)
+    end
+    pop_theme()
+end
+
+-- The window of the private chats: a list of conversations at the left, the
+-- lines and the box to write at the right. It opens by itself when someone
+-- writes to you.
+-- The private chats are a tab of the chat window (sheetx.pm_panes); there is
+-- no window of their own any more.
+function sheetx.private_draw()
+    sheetx.pm_was_open = false
+
+    if sheetx.input_ctx == 'pm' and not (
+        controller and controller.chat
+        and controller.chat.GetPrivateOpen
+        and controller.chat.GetPrivateOpen()
+        and controller.chat.GetOpen()
+    ) then
+        sheetx.input_ctx = nil
+        sheetx.key_pending = nil
+    end
+end
+
 function sheetx.zones_draw()
     local store = controller and controller.zonelist
 
@@ -10584,6 +12832,2389 @@ function sheetx.zones_draw()
     pop_theme()
 end
 
+-- A click on a monster name in a step: its sheet (the monster search).
+-- nil when the controller has no monster search, and then the names are
+-- not clickable.
+-- Item names of the steps: the click opens their sheet in the item catalogue;
+-- only the ones the catalogue has are links.
+sheetx.item_click = function()
+    if controller ~= nil and controller.items ~= nil
+        and controller.items.ShowByName ~= nil then
+
+        return function(name)
+            controller.items.ShowByName(name)
+        end
+    end
+
+    return nil
+end
+
+sheetx.item_known = function(name)
+    return controller ~= nil and controller.items ~= nil
+        and controller.items.ByName(name) ~= nil
+end
+
+sheetx.monster_click = function()
+    if controller ~= nil and controller.monsters ~= nil
+        and controller.monsters.Show ~= nil then
+
+        return function(name)
+            controller.monsters.Show(name)
+        end
+    end
+
+    return nil
+end
+
+-- The monster search (the monster button of the bar, or /journal monsters): the list of
+-- the monsters the Journal knows on the left, the sheet of the one picked on
+-- the right. The data and the state are in monsters.lua.
+sheetx.monsters_filter = { '' }
+sheetx.monsters_open = {}
+
+-- "Yes", "No" or "Not in the data" (nil: the source variants disagree).
+function sheetx.monsters_yesno(value)
+    if value == true then
+        return tx('Yes')
+    elseif value == false then
+        return tx('No')
+    end
+
+    return tx('Not in the data')
+end
+
+-- "Level 20-25", "Level 3" or '' when the source has no level.
+function sheetx.monsters_levels(low, high)
+    low = tonumber(low) or 0
+    high = tonumber(high) or 0
+
+    if high <= 0 then
+        return ''
+    end
+
+    if low <= 0 or low == high then
+        return tx('Level') .. ' ' .. string.format('%d', high)
+    end
+
+    return tx('Level') .. ' ' .. string.format('%d-%d', low, high)
+end
+
+-- A line "Label: value" with the label dim.
+function sheetx.monsters_line(label, value, width, color)
+    imgui.TextColored(colors.text_dim, label .. ':')
+    imgui.SameLine(0, 8)
+
+    if width ~= nil then
+        local label_w = (imgui.CalcTextSize(label .. ':')) + 8
+
+        value = fit_text(value, width - label_w - scaled(8))
+    end
+
+    if color ~= nil then
+        imgui.TextColored(color, value)
+    else
+        imgui.Text(value)
+    end
+end
+
+-- The sheet of the monster that is selected.
+-- The data of the monster (notorious, species, job, aggressive...): at the
+-- right of the 3D model, or under the sheet's header when there is no model.
+function sheetx.monsters_info(store, data, width)
+    if data.species ~= nil then
+        sheetx.monsters_line(tx('Species'), store.SpeciesLabel(data.species), width)
+    end
+
+    if data.jobs ~= nil then
+        local main, sub = data.jobs[1], data.jobs[2]
+
+        sheetx.monsters_line(
+            tx('Job'),
+            store.JobLabel(main) .. (sub ~= nil and sub ~= main
+                and ('/' .. store.JobLabel(sub)) or ''),
+            width
+        )
+    end
+
+    sheetx.monsters_line(
+        tx('Aggressive'), sheetx.monsters_yesno(data.aggro), width,
+        data.aggro == true and { 0.95, 0.25, 0.25, 1.0 } or nil
+    )
+    sheetx.monsters_line(tx('Links'), sheetx.monsters_yesno(data.links), width)
+    sheetx.monsters_line(
+        tx('True detection'),
+        sheetx.monsters_yesno(data.truedet),
+        width
+    )
+
+    if data.detects ~= nil and #data.detects > 0 then
+        local labels = {}
+
+        for _, kind in ipairs(data.detects) do
+            labels[#labels + 1] = tx(tostring(kind))
+        end
+
+        sheetx.monsters_line(tx('Detects'), table.concat(labels, ', '), width)
+    end
+end
+
+function sheetx.monsters_sheet(store, width)
+    local name = store.GetSelected()
+
+    if name == nil then
+        imgui.TextWrapped(tx('Pick a monster from the list.'))
+
+        return
+    end
+
+    local data, data_name = store.Info(name)
+    local fav_name = store.Canonical(name) or data_name or name
+
+    -- Defeated: the mark appears once the character (or the party) has
+    -- killed it.
+    local times, first = store.Defeated(fav_name)
+
+    -- The name: big and centered, with a green V at its right when defeated.
+    do
+        local title = data_name or name
+        local pushed = false
+
+        if journal_font ~= nil then
+            pushed = pcall(imgui.PushFont, journal_font, journal_font_size * 1.35)
+        end
+
+        local title_w, title_h = imgui.CalcTextSize(title)
+        local mark_gap = scaled(12)
+        -- A green check (drawn) at the right of the name when it is defeated.
+        local mark_w = times > 0 and (title_h or scaled(30)) or 0
+        local total_w = title_w + (times > 0 and (mark_gap + mark_w) or 0)
+
+        imgui.SetCursorPosX(math.max(0, (width - total_w) * 0.5))
+        imgui.TextColored(richtext.COLORS.monster, title)
+
+        if times > 0 then
+            imgui.SameLine(0, mark_gap)
+            imgui.Dummy({ mark_w, mark_w })
+
+            if imgui.GetItemRectMin ~= nil and imgui.GetWindowDrawList ~= nil then
+                local check_x, check_y = imgui.GetItemRectMin()
+
+                icons.draw_check(
+                    imgui.GetWindowDrawList(), check_x, check_y, mark_w * 0.9,
+                    imgui.GetColorU32(colors.leaf)
+                )
+            end
+        end
+
+        if pushed then
+            imgui.PopFont()
+        end
+
+        -- Notorious: the label goes under the name.
+        if data ~= nil and data.nm == true then
+            local label = tx('Notorious monster')
+
+            imgui.SetCursorPosX(math.max(0, (width - (imgui.CalcTextSize(label))) * 0.5))
+            imgui.TextColored(sheetx.monsters_nm_border, label)
+        end
+
+        -- How many times it was defeated and the first time, under the name.
+        if times > 0 then
+            local line = tx('Defeated')
+
+            if times > 1 then
+                line = line .. '  x' .. times
+            end
+
+            local when = first > 0
+                and tx('First time: %s'):format(os.date('%Y-%m-%d', first)) or nil
+            local gap = scaled(12)
+            local line_w = (imgui.CalcTextSize(line))
+                + (when ~= nil and (gap + (imgui.CalcTextSize(when))) or 0)
+
+            imgui.SetCursorPosX(math.max(0, (width - line_w) * 0.5))
+            imgui.TextColored(colors.leaf, line)
+
+            if when ~= nil then
+                imgui.SameLine(0, gap)
+                imgui.TextColored(colors.text_dim, when)
+            end
+        else
+            local line = tx('Not defeated yet')
+
+            imgui.SetCursorPosX(math.max(0, (width - (imgui.CalcTextSize(line))) * 0.5))
+            imgui.TextColored(colors.text_dim, line)
+        end
+    end
+
+    -- Favorite: the monster goes to (or leaves) the Favorites folder.
+    local is_fav = store.IsFavorite(fav_name)
+    -- A star: gold when it is a favorite, grey when it is not.
+    local fav_w = ui_button_height
+
+    imgui.SetCursorPosX(math.max(0, (width - fav_w) * 0.5))
+
+    if is_fav then
+        imgui.PushStyleColor(ImGuiCol_Button, colors.button_active)
+    end
+
+    if imgui.Button('##MonFavorite', { fav_w, ui_button_height }) then
+        if not store.ToggleFavorite(fav_name) then
+            sheetx.monsters_full = os.clock()
+        end
+    end
+
+    if imgui.GetItemRectMin ~= nil and imgui.GetWindowDrawList ~= nil then
+        local star_x, star_y = imgui.GetItemRectMin()
+        local pad = ui_button_height * 0.12
+
+        icons.draw_star(
+            imgui.GetWindowDrawList(), star_x + pad, star_y + pad,
+            ui_button_height - pad * 2,
+            imgui.GetColorU32(is_fav and { 1.0, 0.85, 0.1, 1.0 } or colors.text_dim)
+        )
+    end
+
+    if is_fav then
+        imgui.PopStyleColor()
+    end
+
+    if imgui.IsItemHovered() and imgui.SetTooltip then
+        imgui.SetTooltip(
+            is_fav and tx('Remove from favorites') or tx('Add to favorites')
+        )
+    end
+
+    if sheetx.monsters_full ~= nil and os.clock() - sheetx.monsters_full < 4 then
+        imgui.TextColored(colors.text_dim, tx('The favorites list is full.'))
+    end
+
+    -- The 3D model (only the monsters that have a DAT in data/monster_dats.lua).
+    local side_done = false
+
+    if controller ~= nil and controller.monster_view ~= nil then
+        side_done = controller.monster_view.DrawPanel(fav_name, width, {
+            scale = scaled(1),
+            dim = colors.text_dim,
+            accent = colors.gold,
+            button_h = ui_button_height,
+            -- The data of the monster goes at the right of the model.
+            side = data ~= nil and function(room)
+                sheetx.monsters_info(store, data, room)
+                sheetx.monsters_drops(store, data_name or fav_name, room, true)
+            end or nil,
+            side_w = scaled(240),
+        }) == true
+    end
+
+    if data == nil then
+        imgui.Spacing()
+        imgui.TextWrapped(
+            tx('No sheet for this name in the source data. It may be a group or a type of monster.')
+        )
+
+        return
+    end
+
+    if not side_done then
+        imgui.Spacing()
+        sheetx.monsters_info(store, data, width)
+    end
+
+    -- The drops go under the data at the right of the model; with no model
+    -- they go here, above the zones (the section draws its own separator).
+    if not side_done then
+        sheetx.monsters_drops(store, data_name or fav_name, width)
+    end
+
+    imgui.Spacing()
+    imgui.Separator()
+    imgui.Spacing()
+
+    -- Zones: a click guides the compass there (the same as the zone list).
+    imgui.TextColored(colors.text, tx('Where to find it'))
+
+    local zones = data.zones or {}
+
+    if #zones == 0 then
+        imgui.TextWrapped(tx('No zones in the data.'))
+    else
+        imgui.TextColored(colors.text_dim, tx('Click a zone to guide the compass there.'))
+
+        local goal = controller.GetCompassZoneGoal
+            and controller.GetCompassZoneGoal() or nil
+
+        for index, zone in ipairs(sheetx.zones_by_level(zones)) do
+            local zone_name = controller.GetCompassZoneName
+                and controller.GetCompassZoneName(zone[1]) or nil
+
+            if zone_name == nil or zone_name == '' or zone_name == '???' then
+                zone_name = string.format(tx('Zone #%d'), zone[1])
+            end
+
+            local levels = sheetx.monsters_levels(zone[2], zone[3])
+            local label = levels ~= '' and (zone_name .. '  -  ' .. levels)
+                or zone_name
+
+            local selected = zone[1] == goal
+
+            if toolbar_mode_button(
+                fit_text(label, width - 24) .. '##MonZone' .. index,
+                selected,
+                width - 8
+            ) and controller.ToggleCompassZoneGoal then
+                controller.ToggleCompassZoneGoal(zone[1])
+            end
+        end
+    end
+end
+
+-- The zones of a monster from the lowest level to the highest: by the low
+-- end of the range (the high one when the low is 0), then by the high end.
+-- The ones with no level go last; the order of the data breaks the ties.
+-- It returns a new list: the data is not changed.
+function sheetx.zones_by_level(zones)
+    local list = {}
+
+    for index, zone in ipairs(zones or {}) do
+        local low = tonumber(zone[2]) or 0
+        local high = tonumber(zone[3]) or 0
+
+        list[#list + 1] = {
+            zone = zone,
+            index = index,
+            low = low > 0 and low or high,
+            high = high,
+        }
+    end
+
+    table.sort(list, function(a, b)
+        local a_none, b_none = a.low <= 0, b.low <= 0
+
+        if a_none ~= b_none then
+            return b_none
+        end
+
+        if a.low ~= b.low then
+            return a.low < b.low
+        end
+
+        if a.high ~= b.high then
+            return a.high < b.high
+        end
+
+        return a.index < b.index
+    end)
+
+    local result = {}
+
+    for position, item in ipairs(list) do
+        result[position] = item.zone
+    end
+
+    return result
+end
+
+-- What a click on a drop does: opens the sheet of the item in the item
+-- catalogue (by its id, or by its name when that id is not in it). nil when
+-- the catalogue does not have the item: its name stays plain text.
+function sheetx.drop_item_link(item)
+    local items = controller ~= nil and controller.items or nil
+
+    if items == nil or items.Show == nil then
+        return nil
+    end
+
+    local id = tonumber(item[1])
+
+    if id ~= nil and items.Entry ~= nil and items.Entry(id) ~= nil then
+        return function()
+            items.Show(id)
+        end
+    end
+
+    if items.ByName ~= nil and items.ShowByName ~= nil
+        and items.ByName(item[2]) ~= nil then
+
+        return function()
+            items.ShowByName(item[2])
+        end
+    end
+
+    return nil
+end
+
+-- The drops of the monster: the name of the item (the data gives it, the game
+-- is not asked) and its percent, the most frequent first. The names of the
+-- items the catalogue has are buttons that open their sheet.
+function sheetx.monsters_drops(store, name, width, no_separator)
+    local entry = store.Drops and store.Drops(name) or nil
+
+    imgui.Spacing()
+
+    -- A separator spans the whole window: not inside the column of the data.
+    if not no_separator then
+        imgui.Separator()
+    end
+
+    imgui.Spacing()
+    imgui.TextColored(colors.text, tx('Drops'))
+
+    -- A small line under the title (drawn: a Separator spans the window).
+    if imgui.GetCursorScreenPos ~= nil and imgui.GetWindowDrawList ~= nil then
+        local line_x, line_y = imgui.GetCursorScreenPos()
+
+        imgui.GetWindowDrawList():AddLine(
+            { line_x, line_y + 1 },
+            { line_x + math.max(10, width - scaled(8)), line_y + 1 },
+            imgui.GetColorU32(colors.text_dim),
+            1
+        )
+        imgui.Dummy({ 1, scaled(6) })
+    end
+
+    if entry == nil or entry.items == nil or #entry.items == 0 then
+        imgui.TextColored(colors.text_dim, tx('No drops in the data.'))
+
+        return
+    end
+
+    if entry.varies then
+        imgui.TextColored(
+            colors.text_dim,
+            fit_text(tx('Versions of it drop different things: the highest rate is shown.'), width - 8)
+        )
+    end
+
+    -- SameLine counts from the left of the window: add where the section starts.
+    local base = imgui.GetCursorPosX ~= nil and imgui.GetCursorPosX() or 0
+
+    -- The percents go at the left, in a column, and then the name.
+    local percent_col = 0
+
+    for _, item in ipairs(entry.items) do
+        percent_col = math.max(
+            percent_col, (imgui.CalcTextSize(store.PercentLabel(item[3])))
+        )
+    end
+
+    -- The names that are buttons start at the left of their box.
+    local align_pushed = false
+
+    if ImGuiStyleVar_ButtonTextAlign ~= nil then
+        imgui.PushStyleVar(ImGuiStyleVar_ButtonTextAlign, { 0, 0.5 })
+        align_pushed = true
+    end
+
+    for index, item in ipairs(entry.items) do
+        local percent = store.PercentLabel(item[3])
+        local percent_w = (imgui.CalcTextSize(percent))
+        local label = tostring(item[2]):gsub('^%l', string.upper)
+        local open_item = sheetx.drop_item_link(item)
+
+        -- SetCursorPosX counts from the window; SameLine(offset) would count
+        -- from the group (the column of the data), so it is not used here.
+        imgui.SetCursorPosX(base + percent_col - percent_w)
+        imgui.TextColored(colors.text_dim, percent)
+        imgui.SameLine(0, 0)
+        imgui.SetCursorPosX(base + percent_col + scaled(10))
+
+        if open_item ~= nil then
+            if toolbar_mode_button(
+                fit_text(label, width - percent_col - scaled(40))
+                    .. '##DropItem' .. index,
+                false, width - percent_col - scaled(24)
+            ) then
+                open_item()
+            end
+
+            if imgui.IsItemHovered ~= nil and imgui.SetTooltip ~= nil
+                and imgui.IsItemHovered() then
+
+                imgui.SetTooltip(tx('Click to see its sheet'))
+            end
+        else
+            imgui.Text(fit_text(label, width - percent_col - scaled(28)))
+        end
+    end
+
+    if align_pushed then
+        imgui.PopStyleVar()
+    end
+end
+
+-- The very light colors of the folders and the defeated monsters in the
+-- Legacy theme (the page is parchment: the dark ones would be heavy).
+sheetx.monsters_pale = {
+    zone = { 0.80, 0.89, 1.00 },
+    defeated = { 0.76, 0.95, 0.76 },
+    favorite = { 1.00, 0.93, 0.62 },
+}
+
+-- The border of the button of a notorious monster.
+sheetx.monsters_nm_border = { 1.00, 0.55, 0.05, 1.00 }
+
+-- The color of the folders of zones (the monsters keep the normal text
+-- color; the Favorites folder is gold).
+sheetx.monsters_zone_tint = { 0.45, 0.68, 0.95, 1.0 }
+
+-- The border of the folder of the zone you are in.
+sheetx.monsters_here_border = { 0.30, 0.85, 0.35, 1.0 }
+-- The row of the zone you are in: light green, with dark text, in any theme.
+-- { fill, hover, pressed, text }
+sheetx.monsters_here_fill = {
+    { 0.78, 0.92, 0.78, 1 }, { 0.70, 0.88, 0.70, 1 },
+    { 0.62, 0.82, 0.62, 1 }, { 0.07, 0.16, 0.08, 1 },
+}
+sheetx.monsters_here_fill_open = {
+    { 0.64, 0.86, 0.64, 1 }, { 0.60, 0.84, 0.60, 1 },
+    { 0.55, 0.80, 0.55, 1 }, { 0.07, 0.16, 0.08, 1 },
+}
+
+-- The regions (the ones of the list of zones: Windurst, Sarutabaruta...)
+-- that have monsters, each with its zones. The regions go in the order of
+-- the list of zones (the nations first), or by their lowest level when the
+-- list is sorted by level; the zones of a region by name or by level. The
+-- zones that no region has go in "Other zones", and the monsters with no
+-- zone in the data in a folder of their own, last.
+function sheetx.monsters_zone_order(store, mode)
+    local groups = store.ByZone(mode)
+    local zonelist = controller and controller.zonelist
+    local ranks = {}
+    local names = {}
+
+    if zonelist ~= nil then
+        for index, region in ipairs(zonelist.Regions()) do
+            for _, id in ipairs(region.zones) do
+                ranks[id] = index
+            end
+
+            names[index] = region.name
+        end
+    end
+
+    local OTHER, NONE = 1000, 2000
+    local by_rank = {}
+    local regions = {}
+
+    for id, list in pairs(groups) do
+        local name
+
+        if id == 0 then
+            name = tx('No zone in the data')
+        else
+            name = controller.GetCompassZoneName
+                and controller.GetCompassZoneName(id) or nil
+
+            if name == nil or name == '' or name == '???' then
+                name = string.format(tx('Zone #%d'), id)
+            end
+        end
+
+        local rank = id == 0 and NONE or ranks[id] or OTHER
+        local region = by_rank[rank]
+
+        if region == nil then
+            region = {
+                rank = rank,
+                key = 'R' .. rank,
+                name = rank == NONE and tx('No zone in the data')
+                    or rank == OTHER and tx('Other zones')
+                    or names[rank],
+                flat = rank == NONE,
+                level = 999,
+                zones = {},
+            }
+            by_rank[rank] = region
+            regions[#regions + 1] = region
+        end
+
+        local first = 999
+
+        for _, entry in ipairs(list) do
+            first = math.min(first, store.low_key(entry))
+        end
+
+        region.level = math.min(region.level, first)
+        region.zones[#region.zones + 1] = {
+            id = id, name = name, key = name:lower(), level = first,
+        }
+    end
+
+    for _, region in ipairs(regions) do
+        table.sort(region.zones, function(a, b)
+            if mode == 'level' and a.level ~= b.level then
+                return a.level < b.level
+            end
+
+            return a.key < b.key
+        end)
+    end
+
+    table.sort(regions, function(a, b)
+        local a_last, b_last = a.rank >= OTHER, b.rank >= OTHER
+
+        if a_last ~= b_last then
+            return b_last
+        end
+
+        if mode == 'level' and not a_last and a.level ~= b.level then
+            return a.level < b.level
+        end
+
+        return a.rank < b.rank
+    end)
+
+    return regions
+end
+
+-- How many of the monsters of the entries have been defeated, and how many
+-- there are (a monster in several zones counts once).
+function sheetx.monsters_counts(store, lists, bonus, cache_key)
+    -- The counts only change when the kills change (or when the lists are
+    -- built again), so the ones of a folder with a cache_key are worked out
+    -- once and not on every frame (that was most of the cost of the window).
+    local cache = nil
+
+    if cache_key ~= nil and store.KillsVersion ~= nil and store.ByZone ~= nil then
+        local version = tostring(store.KillsOwner()) .. ':' .. tostring(store.KillsVersion())
+        local groups = store.ByZone('name')
+
+        cache = sheetx.monsters_counts_cache
+
+        if cache == nil or cache.version ~= version or cache.groups ~= groups then
+            cache = { version = version, groups = groups, items = {} }
+            sheetx.monsters_counts_cache = cache
+        end
+
+        local hit = cache.items[cache_key]
+
+        if hit ~= nil then
+            return { done = hit.done, total = hit.total, bonus = bonus }
+        end
+    end
+
+    local done, total, seen = 0, 0, {}
+
+    for _, list in ipairs(lists) do
+        for _, entry in ipairs(list) do
+            if not seen[entry.name] then
+                seen[entry.name] = true
+                total = total + 1
+
+                if store.Defeated(entry.name) > 0 then
+                    done = done + 1
+                end
+            end
+        end
+    end
+
+    if cache ~= nil then
+        cache.items[cache_key] = { done = done, total = total }
+    end
+
+    return { done = done, total = total, bonus = bonus }
+end
+
+-- The title of a folder: its name, the monsters defeated / all of them, and
+-- a V when they are all defeated, with the points of the bonus of having
+-- completed it ("V +50").
+function sheetx.monsters_folder_title(name, counts, room)
+    local suffix = ' (' .. counts.done .. '/' .. counts.total .. ')'
+
+    if counts.total > 0 and counts.done >= counts.total then
+        suffix = suffix .. ' V'
+
+        if counts.bonus ~= nil and counts.bonus > 0 then
+            suffix = suffix .. ' +' .. counts.bonus
+        end
+    end
+
+    return fit_text(name, math.max(40, room - (imgui.CalcTextSize(suffix)))) .. suffix
+end
+
+-- The line of a folder: a +/- button and the name in its own color. True
+-- when it was clicked. depth is how many levels it is inside.
+function sheetx.monsters_header(key, name, counts, tint, opened, row_w, depth, border, active)
+    local toggle_w = ui_button_height
+    local base = scaled(24) * (depth or 0)
+    local clicked = false
+
+    if base > 0 then
+        imgui.Dummy({ base, 1 })
+        imgui.SameLine(0, 0)
+    end
+
+    if imgui.Button(
+        (opened and '-' or '+') .. '##MonFold' .. key,
+        { toggle_w, ui_button_height }
+    ) then
+        clicked = true
+    end
+
+    imgui.SameLine(0, 4)
+
+    if toolbar_mode_button(
+        sheetx.monsters_folder_title(
+            name, counts, row_w - base - toggle_w - 28
+        ) .. '##MonGroup' .. key,
+        active == true,
+        row_w - base - toggle_w - 4,
+        tint,
+        tint == sheetx.monsters_zone_tint and sheetx.monsters_pale.zone
+            or sheetx.monsters_pale.favorite
+    ) then
+        clicked = true
+    end
+
+    -- A colored border (the folder of the zone you are in is green).
+    if border ~= nil and imgui.GetItemRectMin ~= nil then
+        local min_x, min_y = imgui.GetItemRectMin()
+        local max_x, max_y = imgui.GetItemRectMax()
+
+        imgui.GetWindowDrawList():AddRect(
+            { min_x, min_y },
+            { max_x, max_y },
+            imgui.GetColorU32(border),
+            2,
+            0,
+            2
+        )
+    end
+
+    return clicked
+end
+
+-- One row of the list of monsters: its name (with its levels), green when
+-- it is defeated, an orange border when it is notorious. key is the id of
+-- its group (the zone id or 'C' / 'F'), only for the id of the button.
+function sheetx.monsters_row(store, key, index, entry, row_w, selected_name, indent)
+    local label = entry.name
+
+    indent = indent or 0
+
+    if indent > 0 then
+        imgui.Dummy({ indent, 1 })
+        imgui.SameLine(0, 0)
+        row_w = row_w - indent
+    end
+
+    if entry.high > 0 then
+        label = label .. ' (' .. sheetx.monsters_range(
+            entry.low, entry.high
+        ) .. ')'
+    end
+
+    local defeated = (store.Defeated(entry.name)) > 0
+
+    if toolbar_mode_button(
+        fit_text(label, row_w - 24) .. '##Mon' .. key .. '_' .. index,
+        entry.name == selected_name,
+        row_w,
+        defeated and colors.leaf or nil,
+        defeated and sheetx.monsters_pale.defeated or nil
+    ) then
+        store.Select(entry.name)
+        sheetx.monsters_rank_open = false
+    end
+
+    -- The monster picked from a step: the list scrolls to its row.
+    local reveal = sheetx.monsters_reveal
+
+    if reveal ~= nil and reveal.key == key and reveal.name == entry.name then
+        if imgui.SetScrollHereY ~= nil then
+            imgui.SetScrollHereY(0.4)
+        end
+
+        sheetx.monsters_reveal = nil
+    end
+
+    if store.IsNotorious(entry.name) and imgui.GetItemRectMin ~= nil then
+        local min_x, min_y = imgui.GetItemRectMin()
+        local max_x, max_y = imgui.GetItemRectMax()
+
+        imgui.GetWindowDrawList():AddRect(
+            { min_x, min_y },
+            { max_x, max_y },
+            imgui.GetColorU32(sheetx.monsters_nm_border),
+            2,
+            0,
+            1.5
+        )
+    end
+end
+
+-- Bold text: the bold font of the step text, or the text drawn twice (one
+-- pixel apart) when that font is not loaded.
+function sheetx.monsters_bold_width(text)
+    local pushed = text_bold_font ~= nil
+        and pcall(imgui.PushFont, text_bold_font, journal_font_size)
+    local width = (imgui.CalcTextSize(text))
+
+    if pushed then
+        imgui.PopFont()
+    end
+
+    return width
+end
+
+function sheetx.monsters_bold_text(text, color)
+    local pushed = text_bold_font ~= nil
+        and pcall(imgui.PushFont, text_bold_font, journal_font_size)
+
+    if pushed then
+        imgui.TextColored(color, text)
+        imgui.PopFont()
+    else
+        local x, y = imgui.GetCursorScreenPos()
+
+        imgui.TextColored(color, text)
+        imgui.SetCursorScreenPos({ x + 1, y })
+        imgui.TextColored(color, text)
+    end
+end
+
+-- A row of the list that is not a folder: the zone you are in, Favorites, or a
+-- zone of a region.
+function sheetx.monsters_place(
+    key, name, counts, tint, row_w, depth, selected, border, fill, prefix
+)
+    local base = scaled(24) * (depth or 0)
+
+    if base > 0 then
+        imgui.Dummy({ base, 1 })
+        imgui.SameLine(0, 0)
+    end
+
+    -- With a prefix (in bold) the text of the button is drawn over it.
+    local prefix_w = 0
+
+    if prefix ~= nil then
+        prefix_w = sheetx.monsters_bold_width(prefix) + scaled(6)
+    end
+
+    local title = sheetx.monsters_folder_title(
+        name, counts, row_w - base - 28 - prefix_w
+    )
+
+    local clicked = toolbar_mode_button(
+        (prefix ~= nil and '' or title) .. '##MonPlace' .. key,
+        selected,
+        row_w - base,
+        tint,
+        tint == colors.favorite and sheetx.monsters_pale.favorite
+            or sheetx.monsters_pale.zone,
+        fill
+    )
+
+    if prefix ~= nil and imgui.GetItemRectMin ~= nil then
+        local min_x, min_y = imgui.GetItemRectMin()
+        local _, max_y = imgui.GetItemRectMax()
+        local next_x, next_y = imgui.GetCursorScreenPos()
+        local text_color = fill ~= nil and fill[4] or colors.text
+
+        imgui.SetCursorScreenPos({
+            min_x + scaled(8),
+            min_y + math.max(0, (max_y - min_y - imgui.GetTextLineHeight()) * 0.5),
+        })
+        sheetx.monsters_bold_text(prefix, text_color)
+        imgui.SameLine(0, scaled(6))
+        imgui.TextColored(text_color, title)
+        imgui.SetCursorScreenPos({ next_x, next_y })
+    end
+
+    if border ~= nil and imgui.GetItemRectMin ~= nil then
+        local min_x, min_y = imgui.GetItemRectMin()
+        local max_x, max_y = imgui.GetItemRectMax()
+
+        imgui.GetWindowDrawList():AddRect(
+            { min_x, min_y },
+            { max_x, max_y },
+            imgui.GetColorU32(border),
+            2,
+            0,
+            2
+        )
+    end
+
+    return clicked
+end
+
+-- What the two columns need in every frame: the monsters by zone, the
+-- search, the filters and the zone you are in. It also does what has to be
+-- done once per frame: take the monster picked from a step (its zone is
+-- selected and its region opened), and choose a place when there is none.
+function sheetx.monsters_context(store)
+    local mode = store.GetSort()
+
+    if sheetx.monsters_zones == nil or sheetx.monsters_zones_mode ~= mode then
+        sheetx.monsters_zones = sheetx.monsters_zone_order(store, mode)
+        sheetx.monsters_zones_mode = mode
+    end
+
+    local ctx = {
+        mode = mode,
+        groups = store.ByZone(mode),
+        query = store.fold(sheetx.monsters_filter[1]),
+        pending = store.GetOnlyPending(),
+        rank_points = controller and controller.monster_rank or nil,
+    }
+
+    ctx.here = store.CurrentZone and store.CurrentZone() or nil
+
+    if ctx.here ~= nil and ctx.groups[ctx.here] == nil then
+        ctx.here = nil
+    end
+
+    -- The entries that pass the search and the filters.
+    function ctx.passes(entry)
+        return (ctx.query == '' or entry.key:find(ctx.query, 1, true))
+            and not (ctx.pending and store.Defeated(entry.name) > 0)
+            and store.PassesFilters(entry)
+    end
+
+    -- Asked twice for the same zone in a frame (to know if it has a match
+    -- and to draw it): worked out once.
+    local shown_memo = {}
+
+    function ctx.shown(list)
+        if list ~= nil and shown_memo[list] ~= nil then
+            return shown_memo[list]
+        end
+
+        local out = {}
+
+        for _, entry in ipairs(list or {}) do
+            if ctx.passes(entry) then
+                out[#out + 1] = entry
+            end
+        end
+
+        if list ~= nil then
+            shown_memo[list] = out
+        end
+
+        return out
+    end
+
+    function ctx.zone_bonus(id)
+        return ctx.rank_points ~= nil and ctx.rank_points.ZoneBonus(id) or nil
+    end
+
+    -- A monster picked from a step: no filter hides it. The place of the zone
+    -- you are in comes first; if not, the first zone of the list that has it.
+    local wanted = store.TakeReveal and store.TakeReveal() or nil
+
+    if wanted ~= nil then
+        sheetx.monsters_filter[1] = ''
+        sheetx.monsters_rank_open = false
+        store.ClearFilters()
+        ctx.query = ''
+        ctx.pending = false
+
+        local function has(zone_id)
+            for _, entry in ipairs(ctx.groups[zone_id] or {}) do
+                if entry.name == wanted then
+                    return true
+                end
+            end
+
+            return false
+        end
+
+        if ctx.here ~= nil and has(ctx.here) then
+            sheetx.monsters_sel = { kind = 'C' }
+            sheetx.monsters_reveal = { name = wanted, key = 'C' }
+        else
+            for _, region in ipairs(sheetx.monsters_zones) do
+                for _, zone in ipairs(region.zones) do
+                    if sheetx.monsters_reveal == nil and has(zone.id) then
+                        sheetx.monsters_open[region.key] = true
+                        sheetx.monsters_sel = { kind = 'zone', key = zone.id }
+                        sheetx.monsters_reveal = { name = wanted, key = zone.id }
+                    end
+                end
+            end
+        end
+    end
+
+    local sel = sheetx.monsters_sel
+
+    -- No place picked (or the zone you were in is gone): the zone you are in,
+    -- or everything closed. 'none' is a list with every place closed.
+    if sel == nil or (sel.kind == 'C' and ctx.here == nil) then
+        sheetx.monsters_sel = ctx.here ~= nil and { kind = 'C' } or { kind = 'none' }
+    end
+
+    return ctx
+end
+
+-- The only list: the places (the zone you are in, Favorites, the regions with
+-- their zones) and, under the place that is open, its monsters (that pass the
+-- search and the filters). A click on a place opens it; a click on the open
+-- one closes it. With a search or a filter every zone with a match is open.
+function sheetx.monsters_tree(store, ctx, col_w)
+    local sel = sheetx.monsters_sel
+    local row_w = col_w - scaled(28)
+    local indent = scaled(24)
+    local selected_name = store.GetSelected()
+    local searching = ctx.query ~= '' or store.AnyFilter() or ctx.pending
+    local anything = false
+
+    if ImGuiStyleVar_ButtonTextAlign ~= nil then
+        imgui.PushStyleVar(ImGuiStyleVar_ButtonTextAlign, { 0, 0.5 })
+    end
+
+    -- Clicking the open place closes it.
+    local function pick(kind, key)
+        if sel.kind == kind and sel.key == key then
+            sheetx.monsters_sel = { kind = 'none' }
+        else
+            sheetx.monsters_sel = { kind = kind, key = key }
+        end
+    end
+
+    local function monsters(key, shown, depth)
+        for index, entry in ipairs(shown) do
+            anything = true
+            sheetx.monsters_row(
+                store, key, index, entry, row_w, selected_name, indent * depth
+            )
+        end
+    end
+
+    -- The zone you are in (green border).
+    if ctx.here ~= nil then
+        local here_name = controller.GetCompassZoneName
+            and controller.GetCompassZoneName(ctx.here) or nil
+
+        if here_name == nil or here_name == '' or here_name == '???' then
+            here_name = string.format(tx('Zone #%d'), ctx.here)
+        end
+
+        local opened = sel.kind == 'C'
+
+        if sheetx.monsters_place(
+            'C', here_name,
+            sheetx.monsters_counts(
+                store, { ctx.groups[ctx.here] }, ctx.zone_bonus(ctx.here),
+                'Z' .. ctx.here
+            ),
+            sheetx.monsters_zone_tint, row_w, 0, opened,
+            sheetx.monsters_here_border,
+            opened and sheetx.monsters_here_fill_open or sheetx.monsters_here_fill,
+            tx('Current zone:')
+        ) then
+            pick('C')
+        end
+
+        if opened then
+            monsters('C', ctx.shown(ctx.groups[ctx.here]), 1)
+        end
+    end
+
+    local favs = store.Favorites(ctx.mode)
+    local fav_open = sel.kind == 'F'
+
+    if sheetx.monsters_place(
+        'F', tx('Favorites'), sheetx.monsters_counts(store, { favs }),
+        colors.favorite, row_w, 0, fav_open
+    ) then
+        pick('F')
+    end
+
+    if fav_open then
+        local shown = ctx.shown(favs)
+
+        monsters('F', shown, 1)
+
+        if #shown == 0 and not searching then
+            imgui.TextWrapped(tx('No favorite monsters yet. Pick one and press Fav.'))
+        end
+    end
+
+    imgui.Spacing()
+
+    for _, region in ipairs(sheetx.monsters_zones) do
+        local visible = {}
+
+        for _, zone in ipairs(region.zones) do
+            -- With a search or a filter only the zones with a match.
+            if not searching or #ctx.shown(ctx.groups[zone.id]) > 0 then
+                visible[#visible + 1] = zone
+            end
+        end
+
+        if #visible > 0 then
+            if region.flat then
+                local zone = visible[1]
+                local opened = searching
+                    or (sel.kind == 'zone' and sel.key == zone.id)
+
+                if sheetx.monsters_place(
+                    tostring(zone.id), region.name,
+                    sheetx.monsters_counts(
+                        store, { ctx.groups[zone.id] or {} }, nil, 'Z' .. zone.id
+                    ),
+                    sheetx.monsters_zone_tint, row_w, 0, opened
+                ) then
+                    pick('zone', zone.id)
+                end
+
+                if opened then
+                    monsters(zone.id, ctx.shown(ctx.groups[zone.id]), 1)
+                end
+            else
+                local lists = {}
+
+                for _, zone in ipairs(region.zones) do
+                    lists[#lists + 1] = ctx.groups[zone.id] or {}
+                end
+
+                local opened = searching or sheetx.monsters_open[region.key] == true
+
+                if sheetx.monsters_header(
+                    region.key, region.name,
+                    sheetx.monsters_counts(
+                        store, lists,
+                        region.rank < 1000 and ctx.rank_points
+                            and ctx.rank_points.RegionBonus(region.rank) or nil,
+                        'R' .. region.key
+                    ),
+                    sheetx.monsters_zone_tint, opened, row_w, 0, nil, false
+                ) then
+                    sheetx.monsters_open[region.key] = not opened
+                end
+
+                if opened then
+                    for _, zone in ipairs(visible) do
+                        local zone_open = searching
+                            or (sel.kind == 'zone' and sel.key == zone.id)
+
+                        if sheetx.monsters_place(
+                            tostring(zone.id), zone.name,
+                            sheetx.monsters_counts(
+                                store, { ctx.groups[zone.id] or {} },
+                                ctx.zone_bonus(zone.id), 'Z' .. zone.id
+                            ),
+                            sheetx.monsters_zone_tint, row_w, 1, zone_open
+                        ) then
+                            pick('zone', zone.id)
+                        end
+
+                        if zone_open then
+                            monsters(zone.id, ctx.shown(ctx.groups[zone.id]), 2)
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    if ImGuiStyleVar_ButtonTextAlign ~= nil then
+        imgui.PopStyleVar()
+    end
+
+    if searching and not anything then
+        if ctx.pending and ctx.query == '' and not store.AnyFilter() then
+            imgui.TextWrapped(tx('You have defeated them all!'))
+        else
+            imgui.TextWrapped(tx('No monster matches.'))
+        end
+    end
+end
+
+-- "4-5" or "3": the levels of a monster in a zone, for its row.
+function sheetx.monsters_range(low, high)
+    if low <= 0 or low == high then
+        return string.format('%d', high)
+    end
+
+    return string.format('%d-%d', low, high)
+end
+
+-- The name of the function, big and centered at the top of the window.
+function sheetx.monsters_title(width, title)
+    local text = title or tx("Vana'dex (BETA)")
+    local font = sheetx.alert_font or sheetx.banner_font or journal_font
+    local size = scaled(80)
+    local pushed = false
+
+    if font ~= nil then
+        pushed = pcall(imgui.PushFont, font, size)
+    end
+
+    local text_w = (imgui.CalcTextSize(text))
+
+    imgui.SetCursorPosX(math.max(0, (width - text_w) * 0.5))
+    imgui.TextColored(colors.gold, text)
+
+    if pushed then
+        imgui.PopFont()
+    end
+
+    return text_w
+end
+
+-- 12345 -> "12,345".
+function sheetx.thousands(value)
+    local text = tostring(math.floor(tonumber(value) or 0))
+    local replaced
+
+    repeat
+        text, replaced = text:gsub('^(-?%d+)(%d%d%d)', '%1,%2')
+    until replaced == 0
+
+    return text
+end
+
+-- The text of the tooltip of the rank: the rank, the points and where they
+-- come from.
+function sheetx.monsters_rank_tooltip(rank, score)
+    local parts = score.parts
+    local counts = score.counts
+    local lines = {
+        string.format(
+            '%s  (%d/%d)', tx(score.rank_name), score.rank, #rank.RANKS
+        ),
+        string.format(tx('%s points'), sheetx.thousands(score.points)),
+    }
+
+    if score.next_points ~= nil then
+        lines[#lines + 1] = string.format(
+            tx('Next: %s at %s points'),
+            tx(score.next_name), sheetx.thousands(score.next_points)
+        )
+    else
+        lines[#lines + 1] = tx('Highest rank reached')
+    end
+
+    lines[#lines + 1] = ''
+    lines[#lines + 1] = string.format(
+        tx('Discovered: %d / %d (%s)'),
+        counts.discovered, counts.total, sheetx.thousands(parts.discovered)
+    )
+    lines[#lines + 1] = string.format(
+        tx('Repeat defeats: %s'), sheetx.thousands(parts.repeats)
+    )
+    lines[#lines + 1] = string.format(
+        tx('Notorious: %d (%s)'),
+        counts.notorious, sheetx.thousands(parts.notorious)
+    )
+    lines[#lines + 1] = string.format(
+        tx('Zones completed: %d / %d (%s)'),
+        counts.zones_done, counts.zones_total, sheetx.thousands(parts.zones)
+    )
+    lines[#lines + 1] = string.format(
+        tx('Regions completed: %d / %d (%s)'),
+        counts.regions_done, counts.regions_total,
+        sheetx.thousands(parts.regions)
+    )
+    lines[#lines + 1] = ''
+    lines[#lines + 1] = tx('Click for the details')
+
+    return table.concat(lines, '\n')
+end
+
+-- The rank at the top right of the window: its name, the points and a bar
+-- to the next rank. A click opens the page of the rank. It goes under the X
+-- button, beside the title; if the window is too narrow for that, under the
+-- title. Returns the Y where the rest of the window can start.
+function sheetx.monsters_rank_widget(width, title_y, title_w, after_y)
+    local rank = controller and controller.monster_rank
+
+    if rank == nil or imgui.InvisibleButton == nil then
+        return after_y
+    end
+
+    local score = rank.Score()
+    local inner, pad = sheetx.settings_inner(width)
+    local right = pad + inner
+    local want = scaled(240)
+    local room = right - ((width + title_w) * 0.5 + scaled(12))
+    local box_w = math.min(want, room)
+    local inline = box_w >= scaled(170)
+    local line_h = scaled(16)
+
+    if imgui.GetTextLineHeight ~= nil then
+        local ok, value = pcall(imgui.GetTextLineHeight)
+
+        if ok and type(value) == 'number' and value > 0 then
+            line_h = value
+        end
+    end
+
+    local bar_h = scaled(8)
+    local box_h = line_h + bar_h + scaled(14)
+
+    if not inline then
+        box_w = math.min(want, right - pad)
+    end
+
+    local box_x = right - box_w
+    local box_y = inline and (title_y + scaled(26) + scaled(6)) or after_y
+
+    imgui.SetCursorPosX(box_x)
+    imgui.SetCursorPosY(box_y)
+
+    local clicked = imgui.InvisibleButton('##MonRankBox', { box_w, box_h })
+    local hovered = imgui.IsItemHovered()
+    local min_x, min_y = imgui.GetItemRectMin()
+    local draw = imgui.GetWindowDrawList()
+    local open = sheetx.monsters_rank_open == true
+
+    draw:AddRectFilled(
+        { min_x, min_y }, { min_x + box_w, min_y + box_h },
+        imgui.GetColorU32({ 0, 0, 0, hovered and 0.38 or 0.26 }), 4
+    )
+    draw:AddRect(
+        { min_x, min_y }, { min_x + box_w, min_y + box_h },
+        imgui.GetColorU32(open and colors.gold or colors.text_dim), 4, 0,
+        open and 2 or 1
+    )
+
+    local name = fit_text(tx(score.rank_name), box_w * 0.55)
+    local points = sheetx.thousands(score.points)
+
+    draw:AddText(
+        { min_x + 8, min_y + 4 }, imgui.GetColorU32(colors.gold), name
+    )
+
+    local points_w = (imgui.CalcTextSize(points))
+
+    draw:AddText(
+        { min_x + box_w - 8 - points_w, min_y + 4 },
+        imgui.GetColorU32(colors.text), points
+    )
+
+    local bar_y = min_y + 4 + line_h + scaled(4)
+    local bar_x1, bar_x2 = min_x + 8, min_x + box_w - 8
+
+    draw:AddRectFilled(
+        { bar_x1, bar_y }, { bar_x2, bar_y + bar_h },
+        imgui.GetColorU32({ 1, 1, 1, 0.16 }), 3
+    )
+
+    local fill = math.max(0, math.min(1, score.progress or 0))
+
+    if fill > 0 then
+        draw:AddRectFilled(
+            { bar_x1, bar_y },
+            { bar_x1 + (bar_x2 - bar_x1) * fill, bar_y + bar_h },
+            imgui.GetColorU32(colors.gold), 3
+        )
+    end
+
+    if hovered and imgui.SetTooltip then
+        imgui.SetTooltip(sheetx.monsters_rank_tooltip(rank, score))
+    end
+
+    if clicked then
+        sheetx.monsters_rank_open = not open
+    end
+
+    local bottom = box_y + box_h + scaled(4)
+
+    -- The total of defeated monsters, under the box (right aligned).
+    local totals = sheetx.monsters_totals
+
+    sheetx.monsters_totals_drawn = false
+
+    if totals ~= nil then
+        local text_w = (imgui.CalcTextSize(totals.text))
+
+        draw:AddText(
+            { min_x + box_w - text_w, min_y + box_h + scaled(3) },
+            imgui.GetColorU32(totals.color), totals.text
+        )
+        bottom = bottom + line_h + scaled(4)
+        sheetx.monsters_totals_drawn = true
+    end
+
+    if inline then
+        return math.max(after_y, bottom)
+    end
+
+    return bottom
+end
+
+-- The page of the rank, in the place of the sheet of a monster: the points,
+-- the rank ladder and the achievements.
+function sheetx.monsters_rank_page(width)
+    local rank = controller and controller.monster_rank
+
+    if rank == nil then
+        sheetx.monsters_rank_open = false
+
+        return
+    end
+
+    local score = rank.Score()
+    local counts = score.counts
+
+    if imgui.Button(tx('Back') .. '##MonRankBack', { scaled(90), ui_button_height }) then
+        sheetx.monsters_rank_open = false
+    end
+
+    imgui.Spacing()
+    imgui.TextColored(colors.gold, tx(score.rank_name))
+    imgui.SameLine(0, 10)
+    imgui.TextColored(
+        colors.text, string.format(tx('%s points'), sheetx.thousands(score.points))
+    )
+
+    if score.next_points ~= nil then
+        imgui.TextColored(
+            colors.text_dim,
+            string.format(
+                tx('Next: %s at %s points'),
+                tx(score.next_name), sheetx.thousands(score.next_points)
+            )
+        )
+    else
+        imgui.TextColored(colors.leaf, tx('Highest rank reached'))
+    end
+
+    imgui.Spacing()
+    imgui.Separator()
+    imgui.Spacing()
+    imgui.TextColored(colors.gold, tx('Where the points come from'))
+
+    local parts = score.parts
+
+    sheetx.monsters_line(
+        tx('Discovered'),
+        string.format('%d / %d  (%s)', counts.discovered, counts.total,
+            sheetx.thousands(parts.discovered))
+    )
+    sheetx.monsters_line(
+        tx('Repeat defeats'), sheetx.thousands(parts.repeats)
+    )
+    sheetx.monsters_line(
+        tx('Notorious'),
+        string.format('%d  (%s)', counts.notorious,
+            sheetx.thousands(parts.notorious))
+    )
+    sheetx.monsters_line(
+        tx('Zones completed'),
+        string.format('%d / %d  (%s)', counts.zones_done, counts.zones_total,
+            sheetx.thousands(parts.zones))
+    )
+    sheetx.monsters_line(
+        tx('Regions completed'),
+        string.format('%d / %d  (%s)', counts.regions_done,
+            counts.regions_total, sheetx.thousands(parts.regions))
+    )
+
+    local cfg = rank.CONFIG
+
+    imgui.Spacing()
+    imgui.PushStyleColor(ImGuiCol_Text, colors.text_dim)
+    imgui.TextWrapped(
+        string.format(
+            tx('A new monster gives %d points plus %s per level, and %d more if it is a notorious one. Each repeat defeat gives %d (the first %d count). A completed zone or region gives a bonus.'),
+            cfg.discover_base, tostring(cfg.per_level), cfg.notorious_bonus,
+            cfg.repeat_points, cfg.repeat_cap
+        )
+    )
+    imgui.PopStyleColor()
+
+    imgui.Spacing()
+    imgui.Separator()
+    imgui.Spacing()
+    imgui.TextColored(colors.gold, tx('Ranks'))
+
+    for position, entry in ipairs(rank.RANKS) do
+        local reached = score.points >= entry.points
+        local line = string.format(
+            '%s%s  -  %s', position == score.rank and '> ' or '   ',
+            tx(entry.name), sheetx.thousands(entry.points)
+        )
+
+        imgui.TextColored(
+            position == score.rank and colors.gold
+                or (reached and colors.leaf or colors.text_dim),
+            line
+        )
+    end
+
+    imgui.Spacing()
+    imgui.Separator()
+    imgui.Spacing()
+    imgui.TextColored(colors.gold, tx('Achievements'))
+
+    for _, item in ipairs(rank.Achievements()) do
+        if item.done then
+            imgui.TextColored(colors.leaf, 'V  ' .. item.text)
+        elseif item.need > 1 then
+            imgui.TextColored(
+                colors.text_dim,
+                string.format('-  %s  (%d/%d)', item.text, item.value, item.need)
+            )
+        else
+            imgui.TextColored(colors.text_dim, '-  ' .. item.text)
+        end
+    end
+end
+
+-- The item catalogue -----------------------------------------------------------
+-- The window of the items: a search box and two filters (group and category), one
+-- list (only the visible rows are drawn: there are more than 20,000) and the
+-- sheet of the item selected: icon, data, text of the game, versions and the
+-- monsters that drop it. The data is in items.lua.
+
+sheetx.items_query = { '' }
+sheetx.items_group = 0
+sheetx.items_sub = 0
+sheetx.items_row_h = nil
+sheetx.items_scroll_top = false
+sheetx.items_last_sig = nil
+
+-- A combo of strings: options = { { value, label }, ... }. Returns the value
+-- picked, or nil when nothing changed.
+function sheetx.items_combo(id, width, current_label, options, current)
+    local picked = nil
+
+    imgui.PushItemWidth(width)
+
+    if imgui.BeginCombo('##' .. id, current_label) then
+        for index, option in ipairs(options) do
+            if imgui.Selectable(option[2] .. '##' .. id .. index, option[1] == current) then
+                picked = option[1]
+            end
+        end
+
+        imgui.EndCombo()
+    end
+
+    imgui.PopItemWidth()
+
+    return picked
+end
+
+-- The list: only the rows that are seen are drawn (a Dummy has the height of
+-- the others, so the scroll bar is the one of the whole list).
+function sheetx.items_list(store, list, col_w)
+    local row_w = col_w - scaled(28)
+    local selected = store.GetSelected()
+    local count = #list
+
+    if sheetx.items_scroll_top then
+        sheetx.items_scroll_top = false
+
+        if imgui.SetScrollY ~= nil then
+            imgui.SetScrollY(0)
+        end
+    end
+
+    if count == 0 then
+        if store.FavoritesGroup ~= nil and sheetx.items_group == store.FavoritesGroup()
+            and store.FavoriteCount() == 0 then
+
+            imgui.TextWrapped(tx('No favorites yet. Use the star on the sheet of an item.'))
+        else
+            imgui.TextWrapped(tx('No item matches.'))
+        end
+
+        return
+    end
+
+    local row_h = sheetx.items_row_h or (ui_button_height + scaled(6))
+    local gap = math.max(0, row_h - ui_button_height)
+    local scroll = imgui.GetScrollY ~= nil and imgui.GetScrollY() or 0
+    local view_h = imgui.GetWindowHeight ~= nil and imgui.GetWindowHeight() or scaled(600)
+    local first = math.min(count, math.max(1, math.floor(scroll / row_h)))
+    local last = math.min(count, math.ceil((scroll + view_h) / row_h) + 1)
+
+    if first > 1 then
+        imgui.Dummy({ 1, math.max(1, (first - 1) * row_h - gap) })
+    end
+
+    if ImGuiStyleVar_ButtonTextAlign ~= nil then
+        imgui.PushStyleVar(ImGuiStyleVar_ButtonTextAlign, { 0, 0.5 })
+    end
+
+    local draw = imgui.GetWindowDrawList()
+    local size = ui_button_height - scaled(6)
+
+    for index = first, last do
+        local entry = list[index]
+        local y_before = imgui.GetCursorPosY()
+
+        if toolbar_mode_button(
+            '##ItemRow' .. entry.ids[1], entry == selected, row_w
+        ) then
+            store.Select(entry)
+        end
+
+        if sheetx.items_row_h == nil and imgui.GetCursorPosY() > y_before then
+            sheetx.items_row_h = imgui.GetCursorPosY() - y_before
+        end
+
+        local min_x, min_y = imgui.GetItemRectMin()
+        local max_x, max_y = imgui.GetItemRectMax()
+        local texture = store.Icon(entry.ids[1])
+
+        if texture ~= nil then
+            draw:AddImage(
+                texture.id,
+                { min_x + scaled(4), min_y + scaled(3) },
+                { min_x + scaled(4) + size, min_y + scaled(3) + size },
+                { 0, 0 }, { 1, 1 },
+                imgui.GetColorU32({ 1, 1, 1, 1 })
+            )
+        end
+
+        if store.IsFavorite(entry) then
+            icons.draw_star(
+                draw,
+                max_x - scaled(24), min_y + (max_y - min_y - scaled(16)) * 0.5, scaled(16),
+                imgui.GetColorU32({ 1.0, 0.85, 0.1, 1.0 })
+            )
+        end
+
+        local label = entry.name
+
+        if #entry.ids > 1 then
+            label = label .. ' (' .. #entry.ids .. ')'
+        end
+
+        local line_h = imgui.GetTextLineHeight ~= nil and imgui.GetTextLineHeight() or scaled(16)
+
+        draw:AddText(
+            { min_x + size + scaled(12), min_y + math.max(0, (max_y - min_y - line_h) * 0.5) },
+            imgui.GetColorU32(colors.text),
+            fit_text(label, row_w - size - scaled(44))
+        )
+    end
+
+    if ImGuiStyleVar_ButtonTextAlign ~= nil then
+        imgui.PopStyleVar()
+    end
+
+    if last < count then
+        imgui.Dummy({ 1, math.max(1, (count - last) * row_h - gap) })
+    end
+end
+
+-- A line of the sheet: "Label: value".
+function sheetx.items_line(label, value)
+    imgui.TextColored(colors.text_dim, label .. ':')
+    imgui.SameLine(0, 8)
+    imgui.Text(value)
+end
+
+-- The sheet of the item selected.
+function sheetx.items_sheet(store, width)
+    local entry = store.GetSelected()
+
+    if entry == nil then
+        imgui.TextWrapped(tx('Pick an item from the list.'))
+
+        return
+    end
+
+    local id = store.GetSelectedId() or entry.ids[1]
+    local info = store.Info(id)
+
+    -- Icon (its place stays empty when the file is not there) and name.
+    local icon_size = scaled(64)
+    local texture = store.Icon(id)
+
+    imgui.Dummy({ icon_size, icon_size })
+
+    if imgui.GetItemRectMin ~= nil then
+        local icon_x, icon_y = imgui.GetItemRectMin()
+        local draw = imgui.GetWindowDrawList()
+
+        if texture ~= nil then
+            draw:AddImage(
+                texture.id, { icon_x, icon_y }, { icon_x + icon_size, icon_y + icon_size },
+                { 0, 0 }, { 1, 1 }, imgui.GetColorU32({ 1, 1, 1, 1 })
+            )
+        else
+            draw:AddRect(
+                { icon_x, icon_y }, { icon_x + icon_size, icon_y + icon_size },
+                imgui.GetColorU32(colors.text_dim), 4, 0, 1
+            )
+        end
+    end
+
+    imgui.SameLine(0, scaled(14))
+    imgui.BeginGroup()
+
+    local pushed = false
+
+    if journal_font ~= nil then
+        pushed = pcall(imgui.PushFont, journal_font, journal_font_size * 1.35)
+    end
+
+    imgui.TextColored(colors.gold, fit_text(entry.name, width - icon_size - scaled(40)))
+
+    if pushed then
+        imgui.PopFont()
+    end
+
+    local group, sub = store.CategoryLabel(id)
+
+    if group ~= nil then
+        imgui.TextColored(
+            colors.text_dim,
+            tx(group) .. (sub ~= nil and sub ~= group and (' > ' .. tx(sub)) or '')
+        )
+    end
+
+
+    -- Favorite: a star, yellow when the item is in the favorites folder.
+    local is_fav = store.IsFavorite(entry)
+
+    if is_fav then
+        imgui.PushStyleColor(ImGuiCol_Button, colors.button_active)
+    end
+
+    if imgui.Button('##ItemFavorite', { ui_button_height, ui_button_height }) then
+        store.ToggleFavorite(entry)
+    end
+
+    if imgui.GetItemRectMin ~= nil then
+        local star_x, star_y = imgui.GetItemRectMin()
+        local pad = ui_button_height * 0.12
+
+        icons.draw_star(
+            imgui.GetWindowDrawList(), star_x + pad, star_y + pad,
+            ui_button_height - pad * 2,
+            imgui.GetColorU32(is_fav and { 1.0, 0.85, 0.1, 1.0 } or colors.text_dim)
+        )
+    end
+
+    if is_fav then
+        imgui.PopStyleColor()
+    end
+
+    if imgui.IsItemHovered() and imgui.SetTooltip then
+        imgui.SetTooltip(is_fav and tx('Remove from favorites') or tx('Add to favorites'))
+    end
+
+    imgui.EndGroup()
+
+    imgui.Spacing()
+
+    if info == nil then
+        imgui.TextColored(colors.text_dim, tx('No data for this item.'))
+    else
+        -- What the source has; a field it does not have is not shown.
+        if info.level > 0 then
+            sheetx.items_line(tx('Level'), tostring(info.level))
+        end
+
+        if info.ilevel > 0 then
+            sheetx.items_line(tx('Item level'), tostring(info.ilevel))
+        end
+
+        local jobs = store.JobsLabel(info.jobs)
+
+        if jobs ~= nil then
+            sheetx.items_line(tx('Jobs'), jobs == 'All jobs' and tx('All jobs') or jobs)
+        end
+
+        if info.rare or info.ex then
+            sheetx.items_line(
+                tx('Flags'),
+                (info.rare and 'Rare' or '') .. (info.rare and info.ex and ' ' or '') .. (info.ex and 'Ex' or '')
+            )
+        end
+
+        if info.stack > 1 then
+            sheetx.items_line(tx('Stack'), tostring(info.stack))
+        end
+
+        if info.price > 0 then
+            sheetx.items_line(tx('Base price'), string.format(tx('%d gil'), info.price))
+        end
+
+        imgui.Spacing()
+        imgui.Separator()
+        imgui.Spacing()
+
+        if info.text ~= nil and info.text ~= '' then
+            imgui.TextWrapped(info.text)
+        else
+            imgui.TextColored(colors.text_dim, tx('No description in the data.'))
+        end
+    end
+
+    -- The versions of the name: a click shows its data.
+    if #entry.ids > 1 then
+        imgui.Spacing()
+        imgui.Separator()
+        imgui.Spacing()
+        imgui.TextColored(colors.text, tx('Versions'))
+
+        if ImGuiStyleVar_ButtonTextAlign ~= nil then
+            imgui.PushStyleVar(ImGuiStyleVar_ButtonTextAlign, { 0, 0.5 })
+        end
+
+        for _, version in ipairs(entry.ids) do
+            local data = store.Info(version)
+            local first_line = data ~= nil and tostring(data.text or ''):match('^[^\n]*') or ''
+            local label = '#' .. version .. (first_line ~= '' and ('  ' .. first_line) or '')
+
+            if toolbar_mode_button(
+                fit_text(label, width - scaled(24)) .. '##ItemVersion' .. version,
+                version == id, width - scaled(8)
+            ) then
+                store.Select(entry, version)
+            end
+        end
+
+        if ImGuiStyleVar_ButtonTextAlign ~= nil then
+            imgui.PopStyleVar()
+        end
+    end
+
+    -- The monsters that drop it (the Vana'dex data): a click opens its sheet.
+    imgui.Spacing()
+    imgui.Separator()
+    imgui.Spacing()
+    imgui.TextColored(colors.text, tx('Dropped by'))
+
+    local droppers = store.DroppedBy(id)
+
+    if #droppers == 0 then
+        imgui.TextColored(colors.text_dim, tx('No monster of the Vana\'dex drops it in the data.'))
+    else
+        local percent_col = 0
+
+        for _, dropper in ipairs(droppers) do
+            percent_col = math.max(
+                percent_col, (imgui.CalcTextSize(controller.monsters.PercentLabel(dropper.percent)))
+            )
+        end
+
+        if ImGuiStyleVar_ButtonTextAlign ~= nil then
+            imgui.PushStyleVar(ImGuiStyleVar_ButtonTextAlign, { 0, 0.5 })
+        end
+
+        local base = imgui.GetCursorPosX()
+
+        for index, dropper in ipairs(droppers) do
+            if index > 40 then
+                imgui.TextColored(
+                    colors.text_dim, string.format(tx('and %d more'), #droppers - 40)
+                )
+
+                break
+            end
+
+            local percent = controller.monsters.PercentLabel(dropper.percent)
+
+            imgui.SetCursorPosX(base + percent_col - (imgui.CalcTextSize(percent)))
+            imgui.TextColored(colors.text_dim, percent)
+            imgui.SameLine(0, 0)
+            imgui.SetCursorPosX(base + percent_col + scaled(10))
+
+            if toolbar_mode_button(
+                fit_text(dropper.name, width - percent_col - scaled(40))
+                    .. '##ItemDrop' .. index,
+                false, width - percent_col - scaled(24)
+            ) then
+                controller.monsters.Show(dropper.name)
+            end
+        end
+
+        if ImGuiStyleVar_ButtonTextAlign ~= nil then
+            imgui.PopStyleVar()
+        end
+    end
+end
+
+function sheetx.items_draw()
+    local store = controller and controller.items
+
+    if store == nil
+        or not store.GetOpen()
+        or not can_draw_ui()
+        or imgui.InputText == nil then
+
+        if sheetx.items_was_open and store ~= nil then
+            -- Closed: the size is written now.
+            store.Flush()
+        end
+
+        sheetx.items_was_open = false
+
+        return
+    end
+
+    store.Tick()
+
+    if not sheetx.items_was_open then
+        sheetx.items_was_open = true
+
+        local journal =
+            controller.GetJournalWindowState
+            and controller.GetJournalWindowState()
+
+        local saved = store.GetSize()
+        local win_w, win_h = sheetx.fit_screen(
+            saved and saved.w or scaled(960),
+            saved and saved.h or scaled(860)
+        )
+
+        imgui.SetNextWindowSize({ win_w, win_h })
+
+        imgui.SetNextWindowPos({
+            ((journal and journal.visible and journal.x) or 40) + 90,
+            ((journal and journal.visible and journal.y) or 40) + 90,
+        })
+    end
+
+    if imgui.SetNextWindowSizeConstraints then
+        imgui.SetNextWindowSizeConstraints(
+            { scaled(520), scaled(320) },
+            { scaled(1800), scaled(2400) }
+        )
+    end
+
+    push_theme()
+
+    local font_pushed = journal_font ~= nil
+
+    if font_pushed then
+        imgui.PushFont(journal_font, journal_font_size)
+    end
+
+    local open = { true }
+
+    imgui.PushStyleColor(ImGuiCol_ResizeGrip, { 0.80, 0.84, 0.95, 0.30 })
+    imgui.PushStyleColor(ImGuiCol_ResizeGripHovered, { 0.80, 0.84, 0.95, 0.60 })
+    imgui.PushStyleColor(ImGuiCol_ResizeGripActive, { 0.80, 0.84, 0.95, 0.90 })
+
+    scalex.before('items')
+
+    if imgui.Begin(
+        tx('Item catalog (BETA)') .. '###JournalItems',
+        open,
+        ImGuiWindowFlags_NoSavedSettings
+            + ImGuiWindowFlags_NoCollapse
+            + ImGuiWindowFlags_NoTitleBar
+    ) then
+        scalex.after('items')
+
+        local draw = imgui.GetWindowDrawList()
+        local x, y = imgui.GetWindowPos()
+        local width, height = imgui.GetWindowSize()
+
+        store.SetSize(width, height)
+
+        draw_window_panel(draw, x, y, width, height, true)
+
+        local title_y = imgui.GetCursorPosY()
+
+        sheetx.close_row(open)
+        imgui.SetCursorPosY(title_y)
+
+        local start_x = imgui.GetCursorPosX()
+
+        sheetx.monsters_title(width, tx('Item catalog (BETA)'))
+        imgui.Spacing()
+        imgui.SetCursorPosX(start_x)
+
+        if not store.Ready() then
+            imgui.TextWrapped(
+                string.format(tx('The item data is not available: %s'), tostring(store.Error()))
+            )
+        else
+            local list_w = math.floor(math.max(scaled(250), width * 0.34))
+
+            -- Search.
+            imgui.PushItemWidth(list_w)
+            imgui.InputText('##ItemsSearch', sheetx.items_query, 64)
+            imgui.PopItemWidth()
+
+            if (sheetx.items_query[1] or '') == '' then
+                imgui.SameLine(0, 12)
+                imgui.TextColored(colors.text_dim, tx('Type a name or an id to search'))
+            end
+
+            -- Group and category.
+            local groups = store.Groups()
+            local half = math.floor((list_w - 8) / 2)
+            local favorites_group = store.FavoritesGroup()
+            local group_options = {
+                { 0, tx('All groups') },
+                { favorites_group, tx('Favorites') },
+            }
+
+            for index, name in ipairs(groups) do
+                group_options[#group_options + 1] = { index, tx(name) }
+            end
+
+            local group_label = tx('All groups')
+
+            if sheetx.items_group == favorites_group then
+                group_label = tx('Favorites')
+            elseif sheetx.items_group ~= 0 then
+                group_label = tx(groups[sheetx.items_group] or '')
+            end
+
+            local picked = sheetx.items_combo(
+                'ItemsGroup', half, group_label,
+                group_options, sheetx.items_group
+            )
+
+            if picked ~= nil and picked ~= sheetx.items_group then
+                sheetx.items_group = picked
+                sheetx.items_sub = 0
+            end
+
+            imgui.SameLine(0, 8)
+
+            if sheetx.items_group == favorites_group then
+                imgui.TextColored(colors.text_dim, string.format(tx('%d favorites'), store.FavoriteCount()))
+            elseif sheetx.items_group ~= 0 then
+                local subs = store.Subs(sheetx.items_group)
+                local sub_options = { { 0, tx('All categories') } }
+                local sub_label = tx('All categories')
+
+                for _, sub in ipairs(subs) do
+                    sub_options[#sub_options + 1] = { sub.index, tx(sub.label) }
+
+                    if sub.index == sheetx.items_sub then
+                        sub_label = tx(sub.label)
+                    end
+                end
+
+                local sub_picked = sheetx.items_combo(
+                    'ItemsSub', half, sub_label, sub_options, sheetx.items_sub
+                )
+
+                if sub_picked ~= nil then
+                    sheetx.items_sub = sub_picked
+                end
+            else
+                imgui.TextColored(colors.text_dim, tx('Pick a group to see its categories'))
+            end
+
+            local list = store.Filter(
+                sheetx.items_query[1] or '', sheetx.items_group, sheetx.items_sub
+            )
+
+            -- A new search or filter: the list goes back to the top.
+            local sig = tostring(sheetx.items_query[1]) .. '|' .. sheetx.items_group
+                .. '|' .. sheetx.items_sub
+
+            if sig ~= sheetx.items_last_sig then
+                sheetx.items_last_sig = sig
+                sheetx.items_scroll_top = true
+            end
+
+            imgui.TextColored(
+                colors.text_dim, string.format(tx('%d items'), #list)
+            )
+
+            imgui.Spacing()
+
+            imgui.PushStyleColor(ImGuiCol_ChildBg, transparent)
+
+            if imgui.BeginChild('##ItemsList', { list_w, -1 }, child_border) then
+                sheetx.items_list(store, list, list_w)
+            end
+
+            imgui.EndChild()
+
+            imgui.SameLine(0, 8)
+
+            if imgui.BeginChild('##ItemsSheet', { -1, -1 }, child_border) then
+                local sheet_w = width - list_w - scaled(40)
+
+                if imgui.GetContentRegionAvail ~= nil then
+                    local ok, avail = pcall(imgui.GetContentRegionAvail)
+
+                    if ok and type(avail) == 'number' and avail > 0 then
+                        sheet_w = math.floor(avail) - scaled(20)
+                    end
+                end
+
+                sheetx.items_sheet(store, sheet_w)
+            end
+
+            imgui.EndChild()
+
+            imgui.PopStyleColor()
+        end
+    end
+
+    imgui.End()
+
+    imgui.PopStyleColor(3)
+
+    if not open[1] then
+        store.SetOpen(false)
+    end
+
+    if font_pushed then
+        imgui.PopFont()
+    end
+
+    pop_theme()
+end
+
+function sheetx.monsters_draw()
+    local store = controller and controller.monsters
+
+    if store == nil
+        or not store.GetOpen()
+        or not can_draw_ui()
+        or imgui.InputText == nil then
+
+        if sheetx.monsters_was_open then
+            -- Closed: the size and the favorites are written now.
+            if store ~= nil then
+                store.Flush()
+            end
+        end
+
+        sheetx.monsters_was_open = false
+
+        return
+    end
+
+    store.Tick()
+
+    if not sheetx.monsters_was_open then
+        sheetx.monsters_was_open = true
+        -- Read again: the zone names may not have been there before.
+        sheetx.monsters_zones = nil
+
+        local journal =
+            controller.GetJournalWindowState
+            and controller.GetJournalWindowState()
+
+        -- The size it had the last time, without going over the screen.
+        local saved = store.GetSize()
+        local win_w, win_h = sheetx.fit_screen(
+            saved and saved.w or scaled(980),
+            saved and saved.h or scaled(900)
+        )
+
+        imgui.SetNextWindowSize({ win_w, win_h })
+
+        imgui.SetNextWindowPos({
+            ((journal and journal.visible and journal.x) or 40) + 70,
+            ((journal and journal.visible and journal.y) or 40) + 70,
+        })
+    end
+
+    -- The player can drag the corner to resize it.
+    if imgui.SetNextWindowSizeConstraints then
+        imgui.SetNextWindowSizeConstraints(
+            { scaled(520), scaled(320) },
+            { scaled(1800), scaled(2400) }
+        )
+    end
+
+    push_theme()
+
+    local font_pushed = journal_font ~= nil
+
+    if font_pushed then
+        imgui.PushFont(journal_font, journal_font_size)
+    end
+
+    local open = { true }
+
+    imgui.PushStyleColor(ImGuiCol_ResizeGrip, { 0.80, 0.84, 0.95, 0.30 })
+    imgui.PushStyleColor(ImGuiCol_ResizeGripHovered, { 0.80, 0.84, 0.95, 0.60 })
+    imgui.PushStyleColor(ImGuiCol_ResizeGripActive, { 0.80, 0.84, 0.95, 0.90 })
+
+    scalex.before('monsters')
+
+    if imgui.Begin(
+        tx("Vana'dex (BETA)") .. '###JournalMonsters',
+        open,
+        ImGuiWindowFlags_NoSavedSettings
+            + ImGuiWindowFlags_NoCollapse
+            + ImGuiWindowFlags_NoTitleBar
+    ) then
+        scalex.after('monsters')
+
+        local draw = imgui.GetWindowDrawList()
+        local x, y = imgui.GetWindowPos()
+        local width, height = imgui.GetWindowSize()
+
+        -- Remembered (the file is written a moment after the last change).
+        store.SetSize(width, height)
+
+        draw_window_panel(draw, x, y, width, height, true)
+
+        -- The X is at the right; the title goes on the same line.
+        local title_y = imgui.GetCursorPosY()
+
+        sheetx.close_row(open)
+        imgui.SetCursorPosY(title_y)
+
+        local start_x = imgui.GetCursorPosX()
+        local title_w = sheetx.monsters_title(width)
+
+        imgui.Spacing()
+
+        -- The rank, at the top right, and under it the defeated total.
+        local done, total = store.DefeatedTotals()
+
+        sheetx.monsters_totals = {
+            text = tx('Defeated %d / %d'):format(done, total),
+            color = done >= total and total > 0 and colors.leaf or colors.text,
+        }
+        sheetx.monsters_totals_drawn = false
+
+        local after_y = sheetx.monsters_rank_widget(
+            width, title_y, title_w or 0, imgui.GetCursorPosY()
+        )
+
+        imgui.SetCursorPosX(start_x)
+        imgui.SetCursorPosY(after_y)
+
+        -- Two columns: one list (the places with their monsters) and the sheet.
+        local list_w = math.floor(math.max(scaled(230), width * 0.30))
+        local toolbar_w = list_w
+
+        -- The order of the list: by name or by level.
+        local by_level = store.GetSort() == 'level'
+        local sort_label = by_level and tx('Sort: Level') or tx('Sort: Name')
+        local sort_w = (imgui.CalcTextSize(sort_label)) + scaled(28)
+
+        imgui.PushItemWidth(math.max(scaled(80), toolbar_w - sort_w - 8))
+        imgui.InputText('##MonstersFilter', sheetx.monsters_filter, 64)
+        imgui.PopItemWidth()
+
+        imgui.SameLine(0, 8)
+
+        if imgui.Button(sort_label .. '##MonstersSort', { sort_w, ui_button_height }) then
+            store.ToggleSort()
+        end
+
+        if imgui.IsItemHovered() and imgui.SetTooltip then
+            imgui.SetTooltip(tx('Sort the monsters by name or by level'))
+        end
+
+        if (sheetx.monsters_filter[1] or '') == '' then
+            imgui.SameLine(0, 12)
+            imgui.TextColored(colors.text_dim, tx('Type a name to search'))
+        end
+
+        -- The progress and the filter of the ones not defeated yet.
+        local pending_on = store.GetOnlyPending()
+        local pending_label = pending_on and tx('Show: Pending') or tx('Show: All')
+        local pending_w = (imgui.CalcTextSize(pending_label)) + scaled(28)
+
+        -- Without the rank box the total stays here.
+        if not sheetx.monsters_totals_drawn then
+            imgui.TextColored(sheetx.monsters_totals.color, sheetx.monsters_totals.text)
+            imgui.SameLine(0, 12)
+        end
+
+        if imgui.Button(pending_label .. '##MonstersPending', { pending_w, ui_button_height }) then
+            store.ToggleOnlyPending()
+        end
+
+        if imgui.IsItemHovered() and imgui.SetTooltip then
+            imgui.SetTooltip(tx('Show all the monsters or only the ones you have not defeated yet'))
+        end
+
+        -- Filters: notorious, aggressive, close to your level.
+        local mine = store.PlayerLevel()
+        local gap = 6
+        local filter_w = math.floor((toolbar_w - gap * 2) / 3)
+
+        for position, filter in ipairs({
+            { 'notorious', 'Notorious',
+                'Only the notorious monsters' },
+            { 'aggro', 'Aggro',
+                'Only the aggressive monsters' },
+            { 'level', 'Level +/-5',
+                mine ~= nil
+                    and string.format(
+                        tx('Only the monsters close to your level (%d): from %d to %d'),
+                        mine, math.max(1, mine - store.LEVEL_RANGE),
+                        mine + store.LEVEL_RANGE
+                    )
+                    or tx('Your level is not known yet') },
+        }) do
+            if position > 1 then
+                imgui.SameLine(0, gap)
+            end
+
+            if toolbar_mode_button(
+                fit_text(tx(filter[2]), filter_w - scaled(24))
+                    .. '##MonstersFilter_' .. filter[1],
+                store.GetFilter(filter[1]),
+                filter_w
+            ) then
+                store.ToggleFilter(filter[1])
+            end
+
+            if imgui.IsItemHovered() and imgui.SetTooltip then
+                imgui.SetTooltip(
+                    filter[1] == 'level' and filter[3] or tx(filter[3])
+                )
+            end
+        end
+
+        imgui.Spacing()
+
+        imgui.PushStyleColor(ImGuiCol_ChildBg, transparent)
+
+        local ctx = sheetx.monsters_context(store)
+
+        -- The list: regions, zones and the monsters of the open place.
+        if imgui.BeginChild('##MonstersList', { list_w, -1 }, child_border) then
+            sheetx.monsters_tree(store, ctx, list_w)
+        end
+
+        imgui.EndChild()
+
+        imgui.SameLine(0, 8)
+
+        -- The sheet.
+        if imgui.BeginChild('##MonsterSheet', { -1, -1 }, child_border) then
+            local sheet_w = width - list_w - scaled(40)
+
+            if imgui.GetContentRegionAvail ~= nil then
+                local ok, avail = pcall(imgui.GetContentRegionAvail)
+
+                if ok and type(avail) == 'number' and avail > 0 then
+                    sheet_w = math.floor(avail) - scaled(20)
+                end
+            end
+
+            if sheetx.monsters_rank_open then
+                sheetx.monsters_rank_page(sheet_w)
+            else
+                sheetx.monsters_sheet(store, sheet_w)
+            end
+        end
+
+        imgui.EndChild()
+
+        imgui.PopStyleColor()
+    end
+
+    imgui.End()
+
+    imgui.PopStyleColor(3)
+
+    if not open[1] then
+        store.SetOpen(false)
+    end
+
+    if font_pushed then
+        imgui.PopFont()
+    end
+
+    pop_theme()
+end
+
 function M.Draw()
     -- Set again by the note box of this frame, if it has the keyboard.
     note_input_active = false
@@ -10605,6 +15236,10 @@ function M.Draw()
     fame_ui.draw()
     notesx.draw()
     sheetx.zones_draw()
+    sheetx.monsters_draw()
+    sheetx.items_draw()
+    sheetx.chat_draw()
+    sheetx.private_draw()
     draw_journal_mini()
     draw_journal_help()
 end
