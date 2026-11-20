@@ -158,7 +158,7 @@ M.STEPS = {
         name = "Rescue! A Moogle's Labor of Love",
         steps = {
             "You must have the Map of the Quicksand Caves; the Goblin marks the stone spots on it.",
-            "Reach Quicksand Caves Map 5 at the " .. ACTOR.GOBLIN_GEOLOGIST.text .. " (J-11): the Geomagnetic Fount waypoint (go east, right after the door; don't fall in the hole), or the hidden Western Altepa Desert (D-12) entrance (Quicksand Caves Home Point #1, exit 5 at (H-4), then south). Speak with him.",
+            "Reach the Goblin Geologist (J-11) on Quicksand Caves Map 5: the Geomagnetic Fount waypoint (go east, right after the door; don't fall in the hole), or the hidden Western Altepa Desert (D-12) entrance (Quicksand Caves Home Point #1, exit 5 at (H-4), then south). Speak with him.",
             "Collect the nine stones (Surya, Chandra, Mangala, Budha, Brihaspati, Shukra, Shani, Rahu, Ketu) from the ??? marked in green on your map. The marks are random, saved on your PC, and don't clear when collected, so note which you've done. Use \"Change Map\" to plan.",
             "Possible maps: Map 5 via Western Altepa (G-5) entrance 6 (Kuftal Tunnel Survival Guide); Maps 3 and 4 via Western Altepa (J-9) entrance 2 (Unity Warp level 125; Map 4 is exit C at (D-11)); Map 1 via Eastern Altepa (K-7) entrance 1 (Unity Warp level 125 to Quicksand Caves); Map 2 via Eastern Altepa (H-10) entrance 4 (Survival Guide). Many are one-way drops; Teleport-Altep, Instant Warp or Quicksand Caves Home Point #2 help.",
             "Return to the " .. ACTOR.GOBLIN_GEOLOGIST.text .. " with all nine for the Navaratna talisman.",

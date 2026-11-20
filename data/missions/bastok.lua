@@ -402,13 +402,14 @@ M.STEPS = {
         reward = "Rank 8, 60,000 gil",
         steps = {
             "Speak with " .. ACTOR.BASTOK_GATE_GUARD.text .. ".",
-            "Speak with " .. ACTOR.KARST.text .. ".",
-            "Speak with " .. ACTOR.HILDA.text .. ".",
+            "Speak with President " .. ACTOR.KARST.text .. " in the President's Office in Bastok Metalworks for details on the mission.",
+            "Speak with Hilda at the Steaming Sheep restaurant in Port Bastok (E-6), near Home Point #3. You can talk to her from the bottom floor.",
             "Travel to Waughroon Shrine through Palborough Mines (the Palborough Mines Home Point is close), or pay Domenic in Lower Jeuno (J-7) 750 gil to be teleported straight to the battlefield.",
             "Examine the Burning Circle to enter the battlefield \"On My Way\" (6 people, no level cap, no experience loss, buffs removed, Trusts allowed). You face four Quadavs that each use their two-hour ability: Sa'Nha Soulsaver (WHM), Go'Bha Slaughterer (DRK), Ku'Jhu Graniteskin (WAR) and Da'Shu Knightslayer (RDM). Sleep them and fight one at a time, pulling the White Mage first, down to the bottom of the ramp, so Benediction doesn't wake the others.",
             "Winning gives the key item Letter from Werei.",
-            "Return to Bastok and speak with " .. ACTOR.KARST.text .. ".",
-            "Speak with Gumbah in Bastok Mines (J-7), in the house next to Home Point #3 (upstairs and across the bridge), for the cutscene where he reads the letter. Keep talking to him until his text stops changing; if a Voracious Resurgence mission is active he talks about that first.",
+            "Return to the President's Office in Bastok Metalworks and speak with " .. ACTOR.KARST.text .. " for Rank 8.",
+            "Speak with Gumbah in Bastok Mines (J-7), in the house next to Home Point #3 (upstairs and across the bridge), for the cutscene where he reads the letter. Keep talking to him until his text stops changing; if a Voracious Resurgence mission is active he talks about that first. If a Gate Guard still tells you to deliver the Letter from Werei, you haven't seen the right cutscene yet.",
+            "Optional: Cornelia's door, behind President Karst, is no longer locked; examine it for a cutscene. You can return for a different one after Beauty and the Galka, Fallen Comrades and Rivals.",
         },
     },
 

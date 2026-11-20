@@ -17,7 +17,8 @@ function M.step(text)
     text = text:gsub('%.%.', '.')
 
     -- "Kocco Ehllek (H-8)., who" -> "Kocco Ehllek (H-8), who"
-    text = text:gsub('%.([,;])', '%1')
+    -- Local patch: also "Seed Afterglow (J-10).: Amicitia Stone".
+    text = text:gsub('%.([,;:])', '%1')
 
     -- "Thorben (J-10). in Batallia" -> "Thorben (J-10) in Batallia"
     -- A sentence break is always followed by a capital letter, so a
