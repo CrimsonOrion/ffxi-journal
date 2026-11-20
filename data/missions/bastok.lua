@@ -199,7 +199,7 @@ M.STEPS = {
         reward = "Rank 3, 3,000 gil, Adventurer's Certificate",
         steps = {
             "Speak with " .. ACTOR.BASTOK_GATE_GUARD.text .. ".",
-            "Speak with " .. ACTOR.NAJI.text .. " to begin the embassy mission.",
+            "Go to Bastok Metalworks and speak with " .. ACTOR.NAJI.text .. " in front of the President's Office to begin the embassy mission.",
             "Choose whether to visit San d'Oria or Windurst first.",
 
             "San d'Oria first: travel to Northern San d'Oria and speak with Baraka at the Bastokan Consulate.",
@@ -223,7 +223,7 @@ M.STEPS = {
             "Defeat the Dread Dragon.",
             "Return to Northern San d'Oria and speak with Helaku.",
 
-            "Return to Bastok and speak with " .. ACTOR.NAJI.text .. " after completing both paths.",
+            "Return to Bastok Metalworks and speak with " .. ACTOR.NAJI.text .. " after completing both paths.",
         },
     },
 
@@ -314,11 +314,11 @@ M.STEPS = {
         reward = "Rank Points",
         steps = {
             "Speak with " .. ACTOR.BASTOK_GATE_GUARD.text .. ".",
-            "Speak with " .. ACTOR.NAJI.text .. ".",
+            "Go to Bastok Metalworks and speak with " .. ACTOR.NAJI.text .. " in front of the President's Office.",
             "Go to Fei'Yin, in the northeast corner of Beaucedine Glacier, for a cutscene with Zeid. Home Point #1 in Fei'Yin puts you right by Qu'Bia Arena; Unity Warp (level 128) puts you at the Fei'Yin entrance. Most monsters here detect by sound, a few by spellcasting. If you are low level, bring Trusts or a party of level 50+ players.",
             "From the Fei'Yin entrance go east to (K-8) on map 1 and open the Cermet Portal between the two Dolls to enter Qu'Bia Arena. All your buffs wear off when you enter, so plan accordingly.",
             "Examine the Burning Circle to enter the BCNM \"The Rank 5 Mission\". You only need to defeat Archlich Taber'quoan, a Black Mage who casts Sleepga II and Freeze and may use Manafont. He starts with two Ancient Sorcerers, and Ancient Warriors run in from the hallway to help; the skeletons have little HP and take extra damage from blunt weapons. Winning gives a cutscene and the key item Burnt seal.",
-            "Return to Bastok and speak with " .. ACTOR.NAJI.text .. " to complete the mission.",
+            "Return to Bastok Metalworks and speak with " .. ACTOR.NAJI.text .. " to complete the mission.",
         },
     },
 
