@@ -130,8 +130,8 @@ M.STEPS = {
         steps = {
             "Speak with " .. ACTOR.KUPIPI.text .. " in Heavens Tower (Windurst Walls, Home Point #1) for a cutscene.",
             "Trade a Red Grass Cloth to " .. ACTOR.SASSA_KOTASSA.text .. " in the lobby (Auction House: Materials > Clothcraft).",
-            "Trade a Yagudo Drink to " .. ACTOR.SHEELALA.text .. " (Curio Vendor Moogle or Auction House: Food > Meals > Drinks).",
-            "Trade a Dream Flower Petal to " .. ACTOR.HABIDA_JUBIDA.text .. " (Auction House: Materials > Alchemy 1, or kill Alraune in Bibiki Bay - Purgonorgo Isle after they use Dream Flower).",
+            "Trade a Yagudo Drink to Sheelala (Curio Vendor Moogle or Auction House: Food > Meals > Drinks).",
+            "Trade a Dream Flower Petal to Habida-Jubida (Auction House: Materials > Alchemy 1, or kill Alraune in Bibiki Bay - Purgonorgo Isle after they use Dream Flower).",
             "Return to " .. ACTOR.KUPIPI.text .. " for a cutscene; she asks for a White Rolanberry (a Ripe White Rolanberry also works).",
             "Get one from the Auction House (Food > Ingredients), or trade a Rolanberry (Crawler's Nest NM chain, or the Auction House) to Pellio in Rolanberry Fields (F-11) for a 50/50 White or Ripe White Rolanberry. Pellio only accepts it after Kupipi's request. The Crawler's Nest Survival Guide is closest.",
             "Trade the White Rolanberry or Ripe White Rolanberry to " .. ACTOR.KUPIPI.text .. " for a cutscene.",
@@ -379,7 +379,7 @@ M.STEPS = {
             "In Alzadaal Undersea Ruins, kill Qiqirns until Panaiveriyamman (WAR Acrolith, about 150,000 HP) appears; summon Trusts first. It resists magic (especially Dark) but is weak to Water. Everyone in the party gets the Man-made solution.",
             "Return to Ghatsad for a cutscene and the Repaired aeropearl. FastCS (or a frame rate above 30 FPS) can freeze the end of this cutscene on a black screen; hold Print Screen for a few seconds to break out, or unload FastCS first.",
             "Get another Lamian Fang Key and go back to the ??? on the ship at (H-10), Arrapago Reef Map 1 (Arrapago Reef Survival Guide).",
-            "Return to the " .. ACTOR.APKALLU_GUIDE.text .. " (Caedarva Mire Survival Guide) for the final cutscene and your reward. FastCS (or a frame rate above 30 FPS) can freeze the end of this cutscene on a black screen; hold Print Screen for a few seconds to break out, or unload FastCS first.",
+            "Return to the Apkallu Guide (F-7), by the Caedarva Mire Survival Guide, for the final cutscene and your reward. FastCS (or a frame rate above 30 FPS) can freeze the end of this cutscene on a black screen; hold Print Screen for a few seconds to break out, or unload FastCS first.",
         },
     },
 
@@ -590,7 +590,7 @@ M.STEPS = {
         name = 'Magh Bihu on the Prowl',
         steps = {
             "Before you go, get an Acidic Humus and a Watermelon per party member. Acidic Humus: Auction House (Others > Misc. 2), or in Abyssea - Tahrongi kill Pachypodiums for an Alkaline Humus and trade it to the ??? on the east side of (H-8) to spawn Gancanagh. Watermelon: Scamplix near Home Point #2 in Rabao (F-7).",
-            "Go to The Boyahda Tree Map 1 (F-4), the spot entered from (E-4) with a single " .. ACTOR.MANDRAGORA_WARDEN.text .. " (Proto-Waypoint is closest; or the Cloister Home Point and exit F; or Unity Warp level 135), and ask about Magh Bihu.",
+            "Go to The Boyahda Tree Map 1 (F-4), the spot entered from (E-4) with a single Mandragora Warden (F-4) (Proto-Waypoint is closest; or the Cloister Home Point and exit F; or Unity Warp level 135), and ask about Magh Bihu.",
             "Trade the Acidic Humus to the " .. ACTOR.MANDRAGORA_WARDEN.text .. " for a cutscene.",
             "Speak with the " .. ACTOR.MANDRAGORA_WARDEN.text .. " again and choose \"Where did Magh Bihu go?\"",
             "Trade the Watermelon to the " .. ACTOR.MANDRAGORA_WARDEN.text .. " for the final cutscene and your reward.",
