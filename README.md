@@ -7,6 +7,18 @@ FFXI Journal is an Ashita addon for **Final Fantasy XI** focused on providing a 
 
 It includes mission and quest progression tracking, organized quest categories, objective lists, detailed quest information, a pinned Tracker, and controller/keyboard navigation.
 
+## About this fork
+
+This is a fork of [Kxteel/ffxi-journal](https://github.com/Kxteel/ffxi-journal), based on the 0.4.0 release. It adds:
+
+- Quest and mission walkthroughs checked against BG-Wiki and filled in or corrected for every area and expansion, including all artifact armor quests.
+- NPC positions checked against current [LandSandBoat](https://github.com/LandSandBoat/server); cutscene-only positions are removed, so the compass no longer points into walls.
+- A leveling guide and EXP camps for levels 1-99 from BG-Wiki, for retail.
+- Adoulin and Abyssea fame, and fixes to search, the compass and the window layout.
+- Spanish translations for all of the above.
+
+> **AI disclosure:** The changes in this fork were written with AI assistance (Anthropic's Claude) at my direction. The original addon is the work of its authors, credited above.
+
 ## Compass, alerts and arrows in the game world
 
 **Compass.** "Point compass here" points the compass at the NPC of the current step of a quest or mission. The list of NPCs chosen with the search and the pins of the Tracker also show in it. When you get within 30 yalms of an NPC (kept up to 35) that starts a quest you can start, or that has a quest of yours in progress, the NPC is added to the compass by itself (at most 3 automatic ones, and the compass opens if it was closed); its quests are listed under it and a click opens them in the Journal.
