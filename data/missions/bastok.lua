@@ -366,14 +366,14 @@ M.STEPS = {
         reward = "Rank 7, 40,000 gil",
         steps = {
             "Speak with " .. ACTOR.BASTOK_GATE_GUARD.text .. ".",
-            "Speak with " .. ACTOR.NAJI.text .. ".",
+            "Go to Bastok Metalworks and speak with " .. ACTOR.NAJI.text .. " in front of the President's Office for a cutscene. You may need to speak with him several times to get the right cutscene.",
             "Travel to Norg and speak with Gilgamesh behind the Oaken Door at (K-8) until he mentions Frag Rocks.",
             "Obtain one Adaman Ore for every six people doing the mission (Auction House: Materials > Smithing; mining one in Ifrit's Cauldron is very rare). Each fight gives up to 6 Frag Rocks.",
             "Enter Ifrit's Cauldron from Yhoator Jungle (I-5). Quick routes: Ifrit's Cauldron Home Point #1 then Escape and re-enter, Unity Warp (level 122) to Yhoator Jungle, the Elshimo Uplands outpost warp or the Survival Guide.",
             "Use Sneak and Invisible past the Bats and Bombs: left at the first intersection, right at the next, to the ??? in the lava flow around (H-7) on Map 1. Buff up (Barfira helps) and trade it the Adaman Ore.",
             "This spawns two level 65 NMs: Magma, a Bomb that may Self-Destruct, and Salamander, a weaker Lizard. Only Magma has to die, so sneak-pull it. It drops the Frag Rocks.",
             "Return to Norg and trade your Frag Rock to Gilgamesh for a cutscene.",
-            "Return to Bastok and speak with " .. ACTOR.NAJI.text .. ".",
+            "Return to Bastok Metalworks and speak with " .. ACTOR.NAJI.text .. " for a final cutscene and your reward.",
         },
     },
 
