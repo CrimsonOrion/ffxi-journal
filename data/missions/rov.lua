@@ -370,7 +370,7 @@ M.STEPS = {
     ['2-9'] = {
         name = "Aphmau's Light",
         steps = {
-            "Examine " .. ACTOR.IMPERIAL_WHITEGATE.text .. " (L-8/9) in Aht Urhgan Whitegate while Aphmau is in town.",
+            "Examine the Imperial Whitegate (L-8/9) in Aht Urhgan Whitegate while Aphmau is in town.",
             "Even past Passing Glory, in some Aht Urhgan missions Aphmau is away (for example Sweets for the Soul and Puppet in Peril). Progress to one where she is in town.",
             "Receive Cipher: Nashmeira's Alter Ego II.",
         },
