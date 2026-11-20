@@ -306,7 +306,7 @@ M.STEPS = {
     [22] = {
         name = "Dungeons and Dancers",
         steps = {
-            "Examine " .. ACTOR.BEAUCEDINE_REGAL_PAWPRINTS_G9.text .. " (G-9) on the high ground southwest of the Campaign Arbiter, on the same level (don't go to the tower or down the ramp), for a cutscene.",
+            "Examine the Regal Pawprints (G-9) on the high ground southwest of the Campaign Arbiter, on the same level (don't go to the tower or down the ramp), for a cutscene.",
             "Examine them again to enter the Everbloom Hollow maze. You have 30 minutes, with warnings at 10, 5 and 1 minutes. If you fail, get another Aroma bug from Naoi's Regal Pawprints at (H-10).",
             "Everyone gets two Ratstail Explosives (carry up to 3) to blow open dead-end walls at their ???, and jars of Firesand for the colored detonators. Defeated Goblin Reavers leave a ??? with more explosives.",
             "Proceed northwest while keeping to the right-hand wall.",
