@@ -63,8 +63,6 @@ local colors = {
     done = { 0.55, 0.85, 0.55, 1.00 },
     completed = { 0.50, 0.92, 0.55, 1.00 },
     near = { 0.45, 0.88, 0.90, 1.00 },
-    -- Egg-yolk yellow-orange: the default of 'Monsters to Discover'.
-    yolk = { 1.00, 0.72, 0.12, 1.00 },
     check = { 0.35, 0.85, 0.45, 1.00 },
     panel = { 0.045, 0.055, 0.110 },
 }
@@ -172,18 +170,7 @@ local function play_sound(entry)
         base = base .. '/'
     end
 
-    if entry.monster or entry.monster_zone or entry.monster_info then
-        -- Its own sound when it is there, the one of the items if not.
-        file = entry.monster_info and 'monster_rank.wav'
-            or entry.monster_zone and 'monster_zone.wav'
-            or 'monster_defeated.wav'
-
-        if ashita.fs ~= nil
-            and not ashita.fs.exists(base .. 'assets/sounds/' .. file) then
-
-            file = 'item_found.wav'
-        end
-    elseif entry.item then
+    if entry.item then
         file = 'item_found.wav'
 
         if entry.complete
@@ -394,38 +381,6 @@ function M.Draw(controller, can_draw, title_font)
                 quest = tx('Sample Quest'),
                 ask = false,
             }, test.token)
-        elseif test.monster then
-            start_banner(controller, {
-                kind = 'quest',
-                monster = true,
-                name = tx('Sample Monster'),
-                defeated = 3,
-                total = 397,
-                zone_name = tx('Sample Zone'),
-                zone_defeated = 3,
-                zone_total = 7,
-                ask = false,
-            }, test.token)
-        elseif test.monster_rank or test.monster_ach then
-            start_banner(controller, {
-                kind = 'quest',
-                monster_info = true,
-                title = test.monster_rank and tx('Rank Up!')
-                    or tx('Achievement Unlocked'),
-                line1 = test.monster_rank and tx('Hunter')
-                    or string.format(tx('%d Monsters Discovered'), 100),
-                line2 = string.format(tx('%d points'), 2500),
-                ask = false,
-            }, test.token)
-        elseif test.monster_zone then
-            start_banner(controller, {
-                kind = 'quest',
-                monster_zone = true,
-                zone_name = tx('Sample Zone'),
-                missing = 3,
-                total = 7,
-                ask = false,
-            }, test.token)
         elseif test.near then
             start_banner(controller, {
                 kind = 'quest',
@@ -507,8 +462,7 @@ function M.Draw(controller, can_draw, title_font)
     -- The look set in the settings: one for new items, one for completed.
     local style = controller.GetAlertStyle ~= nil
         and controller.GetAlertStyle(
-            (entry.monster or entry.monster_zone or entry.monster_info) and 'monster'
-                or entry.near and 'near'
+            entry.near and 'near'
                 or ((entry.done or (entry.item and entry.complete)) and 'done' or 'new')
         )
         or { opacity = 0.70, size = 1.0, color = 0 }
@@ -524,9 +478,7 @@ function M.Draw(controller, can_draw, title_font)
     if entry.near then
         near_lines = #(entry.names or {}) + ((entry.more or 0) > 0 and 1 or 0)
         height = (HEIGHT_PLAIN + 36 + near_lines * (NAME_SIZE + 10)) * scale
-    elseif entry.item or entry.monster or entry.monster_zone
-        or entry.monster_info then
-
+    elseif entry.item then
         height = (HEIGHT_PLAIN + 40) * scale
     end
     local slide = (1 - ease_out(t / FADE_IN)) * SLIDE * scale
@@ -552,10 +504,7 @@ function M.Draw(controller, can_draw, title_font)
 
     -- The color of the title: the one chosen in the palette, or the default
     -- of the alert (gold for quests, blue for missions, green when done).
-    local accent = entry.monster_zone and colors.yolk
-        or entry.near and colors.near
-        or entry.monster_info and colors.quest
-        or entry.monster and colors.completed
+    local accent = entry.near and colors.near
         or (entry.item and entry.complete) and colors.completed
         or entry.done and colors.completed
         or colors[entry.kind]
@@ -585,13 +534,7 @@ function M.Draw(controller, can_draw, title_font)
 
         local title
 
-        if entry.monster_info then
-            title = tostring(entry.title or '')
-        elseif entry.monster_zone then
-            title = tx('Monsters to Discover')
-        elseif entry.monster then
-            title = tx('New Monster Defeated')
-        elseif entry.item then
+        if entry.item then
             title = entry.complete and tx('Items Complete')
                 or tx('Item Obtained')
         elseif entry.near then
@@ -611,7 +554,7 @@ function M.Draw(controller, can_draw, title_font)
         -- moves over so the two stay centered together.
         local check_size = TITLE_SIZE * scale * 0.85
         local check_gap = 14 * scale
-        local show_check = entry.done or entry.monster or (entry.item and entry.complete)
+        local show_check = entry.done or (entry.item and entry.complete)
         local offset = show_check and (check_size + check_gap) * 0.5 or 0
 
         centered_text(
@@ -769,87 +712,6 @@ function M.Draw(controller, can_draw, title_font)
                     string.format(tx('+%d more'), entry.more), width, alpha
                 )
             end
-        elseif entry.monster_info then
-            -- A rank up or an achievement of the monster search: the rank
-            -- (or the achievement) and a line under it.
-            centered_text(
-                regular,
-                NAME_SIZE * scale,
-                colors.name,
-                fit_text(regular, NAME_SIZE * scale, tostring(entry.line1 or ''), width - 80 * scale),
-                width,
-                alpha
-            )
-
-            imgui.Spacing()
-
-            centered_text(
-                regular,
-                TEXT_SIZE * scale,
-                colors.text,
-                fit_text(regular, TEXT_SIZE * scale, tostring(entry.line2 or ''), width - 80 * scale),
-                width,
-                alpha
-            )
-        elseif entry.monster_zone then
-            -- A zone entered: its name, and under it how many of its
-            -- monsters are still to be discovered.
-            centered_text(
-                regular,
-                NAME_SIZE * scale,
-                colors.name,
-                fit_text(regular, NAME_SIZE * scale, tostring(entry.zone_name or ''), width - 80 * scale),
-                width,
-                alpha
-            )
-
-            imgui.Spacing()
-
-            centered_text(
-                regular,
-                TEXT_SIZE * scale,
-                colors.text,
-                (entry.missing or 0) == 1
-                    and tx('1 left to discover here')
-                    or string.format(tx('%d left to discover here'), entry.missing or 0),
-                width,
-                alpha
-            )
-        elseif entry.monster then
-            -- A monster defeated for the first time: its name, and under it
-            -- how many of the monsters have been defeated.
-            centered_text(
-                regular,
-                NAME_SIZE * scale,
-                colors.name,
-                fit_text(regular, NAME_SIZE * scale, tostring(entry.name or ''), width - 80 * scale),
-                width,
-                alpha
-            )
-
-            imgui.Spacing()
-
-            centered_text(
-                regular,
-                TEXT_SIZE * scale,
-                colors.text,
-                entry.zone_name ~= nil and (entry.zone_total or 0) > 0
-                    and fit_text(
-                        regular, TEXT_SIZE * scale,
-                        string.format(
-                            tx('Defeated in %s: %d / %d'),
-                            entry.zone_name,
-                            entry.zone_defeated or 0, entry.zone_total
-                        ),
-                        width - 80 * scale
-                    )
-                    or string.format(
-                        tx('Defeated %d / %d'),
-                        entry.defeated or 0, entry.total or 0
-                    ),
-                width,
-                alpha
-            )
         elseif entry.item then
             -- An item of a quest in progress: its name (with how many of
             -- the ones the quest asks for), and the quest under it.
