@@ -57,6 +57,34 @@ Q.STEPS = {
         "Finally, trade a Brown Belt to the same door for the last cutscene and the Black Belt. The Brown Belt is used up in the trade.",
     },
 
+    jeu_lj_save_the_clock_tower = { -- Local patch: Jeuno quests
+        "Speak with Derrick in the Chamber of Commerce and Industry in Lower Jeuno (H-7) and ask to start a petition. He gives you a Tower Petition.",
+        "Trade the Tower Petition to these 10 NPCs for their signatures: Pitantimand in Port Jeuno (H-7); Teigero-Bangero (H-10) and Zauko (I-6) in Lower Jeuno; Baudin (G-8) and Collet (G-7) in Upper Jeuno.",
+        "Also in Upper Jeuno: Constance (G-9), Monberaux (G-10) and Souren (G-9) in the Infirmary, and Zuber (F-7) in the Marble Bridge Tavern. Last, Radeivepart in Ru'Lude Gardens (H-9).",
+        "With all 10 signatures, trade the Tower Petition back to Derrick to complete the quest.",
+    },
+
+    jeu_lj_the_wonder_magic_set = { -- Local patch: Jeuno quests
+        "Speak with Naruru, Teigero-Bangero or Panta-Putta in the merchant's house in Lower Jeuno (G-10) for a cutscene.",
+        "Speak with Panta-Putta. He wants the key item Wonder Magic Set, which you get from the quest Child's Play.",
+        "Return to Panta-Putta with the Wonder Magic Set to complete the quest.",
+    },
+
+    jeu_lj_your_crystal_ball = { -- Local patch: Jeuno quests
+        "Speak with Kurou-Morou, the fortune teller above the Auction House in Lower Jeuno (I-7). He asks you for a crystal ball.",
+        "Obtain an Ahriman Lens (Ex, not on the Auction House) from Evil Eye type monsters in Ranguemont Pass, Beaucedine Glacier or Xarcabard.",
+        "In the Maze of Shakhrami, go to (G-5) on the first map, east of the exit to Attohwa Chasm, and trade the Ahriman Lens to the Rockwell at the top of the path.",
+        "Wait one Earth minute, then examine the Rockwell again for a Divination Sphere.",
+        "Trade the Divination Sphere to Kurou-Morou to complete the quest.",
+    },
+
+    jeu_lj_collect_tarut_cards = { -- Local patch: Jeuno quests
+        "Speak with Chululu in Lower Jeuno (I-8). She gives you five copies of one random Tarut card.",
+        "Collect one each of Tarut: Death, Tarut: The Hermit, Tarut: The King and Tarut: The Fool by trading with other players. The cards can be sold in bazaars but not on the Auction House.",
+        "You can get another random card from Chululu once per real-life day.",
+        "Trade all four cards to Chululu to complete the quest. Speak with her again afterwards to start All in the Cards.",
+    },
+
     jeu_uj_axe_the_competition = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need Axe skill 240 or higher and level 71.",
         "Speak with Brutus in Upper Jeuno (G-7) to receive the key item Weapon Training Guide and the Pick of Trials. You need to break the latent on the Pick of Trials before completing the rest of the quest.",
@@ -307,6 +335,41 @@ Q.STEPS = {
         "After defeating Dark Spark, examine the same torch again for the key item Shadow flames.",
         "Return to Port Jeuno and examine the ??? again. After the cutscene the quest is complete and you receive the Beast Gloves.",
         "Optional: Guslam mentions more armor scattered about Vana'diel. With Beastmaster as your main job, open the Treasure Coffer in Garlaige Citadel for the Beast Helm, and the one in Beadeaux for the Beast Jackcoat, each with that zone's coffer key. The quest must be active or completed, but these are not needed to complete it.",
+    },
+
+    jeu_uj_crest_of_davoi = { -- Local patch: Jeuno quests
+        "You need to have reached Mission 4-1 of your nation. Speak with Baudin in Upper Jeuno (G-8) to begin the quest.",
+        "Trade a Coeurl Meat to Baudin for the key item Crest of Davoi, which lets you pass the Wall of Dark Arts in Davoi.",
+    },
+
+    jeu_uj_save_my_sister = { -- Local patch: Jeuno quests
+        "Speak with Baudin in Upper Jeuno (G-8) to begin the quest. It does not appear in your current quest list.",
+        "Speak with Mailloquetat in Upper Jeuno (H-9) for a cutscene, then return to Baudin.",
+        "Speak with Neraf-Najiruf in Ru'Lude Gardens (G-7) for a Ducal Guard's Lantern. You may need to speak with him twice.",
+        "Enter the Eldieme Necropolis from Batallia Downs (I-10) and examine the four Braziers in this order: (F-9), (H-7), (F-7), (H-9). Out of order, the lantern won't light.",
+        "Return to Baudin for the Holy Mace and 3,000 gil, then speak with Neraf-Najiruf once more.",
+    },
+
+    jeu_uj_a_clock_most_delicate = { -- Local patch: Jeuno quests
+        "Speak with Collet in Upper Jeuno (G-7), near the clock tower, for a cutscene.",
+        "Examine the Door: House west of Collet, to the right of the Marble Bridge, for another cutscene.",
+        "Obtain the key item Clock Tower Oil by completing the quest Deal with Tenshodo.",
+        "Examine the same Door: House again to complete the quest.",
+    },
+
+    jeu_uj_a_candlelight_vigil = { -- Local patch: Jeuno quests
+        "Speak with Ilumida in Upper Jeuno (G-8) to begin the quest.",
+        "Speak with Rouliette in the Temple of the Goddess, Upper Jeuno (H-9).",
+        "Rouliette gives you the key item Holy Candle once you complete the quest Candle-making, which needs a Lanolin Cube from Battering Rams in La Theine Plateau (or rams in Lufaise Meadows or Caedarva Mire).",
+        "Return to Ilumida to complete the quest.",
+    },
+
+    jeu_uj_the_kind_cardian = { -- Local patch: Jeuno quests
+        "This follows The Lost Cardian. Panta-Putta, in the Infirmary in Upper Jeuno (G-10), asks you to take the Two of Swords to the Manustery in Windurst.",
+        "Speak with Apururu in Windurst Woods (H-9) for a cutscene.",
+        "Obtain a Ten of Cups: kill the Ten of Cups in the Outer Horutoto Ruins (Dahlia Tower, entered from West Sarutabaruta F-11), at (J-8) in the small room with the large locked door, or buy one at the Auction House.",
+        "Give the Ten of Cups to Apururu.",
+        "Return to Panta-Putta, now in Lower Jeuno (G-10), to complete the quest.",
     },
 
     jeu_pj_circle_of_time = {

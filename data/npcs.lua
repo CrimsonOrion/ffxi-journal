@@ -72,10 +72,13 @@ return {
     'Chamama',
     'Chasalvige',
     'Chipmy-Popmy',
+    'Chululu', -- Local patch: Jeuno quests
     'Chumimi',
     'Churano-Shurano',
     'Cid',
     'Cleades',
+    'Collet', -- Local patch: Jeuno quests
+    'Constance', -- Local patch: Jeuno quests
     'Corann',
     'Curilla',
     'Cyranuce',
@@ -90,6 +93,7 @@ return {
     'Dehn Harzhapan',
     'Deidogg',
     'Deraquien',
+    'Derrick', -- Local patch: Jeuno quests
     'Despachiaire',
     'Detzo',
     'Devean',
@@ -141,6 +145,16 @@ return {
     'Gentle Tiger',
     'Gerbaum',
     'Ghatsad',
+    'Ilumida', -- Local patch: Jeuno quests
+    'Kurou-Morou', -- Local patch: Jeuno quests
+    'Mailloquetat', -- Local patch: Jeuno quests
+    'Naruru', -- Local patch: Jeuno quests
+    'Neraf-Najiruf', -- Local patch: Jeuno quests
+    'Panta-Putta', -- Local patch: Jeuno quests
+    'Pitantimand', -- Local patch: Jeuno quests
+    'Rouliette', -- Local patch: Jeuno quests
+    'Souren', -- Local patch: Jeuno quests
+    'Teigero-Bangero', -- Local patch: Jeuno quests
     'Tucker', -- Local patch: A Little Knowledge
     'Champalpieu', -- Local patch: A Little Knowledge
     'Ghebi Damomohe',
@@ -467,11 +481,13 @@ return {
     "Yve'noile",
     'Zacc',
     'Zaldon',
+    'Zauko', -- Local patch: Jeuno quests
     'Zeid',
     'Zokima-Rokima',
     'Zon-Fobun',
     'Zoriboh',
     'Zubaba',
+    'Zuber', -- Local patch: Jeuno quests
     'Zurtermor',
     'Drake Fang',
     'Medicine Eagle',

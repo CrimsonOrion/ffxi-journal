@@ -142,6 +142,58 @@ M.zones = {
                 reward = 'Black Belt, title Black Belt',
                 items = 'Wyrm Beard, Behemoth Tongue, Adamantoise Egg, Brown Belt',
             }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_save_the_clock_tower',
+                name = 'Save the Clock Tower',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-7)',
+                npc = 'Derrick',
+                req = 'Fame 5',
+                prereq = 'A Clock Most Delicate',
+                reward = 'Title Clock Tower Preservationist',
+                items = 'Tower Petition',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_the_wonder_magic_set',
+                name = 'The Wonder Magic Set',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (G-10)',
+                npc = 'Panta-Putta',
+                req = 'Fame 4',
+                prereq = '',
+                reward = "Mythril Earring, title Fool's Errand Runner",
+                items = 'Wonder Magic Set',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_your_crystal_ball',
+                name = 'Your Crystal Ball',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (I-7)',
+                npc = 'Kurou-Morou',
+                req = 'Fame 2',
+                prereq = '',
+                reward = 'Fortune telling, title Fortune-teller in Training',
+                items = 'Ahriman Lens, Divination Sphere',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_collect_tarut_cards',
+                name = 'Collect Tarut Cards',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (I-8)',
+                npc = 'Chululu',
+                req = 'Fame 2',
+                prereq = '',
+                reward = 'Fortune telling',
+                items = 'Tarut: Death, Tarut: The Hermit, Tarut: The King, Tarut: The Fool',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -471,6 +523,71 @@ M.zones = {
                 reward = "Dancer's Casaque",
                 repeatable = true,
             },
+
+            {
+                id = 'jeu_uj_crest_of_davoi',
+                name = 'Crest of Davoi',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Baudin',
+                req = 'Rank 4 mission (any nation), Fame 1',
+                prereq = '',
+                reward = 'Key item Crest of Davoi',
+                items = 'Coeurl Meat',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_save_my_sister',
+                name = 'Save My Sister',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Baudin',
+                req = 'Rank 4 mission (any nation), Fame 4',
+                prereq = 'Crest of Davoi',
+                reward = 'Holy Mace, 3,000 gil, title Exorcist in Training',
+                items = "Ducal Guard's Lantern",
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_a_clock_most_delicate',
+                name = 'A Clock Most Delicate',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-7)',
+                npc = 'Collet',
+                req = 'Fame 5',
+                prereq = '',
+                reward = "1,200 gil, Engineer's Gloves, title Professional Loafer",
+                items = 'Clock Tower Oil',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_a_candlelight_vigil',
+                name = 'A Candlelight Vigil',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Ilumida',
+                req = 'Fame 4',
+                prereq = '',
+                reward = 'Flower Necklace, title Activist for Kindness',
+                items = 'Holy Candle',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_the_kind_cardian',
+                name = 'The Kind Cardian',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-10)',
+                npc = 'Panta-Putta',
+                req = 'Fame 4',
+                prereq = '',
+                reward = 'Green Cape, title Bringer of Bliss',
+                items = 'Two of Swords, Ten of Cups',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -721,6 +838,61 @@ local tracker_data = {
     jeu_lj_beat_around_the_bushin = {
         area = 'jeuno',
         bit = 67,
+    },
+
+    jeu_lj_the_old_monument = {
+        area = 'jeuno',
+        bit = 11,
+    },
+
+    jeu_lj_a_minstrel_in_despair = {
+        area = 'jeuno',
+        bit = 12,
+    },
+
+    jeu_uj_crest_of_davoi = {
+        area = 'jeuno',
+        bit = 0,
+    },
+
+    jeu_uj_save_my_sister = {
+        area = 'jeuno',
+        bit = 1,
+    },
+
+    jeu_uj_a_clock_most_delicate = {
+        area = 'jeuno',
+        bit = 2,
+    },
+
+    jeu_lj_save_the_clock_tower = {
+        area = 'jeuno',
+        bit = 3,
+    },
+
+    jeu_uj_a_candlelight_vigil = {
+        area = 'jeuno',
+        bit = 6,
+    },
+
+    jeu_lj_the_wonder_magic_set = {
+        area = 'jeuno',
+        bit = 7,
+    },
+
+    jeu_uj_the_kind_cardian = {
+        area = 'jeuno',
+        bit = 8,
+    },
+
+    jeu_lj_your_crystal_ball = {
+        area = 'jeuno',
+        bit = 9,
+    },
+
+    jeu_lj_collect_tarut_cards = {
+        area = 'jeuno',
+        bit = 10,
     },
 
     -- --------------------------------------------------------

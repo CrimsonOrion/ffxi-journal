@@ -884,4 +884,10 @@ return {
     ["Duchille"] = { { 164, 82.20, 18.76, 6.00 } }, -- Local patch: Crystal War quests
     ["Stinknix"] = { { 245, -51.07, -116.70, 5.15 } }, -- Local patch: Guide
     ["Vola"] = { { 245, 44.32, -45.38, 3.90 } }, -- Local patch: Jeuno quests
+    ["Collet"] = { { 244, -43.66, 106.96, 0.00 } }, -- Local patch: Jeuno quests
+    ["Derrick"] = { { 245, -33.90, -6.13, -1.00 } }, -- Local patch: Jeuno quests
+    ["Ilumida"] = { { 244, -75.04, 57.28, -1.20 } }, -- Local patch: Jeuno quests
+    ["Panta-Putta"] = { { 244, -59.73, 7.26, -0.25 }, { 245, -62.26, -140.00, -0.30 } }, -- Local patch: Jeuno quests
+    ["Kurou-Morou"] = { { 245, -2.66, -30.14, -6.67 } }, -- Local patch: Jeuno quests
+    ["Chululu"] = { { 245, -10.49, -43.99, -6.67 } }, -- Local patch: Jeuno quests
 }
