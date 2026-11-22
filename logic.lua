@@ -4754,6 +4754,13 @@ do
     end
 
     function M.SetCompassOpen(value)
+        -- Closing it by hand is remembered, so that the automatic opening
+        -- (an NPC close by, after a zone change) leaves it closed.
+        if M.compass.GetClosedByUser() ~= (value ~= true) then
+            M.compass.SetClosedByUser(value ~= true)
+            request_config_save()
+        end
+
         if M.compass.GetWindowOpen() ~= (value == true) then
             M.compass.SetWindowOpen(value)
             request_config_save()
@@ -7384,8 +7391,12 @@ do
                 want[name] = true
                 count = count + 1
 
-                -- The compass opens by itself when it was closed.
-                M.SetCompassOpen(true)
+                -- The compass opens by itself when it was closed, unless
+                -- the player closed it himself.
+                if not M.compass.GetClosedByUser() then
+                    M.compass.SetWindowOpen(true)
+                    request_config_save()
+                end
             end
         end
 

@@ -48,6 +48,9 @@ M.ARRIVED = ARRIVED
 
 local target = nil
 local window_open = false
+-- True when the player closed the window himself: the automatic paths
+-- (NPC close by) must not open it again.
+local closed_by_user = false
 local window_x = nil
 local window_y = nil
 -- Size the player gave the window (nil = it fits its content) and the
@@ -1544,6 +1547,14 @@ function M.SetWindowOpen(value)
     window_open = value == true
 end
 
+function M.GetClosedByUser()
+    return closed_by_user
+end
+
+function M.SetClosedByUser(value)
+    closed_by_user = value == true
+end
+
 -- Where the player left the window (nil until it is moved).
 function M.GetPosition()
     return window_x, window_y
@@ -1644,6 +1655,7 @@ end
 function M.Load(saved)
     target = nil
     window_open = false
+    closed_by_user = false
     window_x = nil
     window_y = nil
     window_w = nil
@@ -1673,6 +1685,7 @@ function M.Load(saved)
     end
 
     window_open = saved.open == true
+    closed_by_user = saved.closed == true
     opacity = clamp_opacity(saved.opacity, 1.0)
     M.SetTextScale(saved.text_scale)
     search_visible = saved.search ~= false
@@ -1712,6 +1725,7 @@ function M.Serialize()
     local saved = new_table()
 
     saved.open = window_open
+    saved.closed = closed_by_user or nil
     saved.x = window_x
     saved.y = window_y
     saved.w = window_w
