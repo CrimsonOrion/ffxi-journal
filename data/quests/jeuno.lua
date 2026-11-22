@@ -194,6 +194,84 @@ M.zones = {
                 reward = 'Fortune telling',
                 items = 'Tarut: Death, Tarut: The Hermit, Tarut: The King, Tarut: The Fool',
             }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_rubbish_day',
+                name = 'Rubbish Day',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (I-8)',
+                npc = 'Chululu',
+                req = 'Fame 4',
+                prereq = 'Collect Tarut Cards',
+                reward = '6,000 gil, Chain Choker, title Street Sweeper',
+                items = 'Magic Trash, Garlaige Key',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_never_to_return',
+                name = 'Never to Return',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (I-7)',
+                npc = 'Kurou-Morou',
+                req = 'Fame 5',
+                prereq = 'Your Crystal Ball',
+                reward = '1,200 gil, Garnet Ring',
+                items = 'Horn Hairpin',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_community_service',
+                name = 'Community Service',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (I-6)',
+                npc = 'Zauko',
+                req = 'Fame 1',
+                prereq = '',
+                reward = "Jeuno fame, title Torchbearer; Lamp Lighter's Membership Card the second time",
+                repeatable = true,
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_cooks_pride',
+                name = "Cook's Pride",
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-10)',
+                npc = 'Naruru',
+                req = 'Fame 4',
+                prereq = 'The Wonder Magic Set',
+                reward = '3,000 gil, Mythril Ring, title Mercy Errand Runner',
+                items = 'Super Soup Pot',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_tenshodo_membership',
+                name = 'Tenshodo Membership',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (I-7)',
+                npc = 'Ghebi Damomohe',
+                req = 'Fame 3',
+                prereq = '',
+                reward = "Tenshodo Member's Card",
+                items = 'Tenshodo Invite, Tenshodo Application Form',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_deal_with_tenshodo',
+                name = 'Deal with Tenshodo',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (J-7)',
+                npc = 'Garnev',
+                req = 'A Clock Most Delicate active',
+                prereq = '',
+                reward = 'Key item Clock Tower Oil, title Trader of Renown',
+                items = 'Gold Orcmask',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -584,9 +662,46 @@ M.zones = {
                 loc = 'Upper Jeuno (G-10)',
                 npc = 'Panta-Putta',
                 req = 'Fame 4',
-                prereq = '',
+                prereq = 'The Lost Cardian',
                 reward = 'Green Cape, title Bringer of Bliss',
                 items = 'Two of Swords, Ten of Cups',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_the_lost_cardian',
+                name = 'The Lost Cardian',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-10)',
+                npc = 'Monberaux',
+                req = 'Fame 4',
+                prereq = "Cook's Pride",
+                reward = "2,100 gil, key item Two of Swords, title Two's Company",
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_the_clockmaster',
+                name = 'The Clockmaster',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-7)',
+                npc = 'Galmut',
+                req = 'Fame 5',
+                prereq = 'Save the Clock Tower',
+                reward = 'Time Hammer, 1,200 gil, title Timekeeper',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_candle_making',
+                name = 'Candle-making',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (H-9)',
+                npc = 'Rouliette',
+                req = 'Fame 4',
+                prereq = '',
+                reward = 'Key item Holy Candle, title Believer of Altana',
+                items = 'Lanolin Cube',
             }, -- Local patch: Jeuno quests
         },
     },
@@ -625,6 +740,19 @@ M.zones = {
                 reward = "Map of Delkfutt's Tower",
                 items = 'Kaiser Sword',
             },
+
+            {
+                id = 'jeu_pj_childs_play',
+                name = "Child's Play",
+                area = 'jeuno',
+                zone = 'Port Jeuno',
+                loc = 'Port Jeuno (H-8)',
+                npc = 'Karl',
+                req = 'Fame 4, The Wonder Magic Set active',
+                prereq = '',
+                reward = 'Key item Wonder Magic Set, title Trader of Mysteries',
+                items = 'White Rock',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -893,6 +1021,56 @@ local tracker_data = {
     jeu_lj_collect_tarut_cards = {
         area = 'jeuno',
         bit = 10,
+    },
+
+    jeu_lj_rubbish_day = {
+        area = 'jeuno',
+        bit = 13,
+    },
+
+    jeu_lj_never_to_return = {
+        area = 'jeuno',
+        bit = 14,
+    },
+
+    jeu_lj_community_service = {
+        area = 'jeuno',
+        bit = 15,
+    },
+
+    jeu_lj_cooks_pride = {
+        area = 'jeuno',
+        bit = 16,
+    },
+
+    jeu_lj_tenshodo_membership = {
+        area = 'jeuno',
+        bit = 17,
+    },
+
+    jeu_uj_the_lost_cardian = {
+        area = 'jeuno',
+        bit = 18,
+    },
+
+    jeu_uj_the_clockmaster = {
+        area = 'jeuno',
+        bit = 21,
+    },
+
+    jeu_uj_candle_making = {
+        area = 'jeuno',
+        bit = 22,
+    },
+
+    jeu_pj_childs_play = {
+        area = 'jeuno',
+        bit = 23,
+    },
+
+    jeu_lj_deal_with_tenshodo = {
+        area = 'jeuno',
+        bit = 26,
     },
 
     -- --------------------------------------------------------

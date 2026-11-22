@@ -890,4 +890,9 @@ return {
     ["Panta-Putta"] = { { 244, -59.73, 7.26, -0.25 }, { 245, -62.26, -140.00, -0.30 } }, -- Local patch: Jeuno quests
     ["Kurou-Morou"] = { { 245, -2.66, -30.14, -6.67 } }, -- Local patch: Jeuno quests
     ["Chululu"] = { { 245, -10.49, -43.99, -6.67 } }, -- Local patch: Jeuno quests
+    ["Zauko"] = { { 245, -3.91, 14.23, 0.00 } }, -- Local patch: Jeuno quests
+    ["Naruru"] = { { 245, -54.72, -139.50, -0.11 } }, -- Local patch: Jeuno quests
+    ["Garnev"] = { { 245, 28.94, -34.83, 4.40 } }, -- Local patch: Jeuno quests
+    ["Rouliette"] = { { 244, -21.23, 12.56, -1.50 } }, -- Local patch: Jeuno quests
+    ["Karl"] = { { 246, -60.89, -8.91, 0.00 } }, -- Local patch: Jeuno quests
 }

@@ -85,6 +85,47 @@ Q.STEPS = {
         "Trade all four cards to Chululu to complete the quest. Speak with her again afterwards to start All in the Cards.",
     },
 
+    jeu_lj_rubbish_day = { -- Local patch: Jeuno quests
+        "Ask Chululu in Lower Jeuno (I-8) to test your compatibility with another player on 3 different game days. Type the name of a nearby player as the password.",
+        "Speak with her one game day after the third test to get this quest and the key item Magic Trash. If she talks about spreading the wonder of tarut cards, that is All in the Cards instead: say no and speak with her again.",
+        "Obtain a Garlaige Key from the Fallen Evacuees in the rooms near the entrance of Garlaige Citadel (map 1).",
+        "Pass through the first two Banishing Gates, then go to (I-7) on map 3 and trade the Garlaige Key to the Crematory Hatch to enter the Incinerator room.",
+        "Speak with Mashira to dispose of the Magic Trash. The quest Making Amens! uses the same room, so take both together to farm the key only once.",
+        "Return to Chululu to complete the quest.",
+    },
+
+    jeu_lj_never_to_return = { -- Local patch: Jeuno quests
+        "After Your Crystal Ball, have Kurou-Morou in Lower Jeuno (I-7) read your fortune on three different game days.",
+        "Ask for a fourth reading to start the quest.",
+        "Trade a Horn Hairpin to Kurou-Morou to complete the quest. It can only be crafted, but is sold at the Auction House.",
+    },
+
+    jeu_lj_community_service = { -- Local patch: Jeuno quests
+        "Only one player per world can take this quest each Vana'diel day. Speak with Zauko in Lower Jeuno (I-6) between 18:03 and 21:00.",
+        "Light all 12 Streetlamps in Lower Jeuno before 1:00 by running up to each one and examining it.",
+        "Return to Zauko to complete the quest. You can report back after 1:00, as long as the lamps were lit in time.",
+        "Completing it a second time gives the key item Lamp Lighter's Membership Card, which tells you when you enter Lower Jeuno if Zauko is looking for help.",
+    },
+
+    jeu_lj_cooks_pride = { -- Local patch: Jeuno quests
+        "Speak with Naruru in the merchant's house in Lower Jeuno (H-10). She can't find her cooking pot and wants a new one from the Culinarians' Guild in Windurst.",
+        "Obtain the key item Super Soup Pot by completing the quest Hoist the Jelly, Roger.",
+        "Return to Naruru with the Super Soup Pot to complete the quest.",
+    },
+
+    jeu_lj_tenshodo_membership = { -- Local patch: Jeuno quests
+        "Enter Neptune's Spire in Lower Jeuno (I-7) and speak with Ghebi Damomohe at the counter. Pick the third, blank line of dialogue.",
+        "You need either a Tenshodo Invite or the key item Tenshodo Application Form. For the form, speak with Jabbar in Warehouse #2, upper level, in Port Bastok.",
+        "Or buy a Tenshodo Invite at the Auction House (Others > Misc.) and trade it to Ghebi Damomohe. It does not skip the fame requirement.",
+        "Return to Ghebi Damomohe for the Tenshodo Member's Card, which lets you enter the Tenshodo back room.",
+    },
+
+    jeu_lj_deal_with_tenshodo = { -- Local patch: Jeuno quests
+        "After starting A Clock Most Delicate, speak with Garnev in the Tenshodo, Lower Jeuno (J-7).",
+        "Obtain a Gold Orcmask from Orcish Troopers in Davoi and the Monastic Cavern, or from the Orcish Overlord in the Monastic Cavern.",
+        "Trade the Gold Orcmask to Garnev for the key item Clock Tower Oil.",
+    },
+
     jeu_uj_axe_the_competition = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need Axe skill 240 or higher and level 71.",
         "Speak with Brutus in Upper Jeuno (G-7) to receive the key item Weapon Training Guide and the Pick of Trials. You need to break the latent on the Pick of Trials before completing the rest of the quest.",
@@ -372,6 +413,24 @@ Q.STEPS = {
         "Return to Panta-Putta, now in Lower Jeuno (G-10), to complete the quest.",
     },
 
+    jeu_uj_the_lost_cardian = { -- Local patch: Jeuno quests
+        "Speak with Naruru, Teigero-Bangero and Panta-Putta in the merchant's house in Lower Jeuno (G-10). Nobody knows where the Two of Swords has gone.",
+        "Speak with Bozz in Upper Jeuno (G-9).",
+        "Speak with Monberaux in the Infirmary in Upper Jeuno (G-10) for a cutscene about a special patient. You may need to speak with him more than once.",
+        "The quest completes after the cutscene, and The Kind Cardian starts automatically.",
+    },
+
+    jeu_uj_the_clockmaster = { -- Local patch: Jeuno quests
+        "After Save the Clock Tower, examine the Door: House in Upper Jeuno (G-7) to speak with Galmut. This completes the quest.",
+        "Optional: speak with Collet again afterwards for a short cutscene.",
+    },
+
+    jeu_uj_candle_making = { -- Local patch: Jeuno quests
+        "During A Candlelight Vigil, speak with Rouliette in the Temple of the Goddess, Upper Jeuno (H-9). She will make you a candle for a Lanolin Cube.",
+        "Obtain a Lanolin Cube from Battering Rams in La Theine Plateau, or from rams in Lufaise Meadows or Caedarva Mire.",
+        "Trade the Lanolin Cube to Rouliette for the key item Holy Candle.",
+    },
+
     jeu_pj_circle_of_time = {
         "Speak with Mertaire in Lower Jeuno, who tells you to take the Star ring (tarnished) to an antique collector. You must be a Bard of level 50 or higher, and the quest does not appear in your log yet. This quest requires the Rise of the Zilart pack and follows The Requiem.",
         "Speak with Imasuke in Port Jeuno (E-6). You must have your current job set to Bard to receive the cutscene; after speaking with him you may change to any job.",
@@ -389,6 +448,11 @@ Q.STEPS = {
         "Speak with Imasuke in Port Jeuno (E-6) to begin the quest. You need Jeuno fame level 2.",
         "Head to Qufim Island and kill Dancing Weapon enemies until you obtain a Kaiser Sword. Kaiser Swords can also sometimes be found at the Auction House.",
         "Trade the Kaiser Sword to Imasuke to complete the quest and receive the Map of Delkfutt's Tower.",
+    },
+
+    jeu_pj_childs_play = { -- Local patch: Jeuno quests
+        "While The Wonder Magic Set is active, speak with Karl in Port Jeuno (H-8). He will give you a Wonder Magic Set for a White Rock.",
+        "Trade a White Rock to Karl for the key item Wonder Magic Set.",
     },
 
     jeu_rg_northward = {

@@ -59,6 +59,7 @@ return {
     'Blandine',
     'Blatherix',
     'Bostillette',
+    'Bozz', -- Local patch: Jeuno quests
     'Brenton',
     'Brutus',
     'Brygid',
@@ -137,7 +138,9 @@ return {
     'Fyi Chalmwoh',
     'Galaihaurat',
     'Gallijaux',
+    'Galmut', -- Local patch: Jeuno quests
     'Gantineux',
+    'Garnev', -- Local patch: Jeuno quests
     'Gate Guard',
     'Gatih Mijurabi',
     'Gaweesh',
@@ -146,6 +149,8 @@ return {
     'Gerbaum',
     'Ghatsad',
     'Ilumida', -- Local patch: Jeuno quests
+    'Jabbar', -- Local patch: Jeuno quests
+    'Karl', -- Local patch: Jeuno quests
     'Kurou-Morou', -- Local patch: Jeuno quests
     'Mailloquetat', -- Local patch: Jeuno quests
     'Naruru', -- Local patch: Jeuno quests
