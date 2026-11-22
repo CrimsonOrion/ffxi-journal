@@ -45,6 +45,7 @@ return {
     'Argus',
     'Arnau',
     'Atelloune',
+    'Atori-Tutori', -- Local patch: Jeuno quests
     'Aurege',
     'Ayame',
     'Balasiel',
@@ -446,6 +447,7 @@ return {
     'Verctissa',
     'Vicorpasse',
     'Vilatroire',
+    'Vola', -- Local patch: Jeuno quests
     'Volker',
     'Vounebariont',
     'Vuntar',

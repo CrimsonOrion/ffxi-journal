@@ -883,4 +883,5 @@ return {
     ["Loutille"] = { { 164, 102.67, 59.35, 0.00 } }, -- Local patch: Crystal War quests
     ["Duchille"] = { { 164, 82.20, 18.76, 6.00 } }, -- Local patch: Crystal War quests
     ["Stinknix"] = { { 245, -51.07, -116.70, 5.15 } }, -- Local patch: Guide
+    ["Vola"] = { { 245, 44.32, -45.38, 3.90 } }, -- Local patch: Jeuno quests
 }

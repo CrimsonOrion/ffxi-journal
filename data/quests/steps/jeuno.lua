@@ -37,6 +37,26 @@ Q.STEPS = {
         "Examine the Door: Merchant's House in Lower Jeuno for a cutscene and your rewards.",
     },
 
+    jeu_lj_fistful_of_fury = { -- Local patch: Jeuno quests
+        "You need Norg (Tenshodo) Fame 3 and Silence of the Rams completed. Speak with Vola in Lower Jeuno (J-8) to begin the quest.",
+        "Obtain a Nue Fang from Nue, a notorious monster in Beaucedine Glacier, or from the BCNM Eye of the Tiger.",
+        "Obtain a Dodo Skin from Deadly Dodo, a notorious monster in Sauromugue Champaign, or from the KSNM Moa Constrictors.",
+        "Obtain a Morbolger Vine from Morbolger, a notorious monster in Ordelle's Caves, or from the KSNM Contaminated Colosseum.",
+        "Nue and Morbolger are also Records of Eminence objectives under Combat: Region (Original Areas 4 and Original Areas 1).",
+        "Trade all three items to Vola for the Brown Belt and the title Brown Belt.",
+    },
+
+    jeu_lj_beat_around_the_bushin = { -- Local patch: Jeuno quests
+        "You need to be a level 71 or higher Monk with Norg (Tenshodo) Fame 6. Speak with Vola in Lower Jeuno (J-8) with Monk as your main job to begin the quest.",
+        "Leave the Tenshodo through the Door: Neptune's Spire for a cutscene with Atori-Tutori.",
+        "Obtain a Wyrm Beard from Nidhogg or from the battlefield Early Bird Catches the Wyrm, and trade it to the Door: Neptune's Spire for a cutscene. Use the inner door next to Domenic, not the outer door with the same name.",
+        "Speak with Degenhard in Bastok Markets (I-10).",
+        "Obtain a Behemoth Tongue from King Behemoth or from the battlefield Horns of War, and trade it to the same door for another cutscene.",
+        "Speak with Maat in Ru'Lude Gardens (H-5).",
+        "Obtain an Adamantoise Egg from Aspidochelone or from the battlefield The Hills Are Alive, and trade it to the same door for a cutscene.",
+        "Finally, trade a Brown Belt to the same door for the last cutscene and the Black Belt. The Brown Belt is used up in the trade.",
+    },
+
     jeu_uj_axe_the_competition = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need Axe skill 240 or higher and level 71.",
         "Speak with Brutus in Upper Jeuno (G-7) to receive the key item Weapon Training Guide and the Pick of Trials. You need to break the latent on the Pick of Trials before completing the rest of the quest.",

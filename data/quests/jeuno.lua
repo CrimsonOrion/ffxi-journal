@@ -114,6 +114,34 @@ M.zones = {
                 repeatable = true,
                 items = "Mahogany Lumber",
             },
+
+            {
+                id = 'jeu_lj_fistful_of_fury',
+                name = 'Fistful of Fury',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (J-8)',
+                npc = 'Vola',
+                req = 'Fame 3 (Norg)',
+                fame_area = 'norg',
+                prereq = 'Silence of the Rams',
+                reward = 'Brown Belt, title Brown Belt',
+                items = 'Nue Fang, Dodo Skin, Morbolger Vine',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_beat_around_the_bushin',
+                name = 'Beat Around the Bushin',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (J-8)',
+                npc = 'Vola',
+                req = 'Lv.71+ MNK, Fame 6 (Norg)',
+                fame_area = 'norg',
+                prereq = 'Fistful of Fury',
+                reward = 'Black Belt, title Black Belt',
+                items = 'Wyrm Beard, Behemoth Tongue, Adamantoise Egg, Brown Belt',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -683,6 +711,16 @@ local tracker_data = {
     jeu_lj_a_new_dawn = {
         area = 'jeuno',
         bit = 62,
+    },
+
+    jeu_lj_fistful_of_fury = {
+        area = 'jeuno',
+        bit = 41,
+    },
+
+    jeu_lj_beat_around_the_bushin = {
+        area = 'jeuno',
+        bit = 67,
     },
 
     -- --------------------------------------------------------
