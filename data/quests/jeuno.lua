@@ -364,6 +364,84 @@ M.zones = {
                 items = 'Magical Pattern',
                 repeatable = true,
             }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_gobbiebag_5',
+                name = 'The Gobbiebag Part V',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Bluffnix',
+                req = 'Fame 3',
+                prereq = 'The Gobbiebag Part IV',
+                reward = 'Inventory increased to 55 slots',
+                items = 'Bugard Leather, Paktong Ingot, Moblinweave, Rhodonite, or Goblin Stew 880',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_gobbiebag_6',
+                name = 'The Gobbiebag Part VI',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Bluffnix',
+                req = 'Fame 3',
+                prereq = 'The Gobbiebag Part V',
+                reward = 'Inventory increased to 60 slots',
+                items = 'Balloon Cloth, Shakudo Ingot, H.Q. Eft Skin, Iolite, or Goblin Stew 880',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_gobbiebag_7',
+                name = 'The Gobbiebag Part VII',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Bluffnix',
+                req = 'Fame 4',
+                prereq = 'The Gobbiebag Part VI',
+                reward = 'Inventory increased to 65 slots',
+                items = 'Lynx Leather, Adaman Ingot, Rainbow Cloth, Deathstone, or Goblin Stew 880',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_gobbiebag_8',
+                name = 'The Gobbiebag Part VIII',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Bluffnix',
+                req = 'Fame 4',
+                prereq = 'The Gobbiebag Part VII',
+                reward = 'Inventory increased to 70 slots',
+                items = 'Smilodon Leather, Electrum Ingot, Cilice, Angelstone, or Goblin Stew 880',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_in_the_mood_for_love',
+                name = 'In the Mood for Love',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Odasel',
+                req = 'Promathia Mission 3-2',
+                prereq = '',
+                reward = '4,800 gil, title Pick-up Artist',
+                items = 'Chameleon Diamond',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_hook_line_and_sinker',
+                name = 'Hook, Line, and Sinker',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (G-10)',
+                npc = 'Omer',
+                req = 'Promathia Mission 3-2',
+                prereq = '',
+                reward = '3,000 gil, title Rod Retriever',
+                items = 'Egret Fishing Rod',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -795,6 +873,55 @@ M.zones = {
                 reward = 'Key item Holy Candle, title Believer of Altana',
                 items = 'Lanolin Cube',
             }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_searching_for_the_right_words',
+                name = 'Searching for the Right Words',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Ilumida',
+                req = 'Fame 6',
+                prereq = 'A Candlelight Vigil, Rubbish Day, Never to Return',
+                reward = '3,000 gil, Scroll of Sleepga II',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_a_chocobos_tale',
+                name = "A Chocobo's Tale",
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-7)',
+                npc = 'Nevela',
+                req = 'Promathia Mission 3-2',
+                prereq = '',
+                reward = '5,200 gil, title Chocobo Love Guru',
+                items = 'Warding Oil x3',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_a_reputation_in_ruins',
+                name = 'A Reputation in Ruins',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (H-9)',
+                npc = 'Migliorozz',
+                req = 'Promathia Mission 3-3',
+                prereq = '',
+                reward = '3,500 gil',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_unlisted_qualities',
+                name = 'Unlisted Qualities',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Fame 1',
+                prereq = '',
+                reward = 'Silver Ingot; you choose your Adventuring Fellow',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -1216,6 +1343,56 @@ local tracker_data = {
     jeu_pj_pretty_little_things = {
         area = 'jeuno',
         bit = 43,
+    },
+
+    jeu_lj_gobbiebag_5 = {
+        area = 'jeuno',
+        bit = 74,
+    },
+
+    jeu_lj_gobbiebag_6 = {
+        area = 'jeuno',
+        bit = 75,
+    },
+
+    jeu_lj_gobbiebag_7 = {
+        area = 'jeuno',
+        bit = 93,
+    },
+
+    jeu_lj_gobbiebag_8 = {
+        area = 'jeuno',
+        bit = 94,
+    },
+
+    jeu_lj_in_the_mood_for_love = {
+        area = 'jeuno',
+        bit = 69,
+    },
+
+    jeu_lj_hook_line_and_sinker = {
+        area = 'jeuno',
+        bit = 71,
+    },
+
+    jeu_uj_searching_for_the_right_words = {
+        area = 'jeuno',
+        bit = 66,
+    },
+
+    jeu_uj_a_chocobos_tale = {
+        area = 'jeuno',
+        bit = 72,
+    },
+
+    jeu_uj_a_reputation_in_ruins = {
+        area = 'jeuno',
+        bit = 73,
+    },
+
+    jeu_uj_unlisted_qualities = {
+        area = 'jeuno',
+        bit = 77,
     },
 
     -- --------------------------------------------------------

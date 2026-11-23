@@ -21,6 +21,7 @@ return {
     'Ahaadah',
     'Ahkk Jharcham',
     'Ailbeche',
+    'Akta', -- Local patch: Jeuno quests
     'Aldo',
     'Alfesar',
     'Alib-Mufalib',
@@ -56,6 +57,7 @@ return {
     'Belgidiveau',
     'Benita',
     'Bertenont',
+    'Bheem', -- Local patch: Jeuno quests
     'Blandine',
     'Blatherix',
     'Bluffnix', -- Local patch: Jeuno quests
@@ -153,12 +155,20 @@ return {
     'Ilumida', -- Local patch: Jeuno quests
     'Jabbar', -- Local patch: Jeuno quests
     'Karl', -- Local patch: Jeuno quests
+    'Kuah Dakonsa', -- Local patch: Jeuno quests
     'Kurou-Morou', -- Local patch: Jeuno quests
+    'Luto Mewrilah', -- Local patch: Jeuno quests
     'Mailloquetat', -- Local patch: Jeuno quests
+    'Matoaka', -- Local patch: Jeuno quests
+    'Migliorozz', -- Local patch: Jeuno quests
     'Naruru', -- Local patch: Jeuno quests
     'Neraf-Najiruf', -- Local patch: Jeuno quests
+    'Nevela', -- Local patch: Jeuno quests
+    'Odasel', -- Local patch: Jeuno quests
+    'Omer', -- Local patch: Jeuno quests
     'Panta-Putta', -- Local patch: Jeuno quests
     'Pitantimand', -- Local patch: Jeuno quests
+    'Red Ghost', -- Local patch: Jeuno quests
     'Rouliette', -- Local patch: Jeuno quests
     'Souren', -- Local patch: Jeuno quests
     'Teigero-Bangero', -- Local patch: Jeuno quests
@@ -477,6 +487,7 @@ return {
     'Washu',
     'Wazyih',
     'Wetata',
+    'Wobke', -- Local patch: Jeuno quests
     'Wolfram',
     'Wyatt',
     'Yazan',

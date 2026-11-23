@@ -173,6 +173,51 @@ Q.STEPS = {
         "Return to Guttrix and choose the body, hands, legs or feet piece. Repeat for the other pieces.",
     },
 
+    jeu_lj_gobbiebag_5 = { -- Local patch: Jeuno quests
+        "Speak with Bluffnix in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "Trade him Bugard Leather, Paktong Ingot, Moblinweave, Rhodonite. All four are sold at the Auction House (Materials).",
+        "Farming them yourself needs areas from Chains of Promathia.",
+        "Or trade a single Goblin Stew 880 instead of all four items. It is usually more expensive, so check the Auction House prices first.",
+        "Your inventory grows to 55 slots. A Mog Satchel grows with it; ask an Artisan Moogle to enlarge a Mog Sack.",
+    },
+
+    jeu_lj_gobbiebag_6 = { -- Local patch: Jeuno quests
+        "Speak with Bluffnix in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "Trade him Balloon Cloth, Shakudo Ingot, H.Q. Eft Skin, Iolite. All four are sold at the Auction House (Materials).",
+        "Farming them yourself needs areas from Chains of Promathia.",
+        "Or trade a single Goblin Stew 880 instead of all four items. It is usually more expensive, so check the Auction House prices first.",
+        "Your inventory grows to 60 slots. A Mog Satchel grows with it; ask an Artisan Moogle to enlarge a Mog Sack.",
+    },
+
+    jeu_lj_gobbiebag_7 = { -- Local patch: Jeuno quests
+        "Speak with Bluffnix in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "Trade him Lynx Leather, Adaman Ingot, Rainbow Cloth, Deathstone. All four are sold at the Auction House (Materials).",
+        "Farming the hide for the leather needs areas from Wings of the Goddess.",
+        "Or trade a single Goblin Stew 880 instead of all four items. It is usually more expensive, so check the Auction House prices first.",
+        "Your inventory grows to 65 slots. A Mog Satchel grows with it; ask an Artisan Moogle to enlarge a Mog Sack.",
+    },
+
+    jeu_lj_gobbiebag_8 = { -- Local patch: Jeuno quests
+        "Speak with Bluffnix in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "Trade him Smilodon Leather, Electrum Ingot, Cilice, Angelstone. All four are sold at the Auction House (Materials).",
+        "Farming the hide for the leather needs areas from Wings of the Goddess.",
+        "Or trade a single Goblin Stew 880 instead of all four items. It is usually more expensive, so check the Auction House prices first.",
+        "Your inventory grows to 70 slots. A Mog Satchel grows with it; ask an Artisan Moogle to enlarge a Mog Sack.",
+    },
+
+    jeu_lj_in_the_mood_for_love = { -- Local patch: Jeuno quests
+        "After Promathia Mission 3-2, speak with Odasel outside Gems by Kshama in Lower Jeuno (H-9).",
+        "Defeat Gigas in Lufaise Meadows until one drops a Chameleon Diamond.",
+        "Trade the Chameleon Diamond to Odasel to complete the quest.",
+        "Optional: speak with Matoaka inside the shop for another cutscene.",
+    },
+
+    jeu_lj_hook_line_and_sinker = { -- Local patch: Jeuno quests
+        "After Promathia Mission 3-2, speak with Omer in Lower Jeuno (G-10).",
+        "Fish on Qufim Island until you hook a Kraken, then defeat it for the Egret Fishing Rod. No fishing skill is needed.",
+        "Trade the Egret Fishing Rod to Omer to complete the quest.",
+    },
+
     jeu_uj_axe_the_competition = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need Axe skill 240 or higher and level 71.",
         "Speak with Brutus in Upper Jeuno (G-7) to receive the key item Weapon Training Guide and the Pick of Trials. You need to break the latent on the Pick of Trials before completing the rest of the quest.",
@@ -476,6 +521,44 @@ Q.STEPS = {
         "During A Candlelight Vigil, speak with Rouliette in the Temple of the Goddess, Upper Jeuno (H-9). She will make you a candle for a Lanolin Cube.",
         "Obtain a Lanolin Cube from Battering Rams in La Theine Plateau, or from rams in Lufaise Meadows or Caedarva Mire.",
         "Trade the Lanolin Cube to Rouliette for the key item Holy Candle.",
+    },
+
+    jeu_uj_searching_for_the_right_words = { -- Local patch: Jeuno quests
+        "After A Candlelight Vigil, Rubbish Day and Never to Return, speak with Kurou-Morou in Lower Jeuno (I-7).",
+        "Speak with Ilumida in Upper Jeuno (G-8) until she asks you for a Moondrop.",
+        "In The Boyahda Tree (map 2, H-8), examine the ??? between 19:00 and 4:00 to spawn the Ahriman NM Agas. It won't spawn during a New Moon. Home Point #1 is close.",
+        "Agas uses Level 5 Petrify. Defeat it, then examine the ??? again (still between 19:00 and 4:00) for the key item Moondrop. The whole party can get one.",
+        "Return to Ilumida to complete the quest.",
+    },
+
+    jeu_uj_a_chocobos_tale = { -- Local patch: Jeuno quests
+        "After Promathia Mission 3-2, speak with Nevela at the chocobo stables in Upper Jeuno (G-7).",
+        "Speak with Wobke in Bastok Mines (I-9).",
+        "Examine the Outpost Gate at the Pashhow Marshlands outpost for a cutscene.",
+        "Obtain three Warding Oils from Emerald Quadav in Beadeaux and trade them to the Outpost Gate. There is no time limit, whatever the cutscene says.",
+        "Speak with Wobke in Bastok Mines again.",
+        "In Batallia Downs (H-6), examine the ??? on a headstone to spawn five Badshah tigers. Defeat them and examine the ??? again for Silver Comet's Collar.",
+        "Return to Nevela to complete the quest.",
+    },
+
+    jeu_uj_a_reputation_in_ruins = { -- Local patch: Jeuno quests
+        "After Promathia Mission 3-3, speak with Migliorozz in the Temple of the Goddess, Upper Jeuno (H-9). You get the key item Phoenix Armlet, or Phoenix Pearl if you have cleared Promathia Mission 3-5; the quest is the same either way.",
+        "Enter Pso'Xja from the tower at Beaucedine Glacier (G-9). Go up the stairs to the small room at (I-8) and examine the ??? to fight Gargoyle-Iota and Gargoyle-Kappa. They switch between physical and magic immunity (they glow blue or yellow).",
+        "Examine the ??? again for the key item Blue Bracelet.",
+        "Go down the stairs to the blue door at (H-9), drop down the hole, and examine the ??? at (H-7) to fight Gargoyle-Lambda and Gargoyle-Mu. Examine it again for the key item Green Bracelet.",
+        "Back upstairs at (I-8), go through the green door to the Crystal Receptor at (G-8). Examine it, then hurry back and drop down the hole at (H-9): the platforms below last 120 seconds.",
+        "Cross the platforms west then north, take the stairs at (G-7) to the elevator at (H-8), ride it down and examine the Avatar Gate on the west side of the round room.",
+        "Return to Migliorozz to complete the quest.",
+    },
+
+    jeu_uj_unlisted_qualities = { -- Local patch: Jeuno quests
+        "This quest sets your Adventuring Fellow's race, name and looks. You can only change them later by finishing Girl in the Looking Glass and Mirror, Mirror and starting over.",
+        "Speak with Luto Mewrilah in Upper Jeuno (G-8) and choose a race and a name from her list.",
+        "Speak with Akta in Ru'Lude Gardens (H-10) to choose your fellow's height.",
+        "Speak with Kuah Dakonsa in Lower Jeuno (H-8) to choose the face and hair. You see a preview before confirming.",
+        "Speak with Red Ghost in Port Jeuno (G-8) to choose the personality, which sets your fellow's dialogue and the food they make.",
+        "Speak with Bheem in Upper Jeuno (F-5) for a cutscene.",
+        "Return to Luto Mewrilah to complete the quest.",
     },
 
     jeu_pj_circle_of_time = {

@@ -898,4 +898,14 @@ return {
     ["Bluffnix"] = { { 245, -43.18, -113.00, 5.90 } }, -- Local patch: Jeuno quests
     ["Guttrix"] = { { 245, -36.01, -139.71, 5.50 } }, -- Local patch: Jeuno quests
     ["Zona Shodhun"] = { { 246, -175.11, -4.21, -5.00 } }, -- Local patch: Jeuno quests
+    ["Nevela"] = { { 244, -60.11, 81.13, 0.00 } }, -- Local patch: Jeuno quests
+    ["Migliorozz"] = { { 244, -37.76, 12.92, -1.50 } }, -- Local patch: Jeuno quests
+    ["Luto Mewrilah"] = { { 244, -55.38, 44.87, -0.30 } }, -- Local patch: Jeuno quests
+    ["Bheem"] = { { 244, -90.01, 169.89, 0.00 } }, -- Local patch: Jeuno quests
+    ["Odasel"] = { { 245, -58.37, -111.70, -6.00 } }, -- Local patch: Jeuno quests
+    ["Omer"] = { { 245, -86.50, -119.82, 0.00 } }, -- Local patch: Jeuno quests
+    ["Kuah Dakonsa"] = { { 245, -42.73, -65.88, 0.00 } }, -- Local patch: Jeuno quests
+    ["Matoaka"] = { { 245, -37.20, -121.94, -6.10 } }, -- Local patch: Jeuno quests
+    ["Red Ghost"] = { { 246, -96.48, -3.33, 0.00 } }, -- Local patch: Jeuno quests
+    ["Akta"] = { { 243, 7.02, -67.18, 0.00 } }, -- Local patch: Jeuno quests
 }
