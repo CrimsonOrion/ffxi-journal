@@ -218,6 +218,15 @@ Q.STEPS = {
         "Trade the Egret Fishing Rod to Omer to complete the quest.",
     },
 
+    jeu_lj_the_road_to_aht_urhgan = { -- Local patch: Jeuno quests
+        "This quest follows Tenshodo Membership. Speak with Faursel in Neptune's Spire, Lower Jeuno (J-8), and pick the hidden third option at the bottom.",
+        "Speak with him again and choose 'I want to go'. He offers four ways to proceed.",
+        "Advanced: one beastman stronghold coffer key (Davoi, Beadeaux, Castle Oztroja, Temple of Uggalepih, Den of Rancor, Quicksand Caves, Sea Serpent Grotto), any testimony, or a Carmine, Cyan and Gray Chip. With Rhapsody in Umber, a Curio Moogle sells coffer keys for 5,000 gil.",
+        "Intermediate: Jade Cryptex, Silver Engraving and 13 Knot Quipus. Beginner: Magicked Skull, Damselfly Worm, Crab Apron, Bloody Robe, Dhalmel Saliva and Wild Rabbit Tail. Or pay 500,000 gil.",
+        "Trade the items (or gil), zone, and speak with Faursel again on the next game day for the key item Boarding Permit. Paying gil also gives a Map of Wajaom Woodlands and a teleport there.",
+        "Take the ship from Mhaura to Al Zahbi (or a Unity warp to Wajaom Woodlands), then speak with Naja Salaheem in Aht Urhgan Whitegate (I-10) to begin the Aht Urhgan missions. On Rhapsodies Mission 2-5, choose 'Where's Tenzen?' to get the permit free.",
+    },
+
     jeu_uj_axe_the_competition = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need Axe skill 240 or higher and level 71.",
         "Speak with Brutus in Upper Jeuno (G-7) to receive the key item Weapon Training Guide and the Pick of Trials. You need to break the latent on the Pick of Trials before completing the rest of the quest.",
@@ -559,6 +568,90 @@ Q.STEPS = {
         "Speak with Red Ghost in Port Jeuno (G-8) to choose the personality, which sets your fellow's dialogue and the food they make.",
         "Speak with Bheem in Upper Jeuno (F-5) for a cutscene.",
         "Return to Luto Mewrilah to complete the quest.",
+    },
+
+    jeu_uj_girl_in_the_looking_glass = { -- Local patch: Jeuno quests
+        "This quest follows Unlisted Qualities. Zone after finishing it, then speak with Luto Mewrilah in Upper Jeuno (G-8).",
+        "Speak with Bheem in Upper Jeuno (F-5) for a cutscene.",
+        "Enter The Eldieme Necropolis from Batallia Downs (G-8) and examine the ??? at (F-9) on map 2. The skeleton NM Namorodo spawns along with your Adventuring Fellow.",
+        "Trusts must be called before you examine the ???, and your fellow takes a party slot. Defeat Namorodo, then speak with your fellow before they leave; otherwise zone and fight it again.",
+        "Return to Luto Mewrilah to complete the quest.",
+    },
+
+    jeu_uj_mirror_mirror = { -- Local patch: Jeuno quests
+        "This quest follows Girl in the Looking Glass. Zone after finishing it, then speak with Luto Mewrilah in Upper Jeuno (G-8).",
+        "Speak with Portaure in Cargo Room B, Port San d'Oria (H-9), near Home Point #1.",
+        "Enter the battlefield through the Hut Door in Ghelsba Outpost (F/G-10). It is capped at level 40 and Trusts can't be used; up to three players can enter.",
+        "Fight the Carrion Dragon. Your fellow joins at about 80% of its HP. Watch out for Petro Eyes.",
+        "Return to Luto Mewrilah for the Signal Pearl. You can now call your Adventuring Fellow.",
+    },
+
+    jeu_uj_past_reflections = { -- Local patch: Jeuno quests
+        "This quest follows Mirror, Mirror. Zone after finishing it, then speak with Luto Mewrilah in Upper Jeuno (G-8). If she talks about Fellow Points, speak with her again.",
+        "Speak with Tosuka-Porika at the Optistery, Windurst Waters (north, G-8).",
+        "Gather a Bison Steak (Auction House), San d'Orian Tea, Icecap Rolanberry (Yoskolo, Lower Jeuno), White Bread and Windurst Salad (Glyke, Upper Jeuno) and Whitefish Stew (Taajiji, Windurst Waters).",
+        "Trade all six to Tosuka-Porika for a cutscene.",
+        "Return to Luto Mewrilah, then speak with Khumo Daramasteh in Port Jeuno (J-8) to complete the quest.",
+    },
+
+    jeu_uj_blighted_gloom = { -- Local patch: Jeuno quests
+        "This quest follows Past Reflections and needs Familiarity 45 with your Adventuring Fellow. Speak with Luto Mewrilah in Upper Jeuno (G-8); she sends you to one of three places.",
+        "The ??? is in Ordelle's Caves (map 2, I-5, entered from La Theine Plateau H-7), Korroloka Tunnel (map 5, F-10) or Ranguemont Pass (I-9).",
+        "Examine the ??? to spawn the Metallic Slime and your fellow. Defeat it, speak with your fellow, then examine the ??? again for Vitrallum. The slime respawns after 3 minutes.",
+        "Return to Luto Mewrilah.",
+        "In Jugner Forest, examine the ??? by the north lake at (G-5) to complete the quest. The quickest way there is through King Ranperre's Tomb from East Ronfaure, leaving at (K-5), or the Geomagnetic Fount.",
+    },
+
+    jeu_uj_blessed_radiance = { -- Local patch: Jeuno quests
+        "This quest follows Blighted Gloom and needs Familiarity 70 with your Adventuring Fellow. Speak with Luto Mewrilah in Upper Jeuno (G-8).",
+        "Enter Neptune's Spire in Lower Jeuno and examine the first door on the left.",
+        "With your fellow called, gather three key items: Glimmering Mica (Pickaxe, Maze of Shakhrami), Mistroot (Sickle, Giddeus) and Lunascent Log (Hatchet, Jugner Forest).",
+        "Warping home dismisses your fellow, but Survival Guides and mounts don't: Shakhrami, Jugner and West Sarutabaruta guides cover all three with one call.",
+        "Zone into Beaucedine Glacier for a cutscene, then go to the northernmost Mirror Pond at (J-7).",
+        "Examine the door in Neptune's Spire again, then speak with Luto Mewrilah to complete the quest.",
+    },
+
+    jeu_uj_mirror_images = { -- Local patch: Jeuno quests
+        "This quest follows Blessed Radiance and needs Familiarity 85 with your Adventuring Fellow. Speak with Luto Mewrilah in Upper Jeuno (G-8).",
+        "Enter Qu'Bia Arena from Fei'Yin (K-8); Home Point #1 is closest. The fight is capped at level 50.",
+        "Defeat the demon Vassago. Let your fellow tank (Stalwart Shield works well). When your fellow says 'Here it comes! Get back!', step away from Blighted Gloom.",
+        "Return to Luto Mewrilah for a cutscene.",
+        "Examine the first Door: Neptune's Spire on the left in Lower Jeuno for a long cutscene that completes the quest.",
+    },
+
+    jeu_uj_chameleon_capers = { -- Local patch: Jeuno quests
+        "This quest needs Familiarity 65 with your Adventuring Fellow. Speak with Luto Mewrilah in Upper Jeuno (G-8).",
+        "Speak with Muhoho on the palace balcony in Ru'Lude Gardens (H-7).",
+        "Speak with Gelzerio in Boytz's Knickknacks, Bastok Mines (H-7).",
+        "Speak with Chamama in the Rarab Tail Hostelry, Windurst Waters (north, F-10), for the key item Jar of Reversion Dust.",
+        "Speak with Luto Mewrilah again, then go to Lower Delkfutt's Tower with your Signal Pearl. Examine the ??? at (J-9), then the one at (I-5), then the one in the pool at (J-9) to spawn the Illusory Pot and your fellow.",
+        "Defeat the pot, speak with your fellow and examine the ??? again. Choose a Tactics Manual: Fortitude (Stalwart Shield), Might (Fierce Attacker) or Endurance (Soothing Healer).",
+        "Show the manual at any city Rendezvous Point to teach your fellow the new role. Manuals aren't used up; the other two can be bought from Ajahkeem for Fellow Points.",
+    },
+
+    jeu_uj_regaining_trust = { -- Local patch: Jeuno quests
+        "This quest follows Picture Perfect and needs Familiarity 55 with an Adventuring Fellow at 51 or higher. Speak with Luto Mewrilah in Upper Jeuno (G-8).",
+        "Speak with Monberaux in the Infirmary, Upper Jeuno (G-10), then return to Luto Mewrilah.",
+        "On Qufim Island, go north past Delkfutt's Tower through the tunnel to the Giant Footprint at (E-6), next to a cermet spine.",
+        "Examine it to spawn the Gigas NM Ingaevon and your fellow. Defeat it, then speak with your fellow. It respawns after 3 minutes.",
+        "Return to Luto Mewrilah, then speak with Monberaux to complete the quest.",
+    },
+
+    jeu_uj_mixed_signals = { -- Local patch: Jeuno quests
+        "This quest follows Regaining Trust and needs Familiarity 80 with an Adventuring Fellow at 56 or higher. With your Signal or Tactics Pearl in your bags but not equipped, speak with Ratoto by the Upper Jeuno Guide Stone (I-10).",
+        "Speak with Luto Mewrilah in Upper Jeuno (G-8).",
+        "Speak with Raimbroy in Raimbroy's Grocery, Southern San d'Oria (E-8), then return to Luto Mewrilah.",
+        "In Beadeaux, enter Qulun Dome from map 2 (M-8) and examine the ??? at (I-6), the same one as for Whence Blows the Wind.",
+        "Return to Luto Mewrilah to complete the quest.",
+    },
+
+    jeu_uj_lure_of_the_wildcat = { -- Local patch: Jeuno quests
+        "Speak with Ajithaam in Upper Jeuno (F-5) for the key item White Sentinel Badge.",
+        "Speak with these 20 people. Ru'Lude Gardens: Albiona (H-9), Crooked Arrow (G-8), Muhoho (H-7), Adolie (G-7), Yavoraile (I-6).",
+        "Upper Jeuno: Sibila-Mobla (G-7), Shiroro (G-8), Luto Mewrilah (G-8), Renik (H-9), Hinda (H-9).",
+        "Lower Jeuno: Sutarara (J-7), Saprut (I-7), Bluffnix (H-9), Naruru (H-10), Gurdern (G-10).",
+        "Port Jeuno: Red Ghost (G-8), Karl (H-8), Shami (H-8), Sagheera (I-8), Rinzei (I-8).",
+        "Return to Ajithaam for the key item White Invitation Card. After joining Salaheem's Sentinels, show it to Naja Salaheem for Imperial currency; Ajithaam will then teleport you to Aht Urhgan Whitegate for 300 gil.",
     },
 
     jeu_pj_circle_of_time = {

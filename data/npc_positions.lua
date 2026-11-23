@@ -908,4 +908,8 @@ return {
     ["Matoaka"] = { { 245, -37.20, -121.94, -6.10 } }, -- Local patch: Jeuno quests
     ["Red Ghost"] = { { 246, -96.48, -3.33, 0.00 } }, -- Local patch: Jeuno quests
     ["Akta"] = { { 243, 7.02, -67.18, 0.00 } }, -- Local patch: Jeuno quests
+    ["Khumo Daramasteh"] = { { 246, 23.84, 6.02, 0.00 } }, -- Local patch: Jeuno quests
+    ["Ratoto"] = { { 244, 27.48, -32.52, -1.00 } }, -- Local patch: Jeuno quests
+    ["Ajithaam"] = { { 244, -81.18, 161.54, 0.00 } }, -- Local patch: Jeuno quests
+    ["Muhoho"] = { { 243, -4.81, 27.83, -5.00 } }, -- Local patch: Jeuno quests
 }

@@ -442,6 +442,18 @@ M.zones = {
                 reward = '3,000 gil, title Rod Retriever',
                 items = 'Egret Fishing Rod',
             }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_the_road_to_aht_urhgan',
+                name = 'The Road to Aht Urhgan',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (J-8)',
+                npc = 'Faursel',
+                req = 'Fame 1',
+                prereq = 'Tenshodo Membership',
+                reward = 'Key item Boarding Permit',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -922,6 +934,129 @@ M.zones = {
                 prereq = '',
                 reward = 'Silver Ingot; you choose your Adventuring Fellow',
             }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_girl_in_the_looking_glass',
+                name = 'Girl in the Looking Glass',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = '',
+                prereq = 'Unlisted Qualities',
+                reward = 'Continues the Adventuring Fellow story',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_mirror_mirror',
+                name = 'Mirror, Mirror',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = '',
+                prereq = 'Girl in the Looking Glass',
+                reward = 'Signal Pearl (call your Adventuring Fellow), title Destined Fellow',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_past_reflections',
+                name = 'Past Reflections',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = '',
+                prereq = 'Mirror, Mirror',
+                reward = 'Familiarity limit raised to 50',
+                items = "Bison Steak, San d'Orian Tea, Icecap Rolanberry, White Bread, Whitefish Stew, Windurst Salad",
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_blighted_gloom',
+                name = 'Blighted Gloom',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Familiarity 45',
+                prereq = 'Past Reflections',
+                reward = 'Familiarity limit raised to 70',
+                items = 'Vitrallum',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_blessed_radiance',
+                name = 'Blessed Radiance',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Familiarity 70',
+                prereq = 'Blighted Gloom',
+                reward = 'Familiarity limit raised to 90',
+                items = 'Pickaxe, Sickle, Hatchet',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_mirror_images',
+                name = 'Mirror Images',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Familiarity 85',
+                prereq = 'Blessed Radiance',
+                reward = 'Familiarity limit raised to 120, fellow learns Blessed Radiance',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_chameleon_capers',
+                name = 'Chameleon Capers',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Familiarity 65',
+                prereq = 'Mirror, Mirror',
+                reward = 'One Tactics Manual (Fortitude, Might or Endurance)',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_regaining_trust',
+                name = 'Regaining Trust',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Familiarity 55, fellow at 51 or higher',
+                prereq = 'Picture Perfect',
+                reward = 'Fellow level cap raised to 60, title Worthy of Trust',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_mixed_signals',
+                name = 'Mixed Signals',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Familiarity 80, fellow at 56 or higher',
+                prereq = 'Regaining Trust',
+                reward = 'Fellow level cap raised to 65, a random Homemade food, title A Friend Indeed',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_lure_of_the_wildcat',
+                name = 'Lure of the Wildcat (Jeuno)',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (F-5)',
+                npc = 'Ajithaam',
+                req = '',
+                prereq = '',
+                reward = 'Key item White Invitation Card',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -1393,6 +1528,61 @@ local tracker_data = {
     jeu_uj_unlisted_qualities = {
         area = 'jeuno',
         bit = 77,
+    },
+
+    jeu_uj_girl_in_the_looking_glass = {
+        area = 'jeuno',
+        bit = 78,
+    },
+
+    jeu_uj_mirror_mirror = {
+        area = 'jeuno',
+        bit = 79,
+    },
+
+    jeu_uj_past_reflections = {
+        area = 'jeuno',
+        bit = 80,
+    },
+
+    jeu_uj_blighted_gloom = {
+        area = 'jeuno',
+        bit = 81,
+    },
+
+    jeu_uj_blessed_radiance = {
+        area = 'jeuno',
+        bit = 82,
+    },
+
+    jeu_uj_mirror_images = {
+        area = 'jeuno',
+        bit = 83,
+    },
+
+    jeu_uj_chameleon_capers = {
+        area = 'jeuno',
+        bit = 84,
+    },
+
+    jeu_uj_regaining_trust = {
+        area = 'jeuno',
+        bit = 85,
+    },
+
+    jeu_uj_mixed_signals = {
+        area = 'jeuno',
+        bit = 87,
+    },
+
+    jeu_uj_lure_of_the_wildcat = {
+        area = 'jeuno',
+        bit = 90,
+    },
+
+    jeu_lj_the_road_to_aht_urhgan = {
+        area = 'jeuno',
+        bit = 91,
     },
 
     -- --------------------------------------------------------

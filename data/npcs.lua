@@ -21,6 +21,7 @@ return {
     'Ahaadah',
     'Ahkk Jharcham',
     'Ailbeche',
+    'Ajithaam', -- Local patch: Jeuno quests
     'Akta', -- Local patch: Jeuno quests
     'Aldo',
     'Alfesar',
@@ -148,6 +149,7 @@ return {
     'Gatih Mijurabi',
     'Gaweesh',
     'Gebhardt',
+    'Gelzerio', -- Local patch: Jeuno quests
     'Gentle Tiger',
     'Gerbaum',
     'Ghatsad',
@@ -155,12 +157,14 @@ return {
     'Ilumida', -- Local patch: Jeuno quests
     'Jabbar', -- Local patch: Jeuno quests
     'Karl', -- Local patch: Jeuno quests
+    'Khumo Daramasteh', -- Local patch: Jeuno quests
     'Kuah Dakonsa', -- Local patch: Jeuno quests
     'Kurou-Morou', -- Local patch: Jeuno quests
     'Luto Mewrilah', -- Local patch: Jeuno quests
     'Mailloquetat', -- Local patch: Jeuno quests
     'Matoaka', -- Local patch: Jeuno quests
     'Migliorozz', -- Local patch: Jeuno quests
+    'Muhoho', -- Local patch: Jeuno quests
     'Naruru', -- Local patch: Jeuno quests
     'Neraf-Najiruf', -- Local patch: Jeuno quests
     'Nevela', -- Local patch: Jeuno quests
@@ -168,6 +172,7 @@ return {
     'Omer', -- Local patch: Jeuno quests
     'Panta-Putta', -- Local patch: Jeuno quests
     'Pitantimand', -- Local patch: Jeuno quests
+    'Ratoto', -- Local patch: Jeuno quests
     'Red Ghost', -- Local patch: Jeuno quests
     'Rouliette', -- Local patch: Jeuno quests
     'Souren', -- Local patch: Jeuno quests
