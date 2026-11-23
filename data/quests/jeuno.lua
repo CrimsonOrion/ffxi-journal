@@ -272,6 +272,98 @@ M.zones = {
                 reward = 'Key item Clock Tower Oil, title Trader of Renown',
                 items = 'Gold Orcmask',
             }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_gobbiebag_1',
+                name = 'The Gobbiebag Part I',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Bluffnix',
+                req = 'Fame 1',
+                prereq = '',
+                reward = 'Inventory increased to 35 slots',
+                items = 'Dhalmel Leather, Steel Ingot, Linen Cloth, Peridot, or Goblin Stew 880',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_gobbiebag_2',
+                name = 'The Gobbiebag Part II',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Bluffnix',
+                req = 'Fame 1',
+                prereq = 'The Gobbiebag Part I',
+                reward = 'Inventory increased to 40 slots',
+                items = 'Ram Leather, Mythril Ingot, Wool Cloth, Turquoise, or Goblin Stew 880',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_gobbiebag_3',
+                name = 'The Gobbiebag Part III',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Bluffnix',
+                req = 'Fame 1',
+                prereq = 'The Gobbiebag Part II',
+                reward = 'Inventory increased to 45 slots',
+                items = 'Tiger Leather, Gold Ingot, Velvet Cloth, Painite, or Goblin Stew 880',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_gobbiebag_4',
+                name = 'The Gobbiebag Part IV',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Bluffnix',
+                req = 'Fame 1',
+                prereq = 'The Gobbiebag Part III',
+                reward = 'Inventory increased to 50 slots',
+                items = 'Cermet Chunk, Darksteel Ingot, Silk Cloth, Goshenite, or Goblin Stew 880',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_mysteries_of_beadeaux_1',
+                name = 'Mysteries of Beadeaux I',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (J-8)',
+                npc = 'Sattal-Mansal',
+                req = 'Mission 4-1 (any nation)',
+                prereq = '',
+                reward = 'Key item Coruscant Rosary',
+                items = 'Quadav Charm',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_mysteries_of_beadeaux_2',
+                name = 'Mysteries of Beadeaux II',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (J-8)',
+                npc = 'Sattal-Mansal',
+                req = 'Mission 4-1 (any nation)',
+                prereq = '',
+                reward = 'Key item Black Matinee Necklace',
+                items = 'Quadav Augury Shell',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_the_goblin_tailor',
+                name = 'The Goblin Tailor',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-10)',
+                npc = 'Guttrix',
+                req = 'Fame 3, Lv.10+',
+                prereq = '',
+                reward = 'Race-specific armor (RSE) piece of your choice',
+                items = 'Magical Pattern',
+                repeatable = true,
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -753,6 +845,19 @@ M.zones = {
                 reward = 'Key item Wonder Magic Set, title Trader of Mysteries',
                 items = 'White Rock',
             }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_pj_pretty_little_things',
+                name = 'Pretty Little Things',
+                area = 'jeuno',
+                zone = 'Port Jeuno',
+                loc = 'Port Jeuno (E-8)',
+                npc = 'Zona Shodhun',
+                req = 'Fame 1',
+                prereq = '',
+                reward = 'Mog House exit to any Jeuno area',
+                items = 'Yellow Rock',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -1071,6 +1176,46 @@ local tracker_data = {
     jeu_lj_deal_with_tenshodo = {
         area = 'jeuno',
         bit = 26,
+    },
+
+    jeu_lj_gobbiebag_1 = {
+        area = 'jeuno',
+        bit = 27,
+    },
+
+    jeu_lj_gobbiebag_2 = {
+        area = 'jeuno',
+        bit = 28,
+    },
+
+    jeu_lj_gobbiebag_3 = {
+        area = 'jeuno',
+        bit = 29,
+    },
+
+    jeu_lj_gobbiebag_4 = {
+        area = 'jeuno',
+        bit = 30,
+    },
+
+    jeu_lj_mysteries_of_beadeaux_1 = {
+        area = 'jeuno',
+        bit = 31,
+    },
+
+    jeu_lj_mysteries_of_beadeaux_2 = {
+        area = 'jeuno',
+        bit = 32,
+    },
+
+    jeu_lj_the_goblin_tailor = {
+        area = 'jeuno',
+        bit = 42,
+    },
+
+    jeu_pj_pretty_little_things = {
+        area = 'jeuno',
+        bit = 43,
     },
 
     -- --------------------------------------------------------

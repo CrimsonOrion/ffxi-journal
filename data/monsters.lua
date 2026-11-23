@@ -190,6 +190,7 @@ return {
     'Glyphweaver Sikool Ja',
     'Glyryvilu',
     "Go'Bha Slaughterer",
+    "Go'Bhu Gascon",
     'Goblin Digger',
     'Goblin Oilman',
     'Goblin Reaver',

@@ -895,4 +895,7 @@ return {
     ["Garnev"] = { { 245, 28.94, -34.83, 4.40 } }, -- Local patch: Jeuno quests
     ["Rouliette"] = { { 244, -21.23, 12.56, -1.50 } }, -- Local patch: Jeuno quests
     ["Karl"] = { { 246, -60.89, -8.91, 0.00 } }, -- Local patch: Jeuno quests
+    ["Bluffnix"] = { { 245, -43.18, -113.00, 5.90 } }, -- Local patch: Jeuno quests
+    ["Guttrix"] = { { 245, -36.01, -139.71, 5.50 } }, -- Local patch: Jeuno quests
+    ["Zona Shodhun"] = { { 246, -175.11, -4.21, -5.00 } }, -- Local patch: Jeuno quests
 }

@@ -58,6 +58,7 @@ return {
     'Bertenont',
     'Blandine',
     'Blatherix',
+    'Bluffnix', -- Local patch: Jeuno quests
     'Bostillette',
     'Bozz', -- Local patch: Jeuno quests
     'Brenton',
@@ -148,6 +149,7 @@ return {
     'Gentle Tiger',
     'Gerbaum',
     'Ghatsad',
+    'Guttrix', -- Local patch: Jeuno quests
     'Ilumida', -- Local patch: Jeuno quests
     'Jabbar', -- Local patch: Jeuno quests
     'Karl', -- Local patch: Jeuno quests
@@ -490,6 +492,7 @@ return {
     'Zeid',
     'Zokima-Rokima',
     'Zon-Fobun',
+    'Zona Shodhun', -- Local patch: Jeuno quests
     'Zoriboh',
     'Zubaba',
     'Zuber', -- Local patch: Jeuno quests

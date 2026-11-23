@@ -126,6 +126,53 @@ Q.STEPS = {
         "Trade the Gold Orcmask to Garnev for the key item Clock Tower Oil.",
     },
 
+    jeu_lj_gobbiebag_1 = { -- Local patch: Jeuno quests
+        "Speak with Bluffnix in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "Trade him Dhalmel Leather, Steel Ingot, Linen Cloth, Peridot. All four are sold at the Auction House (Materials).",
+        "Or trade a single Goblin Stew 880 instead of all four items. It is usually more expensive, so check the Auction House prices first.",
+        "Your inventory grows to 35 slots. A Mog Satchel grows with it; ask an Artisan Moogle to enlarge a Mog Sack.",
+    },
+
+    jeu_lj_gobbiebag_2 = { -- Local patch: Jeuno quests
+        "Speak with Bluffnix in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "Trade him Ram Leather, Mythril Ingot, Wool Cloth, Turquoise. All four are sold at the Auction House (Materials).",
+        "Or trade a single Goblin Stew 880 instead of all four items. It is usually more expensive, so check the Auction House prices first.",
+        "Your inventory grows to 40 slots. A Mog Satchel grows with it; ask an Artisan Moogle to enlarge a Mog Sack.",
+    },
+
+    jeu_lj_gobbiebag_3 = { -- Local patch: Jeuno quests
+        "Speak with Bluffnix in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "Trade him Tiger Leather, Gold Ingot, Velvet Cloth, Painite. All four are sold at the Auction House (Materials).",
+        "Or trade a single Goblin Stew 880 instead of all four items. It is usually more expensive, so check the Auction House prices first.",
+        "Your inventory grows to 45 slots. A Mog Satchel grows with it; ask an Artisan Moogle to enlarge a Mog Sack.",
+    },
+
+    jeu_lj_gobbiebag_4 = { -- Local patch: Jeuno quests
+        "Speak with Bluffnix in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "Trade him Cermet Chunk, Darksteel Ingot, Silk Cloth, Goshenite. All four are sold at the Auction House (Materials).",
+        "Or trade a single Goblin Stew 880 instead of all four items. It is usually more expensive, so check the Auction House prices first.",
+        "Your inventory grows to 50 slots. A Mog Satchel grows with it; ask an Artisan Moogle to enlarge a Mog Sack.",
+    },
+
+    jeu_lj_mysteries_of_beadeaux_1 = { -- Local patch: Jeuno quests
+        "During Mission 4-1 of any nation, speak with Sattal-Mansal in Lower Jeuno (J-8). This starts both Mysteries of Beadeaux quests.",
+        "Obtain a Quadav Charm from the De'Vyu Headhunter in Beadeaux (I-9/I-10).",
+        "Trade the Quadav Charm to Sattal-Mansal for the key item Coruscant Rosary.",
+    },
+
+    jeu_lj_mysteries_of_beadeaux_2 = { -- Local patch: Jeuno quests
+        "This quest starts together with Mysteries of Beadeaux I when you speak with Sattal-Mansal in Lower Jeuno (J-8).",
+        "Obtain a Quadav Augury Shell from the Go'Bhu Gascon in Beadeaux (F-6).",
+        "Trade the Quadav Augury Shell to Sattal-Mansal for the key item Black Matinee Necklace.",
+    },
+
+    jeu_lj_the_goblin_tailor = { -- Local patch: Jeuno quests
+        "Speak with Guttrix in Lower Jeuno (H-10). He makes race-specific armor (RSE) from a Magical Pattern.",
+        "Each race gets one game week (Firesday to Darksday, about 7 hours 41 minutes) in turn. During your race's week, open a Treasure Chest in Gusgen Mines, Ordelle's Caves or the Maze of Shakhrami for the key item Magical Pattern.",
+        "The chests need a Gusgen, Ordelle or Shakhrami Chest Key from the monsters in that zone. You can hold only one pattern at a time.",
+        "Return to Guttrix and choose the body, hands, legs or feet piece. Repeat for the other pieces.",
+    },
+
     jeu_uj_axe_the_competition = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need Axe skill 240 or higher and level 71.",
         "Speak with Brutus in Upper Jeuno (G-7) to receive the key item Weapon Training Guide and the Pick of Trials. You need to break the latent on the Pick of Trials before completing the rest of the quest.",
@@ -453,6 +500,12 @@ Q.STEPS = {
     jeu_pj_childs_play = { -- Local patch: Jeuno quests
         "While The Wonder Magic Set is active, speak with Karl in Port Jeuno (H-8). He will give you a Wonder Magic Set for a White Rock.",
         "Trade a White Rock to Karl for the key item Wonder Magic Set.",
+    },
+
+    jeu_pj_pretty_little_things = { -- Local patch: Jeuno quests
+        "Speak with Zona Shodhun in Port Jeuno (E-8). She likes pretty flowers and pebbles.",
+        "Obtain a Yellow Rock. It is sold at the Auction House (Materials > Goldsmithing), or mined in Gusgen Mines or Yughott Grotto on Earthsday.",
+        "Trade the Yellow Rock to Zona Shodhun to complete the quest. Your Mog House in Jeuno can now exit to any Jeuno area.",
     },
 
     jeu_rg_northward = {
