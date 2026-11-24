@@ -452,6 +452,7 @@ local journal_logo_cache = {}
 local journal_text_banners = {
     outlands = 'Outlands',
     other = 'Other Areas',
+    coalition = 'Coalition',
 }
 
 -- How many times bigger than the usual width a logo is drawn. The banners
