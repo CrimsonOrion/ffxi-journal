@@ -606,7 +606,22 @@ end
 --     count   = number of entity slots to look at (0 .. count),
 --     name    = function(index) -> string or nil
 --     pos     = function(index) -> x, z   (nil when not loaded)
+--     visible = function(index) -> boolean (optional; false skips the
+--               entity)
 -- }
+-- Local patch: some zones hold a hidden copy of an NPC for cutscenes (in
+-- Southern San d'Oria [S], Turlough of Upper Jeuno), loaded but not drawn.
+-- It is skipped, or the compass points at an empty spot.
+local function shown(api, index)
+    if api.visible == nil then
+        return true
+    end
+
+    local ok, value = pcall(api.visible, index)
+
+    return not ok or value ~= false
+end
+
 -- Returns the closest entity with that name, or nil.
 function M.Scan(api, wanted, me)
     local best = nil
@@ -614,7 +629,8 @@ function M.Scan(api, wanted, me)
     for index = 0, api.count do
         local name = api.name(index)
 
-        if name ~= nil and name ~= '' and same_name(name, wanted) then
+        if name ~= nil and name ~= '' and same_name(name, wanted)
+            and shown(api, index) then
             local x, z = api.pos(index)
 
             if x ~= nil and z ~= nil then
@@ -647,7 +663,7 @@ function M.ScanMany(api, wanted, me)
         if name ~= nil and name ~= '' then
             local key = zonematch.normalize(name)
 
-            if wanted[key] then
+            if wanted[key] and shown(api, index) then
                 local x, z = api.pos(index)
 
                 if x ~= nil and z ~= nil then
@@ -726,6 +742,17 @@ function M.AshitaApi()
             end,
             pos = function(index)
                 return entity:GetLocalPositionX(index), second(index)
+            end,
+            -- Drawn by the game: 0x200 set, 0x4000 (hidden) clear.
+            visible = function(index)
+                local flags = entity:GetRenderFlags0(index)
+
+                if type(flags) ~= 'number' then
+                    return true
+                end
+
+                return bit.band(flags, 0x200) ~= 0
+                    and bit.band(flags, 0x4000) == 0
             end,
         }
     end)
