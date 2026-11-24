@@ -170,6 +170,7 @@ return {
     'Naruru', -- Local patch: Jeuno quests
     'Neraf-Najiruf', -- Local patch: Jeuno quests
     'Nevela', -- Local patch: Jeuno quests
+    'Nomad Moogle', -- Local patch: Jeuno quests
     'Odasel', -- Local patch: Jeuno quests
     'Omer', -- Local patch: Jeuno quests
     'Panta-Putta', -- Local patch: Jeuno quests
@@ -179,6 +180,7 @@ return {
     'Red Ghost', -- Local patch: Jeuno quests
     'Rouliette', -- Local patch: Jeuno quests
     'Souren', -- Local patch: Jeuno quests
+    'Syrillia', -- Local patch: Jeuno quests
     'Teigero-Bangero', -- Local patch: Jeuno quests
     'Tucker', -- Local patch: A Little Knowledge
     'Champalpieu', -- Local patch: A Little Knowledge

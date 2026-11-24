@@ -209,6 +209,20 @@ M.zones = {
             }, -- Local patch: Jeuno quests
 
             {
+                id = 'jeu_lj_all_in_the_cards',
+                name = 'All in the Cards',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (I-8)',
+                npc = 'Chululu',
+                req = 'Fame 5',
+                prereq = 'Collect Tarut Cards',
+                reward = '600 gil, title Card Collector',
+                items = 'Tarut: Death, Tarut: The Fool, Tarut: The Hermit, Tarut: The King',
+                repeatable = true,
+            }, -- Local patch: Jeuno quests
+
+            {
                 id = 'jeu_lj_never_to_return',
                 name = 'Never to Return',
                 area = 'jeuno',
@@ -415,6 +429,32 @@ M.zones = {
                 prereq = 'The Gobbiebag Part VII',
                 reward = 'Inventory increased to 70 slots',
                 items = 'Smilodon Leather, Electrum Ingot, Cilice, Angelstone, or Goblin Stew 880',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_gobbiebag_9',
+                name = 'The Gobbiebag Part IX',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Bluffnix',
+                req = 'Fame 5',
+                prereq = 'The Gobbiebag Part VIII',
+                reward = 'Inventory increased to 75 slots',
+                items = 'Orichalcum Ingot, Peiste Leather, Oil-Soaked Cloth, Oxblood Orb, or Goblin Stew 880',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_gobbiebag_10',
+                name = 'The Gobbiebag Part X',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Bluffnix',
+                req = 'Fame 5',
+                prereq = 'The Gobbiebag Part IX',
+                reward = 'Inventory increased to 80 slots, title Grand Greedalox',
+                items = 'Molybdenum Ingot, Griffon Leather, Foulard, Angel Skin Orb, or Goblin Stew 880',
             }, -- Local patch: Jeuno quests
 
             {
@@ -774,6 +814,18 @@ M.zones = {
                 reward = 'Chocobo license (Key Item)',
                 items = 'Gausebit Wildgrass',
             },
+
+            {
+                id = 'jeu_uj_full_speed_ahead',
+                name = 'Full Speed Ahead!',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-7)',
+                npc = 'Mapitoto',
+                req = 'Lv.20+, Chocobo license, Map of the Jeuno area',
+                prereq = "Chocobo's Wounds",
+                reward = "Key items Raptor companion and Trainer's whistle",
+            }, -- Local patch: Jeuno quests
 
             {
                 id = 'jeu_uj_path_of_the_beastmaster',
@@ -1517,6 +1569,97 @@ M.zones = {
             },
 
             {
+                id = 'jeu_rg_new_worlds_await',
+                name = 'New Worlds Await',
+                area = 'jeuno',
+                zone = "Ru'Lude Gardens",
+                loc = "Ru'Lude Gardens (H-5)",
+                npc = 'Nomad Moogle',
+                req = 'Lv.75',
+                prereq = 'Shattering Stars (or another level-75 limit break quest)',
+                reward = 'Raises level cap to 80, key item Limit breaker',
+                items = "Kindred's Seal x5, 3 merit points",
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_rg_expanding_horizons',
+                name = 'Expanding Horizons',
+                area = 'jeuno',
+                zone = "Ru'Lude Gardens",
+                loc = "Ru'Lude Gardens (H-5)",
+                npc = 'Nomad Moogle',
+                req = 'Lv.76+',
+                prereq = 'New Worlds Await',
+                reward = 'Raises level cap to 85',
+                items = "Kindred's Crest x5, 4 merit points",
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_rg_beyond_the_stars',
+                name = 'Beyond the Stars',
+                area = 'jeuno',
+                zone = "Ru'Lude Gardens",
+                loc = "Ru'Lude Gardens (H-5)",
+                npc = 'Nomad Moogle',
+                req = 'Lv.81+',
+                prereq = 'Expanding Horizons',
+                reward = 'Raises level cap to 90',
+                items = "Kindred's Crest x10, 5 merit points",
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_rg_dormant_powers_dislodged',
+                name = 'Dormant Powers Dislodged',
+                area = 'jeuno',
+                zone = "Ru'Lude Gardens",
+                loc = "Ru'Lude Gardens (H-5)",
+                npc = 'Nomad Moogle',
+                req = 'Lv.86+',
+                prereq = 'Beyond the Stars',
+                reward = 'Raises level cap to 95, key item Soul gem',
+                items = "Kindred's Crest, one requested item, 10 merit points",
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_rg_prelude_to_puissance',
+                name = 'Prelude to Puissance',
+                area = 'jeuno',
+                zone = "Ru'Lude Gardens",
+                loc = "Ru'Lude Gardens (H-5)",
+                npc = 'Nomad Moogle',
+                req = 'Lv.91+',
+                prereq = 'Dormant Powers Dislodged',
+                reward = 'Key item Soul gem clasp',
+                items = 'Seasoning Stone',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_rg_beyond_infinity',
+                name = 'Beyond Infinity',
+                area = 'jeuno',
+                zone = "Ru'Lude Gardens",
+                loc = "Ru'Lude Gardens (H-5)",
+                npc = 'Nomad Moogle',
+                req = 'Lv.91+',
+                prereq = 'Prelude to Puissance',
+                reward = 'Raises level cap to 99, Scroll of Instant Warp, warps from Domenic',
+                items = 'Soul gem clasp',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_rg_martial_mastery',
+                name = 'Martial Mastery',
+                area = 'jeuno',
+                zone = "Ru'Lude Gardens",
+                loc = "Ru'Lude Gardens (H-5)",
+                npc = 'Nomad Moogle',
+                req = 'Lv.96+',
+                prereq = 'Beyond Infinity',
+                reward = 'Key item Heart of the bushin, title Bushin-Ryu Inheritor',
+                items = '15 merit points',
+            }, -- Local patch: Jeuno quests
+
+            {
                 id = 'jeu_rg_storms_of_fate',
                 name = 'Storms of Fate',
                 area = 'jeuno',
@@ -1995,6 +2138,61 @@ local tracker_data = {
     jeu_lj_unlocking_a_myth_scholar = {
         area = 'jeuno',
         bit = 121,
+    },
+
+    jeu_lj_gobbiebag_9 = {
+        area = 'jeuno',
+        bit = 123,
+    },
+
+    jeu_lj_gobbiebag_10 = {
+        area = 'jeuno',
+        bit = 124,
+    },
+
+    jeu_rg_new_worlds_await = {
+        area = 'jeuno',
+        bit = 133,
+    },
+
+    jeu_rg_expanding_horizons = {
+        area = 'jeuno',
+        bit = 134,
+    },
+
+    jeu_rg_beyond_the_stars = {
+        area = 'jeuno',
+        bit = 135,
+    },
+
+    jeu_rg_dormant_powers_dislodged = {
+        area = 'jeuno',
+        bit = 136,
+    },
+
+    jeu_rg_beyond_infinity = {
+        area = 'jeuno',
+        bit = 137,
+    },
+
+    jeu_lj_all_in_the_cards = {
+        area = 'jeuno',
+        bit = 166,
+    },
+
+    jeu_rg_martial_mastery = {
+        area = 'jeuno',
+        bit = 167,
+    },
+
+    jeu_rg_prelude_to_puissance = {
+        area = 'jeuno',
+        bit = 170,
+    },
+
+    jeu_uj_full_speed_ahead = {
+        area = 'jeuno',
+        bit = 179,
     },
 
     -- --------------------------------------------------------

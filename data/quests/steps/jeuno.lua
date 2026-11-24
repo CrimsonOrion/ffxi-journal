@@ -94,6 +94,12 @@ Q.STEPS = {
         "Return to Chululu to complete the quest.",
     },
 
+    jeu_lj_all_in_the_cards = { -- Local patch: Jeuno quests
+        "After Collect Tarut Cards, speak with Chululu in Lower Jeuno (I-8) and accept. She gives you five copies of one random card: Tarut: Death, Tarut: The Fool, Tarut: The Hermit or Tarut: The King.",
+        "Trade cards with other players (bazaars work too) until you have one of each. Chululu gives you five more once per real-life day (JST midnight).",
+        "Trade all four different cards to Chululu to complete the quest. You can repeat it the next day.",
+    },
+
     jeu_lj_never_to_return = { -- Local patch: Jeuno quests
         "After Your Crystal Ball, have Kurou-Morou in Lower Jeuno (I-7) read your fortune on three different game days.",
         "Ask for a fourth reading to start the quest.",
@@ -205,6 +211,21 @@ Q.STEPS = {
         "Your inventory grows to 70 slots. A Mog Satchel grows with it; ask an Artisan Moogle to enlarge a Mog Sack.",
     },
 
+    jeu_lj_gobbiebag_9 = { -- Local patch: Jeuno quests
+        "Speak with Bluffnix in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "Trade him Orichalcum Ingot, Peiste Leather, Oil-Soaked Cloth, Oxblood Orb. All four are sold at the Auction House (Materials).",
+        "Peiste Skins for the leather can only be farmed in areas from Wings of the Goddess.",
+        "Or trade a single Goblin Stew 880 instead of all four items. It is usually more expensive, so check the Auction House prices first.",
+        "Your inventory grows to 75 slots. A Mog Satchel grows with it; ask an Artisan Moogle to enlarge a Mog Sack.",
+    },
+
+    jeu_lj_gobbiebag_10 = { -- Local patch: Jeuno quests
+        "Speak with Bluffnix in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "Trade him Molybdenum Ingot, Griffon Leather, Foulard, Angel Skin Orb. All four are sold at the Auction House (Materials).",
+        "Or trade a single Goblin Stew 880 instead of all four items. It is usually more expensive, so check the Auction House prices first.",
+        "Your inventory grows to 80 slots. A Mog Satchel grows with it; ask an Artisan Moogle to enlarge a Mog Sack.",
+    },
+
     jeu_lj_in_the_mood_for_love = { -- Local patch: Jeuno quests
         "After Promathia Mission 3-2, speak with Odasel outside Gems by Kshama in Lower Jeuno (H-9).",
         "Defeat Gigas in Lufaise Meadows until one drops a Chameleon Diamond.",
@@ -307,7 +328,7 @@ Q.STEPS = {
 
     jeu_lj_unlocking_a_myth_ranger = { -- Local patch: Jeuno quests
         "As a Ranger, equip the Vigil weapon Killer Bow (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
-        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "With it in your ranged slot, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
         "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
         "When Trueflight appears in your weapon skill list, trade the Killer Bow to Zalsuhm. He unlocks Trueflight for any weapon of the same type and gives the weapon back.",
     },
@@ -349,7 +370,7 @@ Q.STEPS = {
 
     jeu_lj_unlocking_a_myth_corsair = { -- Local patch: Jeuno quests
         "As a Corsair, equip the Vigil weapon Quicksilver (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
-        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "With it in your ranged slot, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
         "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
         "When Leaden Salute appears in your weapon skill list, trade the Quicksilver to Zalsuhm. He unlocks Leaden Salute for any weapon of the same type and gives the weapon back.",
     },
@@ -404,6 +425,15 @@ Q.STEPS = {
         "It takes 6 feeding attempts to complete the quest. The first 2 attempts automatically fail and do not consume a grass.",
         "Once the chocobo has eaten the Gausebit Grass x4, you are presented with a Chocobo license.",
         "You don't need to zone before the next quest, Full Speed Ahead!, but Mapitoto won't acknowledge you without the Map of the Jeuno area (Rusese, M&P Market in Upper Jeuno (H-6), 600 gil).",
+    },
+
+    jeu_uj_full_speed_ahead = { -- Local patch: Jeuno quests
+        "At level 20 or higher, with the Chocobo license and the Map of the Jeuno area, speak with Mapitoto in Upper Jeuno (G-7) and agree to feed her raptor.",
+        "You ride it in Batallia Downs. She marks the food burrows on your map (Map, Markers); a pillar of light shows each one, and the food is inside the burrow's rectangular entrance.",
+        "Collect 5 foods before its motivation runs out. Going uphill drains it fast; use /cheer when the bar is at 50% or more to refill some. If it runs off you can retry, also on an easier difficulty.",
+        "A route that works: J-8, /cheer, I-7, H-6, /cheer, G-6, F-7, /cheer, E-6.",
+        "Still mounted, speak with Syrillia in Batallia Downs (E-6) to warp back, then return to Mapitoto for the key items Raptor companion and Trainer's whistle.",
+        "Repeating the training on normal difficulty in under 4 minutes earns the title Raptor Wrangler; it doesn't count on the first run.",
     },
 
     jeu_uj_path_of_the_beastmaster = {
@@ -925,6 +955,55 @@ Q.STEPS = {
         "Talk to Maat before every fight: he asks for that job's Testimony and names the battlefield. After your first win each job has an assigned arena, and you have to walk, use the Tenshodo warp or a Home Point to get there: Balga's Dais for MNK/WHM/SMN, Horlais Peak for WAR/BLM/RNG, Qu'Bia Arena for PLD/DRK/BRD, Waughroon Shrine for RDM/THF/BST, Chamber of Oracles for SAM/NIN/DRG. The fights are like Shattering Stars, without the level cap.",
         "To check which jobs you have beaten Maat with, enter the Feretory and speak with Teyrnon. Instincts associated with the jobs on which you have defeated Maat cost 5,000 Infamy instead of 10,000.",
         "Upon defeating Maat for the last time, speak with him to receive the cutscene and your new Maat's Cap.",
+    },
+
+    jeu_rg_new_worlds_await = { -- Local patch: Jeuno quests
+        "At level 75 with your level cap at 75, speak with the Nomad Moogle next to Maat in Ru'Lude Gardens (H-5). He gives you the key item Limit breaker, and the quest starts.",
+        "Trade him 5 Kindred's Seals while you have at least 3 merit points. The seals and 3 merit points are used up, and your level cap rises to 80.",
+        "Besides monster drops, Shemo in Port Jeuno trades 1 seal for 3 of any other kind, and the Greeter Moogle sells seals for 5 login points each when they're offered.",
+    },
+
+    jeu_rg_expanding_horizons = { -- Local patch: Jeuno quests
+        "At level 76 or higher, speak with the Nomad Moogle in Ru'Lude Gardens (H-5) and accept.",
+        "Trade him 5 Kindred's Crests while you have at least 4 merit points. Your level cap rises to 85.",
+        "Besides monster drops, Shemo in Port Jeuno trades 1 seal for 3 of any other kind, and the Greeter Moogle sells seals for 5 login points each when they're offered.",
+    },
+
+    jeu_rg_beyond_the_stars = { -- Local patch: Jeuno quests
+        "At level 81 or higher, speak with the Nomad Moogle in Ru'Lude Gardens (H-5) and accept.",
+        "Trade him 10 Kindred's Crests while you have at least 5 merit points.",
+        "Speak with him again for a game of rock, paper, scissors between Maat and Degenhard: Raging Beast beats Silent Wind, Silent Wind beats Soaring Dragon, Soaring Dragon beats Raging Beast. The picks are random.",
+        "Win the rounds to raise your level cap to 90. Each loss lowers the number of wins you need, so keep trying.",
+        "Besides monster drops, Shemo in Port Jeuno trades 1 seal for 3 of any other kind, and the Greeter Moogle sells seals for 5 login points each when they're offered.",
+    },
+
+    jeu_rg_dormant_powers_dislodged = { -- Local patch: Jeuno quests
+        "At level 86 or higher, speak with the Nomad Moogle in Ru'Lude Gardens (H-5) and agree to sign Atori-Tutori's contract. He asks for one random item.",
+        "The item is one of: Sunsand, Magicked Skull, Damselfly Worm, Crab Apron, Bloody Robe, Dhalmel Saliva, Wild Rabbit Tail, Orcish Axe, Faded Crystal, Yagudo Caulk, Orcish Armor Plate, Quadav Backscale, Dangruf Stone, Siren's Tear.",
+        "Trade him 1 Kindred's Crest and the requested item while you have at least 10 merit points.",
+        "Speak with him again for a timing game: when he says start, wait 10 seconds and choose Push! He counts the first four seconds for you. If you miss, try again.",
+        "Success gives the key item Soul gem and raises your level cap to 95.",
+    },
+
+    jeu_rg_prelude_to_puissance = { -- Local patch: Jeuno quests
+        "At level 91 or higher, speak with the Nomad Moogle in Ru'Lude Gardens (H-5).",
+        "Get a Seasoning Stone. It drops from nearly all regular monsters of level 90 or higher outside Abyssea, and the Login Campaign sometimes offers it for 5 points.",
+        "Trade it to the Nomad Moogle for the key item Soul gem clasp. When Atori-Tutori asks if you are ready, saying yes completes this quest and starts Beyond Infinity; it does not start the fight.",
+    },
+
+    jeu_rg_beyond_infinity = { -- Local patch: Jeuno quests
+        "At level 91 or higher with the Soul gem clasp, the Nomad Moogle in Ru'Lude Gardens (H-5) offers to warp you to Horlais Peak, Waughroon Shrine, Balga's Dais or Qu'Bia Arena. The fight is the same in each. Pick Nowhere yet if you want the Olde Rarab Tail first.",
+        "Strongly recommended: after accepting, speak with Maat (maybe several times) until he mentions Degenhard, then speak with Degenhard in Bastok Markets (I-10), Home Point #4.",
+        "Trade Degenhard a Seasoning Stone, Fossilized Fang and Fossilized Bone for an Olde Rarab Tail. Using it removes Atori-Tutori's cap of about 100 damage per hit and terrorizes him for 2 minutes; get 2 or 3.",
+        "Defeat Atori-Tutori (level 99, party of up to 6). His Hundred Fists removes all enfeebling effects. Players who already finished the quest can help but must walk in.",
+        "If you lose, the Nomad Moogle gives a new Soul gem clasp for 1 merit point or 5 High Kindred's Crests.",
+        "Return to the Nomad Moogle to raise your level cap to 99. Domenic in Lower Jeuno (J-7) can now warp you to these arenas.",
+    },
+
+    jeu_rg_martial_mastery = { -- Local patch: Jeuno quests
+        "At level 96 or higher, speak with the Nomad Moogle next to Maat in Ru'Lude Gardens (H-5).",
+        "Speak with him again while you have 15 merit points. He takes them and gives you the key item Heart of the bushin, which unlocks the merit weapon skills.",
+        "Using a merit weapon skill needs 357 or more skill in that weapon. BG-Wiki says this isn't needed for the quest, but LandSandBoat asks for it.",
     },
 
     jeu_rg_storms_of_fate = {
