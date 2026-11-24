@@ -5482,6 +5482,7 @@ do
         bastok = 'bastok',
         windurst = 'windurst',
         jeuno = 'jeuno',
+        adoulin = 'adoulin',
     }
 
     -- true when the quest needs more fame than the player has. false when
