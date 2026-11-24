@@ -103,6 +103,7 @@ return {
     'Chasalvige',
     'Chelidoine', -- Local patch: Adoulin quests
     'Chipmy-Popmy',
+    'Chocobo Tamer', -- Local patch: Abyssea quests
     'Choubollet', -- Local patch: Adoulin quests
     'Chululu', -- Local patch: Jeuno quests
     'Chumimi',
@@ -145,6 +146,7 @@ return {
     'Diordinne',
     'Dkhaaya',
     'Dodmos',
+    'Dominion Sergeant', -- Local patch: Abyssea quests
     'Door: Research Chamber', -- Local patch: Adoulin quests
     'Drangord',
     'Eamonn', -- Local patch: Adoulin quests
@@ -255,6 +257,7 @@ return {
     'Louisareaux', -- Local patch: Adoulin quests
     'Lucretia', -- Local patch: Adoulin quests
     'Luto Mewrilah', -- Local patch: Jeuno quests
+    'Machine Outfitter', -- Local patch: Abyssea quests
     'Magian Moogle', -- Local patch: Jeuno quests
     'Mailloquetat', -- Local patch: Jeuno quests
     'Malgrom', -- Local patch: Adoulin quests
@@ -315,6 +318,7 @@ return {
     'Ratoto', -- Local patch: Jeuno quests
     'Red Ghost', -- Local patch: Jeuno quests
     'Reja Ygridhi', -- Local patch: Adoulin quests
+    'Resistance Sapper', -- Local patch: Abyssea quests
     'Risen Hackles', -- Local patch: Adoulin quests
     'Rising Solstice', -- Local patch: Adoulin quests
     'Robel-Akbel', -- Local patch: Crystal War quests

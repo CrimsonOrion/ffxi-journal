@@ -534,6 +534,482 @@ Q.STEPS = {
         "She asks you to wear a certain body and legs piece for your job; HQ versions also count. She never picks gear you're already wearing, so take off your body and legs first if you lack some of her choices. If you can't get them, speak to her to quit, then zone and try again.",
         "Speak with Brygid wearing both pieces to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
     },
+
+    -- Repeatable Abyssea quests: Dominion Ops, Wards, Martellos (BG-Wiki).
+
+    aby_alt_dominion_op_01 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #08 in Abyssea - Altepa and accept Dominion Op 01.",
+        "Defeat 5 Sand Sweepers around (D-10).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_02 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #08 in Abyssea - Altepa and accept Dominion Op 02.",
+        "Defeat 5 Surveyors around (D-12).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_03 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #08 in Abyssea - Altepa and accept Dominion Op 03.",
+        "Defeat 5 Bonfire (Monster)s around (E-11).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_04 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Altepa and accept Dominion Op 04.",
+        "Defeat 5 Dune Manticores around (F-6).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_05 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Altepa and accept Dominion Op 05.",
+        "Defeat 5 Manigordos around (G-8).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_06 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Altepa and accept Dominion Op 06.",
+        "Defeat 5 Camelopardalis around (F-7).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_07 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #05 in Abyssea - Altepa and accept Dominion Op 07.",
+        "Defeat 5 Desert Puks around (G-10).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_08 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #05 in Abyssea - Altepa and accept Dominion Op 08.",
+        "Defeat 5 Ergdrakes around (G-9).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_09 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #05 in Abyssea - Altepa and accept Dominion Op 09.",
+        "Defeat 5 Dune Cockatrice around (H-8).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_10 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #05 in Abyssea - Altepa and accept Dominion Op 10.",
+        "Defeat 5 Gastornis around (I-8).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_11 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Altepa and accept Dominion Op 11.",
+        "Defeat 5 Nannakolas around (I-6).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_12 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Altepa and accept Dominion Op 12.",
+        "Defeat 5 Akrabs around (H-6).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_13 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #08 in Abyssea - Altepa and accept Dominion Op 13.",
+        "Defeat 5 Fear Deargs around (E-9).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_alt_dominion_op_14 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #08 in Abyssea - Altepa and accept Dominion Op 14.",
+        "Defeat 5 Barrens Treants around (F-11).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_01 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Uleguerand and accept Dominion Op 01.",
+        "Defeat 5 Mechanical Menaces around (G-8).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_02 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Uleguerand and accept Dominion Op 02.",
+        "Defeat 5 Spectators around (G-7).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_03 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Uleguerand and accept Dominion Op 03.",
+        "Defeat 5 Sub-zero Gears around (F-8).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_04 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #06 in Abyssea - Uleguerand and accept Dominion Op 04.",
+        "Defeat 5 Snowflakes around (G-5).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_05 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #06 in Abyssea - Uleguerand and accept Dominion Op 05.",
+        "Defeat 5 Verglas Golems around (G-6).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_06 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #06 in Abyssea - Uleguerand and accept Dominion Op 06.",
+        "Defeat 5 Olyphants around (F-6).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_07 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #06 in Abyssea - Uleguerand and accept Dominion Op 07.",
+        "Defeat 5 Svelldrakes around (I-5).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_08 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #06 in Abyssea - Uleguerand and accept Dominion Op 08.",
+        "Defeat 5 Adasaurus around (J-5).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_09 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #05 in Abyssea - Uleguerand and accept Dominion Op 09.",
+        "Defeat 5 Ectozoon around (L-8).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_10 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #05 in Abyssea - Uleguerand and accept Dominion Op 10.",
+        "Defeat 5 Hoarmite around (K-7).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_11 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Uleguerand and accept Dominion Op 11.",
+        "Defeat 5 Ermit Imps around (E-8).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_12 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Uleguerand and accept Dominion Op 12.",
+        "Defeat 5 Benumbed Vodorigas around (D-9).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_13 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #05 in Abyssea - Uleguerand and accept Dominion Op 13.",
+        "Defeat 5 Bluffalo around (K-9).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_ule_dominion_op_14 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #05 in Abyssea - Uleguerand and accept Dominion Op 14.",
+        "Defeat 5 Sierra Tigers around (I-10).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_01 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #08 in Abyssea - Grauberg and accept Dominion Op 01.",
+        "Defeat 5 Sinister Seidels around (J-5).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_02 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #08 in Abyssea - Grauberg and accept Dominion Op 02.",
+        "Defeat 5 Monitors around (L-5).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_03 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #08 in Abyssea - Grauberg and accept Dominion Op 03.",
+        "Defeat 5 Stygian Djinns around (K-7).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_04 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #04 in Abyssea - Grauberg and accept Dominion Op 04.",
+        "Defeat 5 Faunus Wyverns around (I-10).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_05 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #04 in Abyssea - Grauberg and accept Dominion Op 05.",
+        "Defeat 5 Putrid Peapuks around (I-9).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_06 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #08 in Abyssea - Grauberg and accept Dominion Op 06.",
+        "Defeat 5 Glade Wivres around (J-7).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_07 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Grauberg and accept Dominion Op 07.",
+        "Defeat 5 Sensenmann around (D-8).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_08 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Grauberg and accept Dominion Op 08.",
+        "Defeat 5 Deimobugards around (F-9).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_09 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #04 in Abyssea - Grauberg and accept Dominion Op 09.",
+        "Defeat 5 Peak Pugils around (H-11).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_10 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #04 in Abyssea - Grauberg and accept Dominion Op 10.",
+        "Defeat 5 Glen Crabs around (G-11).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_11 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Grauberg and accept Dominion Op 11.",
+        "Defeat 5 Seelies around (F-6).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_12 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #07 in Abyssea - Grauberg and accept Dominion Op 12.",
+        "Defeat 5 Unseelies around (F-6).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_13 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #04 in Abyssea - Grauberg and accept Dominion Op 13.",
+        "Defeat 5 Goblin Plunderers around (I-12).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_gra_dominion_op_14 = { -- Local patch: Abyssea quests
+        "Speak with the Dominion Sergeant near Veridical Conflux #04 in Abyssea - Grauberg and accept Dominion Op 14.",
+        "Defeat 5 Goblin Meatgrinders around (J-11).",
+        "Report to any Dominion Sergeant to complete the quest. You can repeat it, and it may give an Empyrean +1 body or hands seal.",
+    },
+
+    aby_att_ward_warden_i = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Attohwa (F-9) for the key item Magicked hempen sack. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to the Target marked on your map (from Conflux #06 go west over the bridge and through the tunnel, hugging the right wall; use Sneak past the skeletons and keep clear of Gieremund) and examine the small Repair Trunk to pack the sack with pointy, jagged and round materials. Pointy ones weigh the most: start with them and switch to lighter ones when the message changes, and stop before the sack tears, or you fail.",
+        "Return to the Resistance Sapper to complete the quest. A fuller sack pays more Cruor and Resistance Credits and restores more HP to the Martello and Clone Wards. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_att_ward_warden_ii = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Attohwa (F-9). Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Speak with the Chocobo Tamer nearby to start the escort, and buy supplies: about 6 Chocobo Blinkers (narrow its view for 90 seconds), 6 Stamina Apples (slow its HP loss for 60 seconds; they don't stack with Blinkers), 6 Azouph Greens (restore 5% of its HP, with a cooldown), and a few Miasmal Counteragents for Dark Miasma on the way.",
+        "Lead the chocobo to the large Repair Trunk at (G-7) without letting it see any monster; if it panics (Kweh!?) it runs back, so catch up and talk to it. Silent Oil and Prism Powder on yourself help. Examine the trunk, then the chocobo, to load supplies; one load is enough, and more slows it down.",
+        "Lead it back to the Chocobo Tamer and speak with them, then report to the Resistance Sapper to complete the quest. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_att_desert_rain_i = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Attohwa (F-9) for the key item Magicked flaxen sack. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to the Target marked on your map (near Conflux #06) and examine the small Repair Trunk to cram the sack with oil cloths, triangular flasks and elongated flasks. Watch its state (perfect condition, a little taut, signs of stretching, squeaking under tension) and choose Finish cramming before it tears.",
+        "Return to the Resistance Sapper to complete the quest; a fuller sack pays more Cruor and Resistance Credits. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_att_desert_rain_ii = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Attohwa (F-9). Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Speak with the Chocobo Tamer nearby to start the escort, and buy supplies: about 6 Chocobo Blinkers (narrow its view for 90 seconds), 6 Stamina Apples (slow its HP loss for 60 seconds; they don't stack with Blinkers), 6 Azouph Greens (restore 5% of its HP, with a cooldown), and a few Miasmal Counteragents for Dark Miasma on the way.",
+        "Lead the chocobo to the large Repair Trunk at (G-7) without letting it see any monster; if it panics (Kweh!?) it runs back, so catch up and talk to it. Silent Oil and Prism Powder on yourself help. Examine the trunk, then the chocobo, to load supplies; one load is enough, and more slows it down.",
+        "Lead it back to the Chocobo Tamer and speak with them, then report to the Resistance Sapper to complete the quest. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_att_crimson_carpet_i = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Attohwa (F-9) for the key item Paralysis trap fluid. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to a Rear Trap about 30 seconds southwest of the Resistance Sapper. Examine it to learn how far away to stand: 1 yalm is just inside its edge, 2 yalms just outside it, and 5 yalms the farthest. Stand there and examine it again to infuse the fluid.",
+        "Return to the Resistance Sapper to complete the quest; the closer you were to the right distance, the more Cruor and Resistance Credits. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_att_crimson_carpet_ii = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Attohwa (F-9) for the key item Weakening trap fluid. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to a Fore Trap north of Conflux #04 through the Chasm Gnats at (E-6), or at (F-10). Examine it to learn how far away to stand: 1 yalm is just inside its edge, 2 yalms just outside it, and 5 yalms the farthest. Stand there and examine it again to infuse the fluid.",
+        "Return to the Resistance Sapper to complete the quest; the closer you were to the right distance, the more Cruor and Resistance Credits. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_mis_ward_warden_i = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Misareaux (I-7) for the key item Magicked hempen sack. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to the Target marked on your map (near Conflux #05; beware the Flame Skimmer) and examine the small Repair Trunk to pack the sack with pointy, jagged and round materials. Pointy ones weigh the most: start with them and switch to lighter ones when the message changes, and stop before the sack tears, or you fail.",
+        "Return to the Resistance Sapper to complete the quest. A fuller sack pays more Cruor and Resistance Credits and restores more HP to the Martello and Clone Wards. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_mis_ward_warden_ii = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Misareaux (I-7). Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Speak with the Chocobo Tamer nearby to start the escort, and buy supplies: about 6 Chocobo Blinkers (narrow its view for 90 seconds), 6 Stamina Apples (slow its HP loss for 60 seconds; they don't stack with Blinkers), 6 Azouph Greens (restore 5% of its HP, with a cooldown), and a few Miasmal Counteragents for Dark Miasma on the way.",
+        "Lead the chocobo to the large Repair Trunk at (G-5) without letting it see any monster; if it panics (Kweh!?) it runs back, so catch up and talk to it. Silent Oil and Prism Powder on yourself help. Examine the trunk, then the chocobo, to load supplies; one load is enough, and more slows it down.",
+        "Lead it back to the Chocobo Tamer and speak with them, then report to the Resistance Sapper to complete the quest. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_mis_desert_rain_i = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Misareaux (I-7) for the key item Magicked flaxen sack. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to the Target marked on your map (near Conflux #04) and examine the small Repair Trunk to cram the sack with oil cloths, triangular flasks and elongated flasks. Watch its state (perfect condition, a little taut, signs of stretching, squeaking under tension) and choose Finish cramming before it tears.",
+        "Return to the Resistance Sapper to complete the quest; a fuller sack pays more Cruor and Resistance Credits. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_mis_desert_rain_ii = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Misareaux (I-7). Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Speak with the Chocobo Tamer nearby to start the escort, and buy supplies: about 6 Chocobo Blinkers (narrow its view for 90 seconds), 6 Stamina Apples (slow its HP loss for 60 seconds; they don't stack with Blinkers), 6 Azouph Greens (restore 5% of its HP, with a cooldown), and a few Miasmal Counteragents for Dark Miasma on the way.",
+        "Lead the chocobo to the large Repair Trunk at (H-9) without letting it see any monster; if it panics (Kweh!?) it runs back, so catch up and talk to it. Silent Oil and Prism Powder on yourself help. Examine the trunk, then the chocobo, to load supplies; one load is enough, and more slows it down.",
+        "Lead it back to the Chocobo Tamer and speak with them, then report to the Resistance Sapper to complete the quest. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_mis_crimson_carpet_i = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Misareaux (I-7) for the key item Paralysis trap fluid. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to a Rear Trap on the path behind the Chocobo Tamer at (I-7). Examine it to learn how far away to stand: 1 yalm is just inside its edge, 2 yalms just outside it, and 5 yalms the farthest. Stand there and examine it again to infuse the fluid.",
+        "Return to the Resistance Sapper to complete the quest; the closer you were to the right distance, the more Cruor and Resistance Credits. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_mis_crimson_carpet_ii = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Misareaux (I-7) for the key item Weakening trap fluid. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to a Fore Trap east of Conflux #02 at (K-8), or at (G-4). Examine it to learn how far away to stand: 1 yalm is just inside its edge, 2 yalms just outside it, and 5 yalms the farthest. Stand there and examine it again to infuse the fluid.",
+        "Return to the Resistance Sapper to complete the quest; the closer you were to the right distance, the more Cruor and Resistance Credits. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_vun_ward_warden_i = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Vunkerl (I-9) for the key item Magicked hempen sack. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to the Target marked on your map and examine the small Repair Trunk to pack the sack with pointy, jagged and round materials. Pointy ones weigh the most: start with them and switch to lighter ones when the message changes, and stop before the sack tears, or you fail.",
+        "Return to the Resistance Sapper to complete the quest. A fuller sack pays more Cruor and Resistance Credits and restores more HP to the Martello and Clone Wards. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_vun_ward_warden_ii = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Vunkerl (I-9). Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Speak with the Chocobo Tamer nearby to start the escort, and buy supplies: about 6 Chocobo Blinkers (narrow its view for 90 seconds), 6 Stamina Apples (slow its HP loss for 60 seconds; they don't stack with Blinkers), 6 Azouph Greens (restore 5% of its HP, with a cooldown), and a few Miasmal Counteragents for Dark Miasma on the way.",
+        "Lead the chocobo to the large Repair Trunk at (H-11) without letting it see any monster; if it panics (Kweh!?) it runs back, so catch up and talk to it. Silent Oil and Prism Powder on yourself help. Examine the trunk, then the chocobo, to load supplies; one load is enough, and more slows it down.",
+        "Lead it back to the Chocobo Tamer and speak with them, then report to the Resistance Sapper to complete the quest. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_vun_desert_rain_i = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Vunkerl (I-9) for the key item Magicked flaxen sack. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to the Target marked on your map (near Conflux #04) and examine the small Repair Trunk to cram the sack with oil cloths, triangular flasks and elongated flasks. Watch its state (perfect condition, a little taut, signs of stretching, squeaking under tension) and choose Finish cramming before it tears.",
+        "Return to the Resistance Sapper to complete the quest; a fuller sack pays more Cruor and Resistance Credits. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_vun_desert_rain_ii = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Vunkerl (I-9). Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Speak with the Chocobo Tamer nearby to start the escort, and buy supplies: about 6 Chocobo Blinkers (narrow its view for 90 seconds), 6 Stamina Apples (slow its HP loss for 60 seconds; they don't stack with Blinkers), 6 Azouph Greens (restore 5% of its HP, with a cooldown), and a few Miasmal Counteragents for Dark Miasma on the way.",
+        "Lead the chocobo to the large Repair Trunk at (F-8) without letting it see any monster; if it panics (Kweh!?) it runs back, so catch up and talk to it. Silent Oil and Prism Powder on yourself help. Examine the trunk, then the chocobo, to load supplies; one load is enough, and more slows it down.",
+        "Lead it back to the Chocobo Tamer and speak with them, then report to the Resistance Sapper to complete the quest. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_vun_crimson_carpet_i = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Vunkerl (I-9) for the key item Paralysis trap fluid. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to a Rear Trap north of Conflux #05 at (G-11). Examine it to learn how far away to stand: 1 yalm is just inside its edge, 2 yalms just outside it, and 5 yalms the farthest. Stand there and examine it again to infuse the fluid.",
+        "Return to the Resistance Sapper to complete the quest; the closer you were to the right distance, the more Cruor and Resistance Credits. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_vun_crimson_carpet_ii = { -- Local patch: Abyssea quests
+        "Speak with the Resistance Sapper by Veridical Conflux #00 in Abyssea - Vunkerl (I-9) for the key item Weakening trap fluid. Only one Ward Warden, Desert Rain or Crimson Carpet quest can be completed per game day, in any zone.",
+        "Go to a Fore Trap north of Conflux #02 through the River Murex at (H-5), or at (J-12). Examine it to learn how far away to stand: 1 yalm is just inside its edge, 2 yalms just outside it, and 5 yalms the farthest. Stand there and examine it again to infuse the fluid.",
+        "Return to the Resistance Sapper to complete the quest; the closer you were to the right distance, the more Cruor and Resistance Credits. You can repeat it, and it may give an Empyrean +1 head seal.",
+    },
+
+    aby_lth_refuel_and_replenish = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - La Theine and choose Assist with replenishment for the key item Vat of martello fuel. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to replenish martello and confirm. Stand on the side the menu names, which can differ from the log, and replenish it.",
+        "Return to the Machine Outfitter with the empty vat to complete the quest. You can repeat it.",
+    },
+
+    aby_lth_a_mightier_martello = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - La Theine and choose Assist with upgrades for the key item Fuel reservoir. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to upgrade martello and confirm. Stand on the side the menu names, which can differ from the log, and upgrade it.",
+        "Return to the Machine Outfitter with the cracked reservoir to complete the quest. You can repeat it.",
+    },
+
+    aby_kon_refuel_and_replenish = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Konschtat and choose Assist with replenishment for the key item Vat of martello fuel. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to replenish martello and confirm. Stand on the side the menu names, which can differ from the log, and replenish it.",
+        "Return to the Machine Outfitter with the empty vat to complete the quest. You can repeat it.",
+    },
+
+    aby_kon_a_mightier_martello = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Konschtat and choose Assist with upgrades for the key item Fuel reservoir. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to upgrade martello and confirm. Stand on the side the menu names, which can differ from the log, and upgrade it.",
+        "Return to the Machine Outfitter with the cracked reservoir to complete the quest. You can repeat it.",
+    },
+
+    aby_tah_refuel_and_replenish = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Tahrongi and choose Assist with replenishment for the key item Vat of martello fuel. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to replenish martello and confirm. Stand on the side the menu names, which can differ from the log, and replenish it.",
+        "Return to the Machine Outfitter with the empty vat to complete the quest. You can repeat it.",
+    },
+
+    aby_tah_a_mightier_martello = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Tahrongi and choose Assist with upgrades for the key item Fuel reservoir. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to upgrade martello and confirm. Stand on the side the menu names, which can differ from the log, and upgrade it.",
+        "Return to the Machine Outfitter with the cracked reservoir to complete the quest. You can repeat it.",
+    },
+
+    aby_att_refuel_and_replenish = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Attohwa and choose Assist with replenishment for the key item Vat of martello fuel. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to replenish martello and confirm. Stand on the side the menu names, which can differ from the log, and replenish it.",
+        "Return to the Machine Outfitter with the empty vat to complete the quest. You can repeat it.",
+    },
+
+    aby_att_a_mightier_martello = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Attohwa and choose Assist with upgrades for the key item Fuel reservoir. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to upgrade martello and confirm. Stand on the side the menu names, which can differ from the log, and upgrade it.",
+        "Return to the Machine Outfitter with the cracked reservoir to complete the quest. You can repeat it.",
+    },
+
+    aby_mis_refuel_and_replenish = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Misareaux and choose Assist with replenishment for the key item Vat of martello fuel. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to replenish martello and confirm. Stand on the side the menu names, which can differ from the log, and replenish it.",
+        "Return to the Machine Outfitter with the empty vat to complete the quest. You can repeat it.",
+    },
+
+    aby_mis_a_mightier_martello = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Misareaux and choose Assist with upgrades for the key item Fuel reservoir. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to upgrade martello and confirm. Stand on the side the menu names, which can differ from the log, and upgrade it.",
+        "Return to the Machine Outfitter with the cracked reservoir to complete the quest. You can repeat it.",
+    },
+
+    aby_vun_refuel_and_replenish = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Vunkerl and choose Assist with replenishment for the key item Vat of martello fuel. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to replenish martello and confirm. Stand on the side the menu names, which can differ from the log, and replenish it.",
+        "Return to the Machine Outfitter with the empty vat to complete the quest. You can repeat it.",
+    },
+
+    aby_vun_a_mightier_martello = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Vunkerl and choose Assist with upgrades for the key item Fuel reservoir. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to upgrade martello and confirm. Stand on the side the menu names, which can differ from the log, and upgrade it.",
+        "Return to the Machine Outfitter with the cracked reservoir to complete the quest. You can repeat it.",
+    },
+
+    aby_alt_refuel_and_replenish = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Altepa and choose Assist with replenishment for the key item Vat of martello fuel. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to replenish martello and confirm. Stand on the side the menu names, which can differ from the log, and replenish it.",
+        "Return to the Machine Outfitter with the empty vat to complete the quest. You can repeat it.",
+    },
+
+    aby_alt_a_mightier_martello = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Altepa and choose Assist with upgrades for the key item Fuel reservoir. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to upgrade martello and confirm. Stand on the side the menu names, which can differ from the log, and upgrade it.",
+        "Return to the Machine Outfitter with the cracked reservoir to complete the quest. You can repeat it.",
+    },
+
+    aby_ule_refuel_and_replenish = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Uleguerand and choose Assist with replenishment for the key item Vat of martello fuel. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to replenish martello and confirm. Stand on the side the menu names, which can differ from the log, and replenish it.",
+        "Return to the Machine Outfitter with the empty vat to complete the quest. You can repeat it.",
+    },
+
+    aby_ule_a_mightier_martello = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Uleguerand and choose Assist with upgrades for the key item Fuel reservoir. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to upgrade martello and confirm. Stand on the side the menu names, which can differ from the log, and upgrade it.",
+        "Return to the Machine Outfitter with the cracked reservoir to complete the quest. You can repeat it.",
+    },
+
+    aby_gra_refuel_and_replenish = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Grauberg and choose Assist with replenishment for the key item Vat of martello fuel. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to replenish martello and confirm. Stand on the side the menu names, which can differ from the log, and replenish it.",
+        "Return to the Machine Outfitter with the empty vat to complete the quest. You can repeat it.",
+    },
+
+    aby_gra_a_mightier_martello = { -- Local patch: Abyssea quests
+        "Speak with the Machine Outfitter near the entrance of Abyssea - Grauberg and choose Assist with upgrades for the key item Fuel reservoir. Only one Refuel and Replenish or A Mightier Martello can be completed per game day, in any zone, and zoning loses the key item.",
+        "Examine any Martello, usually near a Conflux (even one at full health), choose Prepare to upgrade martello and confirm. Stand on the side the menu names, which can differ from the log, and upgrade it.",
+        "Return to the Machine Outfitter with the cracked reservoir to complete the quest. You can repeat it.",
+    },
 }
 
 return Q
