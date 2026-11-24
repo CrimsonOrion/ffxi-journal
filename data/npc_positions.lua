@@ -799,7 +799,7 @@ return {
     ["Yatniel"] = { { 245, -66.82, -126.59, -6.00 } }, -- Local patch: Hitting the Marquisate
     ["Laila"] = { { 244, -54.05, 101.00, 0.00 } }, -- Local patch: AF quests
     ["Rhea Myuliah"] = { { 244, -56.22, 101.81, 0.00 } }, -- Local patch: AF quests
-    ["Valderotaux"] = { { 230, 97.59, 113.68, 0.00 } }, -- Local patch: AF quests
+    ["Valderotaux"] = { { 253, 517.83, -95.51, -20.22 }, { 230, 97.59, 113.68, 0.00 } }, -- Local patch: AF quests
     ["Nhili Uvolep"] = { { 257, 24.06, 34.49, -22.00 } }, -- Local patch: GEO/RUN AF
     ["Octavien"] = { { 257, 2.44, -16.60, -11.44 } }, -- Local patch: GEO/RUN AF
     ["Vestavius"] = { { 265, 446.01, -318.93, -16.00 } }, -- Local patch: GEO/RUN AF
@@ -872,7 +872,7 @@ return {
     ["Meret"] = { { 26, 83.17, 4.63, -25.08 } }, -- Local patch: Other quests
     ["Mengrenaux"] = { { 26, 72.84, 63.92, -34.25 } }, -- Local patch: Other quests
     ["Paul"] = { { 87, -192.88, 53.08, -4.00 } }, -- Local patch: Crystal War quests
-    ["Biggorf"] = { { 87, -210.14, -140.87, 2.00 } }, -- Local patch: Crystal War quests
+    ["Biggorf"] = { { 218, -290.30, 78.25, -5.75 }, { 87, -210.14, -140.87, 2.00 } }, -- Local patch: Crystal War quests
     ["Wilhelmina"] = { { 87, -158.09, -120.08, -4.00 } }, -- Local patch: Crystal War quests
     ["Geltpix"] = { { 80, 154.38, 103.17, -2.00 } }, -- Local patch: Crystal War quests
     ["Pawkrix"] = { { 245, -27.02, -144.14, 4.10 } }, -- Local patch: Crystal War quests
@@ -888,9 +888,9 @@ return {
     ["Derrick"] = { { 245, -33.90, -6.13, -1.00 } }, -- Local patch: Jeuno quests
     ["Ilumida"] = { { 244, -75.04, 57.28, -1.20 } }, -- Local patch: Jeuno quests
     ["Panta-Putta"] = { { 216, 264.67, 218.17, -15.87 }, { 244, -59.73, 7.26, -0.25 }, { 245, -62.26, -140.00, -0.30 } }, -- Local patch: Jeuno quests
-    ["Kurou-Morou"] = { { 245, -2.66, -30.14, -6.67 } }, -- Local patch: Jeuno quests
+    ["Kurou-Morou"] = { { 254, 241.69, -517.52, 24.00 }, { 245, -2.66, -30.14, -6.67 } }, -- Local patch: Jeuno quests
     ["Chululu"] = { { 245, -10.49, -43.99, -6.67 } }, -- Local patch: Jeuno quests
-    ["Zauko"] = { { 245, -3.91, 14.23, 0.00 } }, -- Local patch: Jeuno quests
+    ["Zauko"] = { { 253, 518.82, -103.41, -19.96 }, { 245, -3.91, 14.23, 0.00 } }, -- Local patch: Jeuno quests
     ["Naruru"] = { { 215, -163.54, -177.43, 19.62 }, { 245, -54.72, -139.50, -0.11 } }, -- Local patch: Jeuno quests
     ["Garnev"] = { { 215, -289.95, 11.63, -5.44 }, { 245, 28.94, -34.83, 4.40 } }, -- Local patch: Jeuno quests
     ["Rouliette"] = { { 244, -21.23, 12.56, -1.50 } }, -- Local patch: Jeuno quests
@@ -1064,4 +1064,17 @@ return {
     ["Sieglinde"] = { { 216, 647.80, 292.28, -15.84 } }, -- Local patch: Abyssea quests
     ["Veit"] = { { 216, 42.64, 632.94, -24.01 } }, -- Local patch: Abyssea quests
     ["Yasuji"] = { { 216, -80.61, 257.03, -30.43 } }, -- Local patch: Abyssea quests
+    ["Eight of Hearts"] = { { 254, 206.87, -653.00, 22.87 } }, -- Local patch: Abyssea quests
+    ["Eight of Clubs"] = { { 254, 124.06, 120.41, -56.00 } }, -- Local patch: Abyssea quests
+    ["Moogle"] = { { 253, -252.90, 232.78, -176.50 } }, -- Local patch: Abyssea quests
+    ["Tyamah"] = { { 253, -264.75, 229.59, -176.13 } }, -- Local patch: Abyssea quests
+    ["Purere"] = { { 253, -257.79, 244.55, -176.22 } }, -- Local patch: Abyssea quests
+    ["Polly"] = { { 253, -192.64, -525.91, -39.93 } }, -- Local patch: Abyssea quests
+    ["Oruga"] = { { 253, 526.02, -97.07, -19.93 } }, -- Local patch: Abyssea quests
+    ["Guilboire"] = { { 253, -261.00, 224.00, -178.00 } }, -- Local patch: Abyssea quests
+    ["Michilca"] = { { 253, -225.00, -508.00, -41.00 } }, -- Local patch: Abyssea quests
+    ["Perfaumand"] = { { 253, -372.00, -21.00, -112.00 } }, -- Local patch: Abyssea quests
+    ["Alisa"] = { { 218, -851.62, -593.55, -10.47 } }, -- Local patch: Abyssea quests
+    ["Oiheaurese"] = { { 218, -289.79, 54.17, -5.85 } }, -- Local patch: Abyssea quests
+    ["Yachemidot"] = { { 218, 157.53, -295.40, -3.31 } }, -- Local patch: Abyssea quests
 }

@@ -29,6 +29,7 @@ return {
     'Alfesar',
     'Alib-Mufalib',
     'Alienor', -- Local patch: Adoulin quests
+    'Alisa', -- Local patch: Abyssea quests
     'Alois',
     'Amaura',
     'Amaury', -- Local patch: Adoulin quests
@@ -149,6 +150,8 @@ return {
     'Eamonn', -- Local patch: Adoulin quests
     'Edal-Tahdal',
     'Edigey',
+    'Eight of Clubs', -- Local patch: Abyssea quests
+    'Eight of Hearts', -- Local patch: Abyssea quests
     'Elijah',
     'Elki',
     'Elmemague', -- Local patch: Abyssea quests
@@ -213,6 +216,7 @@ return {
     'Gontrain', -- Local patch: Adoulin quests
     'Greebly', -- Local patch: Adoulin quests
     'Grevan', -- Local patch: Adoulin quests
+    'Guilboire', -- Local patch: Abyssea quests
     'Gurren-Murren', -- Local patch: Adoulin quests
     'Guttrix', -- Local patch: Jeuno quests
     'Halshaob', -- Local patch: Aht Urhgan quests
@@ -263,6 +267,7 @@ return {
     'Memeroon', -- Local patch: Aht Urhgan quests
     'Merleg', -- Local patch: Adoulin quests
     'Mham Lahrih', -- Local patch: Crystal War quests
+    'Michilca', -- Local patch: Abyssea quests
     'Midras', -- Local patch: Adoulin quests
     'Migliorozz', -- Local patch: Jeuno quests
     'Mischief Marker', -- Local patch: Adoulin quests
@@ -282,10 +287,12 @@ return {
     'Oblor', -- Local patch: Adoulin quests
     'Octavernost', -- Local patch: Adoulin quests
     'Odasel', -- Local patch: Jeuno quests
+    'Oiheaurese', -- Local patch: Abyssea quests
     'Oingo-Zoingo', -- Local patch: Adoulin quests
     'Oka Qhantari', -- Local patch: Adoulin quests
     'Omer', -- Local patch: Jeuno quests
     'Orsa-Porsa', -- Local patch: Adoulin quests
+    'Oruga', -- Local patch: Abyssea quests
     'Othellius', -- Local patch: Adoulin quests
     'Pagnelle', -- Local patch: Adoulin quests
     'Palomel', -- Local patch: Adoulin quests
@@ -294,13 +301,17 @@ return {
     'Patient Snake', -- Local patch: Adoulin quests
     'Peladi Shalmohr', -- Local patch: Adoulin quests
     'Peppe-Aleppe', -- Local patch: Adoulin quests
+    'Perfaumand', -- Local patch: Abyssea quests
     'Piketo-Puketo', -- Local patch: Abyssea quests
     'Pitantimand', -- Local patch: Jeuno quests
     'Polished Pebble', -- Local patch: Adoulin quests
+    'Polly', -- Local patch: Abyssea quests
     'Pudith', -- Local patch: Adoulin quests
+    'Purere', -- Local patch: Abyssea quests
     'Quwi Orihbhe', -- Local patch: Adoulin quests
     'Rafaela', -- Local patch: missing quests
     'Rakuru-Rakoru', -- Local patch: Jeuno quests
+    'Ramblix', -- Local patch: Abyssea quests
     'Ratoto', -- Local patch: Jeuno quests
     'Red Ghost', -- Local patch: Jeuno quests
     'Reja Ygridhi', -- Local patch: Adoulin quests
@@ -618,6 +629,7 @@ return {
     'Tsetseroon',
     'Tuffle-Buffle', -- Local patch: Adoulin quests
     'Turlough',
+    'Tyamah', -- Local patch: Abyssea quests
     'Udip Ferawoh', -- Local patch: Adoulin quests
     'Ujlei Zelekko', -- Local patch: Adoulin quests
     'Ulamaal',
@@ -654,6 +666,7 @@ return {
     'Wobke', -- Local patch: Jeuno quests
     'Wolfram',
     'Wyatt',
+    'Yachemidot', -- Local patch: Abyssea quests
     'Yasuji', -- Local patch: Abyssea quests
     'Yazan',
     'Yeggah Dolashi',

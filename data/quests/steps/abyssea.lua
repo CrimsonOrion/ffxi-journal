@@ -346,6 +346,194 @@ Q.STEPS = {
         "Open blue Sturdy Pyxides by hand (not with a Forbidden Key) until one gives the key item Medical supply chest; higher-level ones give it more often, and peering inside doesn't show it.",
         "Return to Yasuji to complete the quest and receive the key item Sapphire abyssite of merit. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
     },
+
+    -- Heroes of Abyssea zone quests (BG-Wiki).
+
+    aby_gra_voices_from_beyond = { -- Local patch: Abyssea quests
+        "Speak with Rukususu at the encampment by the waterfall south of Conflux #07 in Abyssea - Grauberg (F-10); don't drop down the river.",
+        "Examine the ??? at the very end of the Skyrend canyon (C-8), past Azdaja's ???, for a cutscene.",
+        "Defeat Sensenmann for a Decaying Molar (or buy one), use it to spawn Xibalba and defeat it for an Ominous Skull. Xibalba can Doom even well-geared players, so come ready.",
+        "Examine the westernmost ??? in (C-8) for a short message from a spectral voice; Rukususu won't take the skull without it.",
+        "Trade the Ominous Skull to Rukususu to complete the quest and receive the key item Indigo abyssite of lenity.",
+    },
+
+    aby_gra_benevolence_lost = { -- Local patch: Abyssea quests
+        "Zone after Voices from Beyond, then speak with Rukususu by the waterfall south of Conflux #07 in Abyssea - Grauberg (F-10).",
+        "At the Fay Pond in Witchfire Glen (F-5), via Conflux #05, trade Twinkle Powder until you get the key item Pinch of pixie dust; bring several, as it's random.",
+        "Return to Rukususu to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_gra_brugaires_ambition = { -- Local patch: Abyssea quests
+        "Speak with Brugaire northeast of Conflux #08 in Abyssea - Grauberg (L-6) for a Prismatic Elixir; he gives you another any time you lose it.",
+        "Spawn Teekesselchen, use the Prismatic Elixir on it, and defeat it; anyone on the quest can use one and get credit.",
+        "Return to Brugaire to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_gra_chocobo_panic = { -- Local patch: Abyssea quests
+        "Speak with Kuoh Rhel east of Conflux #05 in Abyssea - Grauberg (G-7).",
+        "For Cruor (repeatable, zone between): trade Grauberg Greens to the Chocobo next to her. They come from Harvesting Points around (G-11) to (H-11), near Conflux #04, or the Auction House.",
+        "For the key item Indigo abyssite of confluence (once only): trade the Chocobo a Woozyshroom, then 9 more one at a time.",
+    },
+
+    aby_gra_the_egg_enthusiast = { -- Local patch: Abyssea quests
+        "Speak with Ranpi-Monpi northeast of Conflux #08 in Abyssea - Grauberg (L-6).",
+        "Examine an Earthy Mound for the key item Wivre egg; you may use Confluxes to get there. The mounds at (H-8)/(I-8) and at (J-10) near Conflux #03 pay more and can give a seal; the one at (J-6) pays less and gives none.",
+        "Walk the egg back to Ranpi-Monpi without breaking it: no Confluxes, no getting hit, no dawdling, and don't lose HP by changing gear. If it breaks, zone and start again.",
+        "Speak with Ranpi-Monpi to complete the quest. Zone to repeat it.",
+    },
+
+    aby_gra_getting_lucky = { -- Local patch: Abyssea quests
+        "Speak with Kurou-Morou at Conflux #02 in Abyssea - Grauberg (I-12). He asks for Goblin Bread, Goblin Pie or Goblin Chocolate and names a place.",
+        "Trade the item to the Scuff Mark at that place to make Ramblix appear: near abundance of water is the northeast corner of (F-11) by Conflux #04, dark and cramped is (K-12), and a narrow pathway is the southeast corner of (F-13).",
+        "Speak with Cornelia near Conflux #04 to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_gra_her_fathers_legacy = { -- Local patch: Abyssea quests
+        "Zone after Getting Lucky, then speak with Cornelia near Conflux #04 in Abyssea - Grauberg (G-12).",
+        "Trade her a Pursuer's Wing, from the Faunus Wyverns near Conflux #03 or the Auction House, to complete the quest. To repeat it quickly: Conflux #03 for a wing, #04 to turn it in, then #01 to zone; about 49 completions max Grauberg fame. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_gra_the_mysterious_head_patrol = { -- Local patch: Abyssea quests
+        "Speak with Eight of Hearts southwest of Conflux #02 in Abyssea - Grauberg (H-13); he asks for a Silver pocket watch.",
+        "Get the key item Silver pocket watch from Eight of Clubs at (H-8), a short walk from Conflux #05.",
+        "Return to Eight of Hearts to complete the quest.",
+    },
+
+    aby_gra_master_missing_master_missed = { -- Local patch: Abyssea quests
+        "Speak with Eight of Clubs southeast of Conflux #05 in Abyssea - Grauberg (H-8); no need to zone after the previous quest.",
+        "Examine the Faint Glister in the northwest corner of (J-8), south of Conflux #08, for the key item Elegant gemstone.",
+        "Return to Eight of Clubs to complete the quest.",
+    },
+
+    aby_gra_the_perils_of_kororo = { -- Local patch: Abyssea quests
+        "Speak with Kororo southwest of Conflux #02 in Abyssea - Grauberg (H-13); no need to zone after the previous quest.",
+        "Speak with Eight of Clubs at (H-8), near Conflux #05.",
+        "Return to Kororo to complete the quest.",
+    },
+
+    aby_ule_let_there_be_light = { -- Local patch: Abyssea quests
+        "Speak with Zauko near Conflux #05 in Abyssea - Uleguerand (K-9), then examine the Coal Casket behind him for the key item Torch coal.",
+        "Walk to the encampment near Conflux #06 and put the coal in the Coal Casket by the flames, then walk to the one near Conflux #07 and do the same. Using a Conflux destroys the coal; if that happens, get another and do the casket you missed.",
+        "Warp from Conflux #07 back to Zauko to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_ule_look_out_below = { -- Local patch: Abyssea quests
+        "Speak with Baldric at the outpost by Conflux #06 in Abyssea - Uleguerand (J-5) for the key item Subniveal mines; you don't need real Firesand.",
+        "Walk north from Conflux #05 to the three Fresh Snowfall spots. At each, load Firesand to match the snow and place the mine: thinnest layer, filled to the brim; fair quantity, filled halfway; large deposits ready to give way, only a pinch.",
+        "Return to Baldric to complete the quest; better loads pay more. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_ule_home_home_on_the_range = { -- Local patch: Abyssea quests
+        "Speak with the Moogle at Conflux #07 in Abyssea - Uleguerand (F-7).",
+        "Get the key item Piece of sodden oak lumber from the Lumber Chest at Conflux #01, by the Maw, and give it to the Moogle.",
+        "Get the key item Sodden linen cloth from the Fabric Chest at Conflux #06 and give it to the Moogle.",
+        "Defeat Dhorme Khimaira for the key item Dhorme khimaira's mane (everyone on the quest gets one), then return to the Moogle to complete the quest.",
+    },
+
+    aby_ule_imperial_espionage = { -- Local patch: Abyssea quests
+        "Speak with Tyamah at Conflux #07 in Abyssea - Uleguerand (F-7).",
+        "Speak with Purere at the same Conflux, Latifah at Conflux #06, Valderotaux at Conflux #05 (through the southern tunnel) and Polly at Conflux #01.",
+        "Return to Tyamah to complete the quest.",
+    },
+
+    aby_ule_imperial_espionage_ii = { -- Local patch: Abyssea quests
+        "Zone after Imperial Espionage, then speak with Tyamah at Conflux #07 in Abyssea - Uleguerand (F-7). Take the Soulgauger SGR-1 and buy Blank Gauger Plates from the chests next to him.",
+        "Capture a good Gauger Plate of each of these, from the front with their HP around 20% (take about three of each): Iceberg Murex and Floe Amoeban at the foot of the mountain between Conflux #01 and #02, Crag Limule on the mountain by the hole from Slip Slidin' Away, and Range Clionid in the tunnels near Conflux #03.",
+        "Trade all four plates to Tyamah to complete the quest and receive the key item Vermillion abyssite of avarice.",
+    },
+
+    aby_ule_boreal_blossoms = { -- Local patch: Abyssea quests
+        "Speak with Oruga by the fire south of Conflux #05, through the tunnel, in Abyssea - Uleguerand (K-9).",
+        "Collect three Frostbloom key items, one from each area (each has a few spawn spots): the east edge of (G-8) past the entrance to the Mechanical Menaces camp or by the northern lake; the west edge of (G-8) south of the Spectators or by the split in the wall near the slopes; and the upper left of (G-6) past the golems or by the Snowflakes on the upper level.",
+        "Return to Oruga to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_ule_brothers_in_arms = { -- Local patch: Abyssea quests
+        "Speak with Zazarg at Conflux #07 in Abyssea - Uleguerand (G-7).",
+        "Spawn and defeat Blanga near Conflux #08; everyone in the party with the quest gets the key item Imperial pearl.",
+        "Return to Zazarg to complete the quest and receive the key item Vermillion abyssite of lenity.",
+    },
+
+    aby_ule_scouts_astray = { -- Local patch: Abyssea quests
+        "Speak with Rondipur at the base camp by Conflux #01 in Abyssea - Uleguerand (G-11).",
+        "Warp to Conflux #07 and go north past the golems to Cannau, who walks around (G-6); trade her a Pea Soup or Emerald Soup.",
+        "From Conflux #06 go west to (I-5), find Wanzo-Unzozo, speak with him and trade him a Flint Stone.",
+        "From Conflux #04, speak with Olavia, who walks between the tigers and the buffalo, examine the Strewn Carrion by the wall near the tigers at (J-11), and speak with her again.",
+        "Return to Rondipur to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_ule_frozen_flame_redux = { -- Local patch: Abyssea quests
+        "Speak with Guilboire at Conflux #07 in Abyssea - Uleguerand (F-7) for the key items Snoll reflector and Experiment cheat sheet.",
+        "Walk north to the Impact Point at (G-5); Frost Bomb Mk-II appears to the west. Attacking it raises its HP; get it to at least 50% (higher pays more), without disengaging, which fails the quest.",
+        "Pull it to the Impact Point, where it uses Hypothermal Combustion on the point, not on you, then examine the point for the key item Frosted snoll reflector. Party members get it too if they examine the point before the blast.",
+        "Return to Guilboire to complete the quest. Zone to repeat it. About 25 completions max Uleguerand fame.",
+    },
+
+    aby_ule_slip_slidin_away = { -- Local patch: Abyssea quests
+        "Speak with Michilca at the base camp of Abyssea - Uleguerand (G-11).",
+        "From Conflux #07 go south past the Surveyors to the western cliff by the gears. Start sliding down about a third of the way from the north wall, aiming for the small dip in the slope (zoom out and look down); running backward slows you. Land in the hole below it.",
+        "Speak with Perfaumand inside, then examine each NPC sliding down the cliff to save them (three waves of two or three), without falling off yourself.",
+        "Speak with Perfaumand again before leaving (Conflux #02 is off the edge, past the imps), then report to Michilca to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_alt_classrooms_without_borders = { -- Local patch: Abyssea quests
+        "Speak with Moreno-Toeno near Conflux #01 in Abyssea - Altepa (K-5).",
+        "Trade him 3 Manigordo Tusks, from the Manigordo at Conflux #07 or the Auction House, to complete the quest. You can repeat it without zoning; about 50 completions max Altepa fame. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_alt_the_secret_ingredient = { -- Local patch: Abyssea quests
+        "Speak with Nogelle at Conflux #01 in Abyssea - Altepa (K-5).",
+        "Fish at Conflux #06 for Badlands Crabs and defeat them for a Badlands Salt (about a 30% drop; other salts don't work).",
+        "Trade the salt to Nogelle to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_alt_help_not_wanted = { -- Local patch: Abyssea quests
+        "Speak with Ken north of Conflux #04 in Abyssea - Altepa (G-8); you may need to speak twice if you haven't done All by Myself.",
+        "From the crates behind him take a Soulgauger SGR-1 and buy Blank Gauger Plates, then capture a Gauger Plate of any notorious monster in Abyssea.",
+        "Trade the plate to Ken to complete the quest; better pictures pay more. You can repeat it without zoning, once per game day. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_alt_the_titus_touch = { -- Local patch: Abyssea quests
+        "Speak with Titus at Conflux #05 in Abyssea - Altepa (G-11) and trade him Windurstian Tea Leaves for the key item Military ink package.",
+        "Deliver the package to Chumimi at the oasis by Revelation Rock (G-7), near Conflux #07, to complete the quest.",
+    },
+
+    aby_alt_slacking_subordinates = { -- Local patch: Abyssea quests
+        "Zone after The Titus Touch, then speak with Chumimi at the Revelation Rock oasis, east of Conflux #07 in Abyssea - Altepa (G-7).",
+        "Speak with Biggorf behind Chumimi on the left, Chemioue just south (first left), and Tapoh Lihzeh on top of the rock at the (G-6)/(G-7) border. Each gives a symptom and one trait of the fiend.",
+        "Report to Chumimi the symptom and the trait that two of the three agree on. A perfect report pays more and can give a seal; any other answer still completes the quest. Zone to repeat it.",
+    },
+
+    aby_alt_motherly_love = { -- Local patch: Abyssea quests
+        "Speak with Alisa at the outpost near Conflux #08 in Abyssea - Altepa (C-11), then with Malene nearby about Bugul Noz.",
+        "Get a Sabulous Clay from the Fear Dearg at Conflux #06, use it at the ??? at (E-10) to spawn Bugul Noz, and defeat it for the key item Moon pendant.",
+        "Speak with Alisa, then with Malene to complete the quest.",
+    },
+
+    aby_alt_look_to_the_sky = { -- Local patch: Abyssea quests
+        "Zone after Motherly Love, then speak with Alisa at the outpost near Conflux #08 in Abyssea - Altepa (C-11); she gives the Moon pendant back.",
+        "Go south through the tunnel and up past the Surveyors to the ??? on the concrete slab at (D-11). Examine it for a cutscene, then again for the key item Emerald abyssite of expertise.",
+        "Return to Alisa to complete the quest.",
+    },
+
+    aby_alt_the_unmarked_tomb = { -- Local patch: Abyssea quests
+        "Speak with Oiheaurese at the Revelation Rock oasis, near Conflux #07 in Abyssea - Altepa (G-7).",
+        "Walk to Yachemidot at (J-9) for the key item Wyvern egg.",
+        "In Meriphataud Mountains, examine the ??? at (K-8) on the eastern edge of the Spine (the Survival Guide to Castle Oztroja is quickest) for the key item Wyvern egg shell.",
+        "Return to Yachemidot in Abyssea - Altepa for the key item Emerald abyssite of lenity, then speak with Oiheaurese to complete the quest.",
+    },
+
+    aby_alt_proof_of_the_lion = { -- Local patch: Abyssea quests
+        "Speak with Excenmille east of Conflux #05 in Abyssea - Altepa (G-11).",
+        "Get Puppet's Blood from the Desert Puks just north, use it to spawn Waugyl at (F-9), and defeat it; everyone on the quest gets the key item Waugyl's claw.",
+        "Return to Excenmille to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_alt_brygid_the_stylist_strikes_back = { -- Local patch: Abyssea quests
+        "While wearing at least one piece of original Empyrean armor (not the upgraded i119 versions), speak with Brygid near Conflux #08 in Abyssea - Altepa (D-11).",
+        "She asks you to wear a certain body and legs piece for your job; HQ versions also count. She never picks gear you're already wearing, so take off your body and legs first if you lack some of her choices. If you can't get them, speak to her to quit, then zone and try again.",
+        "Speak with Brygid wearing both pieces to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
 }
 
 return Q
