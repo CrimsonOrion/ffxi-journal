@@ -460,6 +460,15 @@ M.STEPS = {
         },
     },
 
+    -- Local patch: 2-19 was missing, so the mission showed no steps.
+    ['2-19'] = {
+        name = "Of Light and Darkness",
+        steps = {
+            "Travel to Norg.",
+            "Examine " .. ACTOR.NORG_GILGAMESH_OAKEN_DOOR.text .. ".",
+        },
+    },
+
     ['2-20'] = {
         name = "Temporary Farewells",
         steps = {
