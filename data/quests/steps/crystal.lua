@@ -686,6 +686,102 @@ Q.STEPS = {
         "Fight Gloomscale and Gloomtalon alongside Lilisette; if she falls you lose. Both use Doom, so bring Holy Water. Trusts are allowed.",
         "Winning gives Atomos and Cipher: Lilisette. If you get the Somber Dreams cutscene instead, zone out and back in through the Veridical Conflux.",
     },
+    cw_psh_guardian_of_the_void = { -- Local patch: Crystal War quests
+        "First finish all three city Voidwatch climbs: get the Indigo, Crimson and Jade stratum abyssites from the Voidwatch Officers in Bastok, San d'Oria and Windurst, upgrading each at an Atmacite Refiner after every tier.",
+        "Bastok: Sallow Seymour and Ushumgal (North Gustaberg and [S]), Lorbulcrud (Gusgen Mines), Murk-veined Baneberry and Melancholic Moira (Pashhow Marshlands and [S]), then Celaeno in Dangruf Wadi for the title Celaeno Silencer.",
+        "San d'Oria: Sarimanok and Cottus (East Ronfaure and [S]), Krabimanjaro (Ordelle's Caves), Belphoebe and Kholomodumo (Jugner Forest and [S]), then Hahava in King Ranperre's Tomb for Hahava Condemner.",
+        "Windurst: Virvatuli and Pancimanci (West Sarutabaruta and [S]), Ogbunabali (Maze of Shakhrami), Lord Asag and Akupara (Meriphataud Mountains and [S]), then Voidwrought in Outer Horutoto Ruins for Voidwrought Deconstructor.",
+        "Reach the Wings of the Goddess mission Cait Sith, then examine the Veridical Conflux near the Home Point in Xarcabard (S) for a cutscene and the key item Kupofried's medallion. Don't skip this.",
+        "Examine the Veridical Conflux by the gate crystal in Pashhow Marshlands (S) (J-9), then speak with a Voidwatch Officer in San d'Oria, Bastok or Windurst (past or present; not Jeuno) for the Voidwatch alarum.",
+    },
+
+    cw_rlg_drafted_by_the_duchy = { -- Local patch: Crystal War quests
+        "Go to the Audience Chamber in Ru'Lude Gardens (H-6), or the Jeuno Bulwark Gate in Sauromugue Champaign (S), for a cutscene. You get the key items Voidwatcher's emblem: Jeuno and White stratum abyssite, and the next quest starts.",
+    },
+
+    cw_rlg_battle_on_a_new_front = { -- Local patch: Crystal War quests
+        "Tier I, at the planar rifts (G-8), (I-9), (J-10) or the like: Cherufe in Batallia Downs, Taweret in Batallia Downs (S), Yatagarasu in Rolanberry Fields and Agathos in Rolanberry Fields (S) at (E-10), (F-8), (G-7), Goji in Sauromugue Champaign and Gugalanna in Sauromugue Champaign (S) at (G-6), (I-6), (K-10).",
+        "Have an Atmacite Refiner upgrade your abyssite to White stratum abyssite II. You don't need to visit a refiner after each fight, only once the tier is done.",
+        "Tier II: Gasha and Giltine in The Eldieme Necropolis and [S], Map 2 (J-6), (J-10), (L-9); Mellonia and Nympha or Kalos Eunomia in Crawlers' Nest and [S], Map 2 (F-6), (F-8), (I-7); Roly-Poly and Laidly Laurence in Garlaige Citadel and [S], Map 1 (G-9), (H-7) or Map 2 (G-8).",
+        "Speak with any city Voidwatch Officer (past or present) for the Voidwatch alarum, then go to the Audience Chamber for a cutscene and the next abyssite and emblem.",
+        "Also check the Bulwark Gate in Sauromugue Champaign (S) (F-6) now for 30,000 gil. It's needed before A World in Flux.",
+    },
+
+    cw_rlg_vw_op_126_qufim_incursion = { -- Local patch: Crystal War quests
+        "With White stratum abyssite III, defeat the Tier III Voidwalkers: Kaggen in Qufim Island (G-6), (H-6), (I-7); Akvan in Lower Delkfutt's Tower, Basement (G-9), Floor 2 (F-5/6) or Floor 3 (I-6); Pil in Behemoth's Dominion (E-7), (H-8), (J-10).",
+        "Speak with a present-day Voidwatch Officer for the Voidwatch alarum. If no officer gives the alarum, first get the 30,000 gil cutscene at the Bulwark Gate in Sauromugue Champaign (S) (F-6).",
+        "Go to the Audience Chamber in Ru'Lude Gardens (H-6) for a cutscene and 50,000 gil.",
+    },
+
+    cw_psh_a_cait_calls = { -- Local patch: Crystal War quests
+        "Click the Veridical Conflux by the gate crystal in Pashhow Marshlands (S) (J-9) for a cutscene. It completes this quest and starts the next.",
+    },
+
+    cw_rlg_the_truth_is_out_there = { -- Local patch: Crystal War quests
+        "Speak with any present-day Voidwatch Officer for the key item Voidwatch alarum. That completes this quest and starts the next.",
+    },
+
+    cw_rlg_re_drafted_by_the_duchy = { -- Local patch: Crystal War quests
+        "Go to the Audience Chamber in Ru'Lude Gardens (H-6) for a cutscene and the key items White stratum abyssite IV and Tricolor Voidwatcher's emblem. The next quest starts.",
+    },
+
+    cw_rlg_a_new_menace = { -- Local patch: Crystal War quests
+        "Tier IV: Lancing Lamorak in West Ronfaure (H-6), (H-8), (H-10); Bhishani in South Gustaberg (J-10), (K-7), (L-9); Rw Nw Prt M Hrw in East Sarutabaruta (G-11), (H-6), (J-5).",
+        "Have an Atmacite Refiner upgrade your abyssite to White stratum abyssite V. You don't need to visit a refiner after each fight, only once the tier is done.",
+        "Tier V: Stachysaurus in La Theine Plateau (E-5), (I-11), (L-8); Gwynn Ap Nudd in Konschtat Highlands (G-4), (I-11), (J-8); Smierc in Tahrongi Canyon (I-9), (I-12), (J-6).",
+        "Speak with a present-day Voidwatch Officer for the Voidwatch alarum, then go to the Audience Chamber for a cutscene and 50,000 gil. This also starts VW Op. 115 and VW Op. 118 in Jeuno.",
+    },
+
+    cw_sau_no_rest_for_the_weary = { -- Local patch: Crystal War quests
+        "Speak with a Voidwatch Officer in a past (Shadowreign) area for the Voidwatch alarum. If you never got the 30,000 gil cutscene at the Bulwark Gate, do that first, then zone and wait a game day.",
+        "Go to the Bulwark Gate in Sauromugue Champaign (S) (F-6) for a cutscene and the key items White stratum abyssite VI and Starlight Voidwatcher's emblem.",
+    },
+
+    cw_sau_a_world_in_flux = { -- Local patch: Crystal War quests
+        "Tier VI: Gaunab in Vunkerl Inlet (S) (F-5), (G-8), (G-13); Ocythoe in Grauberg (S) (D-14), (G-7), (G-11); Kalasutrax in Fort Karugo-Narugo (S) (D-12), (I-11), (K-8).",
+        "Speak with a past-era Voidwatch Officer for the Voidwatch alarum, then go to the Bulwark Gate in Sauromugue Champaign (S) (F-6) for a cutscene and 30,000 gil.",
+    },
+
+    cw_psh_between_a_rock_and_rift = { -- Local patch: Crystal War quests
+        "Examine the Veridical Conflux in Pashhow Marshlands (S) (J-9) and choose to warp to the Walk of Echoes for a cutscene. It completes this quest and starts the next.",
+    },
+
+    cw_rlg_a_farewell_to_felines = { -- Local patch: Crystal War quests
+        "After the next Vana'diel midnight, speak with any Voidwatch Officer for the Voidwatch alarum.",
+    },
+
+    cw_rlg_third_tour_of_duchy = { -- Local patch: Crystal War quests
+        "Go to the Audience Chamber in Ru'Lude Gardens (H-6) or the Bulwark Gate in Sauromugue Champaign (S) for a cutscene. It completes this quest and starts the next.",
+    },
+
+    cw_woe_glimmer_of_hope = { -- Local patch: Crystal War quests
+        "With at least one voidstone, warp to the Walk of Echoes from the Veridical Conflux in Pashhow Marshlands (S).",
+        "Click the glimmering ??? where you arrive for a cutscene; a voidstone becomes Kupofried's corundum and the next quest starts.",
+    },
+
+    cw_woe_brace_for_the_unknown = { -- Local patch: Crystal War quests
+        "Choose to warp to ???? at the end of the Glimmer of Hope cutscene. If you didn't, click the glimmering ??? again and pick the warp.",
+        "A long cutscene in Provenance gives you a Clairvoy ant and access to Provenance.",
+    },
+
+    cw_prv_provenance = { -- Local patch: Crystal War quests
+        "Get the key items Beguiling petrifact, Seductive petrifact and Maddening petrifact: 330,000 cruor each from a Voidwatch Officer, a rare drop from Voidwatch battles, or a sure drop from Beguiling, Seductive and Maddening Radiance.",
+        "Examine the Regal Pawprints in Provenance after each one for a cutscene (or once with all three for all of them).",
+        "Examine the Provenance Protocrystal for a short cutscene that completes the quest.",
+    },
+
+    cw_prv_crystal_guardian = { -- Local patch: Crystal War quests
+        "With all three petrifacts, examine the Provenance Protocrystal to fight Provenance Watcher. Everyone in the alliance needs all three, and they are used up.",
+        "After winning, check the Regal Pawprints for a cutscene that completes the quest. You can fight again with new petrifacts.",
+    },
+
+    cw_prv_endings_and_beginnings = { -- Local patch: Crystal War quests
+        "Leave Provenance through the Planar Rift to the Walk of Echoes for the final cutscene.",
+    },
+
+    cw_woe_ad_infinitum = { -- Local patch: Crystal War quests
+        "This marks the end of the Voidwatch story. It never completes and stays under Current Quests in game.",
+    },
 }
 
 return Q

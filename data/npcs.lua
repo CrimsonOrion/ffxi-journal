@@ -48,6 +48,7 @@ return {
     'Argus',
     'Arnau',
     'Atelloune',
+    'Atmacite Refiner', -- Local patch: Crystal War quests
     'Atori-Tutori', -- Local patch: Jeuno quests
     'Aurege',
     'Ayame',
