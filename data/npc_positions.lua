@@ -1035,4 +1035,13 @@ return {
     ["Geosuke"] = { { 257, 62.80, -109.58, -40.15 } }, -- Local patch: Adoulin quests
     ["Ujlei Zelekko"] = { { 257, -102.76, 16.16, -0.65 } }, -- Local patch: Adoulin quests
     ["Saldinor"] = { { 258, -338.88, -308.25, -1.00 } }, -- Local patch: Adoulin quests
+    ["Door: Svenja's Manor"] = { { 256, 51.90, 11.09, -0.85 } }, -- Local patch: Adoulin quests
+    ["Eppel-Treppel"] = { { 257, -90.92, -80.89, -2.65 } }, -- Local patch: Adoulin quests
+    ["Borghest"] = { { 265, 438.55, -345.81, -15.39 } }, -- Local patch: Adoulin quests
+    ["Emjook-Renook"] = { { 263, 365.62, 148.62, 0.19 } }, -- Local patch: Adoulin quests
+    ["Behsa Alehgo"] = { { 257, 66.57, 9.25, -40.15 } }, -- Local patch: Adoulin quests
+    ["Zaffeld"] = { { 257, 70.68, -12.02, -40.15 } }, -- Local patch: Adoulin quests
+    ["Lerene"] = { { 274, -46.88, -28.60, -179.33 } }, -- Local patch: Adoulin quests
+    ["Octavernost"] = { { 256, 126.00, -31.50, 3.85 } }, -- Local patch: Adoulin quests
+    ["Helina"] = { { 248, 19.46, 11.89, -7.29 } }, -- Local patch: Adoulin quests
 }

@@ -66,6 +66,7 @@ return {
     'Barenngo', -- Local patch: Adoulin quests
     'Bataron', -- Local patch: Adoulin quests
     'Baudin',
+    'Behsa Alehgo', -- Local patch: Adoulin quests
     'Belgidiveau',
     'Benita',
     'Berghent', -- Local patch: Adoulin quests
@@ -75,6 +76,7 @@ return {
     'Blandine',
     'Blatherix',
     'Bluffnix', -- Local patch: Jeuno quests
+    'Borghest', -- Local patch: Adoulin quests
     'Bostillette',
     'Bou the Righteous', -- Local patch: missing quests
     'Bozz', -- Local patch: Jeuno quests
@@ -145,12 +147,14 @@ return {
     'Elki',
     'Elmric',
     'Elysia',
+    'Emjook-Renook', -- Local patch: Adoulin quests
     'Enaremand',
     'Endracion',
     'Engelhart',
     'Ensetsu',
     'Eperdur',
     'Epinolle',
+    'Eppel-Treppel', -- Local patch: Adoulin quests
     'Equesobillot',
     'Erik',
     'Erlene',
@@ -205,6 +209,7 @@ return {
     'Halshaob', -- Local patch: Aht Urhgan quests
     'Hauberliond', -- Local patch: Crystal War quests
     'Hegnor', -- Local patch: Adoulin quests
+    'Helina', -- Local patch: Adoulin quests
     'Hishahma', -- Local patch: Aht Urhgan quests
     'Hujette', -- Local patch: Adoulin quests
     'Hurr the Betrayer', -- Local patch: missing quests
@@ -230,6 +235,7 @@ return {
     'Landeric', -- Local patch: Crystal War quests
     'Leautiere', -- Local patch: Adoulin quests
     'Lehko Habhoka', -- Local patch: Crystal War quests
+    'Lerene', -- Local patch: Adoulin quests
     'Louisareaux', -- Local patch: Adoulin quests
     'Lucretia', -- Local patch: Adoulin quests
     'Luto Mewrilah', -- Local patch: Jeuno quests
@@ -237,6 +243,7 @@ return {
     'Mailloquetat', -- Local patch: Jeuno quests
     'Malgrom', -- Local patch: Adoulin quests
     'Mano-Amano', -- Local patch: Adoulin quests
+    'Margret', -- Local patch: Adoulin quests
     'Mastan', -- Local patch: Adoulin quests
     'Matoaka', -- Local patch: Jeuno quests
     "Mawl'gofaur", -- Local patch: Jeuno quests
@@ -249,6 +256,7 @@ return {
     'Muhoho', -- Local patch: Jeuno quests
     'Musto-Rusto', -- Local patch: Adoulin quests
     'Naruru', -- Local patch: Jeuno quests
+    'Nashu', -- Local patch: Adoulin quests
     'Ndah Tolohjin', -- Local patch: Adoulin quests
     'Neraf-Najiruf', -- Local patch: Jeuno quests
     'Nestroh', -- Local patch: Adoulin quests
@@ -258,6 +266,7 @@ return {
     'Nomad Moogle', -- Local patch: Jeuno quests
     'Nylene', -- Local patch: Adoulin quests
     'Oblor', -- Local patch: Adoulin quests
+    'Octavernost', -- Local patch: Adoulin quests
     'Odasel', -- Local patch: Jeuno quests
     'Oingo-Zoingo', -- Local patch: Adoulin quests
     'Oka Qhantari', -- Local patch: Adoulin quests
@@ -637,6 +646,7 @@ return {
     'Yurim',
     "Yve'noile",
     'Zacc',
+    'Zaffeld', -- Local patch: Adoulin quests
     'Zaldon',
     'Zalsuhm', -- Local patch: Jeuno quests
     'Zaoso', -- Local patch: Adoulin quests

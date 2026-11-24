@@ -586,6 +586,137 @@ Q.STEPS = {
         "Speak with Shipilolo in front of the Inventors' Coalition, Western Adoulin (J-9), for the key item Bottle of fertilizer X.",
         "Return to Chalvava to complete the quest.",
     },
+
+    -- Svenja, Zaffeld, Behsa Alehgo, Gaddiux, Lerene and the Empyrean armor quests (BG-Wiki).
+
+    ado_wad_flowers_for_svenja = { -- Local patch: Adoulin quests
+        "Examine the Door: Svenja's Manor in Western Adoulin (I-8), near the Platea Triumphus waypoint.",
+        "Speak with Eppel-Treppel in Eastern Adoulin (G-10) to enter the Celennia Memorial Library for a cutscene.",
+        "Harvest at Harvesting Points in Foret de Hennetiel with a Sickle until you get the key item Hennebloom leaf. Keep your inventory full so the point isn't used up on normal items.",
+        "Return to the Door: Svenja's Manor to complete the quest.",
+    },
+
+    ado_wad_do_not_go_into_the_light = { -- Local patch: Adoulin quests
+        "Wait a game day after Flowers for Svenja, then examine the Door: Svenja's Manor in Western Adoulin (I-8).",
+        "Examine the Door: Hospital at (I-9), to the left as you leave the manor, then speak with Borghest at the Frontier Station in Morimar Basalt Fields.",
+        "Trade an Urunday Lumber, a Damascus Ingot and a Fire Crystal to Chanteillie in the Inventors' Coalition for the key item Inventors' Coalition pickaxe. She won't take them while she's waiting for the Vegetable Vegetable Crisis materials.",
+        "Return to the Door: Hospital to complete the quest.",
+    },
+
+    ado_wad_hypocritical_oath = { -- Local patch: Adoulin quests
+        "Wait a game day after Do Not Go Into the Light, then examine the Door: Svenja's Manor in Western Adoulin (I-8).",
+        "Speak with Wegellion at the back of the Scouts' Coalition in Eastern Adoulin; Margret asks for a Frost Turnip and a Slime Oil. Rabbits in Kamihr Drifts and Uleguerand Range drop the turnip, and the Green Thumb Moogle sells both if you have the white rabbit and slime mementos.",
+        "Trade the items to Wegellion for a cutscene, then return to the Door: Svenja's Manor to complete the quest.",
+    },
+
+    ado_wad_sick_and_tired = { -- Local patch: Adoulin quests
+        "Wait a game day after Hypocritical Oath, then examine the Door: Svenja's Manor in Western Adoulin (I-8) for a cutscene.",
+        "Speak with Emjook-Renook at the Yorcia Weald Frontier Station, then with Fritha at the Foret de Hennetiel Frontier Station.",
+        "Harvest a Hennebloom leaf in Foret de Hennetiel; it only drops after you've spoken with Fritha. Keep your inventory full so the point isn't used up on normal items.",
+        "Speak with Fritha again, then examine the Door: Svenja's Manor to complete the quest.",
+    },
+
+    ado_wad_not_so_clean_bill = { -- Local patch: Adoulin quests
+        "Wait a game day after Sick and Tired, then examine the Door: Svenja's Manor in Western Adoulin (I-8).",
+        "Speak with Borghest at the Morimar Basalt Fields Frontier Station, then with Fritha at the Foret de Hennetiel Frontier Station.",
+        "Examine the Foreboding Vineprints at (J-10) in Foret de Hennetiel, west of Bivouac #2, for a cutscene, then again to spawn Pungent Patricia, a Morbol.",
+        "After defeating it, examine the Foreboding Vineprints again for a cutscene, then examine the Door: Hospital in Western Adoulin (I-9) to complete the quest. A lost earring can be bought back for 10,000 Bayld at the manor door.",
+    },
+
+    ado_ead_thorn_in_the_side = { -- Local patch: Adoulin quests
+        "Speak with Zaffeld near the castle in Eastern Adoulin (J-8).",
+        "In Yorcia Weald, examine the Occultist Footprints near the (I-6)/(J-6) border, north of the Frontier Station, for a cutscene.",
+        "Trade 2 Snapweed Tendrils and a Snapweed Secretion to the Occultist Footprints (Nashu brings the other secretion) for a cutscene that completes the quest.",
+    },
+
+    ado_ead_velkkovert_operations = { -- Local patch: Adoulin quests
+        "Speak with Zaffeld in Eastern Adoulin (J-8).",
+        "In Cirdas Caverns, examine the Congregation Site on the east side of (E-7) for a cutscene. One way in is Marjami Ravine Waypoint #4, west into Woh Gates and northeast into Cirdas Caverns (needs Climbing); the Augural Conveyor at (H-3) also works if you have it.",
+        "In Dho Gates (G-8), near the Marjami Ravine Frontier Station, examine the Rocky Outcrop for a cutscene.",
+        "Defeat 5 Velkk in the area west of the Rocky Outcrop (Velkk elsewhere don't count), then examine it again to complete the quest.",
+    },
+
+    ado_ead_the_good_the_bad_the_clement = { -- Local patch: Adoulin quests
+        "Speak with Zaffeld in Eastern Adoulin (J-8).",
+        "In Yorcia Weald, examine the Occultist Footprints on the (I-6)/(J-6) border, north of the Frontier Station, for a cutscene.",
+        "In Marjami Ravine, warp to Bivouac #2 and head southeast over the river to a small watchtower, take the tunnel at (J-9)/(J-10), climb the vine by the tent and Reive at (I-10), then go northwest through the tunnel under the waterfall to the Hostage Tent at (G-10). Examine it for a cutscene.",
+        "Buff up and examine the Hostage Tent again to spawn a Velkk Sentinel. Defeat it and examine the tent once more for a cutscene.",
+        "Go back to (I-10) and examine the Seat of Gramk-Droog for a cutscene that completes the quest.",
+    },
+
+    ado_wad_the_weatherspoon_inquisition = { -- Local patch: Adoulin quests
+        "Zone into Western Adoulin from Ceizak Battlegrounds for a cutscene with Nashu.",
+        "In Yorcia Weald, examine the Occultist Footprints on the west side of (J-6), north of the Frontier Station, for the key item Sturdy hide pouch.",
+        "Visit three Ergon Loci in any order: the Lake of Light in Sih Gates (K-7), south from Ceizak Battlegrounds Bivouac #1 or #3; the Sweltering Spring in Moh Gates (K-6)/(K-7), southeast from the Morimar Basalt Fields Frontier Station; and the Saliferous Spring in Dho Gates (F-12)/(G-12), entering at (E-10) from Foret de Hennetiel Waypoint #4.",
+        "Zone into Cirdas Caverns for a cutscene (the Enigmatic Device warp works), then head southeast and examine the Hiding Place in the southeast corner of (K-7) to complete the quest.",
+    },
+
+    ado_ead_the_weatherspoon_war = { -- Local patch: Adoulin quests
+        "Speak with Zaffeld in Eastern Adoulin (J-8).",
+        "Zone into Marjami Ravine from Dho Gates for a cutscene: warp to the Frontier Station, go north into Dho Gates and come straight back.",
+        "From Bivouac #2, head southeast to the small watchtower, take the tunnel at (J-9)/(J-10) and climb the vine by the tent to (I-10). Examine the Seat of Gramk-Droog for a cutscene, then again to spawn Mligni-Vorgut, a Black Mage.",
+        "After the battle, examine the seat once more for a cutscene, then examine the Door: Hospital in Western Adoulin (I-9), across from Flapano.",
+        "Return to Zaffeld for the final cutscene to complete the quest. A lost earring can be bought back from him for 10,000 Bayld.",
+    },
+
+    ado_ead_the_secret_to_success = { -- Local patch: Adoulin quests
+        "Speak with Behsa Alehgo at the priory near the castle in Eastern Adoulin (J-8) for a cutscene.",
+        "Speak with Wegellion in the Scouts' Coalition (F-9) for a cutscene. If he offers to take a hat, hand it over and speak with him again.",
+        "Speak with Emjook-Renook at the Yorcia Weald Frontier Station (J-8) for a cutscene.",
+        "Examine the Suspicious Places until one gives the key item Unblemished pioneer's badge: the southwest corner of (J-8), behind a tree (southeast from the Frontier Station into (J-9), right at the fork, then right twice past the Twitherym); the southwest corner of (H-9), northwest of Bivouac #2 past a Colonization Reive; and the Numbing Blossom field in the south of (I-8).",
+        "Return to Emjook-Renook for a cutscene, then speak with Behsa Alehgo to complete the quest.",
+    },
+
+    ado_ead_eye_of_the_beholder = { -- Local patch: Adoulin quests
+        "Speak with Behsa Alehgo at the priory near the castle in Eastern Adoulin (J-8).",
+        "In Yorcia Weald, examine the Suspicious Place in the far southwest corner of (J-8), behind a tree, for a cutscene; go south from the Frontier Station into (J-9) and back up into the corner.",
+        "Trade 12 Holy Waters to the Suspicious Place in the large Numbing Blossom grove in the south of (I-8), northwest of Bivouac #2.",
+        "Examine the Suspicious Place in the southwest corner of (H-9) for the final cutscene to complete the quest.",
+    },
+
+    ado_ead_in_the_land_of_the_blind = { -- Local patch: Adoulin quests
+        "Speak with Behsa Alehgo in Eastern Adoulin (J-8), then enter the Celennia Memorial Library for a cutscene.",
+        "In Yorcia Weald, examine the Suspicious Place in the large Numbing Blossom grove in the south of (I-8) for a cutscene, then again to spawn Jovial Ahriman. It has about 70,000 HP and casts Kaustra, Dread Spikes, Frazzle III and Endark; the Numbing Blossoms nearby paralyze.",
+        "After defeating it, examine the Suspicious Place a third time for a cutscene.",
+        "At the Pool of Clarity Ergon Locus (G-6), northwest of Bivouac #1, examine the Pellucid Afflusion for a final cutscene and the Homiliary.",
+    },
+
+    ado_ork_lerenes_lament = { -- Local patch: Adoulin quests
+        "Speak with Lerene at the entrance of Outer Ra'Kaznar (N-7).",
+        "Trade her 2 Ancestral Cloth to complete the quest and learn the survival skill Pulverizing. The Fomors around the corner at (K-8) drop the cloth easily.",
+    },
+
+    ado_wad_rune_fencing_the_night_away = { -- Local patch: Adoulin quests
+        "As a Rune Fencer (Lv.99), speak with Gaddiux at the Inventors' Coalition in Western Adoulin (J-10) for a cutscene and the Trial Blade.",
+        "Earn 300 weapon skill points with the Trial Blade: 5 for a weapon skill or opening a skillchain, 7, 9 or 11 for closing a level 1, 2 or 3 skillchain. Dimidiation appears in your list while the blade is equipped.",
+        "Trade the Trial Blade to Gaddiux to complete the quest and unlock Dimidiation for any weapon.",
+    },
+
+    ado_wad_quiescence = { -- Local patch: Adoulin quests
+        "Speak with Gaddiux at the Inventors' Coalition in Western Adoulin (J-10). If you're building an Idris, finish or quit it first. Bring a Pickaxe (Tevigogo sells them).",
+        "In Yorcia Weald, examine the ??? in the Numbing Blossom field at (I-8), north of Bivouac #2 past the Reive; there's more than one, so try another if nothing happens. When your key item resonates, trade it the Pickaxe for a Numbing blossom seed, and keep digging quickly until you get the key item Broken rapier hilt.",
+        "Return to Gaddiux, then speak with Runje Desaali in Eastern Adoulin (J-11) and trade her 100 High-Purity Bayld, in one go or bit by bit, for the key item Vial of crimson catalyst.",
+        "Speak with Octavien (I-8) until he talks about the catalyst. As a Rune Fencer, examine the door behind Yeggha Dolashi in Rala Waterways (M-6) and choose Quiescence to fence Zurko-Bazurko alone, with no subjob and a 15-minute limit. He parries a lot, so Swipe and Lunge do the work; keep runes up against his Lunge.",
+        "Speak with Gaddiux for a cutscene with Amchuchu and the Lexeme Blade I; the quest log marks the quest complete here.",
+        "To reach Epeolatry, trade the blade and then each stage's materials to Runje Desaali, and trade the blade to the Runic Overflow: 200 Ghastly Stones, 500 High-Purity Bayld, Gabbrath Horn, Rockfin Fin and Bztavian Wing (Foret de Hennetiel K-10); 200 Verdigris Stones, 2,500 High-Purity Bayld, Yggdreant Root, Waktza Rostrum and Cehuetzi Claw (Marjami Ravine I-12); 200 Wailing Stones, 9,999 High-Purity Bayld and a Pristine Yggrete Crystal (the barrel by the Inventors' Coalition, Western Adoulin I-10).",
+    },
+
+    ado_wad_treasures_of_the_earth = { -- Local patch: Adoulin quests
+        "As a Geomancer (Lv.99), speak with Sylvie at the Western Adoulin Waterfront (I-5), Waypoint #9. You need to have turned in the Crystallized lifestream essence to Wescolina.",
+        "In Morimar Basalt Fields, examine the Ergon Locus ??? at (J-6), northeast of Bivouac #2, for a cutscene. Then climb the Scalable Area on the northwest side of the Hot Spring at (G-7)/(H-7), go east and examine the ??? at the base of the cliff at (H-6)/(H-7) for another.",
+        "Return to Sylvie and choose a fight: the Holla crystal of gales (level 109, La Theine Plateau K-8, Trusts allowed, 10,000 Bayld), the Dem crystal of dunes (level 125, Konschtat Highlands I-6, Trusts allowed, 3 materials) or the blank option for the Mea crystal of flames (level 135, Tahrongi Canyon I-6, Geomancer only and no Trusts, 10 materials and a Codex of Etchings).",
+        "Examine the Ergon Locus ??? beneath the Telepoint of that crag to fight Otherworldly Rimester, a Bard ghost. It's weak to magic bursts; the level 135 version shifts its elemental weakness, so follow a nuke that hits the weakness with another of the same element.",
+        "Return to Sylvie for the key item Treatise on azimuth clothcraft, speak with Wescolina (H-7), then with Helina in the Weavers' Guild in Selbina (H-9).",
+        "Wait a game day and speak with Helina for the Azimuth Coat to complete the quest. She makes the rest of the Azimuth set afterward, and Sylvie gives a new crystal to repeat a fight once per conquest tally.",
+    },
+
+    ado_wad_epiphany = { -- Local patch: Adoulin quests
+        "As a Rune Fencer (Lv.99), speak with Octavernost near the Big Bridge waypoint in Western Adoulin (K-9). You need at least one Rune Fencer relic armor piece.",
+        "In Outer Ra'Kaznar (M-6), near the Enigmatic Device, examine the Meeting Point for a cutscene and the key item Refined Ra'Kaznar fiber.",
+        "Return to Octavernost and choose a fight: the Iridal core of the tomb (level 109, King Ranperre's Tomb, 10,000 Bayld), the Iridal core of the ruins (level 125, Fei'Yin, 3 materials) or the blank option for the Iridal core of the pass (level 135, Ranguemont Pass, Rune Fencer only and no Trusts, 10 materials, a Codex of Etchings and the title Sword Saint).",
+        "Examine the Hazy Rune behind the Strange Apparatus twice to fight Arcus Blades. In King Ranperre's Tomb take the ??? on the slab at (H-10) to Map 2 and go along the right wall to the fake wall at (E-8); in Fei'Yin cross to Map 2 at (G-9), back to Map 1 at (E-7) and go to (G-6). It has little HP but casts Dispelga and tier IV to VI nukes that can one-shot you.",
+        "Examine Amchuchu's Laboratory door in the Inventors' Coalition (J-10) for a cutscene, wait a game day and speak with Octavernost for the Erilaz Surcoat to complete the quest. He forges the rest of the Erilaz set afterward and gives a new core to repeat a fight once per conquest tally.",
+    },
 }
 
 return Q
