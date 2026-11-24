@@ -1406,6 +1406,71 @@ M.zones = {
                 prereq = 'Mixed Signals',
                 reward = 'Fellow level cap raised to 70, title Fellow Fortifier',
             }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_a_trial_in_tandem',
+                name = 'A Trial in Tandem',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Lv.75+, fellow at 66 or higher, Magian trial log',
+                prereq = 'Clash of the Comrades',
+                reward = 'Fellow level cap raised to 75',
+                items = 'Tandem Necklace',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_a_trial_in_tandem_redux',
+                name = 'A Trial in Tandem, Redux',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Lv.75+, fellow at 71 or higher, Magian trial log',
+                prereq = 'A Trial in Tandem',
+                reward = 'Fellow level cap raised to 80',
+                items = 'Tandem Necklace +1',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_yet_another_trial_in_tandem',
+                name = 'Yet Another Trial in Tandem',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Lv.75+, fellow at 76 or higher, Magian trial log',
+                prereq = 'A Trial in Tandem, Redux',
+                reward = 'Fellow level cap raised to 85',
+                items = 'Tandem Necklace +2',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_a_quaternary_trial_in_tandem',
+                name = 'A Quaternary Trial in Tandem',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Lv.75+, fellow at 81 or higher, Magian trial log',
+                prereq = 'Yet Another Trial in Tandem',
+                reward = 'Fellow level cap raised to 90',
+                items = 'Tandem Necklace +3',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_a_trial_in_tandem_revisited',
+                name = 'A Trial in Tandem Revisited',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Lv.75+, fellow at 86 or higher, Magian trial log',
+                prereq = 'A Quaternary Trial in Tandem',
+                reward = 'Fellow level cap raised to 99',
+                items = "Tandem Necklace +4, Kindred's Crest x20",
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -1657,6 +1722,32 @@ M.zones = {
                 prereq = 'Beyond Infinity',
                 reward = 'Key item Heart of the bushin, title Bushin-Ryu Inheritor',
                 items = '15 merit points',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_rg_vw_op_115_valkurm_duster',
+                name = 'VW Op. 115: Valkurm Duster',
+                area = 'jeuno',
+                zone = "Ru'Lude Gardens",
+                loc = "Ru'Lude Gardens (H-5)",
+                npc = "Mawl'gofaur",
+                req = '',
+                prereq = 'A New Menace',
+                reward = 'Title Ig-Alima Inhumer',
+                items = 'White stratum abyssite VI',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_rg_vw_op_118_buburimu_squall',
+                name = 'VW Op. 118: Buburimu Squall',
+                area = 'jeuno',
+                zone = "Ru'Lude Gardens",
+                loc = "Ru'Lude Gardens (H-5)",
+                npc = "Mawl'gofaur",
+                req = '',
+                prereq = 'A New Menace',
+                reward = 'Title Botulus Rex Engorger',
+                items = 'White stratum abyssite VI',
             }, -- Local patch: Jeuno quests
 
             {
@@ -2193,6 +2284,41 @@ local tracker_data = {
     jeu_uj_full_speed_ahead = {
         area = 'jeuno',
         bit = 179,
+    },
+
+    jeu_uj_a_trial_in_tandem = {
+        area = 'jeuno',
+        bit = 160,
+    },
+
+    jeu_uj_a_trial_in_tandem_redux = {
+        area = 'jeuno',
+        bit = 161,
+    },
+
+    jeu_uj_yet_another_trial_in_tandem = {
+        area = 'jeuno',
+        bit = 162,
+    },
+
+    jeu_uj_a_quaternary_trial_in_tandem = {
+        area = 'jeuno',
+        bit = 163,
+    },
+
+    jeu_uj_a_trial_in_tandem_revisited = {
+        area = 'jeuno',
+        bit = 164,
+    },
+
+    jeu_rg_vw_op_115_valkurm_duster = {
+        area = 'jeuno',
+        bit = 168,
+    },
+
+    jeu_rg_vw_op_118_buburimu_squall = {
+        area = 'jeuno',
+        bit = 169,
     },
 
     -- --------------------------------------------------------

@@ -916,4 +916,5 @@ return {
     ["Zalsuhm"] = { { 245, -32.99, -117.46, 5.90 } }, -- Local patch: Jeuno quests
     ["Nomad Moogle"] = { { 243, 10.01, 121.88, 2.45 } }, -- Local patch: Jeuno quests
     ["Syrillia"] = { { 105, -512.40, 207.16, -16.00 } }, -- Local patch: Jeuno quests
+    ["Mawl'gofaur"] = { { 243, 3.88, 92.92, -7.00 } }, -- Local patch: Jeuno quests
 }

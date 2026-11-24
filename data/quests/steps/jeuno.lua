@@ -846,6 +846,50 @@ Q.STEPS = {
         "Your hits seem capped at about 200 damage. Your fellow gives up at 10-20% HP, which completes the quest.",
     },
 
+    jeu_uj_a_trial_in_tandem = { -- Local patch: Jeuno quests
+        "With your job at level 75 or higher and your Adventuring Fellow at 66 or higher, speak with Luto Mewrilah in Upper Jeuno (G-8) for the key item Magian Mooglehood missive.",
+        "Speak with the Magian Moogle with the orange ball on its head in Ru'Lude Gardens (H-5), on the left by the crates, for a cutscene and the Tandem Necklace.",
+        "Trade the Tandem Necklace to the blue Magian Moogle next to it to start Magian Trial 4444. You need the key item Magian trial log.",
+        "Defeat 30 monsters that give your fellow experience while you wear the necklace and your fellow is with you.",
+        "When the trial is done, trade the Tandem Necklace to the blue Magian Moogle for a Copper Meed, then trade the Copper Meed to Luto Mewrilah to complete the quest. Your fellow's level cap rises to 75.",
+    },
+
+    jeu_uj_a_trial_in_tandem_redux = { -- Local patch: Jeuno quests
+        "With your job at level 75 or higher and your Adventuring Fellow at 71 or higher, speak with Luto Mewrilah in Upper Jeuno (G-8) for the key item Magian Mooglehood missive.",
+        "Speak with the Magian Moogle with the orange ball on its head in Ru'Lude Gardens (H-5), on the left by the crates, for a cutscene and the Tandem Necklace +1.",
+        "Trade the Tandem Necklace +1 to the blue Magian Moogle next to it to start Magian Trial 4445. You need the key item Magian trial log.",
+        "Defeat 25 birds that give your fellow experience while you wear the necklace and your fellow is with you. Seaboard Vultures in Misareaux Coast, just outside Tavnazian Safehold's north exit, or Condors in Meriphataud Mountains [S] work.",
+        "When the trial is done, trade the Tandem Necklace +1 to the blue Magian Moogle for a Silver Meed, then trade the Silver Meed to Luto Mewrilah to complete the quest. Your fellow's level cap rises to 80.",
+    },
+
+    jeu_uj_yet_another_trial_in_tandem = { -- Local patch: Jeuno quests
+        "With your job at level 75 or higher and your Adventuring Fellow at 76 or higher, speak with Luto Mewrilah in Upper Jeuno (G-8) for the key item Magian Mooglehood missive.",
+        "Speak with the Magian Moogle with the orange ball on its head in Ru'Lude Gardens (H-5), on the left by the crates, for a cutscene and the Tandem Necklace +2.",
+        "Trade the Tandem Necklace +2 to the blue Magian Moogle next to it to start Magian Trial 4446. You need the key item Magian trial log.",
+        "Your fellow must land 20 weapon skills on monsters that give it experience while you wear the necklace. Evil Weapons in Ro'Maeve, near the Survival Guide, work well.",
+        "Weapon skills must hit to count. Set your fellow to Fierce Attacker and don't give it a club: Moonlight and Starlight don't count.",
+        "When the trial is done, trade the Tandem Necklace +2 to the blue Magian Moogle for a Mythril Meed, then trade the Mythril Meed to Luto Mewrilah to complete the quest. Your fellow's level cap rises to 85.",
+    },
+
+    jeu_uj_a_quaternary_trial_in_tandem = { -- Local patch: Jeuno quests
+        "With your job at level 75 or higher and your Adventuring Fellow at 81 or higher, speak with Luto Mewrilah in Upper Jeuno (G-8) for the key item Magian Mooglehood missive.",
+        "Speak with the Magian Moogle with the orange ball on its head in Ru'Lude Gardens (H-5), on the left by the crates, for a cutscene and the Tandem Necklace +3.",
+        "Trade the Tandem Necklace +3 to the blue Magian Moogle next to it to start Magian Trial 4449. You need the key item Magian trial log.",
+        "Your fellow must land 20 weapon skills on vermin that give it experience while you wear the necklace. Wamouras in Mount Zhayolm, Spinners in Mamook or Gnats in Meriphataud Mountains [S] work. The chat log counts down each success.",
+        "Weapon skills must hit to count. Set your fellow to Fierce Attacker and don't give it a club: Moonlight and Starlight don't count.",
+        "When the trial is done, trade the Tandem Necklace +3 to the blue Magian Moogle for a Dark Meed, then trade the Dark Meed to Luto Mewrilah to complete the quest. Your fellow's level cap rises to 90.",
+    },
+
+    jeu_uj_a_trial_in_tandem_revisited = { -- Local patch: Jeuno quests
+        "With your job at level 75 or higher and your Adventuring Fellow at 86 or higher, speak with Luto Mewrilah in Upper Jeuno (G-8) for the key item Magian Mooglehood missive.",
+        "Speak with the Magian Moogle with the orange ball on its head in Ru'Lude Gardens (H-5), on the left by the crates, for a cutscene and the Tandem Necklace +4.",
+        "Trade the Tandem Necklace +4 to the blue Magian Moogle next to it to start Magian Trial 5054. You need the key item Magian trial log.",
+        "Your fellow must land 30 weapon skills on undead that give it experience while you wear the necklace. Skeletons in Gusgen Mines or Gustav Tunnel work well.",
+        "Weapon skills must hit to count. Set your fellow to Fierce Attacker and don't give it a club: Moonlight and Starlight don't count.",
+        "You also need 20 Kindred's Crests for the hand-in.",
+        "When the trial is done, trade the Tandem Necklace +4 to the blue Magian Moogle for a Gold Meed, then trade the Gold Meed to Luto Mewrilah with 20 Kindred's Crests to complete the quest. Your fellow's level cap rises to 99.",
+    },
+
     jeu_pj_circle_of_time = {
         "Speak with Mertaire in Lower Jeuno, who tells you to take the Star ring (tarnished) to an antique collector. You must be a Bard of level 50 or higher, and the quest does not appear in your log yet. This quest requires the Rise of the Zilart pack and follows The Requiem.",
         "Speak with Imasuke in Port Jeuno (E-6). You must have your current job set to Bard to receive the cutscene; after speaking with him you may change to any job.",
@@ -1004,6 +1048,16 @@ Q.STEPS = {
         "At level 96 or higher, speak with the Nomad Moogle next to Maat in Ru'Lude Gardens (H-5).",
         "Speak with him again while you have 15 merit points. He takes them and gives you the key item Heart of the bushin, which unlocks the merit weapon skills.",
         "Using a merit weapon skill needs 357 or more skill in that weapon. BG-Wiki says this isn't needed for the quest, but LandSandBoat asks for it.",
+    },
+
+    jeu_rg_vw_op_115_valkurm_duster = { -- Local patch: Jeuno quests
+        "This operation is added automatically when you complete A New Menace for Mawl'gofaur in Ru'Lude Gardens. You need the key item White stratum abyssite VI from No Rest for the Weary to call the Voidwalker.",
+        "Defeat Ig-Alima at its planar rift in Valkurm Dunes: (F-8), (K-7) or (K-8).",
+    },
+
+    jeu_rg_vw_op_118_buburimu_squall = { -- Local patch: Jeuno quests
+        "This operation is added automatically when you complete A New Menace for Mawl'gofaur in Ru'Lude Gardens. You need the key item White stratum abyssite VI from No Rest for the Weary to call the Voidwalker.",
+        "Defeat Botulus Rex at its planar rift in Buburimu Peninsula: (F-9), (H-9) or (J-9).",
     },
 
     jeu_rg_storms_of_fate = {

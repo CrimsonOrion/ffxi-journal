@@ -163,8 +163,10 @@ return {
     'Kuah Dakonsa', -- Local patch: Jeuno quests
     'Kurou-Morou', -- Local patch: Jeuno quests
     'Luto Mewrilah', -- Local patch: Jeuno quests
+    'Magian Moogle', -- Local patch: Jeuno quests
     'Mailloquetat', -- Local patch: Jeuno quests
     'Matoaka', -- Local patch: Jeuno quests
+    "Mawl'gofaur", -- Local patch: Jeuno quests
     'Migliorozz', -- Local patch: Jeuno quests
     'Muhoho', -- Local patch: Jeuno quests
     'Naruru', -- Local patch: Jeuno quests
