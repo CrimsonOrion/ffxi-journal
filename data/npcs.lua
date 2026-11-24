@@ -70,6 +70,7 @@ return {
     'Brygid',
     'Buffalostalker Dodzbraz',
     'Cacaroon',
+    'Camille', -- Local patch: Aht Urhgan quests
     'Captain Antje',
     'Carmelo',
     'Castilchat',
@@ -156,6 +157,8 @@ return {
     'Ghanraam', -- Local patch: Jeuno quests
     'Ghatsad',
     'Guttrix', -- Local patch: Jeuno quests
+    'Halshaob', -- Local patch: Aht Urhgan quests
+    'Hishahma', -- Local patch: Aht Urhgan quests
     'Ilumida', -- Local patch: Jeuno quests
     'Jabbar', -- Local patch: Jeuno quests
     'Karl', -- Local patch: Jeuno quests
@@ -167,6 +170,7 @@ return {
     'Mailloquetat', -- Local patch: Jeuno quests
     'Matoaka', -- Local patch: Jeuno quests
     "Mawl'gofaur", -- Local patch: Jeuno quests
+    'Memeroon', -- Local patch: Aht Urhgan quests
     'Migliorozz', -- Local patch: Jeuno quests
     'Muhoho', -- Local patch: Jeuno quests
     'Naruru', -- Local patch: Jeuno quests
@@ -176,6 +180,7 @@ return {
     'Odasel', -- Local patch: Jeuno quests
     'Omer', -- Local patch: Jeuno quests
     'Panta-Putta', -- Local patch: Jeuno quests
+    'Paparoon', -- Local patch: Aht Urhgan quests
     'Pitantimand', -- Local patch: Jeuno quests
     'Rakuru-Rakoru', -- Local patch: Jeuno quests
     'Ratoto', -- Local patch: Jeuno quests
@@ -506,6 +511,7 @@ return {
     'Yeggah Dolashi',
     'Yonolala',
     'Yoran-Oran',
+    'Yoyoroon', -- Local patch: Aht Urhgan quests
     'Yujuju',
     'Yurim',
     "Yve'noile",

@@ -917,4 +917,10 @@ return {
     ["Nomad Moogle"] = { { 243, 10.01, 121.88, 2.45 } }, -- Local patch: Jeuno quests
     ["Syrillia"] = { { 105, -512.40, 207.16, -16.00 } }, -- Local patch: Jeuno quests
     ["Mawl'gofaur"] = { { 243, 3.88, 92.92, -7.00 } }, -- Local patch: Jeuno quests
+    ["Hishahma"] = { { 50, 95.90, 6.22, 0.00 } }, -- Local patch: Aht Urhgan quests
+    ["Camille"] = { { 51, 682.90, 229.81, -15.75 } }, -- Local patch: Aht Urhgan quests
+    ["Paparoon"] = { { 53, -2.01, 10.77, 0.00 } }, -- Local patch: Aht Urhgan quests
+    ["Halshaob"] = { { 53, 28.54, -85.25, -6.00 } }, -- Local patch: Aht Urhgan quests
+    ["Yoyoroon"] = { { 53, -17.04, 71.60, -6.00 } }, -- Local patch: Aht Urhgan quests
+    ["Memeroon"] = { { 53, -26.34, -40.64, 0.00 } }, -- Local patch: Aht Urhgan quests
 }

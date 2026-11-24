@@ -536,6 +536,142 @@ Q.STEPS = {
         "Speak with Naja Salaheem to choose your reward. You can repeat the quest.",
     },
 
+    tau_wg_get_the_picture = { -- Local patch: Aht Urhgan quests
+        "Speak with Balakaf in Aht Urhgan Whitegate (I-5) for the key item Image recorder. He wants eight pictures, one per Japanese day: after each correct one, zone and wait for JST midnight.",
+        "Examine the ??? at each spot with the crystal shown and pick the cutscene option in brackets. 1: Wajaom Woodlands (E-6), cloudy weather (not fog), Light Crystal (1st). 2 and 3: Arrapago Reef (G-8) Map 1, snow, Light Crystal then Light Cluster (2nd).",
+        "4: Mount Zhayolm (C-9), 16:00-20:00, Light Crystal (3rd). 5: Halvung (I-8) Map 1, 4:00-10:00, Light Crystal (1st). 6: Aydeewa Subterrane (G-10), wind, entering from Wajaom Woodlands (D-9), Light Cluster (3rd).",
+        "7: Mamook (E-8) Map 1, sunny, 7:00-11:00, Light Crystal (3rd). 8: Caedarva Mire (E-10), 20:00-4:00, Light Cluster (1st). Don't use an Aurora Crystal.",
+        "Bring each picture to Balakaf for an Imperial Silver Piece. A wrong picture breaks the recorder: zone, speak with him and trade him an Ahriman Lens.",
+        "After all eight, wait for JST midnight and speak with him again. Revisit the ??? spots until one gives an Imperial Gold Piece, then trade it to Balakaf; he gives it back and the quest completes.",
+    },
+
+    tau_wg_five_seconds_of_fame = { -- Local patch: Aht Urhgan quests
+        "Speak with Balakaf in Aht Urhgan Whitegate (I-5) for the Photopticator. Record five scenes in the city, each once per Vana'diel day. After each recording, report to Balakaf; after a failed one, zone first.",
+        "Special of the Day: speak with Ulamaal (K-12), Qutiba for a hint, then Ratihb (J-12) after 5:00 and pick the hinted option, then Zubyahn (K-12). Record the pumpkin-headed Galka leaving the counter and rejoining the line.",
+        "An Early Exit: speak with Hishahma (K-8) after 12:00. Start recording on the soldiers' third pass, when the leader reaches the right side; only three should come back.",
+        "Smells Like a Rat: speak with Mushayra and Hadahda (F-10), then Tehf Kimasnahya (F-8) after 14:00. Start recording about five steps after the housewife stops, as she moves to the pillar.",
+        "A Pickpocket's Paradise: speak with Zyfhil, then Talwahn (F-8) after 15:00. Start recording once the fourth arrival, the thief, stands behind the visitor. Strangers in the Night: speak with Ahaadah (G-6), Mathlouq (F-5), then Nijaom (F-7) after 20:00, and record after the second person appears.",
+        "After each success, report to Balakaf and then to the NPC who started that scene. Once all five are done, return to Balakaf for the reward.",
+    },
+
+    tau_wg_finding_faults = { -- Local patch: Aht Urhgan quests
+        "Speak with Hishahma in Aht Urhgan Whitegate (K-8) and pick a beastman to study: Lamia in Caedarva Mire (I-7), Troll in Mount Zhayolm (L-6) or Mamool Ja in Wajaom Woodlands (E-13).",
+        "Touch the ??? there to spawn the NM. Two things intimidate it, out of five: its own two (Lamia: the Peculiar Plant's sound, then melee; Troll: the Peculiar Seed's smell, then run and see if it's slow; Mamool Ja: the Peculiar Bud that makes your eyes blink, then lead it off the ledge), a weapon skill, a weapon skill from an angle, or an element.",
+        "Defeat it and tell Hishahma your theory. Zone, wait a minute and speak with him: one right answer gives 200 Imperial Standing, both give a ??? Box.",
+        "Repeatable. Do it once for each of the three beastmen to unlock The Art of War.",
+    },
+
+    tau_wg_the_art_of_war = { -- Local patch: Aht Urhgan quests
+        "After Finding Faults for all three beastmen, speak with Hishahma in Aht Urhgan Whitegate (K-8) and pick a monster to defeat.",
+        "Orobon: Ornery Orobon in Arrapago Reef (E-11) Map 2; from the Ilrusi Atoll staging point you need no Lamian Fang Key. Wamouracampa: Wheel Wamoura in Halvung (L-8); it takes no damage until it unfolds (Light Point, enfeebling magic or hits). Puk: Carpophagous Puk in Mamook (G-8) upstairs; stop it fleeing with a Mamool Ja disguise, the red fruit or several weapon skills.",
+        "Tell Hishahma what worked, zone and speak with him again for the result. Wheel Wamoura is the easiest solo. Repeatable.",
+    },
+
+    tau_nas_totoroons_treasure_hunt = { -- Local patch: Aht Urhgan quests
+        "Trade Totoroon in Nashmau (G-8) a Date, Pamamas or Kazham Pineapple (not Wild Pamamas). Date or Pamamas sends you to Bhaflau Thickets or Wajaom Woodlands (bring Sickles); a Kazham Pineapple to Caedarva Mire (Hatchets) or Mount Zhayolm (Pickaxes).",
+        "Harvest, log or mine there until you find the ??? Box. An NM may pop while gathering; killing it ends the chance of a box. The first time you may only get a message, which is enough.",
+        "Speak with Totoroon to complete the quest, then trade the box to Memeroon behind the Survival Guide (G-8) to open it. Repeatable each conquest tally.",
+    },
+
+    tau_waj_vw_op_050 = { -- Local patch: Aht Urhgan quests
+        "At level 75 or higher with the Adventurer's Certificate, speak with Camille in Wajaom Woodlands (M-7), just outside Aht Urhgan Whitegate's Ironbound Gate, and agree to join for the Amber stratum abyssite. No other Voidwatch progress is needed.",
+        "Defeat at their planar rifts: Dimgruzub in Arrapago Reef Map 1 (G-8, G-10, I-10), Brekekekex in Caedarva Mire Map 1 (F-11, I-9, I-11), Yalungur in Mamook Map 1 (I-7, J-8, L-8) and Vanasarvik in Mount Zhayolm (M-6, J-8, L-8).",
+        "Return to Camille to complete it; the next operation starts right away.",
+    },
+
+    tau_waj_vw_op_068 = { -- Local patch: Aht Urhgan quests
+        "This starts when you complete VW Op. 050: Aht Urhgan Assault; Camille upgrades your abyssite to Amber stratum abyssite II.",
+        "Defeat Morta in Aydeewa Subterrane at a planar rift: Map 1 (G-8) or (I-8), or Map 2 (F-8).",
+        "Return to Camille in Wajaom Woodlands (M-7) to complete the quest.",
+    },
+
+    tau_wg_an_imperial_heist = { -- Local patch: Aht Urhgan quests
+        "With the Captain Wildcat badge, the Runic key (Nyzul Isle floor 100) and Aht Urhgan Mission 48 done, enter Salaheem's Sentinels in Aht Urhgan Whitegate (I-10) for a cutscene.",
+        "Speak with Abquhbah, then trade him the Vigil weapon that matches the Mythic weapon you want.",
+        "Earn these titles, in any order and even before the quest: Gulool Ja Ja, Gurfurlur the Menacing and Medusa (the three beastman leaders); the four Salvage chariots (Battleclad, Long-Armed, Long-Bowed and Armored Chariot); and Odin in Einherjar.",
+        "Since 2024 the three leaders can also be fought at the Jade Sepulcher, Navukgo Execution Chamber and Talacca Cove entrances (once the quest is offered; 30 minutes, Trusts allowed). Koyol-Futenol (E-9) shows which titles you have.",
+        "Speak with Naja Salaheem for a cutscene to complete the quest. For another Mythic weapon later, only trade Abquhbah the new Vigil weapon and speak with Naja again.",
+    },
+
+    tau_nas_duties_tasks_and_deeds = { -- Local patch: Aht Urhgan quests
+        "Speak with Paparoon in Nashmau (G-7), under the archway, and pick every option. Asking about the assault memoirs gives you five Assault logs; you need five free inventory slots.",
+        "Trade him 30,000 Alexandrite (or one Cat's Eye; Alexandrite already traded is then lost), a Copy of Wyrmseeker Areuhat (150,000 Nyzul tokens from Zasshal) and Balrahn's Eyepatch (100,000 Therion Ichor from Kilusha).",
+        "Clear all 50 assaults again, trading the matching log to the Rune of Release at the end of each, then trade the five full logs to Paparoon.",
+        "Speak with him again for the key item Paparoon's sealed invitation. Changing weapons resets all progress.",
+    },
+
+    tau_iw_forging_a_new_myth = { -- Local patch: Aht Urhgan quests
+        "Examine the Imperial Whitegate in Aht Urhgan Whitegate (L-8/9) for a cutscene, an Imperial Gold Piece and your Mythic weapon, which has no stats yet.",
+        "Trade Tinnin's Fang, Sarameya's Hide and Tyger's Tail (Zeni NMs) to the Seaprince's Tombstone in Caedarva Mire (E-10) for the key item Serpentking Zahak relief.",
+        "At the Nyzul Isle Staging Point, pick Forging a New Myth at the Runic Seal (I-9). Be on the weapon's job and main-hand the Mythic weapon; no Trusts; bring ammunition on RNG or COR. Losing means collecting the three items again.",
+        "Zahak loses a head for each weapon skill that lands. Then Balrahn appears: once he has hit you with your Nyzul weapon skill, use it at 1000, 2000 and 3000 TP to get all three aftermath levels. You get the key item Serpentking Zahak relief shard.",
+    },
+
+    tau_iw_coming_full_circle = { -- Local patch: Aht Urhgan quests
+        "With the Serpentking Zahak relief shard, return to the Seaprince's Tombstone in Caedarva Mire (E-10) for a cutscene, then trade it your unfinished Mythic weapon for the finished level 75 weapon.",
+        "Examine the Imperial Whitegate in Aht Urhgan Whitegate (L-8/9) with the weapon in your inventory.",
+        "Approach Naja Salaheem (I-10) for a cutscene and 3 Imperial Silver Pieces. To make another Mythic weapon, trade Abquhbah a new Vigil weapon.",
+    },
+
+    tau_iw_the_rider_cometh = { -- Local patch: Aht Urhgan quests
+        "After finishing the Aht Urhgan missions, enter the Walahra Temple in Aht Urhgan Whitegate (J/K-8) for a cutscene. If the quest doesn't appear in your log, carry on anyway.",
+        "Speak with Yoyoroon in Nashmau (G-6), on the upper level (not Yuyuroon below). If you are a Blue Mage, change job and speak with him again.",
+        "Get a Timeworn Talisman from Ephramadian Shades in Arrapago Reef or Caedarva Mire (west of the Dvucca Isle Staging Point, or near the Caedarva Mire Survival Guide). An Arrapago Ring from Asrahd (I-8) for 100 accolades puts you near some.",
+        "Trade Yoyoroon the talisman with a Sutlac, an Irmik Helvasi or both (not +1); both gives the best chance. If his appraisal fails, you need a new talisman and food. If it works, zone and speak with him for the key item Talisman of the rebel gods.",
+        "Enter the Walahra Temple again for the key item Talisman key (if there's no cutscene, examine the Imperial Whitegate (L-8/9) instead).",
+        "Enter Hazhalm Testing Grounds (Caedarva Mire Home Point) and examine the Entry Gate for a cutscene, then again to fight Odin Prime. No Trusts. He uses Paralyze, Dispelga and elemental magic, calls up to three Odin Images, and at low HP can use Zantetsuken.",
+        "After winning, choose your reward: Pact with Odin, Aesir Torque, Aesir Mantle, Aesir Ear Pendant or 10,000 gil.",
+        "Examine the Imperial Whitegate (L-8/9) for a cutscene to complete the quest. If you get the Trust: Nashmeira cutscene instead, examine the gate again.",
+    },
+
+    tau_iw_unwavering_resolve = { -- Local patch: Aht Urhgan quests
+        "Speak with Naja Salaheem in Aht Urhgan Whitegate (I-10) for a cutscene, then examine the Imperial Whitegate (L-8/9). You may need to accept Divine Interference first. Repeatable once per Earth day.",
+        "Speak with Yoyoroon in Nashmau (G-6), on the upper level (not Yuyuroon below). If you are a Blue Mage, change job and speak with him again.",
+        "Get a Timeworn Talisman from Ephramadian Shades in Arrapago Reef or Caedarva Mire (west of the Dvucca Isle Staging Point, or near the Caedarva Mire Survival Guide). An Arrapago Ring from Asrahd (I-8) for 100 accolades puts you near some.",
+        "Trade Yoyoroon the talisman with a Sutlac, an Irmik Helvasi or both (not +1); both gives the best chance. If his appraisal fails, you need a new talisman and food. If it works, zone and speak with him for the key item Talisman of the rebel gods.",
+        "Examine the Imperial Whitegate for the key items Talisman key and Spatial pressure barometer.",
+        "Enter Hazhalm Testing Grounds (Caedarva Mire Home Point) and examine the Entry Gate for a cutscene, then again to fight Odin Prime. No Trusts. He uses Paralyze, Dispelga and elemental magic, calls up to three Odin Images, and at low HP can use Zantetsuken.",
+        "After winning, choose your reward: Pact with Odin, Aesir Torque, Aesir Mantle, Aesir Ear Pendant or 10,000 gil.",
+        "Examine the Imperial Whitegate for a cutscene, then speak with Naja Salaheem to complete the quest. Choosing The release of thy knight after the fight eleven times in all leads to A Stygian Pact.",
+    },
+
+    tau_iw_a_stygian_pact = { -- Local patch: Aht Urhgan quests
+        "After choosing The release of thy knight on every Odin win, later fights fall under this quest. Speak with Naja Salaheem in Aht Urhgan Whitegate (I-10), then examine the Imperial Whitegate (L-8/9).",
+        "Speak with Yoyoroon in Nashmau (G-6), on the upper level (not Yuyuroon below). If you are a Blue Mage, change job and speak with him again.",
+        "Get a Timeworn Talisman from Ephramadian Shades in Arrapago Reef or Caedarva Mire (west of the Dvucca Isle Staging Point, or near the Caedarva Mire Survival Guide). An Arrapago Ring from Asrahd (I-8) for 100 accolades puts you near some.",
+        "Trade Yoyoroon the talisman with a Sutlac, an Irmik Helvasi or both (not +1); both gives the best chance. If his appraisal fails, you need a new talisman and food. If it works, zone and speak with him for the key item Talisman of the rebel gods.",
+        "Examine the Imperial Whitegate for the key items Talisman key and Spatial pressure barometer.",
+        "Enter Hazhalm Testing Grounds (Caedarva Mire Home Point) and examine the Entry Gate for a cutscene, then again to fight Odin Prime. No Trusts. He uses Paralyze, Dispelga and elemental magic, calls up to three Odin Images, and at low HP can use Zantetsuken.",
+        "After winning, choose your reward: Pact with Odin, Aesir Torque, Aesir Mantle, Aesir Ear Pendant or 10,000 gil.",
+        "Examine the Imperial Whitegate for a cutscene, then speak with Naja Salaheem to complete the quest. Repeatable.",
+    },
+
+    tau_wg_promo_captain = { -- Local patch: Aht Urhgan quests
+        "After clearing all 50 assaults and Aht Urhgan Mission 48, speak with Abquhbah in Salaheem's Sentinels, Aht Urhgan Whitegate (I-10).",
+        "He teaches you to massage Naja. Choose Knead each time, about 30 times in all, to earn the rank of Captain.",
+    },
+
+    tau_nas_scouting_the_ashu_talif = { -- Local patch: Aht Urhgan quests
+        "After Aht Urhgan Mission 18, trade Halshaob in Nashmau (H-10) 3 Imperial Bronze Pieces.",
+        "Go to the Cutter in Arrapago Reef (H-8): from the Dvucca Isle Staging Point exit into Caedarva Mire and enter Arrapago Reef at (G-9), use the Caedarva Mire Survival Guide, or an Arrapago Ring (100 accolades). The fight has a 30-minute limit, and only one Ashu Talif quest can be done per Earth day.",
+        "Defeat waves of Ashu Talif crew and later Watch Imps, whose ancient magic hits hard from long range. Swiftwinged Gekko appears now and then and flees after casting a -ga spell; he can be stunned, and defeating him adds a second chest.",
+        "Partway through you receive temporary items. Clear the last wave to make the treasure appear. Repeatable.",
+    },
+
+    tau_nas_royal_painter_escort = { -- Local patch: Aht Urhgan quests
+        "Trade Halshaob in Nashmau (H-10) an Imperial Silver Piece.",
+        "Go to the Cutter in Arrapago Reef (H-8): from the Dvucca Isle Staging Point exit into Caedarva Mire and enter Arrapago Reef at (G-9), use the Caedarva Mire Survival Guide, or an Arrapago Ring (100 accolades). The fight has a 30-minute limit, and only one Ashu Talif quest can be done per Earth day.",
+        "When everyone is ready, open the door for Faluuya. Keep her alive (she can be cured) while crew members rush her until she finishes her painting.",
+        "Black Bartholomew appears on the far side of the hull; defeating him stops the crew and adds a second chest. Repeatable.",
+    },
+
+    tau_nas_targeting_the_captain = { -- Local patch: Aht Urhgan quests
+        "Trade Halshaob in Nashmau (H-10) an Imperial Mythril Piece.",
+        "Go to the Cutter in Arrapago Reef (H-8): from the Dvucca Isle Staging Point exit into Caedarva Mire and enter Arrapago Reef at (G-9), use the Caedarva Mire Survival Guide, or an Arrapago Ring (100 accolades). The fight has a 30-minute limit, and only one Ashu Talif quest can be done per Earth day.",
+        "Two Windjammer Imps guard the way to the cabin, where Cutthroat Kabsalah (a COR who uses a weapon skill right after Wild Card) waits with his opo-opo Bubbly, whose Spinning Claw hits everyone near it.",
+        "Up to three chests: defeat Kabsalah, defeat Bubbly before him, and surprise him (attack the Imps without letting their flutes alert him, then pull him without Bubbly). Kite Kabsalah while the party kills Bubbly. Repeatable.",
+    },
+
 }
 
 return Q

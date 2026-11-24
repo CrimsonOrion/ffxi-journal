@@ -900,4 +900,293 @@ M[#M + 1] = {
     trackable = true,
 }
 
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_wg_get_the_picture',
+    name = 'Get the Picture',
+    area = 'whitegate',
+    zone = 'Aht Urhgan Whitegate',
+    loc = 'Aht Urhgan Whitegate (I-5)',
+    npc = 'Balakaf',
+    req = '',
+    prereq = '',
+    reward = '8 Imperial Silver Pieces, Imperial Gold Piece, title Scenic Snapshotter',
+    items = 'Light Crystal x5, Light Cluster x3',
+    tracker_area = 'toau',
+    tracker_id = 4,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_wg_five_seconds_of_fame',
+    name = 'Five Seconds of Fame',
+    area = 'whitegate',
+    zone = 'Aht Urhgan Whitegate',
+    loc = 'Aht Urhgan Whitegate (I-5)',
+    npc = 'Balakaf',
+    req = '',
+    prereq = 'Get the Picture',
+    reward = '3 Imperial Bronze Pieces, 2 Imperial Silver Pieces, Imperial Mythril Piece, title Photopticator Operator',
+    tracker_area = 'toau',
+    tracker_id = 32,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_wg_finding_faults',
+    name = 'Finding Faults',
+    area = 'whitegate',
+    zone = 'Aht Urhgan Whitegate',
+    loc = 'Aht Urhgan Whitegate (K-8)',
+    npc = 'Hishahma',
+    req = '',
+    prereq = '',
+    reward = '200 Imperial Standing or a ??? Box',
+    repeatable = true,
+    tracker_area = 'toau',
+    tracker_id = 8,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_wg_the_art_of_war',
+    name = 'The Art of War',
+    area = 'whitegate',
+    zone = 'Aht Urhgan Whitegate',
+    loc = 'Aht Urhgan Whitegate (K-8)',
+    npc = 'Hishahma',
+    req = '',
+    prereq = 'Finding Faults',
+    reward = '??? Box',
+    repeatable = true,
+    tracker_area = 'toau',
+    tracker_id = 10,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_nas_totoroons_treasure_hunt',
+    name = "Totoroon's Treasure Hunt",
+    area = 'whitegate',
+    zone = 'Nashmau',
+    loc = 'Nashmau (G-8)',
+    npc = 'Totoroon',
+    req = '',
+    prereq = '',
+    reward = '??? Box (crafting materials)',
+    repeatable = true,
+    items = 'Date, Pamamas or Kazham Pineapple',
+    tracker_area = 'toau',
+    tracker_id = 18,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_waj_vw_op_050',
+    name = 'VW Op. 050: Aht Urhgan Assault',
+    area = 'whitegate',
+    zone = 'Wajaom Woodlands',
+    loc = 'Wajaom Woodlands (M-7)',
+    npc = 'Camille',
+    req = "Lv.75+, Adventurer's Certificate",
+    prereq = '',
+    reward = 'Key item Amber stratum abyssite',
+    tracker_area = 'toau',
+    tracker_id = 68,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_waj_vw_op_068',
+    name = 'VW Op. 068: Subterranean Skirmish',
+    area = 'whitegate',
+    zone = 'Wajaom Woodlands',
+    loc = 'Wajaom Woodlands (M-7)',
+    npc = 'Camille',
+    req = '',
+    prereq = 'VW Op. 050: Aht Urhgan Assault',
+    reward = 'Key item Amber stratum abyssite II',
+    tracker_area = 'toau',
+    tracker_id = 69,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_wg_an_imperial_heist',
+    name = 'An Imperial Heist',
+    area = 'whitegate',
+    zone = 'Aht Urhgan Whitegate',
+    loc = 'Aht Urhgan Whitegate (I-10)',
+    npc = 'Naja Salaheem',
+    req = 'Captain Wildcat badge, Runic key, Aht Urhgan Mission 48',
+    prereq = 'Promotion: Captain',
+    reward = 'Starts the Mythic weapon quests',
+    items = 'Vigil weapon',
+    tracker_area = 'toau',
+    tracker_id = 70,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_nas_duties_tasks_and_deeds',
+    name = 'Duties, Tasks, and Deeds',
+    area = 'whitegate',
+    zone = 'Nashmau',
+    loc = 'Nashmau (G-7)',
+    npc = 'Paparoon',
+    req = '',
+    prereq = 'An Imperial Heist',
+    reward = "Key item Paparoon's sealed invitation",
+    items = "Copy of Wyrmseeker Areuhat, 30,000 Alexandrite or a Cat's Eye, Balrahn's Eyepatch, five Assault logs",
+    tracker_area = 'toau',
+    tracker_id = 71,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_iw_forging_a_new_myth',
+    name = 'Forging a New Myth',
+    area = 'whitegate',
+    zone = 'Imperial Ward',
+    loc = 'Aht Urhgan Whitegate (L-8/9)',
+    npc = 'Nashmeira',
+    req = '',
+    prereq = 'Duties, Tasks, and Deeds',
+    reward = 'Unfinished Mythic weapon, Imperial Gold Piece',
+    items = "Tinnin's Fang, Sarameya's Hide, Tyger's Tail",
+    tracker_area = 'toau',
+    tracker_id = 72,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_iw_coming_full_circle',
+    name = 'Coming Full Circle',
+    area = 'whitegate',
+    zone = 'Imperial Ward',
+    loc = 'Aht Urhgan Whitegate (L-8/9)',
+    npc = 'Nashmeira',
+    req = '',
+    prereq = 'Forging a New Myth',
+    reward = 'Level 75 Mythic weapon, 3 Imperial Silver Pieces',
+    tracker_area = 'toau',
+    tracker_id = 73,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_iw_the_rider_cometh',
+    name = 'The Rider Cometh',
+    area = 'whitegate',
+    zone = 'Imperial Ward',
+    loc = 'Aht Urhgan Whitegate (L-8/9)',
+    npc = 'Nashmeira',
+    req = 'All Aht Urhgan missions completed',
+    prereq = '',
+    reward = 'Imperial Gold Piece, choice of Pact with Odin, Aesir Torque, Aesir Mantle, Aesir Ear Pendant or 10,000 gil, title Heir of the Blighted Gloom',
+    items = 'Timeworn Talisman, Sutlac or Irmik Helvasi',
+    tracker_area = 'toau',
+    tracker_id = 76,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_iw_unwavering_resolve',
+    name = 'Unwavering Resolve',
+    area = 'whitegate',
+    zone = 'Imperial Ward',
+    loc = 'Aht Urhgan Whitegate (L-8/9)',
+    npc = 'Nashmeira',
+    req = '',
+    prereq = 'The Rider Cometh',
+    reward = 'Imperial Gold Piece, choice of Pact with Odin, Aesir gear or 10,000 gil',
+    repeatable = true,
+    items = 'Timeworn Talisman, Sutlac or Irmik Helvasi',
+    tracker_area = 'toau',
+    tracker_id = 77,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_iw_a_stygian_pact',
+    name = 'A Stygian Pact',
+    area = 'whitegate',
+    zone = 'Imperial Ward',
+    loc = 'Aht Urhgan Whitegate (L-8/9)',
+    npc = 'Nashmeira',
+    req = 'Odin defeated 12 times, choosing The release of thy knight',
+    prereq = 'Unwavering Resolve',
+    reward = 'Imperial Gold Piece, choice of Pact with Odin, Aesir gear or 10,000 gil, title Sworn to the Dark Divinity',
+    repeatable = true,
+    items = 'Timeworn Talisman, Sutlac or Irmik Helvasi',
+    tracker_area = 'toau',
+    tracker_id = 78,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_wg_promo_captain',
+    name = 'Promotion: Captain',
+    area = 'whitegate',
+    zone = 'Aht Urhgan Whitegate',
+    loc = 'Aht Urhgan Whitegate (I-10)',
+    npc = 'Abquhbah',
+    req = 'All 50 assaults, Aht Urhgan Mission 48',
+    prereq = 'Promotion: First Lieutenant',
+    reward = 'Captain Wildcat badge, free Runic Portal and Alzadaal Undersea Ruins access, title Captain',
+    tracker_area = 'toau',
+    tracker_id = 99,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_nas_scouting_the_ashu_talif',
+    name = 'Scouting the Ashu Talif',
+    area = 'whitegate',
+    zone = 'Nashmau',
+    loc = 'Nashmau (H-10)',
+    npc = 'Halshaob',
+    req = 'Aht Urhgan Mission 18',
+    prereq = '',
+    reward = "??? Box, ??? Dagger (Matron's Knife)",
+    repeatable = true,
+    items = 'Imperial Bronze Piece x3',
+    tracker_area = 'toau',
+    tracker_id = 101,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_nas_royal_painter_escort',
+    name = 'Royal Painter Escort',
+    area = 'whitegate',
+    zone = 'Nashmau',
+    loc = 'Nashmau (H-10)',
+    npc = 'Halshaob',
+    req = '',
+    prereq = 'Scouting the Ashu Talif',
+    reward = '??? Box, ??? Headpiece (Megrim Crown)',
+    repeatable = true,
+    items = 'Imperial Silver Piece',
+    tracker_area = 'toau',
+    tracker_id = 102,
+    trackable = true,
+}
+
+M[#M + 1] = { -- Local patch: Aht Urhgan quests
+    id = 'tau_nas_targeting_the_captain',
+    name = 'Targeting the Captain',
+    area = 'whitegate',
+    zone = 'Nashmau',
+    loc = 'Nashmau (H-10)',
+    npc = 'Halshaob',
+    req = '',
+    prereq = 'Royal Painter Escort',
+    reward = "??? Box (Barbarossa's Zerehs), ??? Gloves (Barbarossa's Moufles)",
+    repeatable = true,
+    items = 'Imperial Mythril Piece',
+    tracker_area = 'toau',
+    tracker_id = 103,
+    trackable = true,
+}
+
 return M
