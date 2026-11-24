@@ -227,6 +227,154 @@ Q.STEPS = {
         "Take the ship from Mhaura to Al Zahbi (or a Unity warp to Wajaom Woodlands), then speak with Naja Salaheem in Aht Urhgan Whitegate (I-10) to begin the Aht Urhgan missions. On Rhapsodies Mission 2-5, choose 'Where's Tenzen?' to get the permit free.",
     },
 
+    jeu_lj_the_miraculous_dale = { -- Local patch: Jeuno quests
+        "At level 75 or higher, speak with Rakuru-Rakoru by the fountain in Lower Jeuno (I-6). He gives you the key item Data Analyzer and Logger EX.",
+        "Defeat these 16 NMs while holding it: Tumbling Truffle (La Theine Plateau), Tottering Toby (Batallia Downs), Blubbery Bulge (Davoi), Black Triple Stars and Drooling Daisy (Rolanberry Fields), Jolly Green (Pashhow Marshlands), Sharp-Eared Ropipi (East Sarutabaruta), Buburimboo (Buburimu Peninsula).",
+        "And: Daggerclaw Dracos (Meriphataud Mountains), Trickster Kinetix (Qufim Island), Ixtab (Upper Delkfutt's Tower), Gargantua (Beaucedine Glacier), Shadow Eye, Boreal Coeurl, Boreal Hound and Boreal Tiger (Xarcabard).",
+        "Each kill shows 'The relevant battle data has been recorded'. Nyzul Isle versions don't count. Speak with Rakuru-Rakoru any time to check your progress.",
+        "Return to Rakuru-Rakoru once all are recorded to complete the quest.",
+    },
+
+    jeu_lj_unlocking_a_myth_warrior = { -- Local patch: Jeuno quests
+        "As a Warrior, equip the Vigil weapon Sturdy Axe (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When King's Justice appears in your weapon skill list, trade the Sturdy Axe to Zalsuhm. He unlocks King's Justice for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_monk = { -- Local patch: Jeuno quests
+        "As a Monk, equip the Vigil weapon Burning Fists (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Ascetic's Fury appears in your weapon skill list, trade the Burning Fists to Zalsuhm. He unlocks Ascetic's Fury for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_white_mage = { -- Local patch: Jeuno quests
+        "As a White Mage, equip the Vigil weapon Werebuster (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Mystic Boon appears in your weapon skill list, trade the Werebuster to Zalsuhm. He unlocks Mystic Boon for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_black_mage = { -- Local patch: Jeuno quests
+        "As a Black Mage, equip the Vigil weapon Mage's Staff (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Vidohunir appears in your weapon skill list, trade the Mage's Staff to Zalsuhm. He unlocks Vidohunir for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_red_mage = { -- Local patch: Jeuno quests
+        "As a Red Mage, equip the Vigil weapon Vorpal Sword (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Death Blossom appears in your weapon skill list, trade the Vorpal Sword to Zalsuhm. He unlocks Death Blossom for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_thief = { -- Local patch: Jeuno quests
+        "As a Thief, equip the Vigil weapon Swordbreaker (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Mandalic Stab appears in your weapon skill list, trade the Swordbreaker to Zalsuhm. He unlocks Mandalic Stab for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_paladin = { -- Local patch: Jeuno quests
+        "As a Paladin, equip the Vigil weapon Brave Blade (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Atonement appears in your weapon skill list, trade the Brave Blade to Zalsuhm. He unlocks Atonement for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_dark_knight = { -- Local patch: Jeuno quests
+        "As a Dark Knight, equip the Vigil weapon Death Sickle (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Insurgency appears in your weapon skill list, trade the Death Sickle to Zalsuhm. He unlocks Insurgency for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_beastmaster = { -- Local patch: Jeuno quests
+        "As a Beastmaster, equip the Vigil weapon Double Axe (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Primal Rend appears in your weapon skill list, trade the Double Axe to Zalsuhm. He unlocks Primal Rend for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_bard = { -- Local patch: Jeuno quests
+        "As a Bard, equip the Vigil weapon Dancing Dagger (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Mordant Rime appears in your weapon skill list, trade the Dancing Dagger to Zalsuhm. He unlocks Mordant Rime for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_ranger = { -- Local patch: Jeuno quests
+        "As a Ranger, equip the Vigil weapon Killer Bow (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Trueflight appears in your weapon skill list, trade the Killer Bow to Zalsuhm. He unlocks Trueflight for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_samurai = { -- Local patch: Jeuno quests
+        "As a Samurai, equip the Vigil weapon Windslicer (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Tachi: Rana appears in your weapon skill list, trade the Windslicer to Zalsuhm. He unlocks Tachi: Rana for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_ninja = { -- Local patch: Jeuno quests
+        "As a Ninja, equip the Vigil weapon Sasuke Katana (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Blade: Kamu appears in your weapon skill list, trade the Sasuke Katana to Zalsuhm. He unlocks Blade: Kamu for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_dragoon = { -- Local patch: Jeuno quests
+        "As a Dragoon, equip the Vigil weapon Radiant Lance (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Drakesbane appears in your weapon skill list, trade the Radiant Lance to Zalsuhm. He unlocks Drakesbane for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_summoner = { -- Local patch: Jeuno quests
+        "As a Summoner, equip the Vigil weapon Scepter Staff (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Garland of Bliss appears in your weapon skill list, trade the Scepter Staff to Zalsuhm. He unlocks Garland of Bliss for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_blue_mage = { -- Local patch: Jeuno quests
+        "As a Blue Mage, equip the Vigil weapon Wightslayer (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Expiacion appears in your weapon skill list, trade the Wightslayer to Zalsuhm. He unlocks Expiacion for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_corsair = { -- Local patch: Jeuno quests
+        "As a Corsair, equip the Vigil weapon Quicksilver (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Leaden Salute appears in your weapon skill list, trade the Quicksilver to Zalsuhm. He unlocks Leaden Salute for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_puppetmaster = { -- Local patch: Jeuno quests
+        "As a Puppetmaster, equip the Vigil weapon Inferno Claws (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Stringing Pummel appears in your weapon skill list, trade the Inferno Claws to Zalsuhm. He unlocks Stringing Pummel for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_dancer = { -- Local patch: Jeuno quests
+        "As a Dancer, equip the Vigil weapon Main Gauche (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Pyrrhic Kleos appears in your weapon skill list, trade the Main Gauche to Zalsuhm. He unlocks Pyrrhic Kleos for any weapon of the same type and gives the weapon back.",
+    },
+
+    jeu_lj_unlocking_a_myth_scholar = { -- Local patch: Jeuno quests
+        "As a Scholar, equip the Vigil weapon Elder Staff (from Nyzul Isle) and speak with Zalsuhm in Muckvix's Junk Shop, Lower Jeuno (H-9).",
+        "With it in your main hand, use weapon skills on monsters that give experience until you reach 250 points: 5 per weapon skill, 7, 9 or 11 when it closes a level 1, 2 or 3 skillchain.",
+        "Trading the weapon to Zalsuhm early tells you roughly how far along you are. Storing it with Ghanraam resets the points.",
+        "When Omniscience appears in your weapon skill list, trade the Elder Staff to Zalsuhm. He unlocks Omniscience for any weapon of the same type and gives the weapon back.",
+    },
+
     jeu_uj_axe_the_competition = {
         "You cannot start this quest if you have another Weapon Skill quest active; return to the person who gave it and quit it first. You need Axe skill 240 or higher and level 71.",
         "Speak with Brutus in Upper Jeuno (G-7) to receive the key item Weapon Training Guide and the Pick of Trials. You need to break the latent on the Pick of Trials before completing the rest of the quest.",
@@ -652,6 +800,20 @@ Q.STEPS = {
         "Lower Jeuno: Sutarara (J-7), Saprut (I-7), Bluffnix (H-9), Naruru (H-10), Gurdern (G-10).",
         "Port Jeuno: Red Ghost (G-8), Karl (H-8), Shami (H-8), Sagheera (I-8), Rinzei (I-8).",
         "Return to Ajithaam for the key item White Invitation Card. After joining Salaheem's Sentinels, show it to Naja Salaheem for Imperial currency; Ajithaam will then teleport you to Aht Urhgan Whitegate for 300 gil.",
+    },
+
+    jeu_uj_a_furious_finale = { -- Local patch: Jeuno quests
+        "Zone and wait until the next game day after Comeback Queen. As a Dancer of level 66 or higher, speak with Laila in Upper Jeuno (G-7).",
+        "Obtain a Dancer's Testimony from Young, Amber, Amethyst or Veteran Quadav in Grauberg [S] or North Gustaberg [S].",
+        "Trade the testimony to Laila; she teleports you to Qu'Bia Arena.",
+        "Trade the testimony to the Burning Circle to fight Laila. Bring her to about 25% HP within 10 minutes to win. Trusts are allowed if you have Rhapsody in Umber.",
+        "Not needed if you have already completed New Worlds Await or a later limit break.",
+    },
+
+    jeu_uj_clash_of_the_comrades = { -- Local patch: Jeuno quests
+        "This quest follows Mixed Signals and needs Familiarity 100 with an Adventuring Fellow at 61 or higher. Speak with Luto Mewrilah in Upper Jeuno (G-8). If she has no cutscene, try Ajahkeem.",
+        "Enter Qu'Bia Arena in Fei'Yin (Home Point #1 is close) to fight your fellow one-on-one. Your fellow's job depends on yours, and you lose no experience.",
+        "Your hits seem capped at about 200 damage. Your fellow gives up at 10-20% HP, which completes the quest.",
     },
 
     jeu_pj_circle_of_time = {

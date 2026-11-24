@@ -912,4 +912,6 @@ return {
     ["Ratoto"] = { { 244, 27.48, -32.52, -1.00 } }, -- Local patch: Jeuno quests
     ["Ajithaam"] = { { 244, -81.18, 161.54, 0.00 } }, -- Local patch: Jeuno quests
     ["Muhoho"] = { { 243, -4.81, 27.83, -5.00 } }, -- Local patch: Jeuno quests
+    ["Rakuru-Rakoru"] = { { 245, -17.08, 1.08, -0.45 } }, -- Local patch: Jeuno quests
+    ["Zalsuhm"] = { { 245, -32.99, -117.46, 5.90 } }, -- Local patch: Jeuno quests
 }

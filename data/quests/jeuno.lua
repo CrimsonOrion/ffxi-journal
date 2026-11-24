@@ -454,6 +454,278 @@ M.zones = {
                 prereq = 'Tenshodo Membership',
                 reward = 'Key item Boarding Permit',
             }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_the_miraculous_dale',
+                name = 'The Miraculous Dale',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (I-6)',
+                npc = 'Rakuru-Rakoru',
+                req = 'Lv.75+',
+                prereq = '',
+                reward = '59,630 gil',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_warrior',
+                name = 'Unlocking a Myth (Warrior)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Warrior, Sturdy Axe equipped',
+                prereq = '',
+                reward = "King's Justice usable with any weapon of its type",
+                items = 'Sturdy Axe',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_monk',
+                name = 'Unlocking a Myth (Monk)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Monk, Burning Fists equipped',
+                prereq = '',
+                reward = "Ascetic's Fury usable with any weapon of its type",
+                items = 'Burning Fists',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_white_mage',
+                name = 'Unlocking a Myth (White Mage)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'White Mage, Werebuster equipped',
+                prereq = '',
+                reward = 'Mystic Boon usable with any weapon of its type',
+                items = 'Werebuster',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_black_mage',
+                name = 'Unlocking a Myth (Black Mage)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = "Black Mage, Mage's Staff equipped",
+                prereq = '',
+                reward = 'Vidohunir usable with any weapon of its type',
+                items = "Mage's Staff",
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_red_mage',
+                name = 'Unlocking a Myth (Red Mage)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Red Mage, Vorpal Sword equipped',
+                prereq = '',
+                reward = 'Death Blossom usable with any weapon of its type',
+                items = 'Vorpal Sword',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_thief',
+                name = 'Unlocking a Myth (Thief)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Thief, Swordbreaker equipped',
+                prereq = '',
+                reward = 'Mandalic Stab usable with any weapon of its type',
+                items = 'Swordbreaker',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_paladin',
+                name = 'Unlocking a Myth (Paladin)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Paladin, Brave Blade equipped',
+                prereq = '',
+                reward = 'Atonement usable with any weapon of its type',
+                items = 'Brave Blade',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_dark_knight',
+                name = 'Unlocking a Myth (Dark Knight)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Dark Knight, Death Sickle equipped',
+                prereq = '',
+                reward = 'Insurgency usable with any weapon of its type',
+                items = 'Death Sickle',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_beastmaster',
+                name = 'Unlocking a Myth (Beastmaster)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Beastmaster, Double Axe equipped',
+                prereq = '',
+                reward = 'Primal Rend usable with any weapon of its type',
+                items = 'Double Axe',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_bard',
+                name = 'Unlocking a Myth (Bard)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Bard, Dancing Dagger equipped',
+                prereq = '',
+                reward = 'Mordant Rime usable with any weapon of its type',
+                items = 'Dancing Dagger',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_ranger',
+                name = 'Unlocking a Myth (Ranger)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Ranger, Killer Bow equipped',
+                prereq = '',
+                reward = 'Trueflight usable with any weapon of its type',
+                items = 'Killer Bow',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_samurai',
+                name = 'Unlocking a Myth (Samurai)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Samurai, Windslicer equipped',
+                prereq = '',
+                reward = 'Tachi: Rana usable with any weapon of its type',
+                items = 'Windslicer',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_ninja',
+                name = 'Unlocking a Myth (Ninja)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Ninja, Sasuke Katana equipped',
+                prereq = '',
+                reward = 'Blade: Kamu usable with any weapon of its type',
+                items = 'Sasuke Katana',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_dragoon',
+                name = 'Unlocking a Myth (Dragoon)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Dragoon, Radiant Lance equipped',
+                prereq = '',
+                reward = 'Drakesbane usable with any weapon of its type',
+                items = 'Radiant Lance',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_summoner',
+                name = 'Unlocking a Myth (Summoner)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Summoner, Scepter Staff equipped',
+                prereq = '',
+                reward = 'Garland of Bliss usable with any weapon of its type',
+                items = 'Scepter Staff',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_blue_mage',
+                name = 'Unlocking a Myth (Blue Mage)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Blue Mage, Wightslayer equipped',
+                prereq = '',
+                reward = 'Expiacion usable with any weapon of its type',
+                items = 'Wightslayer',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_corsair',
+                name = 'Unlocking a Myth (Corsair)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Corsair, Quicksilver equipped',
+                prereq = '',
+                reward = 'Leaden Salute usable with any weapon of its type',
+                items = 'Quicksilver',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_puppetmaster',
+                name = 'Unlocking a Myth (Puppetmaster)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Puppetmaster, Inferno Claws equipped',
+                prereq = '',
+                reward = 'Stringing Pummel usable with any weapon of its type',
+                items = 'Inferno Claws',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_dancer',
+                name = 'Unlocking a Myth (Dancer)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Dancer, Main Gauche equipped',
+                prereq = '',
+                reward = 'Pyrrhic Kleos usable with any weapon of its type',
+                items = 'Main Gauche',
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_lj_unlocking_a_myth_scholar',
+                name = 'Unlocking a Myth (Scholar)',
+                area = 'jeuno',
+                zone = 'Lower Jeuno',
+                loc = 'Lower Jeuno (H-9)',
+                npc = 'Zalsuhm',
+                req = 'Scholar, Elder Staff equipped',
+                prereq = '',
+                reward = 'Omniscience usable with any weapon of its type',
+                items = 'Elder Staff',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -1057,6 +1329,31 @@ M.zones = {
                 prereq = '',
                 reward = 'Key item White Invitation Card',
             }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_a_furious_finale',
+                name = 'A Furious Finale',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-7)',
+                npc = 'Laila',
+                req = 'Lv.66+ DNC',
+                prereq = 'Comeback Queen',
+                reward = 'Dancer level limit raised to 75, title Dazzling Dance Diva',
+                items = "Dancer's Testimony",
+            }, -- Local patch: Jeuno quests
+
+            {
+                id = 'jeu_uj_clash_of_the_comrades',
+                name = 'Clash of the Comrades',
+                area = 'jeuno',
+                zone = 'Upper Jeuno',
+                loc = 'Upper Jeuno (G-8)',
+                npc = 'Luto Mewrilah',
+                req = 'Familiarity 100, fellow at 61 or higher',
+                prereq = 'Mixed Signals',
+                reward = 'Fellow level cap raised to 70, title Fellow Fortifier',
+            }, -- Local patch: Jeuno quests
         },
     },
 
@@ -1583,6 +1880,121 @@ local tracker_data = {
     jeu_lj_the_road_to_aht_urhgan = {
         area = 'jeuno',
         bit = 91,
+    },
+
+    jeu_uj_a_furious_finale = {
+        area = 'jeuno',
+        bit = 99,
+    },
+
+    jeu_lj_the_miraculous_dale = {
+        area = 'jeuno',
+        bit = 100,
+    },
+
+    jeu_uj_clash_of_the_comrades = {
+        area = 'jeuno',
+        bit = 101,
+    },
+
+    jeu_lj_unlocking_a_myth_warrior = {
+        area = 'jeuno',
+        bit = 102,
+    },
+
+    jeu_lj_unlocking_a_myth_monk = {
+        area = 'jeuno',
+        bit = 103,
+    },
+
+    jeu_lj_unlocking_a_myth_white_mage = {
+        area = 'jeuno',
+        bit = 104,
+    },
+
+    jeu_lj_unlocking_a_myth_black_mage = {
+        area = 'jeuno',
+        bit = 105,
+    },
+
+    jeu_lj_unlocking_a_myth_red_mage = {
+        area = 'jeuno',
+        bit = 106,
+    },
+
+    jeu_lj_unlocking_a_myth_thief = {
+        area = 'jeuno',
+        bit = 107,
+    },
+
+    jeu_lj_unlocking_a_myth_paladin = {
+        area = 'jeuno',
+        bit = 108,
+    },
+
+    jeu_lj_unlocking_a_myth_dark_knight = {
+        area = 'jeuno',
+        bit = 109,
+    },
+
+    jeu_lj_unlocking_a_myth_beastmaster = {
+        area = 'jeuno',
+        bit = 110,
+    },
+
+    jeu_lj_unlocking_a_myth_bard = {
+        area = 'jeuno',
+        bit = 111,
+    },
+
+    jeu_lj_unlocking_a_myth_ranger = {
+        area = 'jeuno',
+        bit = 112,
+    },
+
+    jeu_lj_unlocking_a_myth_samurai = {
+        area = 'jeuno',
+        bit = 113,
+    },
+
+    jeu_lj_unlocking_a_myth_ninja = {
+        area = 'jeuno',
+        bit = 114,
+    },
+
+    jeu_lj_unlocking_a_myth_dragoon = {
+        area = 'jeuno',
+        bit = 115,
+    },
+
+    jeu_lj_unlocking_a_myth_summoner = {
+        area = 'jeuno',
+        bit = 116,
+    },
+
+    jeu_lj_unlocking_a_myth_blue_mage = {
+        area = 'jeuno',
+        bit = 117,
+    },
+
+    jeu_lj_unlocking_a_myth_corsair = {
+        area = 'jeuno',
+        bit = 118,
+    },
+
+    jeu_lj_unlocking_a_myth_puppetmaster = {
+        area = 'jeuno',
+        bit = 119,
+    },
+
+    jeu_lj_unlocking_a_myth_dancer = {
+        area = 'jeuno',
+        bit = 120,
+    },
+
+    jeu_lj_unlocking_a_myth_scholar = {
+        area = 'jeuno',
+        bit = 121,
     },
 
     -- --------------------------------------------------------

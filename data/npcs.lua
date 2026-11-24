@@ -21,6 +21,7 @@ return {
     'Ahaadah',
     'Ahkk Jharcham',
     'Ailbeche',
+    'Ajahkeem', -- Local patch: Jeuno quests
     'Ajithaam', -- Local patch: Jeuno quests
     'Akta', -- Local patch: Jeuno quests
     'Aldo',
@@ -152,6 +153,7 @@ return {
     'Gelzerio', -- Local patch: Jeuno quests
     'Gentle Tiger',
     'Gerbaum',
+    'Ghanraam', -- Local patch: Jeuno quests
     'Ghatsad',
     'Guttrix', -- Local patch: Jeuno quests
     'Ilumida', -- Local patch: Jeuno quests
@@ -172,6 +174,7 @@ return {
     'Omer', -- Local patch: Jeuno quests
     'Panta-Putta', -- Local patch: Jeuno quests
     'Pitantimand', -- Local patch: Jeuno quests
+    'Rakuru-Rakoru', -- Local patch: Jeuno quests
     'Ratoto', -- Local patch: Jeuno quests
     'Red Ghost', -- Local patch: Jeuno quests
     'Rouliette', -- Local patch: Jeuno quests
@@ -504,6 +507,7 @@ return {
     "Yve'noile",
     'Zacc',
     'Zaldon',
+    'Zalsuhm', -- Local patch: Jeuno quests
     'Zauko', -- Local patch: Jeuno quests
     'Zeid',
     'Zokima-Rokima',
