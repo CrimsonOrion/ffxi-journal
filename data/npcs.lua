@@ -70,6 +70,7 @@ return {
     'Brygid',
     'Buffalostalker Dodzbraz',
     'Cacaroon',
+    'Callisto', -- Local patch: Crystal War quests
     'Camille', -- Local patch: Aht Urhgan quests
     'Captain Antje',
     'Carmelo',
@@ -139,6 +140,7 @@ return {
     'Fochacha',
     'Fondactiont',
     'Fontoumant',
+    'Fortilace', -- Local patch: Crystal War quests
     'Frescheque',
     'Fuepepe',
     'Fyi Chalmwoh',
@@ -158,24 +160,30 @@ return {
     'Ghatsad',
     'Guttrix', -- Local patch: Jeuno quests
     'Halshaob', -- Local patch: Aht Urhgan quests
+    'Hauberliond', -- Local patch: Crystal War quests
     'Hishahma', -- Local patch: Aht Urhgan quests
     'Ilumida', -- Local patch: Jeuno quests
     'Jabbar', -- Local patch: Jeuno quests
+    'Jubilant Pixie', -- Local patch: Crystal War quests
     'Karl', -- Local patch: Jeuno quests
     'Khumo Daramasteh', -- Local patch: Jeuno quests
     'Kuah Dakonsa', -- Local patch: Jeuno quests
     'Kurou-Morou', -- Local patch: Jeuno quests
+    'Landeric', -- Local patch: Crystal War quests
+    'Lehko Habhoka', -- Local patch: Crystal War quests
     'Luto Mewrilah', -- Local patch: Jeuno quests
     'Magian Moogle', -- Local patch: Jeuno quests
     'Mailloquetat', -- Local patch: Jeuno quests
     'Matoaka', -- Local patch: Jeuno quests
     "Mawl'gofaur", -- Local patch: Jeuno quests
     'Memeroon', -- Local patch: Aht Urhgan quests
+    'Mham Lahrih', -- Local patch: Crystal War quests
     'Migliorozz', -- Local patch: Jeuno quests
     'Muhoho', -- Local patch: Jeuno quests
     'Naruru', -- Local patch: Jeuno quests
     'Neraf-Najiruf', -- Local patch: Jeuno quests
     'Nevela', -- Local patch: Jeuno quests
+    'Nichais', -- Local patch: Crystal War quests
     'Nomad Moogle', -- Local patch: Jeuno quests
     'Odasel', -- Local patch: Jeuno quests
     'Omer', -- Local patch: Jeuno quests
@@ -185,6 +193,7 @@ return {
     'Rakuru-Rakoru', -- Local patch: Jeuno quests
     'Ratoto', -- Local patch: Jeuno quests
     'Red Ghost', -- Local patch: Jeuno quests
+    'Robel-Akbel', -- Local patch: Crystal War quests
     'Rouliette', -- Local patch: Jeuno quests
     'Souren', -- Local patch: Jeuno quests
     'Syrillia', -- Local patch: Jeuno quests
@@ -502,6 +511,7 @@ return {
     'Wahid',
     'Waoud',
     'Washu',
+    'Watchful Pixie', -- Local patch: Crystal War quests
     'Wazyih',
     'Wetata',
     'Wobke', -- Local patch: Jeuno quests

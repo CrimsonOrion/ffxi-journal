@@ -549,6 +549,143 @@ Q.STEPS = {
         'Examine the Bulwark Gate in Sauromugue Champaign (S) at (E-6) again.',
         'Enter Batallia Downs (S) from Rolanberry Fields (S) to receive the Large Memory Fragment.',
     },
+    cw_wwt_healing_herbs = { -- Local patch: Crystal War quests
+        "Examine the left Rhinostery door in Windurst Waters (S) (J-8), Map 2, for a cutscene with Dantie-Corantie and Maju-Naju.",
+        "Approach the Rhinostery door in present-day Windurst Waters for a cutscene and the key item The Healing Herb, then check the past door again.",
+        "Touch the ??? near the center of Grauberg (S) (H-13) for the key item Fireblossom, then check the Rhinostery door in Windurst Waters (S).",
+        "Check the door on each of the next two game days; the second time gives the Tincture. Then check the present-day door for a last cutscene.",
+    },
+
+    cw_fkn_a_manifest_problem = { -- Local patch: Crystal War quests
+        "Speak with Rotih Moalghett in Fort Karugo-Narugo (S) (I-8), Map 2, then zone into Castle Oztroja (S) for a cutscene.",
+        "Return to Rotih Moalghett for the key item Fort Key (he gives another if you lose).",
+        "Examine the Colorful Door (H-5), Map 2, to fight waves of Yagudo. Buffs are removed on entry; Trusts are allowed. The Yagudo have little HP, so area attacks work well.",
+        "You land in West Sarutabaruta (S); zone into Windurst Waters (S) for the last cutscene and your reward.",
+    },
+
+    cw_ssd_beast_from_the_east = { -- Local patch: Crystal War quests
+        "Speak with Nichais in Southern San d'Oria (S) (L-7) and choose Immensely, yes.",
+        "Check the Timeworn Altar in Grauberg (S) (F-11) for a long cutscene, then return to Nichais.",
+        "Trade Nichais a Shell Bug from a Brass Quadav in present-day Vana'diel, then return to the altar for the last cutscene and two random gems.",
+    },
+
+    cw_rol_the_swarm = { -- Local patch: Crystal War quests
+        "This only appears when you use a Pest Repellent from a seasonal event. The party leader uses it, then checks Fortilace in Rolanberry Fields (S) (D-9). You need at least three in the party.",
+        "After a minute to buff, you have 5 minutes against an endless swarm. The Swarmspawn ignore attacks and wander, so area spells centered on you work best.",
+        "Everyone gets the title Swarminator; your score doesn't change the result. Repeatable with another Pest Repellent.",
+    },
+
+    cw_wwt_when_one_man_is_not_enough = { -- Local patch: Crystal War quests
+        "Bring a Blackened Siredon, Forest Carp, Greedie or Pipira (the Auction House is easiest). Speak with Dhea Prandoleh in Windurst Waters (S) (H-10).",
+        "Examine the Sealed Entrance of the tower in West Sarutabaruta (S) (F-11), then speak with Dhea Prandoleh again.",
+        "Trade a fish to the Sealed Entrance. A Blackened Siredon or three fish gives a longer cutscene; either way the quest completes and you get 12 Red Roses.",
+    },
+
+    cw_wwt_a_feast_for_gnats = { -- Local patch: Crystal War quests
+        "Zone into Windurst Waters (S) for a cutscene, then speak with Mham Lahrih upstairs in the fort at Sauromugue Champaign (S) (K-9), next to the Cavernous Maw.",
+        "Click the Abandoned Mineshaft at the foot of the stairs for the key item Signal firecracker, then again to enter the battle (up to six; the leader needs the firecracker).",
+        "Destroy the Confederate Belfry (about 14,000 HP) while Quadav and later Gigas attack. Romaa Mihgo must survive; you can cure her but not buff her. Trusts are allowed. If you fail, Mham Lahrih gives a new firecracker the next game day.",
+        "Speak with Dhea Prandoleh in Windurst Waters (S) to complete the quest.",
+    },
+
+    cw_wwt_the_long_march_north = { -- Local patch: Crystal War quests
+        "Zone into Windurst Waters (S) for a cutscene. In Southern San d'Oria (S) speak with Raustigne (I-7), then Hauberliond (H-9).",
+        "Depending on your answers, examine the New-turned Earth in East Ronfaure (S) (J-11), La Vaule (S) (K-9) or Jugner Forest (S) (J-5) for the key item Darkfire cinder.",
+        "Speak with Striking Snake in the present-day Metalworks (H-7), then mine in North Gustaberg (S) with several Pickaxes until you have the key items Liquid quicksilver and Gelid sulfur.",
+        "Bring them to Striking Snake, zone and wait a game day, then speak with him for the key item Beastbane bullets.",
+        "Speak with Rotih Moalghett in Fort Karugo-Narugo (S) (I-8), Map 2. Summon Trusts first, then examine the Warding Door (E/F-7): the fight starts at once against Count Furfur, two Count Murmurs and two Tartalos (30 minutes).",
+        "Examine the Warding Door again for the last cutscene and the Stellar Earring.",
+    },
+
+    cw_wwt_the_forbidden_path = { -- Local patch: Crystal War quests
+        "Zone into Windurst Waters (S) for a cutscene, then collect three key items in any order.",
+        "Irradiant strand: examine the Gate of Darkness in Inner Horutoto Ruins (I-7), Map 4.",
+        "Scintillant strand: check the Fey Blossoms in Grauberg (S) (F-5), then trade them a Bottled Pixie between 18:00 and 6:00. Yagudo High Priests in Meriphataud Mountains (S) always drop it.",
+        "Refulgent strand: examine the Writhing Flame in Castle Oztroja (S) (G-7), ground floor north hall, then trade it any job's Testimony. This can't be done as Geomancer or Rune Fencer.",
+        "Speak with Velda-Galda in Windurst Waters (S) (K-9) three times, wait one game day, then speak with him again for your reward.",
+    },
+
+    cw_bmk_a_jewelers_lament = { -- Local patch: Crystal War quests
+        "Speak with Wahid in Bastok Markets (S) (J-9), then trade him a Sunstone, an Aquamarine and a Jadeite. He gives them back.",
+        "Zone, speak with him again, then exit to North Gustaberg (S) for a cutscene about a scream near Palborough Mines.",
+        "Examine the ??? by a small tree in North Gustaberg (S) (J-4) twice for the key item Unadorned ring.",
+        "Speak with Wahid, zone, and speak with him again for the Trainee Burin.",
+    },
+
+    cw_wwt_sins_of_the_mothers = { -- Local patch: Crystal War quests
+        "Speak with Dhea Prandoleh (H-10), then Velda-Galda (K-9) in Windurst Waters (S).",
+        "In Fort Karugo-Narugo (S), check the Stone monument (E-7), Map 1, take a Succulent dragon fruit from the Succulent Cactus (F-5), then check the monument again.",
+        "Examine the Sunken Hollow (G-7) twice to enter the battle. Escort Nhev Befrathi and her slow daughter Syu to the exit at (G-9) on Map 2; clear monsters ahead, since the girl flees from them and from being too far from her mother.",
+        "If you fail, get a new fruit the next game day. On success you appear in West Sarutabaruta (S); zone into Windurst Waters (S) for the reward.",
+    },
+
+    cw_wwt_howl_from_the_heavens = { -- Local patch: Crystal War quests
+        "A game day after Sins of the Mothers, zone into Windurst Waters (S) from West Sarutabaruta (S) for a cutscene.",
+        "Get the key items from the Magicite in present-day Davoi (Wall of Dark Arts, G-7), Beadeaux (Qulun Dome) and Castle Oztroja, as you did in the Zilart missions.",
+        "Speak with Velda-Galda in Windurst Waters (S) (K-9), zone into West Sarutabaruta (S) for a cutscene, then examine the Windurstian Bulwark (J-8) for another.",
+        "Buff, then examine the Bulwark again: the fight starts right away on the field (up to 18, 30 minutes). Four waves attack the barriers; keep Romaa Mihgo and at least one Protective Ward alive (wards can only be healed with Curing Waltz).",
+        "Before zoning, examine the Bulwark again for a long cutscene, then zone into Windurst Waters (S) for your reward.",
+    },
+
+    cw_gra_succor_to_the_sidhe = { -- Local patch: Crystal War quests
+        "Trade Callisto in Grauberg (S) (F-6) one of the job weapons: Fay Crozier, Fay Staff, Fay Lance, Fay Gendawa, Fane Baselard, Fane Hexagun, Dweomer Knife, Dweomer Scythe, Dweomer Maul, Oberon's Rapier, Oberon's Knuckles, Oberon's Sainti, Erlking's Blade, Sword, Tabar or Kheten, Rindomaru, Tsukumo, Ogre Jambiya or Ogre Sickle.",
+        "Find a Watchful Pixie and start its battle: West Sarutabaruta (S) (F-10), East Ronfaure (S) (J-7), North Gustaberg (S) (H-6), Grauberg (S) (J-11), Batallia Downs (S) (F-7), Meriphataud Mountains (S) (I-6), Beaucedine Glacier (S) (H-10), Xarcabard (S) (J-8) or Vunkerl Inlet (S).",
+        "Defeat the NMs, then speak with the Jubilant Pixie that appears. It offers your weapon with random augments; you can refuse up to five times for new ones. Repeatable.",
+    },
+
+    cw_wwt_the_young_and_the_threadless = { -- Local patch: Crystal War quests
+        "Speak with Ponono in Windurst Waters (S) (K-11), North map, for the key item Ponono's charm, then zone and speak with her again for three threads.",
+        "Dip each thread: Delicate wool thread at the Knightwell, West Ronfaure (H-11); Delicate linen thread at the Fay Spring waterfall, Grauberg (S) (F-6); Delicate cotton thread at Lake Tepokalipuka, East Sarutabaruta (F-9).",
+        "Return to Ponono for the Trainee Scissors. Present-day Ponono in the Windurst Woods Weavers' Guild (G-12) has an extra cutscene.",
+    },
+
+    cw_ssd_son_and_father = { -- Local patch: Crystal War quests
+        "Speak with Exoroche in Southern San d'Oria (S) (K-9), then Landeric in Jugner Forest (S) (G-5).",
+        "Speak with Exoroche for a Bronze Sword, trade it to him, then trade it to Landeric. Answer: Ask about Exoroche, Not in the slightest!, The boy's spirit is true, Protect his family and kingdom.",
+        "Speak with Exoroche for the Trainee's Spectacles. Wearing them while talking to present-day Exoroche (K-7) shows an extra scene.",
+    },
+
+    cw_wwt_manifest_destiny = { -- Local patch: Crystal War quests
+        "Speak with Dhea Prandoleh in Windurst Waters (S) (H-10), examine the Mithran Bivouac in Meriphataud Mountains (S) (I-8), then enter Castle Oztroja (S) for cutscenes.",
+        "Farm three Dorter Keys from Yagudo Eradicators, Knights Templar, Prioresses and Prelates in Meriphataud Mountains (S) and Castle Oztroja (S).",
+        "On the castle's second-floor outdoor areas (E-7 and G-9), examine the Iron Grilles until one says someone is inside, then trade it a key. A key traded to an empty cell is lost. Three rescues give the key item Poet god's key.",
+        "Climb to the top and examine the Collapsing Floor twice to fight Tzee Xicu the Manifest and two Air Elementals. Losing means a new key from the Bivouac.",
+    },
+
+    cw_mms_at_journeys_end = { -- Local patch: Crystal War quests
+        "Examine the Mithran Bivouac in Meriphataud Mountains (S) (I-8) for another Poet god's key.",
+        "Examine the Collapsing Floor at the top of Castle Oztroja (S) for a cutscene, then again to fight Fenrir, who shifts between Karaha-Baruha and Robel-Akbel. Keep Lehko Habhoka alive.",
+        "Return to the Mithran Bivouac, then speak with Dhea Prandoleh in Windurst Waters (S) (H-10).",
+        "Examine the Sealed Entrance in West Sarutabaruta (S) (F-10), then return to Windurst Waters (S) to complete the quest. Romaa Mihgo (G-11) can then teach the Romaa Mihgo Trust if you have the Bundle of half-inscribed scrolls.",
+    },
+
+    cw_wwt_her_memories_verdure_footfalls = { -- Local patch: Crystal War quests
+        "Zone into Windurst Waters (S) from West Sarutabaruta (S), then speak with Miah Riyuh (H-9), North map. Do it in the nation you were in when Her Memories started.",
+        "In West Sarutabaruta (S), examine the tower Sealed Entrances at (F-4), (F-11) and (J-8).",
+        "Speak with Miah Riyuh again for the key item Large memory fragment.",
+    },
+
+    cw_woe_champion_of_the_dawn = { -- Local patch: Crystal War quests
+        "Enter the Walk of Echoes from anywhere for a cutscene that starts the quest.",
+        "Find the latent energy spots: Beaucedine Glacier (S) at the border of (G-9) and (H-9) below the campaign warp, East Ronfaure (S) in the northwest of (H-7) by a riverside tree, and Jugner Forest (S) at the southeast of Lake Mechieume (H-6/I-6). Each gives a Breath of dawn; you need all three.",
+        "Enter the Walk of Echoes through the Veridical Conflux in Grauberg (S) (F-5) or Pashhow Marshlands (S) (J-9), or with a Lightsworm at a Cavernous Maw. Check the Ornate Door three times: two cutscenes, then the fight.",
+        "Cait Sith uses -ja spells and Mewing Lullaby; up to six, Trusts allowed. Choose Pact with Cait Sith, Nesanica Torque, Belt or Ring, or 10,000 gil.",
+        "If you lose, check the Regal Pawprint outside the door, revisit one energy spot and try again. Don't leave before doing A Forbidden Reunion if you're on Rhapsodies of Vana'diel.",
+    },
+
+    cw_woe_the_dawn_also_rises = { -- Local patch: Crystal War quests
+        "To fight Cait Sith again, wait for JST midnight after your last win, then check the Ornate Door in the Walk of Echoes for a cutscene.",
+        "Find the latent energy spots: Beaucedine Glacier (S) at the border of (G-9) and (H-9) below the campaign warp, East Ronfaure (S) in the northwest of (H-7) by a riverside tree, and Jugner Forest (S) at the southeast of Lake Mechieume (H-6/I-6). You need only one Breath of dawn this time.",
+        "Enter the Walk of Echoes through the Veridical Conflux in Grauberg (S) (F-5) or Pashhow Marshlands (S) (J-9), or with a Lightsworm at a Cavernous Maw. Check the Ornate Door for a cutscene, then again to fight.",
+        "Cait Sith uses -ja spells and Mewing Lullaby; up to six, Trusts allowed. Choose Pact with Cait Sith, Nesanica Torque, Belt or Ring, or 10,000 gil.",
+    },
+
+    cw_woe_a_forbidden_reunion = { -- Local patch: Crystal War quests
+        "After Champion of the Dawn, and with Trusts unlocked, leave through a Veridical Conflux and re-enter the Walk of Echoes for a cutscene.",
+        "Check the Ornate Door for a cutscene and the key item Butterfly-shaped key, then again to enter the battle (zone out and back in if it refuses).",
+        "Fight Gloomscale and Gloomtalon alongside Lilisette; if she falls you lose. Both use Doom, so bring Holy Water. Trusts are allowed.",
+        "Winning gives Atomos and Cipher: Lilisette. If you get the Somber Dreams cutscene instead, zone out and back in through the Veridical Conflux.",
+    },
 }
 
 return Q

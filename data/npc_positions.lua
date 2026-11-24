@@ -865,7 +865,7 @@ return {
     ["Gimb"] = { { 252, -4.97, -44.04, -0.97 } }, -- Local patch: Outlands quests
     ["Babubu"] = { { 240, -175.19, 70.44, -3.32 } }, -- Local patch: Outlands quests
     ["Chef Nonberry"] = { { 159, -135.22, -92.23, 0.00 } }, -- Local patch: Outlands quests
-    ["Ponono"] = { { 241, -38.24, -120.95, -1.25 } }, -- Local patch: Other quests
+    ["Ponono"] = { { 241, -38.24, -120.95, -1.25 }, { 94, 156.07, -15.67, 1.00 } }, -- Local patch: Other quests
     ["Daa Bola the Seer"] = { { 151, -157.98, 193.46, -17.18 } }, -- Local patch: Other quests
     ["Yaya"] = { { 248, -18.77, -14.93, -2.60 } }, -- Local patch: Other quests
     ["Jimaida"] = { { 248, -17.34, -18.77, -2.60 } }, -- Local patch: Other quests
@@ -923,4 +923,10 @@ return {
     ["Halshaob"] = { { 53, 28.54, -85.25, -6.00 } }, -- Local patch: Aht Urhgan quests
     ["Yoyoroon"] = { { 53, -17.04, 71.60, -6.00 } }, -- Local patch: Aht Urhgan quests
     ["Memeroon"] = { { 53, -26.34, -40.64, 0.00 } }, -- Local patch: Aht Urhgan quests
+    ["Nichais"] = { { 80, 133.74, 80.77, 0.00 } }, -- Local patch: Crystal War quests
+    ["Hauberliond"] = { { 80, -58.41, -7.88, 2.00 } }, -- Local patch: Crystal War quests
+    ["Fortilace"] = { { 91, -725.28, -114.72, -27.15 } }, -- Local patch: Crystal War quests
+    ["Callisto"] = { { 89, -102.00, 538.00, -11.90 } }, -- Local patch: Crystal War quests
+    ["Mham Lahrih"] = { { 98, 378.64, -183.49, 10.60 } }, -- Local patch: Crystal War quests
+    ["Landeric"] = { { 82, -142.40, 491.03, 1.57 } }, -- Local patch: Crystal War quests
 }
