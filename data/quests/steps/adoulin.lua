@@ -260,6 +260,168 @@ Q.STEPS = {
         "Defeat three Numbing Blossoms in Yorcia Weald; you get the blossoms automatically. Exactly three grow just north of the Frontier Station, on the way to Yorcia Delve, and the area at (I-8) from Dirt Cheap has plenty.",
         "Return to Mano-Amano to complete the quest. You can repeat it without zoning.",
     },
+
+    -- Western Adoulin quests (BG-Wiki).
+
+    ado_wad_granddaddy_dearest = { -- Local patch: Adoulin quests
+        "Speak with Alienor next to the Pioneers' Coalition waypoint in Western Adoulin (E-8) for the key item Tray of Adoulinian delicacies.",
+        "Speak with Anastase in Ru'Lude Gardens (G-9) for the key item Small bag of Adoulinian delicacies. He sends you to check on one of his researchers, chosen at random: Jillia in Selbina (G-10), Zurko-Bazurko in Mhaura (I-8), Quwi Orihbhe in Rabao (G-8) or Wistful Bison in Norg (G-7).",
+        "Speak with that researcher. Zurko-Bazurko may need to be spoken to more than once before he takes the bag.",
+        "Return to Anastase and speak with him again, then return to Alienor to complete the quest. You can repeat it after each conquest tally.",
+    },
+
+    ado_wad_western_waypoints_ho = { -- Local patch: Adoulin quests
+        "Speak with Alienor outside the Pioneers' Coalition in Western Adoulin (E-8). If you already have all nine Western Adoulin waypoints, speak with her again to finish at once.",
+        "Attune your geomagnetron to all nine Western Adoulin waypoints: Platea Triumphus (H-8), Pioneers' Coalition (E-8), Mummers' Coalition (G-10), Inventors' Coalition (J-9), Auction House (F-10), Rent-a-Room (H-11), Big Bridge (L-9), Airship Docks (H-4) and Adoulin Waterfront (I-5).",
+        "Return to Alienor to complete the quest.",
+    },
+
+    ado_wad_scaredy_cats = { -- Local patch: Adoulin quests
+        "After registering with the Pioneers' Coalition in Western Adoulin (E-8), zone and wait for the next game day, then return to the Pioneers' Coalition for a cutscene with Eamonn.",
+        "In Ceizak Battlegrounds, examine the Earthen Mound in the eastern half of (G-8), just south of Bivouac #2, for a cutscene.",
+        "Head southwest to (E-10) and enter Sih Gates. Go west to (E-6) and examine the Foreboding Presence for a cutscene, then examine it again to spawn Fomor Pioneer.",
+        "Fomor Pioneer has about 10,000 HP and high evasion, and sometimes casts Cure IV or Cure V; Trusts make it easy. After defeating it, examine the Foreboding Presence once more for a cutscene and the key item Reive unity.",
+        "Return to the Pioneers' Coalition for a final cutscene to complete the quest.",
+    },
+
+    ado_wad_a_certain_substitute_patrolman = { -- Local patch: Adoulin quests
+        "Speak with Rising Solstice in Western Adoulin (D-9) for the temporary key item Western Adoulin patrol route.",
+        "Speak with these NPCs in this order, repeating each conversation until it loops; waypoints save time. First Zaoso at the Pioneers' Coalition (E-8), then Clemmar at the Couriers' Coalition (G-8), then Kongramm at the Waterfront (I-5), near Sylvie.",
+        "Next Virsaint by the fountain on Platea Triumphus (H-8), then Shipilolo at the Inventors' Coalition (J-9), then Dangueubert at the Rent-a-Room entrance (H-11) until he offers the Mog Garden menu, and last Nylene at the Mummers' Coalition (H-10).",
+        "Return to Rising Solstice to complete the quest.",
+    },
+
+    ado_wad_transporting = { -- Local patch: Adoulin quests
+        "Speak with Vaulois in Western Adoulin (H-6), halfway between the Airship Docks and Platea Triumphus waypoints, for the key item Misdelivered parcel.",
+        "Speak with Kongramm at the Waterfront (I-5).",
+        "Enter Rala Waterways from the entrance at (F-5), the one closest to the Waterfront and the Airship Docks. Go to (C-6) and examine the ??? near the Sluice Gate.",
+        "Return to Vaulois to complete the quest.",
+    },
+
+    ado_wad_hunger_strikes = { -- Local patch: Adoulin quests
+        "Speak with Westerly Breeze near the Adoulin Waterfront in Western Adoulin (I-5).",
+        "Trade him a Wisdom Soup to complete the quest.",
+    },
+
+    ado_wad_the_starving = { -- Local patch: Adoulin quests
+        "Zone and wait for the next game day after Hunger Strikes, then speak with Westerly Breeze in Western Adoulin (I-5).",
+        "Trade him a Goblin Drink to complete the quest.",
+    },
+
+    ado_wad_always_more_quoth_the_ravenous = { -- Local patch: Adoulin quests
+        "Zone and wait for the next game day after The Starving, then speak with Westerly Breeze in Western Adoulin (I-5).",
+        "Trade him a Cursed Beverage to complete the quest.",
+    },
+
+    ado_wad_the_old_man_and_the_harpoon = { -- Local patch: Adoulin quests
+        "Speak with Jorin near the Adoulin Waterfront in Western Adoulin (J-4) for the key item Broken harpoon.",
+        "Speak with Shipilolo outside the Inventors' Coalition (J-9) for the key item Extravagant harpoon.",
+        "Return to Jorin to complete the quest.",
+    },
+
+    ado_wad_exotic_delicacies = { -- Local patch: Adoulin quests
+        "Speak with Flapano in Western Adoulin (I-8). He needs a Saffron, 2 Barnacles and a Mussel.",
+        "Saffron: synthesize 3 Saffron Blossoms, harvested in Foret de Hennetiel, with a Wind Crystal. Barnacle: synthesize a Carrier Crab Carapace with a Lightning Crystal; Barnacle Crabs and Depthswalker Crabs in Rala Waterways drop it (enter from Western Adoulin (K-8), by the Big Bridge). You can also fish Barnacles in Western Adoulin with a Sabiki Rig or Shrimp Lure.",
+        "Mussel: fish on the secret beach in Foret de Hennetiel with a Robber Rig or Rogue Rig.",
+        "Trade the ingredients to Flapano to complete the quest.",
+    },
+
+    ado_wad_a_pioneers_best_imaginary_friend = { -- Local patch: Adoulin quests
+        "Speak with Merleg near the Rent-a-Room waypoint in Western Adoulin (H-11).",
+        "Get Ionis from Fleuricette near the Pioneers' Coalition waypoint (D-8). If you already have Ionis on, the quest finishes in the first conversation.",
+        "Speak with Merleg again while Ionis is active to complete the quest and receive your club badge.",
+    },
+
+    ado_wad_failure_is_not_an_option = { -- Local patch: Adoulin quests
+        "Speak with Clautaire in Western Adoulin (I-12).",
+        "Harvest the Mineral Vein in your Mog Garden for a Hunk of bedrock. If you've already used up the vein, wait until you can mine it again. If you've never been to the Mog Garden, the Green Thumb Moogle gives you a few introductory tasks first, but you still get the bedrock.",
+        "Bring the Hunk of bedrock to Clautaire to complete the quest.",
+    },
+
+    ado_wad_raptor_rapture = { -- Local patch: Adoulin quests
+        "Speak with Pagnelle near the Mummers' Coalition in Western Adoulin (G-10) for a cutscene.",
+        "Speak with Gontrain (H-12), next to the residential area, then return to Pagnelle.",
+        "In Ceizak Battlegrounds, harvest at Harvesting Points with Sickles until you have three Rockberry key items. They come at random but ahead of normal items, so one point can give all three; bring plenty of Sickles, as they break often. Points are at the three-way paths on the (E-8)/(F-8) and (G-8)/(H-8) borders, the far southeast corner, (E-10), Bivouac #3 (F-9) and (F-6).",
+        "Return to Pagnelle for a cutscene.",
+        "In Rala Waterways (enter from Western Adoulin (J-12), by the Rent-a-Room waypoint), go to (E-11), where Relentless Storm and Jaroney-Baroney stand on a bridge near a door; a cutscene plays automatically.",
+        "Return to Pagnelle to complete the quest.",
+    },
+
+    ado_wad_flavors_of_our_lives = { -- Local patch: Adoulin quests
+        "Speak with Berghent near the Big Bridge in Western Adoulin (J-9).",
+        "Speak with Masad inside the Mummers' Coalition (G-10), then with Dewalt inside the Couriers' Coalition.",
+        "In Rala Waterways, speak with Chalvava at (F-11). The fastest way in is the Western Adoulin entrance at (I-12)/(J-12), by the Mog House.",
+        "In Yahse Hunting Grounds, harvest at Harvesting Points with a Sickle until you get the key item Blightberry; bring several Sickles. Waypoint #3 puts you near a cluster of points.",
+        "Return to Berghent to complete the quest.",
+    },
+
+    ado_wad_no_laughing_matter = { -- Local patch: Adoulin quests
+        "Speak with Peladi Shalmohr inside the Mummers' Coalition in Western Adoulin (G-11) for a cutscene.",
+        "Examine the Mischief Marker at (J-11) for a cutscene with Tuffle-Buffle and Musto-Rusto. Tuffle-Buffle can fail any of the three dishes, so buy a few extra of each ingredient.",
+        "Appetizer: trade the Mischief Marker a Fire Crystal, a Popoto and a Selbina Butter. Ansegusele (I-11) sells Popoto; Chomo Jinjahl at the Windurst Waters Cooking Guild sells the butter if your Cooking is 28 or higher.",
+        "Main course: trade a Fire Crystal, a Dhalmel Meat, an Olive Oil and a Black Pepper. Dhalmel Meat comes from the Kolshushu regional vendors, Olive Oil from Kanil in Western Adoulin (K-8) or Malfud in Aht Urhgan Whitegate (F-8), and Black Pepper from Malfud.",
+        "Dessert: trade a Fire Crystal, a Selbina Butter, a Faerie Apple, a Maple Sugar and a Cinnamon. Ansegusele sells Faerie Apples, Benaige in Southern San d'Oria (F-7) sells Maple Sugar when San d'Oria is 1st or 2nd in Conquest, and Kopopo at the Windurst Waters Cooking Guild (E-8) or Ghemi Sinterilo in Kazham (G-7) sells Cinnamon.",
+        "The last cutscene signs you on with the Mummers' Coalition and completes the quest.",
+    },
+
+    ado_wad_all_the_way_to_the_bank = { -- Local patch: Adoulin quests
+        "Wait for the next game day after No Laughing Matter, then speak with Peladi Shalmohr at the Mummers' Coalition in Western Adoulin (G-11) for the key item Tarutaru Sauce invoice.",
+        "Pay off each merchant on the invoice, in any order, by trading the gil owed (rounding up is fine): Defliaa at the bakery (I-11), 19,440; Hujette at the sweets shop (H-9), 3,000; Flapano at the cafeteria (I-8), 5,600; Bernegeois at the Cafe des Larnes in Eastern Adoulin (G-8), 4,560; Malgrom at the fishmonger's stall in Eastern Adoulin (E-8), 6,832. Farso-Dafarso outside the Couriers' Coalition offers a movement speed boost.",
+        "With the key item Tarutaru Sauce receipt, return to Peladi Shalmohr for a cutscene.",
+        "Examine the Mischief Marker at (J-11). Five times you choose a hat for Tuffle-Buffle from five groups: 1 Costume, 2 Beastman, 3 Heavy, 4 Medium, 5 Light. Each pick must be a group you haven't used yet and at least two groups away from the last one, so use the order 1, 3, 5, 2, 4 (for example Egg helm, Perle salade, Teal chapeau, Quadav barbut, Thaumas hat).",
+        "A failed pick asks for a random food from one of the five stalls; bring it back and continue from where you failed, as your progress is kept. The fifth success completes the quest.",
+    },
+
+    ado_wad_to_laugh_is_to_love = { -- Local patch: Adoulin quests
+        "Wait for the next game day after All the Way to the Bank, then speak with Peladi Shalmohr at the Mummers' Coalition in Western Adoulin (G-11).",
+        "Examine the Mischief Marker at (J-11) and choose a hat, a pick-up line, a pose and a food gift for Musto-Rusto. The combination Qiqirn Hood, Great Cook, Lively Jig and Senroh Skewer is reported to always work.",
+        "Buy the food you chose; Malgrom in Eastern Adoulin (F-8) sells the Senroh Skewer for about 7,000 gil. Trade it to the Mischief Marker for a cutscene, which completes the quest if the combination worked.",
+    },
+
+    ado_wad_a_barrel_of_laughs = { -- Local patch: Adoulin quests
+        "Wait for the next game day after To Laugh Is to Love, then examine the Mischief Marker in Western Adoulin (J-11) for a cutscene.",
+        "Examine the Door: Depository to the left of the Mischief Marker for a cutscene.",
+        "In Rala Waterways (M-6), entered from Eastern Adoulin (F-7), examine the door behind Yeggha Dolashi for a cutscene, then examine it again to enter the battle with the Dashing Dreamers.",
+        "Only the mannequin Pupadi Dollmohr (about 55,000 HP) has to be defeated. Fabioso can Charm, and if Tuffle-Buffle or Musto-Rusto falls you lose at once, so keep the enemies away from them. After a loss, examine the Sauce Barrels at the end of the Waterfront pier by Jorin, trade them the food they ask for, and try again.",
+        "Examine the Door: Svenja's Manor in Western Adoulin (I-8) for a cutscene with Musto-Rusto, Svenja and Othellius. If you started Flowers for Svenja first, do its Celennia Memorial Library cutscene before this one.",
+        "In Sih Gates, target a Harvesting Point and /laugh at it at least once, then harvest with a Sickle for the key item Guffawshroom. Bring spare Sickles; Tevigogo near the Western Adoulin exit sells them.",
+        "Examine the hospital door at (I-9) in Western Adoulin for a cutscene. If it's firmly shut, progress further in Flowers for Svenja first.",
+        "Return to the Mischief Marker (J-11) for a cutscene, which completes the quest. Speak with Peladi Shalmohr at the Mummers' Coalition to choose your earring: Anastasi, Burana, Gelos or Hija. Swapping it later costs 10,000 Bayld, once per conquest tally.",
+    },
+
+    ado_wad_vegetable_vegetable_revolution = { -- Local patch: Adoulin quests
+        "Examine the door of Amchuchu's Laboratory at the back of the Inventors' Coalition in Western Adoulin (J-10) for a cutscene.",
+        "In Sih Gates, examine the ??? in the small round room at (K-8) for a cutscene with Midras and the key item Memo from Midras. The quickest way is the Foret de Hennetiel Frontier Station waypoint, then north past the frogs to (J-5). The Apex Leeches here aggro to sound, and a Reive often blocks the path at (I-8).",
+        "Speak with Cid in the Metalworks, Bastok (H-8), for the key item Cid's catalyst.",
+        "Return to the ??? in Sih Gates for the key item Chunk of milky white minerals.",
+        "Examine the door of Amchuchu's Laboratory again to complete the quest.",
+    },
+
+    ado_wad_vegetable_vegetable_evolution = { -- Local patch: Adoulin quests
+        "Zone and wait for the next game day after Vegetable Vegetable Revolution. You need to be at Seekers of Adoulin mission 2-2-1 or later, and Rank 5 in a nation with Magicite completed.",
+        "Examine the door of Amchuchu's Laboratory in the Inventors' Coalition, Western Adoulin (J-10), for a cutscene.",
+        "In Yorcia Weald, examine the ??? at (I-8) near the Ergon Locus Bryophitic Boulder, close to the (I-7)/(I-8) line, for a cutscene and the key items Midras's explosive sample and Report on Midras's explosive. It isn't the one in the Numbing Blossom field; head north from the Frontier Station.",
+        "Enter the Tenshodo in Lower Jeuno for a cutscene.",
+        "Examine the door of Amchuchu's Laboratory for a cutscene to complete the quest.",
+    },
+
+    ado_wad_vegetable_vegetable_crisis = { -- Local patch: Adoulin quests
+        "Wait for the next game day after Vegetable Vegetable Evolution. Raptor Rapture must also be complete.",
+        "Examine the door of Amchuchu's Laboratory in the Inventors' Coalition, Western Adoulin (J-10).",
+        "Trade a Midrium Ingot, an Urunday Lumber and a Raaz Leather to Chanteillie in the Inventors' Coalition. If she doesn't say Amchuchu is ready, wait a game day and speak with her again.",
+        "Examine the laboratory door for the key item Amchuchu's missive, then speak with Cid in the Metalworks, Bastok (H-8).",
+        "Return to the door of Amchuchu's Laboratory to complete the quest.",
+    },
+
+    ado_wad_vegetable_vegetable_frustration = { -- Local patch: Adoulin quests
+        "Wait for the next game day after Vegetable Vegetable Crisis. You also need the Bastok quests Cid's Secret and The Usual.",
+        "Examine the door of Amchuchu's Laboratory in Western Adoulin (J-10) for a cutscene, then speak with Raibaht in the Metalworks, Bastok (G-8).",
+        "In Palborough Mines, Map 3 (G-8), examine the Peculiar Fissure; bang on the rock three times and then think. The Palborough Mines home point is closest. Then return to Raibaht.",
+        "Examine the Contemplation Site by the Adoulin Waterfront waypoint (I-5) and trade it a Sabiki Rig for the key item Packet of Midras's explosives.",
+        "Examine the Peculiar Fissure for a short cutscene, then again to spawn Incensed Pineapple. Dispel its Berserk right away or it self-destructs; it keeps recasting Berserk and Blaze Spikes, so bring dispels and stuns (Trusts like Qultada, Koru-Moru, Arciela or Ajido-Marujido help). If it does self-destruct, trade the Contemplation Site another Sabiki Rig.",
+        "Examine the Peculiar Fissure again for a cutscene and the key items Tarnished ring and Rusty locket, then return to Raibaht.",
+        "Return to the Contemplation Site for a cutscene to complete the quest. Afterward, examine the door of Amchuchu's Laboratory for a cutscene and the Midras's Helm +1.",
+    },
 }
 
 return Q

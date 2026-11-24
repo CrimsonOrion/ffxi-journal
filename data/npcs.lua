@@ -27,17 +27,21 @@ return {
     'Aldo',
     'Alfesar',
     'Alib-Mufalib',
+    'Alienor', -- Local patch: Adoulin quests
     'Alois',
     'Amaura',
     'Ambrosius',
     'Ambrotien',
+    "Amchuchu's Laboratory", -- Local patch: Adoulin quests
     'Amimi',
     'Amutiyaal',
+    'Anastase', -- Local patch: Adoulin quests
     'Andecia',
     'Andrause',
     'Andreine',
     'Angelica',
     'Anguenet',
+    'Ansegusele', -- Local patch: Adoulin quests
     'Anteurephiaux',
     'Antje',
     'Antreneau',
@@ -61,6 +65,8 @@ return {
     'Baudin',
     'Belgidiveau',
     'Benita',
+    'Berghent', -- Local patch: Adoulin quests
+    'Bernegeois', -- Local patch: Adoulin quests
     'Bertenont',
     'Bheem', -- Local patch: Jeuno quests
     'Blandine',
@@ -81,7 +87,9 @@ return {
     'Castilchat',
     'Ceraulian',
     'Chalvatot',
+    'Chalvava', -- Local patch: Adoulin quests
     'Chamama',
+    'Chanteillie', -- Local patch: Adoulin quests
     'Chasalvige',
     'Chipmy-Popmy',
     'Choubollet', -- Local patch: Adoulin quests
@@ -90,7 +98,9 @@ return {
     'Churano-Shurano',
     'Chya Mindorah', -- Local patch: Adoulin quests
     'Cid',
+    'Clautaire', -- Local patch: Adoulin quests
     'Cleades',
+    'Clemmar', -- Local patch: Adoulin quests
     'Collet', -- Local patch: Jeuno quests
     'Constance', -- Local patch: Jeuno quests
     'Corann',
@@ -99,10 +109,12 @@ return {
     'Dabhuh',
     'Daigraffeaux',
     'Dancing Wolf',
+    'Dangueubert', -- Local patch: Adoulin quests
     'Darcia',
     'Datta',
     'Dauperiat',
     'Davyad',
+    'Defliaa', -- Local patch: Adoulin quests
     'Degenhard',
     'Dehn Harzhapan',
     'Deidogg',
@@ -111,12 +123,14 @@ return {
     'Despachiaire',
     'Detzo',
     'Devean',
+    'Dewalt', -- Local patch: Adoulin quests
     'Dhea Prandoleh',
     'Diederik',
     'Diordinne',
     'Dkhaaya',
     'Dodmos',
     'Drangord',
+    'Eamonn', -- Local patch: Adoulin quests
     'Edal-Tahdal',
     'Edigey',
     'Elijah',
@@ -138,6 +152,7 @@ return {
     'Excenmille',
     'Fallion', -- Local patch: Adoulin quests
     'Fari-Wari',
+    'Farso-Dafarso', -- Local patch: Adoulin quests
     'Faursel',
     'Femitte',
     'Ferchinne',
@@ -145,6 +160,8 @@ return {
     'Ferrol',
     'Fhe Maksojha',
     'Fhelm Jobeizat',
+    'Flapano', -- Local patch: Adoulin quests
+    'Fleuricette', -- Local patch: Adoulin quests
     'Fochacha',
     'Fondactiont',
     'Fontoumant',
@@ -168,21 +185,27 @@ return {
     'Ghanraam', -- Local patch: Jeuno quests
     'Ghatsad',
     'Gondebaud', -- Local patch: missing quests
+    'Gontrain', -- Local patch: Adoulin quests
     'Gurren-Murren', -- Local patch: Adoulin quests
     'Guttrix', -- Local patch: Jeuno quests
     'Halshaob', -- Local patch: Aht Urhgan quests
     'Hauberliond', -- Local patch: Crystal War quests
     'Hegnor', -- Local patch: Adoulin quests
     'Hishahma', -- Local patch: Aht Urhgan quests
+    'Hujette', -- Local patch: Adoulin quests
     'Hurr the Betrayer', -- Local patch: missing quests
     'Ilumida', -- Local patch: Jeuno quests
     'Inmot-Pinmot', -- Local patch: Adoulin quests
     'Inthius', -- Local patch: Adoulin quests
     'Jabbar', -- Local patch: Jeuno quests
     'Jhen Durheka', -- Local patch: Adoulin quests
+    'Jillia', -- Local patch: Adoulin quests
+    'Jorin', -- Local patch: Adoulin quests
     'Jubilant Pixie', -- Local patch: Crystal War quests
+    'Kanil', -- Local patch: Adoulin quests
     'Karl', -- Local patch: Jeuno quests
     'Khumo Daramasteh', -- Local patch: Jeuno quests
+    'Kongramm', -- Local patch: Adoulin quests
     'Kuah Dakonsa', -- Local patch: Jeuno quests
     'Kurou-Morou', -- Local patch: Jeuno quests
     'Landeric', -- Local patch: Crystal War quests
@@ -192,13 +215,18 @@ return {
     'Luto Mewrilah', -- Local patch: Jeuno quests
     'Magian Moogle', -- Local patch: Jeuno quests
     'Mailloquetat', -- Local patch: Jeuno quests
+    'Malgrom', -- Local patch: Adoulin quests
     'Mano-Amano', -- Local patch: Adoulin quests
     'Matoaka', -- Local patch: Jeuno quests
     "Mawl'gofaur", -- Local patch: Jeuno quests
     'Memeroon', -- Local patch: Aht Urhgan quests
+    'Merleg', -- Local patch: Adoulin quests
     'Mham Lahrih', -- Local patch: Crystal War quests
+    'Midras', -- Local patch: Adoulin quests
     'Migliorozz', -- Local patch: Jeuno quests
+    'Mischief Marker', -- Local patch: Adoulin quests
     'Muhoho', -- Local patch: Jeuno quests
+    'Musto-Rusto', -- Local patch: Adoulin quests
     'Naruru', -- Local patch: Jeuno quests
     'Ndah Tolohjin', -- Local patch: Adoulin quests
     'Neraf-Najiruf', -- Local patch: Jeuno quests
@@ -206,24 +234,33 @@ return {
     'Nevela', -- Local patch: Jeuno quests
     'Nichais', -- Local patch: Crystal War quests
     'Nomad Moogle', -- Local patch: Jeuno quests
+    'Nylene', -- Local patch: Adoulin quests
     'Oblor', -- Local patch: Adoulin quests
     'Odasel', -- Local patch: Jeuno quests
     'Omer', -- Local patch: Jeuno quests
     'Orsa-Porsa', -- Local patch: Adoulin quests
+    'Othellius', -- Local patch: Adoulin quests
+    'Pagnelle', -- Local patch: Adoulin quests
     'Panta-Putta', -- Local patch: Jeuno quests
     'Paparoon', -- Local patch: Aht Urhgan quests
+    'Peladi Shalmohr', -- Local patch: Adoulin quests
     'Peppe-Aleppe', -- Local patch: Adoulin quests
     'Pitantimand', -- Local patch: Jeuno quests
+    'Quwi Orihbhe', -- Local patch: Adoulin quests
     'Rafaela', -- Local patch: missing quests
     'Rakuru-Rakoru', -- Local patch: Jeuno quests
     'Ratoto', -- Local patch: Jeuno quests
     'Red Ghost', -- Local patch: Jeuno quests
+    'Rising Solstice', -- Local patch: Adoulin quests
     'Robel-Akbel', -- Local patch: Crystal War quests
     'Rouliette', -- Local patch: Jeuno quests
     'Rumin-Flumin', -- Local patch: Adoulin quests
+    'Shipilolo', -- Local patch: Adoulin quests
     'Souren', -- Local patch: Jeuno quests
+    'Svenja', -- Local patch: Adoulin quests
     'Syrillia', -- Local patch: Jeuno quests
     'Teigero-Bangero', -- Local patch: Jeuno quests
+    'Tevigogo', -- Local patch: Adoulin quests
     'Toppled Tree', -- Local patch: Adoulin quests
     'Traiffeaux', -- Local patch: Adoulin quests
     'Tucker', -- Local patch: A Little Knowledge
@@ -518,6 +555,7 @@ return {
     'Tressia',
     'Trilok',
     'Tsetseroon',
+    'Tuffle-Buffle', -- Local patch: Adoulin quests
     'Turlough',
     'Udip Ferawoh', -- Local patch: Adoulin quests
     'Ulamaal',
@@ -528,12 +566,14 @@ return {
     'Valah Molkot',
     'Valaineral',
     'Vamorcote',
+    'Vaulois', -- Local patch: Adoulin quests
     'Velda-Galda',
     'Veldeth', -- Local patch: Adoulin quests
     'Vera',
     'Verctissa',
     'Vicorpasse',
     'Vilatroire',
+    'Virsaint', -- Local patch: Adoulin quests
     'Vola', -- Local patch: Jeuno quests
     'Volker',
     'Vounebariont',
@@ -543,7 +583,9 @@ return {
     'Washu',
     'Watchful Pixie', -- Local patch: Crystal War quests
     'Wazyih',
+    'Westerly Breeze', -- Local patch: Adoulin quests
     'Wetata',
+    'Wistful Bison', -- Local patch: Adoulin quests
     'Wobke', -- Local patch: Jeuno quests
     'Wolfram',
     'Wyatt',
@@ -558,6 +600,7 @@ return {
     'Zacc',
     'Zaldon',
     'Zalsuhm', -- Local patch: Jeuno quests
+    'Zaoso', -- Local patch: Adoulin quests
     'Zauko', -- Local patch: Jeuno quests
     'Zeid',
     'Zokima-Rokima',
@@ -566,6 +609,7 @@ return {
     'Zoriboh',
     'Zubaba',
     'Zuber', -- Local patch: Jeuno quests
+    'Zurko-Bazurko', -- Local patch: Adoulin quests
     'Zurtermor',
     'Drake Fang',
     'Medicine Eagle',
