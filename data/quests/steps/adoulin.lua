@@ -422,6 +422,170 @@ Q.STEPS = {
         "Examine the Peculiar Fissure again for a cutscene and the key items Tarnished ring and Rusty locket, then return to Raibaht.",
         "Return to the Contemplation Site for a cutscene to complete the quest. Afterward, examine the door of Amchuchu's Laboratory for a cutscene and the Midras's Helm +1.",
     },
+
+    -- Eastern Adoulin and Rala Waterways quests (BG-Wiki).
+
+    ado_ead_weseastern_waypoints_ho = { -- Local patch: Adoulin quests
+        "Speak with Sharuru outside the Peacekeepers' Coalition in Eastern Adoulin (F-8). If you already have all nine Eastern Adoulin waypoints, speak with her again to finish at once.",
+        "Attune your geomagnetron to all nine Eastern Adoulin waypoints: Peacekeepers' Coalition (F-8), Scouts' Coalition (G-9), Statue of the Goddess (H-8), the Wharf to Yahse (G-6), Rent-a-Room (G-11), Auction House (H-10), Sverdhried Hillock (I-7), Coronal Esplanade (I-9) and Castle Adoulin gates (K-9).",
+        "Return to Sharuru to complete the quest.",
+    },
+
+    ado_ead_megalomaniac = { -- Local patch: Adoulin quests
+        "Speak with Sharuru outside the Peacekeepers' Coalition in Eastern Adoulin (F-8) for the key item Waypoint scanner kit.",
+        "Examine all nine waypoints in Western Adoulin: Platea Triumphus (H-8), Pioneers' Coalition (E-8), Mummers' Coalition (G-10), Inventors' Coalition (J-9), Auction House (F-10), Rent-a-Room (H-11), Big Bridge (L-9), Airship Docks (H-4) and Adoulin Waterfront (I-5).",
+        "Return to Sharuru to complete the quest.",
+    },
+
+    ado_ead_wayward_waypoints = { -- Local patch: Adoulin quests
+        "You need the Frontier Station waypoints of Ceizak Battlegrounds, Yahse Hunting Grounds, Foret de Hennetiel, Morimar Basalt Fields, Yorcia Weald, Marjami Ravine and Kamihr Drifts. Speak with Sharuru in Eastern Adoulin (F-8) for the key item Waypoint scanner kit.",
+        "Adjust the waypoint at each of those seven Frontier Stations, then try the waypoint in Lower Jeuno, which can't be adjusted yet.",
+        "Return to Sharuru (the Lower Jeuno waypoint takes you straight to her), then speak with Shipilolo outside the Inventors' Coalition in Western Adoulin (J-9) for the key item Waypoint recalibration kit.",
+        "Calibrate the Lower Jeuno waypoint, then return to Sharuru to complete the quest.",
+    },
+
+    ado_ead_the_longest_way_round = { -- Local patch: Adoulin quests
+        "Speak with Vastran west of the Peacekeepers' Coalition waypoint in Eastern Adoulin (F-8) for the key item Eastern Adoulin patrol route.",
+        "Speak with these NPCs in this order: Fostaig at the Peacekeepers' Coalition (G-7), Lamaron at the Wharf to Yahse (G-5), Irate Destrier near the Statue of the Goddess (G-8), and Nhili Uvolep at Sverdhried Hillock (I-7). On Geomancer she may start her weapon skill quest first; keep talking until she mentions guarding the minister's mansion.",
+        "Then Ploh Trishbahk at Castle Adoulin (K-9), Cunegonde at the Rent-a-Room (G-11) and Ndah Tolohjin at the northeast corner of the Scouts' Coalition (G-9).",
+        "Return to Vastran to complete the quest.",
+    },
+
+    ado_ead_open_the_floodgates = { -- Local patch: Adoulin quests
+        "Speak with Risen Hackles, who patrols near the Wharf to Yahse waypoint in Eastern Adoulin (G-6).",
+        "In Rala Waterways (M-6), entered from Eastern Adoulin (F-7), speak with Yeggha Dolashi twice, until she talks about the Peacekeepers' Coalition.",
+        "Return to Risen Hackles to complete the quest.",
+    },
+
+    ado_ead_one_good_turn = { -- Local patch: Adoulin quests
+        "Speak with Chelidoine northeast of the Coronal Esplanade waypoint in Eastern Adoulin (J-9). He asks for tips on the tasks of each Coalition.",
+        "Answer: Pioneers, assist other pioneers; Couriers, using waypoints is acceptable; Inventors, buy from the Auction House or other pioneers; Scouts, find a good angle of approach; Peacekeepers, assist other pioneers; Mummers, check what the target wants.",
+        "Wait until the next Japanese midnight and return to Chelidoine to complete the quest.",
+    },
+
+    ado_ead_dont_ever_leaf_me = { -- Local patch: Adoulin quests
+        "Speak with Audibert in the Scouts' Coalition in Eastern Adoulin (F-9). He has three tasks; you can do them in any order and report each one, speaking with him once per task.",
+        "Speak with Corpo-Vorpo in the Peacekeepers' Coalition. In Morimar Basalt Fields, go southeast from the Frontier Station and examine the Daunting Emanation at (K-10) between 20:00 and 4:00 for a cutscene.",
+        "Speak with Barenngo in the Pioneers' Coalition. In Yahse Hunting Grounds, go north from Bivouac #1, take the first right and follow the left wall to the Windblown Loam at (J-6) and examine it for a cutscene.",
+        "Speak with Dewalt in the Couriers' Coalition, then fish up the key item Rusted pickaxe in Foret de Hennetiel; the spot by the home point works with any decent rod and bait. Flavors of Our Lives must not be active, or the pickaxe never bites.",
+        "Report each task to Audibert; the third report completes the quest.",
+    },
+
+    ado_ead_keep_your_bloomers_on_erisa = { -- Local patch: Adoulin quests
+        "Examine the Door: Research Chamber on the ramp near the Sverdhried Hillock waypoint in Eastern Adoulin (J-8) for a cutscene.",
+        "Trade a Yahse Humus to the door for a cutscene. It's on the Auction House (Others, Misc) or drops from the Pinetorum just south of the Yahse Hunting Grounds Frontier Station (J-9).",
+        "In Rala Waterways, examine the northern Alluring Plant at (F-10), the one with bulky leaves and hard-shelled fruit, for the key item Tiny seed. The nearest entrance is Western Adoulin (I-12), by the Rent-a-Room waypoint.",
+        "Return to the Door: Research Chamber to complete the quest.",
+    },
+
+    ado_ead_a_good_pair_of_crocs = { -- Local patch: Adoulin quests
+        "Speak with Felmsy at the Wharf to Yahse waypoint in Eastern Adoulin (G-6).",
+        "Trade her a Velkk Mask or Velkk Necklace to complete the quest. There's a small Velkk camp in Foret de Hennetiel northeast of Bivouac #3, and a large one in Marjami Ravine (K-10), down the Scalable Area southwest of Bivouac #1 (needs Climbing).",
+    },
+
+    ado_ead_a_shot_in_the_dark = { -- Local patch: Adoulin quests
+        "Speak with Pudith west of the Wharf to Yahse waypoint in Eastern Adoulin (F-6).",
+        "Trade her an Umbril Ooze to complete the quest. Four Bloodmoon Umbril sit in the eastern tunnel of Cirdas Caverns, southwest of the Yorcia Weald Frontier Station; the Appetent Umbril in Ceizak Battlegrounds only appear at night. After this you can repeat It Sets My Heart Aflutter and the two quests after it.",
+    },
+
+    ado_ead_cafeteria = { -- Local patch: Adoulin quests
+        "Speak with Yocile near the Statue of the Goddess waypoint in Eastern Adoulin (G-8).",
+        "Trade her 2 Elshimo Coconuts to complete the quest. Ghemi Sinterilo sells them in Kazham (G-7). You can repeat it once per conquest tally, and finishing it lets Bernegeois sell you Ulbuconut Milk for that week.",
+    },
+
+    ado_ead_order_up = { -- Local patch: Adoulin quests
+        "Get the key item Celennia Memorial Library card from Patient Snake in the Scouts' Coalition, Eastern Adoulin (F-9).",
+        "Speak with Reja Ygridhi inside the Celennia Memorial Library for the key item Twelve Orders dossier.",
+        "In Eastern Adoulin, speak with Jozhud and then Palomel (G-9), Oscairn (G-7), Nhili Uvolep (I-7), Rigobertine at the very top (J-7), Oingo-Zoingo (K-9), Ploh Trishbahk at the main gate (K-9) and Chumli-Mojumli (K-10).",
+        "Palomel may only talk about A Thirst for the Ages or the Eons while you have it active; finish that first, or skip her if you're on the Eons. Rigobertine may start a cutscene; speak again until she talks about documents. Between 15:00 and 22:00 Ploh Trishbahk may talk about a dinner instead; come back outside those hours.",
+        "In Western Adoulin, speak with Terwok (K-10), Marjoirelle (H-12), Grevan (I-8), Mastan (G-6) and Oka Qhantari (D-8).",
+        "Return to Reja Ygridhi to complete the quest. You can now read the library books.",
+    },
+
+    ado_ead_a_thirst_for_the_ages = { -- Local patch: Adoulin quests
+        "Speak with Roskin near the Cafe des Larmes in Eastern Adoulin (H-8), then bring him a Frontier Soda (125 gil from Bernegeois, G-8) for a cutscene.",
+        "In Ceizak Battlegrounds, on the (E-6)/(F-6) line, use a Pickaxe on the ??? for the key item Royal fiat banning colonization. Bivouac #2 is closest; bring Sneak for the treants.",
+        "Speak with Nikkhail at the Pioneers' Coalition in Western Adoulin (E-8) for the key item Copy of the alliance agreement. Examine the two ??? in the Scouts' Coalition, Eastern Adoulin (F-9), for Record of the 17th Assembly and Copy of Adoulin's Patroness. Optional: Javolio in Yahse Hunting Grounds (K-9) gives the Ulbukan navigation chart.",
+        "Return to Roskin. Say the royal fiat, the record of the 17th Assembly and the alliance agreement are important, and the other two are not.",
+        "Wait a game day and speak with Roskin again to complete the quest.",
+    },
+
+    ado_ead_a_thirst_for_the_eons = { -- Local patch: Adoulin quests
+        "Zone after A Thirst for the Ages, then speak with Roskin in Eastern Adoulin (H-8) and trade him an Ulbuconut Milk. Bernegeois (G-8) sells it if you've done Yocile's coconut quest this conquest week.",
+        "Eastern Adoulin: both ??? in the Scouts' Coalition (Copy of Wrath of the Land), Greebly (G-6) sells Hallowed Wood for 2,000 Bayld, and Amaury (J-11) gives Shrouded in Enigma. In the Celennia Memorial Library (needs Order Up), read the History and Geography stacks for the Giant sheep export record and The Verdancy.",
+        "Western Adoulin: Louisareaux (F-8) gives the Report of a sorcerous nation, and the fountain southeast of Platea Triumphus (H-9) gives a Piece of a SCT Coalition report; then speak with Wegellion in the Scouts' Coalition for a clue.",
+        "Rala Waterways: Sivalda (F-11) gives the Adoulinian agricultural treatise, and the ??? at the northeast of (M-9) gives the Dictum on colonization and a Memo found in Rala Waterways. Foret de Hennetiel: after Wegellion's clue, take the Castoff Point at (G-7) upstream to the ??? at (F-7) for the Cryptic memorandum. Woh Gates: dig the ??? at (F-8) with a Pickaxe for the Mystifying metal rod.",
+        "Speak with Palomel across from the Scouts' Coalition and show her Hallowed Wood. Nhili Uvolep (I-7) can turn it into a replica, and Polished Pebble in the Inventors' Coalition hallway turns the rod into a rusty katana, which Palomel turns into a Traditional Adoulinian katana.",
+        "Return to Roskin and mark as important only Wrath of the Land, the report of a sorcerous nation, The Verdancy, the giant sheep export record and the dictum on colonization. Zone, wait a game day and speak with him again for the 5,000 Bayld that a perfect report earns.",
+        "Optional: with the Memo found in Rala Waterways, examine the blank spot at Rala Waterways (N-10) and type ERGISADE in capitals for 10,000 Bayld.",
+    },
+
+    ado_ead_a_thirst_for_eternity = { -- Local patch: Adoulin quests
+        "Zone after A Thirst for the Eons; you also need Seekers of Adoulin up to Balamor, the Deathborne Xol. Speak with Roskin in Eastern Adoulin (H-8) for the key item Elder wooden box.",
+        "Speak with Palomel near the Scouts' Coalition to turn the box into the key item Imprint device S, then with Quwi Orihbhe near the Proto-Waypoint in Rabao (G-8), then with Roskin again.",
+        "Examine four Mnemonic Pools: Ceizak Battlegrounds, east side of (F-6), via Yahse Hunting Grounds Bivouac #2 and the (F-11) exit; Cirdas Caverns, south side of (H-8), west from the Yorcia Weald Frontier Station; Yorcia Weald, northwest corner of (J-9); Kamihr Drifts, east side of the chasm at (G-8), via Bivouac #3.",
+        "Return to Roskin to complete the quest.",
+        "For A Thirst Before Time: speak with Palomel, zone, and speak with Roskin, who sends you to the History stacks of the Celennia Memorial Library for a 12-question quiz on Adoulin; the answers are in the library's books. After it, wait a game day and speak with Roskin for skill-up books, which he gives again every conquest tally.",
+    },
+
+    ado_ead_a_thirst_before_time = { -- Local patch: Adoulin quests
+        "You need the library quiz from the end of A Thirst for Eternity and The Curious Case of Melvien. Speak with Roskin in Eastern Adoulin (H-8) and choose who exactly made all these requests, then barrel in headfirst.",
+        "Speak with Polished Pebble in the Inventors' Coalition, Western Adoulin (J-10), then return to Roskin for a cutscene.",
+        "In Yorcia Weald, examine the Well-Kept Cache just north of Bivouac #2 (I-10) for a cutscene, then again to spawn Inquisitor Mortuus, a level 115 Fomor ranger that can use Eagle Eye Shot several times. It drops the key item Weathered Haverton hat.",
+        "Examine the Well-Kept Cache again for a cutscene and the key item Forgotten memory, then zone into Eastern Adoulin for a cutscene.",
+        "Speak with Roskin twice, then with Palomel near the Scouts' Coalition, then return to Roskin to choose the Erudition Necklace or 30,000 Bayld. Trade him a Frontier Soda any time to swap the reward.",
+        "Optional: give the Weathered Haverton hat to Wegellion in the Scouts' Coalition (F-9), naming its owner as Cedricaste, for 10,000 EXP and 3 High-Purity Bayld.",
+    },
+
+    ado_ead_the_curious_case_of_melvien = { -- Local patch: Adoulin quests
+        "You need the Seekers of Adoulin mission Balamor's Ruse and the Gladiatorial writ of summons from the Monstrosity introduction. Speak with Estelle behind the Scouts' Coalition in Eastern Adoulin (F-9) for the key item Margret's writ of summons.",
+        "Examine the ??? in the crates in the alcove at the base of the ramp (I-9) for a cutscene and the key item Portrait of Melvien.",
+        "Speak with Chumli-Mojumli (K-10), ask for Estienneux, ask about Melvien when he was alive and show the portrait, for the key item Melvien's turn.",
+        "Speak with Mastan in Western Adoulin (G-6): ask about Soufrriand's death, show the portrait and say you believe him, for the key item Melvien's death?",
+        "Return to the crate at (I-9) for a cutscene and the key item Margret's memo.",
+        "In Rala Waterways (H-6), entered from the Big Bridge in Western Adoulin (K-8), examine the Storage Container and answer Arciela, then Morimar.",
+        "Return to the crate at (I-9) and show your Ring of supernal disjunction, then speak with Estelle to complete the quest.",
+    },
+
+    ado_ead_no_mercy_for_the_wicked = { -- Local patch: Adoulin quests
+        "This quest may need the Seekers of Adoulin missions finished. Speak with Rigobertine outside the Order of Weatherspoon in Eastern Adoulin (J-7); the Castle Adoulin gates waypoint is closest.",
+        "Approach Oscairn outside the Peacekeepers' Coalition for a cutscene.",
+        "In Yorcia Weald, examine the Ergon Locus ??? in the Numbing Blossom grove in the south of (I-8), coming in from (H-8) rather than (I-7), for a cutscene with Ingrid and Morimar.",
+        "Return to Oscairn to complete the quest.",
+    },
+
+    ado_ead_mistress_of_ceremonies = { -- Local patch: Adoulin quests
+        "Speak with Rigobertine outside the Order of Weatherspoon in Eastern Adoulin (J-7) for the key item Purple purgation cloth.",
+        "In Yorcia Weald, go to the Suspicious Roots at (G-6), near the Ergon Locus Pool of Clarity: from Bivouac #1 head north-northwest, take the first right north, then the first left north. Examine them for a cutscene and a battle.",
+        "Everyone needs a Purple purgation cloth unless they have already finished the quest. Trusts are allowed, and Ingrid fights with you; if she falls, you lose. After a loss, get a new cloth from Rigobertine.",
+        "After winning, examine the Suspicious Roots again for the last cutscene and your rewards.",
+    },
+
+    ado_ead_geomancerrific = { -- Local patch: Adoulin quests
+        "As a Geomancer (Lv.99), speak with Nhili Uvolep at the Sverdhried Hillock waypoint in Eastern Adoulin (I-7) for a cutscene and the Trial Wand.",
+        "Earn 300 weapon skill points with the Trial Wand, as for the trial and Mythic weapon skills: 5 for a weapon skill or opening a skillchain, 7, 9 or 11 for closing a level 1, 2 or 3 skillchain. Exudation appears in your weapon skill list when you're done.",
+        "Trade the Trial Wand to Nhili Uvolep to complete the quest and unlock Exudation for any weapon.",
+    },
+
+    ado_ead_saved_by_the_bell = { -- Local patch: Adoulin quests
+        "Speak with Nhili Uvolep at the Sverdhried Hillock waypoint in Eastern Adoulin (I-7); any job can start it. If you're building an Epeolatry, finish or quit it first.",
+        "In Dho Gates, Map 1 (F-12), examine the Inlet of Whispers for the key item Rusted handbell; the Apex monsters around it aggro to sound. Foret de Hennetiel Waypoint #4 is near the entrance. Return to Nhili Uvolep, then speak with Runje Desaali (J-11).",
+        "Trade 100 High-Purity Bayld to Geosuke (J-10), in one go or bit by bit, for the key item Emblazoned handbell, then speak with Nhili Uvolep until she talks about the bell.",
+        "As a Geomancer, examine the Water of Whispers in Dho Gates (H-7) to fight the Bygone Geomancer alone, with no subjob or Trusts and a 15-minute limit. Only destroying her Luopans hurts her, 4% each, so destroy 25 by hitting each with the element strong against it, or with darkness (Cataclysm hits most at once). Coalition Ethers from Ujlei Zelekko in the Peacekeepers' Coalition help.",
+        "Return to Nhili Uvolep for the Nodal Wand I; the quest log marks the quest complete here.",
+        "To reach Idris, trade the wand to Runje Desaali and give Geosuke the materials for each stage, then trade the wand to the Ergon Locus: 200 Ghastly Stones, 500 High-Purity Bayld, Gabbrath Meat, Rockfin Tooth and Bztavian Stinger (Dho Gates E-10); 200 Verdigris Stones, 2,500 High-Purity Bayld, Yggdreant Bole, Waktza Crest and Cehuetzi Pelt (Moh Gates K-10); 200 Wailing Stones, 9,999 High-Purity Bayld and a Pristine Yggrete Crystal (Sih Gates K-11).",
+    },
+
+    ado_rla_it_sets_my_heart_aflutter = { -- Local patch: Adoulin quests
+        "Speak with Saldinor in Rala Waterways (F-10); the nearest entrance is Western Adoulin (I-12), by the Rent-a-Room waypoint.",
+        "Trade him 2 Twitherym Wings to complete the quest. They're on the Auction House (Materials, Clothcraft) or drop from Twitherym in Ceizak Battlegrounds (G-10) or Yahse Hunting Grounds (I-8). The quest repeats after A Good Pair of Crocs and A Shot in the Dark.",
+    },
+
+    ado_rla_fertile_ground = { -- Local patch: Adoulin quests
+        "Speak with Chalvava in Rala Waterways (F-11); the nearest entrance is Western Adoulin (I-12), by the Rent-a-Room. If she only talks about the Blightberry, speak with her again. Finish Keep Your Bloomers On, Erisa first, as it can block this quest.",
+        "Speak with Shipilolo in front of the Inventors' Coalition, Western Adoulin (J-9), for the key item Bottle of fertilizer X.",
+        "Return to Chalvava to complete the quest.",
+    },
 }
 
 return Q
