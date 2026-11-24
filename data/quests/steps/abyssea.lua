@@ -182,6 +182,170 @@ Q.STEPS = {
         "Defeat one of Cuelebre, Adze, Minhocao, Chukwa or Mictlantecuhtli for the key item Bloodied arrow (a Crimson bloodstone on later runs).",
         "Return to Kupipi to complete the quest.",
     },
+
+    -- Scars of Abyssea zone quests (BG-Wiki).
+
+    aby_vun_a_ward_to_end_all_wards = { -- Local patch: Abyssea quests
+        "Speak with Belgidiveau at the base camp by Veridical Conflux #01 in Abyssea - Vunkerl (F-4).",
+        "Trade him one Abyssea monster drop to complete the quest; most first-tier pop items work, but Magian Trial items don't. High-strength items such as Black Whisker, Gory Pincer or Mocking Beak give the most. Sanguinets and Amoeban Pseudopods from the nearby Stream Amoebans also work, and about 50 completions max Vunkerl fame. You can repeat it without zoning.",
+    },
+
+    aby_vun_the_boxwatchers_behest = { -- Local patch: Abyssea quests
+        "Speak with Deraquien at the base camp by Conflux #01 in Abyssea - Vunkerl (F-4) and choose a supply pack: Pocket (-24% movement speed), Standard (-48%) or Hefty (-72%). Heavier packs pay more Cruor.",
+        "Walk to Elmemague near Veridical Conflux #00 (I-9) for the key item Letter of receipt and Flee. Don't use a Conflux on the way, or the pack turns to slag and you fail; zoning or logging out also resets it.",
+        "Return to Deraquien (now you can use a Conflux) to complete the quest. You can repeat it without zoning. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_vun_his_bridge_his_beloved = { -- Local patch: Abyssea quests
+        "Speak with Cheupirudaux near Conflux #04 or #08 in Abyssea - Vunkerl (E-7) for the key item Woodworker's belt; the first time he also gives you 2 Viscous Spittle.",
+        "Examine the Derelict Bridge at (F-7). If it creaks, trade it 2 Viscous Spittle; if it wavers, 4; if it crumbles, 5. Spitting Spiders east of Conflux #05 drop more.",
+        "Return to Cheupirudaux to complete the quest and receive the key item Crimson abyssite of lenity. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_vun_bad_communication = { -- Local patch: Abyssea quests
+        "Speak with Ferdechiond near Conflux #00 in Abyssea - Vunkerl (I-9) for the key item Espionage pearlsack. The clock starts now.",
+        "Examine the three ??? he marks on your map, at (H-10), (G-8) and (E-11). Finishing the last one within 7 minutes pays the most, 8 to 9 minutes less, and 10 or more the least.",
+        "Return to Ferdechiond to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_vun_family_ties = { -- Local patch: Abyssea quests
+        "After For Want of a Pot in Abyssea - Attohwa, speak with Teigero-Bangero in Abyssea - Vunkerl (E-7), southwest of Conflux #08 past the Helter-skelters, for the key item Smudged letter.",
+        "In Abyssea - Attohwa, deliver the letter to Naruru at the entrance for the key item Yellow linkpearl.",
+        "Return to Teigero-Bangero to complete the quest and receive the Taru Tot Toyset.",
+        "Optional: in Abyssea - Misareaux, trade the toyset (you keep it) to Panta-Putta, who walks from Conflux #00 to #04 to #07 and back, for the key item Jester's hat, then trade that to Naruru in Abyssea - Attohwa for a Jester's Hat.",
+    },
+
+    aby_vun_aqua_pura = { -- Local patch: Abyssea quests
+        "Speak with High Bear near Conflux #00 in Abyssea - Vunkerl (I-9).",
+        "Examine the three Watergrass spots, in any order: (E-5) by Conflux #01, (G-10) by Conflux #05, and the northeast corner of (F-13) by Conflux #06.",
+        "Return to High Bear to complete the quest.",
+    },
+
+    aby_vun_aqua_puraga = { -- Local patch: Abyssea quests
+        "Wait for the next game day after Aqua Pura, then speak with High Bear near Conflux #00 in Abyssea - Vunkerl (I-9).",
+        "Examine one Watergrass and note what you see. (E-5): yellowish powder, beastly footprints or slimy leaves. (G-10): raindrops, gunpowder or a curious ooze. (F-13): ash-coated leaves, rotted fruit or malodorous soil.",
+        "Report to High Bear. If his choices don't match the spot you checked, answer Nothing of note, then check the spot whose observations he lists and report again with the right one.",
+        "Wait for the game day to change (00:00), with no need to zone, and speak with him to complete the quest. You can repeat it without zoning. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_vun_whither_the_whisker = { -- Local patch: Abyssea quests
+        "Speak with Rahal in Abyssea - Vunkerl (F-4).",
+        "Trade him a Black Whisker, dropped by the Slaughterous Smilodons northeast of Conflux #04 at (G-8) or bought on the Auction House, to complete the quest and receive the key item Crimson abyssite of celerity.",
+    },
+
+    aby_vun_scattered_shells_scattered_mind = { -- Local patch: Abyssea quests
+        "Speak with Aladoverre in Abyssea - Vunkerl (E-7), near Conflux #08.",
+        "Find the key items Chipped linkshell, Cracked linkshell and Grimy linkshell at ??? spots; each ??? gives one. Three spots never move: among the Helter-skelters near Conflux #08, between the Peapuks and Russet Rarabs northwest of Conflux #06, and among the Aestutaur near Conflux #04.",
+        "Return to Aladoverre to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_att_wayward_wares = { -- Local patch: Abyssea quests
+        "Speak with Chapi Galepilai in Abyssea - Attohwa (G-10).",
+        "Examine at least one of the three Supply Points around the Crevice Amoebans and Treacle Slugs: one at (G-8) and two at (F-9). The more packs you bring back, the bigger the reward.",
+        "Speak with Morlepiche at Veridical Conflux #00 to complete the quest.",
+    },
+
+    aby_att_looking_for_lookouts = { -- Local patch: Abyssea quests
+        "Speak with Colti at Veridical Conflux #08 in Abyssea - Attohwa (H-8) for 5 Parradamo supply pack key items.",
+        "Speak with the five Resistance Fighters around the Parradamo Tor: at the southern base (J-9), partway up the southern base on the cliff (J-9), near the top of the western face (J-8), halfway up the eastern face (K-8), and at the eastern base (K-9).",
+        "Return to Colti to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_att_flown_the_coop = { -- Local patch: Abyssea quests
+        "Speak with Brutus at Veridical Conflux #08 in Abyssea - Attohwa (H-8) for Gysahl Greens. If you've never been up there, Red Ghost teleports you above the ledge.",
+        "Trade the greens to a Chocobo Spoor around (I-8), (I-9) or (J-13); the nearest is just out of the southeast tunnel from Brutus. A Chocobo appears.",
+        "Sneak up behind it while it stops to look around and examine it. It sees through Invisible and runs if it spots you; after too many scares you need more of your own greens, with a one-minute wait.",
+        "Return to Brutus to complete the quest; party members (not other alliance parties) get credit too. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_att_threadbare_tribulations = { -- Local patch: Abyssea quests
+        "Speak with Ponono at Veridical Conflux #08 in Abyssea - Attohwa (H-7); Red Ghost takes you up the ledge if you've never been there.",
+        "Trade her 3 Amoeban Pseudopods, from the Crevice Amoebans southeast and southwest of Conflux #00 or the Auction House, to complete the quest. You can repeat it without zoning; about 25 completions max Attohwa fame. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_att_an_offer_you_cant_refuse = { -- Local patch: Abyssea quests
+        "Speak with Garnev at Veridical Conflux #00 in Abyssea - Attohwa (F-9).",
+        "Trade him a Malachite, from gold Sturdy Pyxides or Attohwa notorious monsters like Maahes, to complete the quest and receive an Elite Beret. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_att_something_in_the_air = { -- Local patch: Abyssea quests
+        "Speak with Yoran-Oran at the base camp of Abyssea - Attohwa (G-10).",
+        "Examine the Gasponia flowers around (F-8)/(F-9), near Conflux #00, until you get the key item Gasponia stamen.",
+        "Return to Yoran-Oran to complete the quest.",
+    },
+
+    aby_att_an_acrididaen_anodyne = { -- Local patch: Abyssea quests
+        "Speak with Yoran-Oran at the base camp of Abyssea - Attohwa (G-10). Jakaka (I-10) can tell you more.",
+        "Go to the small grassy patch by the bones in the southeast of (I-10); near Conflux #03 you may have to wait for the smoke at (J-9) to clear. Move around using /clap until a glowing Rockhopper appears, then examine it for the key item Rockhopper.",
+        "Speak with Yoran-Oran for the key item Phial of counteragent, examine the Gasponia flowers around (F-8)/(F-9), and return to him to complete the quest. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_att_hazy_prospects = { -- Local patch: Abyssea quests
+        "Speak with Harith in Abyssea - Attohwa (G-10) for the key item Miasmal counteragent recipe.",
+        "Craft a Miasmal Counteragent while holding the recipe: a Salinator (Upih Khachla, Windurst Waters H-9), 2 Distilled Water and a Seashell (Shih Tayuun, Windurst Woods H-13).",
+        "Trade it to a path-blocking Dark Miasma around the Parradamo Tor; there's one near Conflux #03 and one right by Conflux #07. It vanishes if it worked.",
+        "Return to Harith to complete the quest and receive the key item Jade abyssite of lenity.",
+    },
+
+    aby_att_for_want_of_a_pot = { -- Local patch: Abyssea quests
+        "Speak with Naruru by Veridical Conflux #01 in Abyssea - Attohwa (G-10).",
+        "Examine the Cargo Crate at (H-8), south of Conflux #06 past the Spuks, for the key item Damaged stewpot, and give it to Naruru.",
+        "Trade a Sieglinde Putty (Alchemy 30, the Auction House, or Odoba at the Alchemy guild) to Ranpi-Monpi at the Cooking Guild in Windurst Waters (D-9) for the key item Naruru's stewpot.",
+        "Return to Naruru to complete the quest.",
+    },
+
+    aby_mis_missing_in_action = { -- Local patch: Abyssea quests
+        "Speak with Iron Eater in Abyssea - Misareaux (K-7) for the key item Iron Eater's pearlsack.",
+        "Speak with Mathurin at Conflux #03, Quasim in the northeast corner of (G-5) from Conflux #05, and Fariel in the northwest corner of (G-8), south of Conflux #06.",
+        "Return to Iron Eater to complete the quest.",
+    },
+
+    aby_mis_i_dream_of_flowers = { -- Local patch: Abyssea quests
+        "Speak with Goraow northeast of Conflux #05 in Abyssea - Misareaux (G-5) and trade him a Lilac.",
+        "Examine the Grassy Mound at (K-12), near Conflux #08, and trade it the Lilac.",
+        "Return to Goraow to complete the quest.",
+    },
+
+    aby_mis_destiny_odyssey = { -- Local patch: Abyssea quests
+        "Zone after I Dream of Flowers, then speak with Goraow in Abyssea - Misareaux (H-4).",
+        "Trade him a Sanguine Spike, dropped by the Peiste notorious monster Gukumatz northeast of Conflux #07, to complete the quest and receive the key item Sapphire abyssite of sojourn.",
+    },
+
+    aby_mis_unidentified_research_object = { -- Local patch: Abyssea quests
+        "Speak with Yurim at the base camp of Abyssea - Misareaux (K-7). She forgets what she needs; trading her an Apple Pie reminds her, but it's optional.",
+        "Trade her a Murex Spicule, from the Escarp Murex just west at (J-7), to complete the quest. Zone to repeat it; about 25 completions max Misareaux fame. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_mis_cookbook_of_hope_restoring = { -- Local patch: Abyssea quests
+        "Speak with Jonette by Conflux #03 in Abyssea - Misareaux (G-7).",
+        "Find the ??? for the key item Torn recipe page. It moves every 10 minutes in this order: among the spiders at (I-7) by Conflux #00, among the Colibri at (H-8), among the Peistes at (J-11), and among the Bugards at (K-11).",
+        "Return to Jonette to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_mis_smoke_over_the_coast = { -- Local patch: Abyssea quests
+        "Speak with Hungry Wolf near Conflux #03 in Abyssea - Misareaux (G-7).",
+        "Get a Galkan Sausage from the Auction House, or trade a Giant Sheep Meat to the ??? on the campfire at (E-7), near Conflux #06. Stop at almost done for a plain sausage, mouthwatering for +1, burnt for +2 or overpowering burnt for +3; it can burn at any time.",
+        "Trade the sausage (not a -1) to Hungry Wolf to complete the quest; better sausages pay more. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_mis_soil_and_green = { -- Local patch: Abyssea quests
+        "Speak with Sieglinde in Abyssea - Misareaux (K-7) for the key item Mineral gauge for dummies.",
+        "Examine a Logging Point (north or southeast of Conflux #05, north of #07, or west or south of #06) and note the gauge's color.",
+        "Return to Sieglinde. If it was red or yellow she gives you the key item Tube of alchemical fertilizer; examine a Logging Point again, any of them, and come back. If it was blue, you're done.",
+        "Speak with Sieglinde to complete the quest. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
+
+    aby_mis_dropping_the_bomb = { -- Local patch: Abyssea quests
+        "Speak with Veit northeast of Conflux #05 in Abyssea - Misareaux (H-4).",
+        "Fish Brine Crabs from the nearby stream (they ferociously bite; almost any rod and bait work) and defeat them for a Powder Casket; it's a rare drop, so Treasure Hunter helps.",
+        "Trade the casket to Veit to complete the quest. He may refuse one with moisture inside; bring another. Zone to repeat it.",
+    },
+
+    aby_mis_wanted_medical_supplies = { -- Local patch: Abyssea quests
+        "Speak with Yasuji near Conflux #03 in Abyssea - Misareaux (G-7).",
+        "Open blue Sturdy Pyxides by hand (not with a Forbidden Key) until one gives the key item Medical supply chest; higher-level ones give it more often, and peering inside doesn't show it.",
+        "Return to Yasuji to complete the quest and receive the key item Sapphire abyssite of merit. Zone to repeat it. Repeats can also give an Empyrean +1 seal.",
+    },
 }
 
 return Q

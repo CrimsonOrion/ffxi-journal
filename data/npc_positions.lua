@@ -865,7 +865,7 @@ return {
     ["Gimb"] = { { 252, -4.97, -44.04, -0.97 } }, -- Local patch: Outlands quests
     ["Babubu"] = { { 240, -175.19, 70.44, -3.32 } }, -- Local patch: Outlands quests
     ["Chef Nonberry"] = { { 159, -135.22, -92.23, 0.00 } }, -- Local patch: Outlands quests
-    ["Ponono"] = { { 241, -38.24, -120.95, -1.25 }, { 94, 156.07, -15.67, 1.00 } }, -- Local patch: Other quests
+    ["Ponono"] = { { 215, -10.51, 159.46, -3.66 }, { 241, -38.24, -120.95, -1.25 }, { 94, 156.07, -15.67, 1.00 } }, -- Local patch: Other quests
     ["Daa Bola the Seer"] = { { 151, -157.98, 193.46, -17.18 } }, -- Local patch: Other quests
     ["Yaya"] = { { 248, -18.77, -14.93, -2.60 } }, -- Local patch: Other quests
     ["Jimaida"] = { { 248, -17.34, -18.77, -2.60 } }, -- Local patch: Other quests
@@ -887,12 +887,12 @@ return {
     ["Collet"] = { { 244, -43.66, 106.96, 0.00 } }, -- Local patch: Jeuno quests
     ["Derrick"] = { { 245, -33.90, -6.13, -1.00 } }, -- Local patch: Jeuno quests
     ["Ilumida"] = { { 244, -75.04, 57.28, -1.20 } }, -- Local patch: Jeuno quests
-    ["Panta-Putta"] = { { 244, -59.73, 7.26, -0.25 }, { 245, -62.26, -140.00, -0.30 } }, -- Local patch: Jeuno quests
+    ["Panta-Putta"] = { { 216, 264.67, 218.17, -15.87 }, { 244, -59.73, 7.26, -0.25 }, { 245, -62.26, -140.00, -0.30 } }, -- Local patch: Jeuno quests
     ["Kurou-Morou"] = { { 245, -2.66, -30.14, -6.67 } }, -- Local patch: Jeuno quests
     ["Chululu"] = { { 245, -10.49, -43.99, -6.67 } }, -- Local patch: Jeuno quests
     ["Zauko"] = { { 245, -3.91, 14.23, 0.00 } }, -- Local patch: Jeuno quests
-    ["Naruru"] = { { 245, -54.72, -139.50, -0.11 } }, -- Local patch: Jeuno quests
-    ["Garnev"] = { { 245, 28.94, -34.83, 4.40 } }, -- Local patch: Jeuno quests
+    ["Naruru"] = { { 215, -163.54, -177.43, 19.62 }, { 245, -54.72, -139.50, -0.11 } }, -- Local patch: Jeuno quests
+    ["Garnev"] = { { 215, -289.95, 11.63, -5.44 }, { 245, 28.94, -34.83, 4.40 } }, -- Local patch: Jeuno quests
     ["Rouliette"] = { { 244, -21.23, 12.56, -1.50 } }, -- Local patch: Jeuno quests
     ["Karl"] = { { 246, -60.89, -8.91, 0.00 } }, -- Local patch: Jeuno quests
     ["Bluffnix"] = { { 245, -43.18, -113.00, 5.90 } }, -- Local patch: Jeuno quests
@@ -906,7 +906,7 @@ return {
     ["Omer"] = { { 245, -86.50, -119.82, 0.00 } }, -- Local patch: Jeuno quests
     ["Kuah Dakonsa"] = { { 245, -42.73, -65.88, 0.00 } }, -- Local patch: Jeuno quests
     ["Matoaka"] = { { 245, -37.20, -121.94, -6.10 } }, -- Local patch: Jeuno quests
-    ["Red Ghost"] = { { 246, -96.48, -3.33, 0.00 } }, -- Local patch: Jeuno quests
+    ["Red Ghost"] = { { 215, 23.00, 126.00, -1.00 }, { 246, -96.48, -3.33, 0.00 } }, -- Local patch: Jeuno quests
     ["Akta"] = { { 243, 7.02, -67.18, 0.00 } }, -- Local patch: Jeuno quests
     ["Khumo Daramasteh"] = { { 246, 23.84, 6.02, 0.00 } }, -- Local patch: Jeuno quests
     ["Ratoto"] = { { 244, 27.48, -32.52, -1.00 } }, -- Local patch: Jeuno quests
@@ -1051,4 +1051,17 @@ return {
     ["Diegai"] = { { 45, 73.23, 119.60, 15.32 } }, -- Local patch: Abyssea quests
     ["Baladanzo"] = { { 45, 287.68, -79.33, -16.89 } }, -- Local patch: Abyssea quests
     ["Baha Mannohl"] = { { 45, -13.45, 551.22, 37.07 } }, -- Local patch: Abyssea quests
+    ["Elmemague"] = { { 217, 166.77, -167.61, -38.99 } }, -- Local patch: Abyssea quests
+    ["Ferdechiond"] = { { 217, 167.63, -151.37, -38.26 } }, -- Local patch: Abyssea quests
+    ["Teigero-Bangero"] = { { 217, -555.97, 221.71, -46.19 } }, -- Local patch: Abyssea quests
+    ["Aladoverre"] = { { 217, -562.98, 222.04, -46.77 } }, -- Local patch: Abyssea quests
+    ["Chapi Galepilai"] = { { 215, -136.69, -168.05, 20.00 } }, -- Local patch: Abyssea quests
+    ["Morlepiche"] = { { 215, -303.00, 6.00, -5.00 } }, -- Local patch: Abyssea quests
+    ["Colti"] = { { 215, 0.33, 159.44, -4.00 } }, -- Local patch: Abyssea quests
+    ["Jakaka"] = { { 215, 46.07, -205.02, -4.89 } }, -- Local patch: Abyssea quests
+    ["Mathurin"] = { { 216, -58.09, 264.17, -30.27 } }, -- Local patch: Abyssea quests
+    ["Fariel"] = { { 216, -106.52, 94.05, -30.15 } }, -- Local patch: Abyssea quests
+    ["Sieglinde"] = { { 216, 647.80, 292.28, -15.84 } }, -- Local patch: Abyssea quests
+    ["Veit"] = { { 216, 42.64, 632.94, -24.01 } }, -- Local patch: Abyssea quests
+    ["Yasuji"] = { { 216, -80.61, 257.03, -30.43 } }, -- Local patch: Abyssea quests
 }

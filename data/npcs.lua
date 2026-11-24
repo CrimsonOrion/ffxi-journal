@@ -24,6 +24,7 @@ return {
     'Ajahkeem', -- Local patch: Jeuno quests
     'Ajithaam', -- Local patch: Jeuno quests
     'Akta', -- Local patch: Jeuno quests
+    'Aladoverre', -- Local patch: Abyssea quests
     'Aldo',
     'Alfesar',
     'Alib-Mufalib',
@@ -97,6 +98,7 @@ return {
     'Chalvava', -- Local patch: Adoulin quests
     'Chamama',
     'Chanteillie', -- Local patch: Adoulin quests
+    'Chapi Galepilai', -- Local patch: Abyssea quests
     'Chasalvige',
     'Chelidoine', -- Local patch: Adoulin quests
     'Chipmy-Popmy',
@@ -111,6 +113,7 @@ return {
     'Cleades',
     'Clemmar', -- Local patch: Adoulin quests
     'Collet', -- Local patch: Jeuno quests
+    'Colti', -- Local patch: Abyssea quests
     'Constance', -- Local patch: Jeuno quests
     'Corann',
     'Corpo-Vorpo', -- Local patch: Adoulin quests
@@ -148,6 +151,7 @@ return {
     'Edigey',
     'Elijah',
     'Elki',
+    'Elmemague', -- Local patch: Abyssea quests
     'Elmric',
     'Elysia',
     'Emjook-Renook', -- Local patch: Adoulin quests
@@ -168,11 +172,13 @@ return {
     'Excenmille',
     'Fallion', -- Local patch: Adoulin quests
     'Fari-Wari',
+    'Fariel', -- Local patch: Abyssea quests
     'Farso-Dafarso', -- Local patch: Adoulin quests
     'Faursel',
     'Felmsy', -- Local patch: Adoulin quests
     'Femitte',
     'Ferchinne',
+    'Ferdechiond', -- Local patch: Abyssea quests
     'Ferghus',
     'Ferrol',
     'Fhe Maksojha',
@@ -223,6 +229,7 @@ return {
     'Inthius', -- Local patch: Adoulin quests
     'Irate Destrier', -- Local patch: Adoulin quests
     'Jabbar', -- Local patch: Jeuno quests
+    'Jakaka', -- Local patch: Abyssea quests
     'Javolio', -- Local patch: Adoulin quests
     'Jhen Durheka', -- Local patch: Adoulin quests
     'Jillia', -- Local patch: Adoulin quests
@@ -250,6 +257,7 @@ return {
     'Mano-Amano', -- Local patch: Adoulin quests
     'Margret', -- Local patch: Adoulin quests
     'Mastan', -- Local patch: Adoulin quests
+    'Mathurin', -- Local patch: Abyssea quests
     'Matoaka', -- Local patch: Jeuno quests
     "Mawl'gofaur", -- Local patch: Jeuno quests
     'Memeroon', -- Local patch: Aht Urhgan quests
@@ -258,6 +266,7 @@ return {
     'Midras', -- Local patch: Adoulin quests
     'Migliorozz', -- Local patch: Jeuno quests
     'Mischief Marker', -- Local patch: Adoulin quests
+    'Morlepiche', -- Local patch: Abyssea quests
     'Muhoho', -- Local patch: Jeuno quests
     'Musto-Rusto', -- Local patch: Adoulin quests
     'Naruru', -- Local patch: Jeuno quests
@@ -304,6 +313,7 @@ return {
     'Saldinor', -- Local patch: Adoulin quests
     'Sharuru', -- Local patch: Adoulin quests
     'Shipilolo', -- Local patch: Adoulin quests
+    'Sieglinde', -- Local patch: Abyssea quests
     'Silver Owl', -- Local patch: Abyssea quests
     'Sivalda', -- Local patch: Adoulin quests
     'Souren', -- Local patch: Jeuno quests
@@ -620,6 +630,7 @@ return {
     'Vamorcote',
     'Vastran', -- Local patch: Adoulin quests
     'Vaulois', -- Local patch: Adoulin quests
+    'Veit', -- Local patch: Abyssea quests
     'Velda-Galda',
     'Veldeth', -- Local patch: Adoulin quests
     'Vera',
@@ -643,6 +654,7 @@ return {
     'Wobke', -- Local patch: Jeuno quests
     'Wolfram',
     'Wyatt',
+    'Yasuji', -- Local patch: Abyssea quests
     'Yazan',
     'Yeggah Dolashi',
     'Yocile', -- Local patch: Adoulin quests
