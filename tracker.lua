@@ -19,6 +19,7 @@ local quest_categories = {
     'crystal_war',
     'adoulin',
     'coalition',
+    'abyssea',
 }
 
 local quest_category_names = {
@@ -32,6 +33,7 @@ local quest_category_names = {
     crystal_war = 'Crystal War',
     adoulin = 'Adoulin',
     coalition = 'Coalition',
+    abyssea = 'Abyssea',
 }
 
 -- The server's quest areas do not always match Journal categories.

@@ -59,6 +59,8 @@ return {
     'Audibert', -- Local patch: Adoulin quests
     'Aurege',
     'Ayame',
+    'Baha Mannohl', -- Local patch: Abyssea quests
+    'Baladanzo', -- Local patch: Abyssea quests
     'Balasiel',
     'Baldric',
     'Baraka',
@@ -135,6 +137,7 @@ return {
     'Dewalt', -- Local patch: Adoulin quests
     'Dhea Prandoleh',
     'Diederik',
+    'Diegai', -- Local patch: Abyssea quests
     'Diordinne',
     'Dkhaaya',
     'Dodmos',
@@ -209,6 +212,7 @@ return {
     'Halshaob', -- Local patch: Aht Urhgan quests
     'Hauberliond', -- Local patch: Crystal War quests
     'Hegnor', -- Local patch: Adoulin quests
+    'Helga', -- Local patch: Abyssea quests
     'Helina', -- Local patch: Adoulin quests
     'Hishahma', -- Local patch: Aht Urhgan quests
     'Hujette', -- Local patch: Adoulin quests
@@ -225,6 +229,7 @@ return {
     'Jorin', -- Local patch: Adoulin quests
     'Jozhud', -- Local patch: Adoulin quests
     'Jubilant Pixie', -- Local patch: Crystal War quests
+    'Julio', -- Local patch: Abyssea quests
     'Kanil', -- Local patch: Adoulin quests
     'Karl', -- Local patch: Jeuno quests
     'Khumo Daramasteh', -- Local patch: Jeuno quests
@@ -280,6 +285,7 @@ return {
     'Patient Snake', -- Local patch: Adoulin quests
     'Peladi Shalmohr', -- Local patch: Adoulin quests
     'Peppe-Aleppe', -- Local patch: Adoulin quests
+    'Piketo-Puketo', -- Local patch: Abyssea quests
     'Pitantimand', -- Local patch: Jeuno quests
     'Polished Pebble', -- Local patch: Adoulin quests
     'Pudith', -- Local patch: Adoulin quests
@@ -298,6 +304,7 @@ return {
     'Saldinor', -- Local patch: Adoulin quests
     'Sharuru', -- Local patch: Adoulin quests
     'Shipilolo', -- Local patch: Adoulin quests
+    'Silver Owl', -- Local patch: Abyssea quests
     'Sivalda', -- Local patch: Adoulin quests
     'Souren', -- Local patch: Jeuno quests
     'Svenja', -- Local patch: Adoulin quests

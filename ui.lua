@@ -453,6 +453,7 @@ local journal_text_banners = {
     outlands = 'Outlands',
     other = 'Other Areas',
     coalition = 'Coalition',
+    abyssea = 'Abyssea',
 }
 
 -- How many times bigger than the usual width a logo is drawn. The banners
