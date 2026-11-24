@@ -758,6 +758,19 @@ Q.STEPS = {
         "Cyan Chip: Treasure Chest monsters (55-60) on several floors from the (G-9) tower, or the Archaic Chest (80) from the (F-7) tower three floors down, at (I-6) and (G-6).",
         "Trade all three chips to Cid in Metalworks (H-8) to complete the quest and receive a CCB Polymer Pump. It's Rare, so trade it away or put it in a delivery box before getting another.",
     },
+
+    bsz_pb_past_perfect = { -- Local patch: missing quests
+        "Speak with Evi in Port Bastok (H-6), then with Rafaela next to him, then with Evi again.",
+        "Touch the ??? near the windmill in Konschtat Highlands (G-8) for the temporary key item Tattered mission orders. The Signpost Marks the Spot also has you click a spot in the Highlands, so you can do both together.",
+        "Return to Evi to complete the quest and receive Scale Mail.",
+    },
+
+    bsz_bm_altanas_sorrow = { -- Local patch: missing quests
+        "At level 10 or higher, speak with Virnage in the Bat's Lair Inn, Bastok Mines (I-5), upstairs on Ore Street.",
+        "Touch the ??? in Garlaige Citadel (H-8), Map 1, in a room full of bats (bring Sneak), for the key item Bucket of divine paint.",
+        "Return to Virnage for the key item Letter from Virnage.",
+        "Speak with Eperdur in the cathedral of Northern San d'Oria (M-7) to complete the quest.",
+    },
 }
 
 return Q

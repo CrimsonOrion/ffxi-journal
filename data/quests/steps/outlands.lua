@@ -516,6 +516,13 @@ Q.STEPS = {
         "Return to Gushing Spring to complete the quest.",
     },
 
+    out_nrg_the_sahagins_key = { -- Local patch: missing quests
+        "Speak with Gimb in Norg (H-9).",
+        "In Sea Serpent Grotto, speak with Bou the Righteous in the Charybdis room, Map 4 (H-11), past the Gold Door (I-11). A Gold Beastcoin opens the door and isn't used up; the level 125 Unity warp also works. From the Ethereal Junction, drop off two cliffs, turn south off the third, then follow the left wall.",
+        "Without leaving the zone, go through the Silver Door (H-3), Map 2, with a Silver Beastcoin (examine it until you see something silver glittering) and speak with Hurr the Betrayer.",
+        "Trade Hurr 3 Mythril Beastcoins and a Norg Shell for the Sahagin Key. Later keys cost a Gold Beastcoin and a Norg Shell. The key opens the Ornamental Door (J-11) and breaks when used.",
+    },
+
 }
 
 return Q

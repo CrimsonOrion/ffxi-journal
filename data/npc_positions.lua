@@ -929,4 +929,9 @@ return {
     ["Callisto"] = { { 89, -102.00, 538.00, -11.90 } }, -- Local patch: Crystal War quests
     ["Mham Lahrih"] = { { 98, 378.64, -183.49, 10.60 } }, -- Local patch: Crystal War quests
     ["Landeric"] = { { 82, -142.40, 491.03, 1.57 } }, -- Local patch: Crystal War quests
+    ["Gondebaud"] = { { 230, 123.75, 92.13, 0.00 } }, -- Local patch: missing quests
+    ["Evi"] = { { 236, -4.66, 1.66, -2.10 } }, -- Local patch: missing quests
+    ["Rafaela"] = { { 236, -3.41, 1.53, -2.10 } }, -- Local patch: missing quests
+    ["Bou the Righteous"] = { { 176, -125.03, -334.78, 46.57 } }, -- Local patch: missing quests
+    ["Hurr the Betrayer"] = { { 176, 305.88, 234.28, 26.77 } }, -- Local patch: missing quests
 }

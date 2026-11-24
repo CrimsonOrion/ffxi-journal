@@ -662,6 +662,20 @@ Q.STEPS = {
         "If you choose correctly, you are given 500 gil. If you choose incorrectly, you fail the quest.",
     },
 
+    sdz_ps_the_competition = { -- Local patch: missing quests
+        "The quest begins with Joulet (for The Competition; Gallijaux starts The Rivalry) in Port San d'Oria (H-8).",
+        "Trade whichever brother you want to help Moat Carp and/or Forest Carp x10,000.",
+        "Ufanne in Port San d'Oria (H-8) keeps track of how many fish you have turned in, and to which brother. You may need to speak to her multiple times.",
+        "Speaking to either brother tells you how many carp he has been traded by all players since the last server maintenance.",
+    },
+
+    sdz_ss_trust_sandoria = { -- Local patch: missing quests
+        "You must be level 5 or higher on any job.",
+        "Speak with Gondebaud in Southern San d'Oria (L-6); you receive the key item Red institute card.",
+        "Go to Northern San d'Oria and speak with Excenmille (D-9). If this is not your first Trust quest, you are finished here and receive the key item San d'Oria Trust permit.",
+        "If this is your first Trust quest, you must use the Trust spell Excenmille in West Ronfaure or East Ronfaure, then return to Excenmille to receive the San d'Oria Trust permit.",
+    },
+
 }
 
 return Q

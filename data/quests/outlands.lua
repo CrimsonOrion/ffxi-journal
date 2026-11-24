@@ -531,6 +531,19 @@ M.zones = {
                 prereq = "VW Op. 115: Li'Telor Variant",
                 reward = '',
             },
+
+            { -- Local patch: missing quests
+                id = 'out_nrg_the_sahagins_key',
+                name = "The Sahagin's Key",
+                area = 'outlands',
+                zone = 'Norg',
+                loc = 'Norg (H-9)',
+                npc = 'Gimb',
+                req = '',
+                prereq = '',
+                reward = 'Sahagin Key',
+                items = 'Silver Beastcoin, Mythril Beastcoin x3, Norg Shell',
+            },
         },
     },
 
@@ -1030,6 +1043,11 @@ local tracker_data = {
     out_nrg_skyward_ho = {
         area = 'outlands',
         bit = 104,
+    },
+
+    out_nrg_the_sahagins_key = {
+        area = 'outlands',
+        bit = 128,
     },
 
     -- --------------------------------------------------------

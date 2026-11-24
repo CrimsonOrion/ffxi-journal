@@ -1488,6 +1488,36 @@ local M = {
     trackable = true,
 },
 
+{ -- Local patch: missing quests
+    id = 'bsz_pb_past_perfect',
+    name = 'Past Perfect',
+    area = 'bastok',
+    zone = 'Port Bastok',
+    loc = 'Port Bastok (H-6)',
+    npc = 'Evi',
+    req = '',
+    prereq = '',
+    reward = 'Scale Mail',
+    tracker_area = 'bastok',
+    tracker_id = 23,
+    trackable = true,
+},
+
+{ -- Local patch: missing quests
+    id = 'bsz_bm_altanas_sorrow',
+    name = "Altana's Sorrow",
+    area = 'bastok',
+    zone = 'Bastok Mines',
+    loc = 'Bastok Mines (I-5)',
+    npc = 'Virnage',
+    req = 'Lv.10+',
+    prereq = '',
+    reward = 'Scroll of Teleport-Dem, title Pilgrim to Dem',
+    tracker_area = 'bastok',
+    tracker_id = 49,
+    trackable = true,
+},
+
 }
 
 return M

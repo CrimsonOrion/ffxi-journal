@@ -1020,11 +1020,11 @@ M = {
 
     {
         id = 'sdz_ps_the_rivalry',
-        name = 'The Rivalry/The Competition',
+        name = 'The Rivalry',
         area = 'sandoria',
         zone = "Port San d'Oria",
         loc = "Port San d'Oria (H-8)",
-        npc = 'Joulet or Gallijaux',
+        npc = 'Gallijaux',
         req = '',
         prereq = '',
         reward = "Lu Shang's Fishing Rod",
@@ -1313,6 +1313,35 @@ M = {
 
         tracker_area = 'sandoria',
         tracker_id = 65,
+    },
+    { -- Local patch: missing quests
+        id = 'sdz_ps_the_competition',
+        name = 'The Competition',
+        area = 'sandoria',
+        zone = "Port San d'Oria",
+        loc = "Port San d'Oria (H-8)",
+        npc = 'Joulet',
+        req = '',
+        prereq = '',
+        reward = "Lu Shang's Fishing Rod",
+        tracker_area = 'sandoria',
+        tracker_id = 76,
+        trackable = true,
+    },
+
+    { -- Local patch: missing quests
+        id = 'sdz_ss_trust_sandoria',
+        name = "Trust: San d'Oria",
+        area = 'sandoria',
+        zone = "Southern San d'Oria",
+        loc = "Southern San d'Oria (L-6)",
+        npc = 'Gondebaud',
+        req = 'Lv.5+',
+        prereq = '',
+        reward = "San d'Oria Trust permit, Trust: Excenmille, title The Trustworthy",
+        tracker_area = 'sandoria',
+        tracker_id = 119,
+        trackable = true,
     },
 }
 

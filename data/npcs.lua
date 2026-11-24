@@ -65,6 +65,7 @@ return {
     'Blatherix',
     'Bluffnix', -- Local patch: Jeuno quests
     'Bostillette',
+    'Bou the Righteous', -- Local patch: missing quests
     'Bozz', -- Local patch: Jeuno quests
     'Brenton',
     'Brutus',
@@ -129,6 +130,7 @@ return {
     'Erlene',
     'Erminold',
     "Esha'ntarl",
+    'Evi', -- Local patch: missing quests
     'Excenmille',
     'Fari-Wari',
     'Faursel',
@@ -159,10 +161,12 @@ return {
     'Gerbaum',
     'Ghanraam', -- Local patch: Jeuno quests
     'Ghatsad',
+    'Gondebaud', -- Local patch: missing quests
     'Guttrix', -- Local patch: Jeuno quests
     'Halshaob', -- Local patch: Aht Urhgan quests
     'Hauberliond', -- Local patch: Crystal War quests
     'Hishahma', -- Local patch: Aht Urhgan quests
+    'Hurr the Betrayer', -- Local patch: missing quests
     'Ilumida', -- Local patch: Jeuno quests
     'Jabbar', -- Local patch: Jeuno quests
     'Jubilant Pixie', -- Local patch: Crystal War quests
@@ -191,6 +195,7 @@ return {
     'Panta-Putta', -- Local patch: Jeuno quests
     'Paparoon', -- Local patch: Aht Urhgan quests
     'Pitantimand', -- Local patch: Jeuno quests
+    'Rafaela', -- Local patch: missing quests
     'Rakuru-Rakoru', -- Local patch: Jeuno quests
     'Ratoto', -- Local patch: Jeuno quests
     'Red Ghost', -- Local patch: Jeuno quests
