@@ -994,11 +994,18 @@ Q.STEPS = {
     },
 
     jeu_rg_beyond_the_sun = {
-        "This quest requires the Rise of the Zilart pack. Talk to Maat at (H-5) in Ru'Lude Gardens on each of the 15 jobs that existed before Treasures of Aht Urhgan, and defeat him with each one.",
-        "The level required to fight Maat is at least level 66.",
-        "Talk to Maat before every fight: he asks for that job's Testimony and names the battlefield. After your first win each job has an assigned arena, and you have to walk, use the Tenshodo warp or a Home Point to get there: Balga's Dais for MNK/WHM/SMN, Horlais Peak for WAR/BLM/RNG, Qu'Bia Arena for PLD/DRK/BRD, Waughroon Shrine for RDM/THF/BST, Chamber of Oracles for SAM/NIN/DRG. The fights are like Shattering Stars, without the level cap.",
-        "To check which jobs you have beaten Maat with, enter the Feretory and speak with Teyrnon. Instincts associated with the jobs on which you have defeated Maat cost 5,000 Infamy instead of 10,000.",
-        "Upon defeating Maat for the last time, speak with him to receive the cutscene and your new Maat's Cap.",
+        "This quest needs the Rise of the Zilart pack. Defeat Maat once on each of the 15 jobs that existed before Treasures of Aht Urhgan, each at level 66 or higher; there is no level cap in these fights.",
+        "To see which jobs you have already beaten Maat with, enter the Feretory and speak with Teyrnon. Instincts for those jobs cost 5,000 Infamy instead of 10,000.",
+        "Change to the job you want to fight with and get that job's Testimony (Warrior's Testimony, Monk's Testimony, etc.). A Testimony is kept after a win and can start up to three fights before it tears.",
+        "Talk to Maat at (H-5) in Ru'Lude Gardens before every fight. He asks for the Testimony and names the battlefield, but after your first win he no longer teleports you; walk, use the Tenshodo warp or a Home Point to get there.",
+        "Monk, White Mage or Summoner: go to Balga's Dais and trade the Testimony to the Burning Circle.",
+        "Warrior, Black Mage or Ranger: go to Horlais Peak and trade the Testimony to the Burning Circle.",
+        "Paladin, Dark Knight or Bard: go to Qu'Bia Arena and trade the Testimony to the Burning Circle.",
+        "Red Mage, Thief or Beastmaster: go to Waughroon Shrine and trade the Testimony to the Burning Circle.",
+        "Samurai, Ninja or Dragoon: go to the Chamber of Oracles and trade the Testimony to the Burning Circle.",
+        "The fight is the same as Shattering Stars: one on one, 10 minutes, your support job, buffs and TP are removed, and Maat starts using Asuran Fists after about 5 minutes. A White Mage can win by surviving 5 minutes after pulling him, and a Thief by stealing his Scroll of Instant Warp.",
+        "After beating Maat on six or more jobs, speak with him in Ru'Lude Gardens to learn the Trust Maat.",
+        "After beating Maat on all 15 jobs, speak with him in Ru'Lude Gardens for the cutscene, your Maat's Cap and the title Ultimate Champion of the World.",
     },
 
     jeu_rg_new_worlds_await = { -- Local patch: Jeuno quests

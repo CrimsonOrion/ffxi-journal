@@ -1630,7 +1630,7 @@ M.zones = {
                 npc = 'Maat',
                 req = 'Rise of Zilart required, defeat Maat on all 15 pre-ToAU jobs',
                 prereq = 'Shattering Stars',
-                reward = "Maat's Cap",
+                reward = "Maat's Cap, title Ultimate Champion of the World (Trust: Maat after six jobs)",
             },
 
             {
