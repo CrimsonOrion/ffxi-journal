@@ -42,7 +42,7 @@ Q.STEPS = {
         "Speak with Fyi Chalmwoh in the Goldsmithing shop in Mhaura (G-8) to begin the quest, then speak to her again. You need Windurst fame level 4. She wants to build a mannequin that rivals those of times past, and it is your job to gather information on how to make one.",
         "Speak with Ramona in Selbina (H-9), inside the Weavers' Guild, to receive the Ye Olde Mannequin Catalogue.",
         "Speak with Cheupirudaux in Northern San d'Oria (F-3), near Home Point #4, to receive the Mannequin joint diagrams.",
-        "Gather all 5 pieces, a Mannequin Body, Feet, Hands, Head and Legs, and trade them to Fyi Chalmwoh. They can also be bought from player bazaars.",
+        "Gather all 5 pieces, a Mannequin Body, Mannequin Feet, Mannequin Hands, Mannequin Head and Mannequin Legs, and trade them to Fyi Chalmwoh. They can also be bought from player bazaars.",
         "Zone and speak with Fyi Chalmwoh again to receive your reward, a mannequin matching your race and gender.",
     },
 
