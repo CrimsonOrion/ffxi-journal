@@ -914,7 +914,7 @@ M = {
         req = '',
         prereq = '',
         reward = 'Lauan Shield',
-        items = 'Parcel for the Magic Shop, Parcel for the Auction House, Parcel for the Pub',
+        items = 'Magic Shop Parcel, Auction Parcel, Pub Parcel',
 
         tracker_area = 'sandoria',
         tracker_id = 12,

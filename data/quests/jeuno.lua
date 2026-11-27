@@ -812,7 +812,7 @@ M.zones = {
                 req = 'Lv.20+',
                 prereq = '',
                 reward = 'Chocobo license (Key Item)',
-                items = 'Gausebit Wildgrass',
+                items = 'Gausebit Grass',
             },
 
             {
@@ -1569,7 +1569,7 @@ M.zones = {
                 req = 'Lv.50+',
                 prereq = '',
                 reward = 'Raises level cap to 55',
-                items = 'Bomb Coal, Exoray Mold, Piece of Ancient Papyrus',
+                items = 'Bomb Coal, Exoray Mold, Ancient Papyrus',
             },
 
             {

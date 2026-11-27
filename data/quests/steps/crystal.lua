@@ -340,7 +340,7 @@ Q.STEPS = {
         'Speak with ' .. ACTOR.LOUXIARD_WOTG.text .. ' in Southern San d\'Oria (S).',
         'Leave the area and return to ' .. ACTOR.LOUXIARD_WOTG.text .. '.',
         'Speak with ' .. ACTOR.RHOLONT_WOTG.text .. '.',
-        'Trade Plumes d\'Or to Machionage (C-6), Louxiard (G-7), Illeuse (H-9), Rongelouts N Distaud (I-9), Sabiliont (I-11), Elnonde (K-9), and Loillie (K-9 via the stairs at L-8).',
+        'Trade a Plume d\'Or to each of Machionage (C-6), Louxiard (G-7), Illeuse (H-9), Rongelouts N Distaud (I-9), Sabiliont (I-11), Elnonde (K-9), and Loillie (K-9 via the stairs at L-8).',
         'Return to ' .. ACTOR.RHOLONT_WOTG.text .. '.',
     },
 

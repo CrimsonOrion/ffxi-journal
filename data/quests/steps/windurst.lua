@@ -388,9 +388,9 @@ Q.STEPS = {
         "Completing Reap What You Sow is not required to start this quest. It cannot be started while Making the Grade is active.",
         "Speak with Mashuu-Ajuu (K-6) and then Paku-Nakku to start the quest.",
         "Speak with Maabu-Sonbu in Port Windurst (E-7), near Home Point #1.",
-        "Harvest at the ??? at (E-5) to obtain the Blazing Pepper.",
-        "Trade the Blazing Pepper to Paku-Nakku, then speak with Paku-Nakku again.",
-        "The quest can also be completed without the Blazing Pepper: trade Paku-Nakku a remedy, go back to Maabu-Sonbu, who points you to Pechiru-Mashiru for advice, then go back to Paku-Nakku, choose \"The automaton butler did it!\" and get the reward from Pechiru-Mashiru. Trading the remedy locks you out of trading the Blazing Pepper.",
+        "Harvest at the ??? at (E-5) to obtain the Blazing Peppers.",
+        "Trade the Blazing Peppers to Paku-Nakku, then speak with Paku-Nakku again.",
+        "The quest can also be completed without the Blazing Peppers: trade Paku-Nakku a remedy, go back to Maabu-Sonbu, who points you to Pechiru-Mashiru for advice, then go back to Paku-Nakku, choose \"The automaton butler did it!\" and get the reward from Pechiru-Mashiru. Trading the remedy locks you out of trading the Blazing Peppers.",
     },
 
     wq_wd_can_cardians_cry = {
