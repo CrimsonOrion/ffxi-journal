@@ -78,10 +78,26 @@ local function normalize_with_map(text)
     return table.concat(out), map
 end
 
+-- Length of a plural ending ("s" or "es") right after a name ending at e,
+-- or 0. "Beastmen's Seals" then matches the item Beastmen's Seal.
+local function plural_length(haystack, e)
+    for _, ending in ipairs({ 's', 'es' }) do
+        if haystack:sub(e + 1, e + #ending) == ending
+            and not is_word_char(haystack:sub(e + #ending + 1, e + #ending + 1)) then
+            return #ending
+        end
+    end
+
+    return 0
+end
+
 -- Names from index found in the text, as { s = first, e = last } in the
 -- original text. Where two names start at the same place the longer one
 -- wins, so "Windurst Waters (S)" is not cut down to "Windurst Waters".
-function M.spans(text, index)
+-- With plural set, a name may be followed by "s" or "es" (items written
+-- in the plural); the span then covers the ending and name_e is where the
+-- name itself ends.
+function M.spans(text, index, plural)
     text = tostring(text or '')
 
     if text == '' or index == nil or #index == 0 then
@@ -103,6 +119,12 @@ function M.spans(text, index)
 
             local before = s > 1 and haystack:sub(s - 1, s - 1) or ''
             local after = haystack:sub(e + 1, e + 1)
+            local extra = 0
+
+            if plural and is_word_char(after) then
+                extra = plural_length(haystack, e)
+                after = haystack:sub(e + extra + 1, e + extra + 1)
+            end
 
             -- Names start with a capital letter in the text, so an
             -- ordinary word is never taken for one.
@@ -112,7 +134,7 @@ function M.spans(text, index)
                 and not is_word_char(after)
                 and first:match('%u') ~= nil then
 
-                found[#found + 1] = { s = s, e = e, length = e - s + 1 }
+                found[#found + 1] = { s = s, e = e + extra, name_e = e, length = e + extra - s + 1 }
             end
 
             from = s + 1
@@ -124,7 +146,13 @@ function M.spans(text, index)
             return a.s < b.s
         end
 
-        return a.length > b.length
+        if a.length ~= b.length then
+            return a.length > b.length
+        end
+
+        -- A name that fits exactly beats one that needs a plural ending
+        -- ("Blazing Peppers" over "Blazing Pepper" + s).
+        return a.name_e > b.name_e
     end)
 
     local result = {}
@@ -132,7 +160,7 @@ function M.spans(text, index)
 
     for _, item in ipairs(found) do
         if item.s > last_end then
-            result[#result + 1] = { s = map[item.s], e = map[item.e] }
+            result[#result + 1] = { s = map[item.s], e = map[item.e], name_e = map[item.name_e] }
             last_end = item.e
         end
     end
@@ -150,10 +178,11 @@ function M.marks(text, styles)
     local candidates = {}
 
     for priority, style in ipairs(styles or {}) do
-        for _, span in ipairs(M.spans(text, style.index)) do
+        for _, span in ipairs(M.spans(text, style.index, style.kind == 'item')) do
             candidates[#candidates + 1] = {
                 s = span.s,
                 e = span.e,
+                name_e = span.name_e,
                 kind = style.kind,
                 length = span.e - span.s + 1,
                 priority = priority,
@@ -178,7 +207,7 @@ function M.marks(text, styles)
 
     for _, item in ipairs(candidates) do
         if item.s > last_end then
-            marks[#marks + 1] = { s = item.s, e = item.e, kind = item.kind }
+            marks[#marks + 1] = { s = item.s, e = item.e, name_e = item.name_e, kind = item.kind }
             last_end = item.e
         end
     end
@@ -503,7 +532,8 @@ function M.annotate(text, styles, status)
 
     for _, mark in ipairs(M.marks(text, styles)) do
         if mark.kind == 'item' and not is_reward(text, mark.s) then
-            local name = text:sub(mark.s, mark.e)
+            -- The item's own name, without a plural ending.
+            local name = text:sub(mark.s, mark.name_e or mark.e)
             local at = mark.e
             local quantity = 1
             local q_start, q_end, digits =
