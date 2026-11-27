@@ -1112,7 +1112,7 @@ M.zones = {
                 req = 'Lv.30+',
                 prereq = '',
                 reward = "Ranger's Necklace, ability to become a Ranger",
-                items = 'Black Tiger Fang',
+                items = '',
             },
 
             {
